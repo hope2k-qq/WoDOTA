@@ -9,10 +9,12 @@ import { ReactComponent as UpdatesIcon } from "../../assets/images/icons/Updates
 import { ReactComponent as ShopIcon } from "../../assets/images/icons/ShopIcon.svg";
 import {LanguagesComponent} from "../../locales/languagesComponent/LanguagesComponent";
 import {useTranslation} from "react-i18next";
+import {useThemeStore} from "../../entities/stores/useThemeStore";
 
 export const SideBar = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const { cycleThemes } = useThemeStore();
 
     return (
         <div className={styles.div}>
@@ -32,6 +34,7 @@ export const SideBar = () => {
                                  onNavigate={() => navigate('/shop')} />
             </div>
             <LanguagesComponent />
+            <button onClick={cycleThemes}>next</button>
         </div>
     );
 };
