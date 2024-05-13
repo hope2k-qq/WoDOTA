@@ -3,16 +3,23 @@
   align-items: center;
   cursor: pointer;
   padding: 1rem;
-  background-color: purple;
-  margin: 1rem;
 
-  &:hover{
-    background-color: cadetblue;
-    color: white;
+  margin: 0.7rem 1rem;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #768294;
+  &:hover {
+    color: var(--color_black_white);
   }
   >svg{
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
     margin-right: 0.5rem;
   }
 }
+.active{
+  color: var(--color_black_white);
+  background-color: var(--color_eef0f3_1d2321);
+}
+

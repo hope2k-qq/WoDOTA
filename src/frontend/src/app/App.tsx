@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
-import './App.css';
-import {Grid, ThemeProvider} from "@mui/material";
+import './app.module.scss';
+import {CssBaseline, Grid, ThemeProvider} from "@mui/material";
 import {Routing} from "../routes/Routing";
 import i18n from "../locales/i18n";
 import {I18nextProvider} from "react-i18next";
 import {setThemeVariables} from "../themesToSCSS";
 import {themes} from "../themes";
 import {useThemeStore} from "../entities/stores/useThemeStore";
+import styles from "./app.module.scss";
 
 const App = () => {
     const { getCurrentTheme } = useThemeStore();
@@ -17,7 +18,8 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <I18nextProvider i18n={i18n}>
-                <Grid item md={12} style={{background: "red", width: "100%", display: "flex", justifyContent: "center"}}>
+                <CssBaseline />
+                <Grid item md={12} className={styles.app}>
                     <Routing />
                 </Grid>
             </I18nextProvider>

@@ -1,9 +1,34 @@
 .div{
   width: 100%;
-  background: var(--colorVariation_black_white);
+  background-color: var(--color_white_0b0b0d);
+  display: flex;
+  flex-direction: column;
   height: 100%;
+
+  .div_header{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .div_menu{
-    > div{
+    margin-top: 1rem;
+  }
+  .div_footer{
+    display: flex;
+    margin: 1rem 4rem;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+    > svg{
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+
+      :hover{
+        opacity: 0.75;
+      }
     }
   }
 }

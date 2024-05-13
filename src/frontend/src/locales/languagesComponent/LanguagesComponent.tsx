@@ -1,42 +1,36 @@
-import React, { useEffect, useState } from "react";
-import styles from "./languages_component.module.scss"
+import React, { useEffect, useState, useMemo } from "react";
+import styles from "./languages_component.module.scss";
 import { useTranslation } from "react-i18next";
-export const LanguagesComponent = () => {
+import ua from "../../assets/images/ua.png";
+import en from "../../assets/images/en.png";
+import ru from "../../assets/images/ru.png";
+
+type Language = "ua" | "ru" | "en";
+export const LanguagesComponent: React.FC = () => {
     const { i18n } = useTranslation();
 
-    const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
-        const storedLanguage = localStorage.getItem("language");
-        return storedLanguage || "en";
+    const languages: Language[] = useMemo(() => ["ua", "ru", "en"], []);
+    const flags: Record<Language, string> = { ua, ru, en };
+
+    const [currentLanguageIndex, setCurrentLanguageIndex]
+        = useState<number>(() => {
+        const storedLanguageIndex = parseInt(localStorage.getItem("languageIndex") || "0", 10);
+        return storedLanguageIndex >= 0 && storedLanguageIndex < languages.length ? storedLanguageIndex : 0;
     });
 
     useEffect(() => {
-        localStorage.setItem("language", currentLanguage);
-        i18n.changeLanguage(currentLanguage);
-    }, [currentLanguage, i18n]);
+        localStorage.setItem("languageIndex", String(currentLanguageIndex));
+        const language = languages[currentLanguageIndex];
+        i18n.changeLanguage(language);
+    }, [currentLanguageIndex, i18n, languages]);
 
-    const changeLanguage = (language: string) => {
-        setCurrentLanguage(language);
+    const changeLanguage = () => {
+        setCurrentLanguageIndex((prevIndex) => (prevIndex + 1) % languages.length);
     };
 
     return (
-        <div className={styles.drop_up}>
-            <span className={styles.drop_span}>
-                {currentLanguage.toUpperCase()}
-            </span>
-            <div className={styles.drop_up_content}>
-                <span onClick={() => changeLanguage("ua")}
-                      className={currentLanguage === "ua" ? styles.active : styles.dont_active}>
-                    UA
-                </span>
-                <span onClick={() => changeLanguage("ru")}
-                      className={currentLanguage === "ru" ? styles.active : styles.dont_active}>
-                    RU
-                </span>
-                <span onClick={() => changeLanguage("en")}
-                      className={currentLanguage === "en" ? styles.active : styles.dont_active}>
-                    EN
-                </span>
-            </div>
+        <div className={styles.div}>
+            <img src={flags[languages[currentLanguageIndex]]} alt={languages[currentLanguageIndex]} onClick={changeLanguage} />
         </div>
     );
 };

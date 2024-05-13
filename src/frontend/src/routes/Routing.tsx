@@ -11,7 +11,7 @@ import {ShopPage} from "../pages/shop/ShopPage";
 export const Routing = () => {
     return (
         <BrowserRouter>
-            <Grid container style={{ width: "100%",maxWidth: "1260px"}}>
+            <Grid container style={{ width: "100%",maxWidth: "1460px"}}>
                 <Grid item xs={3} >
                     <SideBar />
                 </Grid>
