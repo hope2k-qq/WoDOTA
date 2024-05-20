@@ -1,14 +1,14 @@
 import styles from "./side_bar.module.scss"
 import {SideBarMenuItem} from "./components/sideBarMenuItem/SideBarMenuItem";
 import {useLocation, useNavigate} from "react-router-dom";
-import { ReactComponent as HomeIcon } from "../../assets/images/icons/HomeIcon.svg";
-import { ReactComponent as ProfileIcon } from "../../assets/images/icons/ProfileIcon.svg";
-import { ReactComponent as LeaderboardIcon } from "../../assets/images/icons/LeaderboardIcon.svg";
-import { ReactComponent as DotaIcon } from "../../assets/images/icons/DotaIcon.svg";
-import { ReactComponent as UpdatesIcon } from "../../assets/images/icons/UpdatesIcon.svg";
-import { ReactComponent as ShopIcon } from "../../assets/images/icons/ShopIcon.svg";
-import { ReactComponent as MoonIcon } from "../../assets/images/icons/MoonIcon.svg";
-import { ReactComponent as SunIcon } from "../../assets/images/icons/SunIcon.svg";
+import { ReactComponent as HomeIcon } from "../../assets/icons/HomeIcon.svg";
+import { ReactComponent as ProfileIcon } from "../../assets/icons/ProfileIcon.svg";
+import { ReactComponent as LeaderboardIcon } from "../../assets/icons/LeaderboardIcon.svg";
+import { ReactComponent as DotaIcon } from "../../assets/icons/DotaIcon.svg";
+import { ReactComponent as UpdatesIcon } from "../../assets/icons/UpdatesIcon.svg";
+import { ReactComponent as ShopIcon } from "../../assets/icons/ShopIcon.svg";
+import { ReactComponent as MoonIcon } from "../../assets/icons/MoonIcon.svg";
+import { ReactComponent as SunIcon } from "../../assets/icons/SunIcon.svg";
 import {LanguagesComponent} from "../../locales/languagesComponent/LanguagesComponent";
 import {useTranslation} from "react-i18next";
 import {useThemeStore} from "../../entities/stores/useThemeStore";

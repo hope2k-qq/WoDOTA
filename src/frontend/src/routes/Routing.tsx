@@ -7,6 +7,7 @@ import {LeaderboardPage} from "../pages/leaderboard/LeaderboardPage";
 import {HeroesPage} from "../pages/heroes/HeroesPage";
 import {UpdatesPage} from "../pages/updates/UpdatesPage";
 import {ShopPage} from "../pages/shop/ShopPage";
+import {HeroPage} from "../pages/heroes/components/heroPage/HeroPage";
 
 export const Routing = () => {
     return (
@@ -21,6 +22,7 @@ export const Routing = () => {
                         <Route path="/profile" element={<ProfilePage />}/>
                         <Route path="/leaderboard" element={<LeaderboardPage />}/>
                         <Route path="/heroes" element={<HeroesPage />}/>
+                        <Route path="/hero/:name" element={<HeroPage />}/>
                         <Route path="/updates" element={<UpdatesPage />}/>
                         <Route path="/shop" element={<ShopPage />}/>
                     </Routes>

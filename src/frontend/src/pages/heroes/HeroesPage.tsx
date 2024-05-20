@@ -1,7 +1,61 @@
-export const HeroesPage = () => {
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+const heroesWithLocalAssets = ['aghanim', 'legion_commander', 'wraith_king'];
+
+const localAssetHeroes: Set<string> = new Set(Object.values(heroesWithLocalAssets));
+
+export const HeroesPage: React.FC = () => {
+    const navigate = useNavigate();
+    const [heroNames, setHeroNames] = useState<string[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/heroes')
+            .then(response => {
+                const data = response.data;
+                const names = data.map((name: string) => heroesWithLocalAssets.includes(name) ? name : name);
+                setHeroNames(names);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching talents data:', error);
+                setError('Failed to fetch hero data.');
+                setLoading(false);
+            });
+    }, []);
+
+    const getHeroImageSrc = (name: string) => {
+        if (localAssetHeroes.has(name)) {
+            return require(`../../assets/images/heroes/heroesPreview/${name}.png`);
+        }
+        return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${name}.png`;
+    };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
     return (
-        <div style={{background: "yellow", width: "100%", height: "100%"}} >
-            WoDOTA heroes
+        <div>
+            <h1>Hero Names</h1>
+            <ul>
+                {heroNames.map((name, index) => (
+                    <li key={index} onClick={() => navigate(`/hero/${name}`)}>
+                        <img
+                            src={getHeroImageSrc(name)}
+                            alt={name}
+                        />
+                        <span>{name}</span>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
