@@ -46,6 +46,8 @@ export const SideBar = () => {
                                  onNavigate={() => navigate('/updates')} isActive={activeIcon("/updates")}/>
                 <SideBarMenuItem title={t('shop')} icon={<ShopIcon />}
                                  onNavigate={() => navigate('/shop')} isActive={activeIcon("/shop")}/>
+                <SideBarMenuItem title={t('shop')} icon={<ShopIcon />}
+                                 onNavigate={() => navigate('/votes')} isActive={activeIcon("/shop")}/>
             </div>
             <div className={styles.div_footer}>
                 {isDarkTheme ?
