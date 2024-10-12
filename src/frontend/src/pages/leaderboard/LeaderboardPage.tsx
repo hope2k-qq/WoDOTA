@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 interface Player {
     steamid: string;
@@ -27,7 +27,7 @@ export const LeaderboardPage = () => {
 
     const API_URL = process.env.REACT_APP_API_URL;
 
-    const fetchRatingData = async () => {
+    const fetchRatingData = useCallback(async () => {
         try {
             const response = await axios.get(`${API_URL}/api/leaderboard_rating`);
             const playersData: Player[] = response.data.map((player: { steamid: string; rating: string; avatar?: string; profileUrl?: string }) => ({
@@ -42,9 +42,9 @@ export const LeaderboardPage = () => {
         } finally {
             setLoadingRating(false);
         }
-    };
+    }, [API_URL]);
 
-    const fetchArenaData = async () => {
+    const fetchArenaData = useCallback(async () => {
         try {
             const response = await axios.get(`${API_URL}/api/leaderboard_arena`);
             setArenaPlayers(response.data);
@@ -53,12 +53,20 @@ export const LeaderboardPage = () => {
         } finally {
             setLoadingArena(false);
         }
-    };
+    }, [API_URL]);
 
     useEffect(() => {
-        fetchRatingData();
-        fetchArenaData();
-    }, []);
+        const fetchData = async () => {
+            try {
+                await Promise.all([fetchRatingData(), fetchArenaData()]);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        void fetchData();
+    }, [fetchRatingData, fetchArenaData]);
+
 
     const handleRatingChange = (rating: string) => {
         setSelectedRating(rating);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, CSSProperties } from 'react';
+import React, { useEffect, useState, CSSProperties, useCallback } from 'react';
 import { Scene } from './components/scene/Scene';
 
 interface Item {
@@ -20,10 +20,8 @@ export const ShopPage: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [selectedItemType, setSelectedItemType] = useState<ItemType>('Items_Five');
-
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-
     const [localizationData, setLocalizationData] = useState<{ [key: string]: string }>({});
 
     const handleToggleScene = () => {
@@ -32,40 +30,55 @@ export const ShopPage: React.FC = () => {
 
     const API_URL = process.env.REACT_APP_API_URL;
 
-    const fetchItems = async (itemType: ItemType) => {
+    const fetchItems = useCallback(async (itemType: ItemType) => {
+        if (!API_URL) {
+            setError('API_URL is not defined');
+            return;
+        }
+
         setLoading(true);
         setError(null);
         try {
             const response = await fetch(`${API_URL}/api/shop`);
             if (!response.ok) {
-                throw new Error('Failed to fetch items');
+                setError('Failed to fetch items');
+                return;
             }
             const data = await response.json();
             setItems(data[itemType] || []);
-            setLoading(false);
         } catch (err: any) {
             setError(err.message);
+        } finally {
             setLoading(false);
         }
-    };
+    }, [API_URL]);
 
-    const fetchLocalizationData = async () => {
+    const fetchLocalizationData = useCallback(async () => {
+        if (!API_URL) {
+            setError('API_URL is not defined');
+            return;
+        }
+
         try {
             const response = await fetch(`${API_URL}/api/text_data`);
             if (!response.ok) {
-                throw new Error('Failed to fetch localization data');
+                setError('Failed to fetch localization data');
+                return;
             }
             const data = await response.json();
             setLocalizationData(data);
         } catch (error) {
-            console.error('Ошибка загрузки данных локализации:', error);
+            console.error('Error loading localization data:', error);
+            setError('Error loading localization data');
         }
-    };
+    }, [API_URL]);
 
     useEffect(() => {
-        fetchItems(selectedItemType);
-        fetchLocalizationData();
-    }, [selectedItemType]);
+        (async () => {
+            await fetchItems(selectedItemType);
+            await fetchLocalizationData();
+        })();
+    }, [selectedItemType, fetchItems, fetchLocalizationData]);
 
     const openModal = (item: Item) => {
         setSelectedItem(item);
@@ -78,7 +91,7 @@ export const ShopPage: React.FC = () => {
     };
 
     const handleBuy = () => {
-        alert(`Вы купили ${localizationData[selectedItem?.localizationKey!] || selectedItem?.localizationKey}!`);
+        alert(`You bought ${localizationData[selectedItem?.localizationKey!] || selectedItem?.localizationKey}!`);
         closeModal();
     };
 
@@ -113,15 +126,13 @@ export const ShopPage: React.FC = () => {
                     <ul>
                         {items.map((item) => (
                             <li key={item.id}>
-                                {/* Заменяем item.localizationKey на значение из данных локализации */}
                                 <strong>{localizationData[item.localizationKey] || item.localizationKey}:</strong> {item.value} {item.currency}
                                 <img
                                     src={images(`./${item.icon}_png.png`)}
                                     alt={localizationData[item.localizationKey] || item.localizationKey}
                                 />
-                                <button style={{ cursor: 'pointer' }}
-                                        onClick={() => openModal(item)}>
-                                    Купить
+                                <button style={{ cursor: 'pointer' }} onClick={() => openModal(item)}>
+                                    Buy
                                 </button>
                             </li>
                         ))}
@@ -139,8 +150,8 @@ export const ShopPage: React.FC = () => {
                             alt={localizationData[selectedItem.localizationKey] || selectedItem.localizationKey}
                             style={styles.modalImage}
                         />
-                        <p>Цена: {selectedItem.value} {selectedItem.currency}</p>
-                        <button onClick={handleBuy}>Купить</button>
+                        <p>Price: {selectedItem.value} {selectedItem.currency}</p>
+                        <button onClick={handleBuy}>Buy</button>
                     </div>
                 </div>
             )}

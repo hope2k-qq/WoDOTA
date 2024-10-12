@@ -38,8 +38,10 @@ const HeroPage: React.FC = () => {
             }
         };
 
-        fetchAddonData();
-    }, []);
+        fetchAddonData().catch((error) => {
+            console.error('Promise rejected in fetchAddonData:', error);
+        });
+    }, [API_URL]);
 
     useEffect(() => {
         axios.get(`${API_URL}/api/hero/${name}`)
@@ -52,7 +54,7 @@ const HeroPage: React.FC = () => {
                 setError('Failed to fetch hero data.');
                 setLoading(false);
             });
-    }, [name]);
+    }, [API_URL, name]);
 
     const handleButtonClick = (part: string) => {
         setSelectedPart(part);
@@ -134,7 +136,7 @@ const HeroPage: React.FC = () => {
             default:
                 backgroundFileName = 'background_str_png';
         }
-        const backgroundImage = require(`../../../../assets/images/heroes/talents/${(name ? replacements[name] || name 
+        const backgroundImage = require(`../../../../assets/images/heroes/talents/${(name ? replacements[name] || name
             : null)}_${backgroundFileName}.png`);
 
         const renderText = (text: string) => {
@@ -201,7 +203,6 @@ const HeroPage: React.FC = () => {
             </div>
         );
     };
-
 
     return (
         <div className={styles.div}>

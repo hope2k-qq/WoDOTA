@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const heroesWithLocalAssets = ['aghanim', 'creep','roshan','legion_commander', 'wraith_king'];
+const heroesWithLocalAssets = ['aghanim', 'creep', 'roshan', 'legion_commander', 'wraith_king'];
 
 const localAssetHeroes: Set<string> = new Set(Object.values(heroesWithLocalAssets));
 
@@ -15,19 +15,24 @@ export const HeroesPage: React.FC = () => {
     const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
-        axios.get(`${API_URL}/api/heroes`)
-            .then(response => {
+        const fetchHeroNames = async () => {
+            try {
+                const response = await axios.get(`${API_URL}/api/heroes`);
                 const data = response.data;
                 const names = data.map((name: string) => heroesWithLocalAssets.includes(name) ? name : name);
                 setHeroNames(names);
-                setLoading(false);
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Error fetching talents data:', error);
                 setError('Failed to fetch hero data.');
+            } finally {
                 setLoading(false);
-            });
-    }, []);
+            }
+        };
+
+        fetchHeroNames().catch(err => {
+            console.error('Error in fetchHeroNames:', err);
+        });
+    }, [API_URL]);
 
     const getHeroImageSrc = (name: string) => {
         if (localAssetHeroes.has(name)) {

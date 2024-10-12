@@ -1,11 +1,10 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 interface HeroVote {
     hero_name: string;
     votes: string;
 }
-
 
 export const VotesPage = () => {
     const [votes, setVotes] = useState<HeroVote[]>([]);
@@ -14,22 +13,30 @@ export const VotesPage = () => {
 
     const API_URL = process.env.REACT_APP_API_URL;
 
-    const fetchHeroVotes = async () => {
+    const fetchHeroVotes = useCallback(async () => {
+        if (!API_URL) {
+            setError('API_URL is not defined');
+            setLoading(false);
+            return;
+        }
+
         try {
-            setLoading(true);
-            setError(null);
             const response = await axios.get(`${API_URL}/api/votes`);
             setVotes(response.data);
         } catch (err) {
+            console.error('Error fetching hero votes:', err);
             setError('Error fetching hero votes');
         } finally {
             setLoading(false);
         }
-    };
+    }, [API_URL]);
 
     useEffect(() => {
-        fetchHeroVotes();
-    }, []);
+        fetchHeroVotes()
+            .catch(err => {
+                console.error('Error during fetching hero votes:', err);
+            });
+    }, [fetchHeroVotes]);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -38,8 +45,9 @@ export const VotesPage = () => {
     if (error) {
         return <div>{error}</div>;
     }
+
     return (
-        <div style={{background: "yellow", width: "100%", height: "100%"}} >
+        <div style={{ background: "yellow", width: "100%", height: "100%" }}>
             <h1>Hero Votes</h1>
             <ul>
                 {votes.map((vote, index) => (
