@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const heroesWithLocalAssets = ['aghanim', 'legion_commander', 'wraith_king'];
+const heroesWithLocalAssets = ['aghanim', 'creep','roshan','legion_commander', 'wraith_king'];
 
 const localAssetHeroes: Set<string> = new Set(Object.values(heroesWithLocalAssets));
 

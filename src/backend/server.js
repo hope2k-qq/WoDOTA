@@ -13,6 +13,8 @@ const cache = apicache.middleware;
 app.use(cors());
 
 const replacements = {
+    'arc_warden': 'roshan',
+    'chen': 'creep',
     'meepo': 'aghanim',
     'skeleton_king': 'wraith_king',
 };
@@ -171,7 +173,7 @@ app.get('/heroes', (req, res) => {
     if (!herotalents) {
         res.json({ error: 'Talents data not loaded yet' });
     } else {
-        const heroNames = Object.keys(herotalents);
+        const heroNames = Object.keys(herotalents).sort();;
         res.json(heroNames);
     }
 });

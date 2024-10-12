@@ -11,6 +11,13 @@ interface AddonData {
     [key: string]: string;
 }
 
+const replacements: { [key: string]: string } = {
+    'roshan': 'arc_warden',
+    'creep': 'chen',
+    'aghanim': 'meepo',
+    'wraith_king': 'skeleton_king',
+};
+
 const HeroPage: React.FC = () => {
     const { name } = useParams<{ name: string }>();
     const [heroTalents, setHeroTalents] = useState<HeroTalents | null>(null);
@@ -18,6 +25,7 @@ const HeroPage: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [addonData, setAddonData] = useState<AddonData | null>(null);
+
 
     useEffect(() => {
         const fetchAddonData = async () => {
@@ -125,8 +133,8 @@ const HeroPage: React.FC = () => {
             default:
                 backgroundFileName = 'background_str_png';
         }
-
-        const backgroundImage = require(`../../../../assets/images/heroes/talents/${name}_${backgroundFileName}.png`);
+        const backgroundImage = require(`../../../../assets/images/heroes/talents/${(name ? replacements[name] || name 
+            : null)}_${backgroundFileName}.png`);
 
         const renderText = (text: string) => {
             return text.split('\n').map((line, index) => {

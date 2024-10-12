@@ -9,27 +9,29 @@ interface GLTFResult {
     animations: any[];
 }
 
-export const Pet: React.FC<{ animationName: string }> = ({ animationName }) => {
-    const gltf = useLoader(GLTFLoader, '/shroomy.glb') as GLTFResult; // Загрузка модели питомца
+interface PetProps {
+    animationName: string;
+    isPaused: boolean;
+}
+
+export const Pet: React.FC<PetProps> = ({ animationName, isPaused }) => {
+    const gltf = useLoader(GLTFLoader, '/shroomy.glb') as GLTFResult;
     const mixer = useRef<AnimationMixer | null>(null);
     const actions = useRef<{ [key: string]: AnimationAction }>({});
 
     useEffect(() => {
         mixer.current = new AnimationMixer(gltf.scene);
 
-        // Создание действий для всех анимаций
         gltf.animations.forEach((clip) => {
             const action = mixer.current!.clipAction(clip);
-            action.loop = THREE.LoopRepeat; // Зацикливание анимации
-            actions.current[clip.name] = action; // Сохраняем действия для каждой анимации
+            action.loop = THREE.LoopRepeat;
+            actions.current[clip.name] = action;
         });
 
-        // Запуск текущей анимации питомца
         if (actions.current[animationName]) {
             actions.current[animationName].play();
         }
 
-        // Очистка действий при размонтировании компонента
         return () => {
             if (mixer.current) {
                 mixer.current.stopAllAction();
@@ -38,17 +40,23 @@ export const Pet: React.FC<{ animationName: string }> = ({ animationName }) => {
     }, [gltf, animationName]);
 
     useFrame((state, delta) => {
-        if (mixer.current) mixer.current.update(delta); // Обновление анимации каждый кадр
+        if (mixer.current && !isPaused) {
+            mixer.current.update(delta);
+        }
     });
 
-    // Эффект для смены анимации, при изменении пропса animationName
     useEffect(() => {
-        Object.values(actions.current).forEach(action => action.stop()); // Остановить все анимации
+        Object.values(actions.current).forEach(action => action.stop());
         if (actions.current[animationName]) {
-            actions.current[animationName].play(); // Воспроизвести новую анимацию
+            actions.current[animationName].play();
         }
     }, [animationName]);
 
-    return <primitive object={gltf.scene} position={[2, 0, -1]} />; // Смещение питомца по оси x
-};
+    useEffect(() => {
+        Object.values(actions.current).forEach(action => {
+            action.paused = isPaused;
+        });
+    }, [isPaused]);
 
+    return <primitive object={gltf.scene} position={[2, 0, -1]} />;
+};
