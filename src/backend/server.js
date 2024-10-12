@@ -10,7 +10,12 @@ const apicache = require('apicache');
 const port = process.env.PORT || 5000;
 const cache = apicache.middleware;
 
-app.use(cors());
+const corsOptions = {
+    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+};
+
+app.use(cors(corsOptions));
 
 const replacements = {
     'arc_warden': 'roshan',
