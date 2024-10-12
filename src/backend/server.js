@@ -21,8 +21,10 @@ const replacements = {
 
 let herotalents = null;
 
+const filePath = path.join(__dirname, 'talents.lua');
+
 try {
-    const data = fs.readFileSync('./talents.lua', 'utf8');
+    const data = fs.readFileSync(filePath, 'utf8');
     
     const parsedLua = luaparse.parse(data);
     
@@ -173,7 +175,7 @@ app.get('/api/heroes', (req, res) => {
     if (!herotalents) {
         res.json({ error: 'Talents data not loaded yet' });
     } else {
-        const heroNames = Object.keys(herotalents).sort();;
+        const heroNames = Object.keys(herotalents).sort();
         res.json(heroNames);
     }
 });
