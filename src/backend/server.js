@@ -21,10 +21,10 @@ const replacements = {
 
 let herotalents = null;
 
-const filePath = path.join(__dirname, 'talents.lua');
+const filePath2 = path.join(__dirname, 'talents.lua');
 
 try {
-    const data = fs.readFileSync(filePath, 'utf8');
+    const data = fs.readFileSync(filePath2, 'utf8');
     
     const parsedLua = luaparse.parse(data);
     
