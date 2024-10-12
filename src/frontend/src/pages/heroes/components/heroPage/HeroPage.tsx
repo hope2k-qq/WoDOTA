@@ -26,11 +26,12 @@ const HeroPage: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [addonData, setAddonData] = useState<AddonData | null>(null);
 
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const fetchAddonData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/text_data');
+                const response = await axios.get(`${API_URL}/api/text_data`);
                 setAddonData(response.data as AddonData);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
@@ -41,7 +42,7 @@ const HeroPage: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/hero/${name}`)
+        axios.get(`${API_URL}/api/hero/${name}`)
             .then(response => {
                 setHeroTalents(response.data);
                 setLoading(false);

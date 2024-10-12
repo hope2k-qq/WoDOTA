@@ -25,9 +25,11 @@ export const LeaderboardPage = () => {
     const [selectedRating, setSelectedRating] = useState<string>('rating');
     const [arenaGroup, setArenaGroup] = useState<string>('1');
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const fetchRatingData = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/leaderboard_rating');
+            const response = await axios.get(`${API_URL}/api/leaderboard_rating`);
             const playersData: Player[] = response.data.map((player: { steamid: string; rating: string; avatar?: string; profileUrl?: string }) => ({
                 steamid: player.steamid,
                 rating: parseInt(player.rating, 10),
@@ -44,7 +46,7 @@ export const LeaderboardPage = () => {
 
     const fetchArenaData = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/leaderboard_arena');
+            const response = await axios.get(`${API_URL}/api/leaderboard_arena`);
             setArenaPlayers(response.data);
         } catch (err) {
             setError('Error fetching arena data');

@@ -10,13 +10,15 @@ interface HeroVote {
 export const VotesPage = () => {
     const [votes, setVotes] = useState<HeroVote[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null)
+    const [error, setError] = useState<string | null>(null);
+
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const fetchHeroVotes = async () => {
         try {
             setLoading(true);
             setError(null);
-            const response = await axios.get('http://localhost:5000/votes');
+            const response = await axios.get(`${API_URL}/api/votes`);
             setVotes(response.data);
         } catch (err) {
             setError('Error fetching hero votes');

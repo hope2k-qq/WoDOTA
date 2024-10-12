@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 const path = require('path');
 const apicache = require('apicache');
-const port = 5000;
+const port = process.env.PORT || 5000;
 const cache = apicache.middleware;
 
 app.use(cors());
@@ -154,7 +154,7 @@ try {
     console.error(error);
 }
 
-app.get('/hero/:id', (req, res) => {
+app.get('/api/hero/:id', (req, res) => {
     const heroName = req.params.id;
     
     if (!herotalents) {
@@ -169,7 +169,7 @@ app.get('/hero/:id', (req, res) => {
     }
 });
 
-app.get('/heroes', (req, res) => {
+app.get('/api/heroes', (req, res) => {
     if (!herotalents) {
         res.json({ error: 'Talents data not loaded yet' });
     } else {
@@ -178,7 +178,7 @@ app.get('/heroes', (req, res) => {
     }
 });
 
-app.get('/text_data', (req, res) => {
+app.get('/api/text_data', (req, res) => {
     const filePath = path.join(__dirname, 'assets', 'addon_russian.txt');
     try {
         const jsonData = parseAddonFile(filePath);
@@ -192,7 +192,7 @@ app.get('/text_data', (req, res) => {
 const RATING_CACHE_DURATION = '10 minutes';
 const ARENA_CACHE_DURATION = '10 minutes';
 const VOTES_CACHE_DURATION = '30 minutes';
-app.get('/leaderboard_rating', cache(RATING_CACHE_DURATION), async (req, res) => {
+app.get('/api/leaderboard_rating', cache(RATING_CACHE_DURATION), async (req, res) => {
     try {
         let playersData;
         let playersInfo = {};
@@ -271,7 +271,7 @@ const getPlayersInfoBySteamIds = async (friendshipCodes) => {
     return playerInfo;
 };
 
-app.get('/leaderboard_arena', cache(ARENA_CACHE_DURATION), async (req, res) => {
+app.get('/api/leaderboard_arena', cache(ARENA_CACHE_DURATION), async (req, res) => {
     try {
         let playersData;
         const playersByKey = {};
@@ -334,7 +334,7 @@ app.get('/leaderboard_arena', cache(ARENA_CACHE_DURATION), async (req, res) => {
     }
 });
 
-app.get('/votes', cache(VOTES_CACHE_DURATION), async (req, res) => {
+app.get('/api/votes', cache(VOTES_CACHE_DURATION), async (req, res) => {
     try {
         const response = await axios.get('https://data.worldofdota.net/data/get_heroes_votes.php');
         res.json(response.data);
@@ -423,7 +423,7 @@ function extractItems() {
     return items;
 }
 
-app.get('/shop', (req, res) => {
+app.get('/api/shop', (req, res) => {
     try {
         const itemsData = extractItems();
         res.json(itemsData);

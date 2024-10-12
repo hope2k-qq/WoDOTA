@@ -19,11 +19,10 @@ export const HighFive: React.FC<{ position: [number, number, number] }> = ({ pos
 
         gltf.animations.forEach((clip) => {
             const action = mixer.current!.clipAction(clip);
-            action.loop = THREE.LoopRepeat; // Зацикливание анимации
-            actions.current[clip.name] = action; // Сохраняем действие
+            action.loop = THREE.LoopRepeat;
+            actions.current[clip.name] = action;
         });
 
-        // Запускаем анимацию "wave" (предполагается, что она называется "wave")
         if (actions.current['wave']) {
             actions.current['wave'].play();
         }

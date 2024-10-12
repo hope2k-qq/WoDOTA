@@ -12,8 +12,10 @@ export const HeroesPage: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     useEffect(() => {
-        axios.get('http://localhost:5000/heroes')
+        axios.get(`${API_URL}/api/heroes`)
             .then(response => {
                 const data = response.data;
                 const names = data.map((name: string) => heroesWithLocalAssets.includes(name) ? name : name);

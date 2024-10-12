@@ -24,7 +24,6 @@ export const Hero: React.FC<HeroProps> = ({ heroName, animationName, isPaused })
     useEffect(() => {
         mixer.current = new AnimationMixer(gltf.scene);
 
-        // Загружаем анимации
         gltf.animations.forEach((clip) => {
             const action = mixer.current!.clipAction(clip);
             action.loop = THREE.LoopRepeat;
@@ -45,7 +44,6 @@ export const Hero: React.FC<HeroProps> = ({ heroName, animationName, isPaused })
     });
 
     useEffect(() => {
-        // Логирование текущего состояния анимации
         console.log(`Switching from ${prevAnimationName.current} to ${animationName}`);
 
         if (actions.current[animationName]) {

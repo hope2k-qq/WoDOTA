@@ -30,11 +30,13 @@ export const ShopPage: React.FC = () => {
         setShowScene(!showScene);
     };
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const fetchItems = async (itemType: ItemType) => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`http://localhost:5000/shop`);
+            const response = await fetch(`${API_URL}/api/shop`);
             if (!response.ok) {
                 throw new Error('Failed to fetch items');
             }
@@ -49,7 +51,7 @@ export const ShopPage: React.FC = () => {
 
     const fetchLocalizationData = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/text_data`);
+            const response = await fetch(`${API_URL}/api/text_data`);
             if (!response.ok) {
                 throw new Error('Failed to fetch localization data');
             }

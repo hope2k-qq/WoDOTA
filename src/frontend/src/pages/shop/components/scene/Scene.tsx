@@ -13,9 +13,11 @@ export const Scene: React.FC = () => {
     const [heroes, setHeroes] = useState<string[]>([]); // Состояние для списка героев
     const [isPaused, setIsPaused] = useState<boolean>(false); // Состояние для паузы анимации
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const fetchHeroes = async () => {
         try {
-            const response = await fetch('http://localhost:5000/heroes');
+            const response = await fetch(`${API_URL}/api/heroes`);
             if (!response.ok) {
                 throw new Error('Failed to fetch heroes');
             }
