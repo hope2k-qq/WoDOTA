@@ -517,7 +517,7 @@ local herotalents = {
 			}
 		}
 	},
-	["npc_dota_hero_n_druid"] = {
+	["npc_dota_hero_lone_druid"] = {
 		[1] = {
 			[1] = {
 				{"modifier_woda_talent_hp1", "#woda_talent_hp1", 3, "hp1", {}},

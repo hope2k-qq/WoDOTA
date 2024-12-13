@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './app.module.scss';
 import {CssBaseline, Grid, ThemeProvider} from "@mui/material";
 import {Routing} from "../routes/Routing";
@@ -8,13 +8,20 @@ import {setThemeVariables} from "../themesToSCSS";
 import {themes} from "../themes";
 import {useThemeStore} from "../entities/stores/useThemeStore";
 import styles from "./app.module.scss";
+import MaintenancePage from "../pages/maintenance/MaintenancePage";
 
 const App = () => {
     const { getCurrentTheme } = useThemeStore();
     const theme = getCurrentTheme() || themes[0];
+    const [isMaintenance, setIsMaintenance] = useState(true);
     useEffect(() => {
         setThemeVariables(theme);
     }, [theme]);
+
+    if (isMaintenance) {
+        return <MaintenancePage />;
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <I18nextProvider i18n={i18n}>
