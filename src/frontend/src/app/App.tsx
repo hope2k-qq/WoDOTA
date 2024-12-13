@@ -13,7 +13,7 @@ import MaintenancePage from "../pages/maintenance/MaintenancePage";
 const App = () => {
     const { getCurrentTheme } = useThemeStore();
     const theme = getCurrentTheme() || themes[0];
-    const [isMaintenance, setIsMaintenance] = useState(true);
+    const [isMaintenance] = useState(true);
     useEffect(() => {
         setThemeVariables(theme);
     }, [theme]);
