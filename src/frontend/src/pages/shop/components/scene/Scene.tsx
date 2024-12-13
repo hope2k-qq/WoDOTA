@@ -17,9 +17,9 @@ export const Scene: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     const [pedestalUrl, setPedestalUrl] = useState<string | null>(null);
-    const [heroUrl, setHeroUrl] = useState<string | null>(null);
+    // const [heroUrl, setHeroUrl] = useState<string | null>(null);
     const objectKeyPedestal = 'models/pedestal/pedestal.glb';
-    const objectKeyHero = 'models/heroes/hero.glb';
+    // const objectKeyHero = 'models/heroes/hero.glb';
 
     const API_URL = process.env.REACT_APP_API_URL;
 
@@ -72,9 +72,9 @@ export const Scene: React.FC = () => {
         fetchModelUrl(objectKeyPedestal, setPedestalUrl);
     }, [objectKeyPedestal]);
 
-    useEffect(() => {
-        fetchModelUrl(objectKeyHero, setHeroUrl);
-    }, [objectKeyHero]);
+    // useEffect(() => {
+    //     fetchModelUrl(objectKeyHero, setHeroUrl);
+    // }, [objectKeyHero]);
 
     const handleHeroAnimationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedHeroAnimation(event.target.value);
