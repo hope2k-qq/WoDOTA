@@ -1,5 +1,6 @@
 import React, { useEffect, useState, CSSProperties, useCallback } from 'react';
 import { Scene } from './components/scene/Scene';
+import { getImageUrl } from '../../utils/r2Storage';
 
 interface Item {
     id: string;
@@ -12,8 +13,6 @@ interface Item {
 const itemTypes = ['Items_Five', 'Items_pets', 'Items_emblems', 'Items_tips'] as const;
 type ItemType = typeof itemTypes[number];
 
-const images = require.context('../../assets/images/shop', false, /\.png$/);
-
 export const ShopPage: React.FC = () => {
     const [showScene, setShowScene] = useState(false);
     const [items, setItems] = useState<Item[]>([]);
@@ -23,6 +22,7 @@ export const ShopPage: React.FC = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<Item | null>(null);
     const [localizationData, setLocalizationData] = useState<{ [key: string]: string }>({});
+    const [imageUrls, setImageUrls] = useState<{ [key: string]: string }>({}); // Состояние для URL изображений
 
     const handleToggleScene = () => {
         setShowScene(!showScene);
@@ -39,7 +39,7 @@ export const ShopPage: React.FC = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`${API_URL}/api/shop`);
+            const response = await fetch(`${API_URL}/shop`);
             if (!response.ok) {
                 setError('Failed to fetch items');
                 return;
@@ -60,7 +60,7 @@ export const ShopPage: React.FC = () => {
         }
 
         try {
-            const response = await fetch(`${API_URL}/api/text_data`);
+            const response = await fetch(`${API_URL}/text_data`);
             if (!response.ok) {
                 setError('Failed to fetch localization data');
                 return;
@@ -79,6 +79,27 @@ export const ShopPage: React.FC = () => {
             await fetchLocalizationData();
         })();
     }, [selectedItemType, fetchItems, fetchLocalizationData]);
+
+    useEffect(() => {
+        const loadImageUrls = async () => {
+            const urls: { [key: string]: string } = {};
+
+            for (const item of items) {
+                const url = (await getImageUrl(`images/shop/${item.icon}.webp`)) || '';
+                const openUrl = (await getImageUrl(`images/shop/${item.icon}_open.webp`)) || '';
+                urls[item.id] = url;
+                urls[item.id + '_open'] = openUrl;
+            }
+
+            setImageUrls(urls);
+        };
+
+        if (items.length > 0) {
+            loadImageUrls();
+        }
+    }, [items]);
+
+
 
     const openModal = (item: Item) => {
         setSelectedItem(item);
@@ -128,7 +149,7 @@ export const ShopPage: React.FC = () => {
                             <li key={item.id}>
                                 <strong>{localizationData[item.localizationKey] || item.localizationKey}:</strong> {item.value} {item.currency}
                                 <img
-                                    src={images(`./${item.icon}_png.png`)}
+                                    src={imageUrls[item.id] || undefined}
                                     alt={localizationData[item.localizationKey] || item.localizationKey}
                                 />
                                 <button style={{ cursor: 'pointer' }} onClick={() => openModal(item)}>
@@ -146,7 +167,7 @@ export const ShopPage: React.FC = () => {
                         <button onClick={closeModal} style={styles.closeButton}>✖</button>
                         <h2>{localizationData[selectedItem.localizationKey] || selectedItem.localizationKey}</h2>
                         <img
-                            src={images(`./${selectedItem.icon}_open_png.png`)}
+                            src={imageUrls[selectedItem.id + '_open'] || undefined}
                             alt={localizationData[selectedItem.localizationKey] || selectedItem.localizationKey}
                             style={styles.modalImage}
                         />
@@ -155,6 +176,7 @@ export const ShopPage: React.FC = () => {
                     </div>
                 </div>
             )}
+
         </div>
     );
 };

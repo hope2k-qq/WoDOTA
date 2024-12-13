@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from './hero_page.module.scss';
+import { getImageUrl } from '../../../../utils/r2Storage';
 
 interface HeroTalents {
     [key: string]: any;
@@ -11,40 +12,35 @@ interface AddonData {
     [key: string]: string;
 }
 
-const replacements: { [key: string]: string } = {
-    'roshan': 'arc_warden',
-    'creep': 'chen',
-    'aghanim': 'meepo',
-    'wraith_king': 'skeleton_king',
-};
-
 const HeroPage: React.FC = () => {
     const { name } = useParams<{ name: string }>();
     const [heroTalents, setHeroTalents] = useState<HeroTalents | null>(null);
     const [selectedPart, setSelectedPart] = useState<string>('1');
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const [addonData, setAddonData] = useState<AddonData | null>(null);
+    const [generalTalents, setGeneralTalents] = useState<AddonData | null>(null);
+    const [imageSrcs, setImageSrcs] = useState<{ [key: string]: string | null }>({});
+    const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
 
     const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
-        const fetchAddonData = async () => {
+        const fetchGeneralTalentsData = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/text_data`);
-                setAddonData(response.data as AddonData);
+                const response = await axios.get(`${API_URL}/general_talents`);
+                setGeneralTalents(response.data as AddonData);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
             }
         };
 
-        fetchAddonData().catch((error) => {
-            console.error('Promise rejected in fetchAddonData:', error);
+        fetchGeneralTalentsData().catch((error) => {
+            console.error('Promise rejected in fetchGeneralTalentsData:', error);
         });
     }, [API_URL]);
 
     useEffect(() => {
-        axios.get(`${API_URL}/api/hero/${name}`)
+        axios.get(`${API_URL}/hero/${name}`)
             .then(response => {
                 setHeroTalents(response.data);
                 setLoading(false);
@@ -55,6 +51,65 @@ const HeroPage: React.FC = () => {
                 setLoading(false);
             });
     }, [API_URL, name]);
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            console.log(1)
+            const parts = heroTalents?.talents_information[selectedPart] || {};
+            const newImageSrcs: { [key: string]: string | null } = {};
+
+            let levelIndex = 0;
+            for (const level in parts) {
+                const talents = parts[level];
+
+                for (let i = 0; i < talents.length; i++) {
+                    const talent = talents[i];
+
+                    if (talent && !talent.includes("empty")) {
+                        const imageSrc = await getImageForHero(talent);
+                        newImageSrcs[`${levelIndex}-${i}`] = imageSrc;
+                    } else {
+                        newImageSrcs[`${levelIndex}-${i}`] = null;
+                    }
+                }
+                levelIndex++;
+            }
+
+            setImageSrcs(newImageSrcs);
+        };
+
+        if (heroTalents) {
+            fetchImages();
+        }
+    }, [heroTalents, selectedPart]);
+
+    useEffect(() => {
+        const fetchBackgroundImage = async () => {
+            let backgroundFileName;
+            switch (selectedPart) {
+                case '1':
+                    backgroundFileName = 'background_str';
+                    break;
+                case '2':
+                    backgroundFileName = 'background_agi';
+                    break;
+                case '3':
+                    backgroundFileName = 'background_int';
+                    break;
+                default:
+                    backgroundFileName = 'background_str';
+            }
+
+            const objectKey = `images/heroes/talents/talents_backgrounds/${name}_${backgroundFileName}.webp`;
+
+            const imageUrl = await getImageUrl(objectKey);
+            if (imageUrl) {
+                setBackgroundImage(imageUrl);
+            }
+        };
+
+        fetchBackgroundImage();
+    }, [selectedPart, name]);
 
     const handleButtonClick = (part: string) => {
         setSelectedPart(part);
@@ -72,72 +127,63 @@ const HeroPage: React.FC = () => {
         return <div>No data available for this hero.</div>;
     }
 
-    const getImageForHero = (talent: string) => {
+    const getImageForHero = async (talent: string) => {
         const parts = talent.split(', ');
+
         if (parts.length > 3) {
             const heroInfo = parts[3];
+            let objectKey;
+
             if (heroInfo.includes('/')) {
                 const [heroName, imageNumber] = heroInfo.split('/');
-                try {
-                    return require(`../../../../assets/images/heroes/talents/${heroName}/${imageNumber}_png.png`);
-                } catch (err) {
-                    console.error(`Image not found for ${heroName}/${imageNumber}`);
-                }
+                objectKey = `images/heroes/talents/${heroName}/${imageNumber}.webp`;
             } else {
-                try {
-                    return require(`../../../../assets/images/heroes/talents/${heroInfo}_png.png`);
-                } catch (err) {
-                    console.error(`Image not found for ${heroInfo}`);
-                }
+                objectKey = `images/heroes/talents/other/${heroInfo}.webp`;
+            }
+
+            const imageUrl = await getImageUrl(objectKey);
+            if (imageUrl) {
+                return imageUrl;
+            } else {
+                console.error(`Image not found for ${heroInfo}`);
             }
         }
         return null;
     };
 
-    const getTalantText = (talent: string) => {
+    const getTalentText = (talent: string) => {
         const parts = talent.split(', ');
         if (parts.length > 1) {
-            const talantText = parts[1];
-            if (talantText.includes('#') && addonData != null) {
-                const key = talantText.substring(1) + '_0';
-                return addonData[key];
-            } else {
-                return null;
+            const talentText = parts[1];
+            if (talentText.includes('modifier_') && heroTalents.talents_description) {
+                const key = talentText.substring(1) + '_0';
+                return heroTalents.talents_description[key] || null;
+            } else if (talentText.includes('woda_talent_') && generalTalents) {
+                const key = talentText.substring(1) + '_0';
+                return generalTalents[key] || null;
             }
         }
         return null;
     };
 
     const renderTalents = (part: string) => {
-        const talents = heroTalents[part];
-        if (!talents) {
+        const talents = heroTalents.talents_information;
+
+        if (!talents || !talents[part]) {
             return <div>No talents available for this part.</div>;
         }
+
+        const selectedTalents = talents[part];
         const gridData: (string | null)[][] = [];
+
         for (let i = 0; i < 7; i++) {
             const talentIndex = i + 1;
-            if (talents[talentIndex]) {
-                gridData.push(talents[talentIndex]);
+            if (selectedTalents[talentIndex]) {
+                gridData.push(selectedTalents[talentIndex]);
             } else {
                 gridData.push(Array(5).fill(null));
             }
         }
-        let backgroundFileName;
-        switch (selectedPart) {
-            case '1':
-                backgroundFileName = 'background_str_png';
-                break;
-            case '2':
-                backgroundFileName = 'background_agi_png';
-                break;
-            case '3':
-                backgroundFileName = 'background_int_png';
-                break;
-            default:
-                backgroundFileName = 'background_str_png';
-        }
-        const backgroundImage = require(`../../../../assets/images/heroes/talents/${(name ? replacements[name] || name
-            : null)}_${backgroundFileName}.png`);
 
         const renderText = (text: string) => {
             return text.split('\n').map((line, index) => {
@@ -173,12 +219,11 @@ const HeroPage: React.FC = () => {
                     </div>
                     <div className={styles.div_text}>2</div>
                 </div>
-                <div className={styles.grid} style={{backgroundImage: `url(${backgroundImage})`}}>
+                <div className={styles.grid} style={{ backgroundImage: `url(${backgroundImage})`}}>
                     {gridData.map((row, rowIndex) => (
                         row.map((item, colIndex) => {
-                            const imageSrc = item ? getImageForHero(item) : null;
-                            let text = item ? getTalantText(item) : null;
-
+                            const imageSrc = imageSrcs[`${rowIndex}-${colIndex}`] || null;
+                            let text = item ? getTalentText(item) : null;
                             return (
                                 <div key={`${rowIndex}-${colIndex}`} className={styles.square}>
                                     {text ?

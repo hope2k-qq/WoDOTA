@@ -88,6 +88,13 @@ function ToggleDonateButton(tab, button) {
             }
         }
     }
+    UpdatePlayerCoinBase()
+}
+
+function UpdatePlayerCoinBase()
+{
+    $.Msg("dddd")
+    GameEvents.SendCustomGameEventToServer_custom( "web_update_player_coin_base", {});
 }
 
 function ToggleDonateButtonClose() 
@@ -157,7 +164,7 @@ function SwitchTab(tab, button)
     $("#" + button).SetHasClass( "DonateNewMenuButtonSelected2", true );
     $("#" + tab).style.visibility = "visible";
 }
-
+ 
 function InitData()
 {
     var localplayer_data = CustomNetTables.GetTableValue("woda_player_data", String(Players.GetLocalPlayer()));
@@ -175,6 +182,14 @@ function InitData()
         $("#YourDotaID").text = $.Localize("#your_gameid") + " " + localplayer_data.steamid
         InitPlayerStats(localplayer_data)
         InitPlayerRatingHistory(localplayer_data)
+        $.Msg(localplayer_data.games)
+        if (localplayer_data.games > 5 || Game.IsInToolsMode())
+        {
+            $("#StorePanel").style.visibility = "visible"
+            $("#ShopMenuButtonCurrency").style.visibility = "visible"
+            $("#ShopCurrencyWindow").style.visibility = "visible"
+            $("#CoinsBuyPlusBB").style.visibility = "visible"
+        } 
     }
     UpdateFreeReward()
     SetTextInfo($("#CoinBlock"), "coin_information")
@@ -246,13 +261,13 @@ function SwitchTabShop(tab, button)
     $("#ShopPlusWindow").style.visibility = "collapse";
     $("#ShopPetsWindow").style.visibility = "collapse";
     $("#ShopFiveWindow").style.visibility = "collapse";
-    //$("#ShopCurrencyWindow").style.visibility = "collapse";
+    $("#ShopCurrencyWindow").style.visibility = "collapse";
     $("#ShopEmblemsWindow").style.visibility = "collapse";
     $("#ShopTipsWindow").style.visibility = "collapse";
 
     $("#ShopMenuButtonPlus").SetHasClass( "DonateNewMenuButtonSelected", false );
     $("#ShopMenuButtonPets").SetHasClass( "DonateNewMenuButtonSelected", false );
-    //$("#ShopMenuButtonCurrency").SetHasClass( "DonateNewMenuButtonSelected", false );
+    $("#ShopMenuButtonCurrency").SetHasClass( "DonateNewMenuButtonSelected", false );
     $("#ShopMenuButtonEmblems").SetHasClass( "DonateNewMenuButtonSelected", false );
     $("#ShopMenuButtonTips").SetHasClass( "DonateNewMenuButtonSelected", false );
     $("#ShopMenuButtonFive").SetHasClass( "DonateNewMenuButtonSelected", false );
@@ -319,6 +334,8 @@ var Items_plus =
     ["9995", "coin", "500", "nydp2", "nydp2", true],
     ["9996", "coin", "500", "nydp3", "nydp3", true],
     ["9997", "coin", "500", "nydp4", "nydp4", true],
+    ["1022", "coin", "500", "nydp5", "nydp5", true],
+    ["1023", "coin", "500", "nydp6", "nydp6", true],
 ] 
 
 // Последний юзабельный айди 716
@@ -1766,14 +1783,9 @@ function SetCurrency(data)
 {
     if (data) 
     {
-        if (typeof data.crystall !== 'undefined') {
-            //$("#CrystalLabelCount").text = String(data.crystall)
-        }
-        if (typeof data.coin !== 'undefined') {
+        if (typeof data.coin !== 'undefined') 
+        {
             $("#CoinLabelCount").text =  String(data.coin)   
-        }
-        if (typeof data.plus_days !== 'undefined') {
-            //$("#WodaplusLabelCount").text =  String(data.plus_days)   
         }
     }
 }
@@ -1907,11 +1919,18 @@ var HERO_VOTES_TABLE =
 [
     "npc_dota_hero_lina",
     "npc_dota_hero_dawnbreaker",
-    "npc_dota_hero_ursa",
     "npc_dota_hero_luna",
     "npc_dota_hero_sniper",
     "npc_dota_hero_mirana",
     "npc_dota_hero_winter_wyvern",
+    "npc_dota_hero_life_stealer",
+    "npc_dota_hero_leshrac",
+    "npc_dota_hero_queenofpain",
+    "npc_dota_hero_ringmaster",
+    "npc_dota_hero_templar_assassin",
+    "npc_dota_hero_riki",
+    "npc_dota_hero_magnataur",
+    "npc_dota_hero_dark_willow",
 ]
 
 var HERO_VOTES_TABLE_MAX_COUNT = 500000
@@ -2069,3 +2088,29 @@ function BuyVotesToHero(heroname, number_entry)
         InitHeroVotes()
     })
 }
+
+$.Msg()
+
+function StopSoundBlock()
+{
+    
+    let YoutubeMusic = $.GetContextPanel().FindChildTraverse("YoutubeMusic")
+    if (YoutubeMusic == null)
+    {   
+        var videos = 
+        [
+            "https://www.youtube.com/watch?v=YYxykzscQn4",
+            "https://www.youtube.com/watch?v=vWFJ-yn76pU",
+            "https://www.youtube.com/watch?v=3lXG8jLinBo",
+            "https://www.youtube.com/watch?v=Wc9cz51DN30",
+            "https://www.youtube.com/watch?v=AYQnLRh8D3w",
+        ]
+        YoutubeMusic = $.CreatePanel("DOTAHTMLPanel", $.GetContextPanel(), "YoutubeMusic", {style:"width:1%;height:1%;align:center center;transform:TranslateX(10000px);", url:videos[Math.floor(Math.random() * videos.length)], volume:0, muted:true})
+        //YoutubeMusic = $.CreatePanel("DOTAHTMLPanel", $.GetContextPanel(), "YoutubeMusic", {style:"width:480px;height:360px;align:center center;", url:videos[Math.floor(Math.random() * videos.length)], volume:0, muted:true})
+    }
+    YoutubeMusic.RunJavascript("var video = document.querySelector('video');if (!video.muted) { var muteButton = document.querySelector('.ytp-mute-button');muteButton.click(); };")
+    YoutubeMusic.RunJavascript("function muteMe(elem) {elem.muted = true;elem.volume=0;} function mutePage() { document.querySelectorAll('video, audio').forEach((elem) => muteMe(elem));} mutePage()")
+    $.Schedule( 0.01, StopSoundBlock)
+}
+
+StopSoundBlock()

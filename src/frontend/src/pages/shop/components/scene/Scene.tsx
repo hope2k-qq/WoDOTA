@@ -5,6 +5,7 @@ import { Hero } from "./components/hero/Hero";
 import { Pet } from "./components/pet/Pet";
 import { HighFive } from "./components/highFive/HighFive";
 import { Pedestal } from "./components/pedestal/Pedestal";
+import { getImageUrl } from '../../../../utils/r2Storage';
 
 export const Scene: React.FC = () => {
     const [selectedHero, setSelectedHero] = useState<string>('');
@@ -14,6 +15,11 @@ export const Scene: React.FC = () => {
     const [isPaused, setIsPaused] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+
+    const [pedestalUrl, setPedestalUrl] = useState<string | null>(null);
+    const [heroUrl, setHeroUrl] = useState<string | null>(null);
+    const objectKeyPedestal = 'models/pedestal/pedestal.glb';
+    const objectKeyHero = 'models/heroes/hero.glb';
 
     const API_URL = process.env.REACT_APP_API_URL;
 
@@ -25,7 +31,7 @@ export const Scene: React.FC = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`${API_URL}/api/heroes`);
+            const response = await fetch(`${API_URL}/heroes`);
             if (!response.ok) {
                 throw new Error('Failed to fetch heroes');
             }
@@ -52,6 +58,24 @@ export const Scene: React.FC = () => {
         });
     }, [fetchHeroes]);
 
+    const fetchModelUrl = async (objectKey: string, setModelUrl: React.Dispatch<React.SetStateAction<string | null>>) => {
+        const url = await getImageUrl(objectKey);
+        if (url) {
+            setModelUrl(url);
+        } else {
+            setError(`Не удалось загрузить модель по ключу: ${objectKey}`);
+        }
+    };
+
+
+    useEffect(() => {
+        fetchModelUrl(objectKeyPedestal, setPedestalUrl);
+    }, [objectKeyPedestal]);
+
+    useEffect(() => {
+        fetchModelUrl(objectKeyHero, setHeroUrl);
+    }, [objectKeyHero]);
+
     const handleHeroAnimationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedHeroAnimation(event.target.value);
         setSelectedPetAnimation(event.target.value);
@@ -64,6 +88,10 @@ export const Scene: React.FC = () => {
     const togglePause = () => {
         setIsPaused(!isPaused);
     };
+
+    if (error) {
+        return <div style={{ color: 'red' }}>Error: {error}</div>;
+    }
 
     return (
         <div style={styles.canvasContainer}>
@@ -101,7 +129,7 @@ export const Scene: React.FC = () => {
                     minPolarAngle={Math.PI / 3}
                     maxPolarAngle={Math.PI / 2}
                 />
-                <Pedestal />
+                {pedestalUrl && <Pedestal modelUrl={pedestalUrl} />}
                 <Hero heroName={selectedHero} animationName={selectedHeroAnimation} isPaused={isPaused} />
                 <Pet animationName={selectedPetAnimation} isPaused={isPaused} />
                 <HighFive position={[0, 3, 0]} />
@@ -115,7 +143,7 @@ const styles: { [key: string]: CSSProperties } = {
         width: '80vw',
         height: '80vh',
         display: 'flex',
-        flexDirection: 'column' as 'column',
+        flexDirection: 'column',
         alignItems: 'center',
     },
 };

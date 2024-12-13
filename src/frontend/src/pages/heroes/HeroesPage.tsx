@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
-const heroesWithLocalAssets = ['aghanim', 'creep', 'roshan', 'legion_commander', 'wraith_king'];
-
-const localAssetHeroes: Set<string> = new Set(Object.values(heroesWithLocalAssets));
+import { getImageUrl } from '../../utils/r2Storage';
 
 export const HeroesPage: React.FC = () => {
     const navigate = useNavigate();
     const [heroNames, setHeroNames] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [imageUrl, setImageUrl] = useState<{ [key: string]: string | null }>({}); // Состояние для хранения URL изображений
 
     const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const fetchHeroNames = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/heroes`);
+                const response = await axios.get(`${API_URL}/heroes`);
                 const data = response.data;
-                const names = data.map((name: string) => heroesWithLocalAssets.includes(name) ? name : name);
-                setHeroNames(names);
+                setHeroNames(data);
+
+                const urls: { [key: string]: string | null } = {};
+                for (const name of data) {
+                    const url = await getImageUrl(`images/heroes/heroesPreview/${name}.webp`);
+                    urls[name] = url;
+                }
+                setImageUrl(urls);
             } catch (error) {
-                console.error('Error fetching talents data:', error);
+                console.error('Error fetching hero data:', error);
                 setError('Failed to fetch hero data.');
             } finally {
                 setLoading(false);
@@ -33,13 +37,6 @@ export const HeroesPage: React.FC = () => {
             console.error('Error in fetchHeroNames:', err);
         });
     }, [API_URL]);
-
-    const getHeroImageSrc = (name: string) => {
-        if (localAssetHeroes.has(name)) {
-            return require(`../../assets/images/heroes/heroesPreview/${name}.png`);
-        }
-        return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${name}.png`;
-    };
 
     if (loading) {
         return <div>Loading...</div>;
@@ -56,7 +53,7 @@ export const HeroesPage: React.FC = () => {
                 {heroNames.map((name, index) => (
                     <li key={index} onClick={() => navigate(`/hero/${name}`)}>
                         <img
-                            src={getHeroImageSrc(name)}
+                            src={imageUrl[name] || ''}
                             alt={name}
                         />
                         <span>{name}</span>
