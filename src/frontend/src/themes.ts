@@ -19,7 +19,7 @@ export const themes: Theme[] = [
         },
         palette: {
             background: {
-                default: '#f5f5f5',
+                default: '#12131a',
             },
         },
         typography: {
