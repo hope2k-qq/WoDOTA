@@ -10,6 +10,10 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
+app.get('/ping', (req, res) => {
+    res.status(200).send('hope2k 22.02.2025 OK OK');
+});
+
 const routes = require('./routes');
 
 app.use('/', routes);

@@ -1,74 +1,86 @@
 ﻿const fs = require('fs');
 const path = require('path');
 
-// Функция для извлечения данных из файла
-function extractTalentData(fileContent) {
-    const regex = /"([^"]+)"\s+"([^"]+)"/g;
-    const data = {};
+// Функция для извлечения данных из блока AbilityValues, включая "AbilityCooldown" и "AbilityCastRange"
+function extractAbilityValues(fileContent) {
+    // Регулярное выражение для извлечения имени предмета и значений, если они существуют
+    const regex = /"(item_[^"]+)"\s*:\s*{([^}]*)}/g;
+    //const regex = /"(item_[^"]+)"\s*:\s*{[^}]*?"AbilityValues"\s*:\s*{([^}]+)}/g;
+
+    const itemsData = {};
     let match;
+
+    // Ищем все совпадения в содержимом
     while ((match = regex.exec(fileContent)) !== null) {
-        const key = match[1];
-        const value = match[2];
-        data[key] = value;
+        const itemName = match[1]; // Имя предмета
+        const itemContent = match[2]; // Содержимое предмета
+
+        const abilityCooldown = extractField(itemContent, 'AbilityCooldown');
+        const abilityCastRange = extractField(itemContent, 'AbilityCastRange');
+        console.log('abilityCastRange:', abilityCastRange);
+        const abilityValuesString = extractField(itemContent, 'AbilityValues', true);
+        console.log('AbilityValuesString:', abilityValuesString);
+        const abilityValues = abilityValuesString ? parseAbilityValues(abilityValuesString) : {};
+        console.log('AbilityValues:', JSON.stringify(abilityValues, null, 2));
+        // Сохраняем результат в объект
+        itemsData[itemName] = {
+            AbilityCooldown: abilityCooldown,
+            AbilityCastRange: abilityCastRange,
+            AbilityValues: abilityValues
+        };
     }
-    return data;
+    return itemsData;
 }
 
-// Функция для сравнения данных и создания патча
-function createPatch(originalData, updatedData) {
-    const patch = {
-        generalTalents: {}, // Категория "Общие таланты"
-        heroes: {}          // Категория "Герои"
-    };
+// Функция для извлечения значения конкретного поля
+function extractField(itemContent, fieldName, isObject = false) {
+    // Регулярное выражение для извлечения содержимого
+    const fieldRegex = new RegExp(`"${fieldName}"\\s*:\\s*${isObject ? '\\{(.*?)\\}' : '"([^"]*)"'}`); // флаг 's' для захвата многократных строк
+    console.log(fieldRegex);  // Выведем регулярное выражение для отладки
+    console.log(itemContent); // Печать содержимого, с которым мы работаем
 
-    for (const key in originalData) {
-        const originalValue = originalData[key];
-        const updatedValue = updatedData[key];
+    // Ищем первое совпадение
+    const fieldMatch = fieldRegex.exec(itemContent);
 
-        if (!updatedValue || originalValue === updatedValue) {
-            continue; // Пропускаем, если значение не изменилось
-        }
-
-        if (key.startsWith('woda_talent_')) {
-            // Добавляем в "Общие таланты"
-            patch.generalTalents[key] = {
-                old: originalValue,
-                new: updatedValue
-            };
-        } else if (key.startsWith('modifier_') && key.endsWith('_0')) {
-            // Добавляем в "Герои"
-            patch.heroes[key] = {
-                old: originalValue,
-                new: updatedValue
-            };
-        }
-    }
-
-    return patch;
+    // Если совпадение найдено, возвращаем его
+    return fieldMatch ? fieldMatch[1] : null;
 }
 
-// Контроллер для получения патчей
+
+// Функция для парсинга значений внутри AbilityValues
+function parseAbilityValues(abilityValuesString) {
+    const abilityValues = {};
+    const regexValues = /"([^"]+)"\s*:\s*"([^"]+)"/g;
+    let match;
+
+    // Ищем все значения внутри AbilityValues
+    while ((match = regexValues.exec(abilityValuesString)) !== null) {
+        const key = match[1]; // Имя свойства (например, debuff_increase)
+        const value = match[2]; // Значение свойства
+
+        // Добавляем в объект
+        abilityValues[key] = value;
+    }
+    return abilityValues;
+}
+
+// Основной обработчик для генерации патча
 exports.getPatches = async (req, res) => {
     try {
-        // Пути к файлам в папке assets
-        const originalFilePath = path.join(__dirname, '../assets/addon_russian.txt');
-        const updatedFilePath = path.join(__dirname, '../assets/addon_russian2.txt');
+        const itemsFilePath = path.join(__dirname, '../assets/npc_items_custom.txt');
+        const updatedItemsFilePath = path.join(__dirname, '../assets/npc_items_custom2.txt');
 
-        // Чтение файлов
-        const originalContent = fs.readFileSync(originalFilePath, 'utf-8');
-        const updatedContent = fs.readFileSync(updatedFilePath, 'utf-8');
+        const itemsContent = fs.readFileSync(itemsFilePath, 'utf-8');
+        const updatedItemsContent = fs.readFileSync(updatedItemsFilePath, 'utf-8');
 
-        // Извлечение данных
-        const originalData = extractTalentData(originalContent);
-        const updatedData = extractTalentData(updatedContent);
+        const itemsData = extractAbilityValues(itemsContent);
+        const updatedItemsData = extractAbilityValues(updatedItemsContent);
 
-        // Создание патча
-        const patch = createPatch(originalData, updatedData);
+        const patch = createPatch(itemsData, updatedItemsData);
 
-        // Отправка патча в ответе
         res.status(200).json({
             success: true,
-            message: 'Patch successfully generated',
+            message: 'Patch successfully generated for AbilityValues',
             patch
         });
     } catch (err) {
@@ -80,3 +92,56 @@ exports.getPatches = async (req, res) => {
         });
     }
 };
+
+// Функция для создания патча для AbilityValues
+function createPatch(itemsData, updatedItemsData) {
+    const patch = {
+        items: {}
+    };
+
+    for (const itemName in itemsData) {
+        const originalValues = itemsData[itemName];
+        const updatedValues = updatedItemsData[itemName];
+
+        if (originalValues && updatedValues) {
+            const itemPatch = {};
+
+            if (originalValues.AbilityCooldown !== updatedValues.AbilityCooldown) {
+                itemPatch.AbilityCooldown = {
+                    old: originalValues.AbilityCooldown,
+                    new: updatedValues.AbilityCooldown
+                };
+            }
+
+            if (originalValues.AbilityCastRange !== updatedValues.AbilityCastRange) {
+                itemPatch.AbilityCastRange = {
+                    old: originalValues.AbilityCastRange,
+                    new: updatedValues.AbilityCastRange
+                };
+            }
+
+            const abilityValuesPatch = {};
+            for (const key in originalValues.AbilityValues) {
+                const originalValue = originalValues.AbilityValues[key];
+                const updatedValue = updatedValues.AbilityValues[key];
+
+                if (originalValue !== updatedValue) {
+                    abilityValuesPatch[key] = {
+                        old: originalValue,
+                        new: updatedValue
+                    };
+                }
+            }
+
+            if (Object.keys(abilityValuesPatch).length > 0) {
+                itemPatch.AbilityValues = abilityValuesPatch;
+            }
+
+            if (Object.keys(itemPatch).length > 0) {
+                patch.items[itemName] = itemPatch;
+            }
+        }
+    }
+
+    return patch;
+}

@@ -8,6 +8,7 @@
     'furion': 'nature\'s_prophet',
     'vengefulspirit': 'vengeful_spirit',
     'antimage': 'anti-mage',
+    'zuus': 'zeus',
 };
 
 module.exports = replacements_heroes;

@@ -35,7 +35,7 @@ export const themes: Theme[] = [
         },
         palette: {
             background: {
-                default: '#16171b',
+                default: '#12131a',
             },
         },
         typography: {

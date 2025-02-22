@@ -1,0 +1,501 @@
+
+
+
+.hero_characteristics_main {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 2rem;
+}
+
+.hero_characteristics_wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.left_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.attribute_block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border-radius: 8px;
+  margin-right: 3rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.attribute_title {
+  font-size: 15px;
+  font-weight: normal;
+  color: gray;
+  line-height: 1;
+}
+
+.attribute_value {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 23px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.attribute_value img {
+  width: 26px;
+  height: 26px;
+}
+
+
+
+
+.right_block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 1px solid rgba(128, 128, 128, 0.5);
+  padding: 15px;
+}
+
+.main_stats {
+  display: flex;
+  gap: 20px;
+  margin-left: 5px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.main_stats > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main_stats > div > img {
+  width: 27px;
+  height: 27px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #262c37;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: 1px black solid;
+  font-size: 14px;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #262c37 transparent transparent transparent;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 11px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.main_stats > div:hover .tooltip {
+  visibility: visible;
+}
+
+
+
+
+
+.health_mana_block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+}
+
+.health_block, .mana_block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  border-radius: 8px;
+  text-align: start;
+}
+
+.stat_title{
+  color: gray;
+}
+
+.stat_health_container, .stat_mana_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  border-radius: 3px;
+}
+
+.stat_health_container {
+  background: #4e875a;
+}
+
+.stat_mana_container {
+  background: #2d6c8c;
+}
+
+
+.healthValue, .manaValue {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.healthRegen, .manaRegen {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 12px;
+  color: #ddd;
+  font-weight: bold;
+}
+
+.infoBlock {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  background: #262c37;
+  color: white;
+  padding: 0.7rem 0.7rem 0.2rem 0.7rem;
+  border-radius: 5px;
+  width: 525px;
+  z-index: 10;
+  border: 1px black solid;
+  margin-left: 15px;
+}
+
+.infoBlock::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent #262c37 transparent transparent;
+}
+
+.infoBlock::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 16px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.health_mana_block:hover .infoBlock {
+  display: block; /* Появляется при наведении на health_mana_block */
+}
+
+.infoBlockTitle{
+  color: #A9A9A9;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.infoBlockText{
+  color: gray;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.info_block_attribute {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  background: #262c37;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 525px;
+  z-index: 10;
+  border: 1px solid black;
+  margin-left: 15px;
+}
+
+.info_block_attribute::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent #262c37 transparent transparent;
+}
+
+.info_block_attribute::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 16px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.left_block:hover .info_block_attribute {
+  display: block;
+}
+
+/* Центрируем заголовок */
+.attributeTitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #A9A9A9;
+  margin-bottom: 10px;
+}
+
+/* Контейнер для всех атрибутов */
+.attribute_container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Один атрибут */
+.attribute_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Левый блок с иконкой и названием */
+.attribute_icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  min-width: 150px;
+  color: #A9A9A9;
+}
+
+/* Стили для картинки */
+.attribute_icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Правый блок с описанием */
+.attribute_description {
+  flex: 1;
+  text-align: left;
+  color: gray;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1600px) {
+  .hero_characteristics_main {
+    margin-top: 1.56rem;  /* Уменьшение отступа сверху на 22% */
+  }
+
+  .hero_characteristics_wrapper {
+    gap: 15.6px;  /* Уменьшение расстояния между блоками на 22% */
+  }
+
+  .left_block,
+  .right_block {
+    font-size: 17.55px;  /* Уменьшение шрифта внутри блоков на 22% */
+  }
+
+  .attribute_block {
+    margin-right: 2.34rem;  /* Уменьшение отступа справа на 22% */
+  }
+
+  .attribute_title {
+    font-size: 11.7px;  /* Уменьшение размера шрифта для заголовка на 22% */
+  }
+
+  .attribute_value {
+    font-size: 18.0px;  /* Уменьшение шрифта для значения на 22% */
+  }
+
+  .attribute_value img {
+    width: 20.3px;  /* Уменьшение размера иконки на 22% */
+    height: 20.3px;
+  }
+
+  .right_block {
+    gap: 15.6px;  /* Уменьшение расстояния между элементами на 22% */
+    padding: 12px;  /* Уменьшение отступов внутри блока на 22% */
+  }
+
+  .main_stats {
+    font-size: 12.15px;  /* Уменьшение шрифта на 22% */
+    gap: 15.6px;  /* Уменьшение расстояния между элементами на 22% */
+  }
+
+  .main_stats > div > img {
+    width: 21px;  /* Уменьшение иконок на 22% */
+    height: 21px;
+  }
+
+  .health_mana_block {
+    font-size: 14px;  /* Уменьшение шрифта внутри блока на 22% */
+  }
+
+  .health_block, .mana_block {
+    padding: 5px;  /* Уменьшение отступов внутри блоков на 22% */
+  }
+
+  .stat_title {
+    font-size: 11.7px;  /* Уменьшение размера шрифта для заголовков статистик на 22% */
+  }
+
+  .stat_health_container,
+  .stat_mana_container {
+    font-size: 11.7px;  /* Уменьшение шрифта для контейнера статистики на 22% */
+  }
+
+  .healthValue, .manaValue {
+    font-size: 14px;  /* Уменьшение шрифта для значений на 22% */
+  }
+
+  .healthRegen, .manaRegen {
+    font-size: 9.4px;  /* Уменьшение шрифта для регенерации на 22% */
+  }
+}
+
+//@media (max-width: 767px) {
+//  .hero_characteristics_main {
+//    flex-direction: column;  /* Стекать блоки вертикально */
+//    margin-top: 1.2rem;  /* Уменьшение отступа сверху для мобильных устройств */
+//  }
+//
+//  .hero_characteristics_wrapper {
+//    flex-direction: column;  /* Стилизовать блоки в один столбик */
+//    gap: 15px;  /* Уменьшение расстояния между блоками */
+//  }
+//
+//  .left_block,
+//  .right_block {
+//    font-size: 14px;  /* Уменьшение шрифта внутри блоков */
+//    align-items: flex-start;  /* Выровнять элементы по левому краю */
+//  }
+//
+//  .attribute_block {
+//    margin-right: 0;  /* Убрать отступ справа */
+//    width: 100%;  /* Растягиваем блоки на всю ширину */
+//    padding: 0.5rem;  /* Небольшие отступы */
+//  }
+//
+//  .attribute_title {
+//    font-size: 13px;  /* Уменьшение размера шрифта для заголовка */
+//  }
+//
+//  .attribute_value {
+//    font-size: 16px;  /* Уменьшение шрифта для значения */
+//  }
+//
+//  .attribute_value img {
+//    width: 22px;  /* Уменьшение размера иконки */
+//    height: 22px;
+//  }
+//
+//  .right_block {
+//    gap: 10px;  /* Уменьшение расстояния между элементами */
+//    padding: 10px;  /* Уменьшение отступов внутри блока */
+//  }
+//
+//  .main_stats {
+//    font-size: 13px;  /* Уменьшение шрифта для статистики */
+//    gap: 10px;  /* Уменьшение расстояния между иконками и значениями */
+//  }
+//
+//  .main_stats > div > img {
+//    width: 22px;  /* Уменьшение размера иконок */
+//    height: 22px;
+//  }
+//
+//  .health_mana_block {
+//    font-size: 13px;  /* Уменьшение шрифта внутри блока здоровья и маны */
+//  }
+//
+//  .health_block, .mana_block {
+//    padding: 6px;  /* Уменьшение отступов внутри блоков */
+//  }
+//
+//  .stat_title {
+//    font-size: 13px;  /* Уменьшение размера шрифта для заголовков статистик */
+//  }
+//
+//  .stat_health_container,
+//  .stat_mana_container {
+//    font-size: 13px;  /* Уменьшение шрифта для контейнера статистики */
+//  }
+//
+//  .healthValue, .manaValue {
+//    font-size: 15px;  /* Уменьшение шрифта для значений */
+//  }
+//
+//  .healthRegen, .manaRegen {
+//    font-size: 10px;  /* Уменьшение шрифта для регенерации */
+//  }
+//}
+
+
+
+
+
+

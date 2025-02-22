@@ -1,10 +1,10 @@
 import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import { getImageUrl } from '../../utils/r2Storage';
+import styles from "./votes.module.scss";
 
 interface HeroVote {
     hero_name: string;
-    votes: string;
+    votes: string;  // Голоса приходят как строка, нужно будет преобразовать в число
 }
 
 export const VotesPage = () => {
@@ -12,20 +12,9 @@ export const VotesPage = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    const [imageUrl, setImageUrl] = useState<string | null>(null);
-
-    const objectKey = 'images/heroes/heroesPreview/slark.webp';
-
     const API_URL = process.env.REACT_APP_API_URL;
 
-    useEffect(() => {
-        const fetchImage = async () => {
-            const url = await getImageUrl(objectKey);
-            setImageUrl(url);
-        };
-
-        fetchImage();
-    }, [objectKey]);
+    const maxVotes = 500000;
 
     const fetchHeroVotes = useCallback(async () => {
         if (!API_URL) {
@@ -50,30 +39,45 @@ export const VotesPage = () => {
     }, [fetchHeroVotes]);
 
     if (loading) {
-        return <div>Загрузка...</div>;
+        return <div></div>;
     }
 
     if (error) {
-        return <div>{error}</div>;
+        return <div>error</div>;
     }
 
     return (
-        <div style={{background: "yellow", width: "100%", height: "100%"}}>
-            <h1>Голосование за героев</h1>
-            <ul>
-                {votes.map((vote, index) => (
-                    <li key={index} style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <span>{vote.hero_name}</span>
-                        <span>{vote.votes} голосов</span>
-                    </li>
-                ))}
-            </ul>
-            <div>
-                {imageUrl ? (
-                    <img src={imageUrl} alt="Изображение из Cloudflare R2" style={{width: '100%', height: 'auto'}}/>
-                ) : (
-                    <p>Загрузка изображения...</p>
-                )}
+        <div className={styles.container}>
+            <div className={styles.title}>Голосование за героев</div>
+            <div className={styles.grid}>
+                {votes.map((vote, index) => {
+                    const voteCount = parseInt(vote.votes, 10);
+                    const votePercentage = Math.min((voteCount / maxVotes) * 100, 100);
+
+                    return (
+                        <div key={index} className={styles.card}>
+                            <img
+                                src={`https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/heroes/${vote.hero_name}.png`}
+                                alt={vote.hero_name}
+                                className={styles.image}
+                            />
+                            <div className={styles.info}>
+                                {/*<div className={styles.heroName}>{vote.hero_name.toUpperCase()}</div>*/}
+                                <div className={styles.voteContainer}>
+                                    <div className={styles.progressBarContainer}>
+                                        <div
+                                            className={styles.progressBar}
+                                            style={{ width: `${votePercentage}%` }}
+                                        />
+                                        <div className={styles.voteText}>
+                                            {voteCount} / {maxVotes}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

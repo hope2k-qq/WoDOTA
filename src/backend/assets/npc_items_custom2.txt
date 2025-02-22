@@ -1,0 +1,46 @@
+{
+  "DOTAAbilities": {
+    "item_soul_relic1": {
+      "BaseClass": "item_lua",
+      "ScriptFile": "items/item_soul_relic",
+      "AbilityTextureName": "item_soul_relic",
+      "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
+      "ItemPurchasable": "0",
+      "IsObsolete": "2",
+      "AbilityCastRange": "700",
+      "AbilityValues": {
+        "debuff_increase": "20",
+        "health": "20",
+        "mana": "20",
+        "attribute": "25"
+      }
+    }
+    "item_recipe_soul_relic2": {
+      "BaseClass": "item_datadriven",
+      "Model": "models/props_gameplay/recipe.vmdl",
+      "AbilityTextureName": "recipe",
+      "ItemCost": "450",
+      "ItemRecipe": "1",
+      "ItemPurchasable": "0",
+      "IsObsolete": "3",
+      "ItemResult": "item_soul_relic",
+      "ItemRequirements": {
+        "01": "item_ultimate_orb;item_diadem"
+      }
+    }
+    "item_soul_relic3": {
+      "BaseClass": "item_lua",
+      "ScriptFile": "items/item_soul_relic",
+      "AbilityTextureName": "item_soul_relic",
+      "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
+      "ItemPurchasable": "0",
+      "IsObsolete": "113",
+      "AbilityCooldown": "16",
+      "AbilityCastRange": "800",
+      "AbilityValues": {
+        "debuff_increase": "20",
+        "health": "20"
+      }
+    }
+  }
+}

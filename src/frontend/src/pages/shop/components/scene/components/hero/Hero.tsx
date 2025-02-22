@@ -17,6 +17,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ heroName, animationName, isPaused }) => {
     const gltf = useLoader(GLTFLoader, `/${heroName}.glb`) as GLTFResult;
+    console.log(heroName);
     const mixer = useRef<AnimationMixer | null>(null);
     const actions = useRef<{ [key: string]: AnimationAction }>({});
     const prevAnimationName = useRef<string | null>(null);

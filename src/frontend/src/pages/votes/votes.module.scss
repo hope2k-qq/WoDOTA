@@ -1,0 +1,115 @@
+.container {
+  padding: 0 20px;
+  font-family: "Inter", serif;
+}
+.title {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  //padding: 15px;
+  text-align: center;
+  width: 230px;
+}
+.image {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+
+}
+.heroName {
+  font-size: 19px;
+  font-weight: bold;
+  color: #f4bf58;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1;
+}
+.votes {
+  font-size: 16px;
+  color: #ffa071;
+}
+
+.voteContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0.3rem;
+}
+
+.progressBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #1d1e25;
+  position: relative;
+  padding: 8px 0;
+
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.voteText {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1;
+  z-index: 2;
+}
+
+@media (max-width: 1600px) {
+  .grid{
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .title{
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card{
+    width: 210px;
+  }
+
+  .voteText{
+    font-size: 1rem;
+  }
+
+  .progressBarContainer{
+    padding: 5px 0;
+  }
+
+}
+
+
+
+

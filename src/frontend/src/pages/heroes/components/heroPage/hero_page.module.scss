@@ -1,93 +1,4 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color:  #202125;
-  border-radius: 15px;
-}
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(7, 14.2%);
-  max-width: 470.4px;
-  max-height: 708px;
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  margin: 0.6rem 0 0.6rem 0;
-  border-radius: 7px;
-}
-
-.grid::after {
-  content: '';
-  grid-column: 1 / -1;
-  grid-row: 8;
-  margin-top: 17px;
-  overflow: visible;
-}
-
-.square {
-  position: relative;
-  padding: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.square_img {
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: contain;
-}
-
-.menu{
-  display: none;
-  position: absolute;
-  border-radius: 10px;
-  box-shadow: 1px 1px 7.6px 0px rgba(0, 0, 0, 0.25);
-  margin: 0.125rem 0.125rem 0.125rem 0.125rem;
-  z-index: 999;
-  width: 370px;
-  max-width: 370px;
-  right: 100%;
-  > div{
-    display: inline-block;
-    padding: 0.8rem;
-    margin-right: 1.2rem;
-    cursor: pointer;
-    font-size: 1rem;
-    word-wrap: break-word;
-    text-align: start;
-    box-sizing: border-box;
-    background-color: green;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translateY(-50%);
-  }
-  > div::after {
-    content: '';
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 20px solid green;
-  }
-}
-
-.menu:hover{
-  display: none !important;
-}
-.square:hover .menu {
-  display: block;
-}
 
 .div{
   //background-color: yellow;
@@ -111,19 +22,6 @@
       margin-bottom: 1rem;
     }
   }
-
-  > .div_soon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5rem;
-    background-color:  #202125;
-    border-radius: 15px;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 0.5rem;
-  }
 }
 .div_container_sides{
   width: 50%;
@@ -137,51 +35,279 @@
     height: 100%;
   }
 }
-.arrows_container{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.arrow {
-  cursor: pointer;
-  height: 120px;
-  width: 80px;
+
+
+
+
+
+
+.heroSceneContainer {
   position: relative;
+}
+
+.block_name {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
 
-.arrow_line {
-  background: #337AB7;
-  height: 10px;
+.text_name_hero {
+  font-weight: 100;
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+.block_name img {
+  width: 34px;
+  height: 34px;
+}
+
+.overlayBlock {
   position: absolute;
-  width: 100px;
+  top: 0;
+  left: 1%;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 10;
+  margin-top: 50px;
 }
 
-.arrow_left .arrow_line_1 {
-  top: 64px;
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
+.overlayText {
+  color: white;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  text-align: left;
+  font-size: 76px;
+  line-height: 0.9;
 }
 
-.arrow_left .arrow_line_2 {
-  top: 60px;
-  transform: rotate(45deg);
-  transform-origin: top left;
+
+.abilitiesContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.arrow_right .arrow_line_1 {
-  top: 64px;
-  transform: rotate(45deg);
-  transform-origin: bottom right;
+@media (max-width: 1600px) {
+  .text_name_hero {
+    font-size: 18.75px; /* 24px - 25% */
+  }
+
+  .block_name img {
+    width: 26.5px; /* 34px - 25% */
+    height: 26.5px;
+  }
+
+  .overlayBlock {
+    max-width: 429px; /* 550px - 25% */
+    margin-top: 38px; /* 50px - 25% */
+  }
+
+  .overlayText {
+    font-size: 59px; /* 76px - 25% */
+    line-height: 0.9;
+  }
 }
 
-.arrow_right .arrow_line_2 {
-  top: 60px;
-  transform: rotate(-45deg);
-  transform-origin: top right;
+@media (max-width: 768px) {
+  .overlayBlock {
+    position: static; /* убираем абсолютное позиционирование */
+    display: flex;
+    align-items: center;
+    margin-top: 0; /* убираем верхний отступ */
+    padding-top: 20px; /* добавляем отступ сверху для отделения от сцены */
+    max-width: 100%; /* делаем ширину блока 100% */
+    width: auto; /* ширина автоматически подстраивается */
+  }
+
+  .overlayText {
+    font-size: 40px; /* уменьшаем размер шрифта */
+    line-height: 1.2; /* немного увеличиваем межстрочный интервал */
+  }
 }
+
+.render_talents_container{
+
+
+  .render_talents_title{
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 43px;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+
+
+
+
+
+.ability {
+  position: relative;
+  width: 60px;
+  text-align: center;
+}
+
+.abilityImage {
+  width: 100%;
+  cursor: pointer;
+}
+
+.abilityDetails {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  transform: translate(-50%, 10px);
+  z-index: 12;
+}
+
+.ability:hover .abilityDetails {
+  visibility: visible;
+}
+
+.highlightedValue {
+  font-weight: bold;
+  color: #ff9900; /* Оранжевый цвет */
+  background-color: rgba(255, 255, 0, 0.2); /* Полупрозрачный жёлтый фон */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.abilityVideo {
+  width: 100%;
+  max-width: 400px; /* Максимальная ширина видео */
+  margin-bottom: 10px; /* Отступ снизу */
+  border-radius: 8px; /* Закругление углов */
+}
+
+
+
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+
+
+/* Общий контейнер */
+.render2Container {
+  display: flex;
+  flex-direction: row; /* Теперь размещаем элементы по горизонтали */
+  gap: 30px; /* Расстояние между левой и правой частью */
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  align-items: flex-start; /* Выровнять по верху */
+  width: 100%;
+  margin: 0 auto; /* Центрируем контейнер на странице */
+}
+
+/* Контейнер для видео и списка изображений способностей (левая часть) */
+.render2AbilityWrapper {
+  display: flex;
+  flex-direction: column; /* Видео и способности будут располагаться вертикально */
+  gap: 20px; /* Отступы между видео и списком способностей */
+  align-items: center; /* Центрируем все элементы по горизонтали */
+  width: 50%; /* Левая часть будет занимать половину ширины */
+}
+
+/* Контейнер для видео */
+.render2VideoWrapper {
+  display: flex;
+  justify-content: center; /* Центрируем видео */
+  align-items: center;
+}
+
+/* Стили для видео */
+.render2videoElement {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Скругление углов для видео */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Лёгкая тень для видео */
+}
+
+/* Список способностей (картинки) */
+.render2AbilitiesList {
+  display: flex;
+  flex-wrap: wrap; /* Если не помещаются, то переносятся на новую строку */
+  gap: 20px; /* Расстояние между элементами */
+  justify-content: center; /* Центрируем элементы по горизонтали */
+}
+
+/* Обертка для изображения способности */
+.render2ImageWrapper {
+  width: 100px; /* Ширина каждого элемента */
+  height: 100px; /* Высота каждого элемента */
+  display: flex;
+  justify-content: center; /* Центрируем изображение */
+  align-items: center;
+  border-radius: 8px; /* Скругление углов */
+  overflow: hidden; /* Скрываем части изображения, выходящие за границы */
+  cursor: pointer; /* Указатель мыши при наведении */
+  transition: transform 0.3s ease; /* Плавный эффект при наведении */
+}
+
+/* Эффект наведения на изображение */
+.render2ImageWrapper:hover {
+  transform: scale(1.1); /* Немного увеличиваем размер изображения при наведении */
+}
+
+/* Стили для изображений */
+.render2ImageSmall {
+  width: 100%; /* Заполняет весь контейнер */
+  height: 100%;
+  object-fit: cover; /* Изображение не искажается, заполняет контейнер */
+  border-radius: 8px; /* Скругление углов */
+}
+
+/* Дополнительный стиль для сообщения "Изображение не доступно" */
+.render2ImageWrapper span {
+  color: #888; /* Серый цвет текста */
+  font-size: 14px;
+}
+
+/* Правая часть с информацией о способности */
+.render2AbilityInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%; /* Правая часть будет занимать половину ширины */
+}
+
+/* Имя способности */
+.render2AbilityName {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Цвет текста */
+  margin: 0;
+}
+
+/* Описание способности */
+.render2AbilityDescription {
+  font-size: 16px;
+  color: #555; /* Цвет текста описания */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

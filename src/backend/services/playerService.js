@@ -20,12 +20,14 @@ const getPlayersInfoBySteamIds = async (friendshipCodes) => {
                     if (response.data.response.players.length === 0) {
                         return;
                     }
+                    
 
                     response.data.response.players.forEach(player => {
                         const friendCode = (BigInt(player.steamid) - BigInt(76561197960265728)).toString();
                         playerInfo[friendCode] = {
-                            avatar: player.avatar,
-                            profileUrl: player.profileurl
+                            avatar: player.avatarfull,
+                            personaName: player.personaname,
+                            profileUrl: player.profileurl,
                         };
                     });
                 })
