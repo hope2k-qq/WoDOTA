@@ -2,8 +2,6 @@ import styles from "./leaderboard.module.scss";
 import axios from "axios";
 import React, { useEffect, useState, useCallback } from "react";
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
-import { ReactComponent as RainbowIcon } from "../../assets/icons/RainbowIcon.svg";
-import {useNavigate} from "react-router-dom";
 
 interface Player {
     steamid: string;

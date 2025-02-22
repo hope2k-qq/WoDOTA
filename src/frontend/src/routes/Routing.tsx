@@ -1,13 +1,13 @@
 import {Grid} from "@mui/material";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {HomePage} from "../pages/home/HomePage";
-import {ProfilePage} from "../pages/profile/ProfilePage";
+//import {HomePage} from "../pages/home/HomePage";
+//import {ProfilePage} from "../pages/profile/ProfilePage";
 import {LeaderboardPage} from "../pages/leaderboard/LeaderboardPage";
-import {HeroesPage} from "../pages/heroes/HeroesPage";
-import {UpdatesPage} from "../pages/updates/UpdatesPage";
-import {ShopPage} from "../pages/shop/ShopPage";
+//import {HeroesPage} from "../pages/heroes/HeroesPage";
+//import {UpdatesPage} from "../pages/updates/UpdatesPage";
+//import {ShopPage} from "../pages/shop/ShopPage";
 import {VotesPage} from "../pages/votes/VotesPage";
-import HeroPage from "../pages/heroes/components/heroPage/HeroPage";
+//import HeroPage from "../pages/heroes/components/heroPage/HeroPage";
 import {TopBar} from "../widgets/topBar/TopBar";
 import {NotFoundPage} from "../pages/notFound/NotFoundPage";
 

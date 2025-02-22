@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {useEffect, useState} from "react";
 import { ReactComponent as MoreIcon } from "../../assets/icons/MoreIcon.svg";
-import { ReactComponent as HeroesIcon } from "../../assets/icons/heroes_icon.svg";
+//import { ReactComponent as HeroesIcon } from "../../assets/icons/heroes_icon.svg";
 import { ReactComponent as LeaderboardIcon } from "../../assets/icons/leaderboard_icon.svg";
 import { ReactComponent as VotesIcon } from "../../assets/icons/votes_icon.svg";
 import { ReactComponent as SteamIcon } from "../../assets/icons/steam_icon.svg";
@@ -15,12 +15,10 @@ export const TopBar = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [logoSrc, setLogoSrc] = useState("/logo.png");
 
     useEffect(() => {
         const handleResize = () => {
-            setWindowWidth(window.innerWidth);
             setLogoSrc(window.innerWidth <= 1200 ? "/3logo.png" : "/logo1.png");
         };
 
