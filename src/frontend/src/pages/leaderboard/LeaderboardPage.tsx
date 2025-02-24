@@ -1,6 +1,6 @@
 import styles from "./leaderboard.module.scss";
 import axios from "axios";
-import React, { useEffect, useState, useCallback } from "react";
+import React, {useEffect, useState, useCallback, useRef} from "react";
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
 
 interface Player {
@@ -31,7 +31,6 @@ export const LeaderboardPage = () => {
     const [selectedRating, setSelectedRating] = useState<string>("rating");
     const [arenaGroup, setArenaGroup] = useState<string>("1");
     const [searchTerm, setSearchTerm] = useState("");
-
     const API_URL = process.env.REACT_APP_API_URL;
 
     const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
@@ -82,6 +81,11 @@ export const LeaderboardPage = () => {
 
         void fetchData();
     }, [fetchRatingData, fetchArenaData]);
+
+
+
+
+
 
     const handleRatingChange = (rating: string) => {
         setSelectedRating(rating);
@@ -140,7 +144,8 @@ export const LeaderboardPage = () => {
                             <div className={styles.topPlayerAvatarContainer}>
                                 <div className={`${styles.topPlayerAvatarContainerSolo} 
                         ${styles[`topPlayerCard${player.rank}_border_color`]}`}>
-                                    <img src={player.avatar} alt="avatar" className={styles.topPlayerAvatar}/>
+                                    <img src={player.avatar} alt="avatar" className={styles.topPlayerAvatar}
+                                         onClick={() => window.open(`${player.profileUrl}`, "_blank")}/>
                                 </div>
                             </div>
 
@@ -362,6 +367,7 @@ export const LeaderboardPage = () => {
                 </div>
                 ))}
             </div>
+                <div onClick={() =>console.log(openModalIndex)}>1</div>
 
         <table className={styles.table}>
                     <thead className={styles.tableHeader}>
@@ -437,8 +443,13 @@ export const LeaderboardPage = () => {
                                     )}
 
                                     {openModalIndex === index && (
-                                        <div className={styles.modalOverlay}>
-                                            <div className={styles.modalContent}>
+                                        <div
+                                            className={styles.modalOverlay}
+                                        >
+                                            <div
+                                                className={styles.modalContent}
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
                                                 <div className={styles.modalHeroesGrid}>
                                                     {playerGroup.heroes
                                                         .filter(hero => hero)
@@ -472,71 +483,12 @@ export const LeaderboardPage = () => {
         );
     };
 
-
-    // const renderArenaPlayers = () => {
-    //     return (
-    //         <table className={styles.table}>
-    //             <thead className={styles.tableHeader}>
-    //             <tr>
-    //                 {arenaGroup === "1" && (
-    //                     <>
-    //                         <th className={`${styles.cell} ${styles.rankCell}`}>Ранг</th>
-    //                         <th className={`${styles.cell} ${styles.playerCell}`}>Игрок</th>
-    //                         <th className={`${styles.cell} ${styles.ratingCell}`}>Рейтинг</th>
-    //                     </>
-    //                 )}
-    //             </tr>
-    //             </thead>
-    //             <tbody className={styles.playersTable}>
-    //             {arenaGroup === "1" ? (
-    //                 // Для arenaGroup 1 выводим обычные строки
-    //                 arenaPlayers[arenaGroup]?.map((playerGroup, index) => (
-    //                     playerGroup.personaNames.map((personaName, idx) => (
-    //                         <tr
-    //                             key={`${index}-${idx}`}
-    //                             className={styles.tableRow}
-    //                             onClick={() => window.open(playerGroup.profileUrls[idx], '_blank', 'noopener,noreferrer')}
-    //                             role="button"
-    //                             tabIndex={0}
-    //                         >
-    //                             <td className={`${styles.cell} ${styles.rankCellData}`}>{playerGroup.rank}</td>
-    //                             <td className={`${styles.cell} ${styles.playerCellData}`}>
-    //                                 <img src={playerGroup.avatars[idx]} alt="avatar" className={styles.avatar} />
-    //                                 <span className={styles.name}>{personaName}</span>
-    //                             </td>
-    //                             <td className={`${styles.cell} ${styles.ratingCellData}`}>{playerGroup.wave_count}</td>
-    //                         </tr>
-    //                     ))
-    //                 ))
-    //             ) : (
-    //                 // Для arenaGroup 2 и 3 объединяем игроков и показываем только аватары
-    //                 arenaPlayers[arenaGroup]?.map((playerGroup, index) => (
-    //                     <tr key={index} className={styles.tableRow}>
-    //                         {playerGroup.personaNames.map((personaName, idx) => (
-    //                             <td
-    //                                 key={idx}
-    //                                 className={`${styles.cell} ${styles.avatarCell}`}
-    //                                 onClick={() => window.open(playerGroup.profileUrls[idx], '_blank', 'noopener,noreferrer')}
-    //                                 role="button"
-    //                                 tabIndex={0}
-    //                             >
-    //                                 <img src={playerGroup.avatars[idx]} alt="avatar" className={styles.avatar} />
-    //                             </td>
-    //                         ))}
-    //                     </tr>
-    //                 ))
-    //             )}
-    //             </tbody>
-    //         </table>
-    //     );
-    // };
-
     return (
         <div className={styles.main_container}>
             <div className={styles.container_leaderboard}>
                 <div className={styles.title}>ТАБЛИЦА ЛИДЕРОВ</div>
 
-                <div className={styles.container_navigation}>
+                <div className={styles.container_navigation} onClick={() => setOpenModalIndex(null)}>
                     <div className={styles.container_filter_navigation}>
                         <div className={styles.title_buttonGroup}>Выбери режим игры:</div>
                         <div className={styles.buttonGroup}>

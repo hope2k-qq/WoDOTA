@@ -16,30 +16,37 @@ exports.getHeroes = (req, res) => {
             return res.status(500).json({ error: 'Heroes data not available' });
         }
 
-        // Путь к файлу с атрибутами героев
+        // Загружаем дополнительные атрибуты героев
         const attributesFilePath = path.join(__dirname, '..', 'data', 'heroesAttributes.json');
         const rawAttributesData = fs.readFileSync(attributesFilePath, 'utf-8');
         const attributesData = JSON.parse(rawAttributesData);
 
-        // Создаем объект для маппинга имен героев на их основной атрибут
-        const attributesMap = attributesData.reduce((acc, { name, primary_attr }) => {
-            acc[name] = primary_attr;
+        // Создаем объект маппинга имен героев на их данные
+        const attributesMap = attributesData.reduce((acc, { name, primary_attr, custom_hero }) => {
+            acc[name] = {
+                primary_attr: primary_attr || 'unknown',
+                custom_hero: custom_hero || false
+            };
             return acc;
         }, {});
-        
+
+        // Формируем массив героев с атрибутами
         const heroesWithAttributes = heroesData.map(hero => ({
             name: hero,
-            primary_attr: attributesMap[hero] || 'unknown',
+            primary_attr: attributesMap[hero]?.primary_attr || 'unknown',
+            custom_hero: attributesMap[hero]?.custom_hero || false
         }));
-        
+
+        // Сортируем героев по имени
         heroesWithAttributes.sort((a, b) => a.name.localeCompare(b.name));
-        
+
         res.json(heroesWithAttributes);
     } catch (error) {
         console.error('Error loading heroes data:', error);
         res.status(500).json({ error: 'Failed to load heroes data' });
     }
 };
+
 
 exports.getHeroAttribute = (req, res) => {
     const { name } = req.params;

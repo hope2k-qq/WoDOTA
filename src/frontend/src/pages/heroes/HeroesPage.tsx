@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { getImageUrl } from '../../utils/r2Storage';
 import styles from './heroes_page.module.scss';
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
+import {openDB} from "idb";
 
 interface Hero {
     name: string;
     primary_attr: string;
+    custom_hero: boolean;
 }
 
 export const HeroesPage: React.FC = () => {
@@ -19,21 +21,92 @@ export const HeroesPage: React.FC = () => {
     const [selectedAttribute, setSelectedAttribute] = useState<string | null>(null);
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [isSearching, setIsSearching] = useState<boolean>(false);
+    const [showCustomOnly, setShowCustomOnly] = useState<boolean>(false);
     const API_URL = process.env.REACT_APP_API_URL;
+    const CACHE_VERSION = 1;
 
     useEffect(() => {
+        const cachedVersion = localStorage.getItem('cache-version');
+
+        if (cachedVersion !== CACHE_VERSION.toString()) {
+            localStorage.clear();
+
+            openDB('heroes-db', CACHE_VERSION, {
+                upgrade(db, oldVersion, newVersion) {
+                    if (newVersion !== null && newVersion > oldVersion) {
+                        if (db.objectStoreNames.contains('images')) {
+                            db.deleteObjectStore('images');
+                        }
+                        db.createObjectStore('images');
+                    }
+                }
+            }).then(() => {
+                localStorage.setItem('cache-version', CACHE_VERSION.toString());
+            }).catch(err => {
+                console.error('Error during DB upgrade:', err);
+            });
+        }
+
+        const dbPromise = openDB('heroes-db', CACHE_VERSION, {
+            upgrade(db, oldVersion, newVersion) {
+                if (newVersion !== null && newVersion > oldVersion) {
+                    if (db.objectStoreNames.contains('images')) {
+                        db.deleteObjectStore('images');
+                    }
+                    db.createObjectStore('images');
+                }
+            }
+        });
+
         const fetchHeroesData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/heroes`);
                 const data = response.data;
                 setHeroes(data);
 
-                const urls: { [key: string]: string | null } = {};
+                const db = await dbPromise;
+                const updatedUrls: { [key: string]: string | null } = {};
+                const imagePromises: Promise<void>[] = [];
+
                 for (const hero of data) {
-                    const url = await getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`);
-                    urls[hero.name] = url;
+                    const cachedImage = await db.get('images', hero.name);
+                    if (cachedImage) {
+                        updatedUrls[hero.name] = URL.createObjectURL(cachedImage);
+                    } else {
+                        updatedUrls[hero.name] = null;
+                    }
                 }
-                setImageUrl(urls);
+                setLoading(false);
+
+                setImageUrl(updatedUrls);
+
+                for (const hero of data) {
+                    if (!updatedUrls[hero.name]) {
+                        imagePromises.push(
+                            (async () => {
+                                const url = await getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`);
+                                if (url) {
+                                    const response = await fetch(url);
+                                    const imageBlob = await response.blob();
+
+                                    await db.put('images', imageBlob, hero.name);
+
+                                    updatedUrls[hero.name] = URL.createObjectURL(imageBlob);
+
+                                    setImageUrl(prevState => ({
+                                        ...prevState,
+                                        [hero.name]: updatedUrls[hero.name],
+                                    }));
+                                } else {
+                                    console.error(`Image URL for hero ${hero.name} not found.`);
+                                }
+                            })()
+                        );
+                    }
+                }
+
+                await Promise.all(imagePromises);
+
             } catch (error) {
                 console.error('Error fetching hero data:', error);
                 setError('Failed to fetch hero data.');
@@ -47,8 +120,11 @@ export const HeroesPage: React.FC = () => {
         });
     }, [API_URL]);
 
+
+
+
     if (loading) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     if (error) {
@@ -80,8 +156,16 @@ export const HeroesPage: React.FC = () => {
     const filteredHeroes = heroes.filter(hero => {
         const matchesSearch = hero.name.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesAttribute = isSearching || !selectedAttribute ? true : hero.primary_attr === selectedAttribute;
-        return matchesSearch && matchesAttribute;
+        const matchesCustom = !showCustomOnly || hero.custom_hero;
+        return matchesSearch && matchesAttribute && matchesCustom;
     });
+
+
+    const handleCustomOnlyChange = () => {
+        setShowCustomOnly(prevState => !prevState);
+    };
+
+
 
     const groupedHeroes = filteredHeroes.reduce((groups, hero) => {
         const { primary_attr } = hero;
@@ -118,24 +202,43 @@ export const HeroesPage: React.FC = () => {
 
     return (
         <div className={styles['main-container']}>
+            <div className={styles.title}>ВЫБЕРИТЕ ГЕРОЯ</div>
             <div className={styles['container']}>
                 <div className={styles['filter-container']}>
                     <div className={styles['filter-label']}>Фильтр</div>
-                    <div className={styles['attribute-label']}>Атрибут</div>
-                    <div className={styles['filter-buttons']}>
-                        {['str', 'agi', 'int', 'uni'].map((attr) => (
-                            <img
-                                key={attr}
-                                src={getAttributeImage(attr)}
-                                alt={attr}
-                                className={`${styles['filter-attribute-icon']} ${selectedAttribute === attr && 
-                                !isSearching ? styles['active-icon'] : ''}`}
-                                onClick={() => handleAttributeClick(attr)}
-                            />
-                        ))}
+                    <div className={styles['filter-container_center']}>
+                        <div className={styles['container-attribute']}>
+                            <div className={styles['attribute-label']}>Кастомный</div>
+                            <div className={styles['switch-container']}>
+                                <label className={styles['switch']}>
+                                    <input
+                                        type="checkbox"
+                                        checked={showCustomOnly}
+                                        onChange={handleCustomOnlyChange}
+                                    />
+                                    <span className={styles['slider']}></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className={styles['container-attribute']}>
+                            <div className={styles['attribute-label']}>Атрибут</div>
+                            <div className={styles['filter-buttons']}>
+                                {['str', 'agi', 'int', 'uni'].map((attr) => (
+                                    <img
+                                        key={attr}
+                                        src={getAttributeImage(attr)}
+                                        alt={attr}
+                                        className={`${styles['filter-attribute-icon']} ${selectedAttribute === attr &&
+                                        !isSearching ? styles['active-icon'] : ''}`}
+                                        onClick={() => handleAttributeClick(attr)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                     <div className={styles['search-container']}>
-                        <SearchIcon className={styles['search-icon']} />
+                        <SearchIcon className={styles['search-icon']}/>
                         <input
                             type="text"
                             value={searchQuery}
@@ -147,7 +250,7 @@ export const HeroesPage: React.FC = () => {
             </div>
 
             <div>
-                {isSearching ? (
+                {isSearching || showCustomOnly ? (
                     filteredHeroes.length > 0 ? (
                         <div className={styles['search-category-heroes']}>
                             {filteredHeroes.map((hero, index) => (

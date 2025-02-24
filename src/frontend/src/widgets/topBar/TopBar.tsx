@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {useEffect, useState} from "react";
 import { ReactComponent as MoreIcon } from "../../assets/icons/MoreIcon.svg";
-//import { ReactComponent as HeroesIcon } from "../../assets/icons/heroes_icon.svg";
+import { ReactComponent as HeroesIcon } from "../../assets/icons/heroes_icon.svg";
 import { ReactComponent as LeaderboardIcon } from "../../assets/icons/leaderboard_icon.svg";
 import { ReactComponent as VotesIcon } from "../../assets/icons/votes_icon.svg";
 import { ReactComponent as SteamIcon } from "../../assets/icons/steam_icon.svg";
@@ -29,8 +29,14 @@ export const TopBar = () => {
     }, []);
 
     const activeIcon = (path: string) => {
-        return location.pathname === path || (path === "/heroes" && location.pathname.startsWith("/hero/"));
+        if (!path) return true;
+        const { pathname } = location;
+        const isExactMatch = pathname === path;
+        const isHeroesSection = path === "/heroes" && (pathname.startsWith("/hero/") || pathname === "/");
+        return isExactMatch || isHeroesSection;
     };
+
+
 
 
     const toggleMenu = () => {
@@ -56,16 +62,16 @@ export const TopBar = () => {
                         </div>
                     </div>
                     <div className={styles.topbar_menu_open}>
+                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/heroes')}>
+                            <TopBarMenuItem title={t('heroes_guides')}
+                                            onNavigate={() => navigate('/heroes')} menuOpen={menuOpen}/>
+                            <MoreIcon/>
+                        </div>
                         <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/leaderboard')}>
                             <TopBarMenuItem title={t('leaderboard')}
                                             onNavigate={() => navigate('/leaderboard')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
-                        {/*<div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/heroes')}>*/}
-                        {/*<TopBarMenuItem title={t('heroes_guides')}*/}
-                        {/*                    onNavigate={() => navigate('/heroes')} menuOpen={menuOpen}/>*/}
-                        {/*    <MoreIcon/>*/}
-                        {/*</div>*/}
                         <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/votes')}>
                             <TopBarMenuItem title={t('votes')}
                                             onNavigate={() => navigate('/votes')} menuOpen={menuOpen}/>
@@ -79,12 +85,12 @@ export const TopBar = () => {
                         <img src={logoSrc} alt="logo"/>
                     </div>
                     <div className={`${styles.topbar_menu}`}>
+                        <TopBarMenuItem title={t('heroes_guides')}
+                                        onNavigate={() => navigate('/heroes')} isActive={activeIcon("/heroes")}
+                                        menuOpen={menuOpen} icon={<HeroesIcon />}/>
                         <TopBarMenuItem title={t('leaderboard')}
                                         onNavigate={() => navigate('/leaderboard')}
                                         isActive={activeIcon("/leaderboard")} menuOpen={menuOpen} icon={<LeaderboardIcon />}/>
-                        {/*<TopBarMenuItem title={t('heroes_guides')}*/}
-                        {/*                onNavigate={() => navigate('/heroes')} isActive={activeIcon("/heroes")}*/}
-                        {/*                menuOpen={menuOpen} icon={<HeroesIcon />}/>*/}
                         <TopBarMenuItem title={t('votes')}
                                         onNavigate={() => navigate('/votes')} isActive={activeIcon("/votes")}
                                         menuOpen={menuOpen} icon={<VotesIcon />}/>
