@@ -1,6 +1,6 @@
 import styles from "./leaderboard.module.scss";
 import axios from "axios";
-import React, {useEffect, useState, useCallback, useRef} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
 
 interface Player {
