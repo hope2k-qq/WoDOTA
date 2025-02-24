@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from "react";
+import React, {useMemo} from "react";
 import styles from "./footer.module.scss";
 import { ReactComponent as MessageIcon1 } from "../../assets/icons/MessageIcon1.svg";
 import { ReactComponent as MessageIcon2 } from "../../assets/icons/MessageIcon2.svg";
