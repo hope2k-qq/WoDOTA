@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./email_link.module.scss";
+import styles from "./email_link.module.scss"
 
 export const EmailLink: React.FC = () => {
     const [email, setEmail] = useState<string | null>(null);
@@ -11,9 +11,5 @@ export const EmailLink: React.FC = () => {
         setEmail(part1 + part2 + part3);
     }, []);
 
-    return email ? (
-        <div className={styles.text}>
-            <a href={`mailto:${email}`}>{email}</a>
-        </div>
-    ) : null;
+    return email ? <div className={styles.text}>{email}</div> : null;
 };
