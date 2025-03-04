@@ -81,7 +81,7 @@ const HeroPage: React.FC = () => {
     return (
         <div className={styles.div}>
             <div className={styles.heroSceneContainer}>
-                <HeroScenePage heroName={name || 'slark'}/>
+                {/*<HeroScenePage heroName={name || 'slark'}/>*/}
                 <div className={styles.overlayBlock}>
                     {isLoading ? (
                         <div>Загрузка...</div>
