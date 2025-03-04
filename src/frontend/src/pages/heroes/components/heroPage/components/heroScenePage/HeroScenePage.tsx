@@ -33,25 +33,6 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
     const [isMouseInsideCanvas, setIsMouseInsideCanvas] = useState<boolean>(false);
     const [canvasPosition, setCanvasPosition] = useState<[number, number, number]>([0, -0.9, 0]);
 
-    const handleMouseMove = (event: MouseEvent) => {
-        if (isMouseInsideCanvas && mouseDownRef.current && event.button === 0) {
-            const deltaX = event.clientX - initialMouseXRef.current;
-            setPedestalRotation((prevRotation) => prevRotation + deltaX * 0.007);
-            initialMouseXRef.current = event.clientX;
-        }
-    };
-
-    const handleMouseDown = (event: MouseEvent) => {
-        // Проверяем, что нажата левая кнопка мыши
-        if (event.button === 0) {
-            mouseDownRef.current = true;
-            initialMouseXRef.current = event.clientX;
-        }
-    };
-
-    const handleMouseUp = () => {
-        mouseDownRef.current = false;
-    };
 
     const handleMouseEnterCanvas = () => {
         setIsMouseInsideCanvas(true);
@@ -106,6 +87,25 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
         //     console.error('Error in fetchHeroesData:', err);
         // });
 
+        const handleMouseMove = (event: MouseEvent) => {
+            if (isMouseInsideCanvas && mouseDownRef.current && event.button === 0) {
+                const deltaX = event.clientX - initialMouseXRef.current;
+                setPedestalRotation((prevRotation) => prevRotation + deltaX * 0.007);
+                initialMouseXRef.current = event.clientX;
+            }
+        };
+
+        const handleMouseDown = (event: MouseEvent) => {
+            if (event.button === 0) {
+                mouseDownRef.current = true;
+                initialMouseXRef.current = event.clientX;
+            }
+        };
+
+        const handleMouseUp = () => {
+            mouseDownRef.current = false;
+        };
+
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mousedown', handleMouseDown);
         window.addEventListener('mouseup', handleMouseUp);
@@ -115,7 +115,7 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
             window.removeEventListener('mousedown', handleMouseDown);
             window.removeEventListener('mouseup', handleMouseUp);
         };
-    }, [isMouseInsideCanvas, handleMouseMove, handleMouseDown, handleMouseUp]);
+    }, [isMouseInsideCanvas]);
 
     const fetchModelUrl = async (objectKey: string, setModelUrl: React.Dispatch<React.SetStateAction<string | null>>) => {
         try {

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import { getImageUrl } from '../../../../utils/r2Storage';
 import { Talent, AddonData, RenderTalentsProps } from '../../../../types/heroes';
 import axios from 'axios';
@@ -22,7 +22,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const [backgroundImages, setBackgroundImages] = useState<{ [key: string]: string | null }>({});
     // const [loading, setLoading] = useState<boolean>(true);
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    // const [error, setError] = useState<string | null>(null);
     const [isUpgradeMode, setIsUpgradeMode] = useState(false); // Можно ли качать таланты?
     const [currentTalentLevels, setCurrentTalentLevels] = useState<{ [key: string]: { [key: string]: number } }>({});
     const [upgradeOrder, setUpgradeOrder] = useState<string[]>([]);
@@ -311,8 +311,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
 
 
-// Функция для получения изображений талантов для конкретного героя
-    const getImageForHero = async (talent: Talent, db: IDBPDatabase): Promise<Blob | null> => {
+    const getImageForHero = useCallback(async (talent: Talent, db: IDBPDatabase): Promise<Blob | null> => {
         const imagePath = talent.imagePath;
         let objectKey;
         if (imagePath.includes('/')) {
@@ -340,7 +339,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             console.error(`Image not found for ${imagePath}`);
             return null;
         }
-    };
+    }, [hero_name]);
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -348,13 +347,10 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
             const db = await openHeroesDB();
             const allParts = Object.entries(talents_information);
-            const imagesToSave: { [key: string]: Blob } = {}; // Для хранения изображений, которые нужно сохранить в базе данных
-            let isImageFetchedFromServer = false;  // Флаг для отслеживания, были ли изображения загружены с сервера
+            const imagesToSave: { [key: string]: Blob } = {}; // For storing images to save in the database
 
-            // Получаем данные о талантах героя из базы данных один раз в начале
             const heroTalentsData = await db.get('talents', hero_name);
 
-            // Создаем массив Promise для загрузки всех изображений
             const loadImagePromises = [];
 
             for (const [part, talentsByLevel] of allParts) {
@@ -370,10 +366,12 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                         loadImagePromises.push(
                             (async () => {
                                 let imageBlob: Blob | null = null;
+                                let isImageFetchedFromServer = false;
+
                                 if (talent && !talent.id.includes("empty")) {
                                     imageBlob = await getImageForHero(talent, db);
 
-                                    // Если изображение было загружено с сервера, установим флаг
+                                    // If image was fetched from the server, set the flag
                                     if (imageBlob && !heroTalentsData?.talents?.[key]) {
                                         isImageFetchedFromServer = true;
                                     }
@@ -387,6 +385,8 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                 if (imageBlob) {
                                     imagesToSave[key] = imageBlob;
                                 }
+
+                                return isImageFetchedFromServer;
                             })()
                         );
                     }
@@ -394,31 +394,27 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                 }
             }
 
-            await Promise.all(loadImagePromises);
+            const results = await Promise.all(loadImagePromises);
 
             try {
-                if (Object.keys(imagesToSave).length > 0 && isImageFetchedFromServer) {
-
+                if (Object.keys(imagesToSave).length > 0 && results.some(result => result)) {
                     if (heroTalentsData) {
                         const updatedTalents = { ...heroTalentsData?.talents, ...imagesToSave };
-
                         await db.put('talents', { ...heroTalentsData, talents: updatedTalents });
-
-                        // const updatedHeroTalentsData = await db.get('talents', hero_name);
-                        // console.log('Updated Hero Talents Data:', updatedHeroTalentsData);
                     } else {
-                       // console.error('No data found for hero:', hero_name);
+                        //console.error('No data found for hero:', hero_name);
                     }
                 } else {
-                    //console.log("No new images fetched from server. Data not saved.");
+                    //console.log("No new images fetched from the server. Data not saved.");
                 }
             } catch (error) {
-                //console.error('Error saving to DB:', error);
+                // console.error('Error saving to DB:', error);
             }
         };
 
         fetchImages();
-    }, [talents_information]);
+    }, [talents_information, hero_name, getImageForHero]);
+
 
 
 
@@ -766,9 +762,9 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     //     return <div>Loading...</div>;
     // }
 
-    if (error) {
-        return <div>{error}</div>;
-    }
+    // if (error) {
+    //     return <div>{error}</div>;
+    // }
 
     if (!talents_information || !talents_description) {
         return <div>No data available for this hero.</div>;
