@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import styles from './hero_page.module.scss';
-//import { HeroScenePage } from './components/heroScenePage/HeroScenePage';
+import { HeroScenePage } from './components/heroScenePage/HeroScenePage';
 import AbilitiesSection from './AbilitiesSection';
 import Abilities from './Abilities';
 import RenderTalents from './RenderTalents';
@@ -81,7 +81,7 @@ const HeroPage: React.FC = () => {
     return (
         <div className={styles.div}>
             <div className={styles.heroSceneContainer}>
-                {/*<HeroScenePage heroName={name || 'slark'}/>*/}
+                <HeroScenePage heroName={name || 'slark'}/>
                 <div className={styles.overlayBlock}>
                     {isLoading ? (
                         <div>Загрузка...</div>
