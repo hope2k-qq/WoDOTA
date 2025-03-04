@@ -100,12 +100,11 @@ const HeroPage: React.FC = () => {
                 <HeroDifferences/>
             </div>
             <div className={styles.render_talents_container}>
-                <div className={styles.render_talents_title}>ОБ ТАЛАНТАХ:</div>
                 <RenderTalents hero_name={name || 'slark'}
-                               talents_information={heroInformation?.talents_information  || {}}
+                               talents_information={heroInformation?.talents_information || {}}
                                talents_description={heroInformation?.talents_description || {}}/>
             </div>
-            <AbilitiesSection heroName={name || 'slark'} />
+            <AbilitiesSection heroName={name || 'slark'}/>
         </div>
     );
 };

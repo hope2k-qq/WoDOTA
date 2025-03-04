@@ -7,7 +7,7 @@ import {HeroesPage} from "../pages/heroes/HeroesPage";
 //import {UpdatesPage} from "../pages/updates/UpdatesPage";
 //import {ShopPage} from "../pages/shop/ShopPage";
 import {VotesPage} from "../pages/votes/VotesPage";
-//import HeroPage from "../pages/heroes/components/heroPage/HeroPage";
+import HeroPage from "../pages/heroes/components/heroPage/HeroPage";
 import {TopBar} from "../widgets/topBar/TopBar";
 import {NotFoundPage} from "../pages/notFound/NotFoundPage";
 import {Footer} from "../widgets/footer/Footer";
@@ -24,7 +24,7 @@ export const Routing = () => {
                             {/*<Route path="/profile" element={<ProfilePage />} />*/}
                             <Route path="/leaderboard" element={<LeaderboardPage />} />
                             <Route path="/heroes" element={<HeroesPage />} />
-                            {/*<Route path="/hero/:name" element={<HeroPage />} />*/}
+                            <Route path="/hero/:name" element={<HeroPage />} />
                             {/*<Route path="/updates" element={<UpdatesPage />} />*/}
                             {/*<Route path="/shop" element={<ShopPage />} />*/}
                             <Route path="/votes" element={<VotesPage />} />

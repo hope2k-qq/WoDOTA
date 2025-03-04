@@ -76,7 +76,6 @@ exports.getHeroData = (req, res) => {
         const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
         //console.log(heroTalentsInformation)
         const heroAttributes = getHeroAttributes(heroName);
-        console.log(heroAttributes);
         
 
         if (!abilityNames) {
@@ -88,8 +87,51 @@ exports.getHeroData = (req, res) => {
         const heroTalentsDescription = heroData.heroTalentsData; // Таланты героя
         const heroAbilitiesData = heroData.abilitiesData; // Способности героя
         const abilitiesWithDetails = {};
-
-        // Обрабатываем способности героя и собираем все доступные поля
+        // abilityNames.forEach(ability => {
+        //     const abilityPrefix = `DOTA_Tooltip_ability_${ability}`;
+        //     const abilityKeys = Object.keys(heroAbilitiesData).filter(key => key.startsWith(abilityPrefix));
+        //    
+        //     if (abilityKeys.length > 0) {
+        //         abilitiesWithDetails[ability] = {};
+        //
+        //         abilityKeys.forEach(key => {
+        //             let fieldName = key.replace(`${abilityPrefix}`, '').toLowerCase(); // Приводим ключ к нижнему регистру
+        //             if (fieldName === '_custom' || fieldName === '') {
+        //                 abilitiesWithDetails[ability]['name'] = heroAbilitiesData[key];
+        //             } else if (fieldName.startsWith('_custom_')) {
+        //                 const cleanedFieldName = fieldName.replace('_custom_', '');
+        //                 abilitiesWithDetails[ability][cleanedFieldName] = heroAbilitiesData[key];
+        //             } else if (fieldName.startsWith('_')) {
+        //                 const cleanedFieldName = fieldName.replace('_', '');
+        //                 abilitiesWithDetails[ability][cleanedFieldName] = heroAbilitiesData[key];
+        //             } else {
+        //                 abilitiesWithDetails[ability][fieldName] = heroAbilitiesData[key];
+        //             }
+        //         });
+        //        
+        //         const abilityDetails = abilitiesDataService.getAbilityDetails(ability);
+        //         function formatNumbersInObject(obj) {
+        //             const formattedObj = {};
+        //
+        //             for (const key in obj) {
+        //                 if (Object.hasOwnProperty.call(obj, key)) {
+        //                     const value = obj[key];
+        //                     if (typeof value === "string" && !isNaN(value)) {
+        //                         const num = parseFloat(value);
+        //                         formattedObj[key] = Number.isInteger(num) ? num.toFixed(0) : num.toString();
+        //                     } else {
+        //                         formattedObj[key] = value; // Оставляем без изменений, если не число
+        //                     }
+        //                 }
+        //             }
+        //
+        //             return formattedObj;
+        //         }
+        //
+        //         const formattedAbilityDetails = formatNumbersInObject(abilityDetails);
+        //         abilitiesWithDetails[ability].values = formattedAbilityDetails || {};
+        //     }
+        // });
         abilityNames.forEach(ability => {
             const abilityPrefix = `DOTA_Tooltip_ability_${ability}`;
             const abilityKeys = Object.keys(heroAbilitiesData).filter(key => key.startsWith(abilityPrefix));
@@ -112,14 +154,109 @@ exports.getHeroData = (req, res) => {
                     }
                 });
 
-                // Получаем дополнительные значения, связанные со способностью
                 const abilityDetails = abilitiesDataService.getAbilityDetails(ability);
-                // console.log(abilityDetails)
-                abilitiesWithDetails[ability].values = abilityDetails || {};
+
+                function formatValues(obj) {
+                    const formattedObj = {};
+                    for (const key in obj) {
+                        if (Object.hasOwnProperty.call(obj, key)) {
+                            let value = obj[key];
+
+                            if (typeof value === "object" && value !== null && "value" in value) {
+                                value = value.value;
+                            }
+
+                            if (typeof value === "string") {
+                                let formattedValue = value
+                                    .split(" ")
+                                    .map(part => {
+                                        let num = parseFloat(part);
+                                        if (!isNaN(num)) {
+                                            return Number.isInteger(num) ? num.toFixed(0) : num.toString();
+                                        }
+                                        return part;
+                                    });
+                                
+                                formattedValue = [...new Set(formattedValue)].join(" ");
+
+                                formattedObj[key] = formattedValue;
+                            } else {
+                                formattedObj[key] = value;
+                            }
+                        }
+                    }
+                    return formattedObj;
+                }
+
+                function formatNumbersInObject(obj) {
+                    const formattedObj = {};
+                    for (const key in obj) {
+                        if (Object.hasOwnProperty.call(obj, key)) {
+                            let value = obj[key];
+
+                            if (typeof value === "object" && value !== null && "value" in value) {
+                                value = value.value;
+                            }
+
+                            if (typeof value === "string") {
+                                let formattedValue = value
+                                    .split(" ")
+                                    .map(part => {
+                                        const num = parseFloat(part);
+                                        return !isNaN(num) && Number.isInteger(num) ? num.toFixed(0) : part;
+                                    })
+                                    .join(" ");
+                                formattedObj[key] = formattedValue;
+                            } else {
+                                formattedObj[key] = value;
+                            }
+                        }
+                    }
+                    return formattedObj;
+                }
+
+                const formattedAbilityDetails = formatNumbersInObject(abilityDetails);
+
+                function mergeValues(abilityData, formattedDetails) {
+                    const result = { descriptions: {}, values: {} };
+
+                    Object.entries(formattedDetails).forEach(([key, value]) => {
+                        let normalValue = abilityData[key];
+                        if (!normalValue && key.endsWith("width")) {
+                            const lengthKey = key.replace("width", "length");
+                            normalValue = abilityData[lengthKey];
+                        }
+
+                        if (typeof normalValue !== "string") {
+                            normalValue = "";
+                        }
+
+                        if (!normalValue || normalValue === "0" || normalValue === "0%") {
+                            return;
+                        }
+
+                        let prefix = "";
+                        if (normalValue.startsWith("%")) {
+                            prefix = "%";
+                            normalValue = normalValue.slice(1).trim();
+                        }
+
+                        const valueArray = value.toString().split(" ").map(num => `${num.trim()}${prefix}`);
+                        const uniqueValues = Array.from(new Set(valueArray)).filter(val => val !== "0" && val !== "0%" && val);
+
+                        if (uniqueValues.length > 0) {
+                            result.descriptions[key] = normalValue;
+                            result.values[key] = uniqueValues.join(" / ");
+                        }
+                    });
+
+                    return result;
+                }
+                
+                abilitiesWithDetails[ability].values = formatValues(abilityDetails) || {};
+                abilitiesWithDetails[ability].valuesInfo = mergeValues(abilitiesWithDetails[ability], formattedAbilityDetails);
             }
         });
-
-        // Если нет данных о талантах и способностях, возвращаем ошибку
         if (!heroTalentsInformation && Object.keys(abilitiesWithDetails).length === 0) {
             return res.status(404).json({ error: `Hero ${heroName} not found or has no data` });
         }

@@ -1,0 +1,323 @@
+.ability {
+  position: relative;
+  width: 60px;
+  text-align: center;
+}
+
+.abilityImage {
+  width: 100%;
+  cursor: pointer;
+}
+
+.abilityDetails {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  transform: translate(-50%, 10px);
+  z-index: 12;
+}
+
+.ability:hover .abilityDetails {
+  visibility: visible;
+}
+
+.highlightedValue {
+  font-weight: bold;
+  color: #ff9900; /* Оранжевый цвет */
+  background-color: rgba(255, 255, 0, 0.2); /* Полупрозрачный жёлтый фон */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.abilityVideo {
+  width: 100%;
+  max-width: 400px; /* Максимальная ширина видео */
+  margin-bottom: 10px; /* Отступ снизу */
+  border-radius: 8px; /* Закругление углов */
+}
+
+
+
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+
+
+/* Общий контейнер */
+.render2Container {
+  display: flex;
+  flex-direction: row; /* Теперь размещаем элементы по горизонтали */
+  gap: 30px; /* Расстояние между левой и правой частью */
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  align-items: flex-start; /* Выровнять по верху */
+  padding: 0 2rem;
+  width: 100%;
+
+}
+
+.render2AbilityWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+.render2VideoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Стили для видео */
+.render2videoElement {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Лёгкая тень для видео */
+}
+
+.render2AbilitiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: -37px;
+}
+
+.render2ImageWrapper {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease;
+  position: relative;
+
+}
+
+
+.render2ImageWrapper:hover {
+  transform: scale(1.1);
+}
+
+.render2ImageSmall {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.render2ImageWrapper span {
+  color: #888;
+  font-size: 14px;
+}
+
+.render2AbilityInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 650px;
+  width: 100%;
+}
+
+.render2AbilityName {
+  font-size: 24px;
+  font-weight: bold;
+  color: white; /* Цвет текста */
+  margin: 0;
+  font-family: "Inter", serif;
+  line-height: 1;
+}
+
+.render2AbilityDescription {
+  font-size: 14px;
+  color: white;
+  font-family: "Inter", serif;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.render2AbilityInfoContainer{
+  display: flex;
+  justify-content: start;
+  gap: 0.5rem;
+  background-color: #121212;
+  padding: 0.5rem;
+
+  > img{
+    width: 95px;
+    height: 95px;
+    margin: 10px;
+    box-shadow: 0 0 10px #000;
+  }
+
+  > div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-top: 0.5rem;
+  }
+}
+
+.render2AbilityValuesContainer{
+  background-color: #000;
+  color: white;
+  padding: 20px 30px 15px 30px;
+
+  > div:first-child{
+    line-height: 1.45;
+  }
+}
+
+.abilityDescription, .abilityValue{
+  font-size: 14px;
+  font-family: "Inter", serif;
+}
+.abilityDescription{
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.abilityValue{
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-left: 0.3rem;
+}
+
+.mana_icon{
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: linear-gradient(#00A4DB, #007196);
+}
+
+.render2FieldItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", serif;
+  color: white;
+  gap: 0.4rem;
+  font-size: 13px;
+  font-weight: 400;
+
+  > img{
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.render2AbilityFields{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+  margin-top: 12px;
+}
+
+.lore_container{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 12px;
+  color: #aaa;
+  background-color: #111;
+  padding: 7px;
+}
+
+.noFoundAbilities{
+  padding-top: 8rem;
+  color: #f4bf58;
+  text-align: center;
+  font-weight: 400;
+  font-family: "Inter", serif;
+  font-size: 20px;
+}
+
+.render_talents_title{
+  text-align: center;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 43px;
+  padding-top: 5.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 1450px) {
+  .render2AbilityName{
+    font-size: 21px;
+  }
+
+  .render2AbilityDescription{
+    font-size: 13px;
+  }
+
+  .abilityDescription, .abilityValue{
+    font-size: 13px;
+  }
+
+  .lore_container{
+    font-size: 11px;
+  }
+
+  .render2AbilityInfo{
+    max-width: 550px;
+  }
+
+  .render2ImageWrapper{
+    width: 65px;
+    height: 65px;
+  }
+
+  .render_talents_title{
+    font-size: 30px;
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .render2Container{
+    padding: 0 1rem;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .render2Container{
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .render2AbilityInfo{
+    max-width: 100%;
+  }
+
+  .render2AbilityWrapper{
+    max-width: 100%;
+  }
+
+  .render_talents_title{
+    font-size: 22px;
+    margin-bottom: 1.5rem;
+  }
+}

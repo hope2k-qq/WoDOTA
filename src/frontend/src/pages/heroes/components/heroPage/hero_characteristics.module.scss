@@ -102,7 +102,7 @@
   font-size: 14px;
   margin-bottom: 15px;
   white-space: nowrap;
-  visibility: hidden;
+  display: none;
 }
 
 .tooltip::after {
@@ -128,7 +128,7 @@
 }
 
 .main_stats > div:hover .tooltip {
-  visibility: visible;
+  display: flex;
 }
 
 
@@ -230,7 +230,7 @@
 }
 
 .health_mana_block:hover .infoBlock {
-  display: block; /* Появляется при наведении на health_mana_block */
+  display: block;
 }
 
 .infoBlockTitle{
@@ -347,11 +347,11 @@
 
 @media (max-width: 1600px) {
   .hero_characteristics_main {
-    margin-top: 1.56rem;  /* Уменьшение отступа сверху на 22% */
+    margin-top: 1.56rem;
   }
 
   .hero_characteristics_wrapper {
-    gap: 15.6px;  /* Уменьшение расстояния между блоками на 22% */
+    gap: 15.6px;
   }
 
   .left_block,
@@ -417,82 +417,36 @@
   }
 }
 
-//@media (max-width: 767px) {
-//  .hero_characteristics_main {
-//    flex-direction: column;  /* Стекать блоки вертикально */
-//    margin-top: 1.2rem;  /* Уменьшение отступа сверху для мобильных устройств */
-//  }
-//
-//  .hero_characteristics_wrapper {
-//    flex-direction: column;  /* Стилизовать блоки в один столбик */
-//    gap: 15px;  /* Уменьшение расстояния между блоками */
-//  }
-//
-//  .left_block,
-//  .right_block {
-//    font-size: 14px;  /* Уменьшение шрифта внутри блоков */
-//    align-items: flex-start;  /* Выровнять элементы по левому краю */
-//  }
-//
-//  .attribute_block {
-//    margin-right: 0;  /* Убрать отступ справа */
-//    width: 100%;  /* Растягиваем блоки на всю ширину */
-//    padding: 0.5rem;  /* Небольшие отступы */
-//  }
-//
-//  .attribute_title {
-//    font-size: 13px;  /* Уменьшение размера шрифта для заголовка */
-//  }
-//
-//  .attribute_value {
-//    font-size: 16px;  /* Уменьшение шрифта для значения */
-//  }
-//
-//  .attribute_value img {
-//    width: 22px;  /* Уменьшение размера иконки */
-//    height: 22px;
-//  }
-//
-//  .right_block {
-//    gap: 10px;  /* Уменьшение расстояния между элементами */
-//    padding: 10px;  /* Уменьшение отступов внутри блока */
-//  }
-//
-//  .main_stats {
-//    font-size: 13px;  /* Уменьшение шрифта для статистики */
-//    gap: 10px;  /* Уменьшение расстояния между иконками и значениями */
-//  }
-//
-//  .main_stats > div > img {
-//    width: 22px;  /* Уменьшение размера иконок */
-//    height: 22px;
-//  }
-//
-//  .health_mana_block {
-//    font-size: 13px;  /* Уменьшение шрифта внутри блока здоровья и маны */
-//  }
-//
-//  .health_block, .mana_block {
-//    padding: 6px;  /* Уменьшение отступов внутри блоков */
-//  }
-//
-//  .stat_title {
-//    font-size: 13px;  /* Уменьшение размера шрифта для заголовков статистик */
-//  }
-//
-//  .stat_health_container,
-//  .stat_mana_container {
-//    font-size: 13px;  /* Уменьшение шрифта для контейнера статистики */
-//  }
-//
-//  .healthValue, .manaValue {
-//    font-size: 15px;  /* Уменьшение шрифта для значений */
-//  }
-//
-//  .healthRegen, .manaRegen {
-//    font-size: 10px;  /* Уменьшение шрифта для регенерации */
-//  }
-//}
+@media (max-width: 1200px) {
+  .infoBlock{
+    width: 400px;
+  }
+
+  .infoBlockTitle{
+    font-size: 17px;
+  }
+
+  .infoBlockText{
+    font-size: 12px;
+  }
+
+  .healthValue, .manaValue {
+    font-size: 14px;
+  }
+
+  .healthRegen, .manaRegen {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 750px) {
+  .health_mana_block:hover .infoBlock {
+    display: none;
+  }
+  .left_block:hover .info_block_attribute {
+    display: none;
+  }
+}
 
 
 

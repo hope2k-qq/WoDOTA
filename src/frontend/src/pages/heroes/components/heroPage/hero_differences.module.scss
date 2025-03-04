@@ -10,7 +10,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   z-index: 10;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .overlay_block_right_title,
@@ -34,18 +34,19 @@
 
 @media (max-width: 1600px) {
   .overlay_block_right {
-    max-width: 429px; /* 550px - 22% */
-    height: 390px; /* 500px - 22% */
-    margin-top: 39px; /* 50px - 22% */
+    max-width: 429px;
+    height: 390px;
+    padding-top: 39px;
+
   }
 
   .overlay_block_right_title {
-    font-size: 2.34rem; /* 3rem - 22% */
+    font-size: 2.34rem;
   }
 
   .overlay_block_right_text {
-    font-size: 1.56rem; /* 2rem - 22% */
-    margin-top: 0.78rem; /* 1rem - 22% */
+    font-size: 1.56rem;
+    margin-top: 0.78rem;
   }
 }
 
@@ -57,8 +58,9 @@
     right: auto;
     width: 100%;
     max-width: none;
+    background: #0a0b10;
     height: auto;
-    margin-top: 20px;
+    padding-top: 20px;
     align-items: center;
     text-align: center;
   }

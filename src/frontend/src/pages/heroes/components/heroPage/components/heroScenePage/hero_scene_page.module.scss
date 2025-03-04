@@ -1,9 +1,29 @@
 .canvasContainer {
-  width: 100vw;
+  position: relative;
+  width: 100%;
   height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #2d2d2d, #000000 87%);
+  background: linear-gradient(to bottom, #12131a, #000000 95%);
 }
+
+.canvasContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, #0a0b10 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .canvasContainer{
+    height: 60vh;
+  }
+}
+
+

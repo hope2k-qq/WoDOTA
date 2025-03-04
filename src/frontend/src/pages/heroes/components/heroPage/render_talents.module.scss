@@ -4,7 +4,51 @@
   flex-wrap: wrap;
   align-items: center;
   border-radius: 15px;
+
+
 }
+
+.menu_container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1492px;
+  padding: 15px 0;
+}
+
+.additionalButtons{
+  gap: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upgradeNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 28px;
+  pointer-events: none;
+  line-height: 1;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+
+  text-shadow:
+          -1px -1px 0 black,
+          1px -1px 0 black,
+          -1px  1px 0 black,
+          1px  1px 0 black,
+          -1px  0px 0 black,
+          1px  0px 0 black,
+          0px -1px 0 black,
+          0px  1px 0 black;
+}
+
+
 
 .grid {
   display: grid;
@@ -15,7 +59,6 @@
   background-size: cover;
   margin: 0.6rem 0 0.6rem 0;
   border-radius: 7px;
-
 }
 
 .grid::after {
@@ -24,6 +67,89 @@
   grid-row: 8;
   margin-top: 17px;
   overflow: visible;
+}
+
+.talentSection_info{
+  position: absolute;
+  text-align: start;
+  top: 100%;
+  left: 0;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Inter", serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.square_arrow_down{
+  > div:last-child::after {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.7rem;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #262c37;
+    z-index: 2000;
+    pointer-events: none;
+  }
+
+  > div:last-child::before {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.55rem;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 22px solid black;
+    pointer-events: none;
+    z-index: 500;
+  }
+}
+
+.square_arrow_up{
+  > div:last-child::after {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: 0.85rem;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #262c37;
+    z-index: 2000;
+    pointer-events: none;
+  }
+
+  > div:last-child::before {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: 0.7rem;
+    transform: translateX(-50%);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 22px solid black;
+    pointer-events: none;
+  }
 }
 
 .square {
@@ -41,11 +167,12 @@
   min-width: 100%;
   min-height: 100%;
   object-fit: contain;
+  position: relative;
 }
 
 .withBorder {
   position: relative;
-  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .withBorder::after {
@@ -56,27 +183,34 @@
   bottom: 0;
   position: absolute;
   border: 2px solid #ffcc00;
-  box-sizing: border-box;
   border-radius: 8px;
-  animation: blink 3s infinite;
+  //animation: blink 3s infinite;
   opacity: 80%;
 }
 
-@keyframes blink {
-  0% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #ffcc00;
-  }
-  100% {
-    border-color: transparent;
-  }
+//@keyframes blink {
+//  0% {
+//    border-color: transparent;
+//  }
+//  50% {
+//    border-color: #ffcc00;
+//  }
+//  100% {
+//    border-color: transparent;
+//  }
+//}
+
+
+
+.render_talents_title{
+  text-align: center;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 43px;
+  padding-top: 5.5rem;
+  margin-bottom: 3rem;
 }
-
-
-
-
 
 
 
@@ -142,61 +276,78 @@
 
 .menu_center_down {
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
 
   > div {
     position: relative;
     margin-top: 1.2rem;
   }
+}
 
-  > div::after {
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 20px solid #262c37;
-  }
+.menu_type_left_location{
+  left: calc(0% - 88px) !important;
+}
 
-  > div::before {
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 22px solid black;
-  }
+.menu_type_right_location{
+  right: calc(0% - 88px) !important;
+}
+
+.menu_type_center_location{
+  left: 50% !important;
+  transform: translateX(-50%);
+  display: block !important;
+}
+
+.menu_type_left{
+  left: 6px;
+  display: flex;
+  justify-content: start;
+}
+
+.menu_type_right{
+  right: 6px;
+  display: flex;
+  justify-content: end;
+}
+
+.menu_type_center{
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .menu_center_up {
   bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  //transform: translateX(-50%);
 
   > div {
     position: relative;
     margin-bottom: 1.2rem;
   }
 
-  > div::after {
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 20px solid #262c37;
-  }
 
-  > div::before {
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 22px solid black;
-  }
 }
+
+.overlayGrid {
+  position: absolute;
+  top: -30px; /* Поднимаем оверлей над картинкой */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Ширина оверлея */
+  height: 30px; /* Высота оверлея */
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  font-size: 12px;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.square:hover .overlayContainer {
+  opacity: 1; /* Показываем при наведении */
+}
+
 
 
 
@@ -207,7 +358,7 @@
   z-index: 999;
   max-width: 355px;
   width: 355px;
-
+  pointer-events: none;
 
   > div{
     display: inline-block;
@@ -240,12 +391,19 @@
   }
 }
 
-.menu:hover{
-  visibility: hidden !important;
-}
 .square:hover .menu {
   visibility: visible;
 }
+
+.square:hover {
+  > div:last-child::after{
+    visibility: visible;
+  }
+  > div:last-child::before{
+    visibility: visible;
+  }
+}
+
 
 
 
@@ -260,9 +418,13 @@
   flex-direction: column;
   gap: 10px;
   margin: 0 1.25rem 0 1.25rem;
+  position: relative;
+  padding-top: 3rem;
 }
 
 .talentSection_title {
+  position: absolute;
+  bottom: calc(94.5%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -290,6 +452,7 @@
 
 .progressBar {
   position: absolute;
+  margin-top: 0.2rem;
   top: 100%;
   left: 0;
   height: 5px;
@@ -297,4 +460,479 @@
   border-radius: 10px;
   transition: width 0.3s ease-in-out;
 }
+
+.grayscale {
+  filter: grayscale(98%);
+}
+
+.no-filter {
+  filter: none;
+}
+
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(155, 157, 177, 0.3);
+  border-top: 4px solid #f4bf58;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container-attribute{
+  display: flex;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.slider-label {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  color: #808fa6;
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #292a2f;
+  border-radius: 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 5px;
+  left: 5%;
+  background-color: #9b9db1;
+  transition: all 0.3s ease-in-out;
+}
+
+input:checked + .slider {
+  background-color: #f4bf58;
+}
+
+input:checked + .slider:before {
+  background-color: #12131a;
+  left: calc(100% - 5% - 16px);
+}
+
+.menu_container_bottom{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1492px;
+  padding-top: 5.5rem;
+
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  font-family: "Inter", serif;
+  font-size: 18px;
+  background: linear-gradient(271.68deg, rgba(255, 85, 85, .235) 92.91%, rgba(255, 85, 85, .04) 177.8%);
+  color: #f55;
+  border: none;
+  font-weight: 600;
+  height: 42px;
+  padding: 0 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  > svg{
+    margin-right: 8px;
+  }
+}
+
+.resetButton:hover {
+  color: white;
+  background: linear-gradient(271.68deg, rgba(204, 0, 0, .5) 92.91%, rgba(204, 0, 0, .2) 177.8%); /* Темнее фон */
+  > svg{
+    fill: white;
+  }
+}
+
+
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: #f55;
+  transition: transform 0.3s;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(271.68deg, rgba(76, 175, 80, 0.8) 92.91%, rgba(76, 175, 80, 0.4) 177.8%);
+  font-size: 16px;
+  font-family: "Inter", serif;
+  font-weight: 600;
+  color: white;
+  border: none;
+  height: 42px;
+  padding: 0 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  > svg{
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.saveButton:hover {
+  background: linear-gradient(271.68deg, rgba(56, 142, 60, 0.8) 92.91%, rgba(56, 142, 60, 0.4) 177.8%); /* Более тёмный зелёный при наведении */
+}
+
+
+
+/* Разделительная линия */
+.separator {
+  width: 1px;
+  height: 22px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.toggleUpgrade {
+  display: flex;
+  align-items: center;
+  font-family: "Inter", serif;
+  justify-content: center;
+  background-color: #ff9800;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0 20px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggleUpgrade:hover {
+  background-color: #e68900; /* Темнее при наведении */
+}
+
+.toggleUpgrade:active {
+  background-color: #cc7a00;
+  transform: scale(0.98);
+}
+
+
+
+
+.additionalButtonsWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.settings{
+  background-color: #202127;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  > svg{
+    fill: #9b9db1;
+    width: 26px;
+    height: 26px;
+  }
+  &:hover {
+    filter: brightness(1.1);
+    > svg {
+      animation: rotate-animation 0.5s ease-in-out;
+    }
+  }
+}
+
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+/* Стили для затемняющего фона */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  display: flex;
+  justify-content: center; /* Выравнивание по горизонтали */
+  align-items: center; /* Выравнивание по вертикали */
+  z-index: 1000; /* Высокий уровень, чтобы окно было поверх всего */
+}
+
+/* Стили для содержимого модального окна */
+.modalContent {
+  background: rgba(29, 30, 37); /* Фон с прозрачностью */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Стили для кнопки закрытия */
+.closeButton {
+  background: linear-gradient(104.52deg, hsla(0, 0%, 85%, .535) -158%, hsla(0, 0%, 85%, .09) -55.77%);
+  color: #9b9db1;
+  font-family: "Inter", serif;
+  border: none;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.closeButton:hover {
+  background: linear-gradient(104.52deg, hsla(0, 0%, 85%, .7) -158%, hsla(0, 0%, 85%, .2) -55.77%); /* Более яркий градиент */
+  color: #ffffff; /* Белый цвет текста */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+  transform: scale(1.05); /* Легкое увеличение размера кнопки */
+}
+
+.settings_tittle{
+  color: white;
+  font-weight: bold;
+  font-family: "Inter", serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Основные стили для кнопки */
+.saveButtonInModal {
+  background: #44b678; /* Светлый зеленый фон */
+  color: white;
+  font-family: "Inter", serif;
+  border: 3px solid #161720; /* Темная граница */
+  padding: 12px 24px; /* Отступы внутри кнопки */
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 10px 0;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  > svg{
+    width: 16px;
+    height: 16px;
+    fill: #333;
+  }
+}
+
+.saveButtonDisplay{
+  display: none;
+}
+
+.saveButtonInModal:hover {
+  background-color: #39a44d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень для подсветки */
+}
+
+/* Стили для заблокированной кнопки */
+.saveButtonInModal:disabled {
+  background: #feb602; /* Желтый фон для заблокированной кнопки */
+  color: #333; /* Темный цвет текста */
+  font-family: "Inter", serif;
+  font-weight: 600;
+  cursor: not-allowed; /* Курсор недоступности */
+  transform: none; /* Нет анимации для заблокированной кнопки */
+}
+
+/* Эффект при наведении на заблокированную кнопку */
+.saveButtonInModal:disabled:hover {
+  background-color: #feb602; /* Без изменений для заблокированной кнопки */
+  box-shadow: none; /* Убираем тень */
+}
+
+
+.ModalSaveButtonContainer{
+  display: flex;
+  gap: 1rem;
+}
+.dots {
+  display: inline-block;
+}
+
+.dot {
+  opacity: 0;
+  animation: blink 1.4s infinite both;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@media (max-width: 1548px) {
+  .menu_container, .menu_container_bottom{
+    max-width: 981px;
+  }
+  .resetButton{
+    > span:last-child{
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1450px) {
+  .render_talents_title{
+    font-size: 30px;
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .render_talents_title{
+    font-size: 22px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 1037px) {
+  .menu_container, .menu_container_bottom{
+    max-width: 470px;
+  }
+
+  .toggleUpgrade{
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .resetButton{
+    font-size: 16px;
+    padding: 0 12px;
+  }
+  .icon{
+    width: 16px;
+    height: 16px;
+  }
+
+  .settings{
+    > svg{
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .additionalButtons{
+    gap: 0.3rem;
+  }
+
+  .talentSection_info{
+    font-size: 17px;
+  }
+
+  .saveButton{
+    display: none;
+  }
+  .saveButtonDisplay{
+    display: flex;
+    justify-content: center;
+    //width: 100%;
+  }
+
+  .modalContent{
+    max-width: 450px;
+  }
+
+
+  //.additionalButtons{
+  //  flex-direction: column;
+  //}
+}
+
+
+
+
+
 

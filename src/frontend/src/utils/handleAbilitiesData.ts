@@ -1,10 +1,14 @@
 import { convertUnknownFieldsToString } from './convertUnknownFieldsToString';
 
-interface AbilityData {
+export interface AbilityData {
     name: string;
     description: string;
     values: Record<string, any>;
     [key: string]: any;
+    valuesInfo: {
+        descriptions: Record<string, string>;
+        values: Record<string, string>;
+    };
 }
 
 export const handleAbilitiesData = (
@@ -18,6 +22,7 @@ export const handleAbilitiesData = (
             name: abilityData.name,
             description: abilityData.description,
             values: abilityData.values || {},
+            valuesInfo: abilityData.valuesInfo ?? { descriptions: {}, values: {} }, // Добавлено значение по умолчанию
             ...convertUnknownFieldsToString(abilityData),
         };
     });

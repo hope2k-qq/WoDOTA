@@ -34,10 +34,9 @@ export const HeroesPage: React.FC = () => {
             openDB('heroes-db', CACHE_VERSION, {
                 upgrade(db, oldVersion, newVersion) {
                     if (newVersion !== null && newVersion > oldVersion) {
-                        if (db.objectStoreNames.contains('images')) {
-                            db.deleteObjectStore('images');
+                        if (!db.objectStoreNames.contains('heroes')) {
+                            db.createObjectStore('heroes');
                         }
-                        db.createObjectStore('images');
                     }
                 }
             }).then(() => {
@@ -50,10 +49,9 @@ export const HeroesPage: React.FC = () => {
         const dbPromise = openDB('heroes-db', CACHE_VERSION, {
             upgrade(db, oldVersion, newVersion) {
                 if (newVersion !== null && newVersion > oldVersion) {
-                    if (db.objectStoreNames.contains('images')) {
-                        db.deleteObjectStore('images');
+                    if (!db.objectStoreNames.contains('heroes')) {
+                        db.createObjectStore('heroes');
                     }
-                    db.createObjectStore('images');
                 }
             }
         });
@@ -68,16 +66,18 @@ export const HeroesPage: React.FC = () => {
                 const updatedUrls: { [key: string]: string | null } = {};
                 const imagePromises: Promise<void>[] = [];
 
+                // Работаем с объектом 'images' в базе
+                const imagesStore = db.transaction('heroes', 'readonly').objectStore('heroes');
                 for (const hero of data) {
-                    const cachedImage = await db.get('images', hero.name);
+                    const cachedImage = await imagesStore.get(hero.name);
                     if (cachedImage) {
                         updatedUrls[hero.name] = URL.createObjectURL(cachedImage);
                     } else {
                         updatedUrls[hero.name] = null;
                     }
                 }
-                setLoading(false);
 
+                setLoading(false);
                 setImageUrl(updatedUrls);
 
                 for (const hero of data) {
@@ -89,7 +89,8 @@ export const HeroesPage: React.FC = () => {
                                     const response = await fetch(url);
                                     const imageBlob = await response.blob();
 
-                                    await db.put('images', imageBlob, hero.name);
+                                    const imagesStore = db.transaction('heroes', 'readwrite').objectStore('heroes');
+                                    await imagesStore.put(imageBlob, hero.name);
 
                                     updatedUrls[hero.name] = URL.createObjectURL(imageBlob);
 
@@ -119,6 +120,7 @@ export const HeroesPage: React.FC = () => {
             console.error('Error in fetchHeroesData:', err);
         });
     }, [API_URL]);
+
 
 
 

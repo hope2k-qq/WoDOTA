@@ -7,8 +7,7 @@ const abilitiesDataService = {
     getAbilityDetails: (abilityName) => {
         let originalHeroName = abilityName.split('_')[0];
         let updatedAbilityName = abilityName;
-
-        // Handle name replacement (for hero name changes)
+        
         for (const [oldName, newName] of Object.entries(replacements_heroes)) {
             if (updatedAbilityName.startsWith(newName)) {
                 updatedAbilityName = updatedAbilityName.replace(newName, oldName);
@@ -21,7 +20,6 @@ const abilitiesDataService = {
         const secondaryFilePath = path.resolve(__dirname, '../assets/npc_dota_hero_medusa.txt');
 
         let abilityDetails = findAbilityDetails(primaryFilePath, updatedAbilityName);
-
         if (!abilityDetails) {
             abilityDetails = findAbilityDetails(primaryFilePath, abilityName);
         }
@@ -46,31 +44,32 @@ const findAbilityDetails = (filePath, abilityName) => {
     try {
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         const abilityRegex = new RegExp(`"${abilityName}(_custom)?"\\s*{[^}]*?"AbilityValues"\\s*{`, 'gs');
-        const match = fileContent.match(abilityRegex);
+        let match = fileContent.match(abilityRegex);
+        let abilityValuesBlock = null;
 
-        if (!match) {
-            return null;
+        if (match) {
+            const startIndex = fileContent.indexOf(match[0]) + match[0].length - 1;
+            abilityValuesBlock = extractNestedBlock(fileContent, startIndex);
+        } else {
+            const fallbackRegex = new RegExp(`"${abilityName}(_custom)?"\\s*{`, 'gs');
+            match = fileContent.match(fallbackRegex);
+
+            if (!match) {
+                return null;
+            }
         }
-
-        const startIndex = fileContent.indexOf(match[0]) + match[0].length - 1;
-        const abilityValuesBlock = extractNestedBlock(fileContent, startIndex);
-
-        // Look for extra fields outside AbilityValues
+        
         const extraFields = extractExtraFields(fileContent, abilityName);
+        
+        const abilityData = abilityValuesBlock ? parseBlock(abilityValuesBlock) : {};
 
-        if (!abilityValuesBlock) {
-            return null;
-        }
-
-        const abilityData = parseBlock(abilityValuesBlock);
-
-        // Merge extra fields into the final result
         return { ...abilityData, ...extraFields };
     } catch (err) {
         console.error(`Error reading file ${filePath}:`, err);
         return null;
     }
 };
+
 
 // Extract extra fields for a specific ability
 const extractExtraFields = (fileContent, abilityName) => {
@@ -81,6 +80,7 @@ const extractExtraFields = (fileContent, abilityName) => {
         "abilitycooldown",
         "abilitycastrange",
         "abilitymanacost",
+        "abilitychanneltime",
     ];
 
     // Регулярка для поиска блока способности

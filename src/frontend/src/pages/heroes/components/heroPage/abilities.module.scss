@@ -27,6 +27,7 @@
   transform: translate(10px, -50%);
   z-index: 12;
   white-space: normal;
+  pointer-events: none;
 }
 
 
@@ -58,7 +59,8 @@
 .ability_title{
   font-weight: bold;
   font-size: 1.7rem;
-  font-family: 'Merriweather', serif;
+  line-height: 1.2;
+  font-family: "Inter", serif;
 }
 
 
@@ -99,5 +101,19 @@
   .ability_description {
     font-size: 12.75px; /* 17px - 25% */
     margin-top: 2.25px; /* 3px - 25% */
+  }
+}
+
+@media (max-width: 768px) {
+  .abilityDetails {
+    top: auto;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  .abilitiesContainer{
+    justify-content: center;
+    padding: 0 4rem;
   }
 }

@@ -30,8 +30,9 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
     const mouseDownRef = useRef<boolean>(false);
     const initialMouseXRef = useRef<number>(0);
 
-    const [isMouseInsideCanvas, setIsMouseInsideCanvas] = useState<boolean>(false); // Состояние для отслеживания мыши внутри Canvas
-    const [canvasPosition, setCanvasPosition] = useState<[number, number, number]>([0, -0.9, 0]); // Управляемая позиция сцены и героя
+    const [isMouseInsideCanvas, setIsMouseInsideCanvas] = useState<boolean>(false);
+    const [canvasPosition, setCanvasPosition] = useState<[number, number, number]>([0, -0.9, 0]);
+    const [heroScale, setHeroScale] = useState<[number, number, number]>([0.66, 0.66, 0.66]);
 
     const handleMouseMove = (event: MouseEvent) => {
         if (isMouseInsideCanvas && mouseDownRef.current && event.button === 0) {
@@ -61,20 +62,24 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
         setIsMouseInsideCanvas(false);
     };
 
-    // Adjust canvas position based on screen width
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 1200 && window.innerWidth > 768) {
                 setCanvasPosition([0.3, -0.9, 0]);
+                // setHeroScale([0.6, 0.6, 0.6]);
             } else{
                 setCanvasPosition([0, -0.9, 0]);
             }
+            // if (window.innerWidth < 768) {
+            //     setHeroScale([0.5, 0.5, 0.5]);
+            // } else if (window.innerWidth > 1200) {
+            //     setHeroScale([0.66, 0.66, 0.66]);
+            // }
+
         };
 
-        // Initialize position on page load
         handleResize();
 
-        // Add resize event listener
         window.addEventListener('resize', handleResize);
 
         // Cleanup on component unmount
@@ -190,7 +195,7 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
                         heroName={heroName}
                         animationName={selectedHeroAnimation}
                         isPaused={isPaused}
-                        scale={[0.66, 0.66, 0.66]}
+                        scale={heroScale}
                         rotation={[0, pedestalRotation, 0]}
                         position={canvasPosition}
                     />
