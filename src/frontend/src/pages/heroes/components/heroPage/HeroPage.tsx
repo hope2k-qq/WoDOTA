@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import styles from './hero_page.module.scss';
-import { HeroScenePage } from './components/heroScenePage/HeroScenePage';
+//import { HeroScenePage } from './components/heroScenePage/HeroScenePage';
 import AbilitiesSection from './AbilitiesSection';
 import Abilities from './Abilities';
 import RenderTalents from './RenderTalents';
