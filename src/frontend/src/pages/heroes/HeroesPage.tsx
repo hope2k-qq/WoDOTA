@@ -23,7 +23,7 @@ export const HeroesPage: React.FC = () => {
     const [isSearching, setIsSearching] = useState<boolean>(false);
     const [showCustomOnly, setShowCustomOnly] = useState<boolean>(false);
     const API_URL = process.env.REACT_APP_API_URL;
-    const CACHE_VERSION = 3;
+    const CACHE_VERSION = 4;
 
     useEffect(() => {
         const cachedVersion = localStorage.getItem('cache-version');
