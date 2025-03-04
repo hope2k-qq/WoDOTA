@@ -49,7 +49,6 @@ const HeroPage: React.FC = () => {
         fetchHeroData();
     }, [API_URL, name]);
 
-    // Маппинг атрибутов
     const attributeData: Record<AttributeType, AttributeData> = {
         'int': {
             text: 'ИНТЕЛЛЕКТ',

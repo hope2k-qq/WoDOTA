@@ -18,9 +18,10 @@ export const formatAbilityDescription = (
         return match.split(' ').join(' / ');
     });
 
-    formattedDescription = formattedDescription.replace(/\{\"text\": \"(.*?)\", \"color\": \"(.*?)\"\}/g, (match, text, color) => {
+    formattedDescription = formattedDescription.replace(/{"text": "(.*?)", "color": "(.*?)"}/g, (match, text, color) => {
         return `<span style="color: ${color}; font-weight: bold;">${text}</span>`;
     });
+
 
     formattedDescription = formattedDescription.replace(/\\n\\n/g, '<br/><br/>');
 

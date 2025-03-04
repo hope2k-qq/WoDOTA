@@ -11,10 +11,12 @@ import HeroPage from "../pages/heroes/components/heroPage/HeroPage";
 import {TopBar} from "../widgets/topBar/TopBar";
 import {NotFoundPage} from "../pages/notFound/NotFoundPage";
 import {Footer} from "../widgets/footer/Footer";
+import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 
 export const Routing = () => {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <div style={{ width: "100%", maxWidth: "100%", margin: "0 auto" }}>
                 <TopBar />
                 <Grid container style={{ width: "100%" }}>
