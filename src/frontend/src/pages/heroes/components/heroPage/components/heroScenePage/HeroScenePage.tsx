@@ -4,7 +4,7 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { HeroModelPage } from "./components/heroModelPage/HeroModelPage";
 import { PedestalModelPage } from "./components/pedestalModelPage/PedestalModelPage";
 import { getImageUrl } from '../../../../../../utils/r2Storage';
-import axios from "axios";
+// import axios from "axios";
 import { Group } from 'three';
 import styles from './hero_scene_page.module.scss';
 
@@ -13,17 +13,17 @@ interface HeroScenePageProps {
 }
 
 export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
-    const [selectedHeroAnimation, setSelectedHeroAnimation] = useState<string>('idle');
-    const [heroes, setHeroes] = useState<string[]>([]);
-    const [isPaused, setIsPaused] = useState<boolean>(false);
-    const [loading, setLoading] = useState<boolean>(true);
+    // const [selectedHeroAnimation, setSelectedHeroAnimation] = useState<string>('idle');
+    //const [heroes, setHeroes] = useState<string[]>([]);
+    // const [isPaused, setIsPaused] = useState<boolean>(false);
+    // const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     const [pedestalUrl, setPedestalUrl] = useState<string | null>(null);
     const [pedestalRotation, setPedestalRotation] = useState<number>(0); // Состояние для угла поворота пьедестала
     const objectKeyPedestal = 'models/pedestal/pedestal_2023.glb';
 
-    const API_URL = process.env.REACT_APP_API_URL;
+    //const API_URL = process.env.REACT_APP_API_URL;
 
     const lightTargetRef = useRef<Group>(null); // Ссылка на объект цели для света
 
@@ -32,7 +32,6 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
 
     const [isMouseInsideCanvas, setIsMouseInsideCanvas] = useState<boolean>(false);
     const [canvasPosition, setCanvasPosition] = useState<[number, number, number]>([0, -0.9, 0]);
-    const [heroScale, setHeroScale] = useState<[number, number, number]>([0.66, 0.66, 0.66]);
 
     const handleMouseMove = (event: MouseEvent) => {
         if (isMouseInsideCanvas && mouseDownRef.current && event.button === 0) {
@@ -89,36 +88,34 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
     }, []);
 
     useEffect(() => {
-        const fetchHeroesData = async () => {
-            try {
-                const response = await axios.get(`${API_URL}/heroes`);
-                const data = response.data;
-                const heroNames = data.map((hero: { name: string }) => hero.name);
-                setHeroes(heroNames);
-            } catch (error) {
-                console.error('Error fetching hero data:', error);
-                setError('Failed to fetch hero data.');
-            } finally {
-                setLoading(false);
-            }
-        };
+        // const fetchHeroesData = async () => {
+        //     try {
+        //         const response = await axios.get(`${API_URL}/heroes`);
+        //         const data = response.data;
+        //         const heroNames = data.map((hero: { name: string }) => hero.name);
+        //         setHeroes(heroNames);
+        //     } catch (error) {
+        //         console.error('Error fetching hero data:', error);
+        //         setError('Failed to fetch hero data.');
+        //     } finally {
+        //         setLoading(false);
+        //     }
+        // };
 
-        fetchHeroesData().catch(err => {
-            console.error('Error in fetchHeroesData:', err);
-        });
+        // fetchHeroesData().catch(err => {
+        //     console.error('Error in fetchHeroesData:', err);
+        // });
 
-        // Добавляем события для обработки движения мыши
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mousedown', handleMouseDown);
         window.addEventListener('mouseup', handleMouseUp);
 
-        // Очистка событий при размонтировании компонента
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('mousedown', handleMouseDown);
             window.removeEventListener('mouseup', handleMouseUp);
         };
-    }, [isMouseInsideCanvas]);
+    }, [isMouseInsideCanvas, handleMouseMove, handleMouseDown, handleMouseUp]);
 
     const fetchModelUrl = async (objectKey: string, setModelUrl: React.Dispatch<React.SetStateAction<string | null>>) => {
         try {
@@ -137,17 +134,17 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
         fetchModelUrl(objectKeyPedestal, setPedestalUrl);
     }, [objectKeyPedestal]);
 
-    const handleHeroAnimationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedHeroAnimation(event.target.value);
-    };
+    // const handleHeroAnimationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    //     setSelectedHeroAnimation(event.target.value);
+    // };
 
-    const togglePause = () => {
-        setIsPaused(!isPaused);
-    };
+    // const togglePause = () => {
+    //     setIsPaused(!isPaused);
+    // };
 
-    if (loading) {
-        return <div style={{ color: 'blue' }}>Loading heroes...</div>;
-    }
+    // if (loading) {
+    //     return <div style={{ color: 'blue' }}>Loading heroes...</div>;
+    // }
 
     if (error) {
         return <div style={{ color: 'red' }}>Error: {error}</div>;
@@ -193,9 +190,9 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
                 {heroName && (
                     <HeroModelPage
                         heroName={heroName}
-                        animationName={selectedHeroAnimation}
-                        isPaused={isPaused}
-                        scale={heroScale}
+                        animationName={'idle'}
+                        isPaused={false}
+                        scale={[0.66, 0.66, 0.66]}
                         rotation={[0, pedestalRotation, 0]}
                         position={canvasPosition}
                     />

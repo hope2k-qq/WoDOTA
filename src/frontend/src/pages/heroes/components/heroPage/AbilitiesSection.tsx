@@ -35,7 +35,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
     const [abilitiesSrcs, setAbilitiesSrcs] = useState<{ [key: string]: string | null }>({});
     const [imageSrc, setImageSrc] = useState('');
     const [videoSrc, setVideoSrc] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+    //const [isLoading, setIsLoading] = useState(false);
     const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
@@ -85,7 +85,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
     useEffect(() => {
         const attemptLoadResources = async () => {
             if (!selectedAbility || !heroName) return;
-            setIsLoading(true);
+            //setIsLoading(true);
             let modifiedHeroName = heroName;
             let modifiedAbility = selectedAbility;
 
@@ -104,7 +104,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
             } catch (e) {
                 setVideoSrc('noFound');
             } finally {
-                setIsLoading(false);
+                //setIsLoading(false);
             }
         };
 
@@ -120,7 +120,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
             const firstAbility = Object.keys(heroAbilities)[0];
             setSelectedAbility(firstAbility);
         }
-    }, [heroAbilities]);
+    }, [heroAbilities, selectedAbility]);
 
     const parseAbilityDescription = (description: string) => {
         return description
