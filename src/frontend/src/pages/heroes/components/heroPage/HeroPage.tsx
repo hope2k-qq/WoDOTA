@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import styles from './hero_page.module.scss';
 // import { HeroScenePage } from './components/heroScenePage/HeroScenePage';
-//import AbilitiesSection from './AbilitiesSection';
+import AbilitiesSection from './AbilitiesSection';
 // import Abilities from './Abilities';
 import RenderTalents from './RenderTalents';
 import React, { useEffect, useState } from 'react';
@@ -103,7 +103,7 @@ const HeroPage: React.FC = () => {
                                talents_information={heroInformation?.talents_information || {}}
                                talents_description={heroInformation?.talents_description || {}}/>
             </div>
-            {/*<AbilitiesSection heroName={name || 'slark'}/>*/}
+            <AbilitiesSection heroName={name || 'slark'}/>
         </div>
     );
 };

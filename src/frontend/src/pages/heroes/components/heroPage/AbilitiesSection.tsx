@@ -33,8 +33,8 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
     const [selectedAbility, setSelectedAbility] = useState<string | null>(null);
     const [isVideoLoaded, setVideoLoaded] = useState(false);
     const [abilitiesSrcs, setAbilitiesSrcs] = useState<{ [key: string]: string | null }>({});
-    const [imageSrc, setImageSrc] = useState('');
-    const [videoSrc, setVideoSrc] = useState('');
+    const [imageSrc, setImageSrc] = useState<{ [key: string]: string }>({});
+    const [videoSrc, setVideoSrc] = useState<{ [key: string]: string }>({});
     //const [isLoading, setIsLoading] = useState(false);
     const API_URL = process.env.REACT_APP_API_URL;
 
@@ -53,8 +53,16 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
         if (heroAbilities) {
             const fetchImages = async () => {
                 try {
-                    const images = await fetchAbilityImages(heroAbilities);
-                    setAbilitiesSrcs(images);
+                    const cachedImages = sessionStorage.getItem(heroName);
+                    if (cachedImages) {
+                        setAbilitiesSrcs(JSON.parse(cachedImages));
+                    } else {
+                        const images = await fetchAbilityImages(heroAbilities);
+
+                        sessionStorage.setItem(heroName, JSON.stringify(images));
+
+                        setAbilitiesSrcs(images);
+                    }
                 } catch (error) {
                     console.error('Error fetching ability images:', error);
                 }
@@ -62,19 +70,41 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
 
             fetchImages();
         }
-    }, [heroAbilities]);
+    }, [heroAbilities, heroName]);
+
+
+
+
 
     const tryLoadResource = (type: 'jpg' | 'webm', name: string, selectedAbility: string): Promise<string> => {
         return new Promise((resolve, reject) => {
+            // Create a unique cache key based on the name and ability
+            const cacheKey = `${name}_${selectedAbility}_${type}`;
+
+            // Check if the resource is already in sessionStorage
+            const cachedSrc = sessionStorage.getItem(cacheKey);
+            if (cachedSrc) {
+                resolve(cachedSrc);
+                return;
+            }
+
             const src = `https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/abilities/${name}/${selectedAbility}.${type}`;
             const resource = type === 'jpg' ? new Image() : document.createElement('video');
             resource.src = src;
 
             if (type === 'jpg') {
-                resource.onload = () => resolve(src);
+                resource.onload = () => {
+                    // Store the image URL in sessionStorage
+                    sessionStorage.setItem(cacheKey, src);
+                    resolve(src);
+                };
                 resource.onerror = () => reject();
             } else if (type === 'webm') {
-                resource.onloadeddata = () => resolve(src);
+                resource.onloadeddata = () => {
+                    // Store the video URL in sessionStorage
+                    sessionStorage.setItem(cacheKey, src);
+                    resolve(src);
+                };
                 resource.onerror = () => reject();
             }
         });
@@ -82,10 +112,11 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
 
 
 
+
     useEffect(() => {
         const attemptLoadResources = async () => {
             if (!selectedAbility || !heroName) return;
-            //setIsLoading(true);
+
             let modifiedHeroName = heroName;
             let modifiedAbility = selectedAbility;
 
@@ -99,20 +130,15 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
                 const pendingImageSrc = await tryLoadResource('jpg', modifiedHeroName, modifiedAbility);
                 const pendingVideoSrc = await tryLoadResource('webm', modifiedHeroName, modifiedAbility);
 
-                setImageSrc(pendingImageSrc);
-                setVideoSrc(pendingVideoSrc);
+                setImageSrc(prev => ({ ...prev, [selectedAbility]: pendingImageSrc }));
+                setVideoSrc(prev => ({ ...prev, [selectedAbility]: pendingVideoSrc }));
             } catch (e) {
-                setVideoSrc('noFound');
-            } finally {
-                //setIsLoading(false);
+                setVideoSrc(prev => ({ ...prev, [selectedAbility]: 'noFound' }));
             }
         };
 
         attemptLoadResources();
     }, [heroName, selectedAbility]);
-
-
-
 
 
     useEffect(() => {
@@ -121,6 +147,37 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
             setSelectedAbility(firstAbility);
         }
     }, [heroAbilities, selectedAbility]);
+
+    useEffect(() => {
+        const loadAllAbilities = async () => {
+            if (!heroAbilities) return;
+
+            for (const ability in heroAbilities) {
+                if (ability === selectedAbility) continue;
+
+                let modifiedHeroName = heroName;
+                let modifiedAbility = ability;
+
+                const replacementHeroName = replacements_heroes[heroName];
+                if (replacementHeroName) {
+                    modifiedHeroName = replacementHeroName;
+                    modifiedAbility = ability.replace(heroName, replacementHeroName);
+                }
+
+                try {
+                    const pendingImageSrc = await tryLoadResource('jpg', modifiedHeroName, modifiedAbility);
+                    const pendingVideoSrc = await tryLoadResource('webm', modifiedHeroName, modifiedAbility);
+
+                    setImageSrc(prev => ({ ...prev, [ability]: pendingImageSrc }));
+                    setVideoSrc(prev => ({ ...prev, [ability]: pendingVideoSrc }));
+                } catch (e) {
+                    setVideoSrc(prev => ({ ...prev, [ability]: 'noFound' }));
+                }
+            }
+        };
+
+        loadAllAbilities();
+    }, [heroAbilities, heroName, selectedAbility]);
 
     const parseAbilityDescription = (description: string) => {
         return description
@@ -147,6 +204,10 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
         if (!heroAbilities || Object.keys(heroAbilities).length === 0) {
             return <div></div>;
         }
+
+        const selectedImageSrc = imageSrc[selectedAbility ?? ''] ?? '/noFound.png';
+        const selectedVideoSrc = videoSrc[selectedAbility ?? ''] ?? 'noFound';
+
         return (
             <div>
                 <div className={styles.render_talents_title}>СПОСОБНОСТИ:</div>
@@ -157,15 +218,15 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
                         >
                             {selectedAbility && imageSrc && !isVideoLoaded && (
                                 <img
-                                    src={imageSrc}
+                                    src={selectedImageSrc}
                                     alt="Ability preview"
                                     className={styles.render2ImageSmall}
                                 />
                             )}
-                            {videoSrc && videoSrc !== 'noFound' ? (
+                            {videoSrc && selectedVideoSrc !== 'noFound' ? (
                                     <video
                                         className={styles.render2videoElement}
-                                        src={videoSrc}
+                                        src={selectedVideoSrc}
                                         autoPlay
                                         loop
                                         muted
