@@ -34,7 +34,7 @@ const App = () => {
 
                 localStorage.setItem('heroesData', JSON.stringify(data));
                 localStorage.setItem('cacheVersion', CACHE_VERSION);
-
+                window.location.reload();
                 console.log('Данные загружены с сервера:', data);
             } catch (error) {
                 console.error('Ошибка при загрузке данных с сервера:', error);

@@ -8,7 +8,14 @@ import { ReactComponent as UpdateIcon } from "../../../../assets/icons/UpdateIco
 import { ReactComponent as SaveIcon } from "../../../../assets/icons/SaveIcon.svg";
 import { ReactComponent as SettingsIcon } from "../../../../assets/icons/settings_icon.svg";
 import { ReactComponent as ShareIcon } from "../../../../assets/icons/ShareIcon.svg";
-// import {openDB} from "idb";
+import {
+    CACHE_VERSION,
+    cacheImage,
+    clearCache,
+    getCachedImage,
+    getCacheVersion,
+    setCacheVersion
+} from "../../../../utils/dbUtils";
 
 interface TalentImage {
     text: string;
@@ -283,7 +290,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     //     return db;
     // };
 
-    const getBackgroundForHero = async (part: string, hero_name: string): Promise<string | null> => {
+    const getBackgroundForHero = useCallback(async (part: string, hero_name: string): Promise<string | null> => {
         let backgroundFileName;
         switch (part) {
             case '1':
@@ -301,9 +308,9 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
         const objectKey = `images/heroes/talents/talents_backgrounds/${hero_name}_${backgroundFileName}.webp`;
 
-        const cachedBackground = sessionStorage.getItem(objectKey);
+        const cachedBackground = await getCachedImage(objectKey);
         if (cachedBackground) {
-            console.log(objectKey);
+            console.log("Loaded background from cache:", objectKey);
             return cachedBackground;
         }
 
@@ -313,61 +320,107 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                 const response = await fetch(imageUrl);
                 const imageBlob = await response.blob();
 
-                const reader = new FileReader();
-                return new Promise((resolve, reject) => {
-                    reader.onloadend = () => {
-                        const base64Image = reader.result as string;
+                await cacheImage(objectKey, imageBlob);
 
-                        sessionStorage.setItem(objectKey, base64Image);
-
-                        resolve(base64Image);
-                    };
-                    reader.onerror = (error) => reject(error);
-                    reader.readAsDataURL(imageBlob);
-                });
+                return URL.createObjectURL(imageBlob);
             } catch (error) {
                 console.error(`Error fetching background for ${objectKey}`, error);
                 return null;
             }
         } else {
-            console.error(`Background not found for ${objectKey}`);
             return null;
         }
-    };
-
+    }, []);
 
     useEffect(() => {
         const fetchBackgroundImages = async () => {
             if (!talents_information || !hero_name) return;
 
-            for (const part in talents_information) {
+            const imageFetchPromises = Object.keys(talents_information).map(async (part) => {
                 const imageSrc = await getBackgroundForHero(part, hero_name);
-
                 setBackgroundImages((prev) => ({
                     ...prev,
                     [part]: imageSrc || null,
                 }));
-            }
+            });
+
+            await Promise.all(imageFetchPromises);
         };
 
         fetchBackgroundImages();
-    }, [talents_information, hero_name]);
+    }, [talents_information, hero_name, getBackgroundForHero]);
 
 
+
+
+
+    // const CACHE_VERSION = "1";
+
+    // const dbPromise: Promise<IDBPDatabase> = openDB("talents-cache", 2, {
+    //     upgrade(db, oldVersion) {
+    //         if (oldVersion < 2) {
+    //             if (!db.objectStoreNames.contains("images")) {
+    //                 db.createObjectStore("images");
+    //             }
+    //
+    //             if (!db.objectStoreNames.contains("cacheVersion")) {
+    //                 const cacheVersionStore = db.createObjectStore("cacheVersion");
+    //                 // Храним текущую версию кеша
+    //                 cacheVersionStore.put(CACHE_VERSION, "version");
+    //             }
+    //         }
+    //     }
+    // });
+    //
+    // const getCacheVersion = async (): Promise<string | null> => {
+    //     const db = await dbPromise;
+    //     const version = await db.get("cacheVersion", "version");
+    //     return version || null;
+    // };
+    //
+    // const setCacheVersion = async (): Promise<void> => {
+    //     const db = await dbPromise;
+    //     await db.put("cacheVersion", CACHE_VERSION, "version");
+    // };
+    //
+    // const clearCache = async (): Promise<void> => {
+    //     const db = await dbPromise;
+    //     await db.clear("images");
+    // };
+    //
+    // const cacheImage = async (key: string, blob: Blob): Promise<void> => {
+    //     const db = await dbPromise;
+    //     await db.put("images", blob, key);
+    // };
+    //
+    // const getCachedImage = async (key: string): Promise<string | null> => {
+    //     const db = await dbPromise;
+    //     const blob: Blob | undefined = await db.get("images", key);
+    //     return blob ? URL.createObjectURL(blob) : null;
+    // };
 
     const getImageForHero = useCallback(async (talent: Talent): Promise<string | null> => {
         if (!talent || talent.id.includes("empty")) return null;
 
         const imagePath = talent.imagePath;
-        let objectKey = imagePath.includes('/')
-            ? `images/heroes/talents/${imagePath.replace('/', '/')}.webp`
+        const objectKey = imagePath.includes("/")
+            ? `images/heroes/talents/${imagePath.replace("/", "/")}.webp`
             : `images/heroes/talents/other/${imagePath}.webp`;
 
-        const cachedImage = sessionStorage.getItem(objectKey);
+        const cachedVersion = await getCacheVersion();
+        if (cachedVersion !== CACHE_VERSION) {
+            await clearCache();
+            await setCacheVersion();
+        }
+
+        const cachedImage = await getCachedImage(objectKey);
         if (cachedImage) {
-            console.log(objectKey);
+            console.log("Loaded from cache:", objectKey);
             return cachedImage;
         }
+
+        const loadingImage = "path/to/loading-placeholder.jpg";
+        setImageSrcs(prev => ({ ...prev, [objectKey]: loadingImage }));
 
         try {
             const imageUrl = await getImageUrl(objectKey);
@@ -376,31 +429,26 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             const response = await fetch(imageUrl);
             const blob = await response.blob();
 
-            // Store the blob in sessionStorage or localStorage as a base64 string
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const base64Image = reader.result as string;
-                sessionStorage.setItem(objectKey, base64Image);  // Save as base64 encoded string
-            };
-            reader.readAsDataURL(blob);
+            // Сохраняем изображение в кеш
+            await cacheImage(objectKey, blob);
+            const imageUrlObject = URL.createObjectURL(blob);
 
-            // Create an object URL for the Blob
-            const imageObjectUrl = URL.createObjectURL(blob);
+            // Обновляем картинку в состоянии
+            setImageSrcs(prev => ({ ...prev, [objectKey]: imageUrlObject }));
 
-            return imageObjectUrl;
+            return imageUrlObject;
         } catch (error) {
             console.error(error);
             return null;
         }
     }, []);
 
-
     useEffect(() => {
         if (!talents_information) return;
 
         const fetchImages = async () => {
-            const imagePromises: Promise<{ key: string, src: string | null }>[] = [];
-            const chunkSize = 5;
+            const imagePromises: Promise<{ key: string; src: string | null }>[] = [];
+            const chunkSize = 7;
 
             Object.entries(talents_information).forEach(([part, talentsByLevel]) => {
                 let levelIndex = 0;
@@ -409,35 +457,39 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                     talents.forEach((talent, i) => {
                         const key = `${part}-${levelIndex}-${i}`;
                         imagePromises.push(
-                            getImageForHero(talent).then((src) => {
-                                return { key, src };
-                            })
+                            getImageForHero(talent).then((src) => ({ key, src }))
                         );
                     });
                     levelIndex++;
                 });
-
             });
 
-            const chunks = [];
+            const processChunks = async (chunks: Promise<{ key: string; src: string | null }>[][]) => {
+                for (const chunk of chunks) {
+                    const results = await Promise.all(chunk);
+                    const newImageSrcs: Record<string, string | null> = {};
+                    results.forEach(({ key, src }) => {
+                        newImageSrcs[key] = src;
+                    });
+                    setImageSrcs((prev) => ({ ...prev, ...newImageSrcs }));
+                }
+            };
+
+            // Создаем массив чанкованных обещаний
+            const chunks: Promise<{ key: string; src: string | null }>[][] = [];
             for (let i = 0; i < imagePromises.length; i += chunkSize) {
                 chunks.push(imagePromises.slice(i, i + chunkSize));
             }
 
-            for (const chunk of chunks) {
-                const results = await Promise.allSettled(chunk);
-                const newImageSrcs: Record<string, string | null> = {};
-                results.forEach((result) => {
-                    if (result.status === "fulfilled") {
-                        newImageSrcs[result.value.key] = result.value.src;
-                    }
-                });
-                setImageSrcs((prev) => ({ ...prev, ...newImageSrcs }));
-            }
+            // Обрабатываем каждый чанк обещаний
+            await processChunks(chunks);
         };
-
         fetchImages();
     }, [talents_information, getImageForHero]);
+
+
+
+
 
 
 
