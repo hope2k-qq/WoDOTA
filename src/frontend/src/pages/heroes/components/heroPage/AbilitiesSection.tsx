@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./abilities_section.module.scss";
-import axios from "axios";
+//import axios from "axios";
 import { formatAbilityDescription } from '../../../../utils/formatAbilityDescription';
 import { handleAbilitiesData } from '../../../../utils/handleAbilitiesData';
 import { AbilityData } from '../../../../utils/handleAbilitiesData';
 import {fetchAbilityImages} from "../../../../utils/abilityUtils";
-
+import { AbilitiesSectionProps } from '../../../../types/heroes';
 const replacements_heroes: { [key: string]: string } = {
     'roshan': 'arc_warden',
     'creep': 'chen',
@@ -21,11 +21,8 @@ const replacements_heroes: { [key: string]: string } = {
 
 
 
-interface AbilitiesSectionProps {
-    heroName: string;
-}
 
-const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
+const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ hero_name, abilities }) => {
     const [heroAbilities, setHeroAbilities] = useState<{
         [key: string]: AbilityData;
     } | null>(null);
@@ -36,30 +33,35 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
     const [imageSrc, setImageSrc] = useState<{ [key: string]: string }>({});
     const [videoSrc, setVideoSrc] = useState<{ [key: string]: string }>({});
     //const [isLoading, setIsLoading] = useState(false);
-    const API_URL = process.env.REACT_APP_API_URL;
+    //const API_URL = process.env.REACT_APP_API_URL;
+
 
     useEffect(() => {
-        axios.get(`${API_URL}/hero/${heroName}`)
-            .then(response => {
-                handleAbilitiesData(response.data.abilities, setHeroAbilities);
-                console.log(response.data.abilities)
-            })
-            .catch(error => {
-                console.error('Error fetching hero data:', error);
-            });
-    }, [API_URL, heroName]);
+        handleAbilitiesData(abilities, setHeroAbilities);
+    }, [abilities]);
+
+    // useEffect(() => {
+    //     axios.get(`${API_URL}/hero/${hero_name}`)
+    //         .then(response => {
+    //             handleAbilitiesData(response.data.abilities, setHeroAbilities);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error fetching hero data:', error);
+    //         });
+    // }, [API_URL, hero_name]);
+
 
     useEffect(() => {
         if (heroAbilities) {
             const fetchImages = async () => {
                 try {
-                    const cachedImages = sessionStorage.getItem(heroName);
+                    const cachedImages = sessionStorage.getItem(hero_name);
                     if (cachedImages) {
                         setAbilitiesSrcs(JSON.parse(cachedImages));
                     } else {
                         const images = await fetchAbilityImages(heroAbilities);
 
-                        sessionStorage.setItem(heroName, JSON.stringify(images));
+                        sessionStorage.setItem(hero_name, JSON.stringify(images));
 
                         setAbilitiesSrcs(images);
                     }
@@ -70,7 +72,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
 
             fetchImages();
         }
-    }, [heroAbilities, heroName]);
+    }, [heroAbilities, hero_name]);
 
 
 
@@ -115,15 +117,15 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
 
     useEffect(() => {
         const attemptLoadResources = async () => {
-            if (!selectedAbility || !heroName) return;
+            if (!selectedAbility || !hero_name) return;
 
-            let modifiedHeroName = heroName;
+            let modifiedHeroName = hero_name;
             let modifiedAbility = selectedAbility;
 
-            const replacementHeroName = replacements_heroes[heroName];
+            const replacementHeroName = replacements_heroes[hero_name];
             if (replacementHeroName) {
                 modifiedHeroName = replacementHeroName;
-                modifiedAbility = selectedAbility.replace(heroName, replacementHeroName);
+                modifiedAbility = selectedAbility.replace(hero_name, replacementHeroName);
             }
 
             try {
@@ -138,7 +140,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
         };
 
         attemptLoadResources();
-    }, [heroName, selectedAbility]);
+    }, [hero_name, selectedAbility]);
 
 
     useEffect(() => {
@@ -155,13 +157,13 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
             for (const ability in heroAbilities) {
                 if (ability === selectedAbility) continue;
 
-                let modifiedHeroName = heroName;
+                let modifiedHeroName = hero_name;
                 let modifiedAbility = ability;
 
-                const replacementHeroName = replacements_heroes[heroName];
+                const replacementHeroName = replacements_heroes[hero_name];
                 if (replacementHeroName) {
                     modifiedHeroName = replacementHeroName;
-                    modifiedAbility = ability.replace(heroName, replacementHeroName);
+                    modifiedAbility = ability.replace(hero_name, replacementHeroName);
                 }
 
                 try {
@@ -177,7 +179,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName }) => {
         };
 
         loadAllAbilities();
-    }, [heroAbilities, heroName, selectedAbility]);
+    }, [heroAbilities, hero_name, selectedAbility]);
 
     const parseAbilityDescription = (description: string) => {
         return description

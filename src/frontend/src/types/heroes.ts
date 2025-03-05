@@ -45,6 +45,11 @@ export interface RenderTalentsProps {
     talents_information: TalentsInformation;
 }
 
+export interface AbilitiesSectionProps {
+    hero_name: string;
+    abilities: { [key: string]: { [key: string]: string } };
+}
+
 
 
 

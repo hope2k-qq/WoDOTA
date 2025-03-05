@@ -231,9 +231,17 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
     useEffect(() => {
         const fetchGeneralTalentsData = async () => {
+            const cachedData = sessionStorage.getItem('generalTalents');
+
+            if (cachedData) {
+                setGeneralTalents(JSON.parse(cachedData));
+                return;
+            }
+
             try {
                 const response = await axios.get(`${API_URL}/general_talents`);
-                setGeneralTalents(response.data as AddonData);
+                setGeneralTalents(response.data);
+                sessionStorage.setItem('generalTalents', JSON.stringify(response.data));
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
             }
@@ -243,6 +251,8 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             console.error('Promise rejected in fetchGeneralTalentsData:', error);
         });
     }, [API_URL]);
+
+
 
     // const openHeroesDB = async () => {
     //     const db = await openDB('talents-db', CACHE_VERSION, {
@@ -390,7 +400,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
         const fetchImages = async () => {
             const imagePromises: Promise<{ key: string, src: string | null }>[] = [];
-            const chunkSize = 15;
+            const chunkSize = 5;
 
             Object.entries(talents_information).forEach(([part, talentsByLevel]) => {
                 let levelIndex = 0;
