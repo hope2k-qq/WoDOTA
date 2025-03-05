@@ -8,7 +8,7 @@ import { ReactComponent as UpdateIcon } from "../../../../assets/icons/UpdateIco
 import { ReactComponent as SaveIcon } from "../../../../assets/icons/SaveIcon.svg";
 import { ReactComponent as SettingsIcon } from "../../../../assets/icons/settings_icon.svg";
 import { ReactComponent as ShareIcon } from "../../../../assets/icons/ShareIcon.svg";
-import {IDBPDatabase, openDB} from "idb";
+// import {openDB} from "idb";
 
 interface TalentImage {
     text: string;
@@ -28,7 +28,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const [upgradeOrder, setUpgradeOrder] = useState<string[]>([]);
     const [showNumbers, setShowNumbers] = useState(true);
     const [showText, setShowText] = useState(true);
-    const CACHE_VERSION = 4;
+    // const CACHE_VERSION = 4;
     const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
     const [rotation, setRotation] = useState(0);
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -244,188 +244,36 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         });
     }, [API_URL]);
 
-    const openHeroesDB = async () => {
-        const db = await openDB('talents-db', CACHE_VERSION, {
-            upgrade(db, oldVersion, newVersion) {
-                if (newVersion !== null && newVersion > oldVersion) {
-                    if (db.objectStoreNames.contains('meta')) {
-                        db.deleteObjectStore('meta');
-                    }
-                    if (db.objectStoreNames.contains('talents')) {
-                        db.deleteObjectStore('talents');
-                    }
-
-                    db.createObjectStore('meta', { keyPath: 'key' });
-                    const talentsStore = db.createObjectStore('talents', { keyPath: 'heroName' });
-                    talentsStore.createIndex('heroName', 'heroName');
-                }
-            }
-        });
-
-        // Проверяем кеш-версию
-        const currentVersion = await db.get('meta', 'CACHE_VERSION');
-        if (currentVersion?.value !== CACHE_VERSION) {
-            // console.log('Кеш-версия изменилась, очищаем данные...');
-            await db.clear('talents'); // Очищаем кэшированные данные
-            await db.put('meta', { key: 'CACHE_VERSION', value: CACHE_VERSION }); // Сохраняем новую версию
-        }
-
-        return db;
-    };
-
-    // useEffect(() => {
-    //     const fetchImages = async () => {
-    //         if (!talents_information) return;
-    //
-    //         const allParts = talents_information || {};
-    //         const newImageSrcs: { [key: string]: string | null } = {};
-    //
-    //         const db = await openHeroesDB();  // Открываем базу данных
-    //
-    //         for (const part in allParts) {
-    //             const talentsByLevel = allParts[part];
-    //
-    //             let levelIndex = 0;
-    //             for (const level in talentsByLevel) {
-    //                 const talents = talentsByLevel[level];
-    //
-    //                 for (let i = 0; i < talents.length; i++) {
-    //                     const talent = talents[i];
-    //
-    //                     if (talent && !talent.id.includes("empty")) {
-    //                         const imageSrc = await getImageForHero(talent, db);
-    //                         newImageSrcs[`${part}-${levelIndex}-${i}`] = imageSrc;
-    //                     } else {
-    //                         newImageSrcs[`${part}-${levelIndex}-${i}`] = null;
-    //                     }
+    // const openHeroesDB = async () => {
+    //     const db = await openDB('talents-db', CACHE_VERSION, {
+    //         upgrade(db, oldVersion, newVersion) {
+    //             if (newVersion !== null && newVersion > oldVersion) {
+    //                 if (db.objectStoreNames.contains('meta')) {
+    //                     db.deleteObjectStore('meta');
     //                 }
-    //                 levelIndex++;
+    //                 if (db.objectStoreNames.contains('talents')) {
+    //                     db.deleteObjectStore('talents');
+    //                 }
+    //
+    //                 db.createObjectStore('meta', { keyPath: 'key' });
+    //                 const talentsStore = db.createObjectStore('talents', { keyPath: 'heroName' });
+    //                 talentsStore.createIndex('heroName', 'heroName');
     //             }
     //         }
+    //     });
     //
-    //         setImageSrcs(newImageSrcs);
-    //     };
+    //     // Проверяем кеш-версию
+    //     const currentVersion = await db.get('meta', 'CACHE_VERSION');
+    //     if (currentVersion?.value !== CACHE_VERSION) {
+    //         // console.log('Кеш-версия изменилась, очищаем данные...');
+    //         await db.clear('talents'); // Очищаем кэшированные данные
+    //         await db.put('meta', { key: 'CACHE_VERSION', value: CACHE_VERSION }); // Сохраняем новую версию
+    //     }
     //
-    //     fetchImages();
-    // }, [talents_information]);
+    //     return db;
+    // };
 
-
-
-    const getImageForHero = useCallback(async (talent: Talent, db: IDBPDatabase): Promise<Blob | null> => {
-        const imagePath = talent.imagePath;
-        let objectKey;
-        if (imagePath.includes('/')) {
-            const [heroName, imageNumber] = imagePath.split('/');
-            objectKey = `images/heroes/talents/${heroName}/${imageNumber}.webp`;
-        } else {
-            objectKey = `images/heroes/talents/other/${imagePath}.webp`;
-        }
-
-        // Получаем данные о талантах героя из базы данных
-        const heroTalentsData = await db.get('talents', hero_name);
-
-        // Если изображение найдено в базе данных, возвращаем его
-        if (heroTalentsData && heroTalentsData.talents && heroTalentsData.talents[objectKey]) {
-            return heroTalentsData.talents[objectKey];  // возвращаем Blob
-        }
-
-        // Если изображение не найдено в базе данных, загружаем его с сервера
-        const imageUrl = await getImageUrl(objectKey);  // Получаем URL изображения
-        if (imageUrl) {
-            const response = await fetch(imageUrl);
-            const imageBlob = await response.blob();
-            return imageBlob;  // Возвращаем Blob
-        } else {
-            console.error(`Image not found for ${imagePath}`);
-            return null;
-        }
-    }, [hero_name]);
-
-    useEffect(() => {
-        const fetchImages = async () => {
-            if (!talents_information) return;
-
-            const db = await openHeroesDB();
-            const allParts = Object.entries(talents_information);
-            const imagesToSave: { [key: string]: Blob } = {}; // For storing images to save in the database
-
-            const heroTalentsData = await db.get('talents', hero_name);
-
-            const loadImagePromises = [];
-
-            for (const [part, talentsByLevel] of allParts) {
-                let levelIndex = 0;
-
-                for (const level in talentsByLevel) {
-                    const talents = talentsByLevel[level];
-
-                    for (let i = 0; i < talents.length; i++) {
-                        const talent = talents[i];
-                        const key = `${part}-${levelIndex}-${i}`;
-
-                        loadImagePromises.push(
-                            (async () => {
-                                let imageBlob: Blob | null = null;
-                                let isImageFetchedFromServer = false;
-
-                                if (talent && !talent.id.includes("empty")) {
-                                    imageBlob = await getImageForHero(talent, db);
-
-                                    // If image was fetched from the server, set the flag
-                                    if (imageBlob && !heroTalentsData?.talents?.[key]) {
-                                        isImageFetchedFromServer = true;
-                                    }
-                                }
-
-                                setImageSrcs((prev) => ({
-                                    ...prev,
-                                    [key]: imageBlob ? URL.createObjectURL(imageBlob) : null,
-                                }));
-
-                                if (imageBlob) {
-                                    imagesToSave[key] = imageBlob;
-                                }
-
-                                return isImageFetchedFromServer;
-                            })()
-                        );
-                    }
-                    levelIndex++;
-                }
-            }
-
-            const results = await Promise.all(loadImagePromises);
-
-            try {
-                if (Object.keys(imagesToSave).length > 0 && results.some(result => result)) {
-                    if (heroTalentsData) {
-                        const updatedTalents = { ...heroTalentsData?.talents, ...imagesToSave };
-                        await db.put('talents', { ...heroTalentsData, talents: updatedTalents });
-                    } else {
-                        //console.error('No data found for hero:', hero_name);
-                    }
-                } else {
-                    //console.log("No new images fetched from the server. Data not saved.");
-                }
-            } catch (error) {
-                // console.error('Error saving to DB:', error);
-            }
-        };
-
-        fetchImages();
-    }, [talents_information, hero_name, getImageForHero]);
-
-
-
-
-
-
-
-
-
-
-
-    const getBackgroundForHero = async (part: string, hero_name: string, db: IDBPDatabase) => {
+    const getBackgroundForHero = async (part: string, hero_name: string): Promise<string | null> => {
         let backgroundFileName;
         switch (part) {
             case '1':
@@ -443,50 +291,47 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
         const objectKey = `images/heroes/talents/talents_backgrounds/${hero_name}_${backgroundFileName}.webp`;
 
-        // Получаем данные о талантах героя
-        const heroTalentsData = await db.get('talents', hero_name);  // Получаем данные по герою
-
-        // Если фон уже есть в кэше
-        if (heroTalentsData && heroTalentsData.backgrounds && heroTalentsData.backgrounds[objectKey]) {
-            return URL.createObjectURL(heroTalentsData.backgrounds[objectKey]);
+        const cachedBackground = sessionStorage.getItem(objectKey);
+        if (cachedBackground) {
+            console.log(objectKey);
+            return cachedBackground;
         }
 
-        // Если фона нет в базе данных, загружаем его с сервера
         const imageUrl = await getImageUrl(objectKey);
         if (imageUrl) {
-            const response = await fetch(imageUrl);
-            const imageBlob = await response.blob();
+            try {
+                const response = await fetch(imageUrl);
+                const imageBlob = await response.blob();
 
-            // Сохраняем фон в базе данных для этого героя
-            if (!heroTalentsData) {
-                // Если данных о герое нет, создаем новые
-                const newHeroData = {
-                    heroName: hero_name,
-                    talents: {},
-                    backgrounds: { [objectKey]: imageBlob },
-                };
-                await db.put('talents', newHeroData);  // Добавляем в хранилище talents
-            } else {
-                // Если данные о герое уже есть, обновляем его фоны
-                const updatedBackgrounds = { ...heroTalentsData.backgrounds, [objectKey]: imageBlob };
-                await db.put('talents', { ...heroTalentsData, backgrounds: updatedBackgrounds });  // Обновляем
+                const reader = new FileReader();
+                return new Promise((resolve, reject) => {
+                    reader.onloadend = () => {
+                        const base64Image = reader.result as string;
+
+                        sessionStorage.setItem(objectKey, base64Image);
+
+                        resolve(base64Image);
+                    };
+                    reader.onerror = (error) => reject(error);
+                    reader.readAsDataURL(imageBlob);
+                });
+            } catch (error) {
+                console.error(`Error fetching background for ${objectKey}`, error);
+                return null;
             }
-
-            return URL.createObjectURL(imageBlob);
         } else {
             console.error(`Background not found for ${objectKey}`);
             return null;
         }
     };
 
+
     useEffect(() => {
         const fetchBackgroundImages = async () => {
             if (!talents_information || !hero_name) return;
 
-            const db = await openHeroesDB(); // Открываем базу данных
-
             for (const part in talents_information) {
-                const imageSrc = await getBackgroundForHero(part, hero_name, db);
+                const imageSrc = await getBackgroundForHero(part, hero_name);
 
                 setBackgroundImages((prev) => ({
                     ...prev,
@@ -497,6 +342,95 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
         fetchBackgroundImages();
     }, [talents_information, hero_name]);
+
+
+
+    const getImageForHero = useCallback(async (talent: Talent): Promise<string | null> => {
+        if (!talent || talent.id.includes("empty")) return null;
+
+        const imagePath = talent.imagePath;
+        let objectKey = imagePath.includes('/')
+            ? `images/heroes/talents/${imagePath.replace('/', '/')}.webp`
+            : `images/heroes/talents/other/${imagePath}.webp`;
+
+        const cachedImage = sessionStorage.getItem(objectKey);
+        if (cachedImage) {
+            console.log(objectKey);
+            return cachedImage;
+        }
+
+        try {
+            const imageUrl = await getImageUrl(objectKey);
+            if (!imageUrl) throw new Error(`Image not found for ${imagePath}`);
+
+            const response = await fetch(imageUrl);
+            const blob = await response.blob();
+
+            // Store the blob in sessionStorage or localStorage as a base64 string
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64Image = reader.result as string;
+                sessionStorage.setItem(objectKey, base64Image);  // Save as base64 encoded string
+            };
+            reader.readAsDataURL(blob);
+
+            // Create an object URL for the Blob
+            const imageObjectUrl = URL.createObjectURL(blob);
+
+            return imageObjectUrl;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }, []);
+
+
+    useEffect(() => {
+        if (!talents_information) return;
+
+        const fetchImages = async () => {
+            const imagePromises: Promise<{ key: string, src: string | null }>[] = [];
+            const chunkSize = 15;
+
+            Object.entries(talents_information).forEach(([part, talentsByLevel]) => {
+                let levelIndex = 0;
+                Object.keys(talentsByLevel).forEach((level) => {
+                    const talents = talentsByLevel[level];
+                    talents.forEach((talent, i) => {
+                        const key = `${part}-${levelIndex}-${i}`;
+                        imagePromises.push(
+                            getImageForHero(talent).then((src) => {
+                                return { key, src };
+                            })
+                        );
+                    });
+                    levelIndex++;
+                });
+
+            });
+
+            const chunks = [];
+            for (let i = 0; i < imagePromises.length; i += chunkSize) {
+                chunks.push(imagePromises.slice(i, i + chunkSize));
+            }
+
+            for (const chunk of chunks) {
+                const results = await Promise.allSettled(chunk);
+                const newImageSrcs: Record<string, string | null> = {};
+                results.forEach((result) => {
+                    if (result.status === "fulfilled") {
+                        newImageSrcs[result.value.key] = result.value.src;
+                    }
+                });
+                setImageSrcs((prev) => ({ ...prev, ...newImageSrcs }));
+            }
+        };
+
+        fetchImages();
+    }, [talents_information, getImageForHero]);
+
+
+
 
 
 
