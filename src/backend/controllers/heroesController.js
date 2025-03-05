@@ -228,8 +228,15 @@ exports.getHeroData = (req, res) => {
     }
 };
 
+let cachedHeroesData = null; // Variable to store cached data
+
 exports.getAllHeroesData = (req, res) => {
     try {
+        // If the data is already cached, return the cached data
+        if (cachedHeroesData) {
+            return res.json(cachedHeroesData);
+        }
+
         const allHeroNames = getAllHeroesService.getHeroesData();
         const allHeroesData = {};
 
@@ -388,6 +395,9 @@ exports.getAllHeroesData = (req, res) => {
             };
         });
 
+        // Cache the gathered data so it can be used in subsequent requests
+        cachedHeroesData = allHeroesData;
+
         // Return all the gathered data
         res.json(allHeroesData);
 
@@ -396,6 +406,7 @@ exports.getAllHeroesData = (req, res) => {
         res.status(500).json({ error: 'Failed to load all heroes data' });
     }
 };
+
 
 
 
