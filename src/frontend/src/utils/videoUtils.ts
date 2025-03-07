@@ -1,9 +1,9 @@
-
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 // Функция для получения URL видео
 export const getVideoUrl = (name: string) =>
-    `http://localhost:5000/proxy/video?url=https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${name}.webm`;
+    `${API_URL}/proxy/video?url=https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${name}.webm`;
 
 // Функция для получения URL изображения
 export const getImageUrl = (name: string) =>
