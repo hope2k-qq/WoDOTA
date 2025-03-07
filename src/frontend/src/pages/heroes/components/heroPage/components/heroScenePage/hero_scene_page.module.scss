@@ -1,13 +1,25 @@
 .canvasContainer {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height:700px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: end;
+  justify-content: start;
   background: linear-gradient(to bottom, #12131a, #000000 95%);
 }
+.diagonalOverlay {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(135deg, rgba(244, 191, 88, 0.08) 0%, rgba(244, 191, 88, 0.08) 100%);
+  pointer-events: none;
+  transform: skewY(-30deg);
+}
+
+
 
 .canvasContainer::after {
   content: "";
@@ -15,15 +27,539 @@
   bottom: -3px;
   left: 0;
   width: 100%;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, #0a0b10 100%);
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, #0a0b10 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.heroVideo{
+  position: absolute;
+  width: auto;
+  height: 1200px;
+  margin-top: -7rem;
+  z-index: 1;
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
+.bristleback{
+  margin-right: 10rem;
+}
+
+.doom_bringer{
+  height: 1300px;
+  margin-top: -12rem;
+}
+
+.dragon_knight{
+  height: 1300px;
+}
+
+.earthshaker{
+  height: 1000px;
+  margin-right: 7rem;
+}
+
+.huskar{
+  margin-right: -2rem;
+}
+
+.kunkka{
+  margin-right: 7rem;
+  height: 1100px;
+}
+
+.legion_commander{
+  margin-top: -11rem;
+}
+
+.night_stalker{
+  margin-right: 7rem;
+}
+
+.pudge{
+  margin-top: -20rem;
+  height: 1300px;
+}
+
+.spirit_breaker{
+  margin-top: -23rem;
+  margin-right: 6rem;
+  height: 1300px;
+}
+
+.tidehunter{
+  margin-right: 6rem;
+}
+
+.tiny{
+  margin-top: -10rem;
+}
+
+.slardar{
+  height: 1050px;
+}
+
+.bounty_hunter{
+  margin-top: -15rem;
+}
+
+.kez{
+  height: 1300px;
+  margin-top: -25rem;
+  margin-right: -8rem;
+}
+
+.medusa{
+  height: 1100px;
+  margin-right: 9rem;
+}
+
+.morphling{
+  height: 1100px;
+  margin-right: 4rem;
+}
+
+.naga_siren{
+  height: 1300px;
+  margin-top: -15rem;
+}
+
+.slark{
+  height: 1050px;
+}
+
+.terrorblade{
+  margin-top: -15rem;
+  height: 1100px;
+}
+
+.invoker{
+  margin-top: -10rem;
+}
+
+.jakiro{
+  margin-top: -17rem;
+}
+
+.lion{
+  margin-top: -1rem;
+  margin-right: 10rem;
+  height: 1000px;
+}
+
+.necrolyte{
+  margin-top: -18rem;
+  margin-right: 5rem;
+}
+
+.rubick{
+  margin-top: -12rem;
+  margin-right: 5rem;
+  height: 1000px;
+}
+
+.skywrath_mage{
+  margin-top: -18rem;
+  margin-right: -5rem;
+}
+
+.warlock{
+  margin-top: -12rem;
+  margin-right: 5rem;
+  height: 1000px;
+}
+
+.witch_doctor{
+  margin-top: -20rem;
+}
+
+.marci{
+  margin-right: -5rem;
+}
+
+.furion{
+  height: 1100px;
+  margin-top: -17rem;
+  margin-right: -6rem;
+}
+
+.nyx_assassin{
+  height: 1100px;
+  margin-top: -13rem;
+}
+
+.pangolier{
+  height: 1000px;
+  margin-right: 5rem;
+}
+
+.techies{
+  height: 1050px;
+  margin-top: -12rem;
+}
+
+.windrunner{
+  height: 1050px;
+  margin-right: -5rem;
+}
+
+
+@media (max-width: 1600px) {
   .canvasContainer{
-    height: 60vh;
+    height: 600px;
+  }
+  .heroVideo{
+    margin-top: -4rem;
+    height: 900px;
+  }
+
+  .earthshaker{
+    margin-right: 0;
+  }
+
+  .pudge{
+    margin-top: -15rem;
+    height: 1100px;
+  }
+  .spirit_breaker{
+    margin-top: -16rem;
+    margin-right: 6rem;
+    height: 1000px;
+  }
+
+  .tidehunter{
+    margin-right: 0;
+  }
+
+  .bounty_hunter{
+    margin-top: -10rem;
+    height: 1000px;
+  }
+
+  .kez{
+    height: 1100px;
+    margin-top: -20rem;
+    margin-right: -8rem;
+  }
+  .medusa{
+    height: 850px;
+    margin-right: 9rem;
+  }
+
+  .morphling{
+    margin-right: 2rem;
+  }
+
+  .naga_siren{
+    height: 1100px;
+    margin-top: -12rem;
+  }
+
+  .terrorblade{
+    margin-top: -14rem;
+    height: 1000px;
+  }
+
+  .invoker{
+    margin-top: -7rem;
+  }
+  .jakiro{
+    margin-top: -12rem;
+  }
+
+  .lion{
+    margin-top: 0;
+    margin-right: 4rem;
+    height: 800px;
+  }
+
+  .necrolyte{
+    margin-top: -12rem;
+    margin-right: 3rem;
+  }
+  .rubick{
+    margin-top: -8rem;
+    margin-right: 3rem;
+    height: 800px;
+  }
+  .skywrath_mage{
+    margin-top: -13rem;
+    margin-right: -3rem;
+  }
+  .warlock{
+    margin-top: -9rem;
+    margin-right: 1rem;
+    height: 900px;
+  }
+  .witch_doctor{
+    margin-top: -15rem;
+    margin-right: -5rem;
+  }
+  .furion{
+    height: 950px;
+    margin-top: -15rem;
+    margin-right: -5rem;
+  }
+  .nyx_assassin{
+    height: 1000px;
+    margin-top: -10rem;
+  }
+  .pangolier{
+    height: 900px;
+    margin-right: 5rem;
+    margin-top: -6rem;
+  }
+  .techies{
+    height: 900px;
+    margin-top: -11rem;
+  }
+  .windrunner{
+    height: 950px;
+    margin-right: -4rem;
   }
 }
+
+@media (max-width: 1300px) {
+  .heroVideo{
+    margin-top: -1rem;
+    height: 800px;
+  }
+
+  .earthshaker{
+    height: 700px;
+  }
+
+  .pudge{
+    margin-top: -8rem;
+    height: 900px;
+  }
+  .slardar{
+    height: 750px;
+    margin-right: -5rem;
+  }
+  .spirit_breaker{
+    margin-top: -10rem;
+    margin-right: 2rem;
+    height: 900px;
+  }
+
+  .bounty_hunter{
+    margin-top: -8rem;
+    height: 900px;
+  }
+
+  .kez{
+    height: 1000px;
+    margin-top: -15rem;
+    margin-right: -10rem;
+  }
+
+  .medusa{
+    margin-right: 0;
+  }
+
+  .morphling{
+    height: 750px;
+    margin-right: 0;
+  }
+
+  .naga_siren{
+    height: 850px;
+    margin-top: -4rem;
+  }
+
+  .slark{
+    margin-top: 2rem;
+    height: 700px;
+  }
+
+  .terrorblade{
+    margin-top: -7rem;
+    height: 850px;
+  }
+  .jakiro{
+    margin-top: -9rem;
+  }
+
+  .lion{
+    margin-top: 0;
+    margin-right: 2rem;
+    height: 700px;
+  }
+
+  .muerta{
+    margin-right: -5rem;
+  }
+
+  .necrolyte{
+    margin-top: -7rem;
+    margin-right: 1rem;
+  }
+  .rubick{
+    margin-top: -4rem;
+    margin-right: 1rem;
+    height: 750px;
+  }
+  .skywrath_mage{
+    margin-top: -9rem;
+    margin-right: -2rem;
+  }
+  .warlock{
+    margin-top: -4rem;
+    margin-right: 0;
+    height: 800px;
+  }
+  .witch_doctor{
+    margin-top: -9rem;
+    margin-right: -5rem;
+  }
+  .furion{
+    height: 850px;
+    margin-top: -11rem;
+    margin-right: -5rem;
+  }
+  .nyx_assassin{
+    height: 800px;
+    margin-top: -3rem;
+    margin-right: -5rem;
+  }
+  .pangolier{
+    height: 700px;
+    margin-right: 1rem;
+    margin-top: -1rem;
+  }
+  .techies{
+    height: 750px;
+    margin-top: -4rem;
+  }
+}
+@media (max-width: 1100px) {
+  .heroVideo{
+    margin-top: 1rem;
+    height: 700px;
+  }
+  .kunkka{
+    margin-right: 0;
+  }
+
+  .bristleback{
+    margin-right: 0;
+  }
+
+  .pudge{
+    margin-top: -5rem;
+    height: 800px;
+  }
+
+  .spirit_breaker{
+    margin-top: -8rem;
+    margin-right: 1rem;
+    height: 850px;
+  }
+
+  .bounty_hunter{
+    margin-top: -6rem;
+    height: 800px;
+    margin-right: -3rem;
+  }
+
+  .kez{
+    height: 950px;
+    margin-top: -13rem;
+    margin-right: -12rem;
+  }
+
+  .morphling{
+    height: 650px;
+  }
+
+  .slark{
+    margin-top: 7rem;
+    height: 600px;
+  }
+  .terrorblade{
+    margin-top: -5rem;
+    height:750px;
+    margin-right: -4rem;
+  }
+
+  .jakiro{
+    margin-top: -5rem;
+  }
+
+  .lion{
+    margin-top: 3rem;
+    margin-right: 0;
+    height: 600px;
+  }
+
+  .necrolyte{
+    margin-top: -3rem;
+    margin-right: 0;
+  }
+  .rubick{
+    margin-top: -4rem;
+    margin-right: -2rem;
+    height: 750px;
+  }
+  .skywrath_mage{
+    margin-top: -9rem;
+    margin-right: -3rem;
+  }
+  .warlock{
+    margin-top: -2rem;
+    margin-right: 0;
+  }
+  .witch_doctor{
+    margin-top: -5rem;
+    margin-right: -5rem;
+  }
+  .furion{
+    height: 750px;
+    margin-top: -7rem;
+    margin-right: -5rem;
+  }
+  .nyx_assassin{
+    height: 750px;
+    margin-top: -3rem;
+    margin-right: -5rem;
+  }
+  .pangolier{
+    height: 680px;
+    margin-right: 0;
+    margin-top: 0;
+  }
+  .techies{
+    height: 650px;
+    margin-top: -0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .canvasContainer{
+    height: 400px;
+    align-items: center;
+  }
+  .heroVideo{
+    width: 95%;
+    height: calc(100% + 100px);
+    margin: 0;
+  }
+
+  .kez{
+    width: auto;
+    height: 550px;
+    margin-top: -7rem;
+  }
+
+  .slark{
+    width: 85%;
+  }
+  .skywrath_mage{
+    margin-top: -5rem;
+  }
+}
+
 
 

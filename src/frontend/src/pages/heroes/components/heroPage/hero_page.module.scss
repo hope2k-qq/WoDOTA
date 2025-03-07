@@ -48,27 +48,27 @@
 .block_name {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .text_name_hero {
-  font-weight: 100;
-  font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 38px;
+  font-family: "Inter", serif;
   color: #fff;
 }
 
 .block_name img {
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
 }
 
 .overlayBlock {
   position: absolute;
   top: 0;
-  left: 1%;
+  left: 3%;
   width: 100%;
-  max-width: 550px;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -79,10 +79,10 @@
 
 .overlayText {
   color: white;
-  font-family: 'Merriweather', serif;
+  font-family: "Inter", serif;
   font-weight: bold;
   text-align: left;
-  font-size: 76px;
+  font-size: 79px;
   line-height: 0.9;
 }
 
@@ -113,15 +113,16 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .overlayBlock {
-    position: static;
+    position: sticky;
     display: flex;
     align-items: center;
     margin-top: 0;
     padding-top: 20px;
     max-width: 100%;
     width: auto;
+    z-index: 5;
     background-color: #0a0b10;
   }
 
@@ -132,7 +133,9 @@
 }
 
 .render_talents_container{
+  position: relative;
   background: linear-gradient(to bottom, #0a0b10 , #12131a 50%);
+  z-index: 3;
 }
 
 
