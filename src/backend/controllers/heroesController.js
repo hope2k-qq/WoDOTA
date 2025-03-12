@@ -228,32 +228,23 @@ exports.getHeroData = (req, res) => {
     }
 };
 
-// let cachedHeroesData = null; // Variable to store cached data
-//
 // exports.getAllHeroesData = (req, res) => {
 //     try {
-//         // If the data is already cached, return the cached data
-//         if (cachedHeroesData) {
-//             return res.json(cachedHeroesData);
-//         }
-//
 //         const allHeroNames = getAllHeroesService.getHeroesData();
 //         const allHeroesData = {};
 //
-//         // Iterate over each hero and fetch data
 //         allHeroNames.forEach(heroName => {
-//             const abilityNames = abilitiesService.getHeroAbilities()[heroName]; // Get abilities for hero
-//             const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName); // Get hero talents
-//             const heroAttributes = getHeroAttributes(heroName); // Get hero attributes
+//             const abilityNames = abilitiesService.getHeroAbilities()[heroName];
+//             const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
+//             const heroAttributes = getHeroAttributes(heroName);
 //
 //             if (!abilityNames) {
-//                 return; // Skip if no abilities found for this hero
+//                 return;
 //             }
 //
-//             const heroData = textService.getHeroData(heroName, abilityNames); // Get hero data (abilities, talents, etc.)
-//
-//             const heroTalentsDescription = heroData.heroTalentsData; // Talents description
-//             const heroAbilitiesData = heroData.abilitiesData; // Abilities data
+//             const heroData = textService.getHeroData(heroName, abilityNames);
+//             const heroTalentsDescription = heroData.heroTalentsData;
+//             const heroAbilitiesData = heroData.abilitiesData;
 //             const abilitiesWithDetails = {};
 //
 //             abilityNames.forEach(ability => {
@@ -381,12 +372,10 @@ exports.getHeroData = (req, res) => {
 //                 }
 //             });
 //
-//             // If the hero has no data, skip adding it
 //             if (!heroTalentsInformation && Object.keys(abilitiesWithDetails).length === 0) {
 //                 return;
 //             }
 //
-//             // Store the hero data with heroName as the key
 //             allHeroesData[heroName] = {
 //                 talents_information: heroTalentsInformation || null,
 //                 talents_description: heroTalentsDescription || null,
@@ -395,183 +384,15 @@ exports.getHeroData = (req, res) => {
 //             };
 //         });
 //
-//         // Cache the gathered data so it can be used in subsequent requests
-//         cachedHeroesData = allHeroesData;
+//         const filePath = path.join(__dirname, 'heroesData.json');
+//         fs.writeFileSync(filePath, JSON.stringify(allHeroesData, null, 2), 'utf8');
 //
-//         // Return all the gathered data
 //         res.json(allHeroesData);
-//
 //     } catch (error) {
 //         console.error('Error loading all heroes data:', error);
 //         res.status(500).json({ error: 'Failed to load all heroes data' });
 //     }
 // };
-
-exports.getAllHeroesData = (req, res) => {
-    try {
-        const allHeroNames = getAllHeroesService.getHeroesData();
-        const allHeroesData = {};
-
-        allHeroNames.forEach(heroName => {
-            const abilityNames = abilitiesService.getHeroAbilities()[heroName];
-            const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
-            const heroAttributes = getHeroAttributes(heroName);
-
-            if (!abilityNames) {
-                return;
-            }
-
-            const heroData = textService.getHeroData(heroName, abilityNames);
-            const heroTalentsDescription = heroData.heroTalentsData;
-            const heroAbilitiesData = heroData.abilitiesData;
-            const abilitiesWithDetails = {};
-
-            abilityNames.forEach(ability => {
-                const abilityPrefix = `DOTA_Tooltip_ability_${ability}`;
-                const abilityKeys = Object.keys(heroAbilitiesData).filter(key => key.startsWith(abilityPrefix));
-
-                if (abilityKeys.length > 0) {
-                    abilitiesWithDetails[ability] = {};
-
-                    abilityKeys.forEach(key => {
-                        let fieldName = key.replace(`${abilityPrefix}`, '').toLowerCase();
-                        if (fieldName === '_custom' || fieldName === '') {
-                            abilitiesWithDetails[ability]['name'] = heroAbilitiesData[key];
-                        } else if (fieldName.startsWith('_custom_')) {
-                            const cleanedFieldName = fieldName.replace('_custom_', '');
-                            abilitiesWithDetails[ability][cleanedFieldName] = heroAbilitiesData[key];
-                        } else if (fieldName.startsWith('_')) {
-                            const cleanedFieldName = fieldName.replace('_', '');
-                            abilitiesWithDetails[ability][cleanedFieldName] = heroAbilitiesData[key];
-                        } else {
-                            abilitiesWithDetails[ability][fieldName] = heroAbilitiesData[key];
-                        }
-                    });
-
-                    const abilityDetails = abilitiesDataService.getAbilityDetails(ability);
-
-                    function formatValues(obj) {
-                        const formattedObj = {};
-                        for (const key in obj) {
-                            if (Object.hasOwnProperty.call(obj, key)) {
-                                let value = obj[key];
-
-                                if (typeof value === "object" && value !== null && "value" in value) {
-                                    value = value.value;
-                                }
-
-                                if (typeof value === "string") {
-                                    let formattedValue = value
-                                        .split(" ")
-                                        .map(part => {
-                                            let num = parseFloat(part);
-                                            if (!isNaN(num)) {
-                                                return Number.isInteger(num) ? num.toFixed(0) : num.toString();
-                                            }
-                                            return part;
-                                        });
-
-                                    formattedValue = [...new Set(formattedValue)].join(" ");
-                                    formattedObj[key] = formattedValue;
-                                } else {
-                                    formattedObj[key] = value;
-                                }
-                            }
-                        }
-                        return formattedObj;
-                    }
-
-                    function formatNumbersInObject(obj) {
-                        const formattedObj = {};
-                        for (const key in obj) {
-                            if (Object.hasOwnProperty.call(obj, key)) {
-                                let value = obj[key];
-
-                                if (typeof value === "object" && value !== null && "value" in value) {
-                                    value = value.value;
-                                }
-
-                                if (typeof value === "string") {
-                                    let formattedValue = value
-                                        .split(" ")
-                                        .map(part => {
-                                            const num = parseFloat(part);
-                                            return !isNaN(num) && Number.isInteger(num) ? num.toFixed(0) : part;
-                                        })
-                                        .join(" ");
-                                    formattedObj[key] = formattedValue;
-                                } else {
-                                    formattedObj[key] = value;
-                                }
-                            }
-                        }
-                        return formattedObj;
-                    }
-
-                    const formattedAbilityDetails = formatNumbersInObject(abilityDetails);
-
-                    function mergeValues(abilityData, formattedDetails) {
-                        const result = { descriptions: {}, values: {} };
-
-                        Object.entries(formattedDetails).forEach(([key, value]) => {
-                            let normalValue = abilityData[key];
-                            if (!normalValue && key.endsWith("width")) {
-                                const lengthKey = key.replace("width", "length");
-                                normalValue = abilityData[lengthKey];
-                            }
-
-                            if (typeof normalValue !== "string") {
-                                normalValue = "";
-                            }
-
-                            if (!normalValue || normalValue === "0" || normalValue === "0%") {
-                                return;
-                            }
-
-                            let prefix = "";
-                            if (normalValue.startsWith("%")) {
-                                prefix = "%";
-                                normalValue = normalValue.slice(1).trim();
-                            }
-
-                            const valueArray = value.toString().split(" ").map(num => `${num.trim()}${prefix}`);
-                            const uniqueValues = Array.from(new Set(valueArray)).filter(val => val !== "0" && val !== "0%" && val);
-
-                            if (uniqueValues.length > 0) {
-                                result.descriptions[key] = normalValue;
-                                result.values[key] = uniqueValues.join(" / ");
-                            }
-                        });
-
-                        return result;
-                    }
-
-                    abilitiesWithDetails[ability].values = formatValues(abilityDetails) || {};
-                    abilitiesWithDetails[ability].valuesInfo = mergeValues(abilitiesWithDetails[ability], formattedAbilityDetails);
-                }
-            });
-
-            if (!heroTalentsInformation && Object.keys(abilitiesWithDetails).length === 0) {
-                return;
-            }
-
-            allHeroesData[heroName] = {
-                talents_information: heroTalentsInformation || null,
-                talents_description: heroTalentsDescription || null,
-                abilities: abilitiesWithDetails,
-                characteristics: heroAttributes || null
-            };
-        });
-
-        const filePath = path.join(__dirname, 'heroesData.json');
-        fs.writeFileSync(filePath, JSON.stringify(allHeroesData, null, 2), 'utf8');
-
-        res.json(allHeroesData);
-    } catch (error) {
-        console.error('Error loading all heroes data:', error);
-        res.status(500).json({ error: 'Failed to load all heroes data' });
-    }
-};
 
 const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, 'heroesData.json'), 'utf8'));
 

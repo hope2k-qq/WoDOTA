@@ -1,7 +1,6 @@
 ﻿const express = require('express');
 const router = express.Router();
 const homeRoutes = require('./homeRoutes');
-const proxyRoutes = require('./proxyRoutes');
 const heroesRoutes = require('./heroesRoutes');
 const textRoutes = require('./textRoutes');
 const leaderboardRoutes = require('./leaderboardRoutes');
@@ -17,6 +16,5 @@ router.use('/', leaderboardRoutes);
 router.use('/', patchesRoutes);
 router.use('/', shopRoutes);
 router.use('/', votesRoutes);
-router.use('/', proxyRoutes);
 
 module.exports = router;
