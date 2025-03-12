@@ -1,18 +1,17 @@
 .container {
   display: flex;
+  width: 100%;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   border-radius: 15px;
-
 }
 
 .menu_container{
-  margin: 0 auto;
+  margin: 0 1.25rem 0 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1492px;
   padding: 15px 0;
 }
 
@@ -53,12 +52,15 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(7, 14.2%);
-  width: 470.4px;
-  height: 708px;
+  width: 100%;
+  max-width: 470.4px;
+  max-height: 708px;
   background-size: cover;
-  margin: 0.6rem 0 0.6rem 0;
+  margin: 0.6rem auto;
   border-radius: 7px;
+  overflow: hidden;
 }
+
 
 .grid::after {
   content: '';
@@ -158,7 +160,6 @@
   justify-content: center;
   align-items: center;
   user-select: none;
-
 }
 
 .square_img {
@@ -474,14 +475,18 @@
 
 .loaderContainer {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  > img{
+    visibility: hidden;
+  }
 }
 
 .loader {
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  width: 39px;
+  height: 39px;
   border: 4px solid rgba(155, 157, 177, 0.3);
   border-top: 4px solid #f4bf58;
   border-radius: 50%;
@@ -563,13 +568,17 @@ input:checked + .slider:before {
 }
 
 .menu_container_bottom{
-  margin: 0 auto;
+  margin: 0.6rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1492px;
   padding-top: 5.5rem;
+}
 
+.noPseudo::before,
+.noPseudo::after {
+  content: none !important;
+  display: none !important;
 }
 
 .resetButton {
@@ -722,14 +731,13 @@ input:checked + .slider:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center; /* Выравнивание по горизонтали */
-  align-items: center; /* Выравнивание по вертикали */
-  z-index: 1000; /* Высокий уровень, чтобы окно было поверх всего */
+  justify-content: center;
+  align-items: center;
+  z-index: 9000;
 }
 
-/* Стили для содержимого модального окна */
 .modalContent {
   background: rgba(29, 30, 37); /* Фон с прозрачностью */
   padding: 20px;
@@ -739,6 +747,7 @@ input:checked + .slider:before {
   text-align: center;
   position: relative;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
 }
 
 
@@ -847,6 +856,36 @@ input:checked + .slider:before {
   animation-delay: 0.6s;
 }
 
+.back_container{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  padding: 0 15px;
+  border-radius: 8px;
+  background: linear-gradient(271.68deg, rgba(255, 85, 85, .235) 92.91%, rgba(255, 85, 85, .04) 177.8%);
+  transition: background 0.3s ease;
+  cursor: pointer;
+  > svg{
+    width: auto;
+    height: 17px;
+    fill: #f55;
+  }
+}
+
+.back_container:hover {
+  background: linear-gradient(271.68deg, rgba(204, 0, 0, .5) 92.91%, rgba(204, 0, 0, .2) 177.8%); /* Темнее фон */
+  > svg{
+    fill: white;
+  }
+}
+
+.div_container{
+  max-width: 1531px;
+  margin: 0 auto;
+}
+
 @keyframes blink {
   0% { opacity: 0; }
   20% { opacity: 1; }
@@ -855,8 +894,8 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 1548px) {
-  .menu_container, .menu_container_bottom{
-    max-width: 981px;
+  .div_container{
+    max-width: 1023px;
   }
   .resetButton{
     > span:last-child{
@@ -881,8 +920,8 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 1037px) {
-  .menu_container, .menu_container_bottom{
-    max-width: 470px;
+  .div_container{
+    max-width: 512px;
   }
 
   .toggleUpgrade{
@@ -926,13 +965,14 @@ input:checked + .slider:before {
   .modalContent{
     max-width: 450px;
   }
-
-
-  //.additionalButtons{
-  //  flex-direction: column;
-  //}
 }
 
+@media (max-width: 600px) {
+  .modalContent{
+    max-width: 100%;
+    margin: 0 1.5rem;
+  }
+}
 
 
 

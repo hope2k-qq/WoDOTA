@@ -1,22 +1,19 @@
-import {AbilitiesProps, CharacteristicsData} from '../../../../types/heroes';
-import React, {useEffect, useState} from "react";
-import axios from "axios";
+import {AbilitiesPropsCharacteristics} from '../../../../types/heroes';
 import styles from "./hero_characteristics.module.scss";
 
 
-export const HeroCharacteristics: React.FC<AbilitiesProps> = ({ heroName }) => {
-    const [characteristics, setCharacteristics] = useState<CharacteristicsData | null>(null);
-    const API_URL = process.env.REACT_APP_API_URL;
+export const HeroCharacteristics: React.FC<AbilitiesPropsCharacteristics> = ({ heroName, characteristics }) => {
+    // const [characteristics, setCharacteristics] = useState<CharacteristicsData | null>(null);
 
-    useEffect(() => {
-        axios.get(`${API_URL}/hero/${heroName}`)
-            .then(response => {
-                setCharacteristics(response.data.characteristics);
-            })
-            .catch(error => {
-                console.error('Error fetching hero data:', error);
-            });
-    }, [API_URL, heroName]);
+    // useEffect(() => {
+    //     axios.get(`${API_URL}/hero/${heroName}`)
+    //         .then(response => {
+    //             setCharacteristics(response.data.characteristics);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error fetching hero data:', error);
+    //         });
+    // }, [API_URL, heroName]);
 
     return (
         <div className={styles.hero_characteristics_main}>

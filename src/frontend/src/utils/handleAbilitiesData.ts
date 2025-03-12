@@ -22,7 +22,7 @@ export const handleAbilitiesData = (
             name: abilityData.name,
             description: abilityData.description,
             values: abilityData.values || {},
-            valuesInfo: abilityData.valuesInfo ?? { descriptions: {}, values: {} }, // Добавлено значение по умолчанию
+            valuesInfo: abilityData.valuesInfo ?? { descriptions: {}, values: {} },
             ...convertUnknownFieldsToString(abilityData),
         };
     });

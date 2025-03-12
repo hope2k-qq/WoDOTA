@@ -356,11 +356,11 @@
 
   .left_block,
   .right_block {
-    font-size: 17.55px;  /* Уменьшение шрифта внутри блоков на 22% */
+    font-size: 17.55px;
   }
 
   .attribute_block {
-    margin-right: 2.34rem;  /* Уменьшение отступа справа на 22% */
+    margin-right: 2.34rem;
   }
 
   .attribute_title {
@@ -439,12 +439,34 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
   .health_mana_block:hover .infoBlock {
     display: none;
   }
   .left_block:hover .info_block_attribute {
     display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .infoBlock{
+    width: 400px;
+  }
+
+  .infoBlockTitle{
+    font-size: 17px;
+  }
+
+  .infoBlockText{
+    font-size: 12px;
+  }
+
+  .healthValue, .manaValue {
+    font-size: 14px;
+  }
+
+  .healthRegen, .manaRegen {
+    font-size: 8px;
   }
 }
 

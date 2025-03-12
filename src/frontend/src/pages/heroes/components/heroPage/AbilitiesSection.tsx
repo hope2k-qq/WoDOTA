@@ -1,146 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./abilities_section.module.scss";
-//import axios from "axios";
 import { formatAbilityDescription } from '../../../../utils/formatAbilityDescription';
-import { handleAbilitiesData } from '../../../../utils/handleAbilitiesData';
-import { AbilityData } from '../../../../utils/handleAbilitiesData';
-import {fetchAbilityImages} from "../../../../utils/abilityUtils";
 import { AbilitiesSectionProps } from '../../../../types/heroes';
-const replacements_heroes: { [key: string]: string } = {
-    'roshan': 'arc_warden',
-    'creep': 'chen',
-    'aghanim': 'meepo',
-    'wraith_king': 'skeleton_king',
-    'shadow_fiend': 'nevermore',
-    'necrophos': 'necrolyte',
-    'nature\'s_prophet': 'furion',
-    'vengeful_spirit': 'vengefulspirit',
-    'anti-mage': 'antimage',
-    'zeus': 'zuus',
-};
 
 
 
 
-const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ hero_name, abilities }) => {
-    const [heroAbilities, setHeroAbilities] = useState<{
-        [key: string]: AbilityData;
-    } | null>(null);
+const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName, abilities, abilitiesSrcs, videoSrc, imageSrc, heroAbilities }) => {
 
     const [selectedAbility, setSelectedAbility] = useState<string | null>(null);
-    const [isVideoLoaded, setVideoLoaded] = useState(false);
-    const [abilitiesSrcs, setAbilitiesSrcs] = useState<{ [key: string]: string | null }>({});
-    const [imageSrc, setImageSrc] = useState<{ [key: string]: string }>({});
-    const [videoSrc, setVideoSrc] = useState<{ [key: string]: string }>({});
-    //const [isLoading, setIsLoading] = useState(false);
-    //const API_URL = process.env.REACT_APP_API_URL;
 
+    const [isFading, setIsFading] = useState(false); // Стейт для контроля анимации
 
     useEffect(() => {
-        handleAbilitiesData(abilities, setHeroAbilities);
-    }, [abilities]);
-
-    // useEffect(() => {
-    //     axios.get(`${API_URL}/hero/${hero_name}`)
-    //         .then(response => {
-    //             handleAbilitiesData(response.data.abilities, setHeroAbilities);
-    //         })
-    //         .catch(error => {
-    //             console.error('Error fetching hero data:', error);
-    //         });
-    // }, [API_URL, hero_name]);
-
-
-    useEffect(() => {
-        if (heroAbilities) {
-            const fetchImages = async () => {
-                try {
-                    const cachedImages = sessionStorage.getItem(hero_name);
-                    if (cachedImages) {
-                        setAbilitiesSrcs(JSON.parse(cachedImages));
-                    } else {
-                        const images = await fetchAbilityImages(heroAbilities);
-
-                        sessionStorage.setItem(hero_name, JSON.stringify(images));
-
-                        setAbilitiesSrcs(images);
-                    }
-                } catch (error) {
-                    console.error('Error fetching ability images:', error);
-                }
-            };
-
-            fetchImages();
+        if (selectedAbility) {
+            setIsFading(true);
+            setTimeout(() => setIsFading(false), 400);
         }
-    }, [heroAbilities, hero_name]);
+    }, [selectedAbility]);
 
-
-
-
-
-    const tryLoadResource = (type: 'jpg' | 'webm', name: string, selectedAbility: string): Promise<string> => {
-        return new Promise((resolve, reject) => {
-            // Create a unique cache key based on the name and ability
-            const cacheKey = `${name}_${selectedAbility}_${type}`;
-
-            // Check if the resource is already in sessionStorage
-            const cachedSrc = sessionStorage.getItem(cacheKey);
-            if (cachedSrc) {
-                resolve(cachedSrc);
-                return;
-            }
-
-            const src = `https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/abilities/${name}/${selectedAbility}.${type}`;
-            const resource = type === 'jpg' ? new Image() : document.createElement('video');
-            resource.src = src;
-
-            if (type === 'jpg') {
-                resource.onload = () => {
-                    // Store the image URL in sessionStorage
-                    sessionStorage.setItem(cacheKey, src);
-                    resolve(src);
-                };
-                resource.onerror = () => reject();
-            } else if (type === 'webm') {
-                resource.onloadeddata = () => {
-                    // Store the video URL in sessionStorage
-                    sessionStorage.setItem(cacheKey, src);
-                    resolve(src);
-                };
-                resource.onerror = () => reject();
-            }
-        });
-    };
-
-
-
-
-    useEffect(() => {
-        const attemptLoadResources = async () => {
-            if (!selectedAbility || !hero_name) return;
-
-            let modifiedHeroName = hero_name;
-            let modifiedAbility = selectedAbility;
-
-            const replacementHeroName = replacements_heroes[hero_name];
-            if (replacementHeroName) {
-                modifiedHeroName = replacementHeroName;
-                modifiedAbility = selectedAbility.replace(hero_name, replacementHeroName);
-            }
-
-            try {
-                const pendingImageSrc = await tryLoadResource('jpg', modifiedHeroName, modifiedAbility);
-                const pendingVideoSrc = await tryLoadResource('webm', modifiedHeroName, modifiedAbility);
-
-                setImageSrc(prev => ({ ...prev, [selectedAbility]: pendingImageSrc }));
-                setVideoSrc(prev => ({ ...prev, [selectedAbility]: pendingVideoSrc }));
-            } catch (e) {
-                setVideoSrc(prev => ({ ...prev, [selectedAbility]: 'noFound' }));
-            }
-        };
-
-        attemptLoadResources();
-    }, [hero_name, selectedAbility]);
 
 
     useEffect(() => {
@@ -150,36 +28,6 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ hero_name, abilitie
         }
     }, [heroAbilities, selectedAbility]);
 
-    useEffect(() => {
-        const loadAllAbilities = async () => {
-            if (!heroAbilities) return;
-
-            for (const ability in heroAbilities) {
-                if (ability === selectedAbility) continue;
-
-                let modifiedHeroName = hero_name;
-                let modifiedAbility = ability;
-
-                const replacementHeroName = replacements_heroes[hero_name];
-                if (replacementHeroName) {
-                    modifiedHeroName = replacementHeroName;
-                    modifiedAbility = ability.replace(hero_name, replacementHeroName);
-                }
-
-                try {
-                    const pendingImageSrc = await tryLoadResource('jpg', modifiedHeroName, modifiedAbility);
-                    const pendingVideoSrc = await tryLoadResource('webm', modifiedHeroName, modifiedAbility);
-
-                    setImageSrc(prev => ({ ...prev, [ability]: pendingImageSrc }));
-                    setVideoSrc(prev => ({ ...prev, [ability]: pendingVideoSrc }));
-                } catch (e) {
-                    setVideoSrc(prev => ({ ...prev, [ability]: 'noFound' }));
-                }
-            }
-        };
-
-        loadAllAbilities();
-    }, [heroAbilities, hero_name, selectedAbility]);
 
     const parseAbilityDescription = (description: string) => {
         return description
@@ -207,9 +55,6 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ hero_name, abilitie
             return <div></div>;
         }
 
-        const selectedImageSrc = imageSrc[selectedAbility ?? ''] ?? '/noFound.png';
-        const selectedVideoSrc = videoSrc[selectedAbility ?? ''] ?? 'noFound';
-
         return (
             <div>
                 <div className={styles.render_talents_title}>СПОСОБНОСТИ:</div>
@@ -218,26 +63,18 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ hero_name, abilitie
                         <div
                             className={`${styles.render2VideoWrapper}`}
                         >
-                            {selectedAbility && imageSrc && !isVideoLoaded && (
-                                <img
-                                    src={selectedImageSrc}
-                                    alt="Ability preview"
-                                    className={styles.render2ImageSmall}
+                            {isFading && <div className={styles.fadeOverlay}></div>}
+                            {selectedAbility && imageSrc[selectedAbility] && (
+                                <video
+                                    className={styles.render2videoElement}
+                                    src={videoSrc[selectedAbility] ? videoSrc[selectedAbility] : ""}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    poster={imageSrc[selectedAbility]}
                                 />
+
                             )}
-                            {videoSrc && selectedVideoSrc !== 'noFound' ? (
-                                    <video
-                                        className={styles.render2videoElement}
-                                        src={selectedVideoSrc}
-                                        autoPlay
-                                        loop
-                                        muted
-                                        onLoadedData={() => setVideoLoaded(true)}
-                                        style={{display: isVideoLoaded ? 'block' : 'none'}}
-                                    />
-                                ) :
-                                <img className={styles.render2ImageSmall} src={"/noFound.png"} alt="noFound"/>
-                            }
                         </div>
                         <div className={styles.render2AbilitiesList}>
                             {Object.keys(heroAbilities).map((key) => {
@@ -260,7 +97,11 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ hero_name, abilitie
                                                 src={imageUrl}
                                                 alt={ability.name}
                                                 className={`${styles.render2ImageSmall} ${isGrayScale ? '' : styles.grayscale}`}
-                                                onClick={() => setSelectedAbility(key)}
+                                                onClick={() => {
+                                                    setSelectedAbility(key);
+
+                                                }}
+
                                             />
                                         ) : (
                                             <span></span>

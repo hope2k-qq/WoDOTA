@@ -8,6 +8,7 @@ import { ReactComponent as UpdateIcon } from "../../../../assets/icons/UpdateIco
 import { ReactComponent as SaveIcon } from "../../../../assets/icons/SaveIcon.svg";
 import { ReactComponent as SettingsIcon } from "../../../../assets/icons/settings_icon.svg";
 import { ReactComponent as ShareIcon } from "../../../../assets/icons/ShareIcon.svg";
+import { ReactComponent as BackIcon } from "../../../../assets/icons/BackIcon.svg";
 import {
     CACHE_VERSION,
     cacheImage,
@@ -47,14 +48,14 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const saveGridAsImage = async () => {
         setIsLoading(true);
         if (!sectionsRef.current || sectionsRef.current.length === 0) {
-            console.error("Секции талантов не найдены!");
+            //console.error("Секции талантов не найдены!");
             return;
         }
 
         try {
             const validSections = sectionsRef.current.filter(section => section !== null);
             if (validSections.length === 0) {
-                console.error("Нет доступных секций для рендеринга!");
+                //console.error("Нет доступных секций для рендеринга!");
                 return;
             }
 
@@ -105,7 +106,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             const maxHeight = Math.max(...canvases.map(canvas => canvas?.height || 0));
 
             if (totalWidth === 0 || maxHeight === 0) {
-                console.error("Ошибка: получены пустые изображения!");
+                //console.error("Ошибка: получены пустые изображения!");
                 return;
             }
 
@@ -116,7 +117,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             const ctx = finalCanvas.getContext("2d");
 
             if (!ctx) {
-                console.error("Ошибка при создании контекста канваса");
+                //console.error("Ошибка при создании контекста канваса");
                 return;
             }
 
@@ -159,13 +160,13 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                 finalCanvas.height = 0;
                 finalCanvas.remove();
 
-                console.log("Очистка завершена.");
+                //console.log("Очистка завершена.");
             };
 
             cleanup();
 
         } catch (error) {
-            console.error("Ошибка при создании изображения:", error);
+            //console.error("Ошибка при создании изображения:", error);
         } finally {
             setIsLoading(false);
         }
@@ -195,7 +196,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             };
 
             img.onerror = () => {
-                console.error("Error loading image:", img.src);
+                //console.error("Error loading image:", img.src);
                 resolve(imgElement.src); // If an error occurs, return the original src
             };
         });
@@ -250,45 +251,15 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                 setGeneralTalents(response.data);
                 sessionStorage.setItem('generalTalents', JSON.stringify(response.data));
             } catch (error) {
-                console.error('Ошибка при получении данных:', error);
+                //console.error('Ошибка при получении данных:', error);
             }
         };
 
         fetchGeneralTalentsData().catch((error) => {
-            console.error('Promise rejected in fetchGeneralTalentsData:', error);
+            //console.error('Promise rejected in fetchGeneralTalentsData:', error);
         });
     }, [API_URL]);
 
-
-
-    // const openHeroesDB = async () => {
-    //     const db = await openDB('talents-db', CACHE_VERSION, {
-    //         upgrade(db, oldVersion, newVersion) {
-    //             if (newVersion !== null && newVersion > oldVersion) {
-    //                 if (db.objectStoreNames.contains('meta')) {
-    //                     db.deleteObjectStore('meta');
-    //                 }
-    //                 if (db.objectStoreNames.contains('talents')) {
-    //                     db.deleteObjectStore('talents');
-    //                 }
-    //
-    //                 db.createObjectStore('meta', { keyPath: 'key' });
-    //                 const talentsStore = db.createObjectStore('talents', { keyPath: 'heroName' });
-    //                 talentsStore.createIndex('heroName', 'heroName');
-    //             }
-    //         }
-    //     });
-    //
-    //     // Проверяем кеш-версию
-    //     const currentVersion = await db.get('meta', 'CACHE_VERSION');
-    //     if (currentVersion?.value !== CACHE_VERSION) {
-    //         // console.log('Кеш-версия изменилась, очищаем данные...');
-    //         await db.clear('talents'); // Очищаем кэшированные данные
-    //         await db.put('meta', { key: 'CACHE_VERSION', value: CACHE_VERSION }); // Сохраняем новую версию
-    //     }
-    //
-    //     return db;
-    // };
 
     const getBackgroundForHero = useCallback(async (part: string, hero_name: string): Promise<string | null> => {
         let backgroundFileName;
@@ -310,7 +281,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
         const cachedBackground = await getCachedImage(objectKey);
         if (cachedBackground) {
-            console.log("Loaded background from cache:", objectKey);
+            //console.log("Loaded background from cache:", objectKey);
             return cachedBackground;
         }
 
@@ -324,7 +295,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
                 return URL.createObjectURL(imageBlob);
             } catch (error) {
-                console.error(`Error fetching background for ${objectKey}`, error);
+                //console.error(`Error fetching background for ${objectKey}`, error);
                 return null;
             }
         } else {
@@ -350,55 +321,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         fetchBackgroundImages();
     }, [talents_information, hero_name, getBackgroundForHero]);
 
-
-
-
-
-    // const CACHE_VERSION = "1";
-
-    // const dbPromise: Promise<IDBPDatabase> = openDB("talents-cache", 2, {
-    //     upgrade(db, oldVersion) {
-    //         if (oldVersion < 2) {
-    //             if (!db.objectStoreNames.contains("images")) {
-    //                 db.createObjectStore("images");
-    //             }
-    //
-    //             if (!db.objectStoreNames.contains("cacheVersion")) {
-    //                 const cacheVersionStore = db.createObjectStore("cacheVersion");
-    //                 // Храним текущую версию кеша
-    //                 cacheVersionStore.put(CACHE_VERSION, "version");
-    //             }
-    //         }
-    //     }
-    // });
-    //
-    // const getCacheVersion = async (): Promise<string | null> => {
-    //     const db = await dbPromise;
-    //     const version = await db.get("cacheVersion", "version");
-    //     return version || null;
-    // };
-    //
-    // const setCacheVersion = async (): Promise<void> => {
-    //     const db = await dbPromise;
-    //     await db.put("cacheVersion", CACHE_VERSION, "version");
-    // };
-    //
-    // const clearCache = async (): Promise<void> => {
-    //     const db = await dbPromise;
-    //     await db.clear("images");
-    // };
-    //
-    // const cacheImage = async (key: string, blob: Blob): Promise<void> => {
-    //     const db = await dbPromise;
-    //     await db.put("images", blob, key);
-    // };
-    //
-    // const getCachedImage = async (key: string): Promise<string | null> => {
-    //     const db = await dbPromise;
-    //     const blob: Blob | undefined = await db.get("images", key);
-    //     return blob ? URL.createObjectURL(blob) : null;
-    // };
-
     const getImageForHero = useCallback(async (talent: Talent): Promise<string | null> => {
         if (!talent || talent.id.includes("empty")) return null;
 
@@ -415,7 +337,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
         const cachedImage = await getCachedImage(objectKey);
         if (cachedImage) {
-            console.log("Loaded from cache:", objectKey);
+            //console.log("Loaded from cache:", objectKey);
             return cachedImage;
         }
 
@@ -438,7 +360,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
             return imageUrlObject;
         } catch (error) {
-            console.error(error);
+            //console.error(error);
             return null;
         }
     }, []);
@@ -637,6 +559,33 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         setUpgradeOrder([]);
     };
 
+    const removeLastUpgrade = () => {
+        if (upgradeOrder.length === 0) return;
+
+        const lastUpgrade = upgradeOrder[upgradeOrder.length - 1];
+        const [part, baseKey] = lastUpgrade.split("-");
+
+        setUpgradeOrder((prevOrder) => prevOrder.slice(0, -1));
+
+        setCurrentTalentLevels((prev) => {
+            const newPart = { ...prev[part] };
+
+            const newLevel = Math.max((prev[part]?.[baseKey] ?? 1) - 1, 0);
+
+            if (newLevel === 0) {
+                delete newPart[baseKey];
+            } else {
+                newPart[baseKey] = newLevel;
+            }
+
+            return {
+                ...prev,
+                [part]: newPart,
+            };
+        });
+    };
+
+
 
     const getUpgradedTalentCount = (part: string) => {
         let totalLevel = 0;  // Сумма уровней талантов
@@ -825,7 +774,8 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                     }
 
                     return (
-                        <div key={part} className={styles.talentSection} ref={el => (sectionsRef.current[Number(part)] = el)}>
+                        <div key={part} className={styles.talentSection}
+                             ref={el => (sectionsRef.current[Number(part)] = el)}>
                             {talentData[Number(part)] && isUpgradeMode && (
                                 <div className={styles.talentSection_title}>
                                     <img src={talentData[Number(part)].image} alt={`Talent ${part}`}/>
@@ -862,9 +812,9 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                             if (text !== null) {
                                                 text2 = text.replace(/{[^}]*}/g, '');
                                             }
-                                            if(text2 && colIndex === 1 && text2.length >= 22){
+                                            if (text2 && colIndex === 1 && text2.length >= 22) {
                                                 menuClass3 = styles.menu_type_left_location;
-                                            } else if(text2 && colIndex === 1 && text2.length < 22) {
+                                            } else if (text2 && colIndex === 1 && text2.length < 22) {
                                                 menuClass3 = styles.menu_type_center_location
                                             }
                                             menuClass2 = styles.menu_type_left;
@@ -874,54 +824,58 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                             if (text !== null) {
                                                 text2 = text.replace(/{[^}]*}/g, '');
                                             }
-                                            if(text2 && colIndex === 3 && text2.length >= 22){
+                                            if (text2 && colIndex === 3 && text2.length >= 22) {
                                                 menuClass3 = styles.menu_type_right_location;
-                                            } else if(text2 && colIndex === 3 && text2.length < 22) {
+                                            } else if (text2 && colIndex === 3 && text2.length < 22) {
                                                 menuClass3 = styles.menu_type_center_location
                                             }
                                             menuClass2 = styles.menu_type_right;
                                         }
                                         return (
-                                            <div key={`${rowIndex}-${colIndex}`} className={`${styles.square} ${menuClassArrow}`}
+                                            <div key={`${rowIndex}-${colIndex}`}
+                                                 className={`${styles.square} ${menuClassArrow}`}
                                                  onClick={() => item && isUpgradeMode && isUpgradeAllowed && upgradeTalent(item.talentInfo, rowIndex, part)}>
                                                 {showText && text ? (
-                                                    <div className={`${styles.menu} ${menuClass} ${menuClass2} ${menuClass3}`}>
+                                                    <div
+                                                        className={`${styles.menu} ${menuClass} ${menuClass2} ${menuClass3}`}>
                                                         <div>
                                                             {renderText(text)}
                                                         </div>
                                                     </div>
                                                 ) : null}
                                                 {imageSrc ? (
-                                                    <div
-                                                        className={`${styles.imageContainer}`}>
-                                                        <div style={{display: "flex"}} className={`${isUpgradeMode && borderClass && isUpgradeAllowed ? styles.withBorder : ''}`}>
-                                                            <img
-                                                                className={`${styles.square_img} ${isUpgradeMode && item
-                                                                    ? (currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] ?? -1) === -1
-                                                                        ? `${styles.grayscale} grayscale`
-                                                                        : `${styles.noFilter}`
-                                                                    : `${styles.noFilter}`}`}
-                                                                src={imageSrc}
-                                                                alt="item"
-                                                            />
+                                                        <div
+                                                            className={`${styles.imageContainer} ${showText ? '' : styles.noPseudo}`}>
+                                                            <div style={{display: "flex"}}
+                                                                 className={`${isUpgradeMode && borderClass && isUpgradeAllowed ? styles.withBorder : ''}`}>
+                                                                <img
+                                                                    className={`${styles.square_img} ${isUpgradeMode && item
+                                                                        ? (currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] ?? -1) === -1
+                                                                            ? `${styles.grayscale} grayscale`
+                                                                            : `${styles.noFilter}`
+                                                                        : `${styles.noFilter}`}`}
+                                                                    src={imageSrc}
+                                                                    alt="item"
+                                                                />
+                                                            </div>
+
+                                                            {item && isUpgradeMode && currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] > 0 && (
+                                                                <>
+                                                                    <div className={styles.progressBar}
+                                                                         style={{width: calculateProgressBarWidth(item.talentInfo, part)}}/>
+                                                                    {showNumbers && (
+                                                                        <div className={styles.upgradeNumber}>
+                                                                            {getTalentUpgradeNumbers(part, item.talentInfo.substring(1))}
+                                                                        </div>
+                                                                    )}
+                                                                </>
+                                                            )}
+
                                                         </div>
-
-                                                        {item && isUpgradeMode && currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] > 0 && (
-                                                            <>
-                                                                <div className={styles.progressBar}
-                                                                     style={{width: calculateProgressBarWidth(item.talentInfo, part)}}/>
-                                                                {showNumbers && (
-                                                                    <div className={styles.upgradeNumber}>
-                                                                        {getTalentUpgradeNumbers(part, item.talentInfo.substring(1))}
-                                                                    </div>
-                                                                )}
-                                                            </>
-                                                        )}
-
-                                                    </div>
-                                                ) :
+                                                    ) :
                                                     text ? (
-                                                        <div className={styles.loaderContainer}>
+                                                        <div className={`${styles.loaderContainer}`}>
+                                                            <img className={`${styles.square_img}`} src={"/load_img.png"} alt="loader" />
                                                             <div className={styles.loader}></div>
                                                         </div>
                                                     ) : ''}
@@ -946,105 +900,109 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     return(
         <div>
             <div className={styles.render_talents_title}>ОБ ТАЛАНТАХ:</div>
-            <div className={styles.menu_container}>
-                <button
-                    onClick={() => setIsUpgradeMode(!isUpgradeMode)}
-                    className={styles.toggleUpgrade}
-                >
-                    {isUpgradeMode ? "Отмена" : "Начать прокачку"}
-                </button>
-                {isUpgradeMode && (
-                    <div className={styles.additionalButtons}>
-                        <button onClick={resetAllTalents} className={styles.resetButton}>
-                            <UpdateIcon className={styles.icon} style={{transform: `rotate(${rotation}deg)`}}/>
-                            <span>Сбросить</span>
-                            <span>&nbsp;все таланты</span>
-                        </button>
-                        <button onClick={() => setIsSaveModalOpen(true)} className={styles.saveButton}>
-                            <SaveIcon className={styles.icon}/>
-                            <div className={styles.separator}></div>
-                            <span>Сохранить</span>
-                        </button>
-                        <div className={styles.settings} onClick={() => setIsSettingsOpen(true)}>
-                            <SettingsIcon/>
-                        </div>
-                        {isSaveModalOpen && (
-                            <div className={styles.modalOverlay} onClick={() => setIsSaveModalOpen(false)}>
-                                <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                                    <div className={styles.settings_tittle}>Как сохранить?</div>
+            <div className={styles.div_container}>
+                <div className={styles.menu_container}>
+                    <button
+                        onClick={() => setIsUpgradeMode(!isUpgradeMode)}
+                        className={styles.toggleUpgrade}
+                    >
+                        {isUpgradeMode ? "Отмена" : "Начать прокачку"}
+                    </button>
+                    {isUpgradeMode && (
+                        <div className={styles.additionalButtons}>
+                            <div className={styles.back_container} onClick={removeLastUpgrade}><BackIcon/></div>
+                            <button onClick={resetAllTalents} className={styles.resetButton}>
+                                <UpdateIcon className={styles.icon} style={{transform: `rotate(${rotation}deg)`}}/>
+                                <span>Сбросить</span>
+                                <span>&nbsp;все таланты</span>
+                            </button>
+                            <button onClick={() => setIsSaveModalOpen(true)} className={styles.saveButton}>
+                                <SaveIcon className={styles.icon}/>
+                                <div className={styles.separator}></div>
+                                <span>Сохранить</span>
+                            </button>
+                            <div className={styles.settings} onClick={() => setIsSettingsOpen(true)}>
+                                <SettingsIcon/>
+                            </div>
+                            {isSaveModalOpen && (
+                                <div className={styles.modalOverlay} onClick={() => setIsSaveModalOpen(false)}>
+                                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                                        <div className={styles.settings_tittle}>Как сохранить?</div>
 
-                                    <div className={styles.ModalSaveButtonContainer}>
-                                        <button onClick={saveGridAsImage} className={styles.saveButtonInModal}>
-                                            {isLoading ? (
-                                                <>
-                                                    <span>Загрузка</span>
-                                                    <span className={styles.dots}>
+                                        <div className={styles.ModalSaveButtonContainer}>
+                                            <button onClick={saveGridAsImage} className={styles.saveButtonInModal}>
+                                                {isLoading ? (
+                                                    <>
+                                                        <span>Загрузка</span>
+                                                        <span className={styles.dots}>
                                                         <span className={styles.dot}>.</span>
                                                         <span className={styles.dot}>.</span>
                                                         <span className={styles.dot}>.</span>
                                                     </span>
-                                                </>
-                                            ) : (
-                                                'Скачать'
-                                            )}
-                                        </button>
-                                        <button className={styles.saveButtonInModal} disabled>
-                                            <ShareIcon/>
-                                            Поделиться
+                                                    </>
+                                                ) : (
+                                                    'Скачать'
+                                                )}
+                                            </button>
+                                            <button className={styles.saveButtonInModal} disabled>
+                                                <ShareIcon/>
+                                                Поделиться
+                                            </button>
+                                        </div>
+
+                                        <button onClick={() => setIsSaveModalOpen(false)}
+                                                className={styles.closeButton}>
+                                            Отмена
                                         </button>
                                     </div>
-
-                                    <button onClick={() => setIsSaveModalOpen(false)} className={styles.closeButton}>
-                                        Отмена
-                                    </button>
                                 </div>
-                            </div>
-                        )}
+                            )}
 
-                        {isSettingsOpen && (
-                            <div className={styles.modalOverlay} onClick={() => setIsSettingsOpen(false)}>
-                                <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                                    <div className={styles.settings_tittle}>Настройки</div>
-                                    <div className={styles.additionalButtonsWrapper}>
-                                        <div className={styles['container-attribute']}>
-                                            <div className={styles['slider-label']}>
-                                                ЦИФРЫ
+                            {isSettingsOpen && (
+                                <div className={styles.modalOverlay} onClick={() => setIsSettingsOpen(false)}>
+                                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                                        <div className={styles.settings_tittle}>Настройки</div>
+                                        <div className={styles.additionalButtonsWrapper}>
+                                            <div className={styles['container-attribute']}>
+                                                <div className={styles['slider-label']}>
+                                                    ЦИФРЫ
+                                                </div>
+                                                <div className={styles['switch-container']}>
+                                                    <label className={styles['switch']}>
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={showNumbers}
+                                                            onChange={toggleNumbersVisibility}
+                                                        />
+                                                        <span className={styles['slider']}></span>
+                                                    </label>
+                                                </div>
                                             </div>
-                                            <div className={styles['switch-container']}>
-                                                <label className={styles['switch']}>
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={showNumbers}
-                                                        onChange={toggleNumbersVisibility}
-                                                    />
-                                                    <span className={styles['slider']}></span>
-                                                </label>
+                                            <div className={styles['container-attribute']}>
+                                                <div className={styles['slider-label']}>
+                                                    О ТАЛАНТАХ
+                                                </div>
+                                                <div className={styles['switch-container']}>
+                                                    <label className={styles['switch']}>
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={showText}
+                                                            onChange={toggleTextVisibility}
+                                                        />
+                                                        <span className={styles['slider']}></span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className={styles['container-attribute']}>
-                                            <div className={styles['slider-label']}>
-                                                О ТАЛАНТАХ
-                                            </div>
-                                            <div className={styles['switch-container']}>
-                                                <label className={styles['switch']}>
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={showText}
-                                                        onChange={toggleTextVisibility}
-                                                    />
-                                                    <span className={styles['slider']}></span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                        <button onClick={() => setIsSettingsOpen(false)} className={styles.closeButton}>
+                                            Закрыть
+                                        </button>
                                     </div>
-                                    <button onClick={() => setIsSettingsOpen(false)} className={styles.closeButton}>
-                                        Закрыть
-                                    </button>
                                 </div>
-                            </div>
-                        )}
-                    </div>
-                )}
+                            )}
+                        </div>
+                    )}
+                </div>
             </div>
             {renderTalents()}
             {isUpgradeMode && (

@@ -24,6 +24,7 @@ export const formatAbilityDescription = (
 
 
     formattedDescription = formattedDescription.replace(/\\n\\n/g, '<br/><br/>');
+    formattedDescription = formattedDescription.replace(/\\n/g, '<br/>');
 
     return formattedDescription;
 };

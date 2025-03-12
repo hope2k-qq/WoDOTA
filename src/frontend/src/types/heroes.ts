@@ -3,10 +3,24 @@ export interface AbilityData {
     description: string;
     values: Record<string, string | { value?: string; [key: string]: any }>;
     [key: string]: string | Record<string, string | object>;
+    valuesInfo: {
+        descriptions: Record<string, string>;
+        values: Record<string, string | number>;
+    };
 }
 
 export interface AbilitiesProps {
     heroName: string;
+    abilities: { [key: string]: { [key: string]: string } };
+    abilitiesSrcs: { [key: string]: string | null };
+    videoSrc: { [key: string]: string };
+    imageSrc: { [key: string]: string };
+    heroAbilities: { [key: string]: AbilityData } | null;
+}
+
+export interface AbilitiesPropsCharacteristics {
+    heroName: string;
+    characteristics: { [key: string]: string };
 }
 
 export interface RelatedTalent {
@@ -46,8 +60,12 @@ export interface RenderTalentsProps {
 }
 
 export interface AbilitiesSectionProps {
-    hero_name: string;
+    heroName: string;
     abilities: { [key: string]: { [key: string]: string } };
+    abilitiesSrcs: { [key: string]: string | null };
+    videoSrc: { [key: string]: string };
+    imageSrc: { [key: string]: string };
+    heroAbilities: { [key: string]: AbilityData } | null;
 }
 
 

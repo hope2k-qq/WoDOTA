@@ -15,7 +15,7 @@ export const TopBarMenuItem: React.FC<Props> = ({ title, onNavigate, isActive, m
             onClick={onNavigate}
         >
             {icon}
-            <div className={styles.title} style={menuOpen ? {color: "#9b9db1;"} : undefined}>{title}</div>
+            <div className={styles.title} style={menuOpen ? {color: "#9b9db1"} : undefined}>{title}</div>
         </div>
     );
 };

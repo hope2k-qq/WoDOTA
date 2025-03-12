@@ -8,8 +8,27 @@ body {
   /*background-position: center;*/
   /*background-repeat: no-repeat;*/
   height: 100vh;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 code {
   /*font-family: 'Geometria', sans-serif;*/
 }
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #12131a;
+  border-radius: 10px;
+}
+
+

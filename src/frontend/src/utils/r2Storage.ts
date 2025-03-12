@@ -14,13 +14,13 @@ const s3Client = new S3Client({
     },
 });
 
+
 export const getImageUrl = async (objectKey: string): Promise<string | null> => {
     try {
-        const command = new GetObjectCommand({ Bucket: 'assets', Key: objectKey });
-        const signedUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
-        return signedUrl;
+        const command = new GetObjectCommand({Bucket: 'assets', Key: objectKey});
+        const signedUrl = await getSignedUrl(s3Client, command, {expiresIn: 3600});
+        return signedUrl; // Если объект существует, генерируем и возвращаем подписанный URL
     } catch (error) {
-        console.error('Ошибка при получении изображения:', error);
-        return null;
+        return null; // Если произошла ошибка при генерации URL
     }
-};
+}

@@ -1,13 +1,12 @@
-const API_URL = process.env.REACT_APP_API_URL;
-
+import {getImageUrl} from "./r2Storage";
 
 // Функция для получения URL видео
 export const getVideoUrl = (name: string) =>
-    `${API_URL}/proxy/video?url=https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${name}.webm`;
+    getImageUrl(`heroes/renders/videos/${name}.webm`);
 
 // Функция для получения URL изображения
-export const getImageUrl = (name: string) =>
-    `https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${name}.png`;
+export const getImageUrl2 = (name: string) =>
+    getImageUrl(`heroes/renders/images/${name}.webp`);
 
 // Функция для открытия IndexedDB
 const openIndexedDB = (): Promise<IDBDatabase> => {
@@ -119,40 +118,36 @@ export const deleteExpiredVideos = async () => {
 // Функция для загрузки и кэширования видео
 export const fetchAndCacheVideo = async (
     name: string,
-    setVideoBlob: (blob: Blob) => void,
-    setVideoLoaded: (loaded: boolean) => void,
-    handleVideoError: () => void
+    setVideoBlob: (blob: Blob) => void
 ) => {
     console.log(`Attempting to load video for hero: ${name}`);
 
-    await deleteExpiredVideos();
+    await deleteExpiredVideos(); // Удаление устаревших видео
 
-    const cachedVideoBlob = await getVideoFromIndexedDB(name);
-
-    if (cachedVideoBlob) {
-        console.log('Video found in cache');
-        setVideoBlob(cachedVideoBlob);
-        setVideoLoaded(true);
-    } else {
-        console.log('Video not found in cache, fetching from server...');
-        try {
-            const videoUrl = getVideoUrl(name);
-            const response = await fetch(videoUrl);
-
-            if (!response.ok) {
-                console.error('Failed to fetch video from server:', videoUrl);
-                throw new Error('Video not found');
-            }
-
-            const videoBlob = await response.blob();
-            console.log(`Saving video to IndexedDB for ${name}`);
-            await saveVideoToIndexedDB(name, videoBlob);
-
-            setVideoBlob(videoBlob);
-            setVideoLoaded(true);
-        } catch (error) {
-            console.error('Error fetching or saving video:', error);
-            handleVideoError();
+    // Проверка кеша внутри этой функции теперь не требуется
+    console.log('Video not found in cache, fetching from server...');
+    try {
+        const videoUrl = await getVideoUrl(name);
+        if (!videoUrl) {
+            console.error('Failed to generate video URL');
+            throw new Error('Invalid video URL');
         }
+
+        const response = await fetch(videoUrl);
+
+        if (!response.ok) {
+            console.error('Failed to fetch video from server:', videoUrl);
+            throw new Error('Video not found');
+        }
+
+        const videoBlob = await response.blob();
+        console.log(`Saving video to IndexedDB for ${name}`);
+        await saveVideoToIndexedDB(name, videoBlob);
+
+        setVideoBlob(videoBlob);
+    } catch (error) {
+        console.error('Error fetching or saving video:', error);
     }
+
 };
+

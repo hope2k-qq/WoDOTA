@@ -18,30 +18,60 @@ const App = () => {
     const API_URL = process.env.REACT_APP_API_URL;
     const [isMaintenance] = useState(false);
 
+    const clearAllIndexedDB = async () => {
+        try {
+            const databases = await indexedDB.databases();
+
+            // Для каждой базы данных вызываем deleteDatabase
+            for (const db of databases) {
+                if (db.name) {
+                    const request = indexedDB.deleteDatabase(db.name);
+
+                    request.onerror = (event) => {
+                        //console.error(`Ошибка при удалении базы данных ${db.name}`);
+                    };
+
+                    request.onsuccess = () => {
+                        //console.log(`База данных ${db.name} успешно удалена`);
+                    };
+                } else {
+                    //console.warn('Имя базы данных отсутствует, пропускаем удаление');
+                }
+            }
+
+            //console.log('Все базы данных удалены');
+        } catch (error) {
+            //console.error('Ошибка при удалении баз данных:', error);
+        }
+    };
+
+
+
     useEffect(() => {
         const cachedVersion = localStorage.getItem('cacheVersion');
         const cachedData = localStorage.getItem('heroesData');
 
         if (cachedVersion === CACHE_VERSION && cachedData) {
-            console.log('Данные загружены из localStorage:', JSON.parse(cachedData));
+            //console.log('Данные загружены из localStorage:', JSON.parse(cachedData));
             return;
         }
 
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${API_URL}/heroesAllData`);
+                const response = await axios.get(`${API_URL}/heroesAllDataJson`);
                 const data = response.data;
 
                 localStorage.setItem('heroesData', JSON.stringify(data));
                 localStorage.setItem('cacheVersion', CACHE_VERSION);
                 window.location.reload();
-                console.log('Данные загружены с сервера:', data);
+                //console.log('Данные загружены с сервера:', data);
             } catch (error) {
-                console.error('Ошибка при загрузке данных с сервера:', error);
+                //console.error('Ошибка при загрузке данных с сервера:', error);
             }
         };
 
         fetchData();
+        clearAllIndexedDB();
     }, [API_URL])
 
     useEffect(() => {
