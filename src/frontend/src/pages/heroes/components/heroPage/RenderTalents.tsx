@@ -527,7 +527,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
     const getTalentUpgradeNumbers = (part: string, baseKey: string) => {
         const numbers = upgradeOrder
-            .filter((entry) => entry.startsWith(`${part}-${baseKey}`))
+            .filter((entry) => new RegExp(`^${part}-${baseKey}-`).test(entry))
             .map((entry) => entry.split("-")[2])
             .join("/");
 
@@ -899,7 +899,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
     return(
         <div>
-            <div className={styles.render_talents_title}>ОБ ТАЛАНТАХ:</div>
+            <div className={styles.render_talents_title}>О ТАЛАНТАХ:</div>
             <div className={styles.div_container}>
                 <div className={styles.menu_container}>
                     <button
