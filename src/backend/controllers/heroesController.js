@@ -1,4 +1,5 @@
 ﻿const fs = require('fs');
+require('dotenv').config();
 const path = require('path');
 const textService = require('../services/textService');
 const talentsService = require('../services/talentsService');
@@ -466,10 +467,11 @@ exports.createHeroBuild = async (req, res) => {
         buildDescription: buildDescription || '',
         createdAt: new Date(),
     };
+    const domen = process.env.DOMEN;
     
     buildsCollection.insertOne(buildData)
         .then(result => {
-            res.json({ link: `http://localhost:5000/hero-build/${shortId}` });
+            res.json({ link: `${domen}/hero-build/${shortId}` });
         })
         .catch(error => {
             console.error("Error inserting build:", error);
