@@ -23,16 +23,16 @@ app.use(cors({
 }));
 const uri = process.env.MONGODB_URI;
 
-MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+MongoClient.connect(uri)
     .then(client => {
         console.log("Connected to MongoDB");
         
         const db = client.db('BuildDB');
-        
         app.locals.db = db.collection('builds');
-
     })
-    .catch(error => console.error("Error connecting to MongoDB:", error));
+    .catch(error => {
+        console.error("Error connecting to MongoDB:", error);
+    });
 app.get('/ping', (req, res) => {
     res.status(200).send('hope2k 22.02.2025 OK OK');
 });

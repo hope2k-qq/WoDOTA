@@ -308,7 +308,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             });
 
             if (!response.ok) {
-                // console.error('Error:', response.statusText);
+                //console.error('Error:', response.statusText);
                 return;
             }
 
@@ -324,7 +324,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             localStorage.setItem('lastHeroBuildSubmit', now.toString());
             handleCloseModal();
         } catch (error) {
-            // console.error('Error:', error);
+            //console.error('Error:', error);
         }
     };
 
