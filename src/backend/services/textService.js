@@ -23,15 +23,9 @@ function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
             if (parts.length >= 2) {
                 let key = parts[0].trim();
                 let value = parts.slice(1).join('"').trim();
-
-                value = value.replace(/<\/?b>/g, '');
-
-                const colorRegex = /<font color=['"]?([^'"]+)['"]?>(.*?)<\/font>/g;
-                value = value.replace(colorRegex, (match, color, text) => {
-                    return `{"text": "${text}", "color": "${color}"}`;
-                });
-
+                
                 value = value.replace(/<br><br>/g, '\n\n').replace(/<br>/g, '\n');
+                
 
                 let heroNameReplacement = heroName;
 
@@ -41,8 +35,7 @@ function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
                         break;
                     }
                 }
-
-                // Добавляем таланты героя
+                
                 if (key.startsWith('modifier_') && key.includes(heroNameReplacement) && !key.includes('boss_')) {
                     for (const [original, replacement] of Object.entries(replacements_heroes)) {
                         if (key.includes(original)) {
@@ -55,7 +48,6 @@ function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
                 
                 
                 
-                // Добавляем данные только для выбранных способностей
                 if (
                     key.startsWith('DOTA_Tooltip_ability_') &&
                     !key.startsWith('DOTA_Tooltip_ability_item') &&
@@ -108,17 +100,9 @@ function parseAddonFile(filePath) {
             if (parts.length >= 2) {
                 let key = parts[0].trim();
                 let value = parts.slice(1).join('"').trim();
-
-                value = value.replace(/<\/?b>/g, '');
-
-                const colorRegex = /<font color=['"]?([^'"]+)['"]?>(.*?)<\/font>/g;
-                value = value.replace(colorRegex, (match, color, text) => {
-                    return `{"text": "${text}", "color": "${color}"}`;
-                });
-
+                
                 value = value.replace(/<br><br>/g, '\n\n').replace(/<br>/g, '\n');
-
-                // Добавляем общие таланты (например, для всех героев)
+                
                 if (key.startsWith('woda_talent_')) {
                     generalTalentsData[key] = value;
                 }

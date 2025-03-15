@@ -1,0 +1,87 @@
+.main_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title_main{
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  margin-top: 3rem;
+  font-family: "Inter", serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1600px;
+  width: 100%;
+  gap: 1.4rem;
+}
+
+.container_news {
+  background: #181920;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 0 1rem;
+}
+
+.container_news:hover {
+  background: #2c3239;
+}
+
+.title {
+  color: #f4bf58;
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1;
+  padding: 23px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkmark_iron{
+  width: 24px;
+  height: auto;
+  fill: #f4bf58;
+}
+
+.content {
+  color: #9b9db1;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  overflow: hidden;
+  height: 0;
+  border-top: 1px solid rgba(244, 191, 88, 0.5);
+  transition: height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out, border-top 0.4s ease-out;
+  padding: 15px 25px;
+}
+
+.open {
+  height: auto;
+}
+
+.close {
+  height: 0;
+}
+
+@media (max-width: 1000px) {
+  .title_main{
+    font-size: 2.3rem;
+  }
+  .title{
+    font-size: 1.3rem;
+  }
+}
+
+

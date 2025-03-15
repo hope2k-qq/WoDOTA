@@ -9,6 +9,8 @@ import { ReactComponent as SaveIcon } from "../../../../assets/icons/SaveIcon.sv
 import { ReactComponent as SettingsIcon } from "../../../../assets/icons/settings_icon.svg";
 import { ReactComponent as ShareIcon } from "../../../../assets/icons/ShareIcon.svg";
 import { ReactComponent as BackIcon } from "../../../../assets/icons/BackIcon.svg";
+import { ReactComponent as ErrorIcon } from "../../../../assets/icons/ErrorIcon.svg";
+import { ReactComponent as SuccessIcon } from "../../../../assets/icons/SuccessIcon.svg";
 import {
     CACHE_VERSION,
     cacheImage,
@@ -23,28 +25,32 @@ interface TalentImage {
     image: string;
 }
 
-const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_information, talents_description }) => {
-    // const [heroTalents, setHeroTalents] = useState<HeroInformation | null>(null);
+const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_information,
+                                                         talents_description,
+                                                         buildCurrentTalentLevels,
+                                                         buildUpgradeOrder,
+                                                         isBuild}) => {
     const [generalTalents, setGeneralTalents] = useState<AddonData | null>(null);
     const [imageSrcs, setImageSrcs] = useState<{ [key: string]: string | null }>({});
     const [backgroundImages, setBackgroundImages] = useState<{ [key: string]: string | null }>({});
-    // const [loading, setLoading] = useState<boolean>(true);
     const [isLoading, setIsLoading] = useState(false);
-    // const [error, setError] = useState<string | null>(null);
-    const [isUpgradeMode, setIsUpgradeMode] = useState(false); // Можно ли качать таланты?
+    const [isUpgradeMode, setIsUpgradeMode] = useState(false);
     const [currentTalentLevels, setCurrentTalentLevels] = useState<{ [key: string]: { [key: string]: number } }>({});
     const [upgradeOrder, setUpgradeOrder] = useState<string[]>([]);
     const [showNumbers, setShowNumbers] = useState(true);
     const [showText, setShowText] = useState(true);
-    // const CACHE_VERSION = 4;
     const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
     const [rotation, setRotation] = useState(0);
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
     const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
-    const [borderClass, setBorderClass] = useState(true); // State to track 'withBorder' class
+    const [borderClass, setBorderClass] = useState(true);
     const [partInfo, setPartInfo] = useState("1");
-
-
+    const [isOpenShare, setIsOpenShare] = useState(false);
+    const [notification, setNotification] = useState<{ message: string, type: 'error' | 'success' | '' }>({ message: '', type: '' });
+    const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
+    const API_URL = process.env.REACT_APP_API_URL;
+    const [buildName, setBuildName] = useState('');
+    const [buildDescription, setBuildDescription] = useState('');
     const saveGridAsImage = async () => {
         setIsLoading(true);
         if (!sectionsRef.current || sectionsRef.current.length === 0) {
@@ -172,6 +178,69 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         }
     };
 
+    const toggleFormShare = () => {
+        setIsOpenShare(prevState => !prevState);
+    };
+
+    const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setBuildName(e.target.value);
+    };
+
+    const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setBuildDescription(e.target.value);
+    };
+
+    const validateBuild = () => {
+        if (upgradeOrder.length === 0) {
+            showNotification("Вы не распределили очки талантов!", "error");
+            return false;
+        }
+
+        if (buildName.length < 4) {
+            showNotification("Название не может быть меньше 4 символов!", "error");
+            return false;
+        }
+
+        showNotification("Успешно скопировано в буфер обмена!", "success");
+        return true;
+    };
+
+
+    const showNotification = (message: string, type: 'error' | 'success') => {
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+
+        const oldNotificationElement = document.querySelector(`.${styles.notification}`);
+        if (oldNotificationElement) {
+            oldNotificationElement.classList.add(styles.hide);
+            setNotification({ message: '', type: '' });
+        }
+
+        setNotification({ message, type });
+
+        setTimeout(() => {
+            const notificationElement = document.querySelector(`.${styles.notification}`);
+            if (notificationElement) {
+                notificationElement.classList.remove(styles.hide);
+                notificationElement.classList.add(styles.show);
+            }
+        }, 50);
+
+        const newTimerId = setTimeout(() => {
+            const notificationElement = document.querySelector(`.${styles.notification}`);
+            if (notificationElement) {
+                notificationElement.classList.add(styles.hide);
+            }
+        }, 2500);
+
+        setTimerId(newTimerId);
+    };
+
+
+
+
+
 
     const applyGrayscaleFilter = async (imgElement: HTMLImageElement): Promise<string> => {
         return new Promise((resolve) => {
@@ -202,6 +271,82 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         });
     };
 
+    const createHeroBuild = async () => {
+        const now = Date.now();
+        const lastSubmit = localStorage.getItem('lastHeroBuildSubmit');
+        const oneMinute = 60 * 1000;
+        const formatTime = (time: number) => {
+            if (time % 10 === 1 && time % 100 !== 11) {
+                return `${time} секунду`;
+            } else if ((time % 10 >= 2 && time % 10 <= 4) && (time % 100 < 10 || time % 100 >= 20)) {
+                return `${time} секунды`;
+            } else {
+                return `${time} секунд`;
+            }
+        };
+        if (lastSubmit && now - parseInt(lastSubmit, 10) < oneMinute) {
+            const remainingTime = Math.ceil((oneMinute - (now - parseInt(lastSubmit, 10))) / 1000);
+            showNotification(`Вы можете создать новый билд через ${formatTime(remainingTime)}.`, "error");
+            return;
+        }
+
+        if (!validateBuild()) return;
+
+        try {
+            const response = await fetch(`${API_URL}/create-hero-build`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    heroName: hero_name,
+                    buildName,
+                    buildDescription,
+                    currentTalentLevels,
+                    upgradeOrder,
+                }),
+            });
+
+            if (!response.ok) {
+                // console.error('Error:', response.statusText);
+                return;
+            }
+
+            const data = await response.json();
+
+            const currentDomain = window.location.origin;
+
+            const updatedLink = data.link.replace(API_URL, currentDomain);
+
+
+            await navigator.clipboard.writeText(updatedLink);
+
+            localStorage.setItem('lastHeroBuildSubmit', now.toString());
+            handleCloseModal();
+        } catch (error) {
+            // console.error('Error:', error);
+        }
+    };
+
+    const handleCloseModal = () => {
+        setIsSaveModalOpen(false);
+        setIsOpenShare(false);
+        setBuildName('');
+        setBuildDescription('');
+    };
+
+
+
+    useEffect(() => {
+        if (buildCurrentTalentLevels) {
+            setCurrentTalentLevels(buildCurrentTalentLevels);
+        }
+        if (buildUpgradeOrder) {
+            setUpgradeOrder(buildUpgradeOrder);
+        }
+    }, [buildCurrentTalentLevels, buildUpgradeOrder]);
+
+
 
 
     useEffect(() => {
@@ -222,9 +367,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
 
 
-
-
-
     // Функция для переключения видимости текста
     const toggleTextVisibility = () => {
         setShowText(prevState => !prevState);
@@ -233,8 +375,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         setShowNumbers(prevState => !prevState);
     };
 
-
-    const API_URL = process.env.REACT_APP_API_URL;
 
 
     useEffect(() => {
@@ -421,7 +561,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const getTalentText = (talent: string, part: string) => {
         if (!talent) return null;
 
-        // 🔹 Героические таланты (modifier_)
         if (talent.includes('modifier_') && talents_description) {
             const baseKey = talent.substring(1);
             const currentLevel = currentTalentLevels?.[part]?.[baseKey] ?? -1;
@@ -450,11 +589,19 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             return false;
         }
 
-        // Получаем количество улучшенных талантов и максимальный разблокированный ряд
+        if (talent.conflict) {
+            for (const conflict of talent.conflict) {
+                for (let i = 0; i <= 3; i++) {
+                    if (currentTalentLevels?.[i]?.[conflict] > 0 && talent.id !== conflict) {
+                        return false;
+                    }
+                }
+            }
+        }
+
         const upgradedCount = getUpgradedTalentCount(part);
         const maxUnlockedRow = Math.floor(upgradedCount / 4);
 
-        // Проверка, что rowIndex <= maxUnlockedRow
         if (rowIndex > maxUnlockedRow) return false;
 
         // Если талант пустой, не прокачиваем
@@ -513,7 +660,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         const baseKey = talent.substring(1);
         const currentLevel = currentTalentLevels?.[part]?.[baseKey] ?? 0;
         const nextLevel = currentLevel + 1;
-
         setCurrentTalentLevels((prev) => ({
             ...prev,
             [part]: {
@@ -537,10 +683,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
         return numbers;
     };
-
-
-
-
 
 
     const getTotalUpgradedTalentCount = () => {
@@ -722,39 +864,11 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             return <div>No talents available.</div>;
         }
 
-
-
-        const renderText = (text: string) => {
-            return text.split('\n').map((line, index) => {
-                const jsonMatches = line.match(/{.*?}/g);
-
-                if (jsonMatches) {
-                    let processedLine = [];
-                    let lastIndex = 0;
-
-                    jsonMatches.forEach((match) => {
-                        const beforeJson = line.slice(lastIndex, line.indexOf(match));
-                        const parsedLine = JSON.parse(match);
-
-                        processedLine.push(beforeJson);
-                        processedLine.push(
-                            <span key={lastIndex} style={{ color: parsedLine.color, fontWeight: "bold" }}>
-                        {parsedLine.text}
-                    </span>
-                        );
-
-                        lastIndex = line.indexOf(match) + match.length;
-                    });
-
-                    processedLine.push(line.slice(lastIndex));
-
-                    return <div key={index}>{processedLine}</div>;
-                } else {
-                    return <div key={index} style={line.trim() === '' ? { marginBottom: '1em' } : {}}>{line}</div>;
-                }
-            });
-        };
-
+        function formatText(text: string) {
+            text = text.replace(/\n\n/g, '<div style="margin-bottom: 1.2rem"></div>');
+            text = text.replace(/\n/g, '<br>');
+            return text;
+        }
 
 
 
@@ -776,7 +890,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                     return (
                         <div key={part} className={styles.talentSection}
                              ref={el => (sectionsRef.current[Number(part)] = el)}>
-                            {talentData[Number(part)] && isUpgradeMode && (
+                            {talentData[Number(part)] && (!isBuild ? isUpgradeMode : true) && (
                                 <div className={styles.talentSection_title}>
                                     <img src={talentData[Number(part)].image} alt={`Talent ${part}`}/>
                                     <div>{talentData[Number(part)].text}: {getUpgradedTalentCount(part)}</div>
@@ -834,22 +948,20 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                         return (
                                             <div key={`${rowIndex}-${colIndex}`}
                                                  className={`${styles.square} ${menuClassArrow}`}
-                                                 onClick={() => item && isUpgradeMode && isUpgradeAllowed && upgradeTalent(item.talentInfo, rowIndex, part)}>
+                                                 onClick={() => item && isUpgradeMode && !isBuild && isUpgradeAllowed && upgradeTalent(item.talentInfo, rowIndex, part)}>
                                                 {showText && text ? (
                                                     <div
                                                         className={`${styles.menu} ${menuClass} ${menuClass2} ${menuClass3}`}>
-                                                        <div>
-                                                            {renderText(text)}
-                                                        </div>
+                                                        <div dangerouslySetInnerHTML={{__html:  formatText(text)}}/>
                                                     </div>
                                                 ) : null}
                                                 {imageSrc ? (
                                                         <div
                                                             className={`${styles.imageContainer} ${showText ? '' : styles.noPseudo}`}>
                                                             <div style={{display: "flex"}}
-                                                                 className={`${isUpgradeMode && borderClass && isUpgradeAllowed ? styles.withBorder : ''}`}>
+                                                                 className={`${isUpgradeMode && !isBuild && borderClass && isUpgradeAllowed ? styles.withBorder : ''}`}>
                                                                 <img
-                                                                    className={`${styles.square_img} ${isUpgradeMode && item
+                                                                    className={`${styles.square_img} ${(!isBuild ? isUpgradeMode : true) && item
                                                                         ? (currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] ?? -1) === -1
                                                                             ? `${styles.grayscale} grayscale`
                                                                             : `${styles.noFilter}`
@@ -859,7 +971,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                                 />
                                                             </div>
 
-                                                            {item && isUpgradeMode && currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] > 0 && (
+                                                            {item && (!isBuild ? isUpgradeMode : true) && currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] > 0 && (
                                                                 <>
                                                                     <div className={styles.progressBar}
                                                                          style={{width: calculateProgressBarWidth(item.talentInfo, part)}}/>
@@ -870,6 +982,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                                     )}
                                                                 </>
                                                             )}
+
 
                                                         </div>
                                                     ) :
@@ -884,7 +997,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                     })
                                 ))}
                             </div>
-                            {part === partInfo && isUpgradeMode && (
+                            {part === partInfo && (!isBuild ? isUpgradeMode : true) && (
                                 <div className={styles.talentSection_info}>
                                     <div>Доступно для распределения: {40 - getTotalUpgradedTalentCount()}</div>
                                     <div>Всего талантов: {getTotalUpgradedTalentCount()}</div>
@@ -899,111 +1012,157 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
     return(
         <div>
-            <div className={styles.render_talents_title}>О ТАЛАНТАХ:</div>
-            <div className={styles.div_container}>
-                <div className={styles.menu_container}>
-                    <button
-                        onClick={() => setIsUpgradeMode(!isUpgradeMode)}
-                        className={styles.toggleUpgrade}
-                    >
-                        {isUpgradeMode ? "Отмена" : "Начать прокачку"}
-                    </button>
-                    {isUpgradeMode && (
-                        <div className={styles.additionalButtons}>
-                            <div className={styles.back_container} onClick={removeLastUpgrade}><BackIcon/></div>
-                            <button onClick={resetAllTalents} className={styles.resetButton}>
-                                <UpdateIcon className={styles.icon} style={{transform: `rotate(${rotation}deg)`}}/>
-                                <span>Сбросить</span>
-                                <span>&nbsp;все таланты</span>
-                            </button>
-                            <button onClick={() => setIsSaveModalOpen(true)} className={styles.saveButton}>
-                                <SaveIcon className={styles.icon}/>
-                                <div className={styles.separator}></div>
-                                <span>Сохранить</span>
-                            </button>
-                            <div className={styles.settings} onClick={() => setIsSettingsOpen(true)}>
-                                <SettingsIcon/>
-                            </div>
-                            {isSaveModalOpen && (
-                                <div className={styles.modalOverlay} onClick={() => setIsSaveModalOpen(false)}>
-                                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                                        <div className={styles.settings_tittle}>Как сохранить?</div>
+            {!isBuild && (
+                <div className={styles.render_talents_title}>О ТАЛАНТАХ:</div>
+            )}
+            {!isBuild && (
+                <div className={styles.div_container}>
+                    {notification.message && (
+                        <div
+                            className={`${styles.notification} ${styles.show} ${notification.type === 'error' ? styles.error : styles.success}`}>
+                            {notification.type === 'error' ? <ErrorIcon/> : <SuccessIcon/>}
+                            <div>{notification.message}</div>
+                        </div>
+                    )}
 
-                                        <div className={styles.ModalSaveButtonContainer}>
-                                            <button onClick={saveGridAsImage} className={styles.saveButtonInModal}>
-                                                {isLoading ? (
-                                                    <>
-                                                        <span>Загрузка</span>
-                                                        <span className={styles.dots}>
+
+                    <div className={styles.menu_container}>
+                        <button
+                            onClick={() => setIsUpgradeMode(!isUpgradeMode)}
+                            className={styles.toggleUpgrade}
+                        >
+                            {isUpgradeMode ? "Отмена" : "Начать прокачку"}
+                        </button>
+                        {isUpgradeMode && (
+                            <div className={styles.additionalButtons}>
+                                <div className={styles.back_container} onClick={removeLastUpgrade}><BackIcon/></div>
+                                <button onClick={resetAllTalents} className={styles.resetButton}>
+                                    <UpdateIcon className={styles.icon} style={{transform: `rotate(${rotation}deg)`}}/>
+                                    <span>Сбросить</span>
+                                    <span>&nbsp;все таланты</span>
+                                </button>
+                                <button onClick={() => setIsSaveModalOpen(true)} className={styles.saveButton}>
+                                    <SaveIcon className={styles.icon}/>
+                                    <div className={styles.separator}></div>
+                                    <span>Сохранить</span>
+                                </button>
+                                <div className={styles.settings} onClick={() => setIsSettingsOpen(true)}>
+                                    <SettingsIcon/>
+                                </div>
+                                {isSaveModalOpen && (
+                                    <div className={styles.modalOverlay}>
+                                        <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                                            <div className={styles.cross} onClick={handleCloseModal}>
+                                                <div className={styles.line}></div>
+                                                <div className={styles.line}></div>
+                                            </div>
+                                            <div className={styles.settings_tittle}>Как сохранить?</div>
+
+                                            <div className={styles.ModalSaveButtonContainer}>
+                                                <button onClick={saveGridAsImage}
+                                                        className={styles.saveButtonInModal}>
+                                                    {isLoading ? (
+                                                        <>
+                                                            <span>Загрузка</span>
+                                                            <span className={styles.dots}>
                                                         <span className={styles.dot}>.</span>
                                                         <span className={styles.dot}>.</span>
                                                         <span className={styles.dot}>.</span>
                                                     </span>
-                                                    </>
-                                                ) : (
-                                                    'Скачать'
+                                                        </>
+                                                    ) : (
+                                                        'Скачать'
+                                                    )}
+                                                </button>
+                                                <button className={styles.shareButtonInModal}
+                                                        onClick={toggleFormShare}>
+                                                    <ShareIcon/>
+                                                    Поделиться
+                                                </button>
+                                                {isOpenShare && (
+                                                    <div className={styles.shareInfo}>
+                                                        <input
+                                                            type="text"
+                                                            placeholder="Название билда"
+                                                            maxLength={100}
+                                                            className={styles.heroNameInput}
+                                                            value={buildName}
+                                                            onChange={handleNameChange}
+                                                        />
+                                                        <textarea
+                                                            placeholder="Описание билда"
+                                                            className={styles.heroDescriptionInput}
+                                                            maxLength={5000}
+                                                            rows={3}
+                                                            value={buildDescription}
+                                                            onChange={handleDescriptionChange}
+                                                        />
+                                                        <div className={styles.button_container}>
+                                                            <button className={styles.button_confirm}
+                                                                    onClick={createHeroBuild}>
+                                                                Сохранить билд
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 )}
-                                            </button>
-                                            <button className={styles.saveButtonInModal} disabled>
-                                                <ShareIcon/>
-                                                Поделиться
+                                            </div>
+
+                                            <button onClick={() => setIsSaveModalOpen(false)}
+                                                    className={styles.closeButton}>
+                                                Отмена
                                             </button>
                                         </div>
-
-                                        <button onClick={() => setIsSaveModalOpen(false)}
-                                                className={styles.closeButton}>
-                                            Отмена
-                                        </button>
                                     </div>
-                                </div>
-                            )}
+                                )}
 
-                            {isSettingsOpen && (
-                                <div className={styles.modalOverlay} onClick={() => setIsSettingsOpen(false)}>
-                                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                                        <div className={styles.settings_tittle}>Настройки</div>
-                                        <div className={styles.additionalButtonsWrapper}>
-                                            <div className={styles['container-attribute']}>
-                                                <div className={styles['slider-label']}>
-                                                    ЦИФРЫ
+                                {isSettingsOpen && (
+                                    <div className={styles.modalOverlay} onClick={() => setIsSettingsOpen(false)}>
+                                        <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                                            <div className={styles.settings_tittle}>Настройки</div>
+                                            <div className={styles.additionalButtonsWrapper}>
+                                                <div className={styles['container-attribute']}>
+                                                    <div className={styles['slider-label']}>
+                                                        ЦИФРЫ
+                                                    </div>
+                                                    <div className={styles['switch-container']}>
+                                                        <label className={styles['switch']}>
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={showNumbers}
+                                                                onChange={toggleNumbersVisibility}
+                                                            />
+                                                            <span className={styles['slider']}></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                                <div className={styles['switch-container']}>
-                                                    <label className={styles['switch']}>
-                                                        <input
-                                                            type="checkbox"
-                                                            checked={showNumbers}
-                                                            onChange={toggleNumbersVisibility}
-                                                        />
-                                                        <span className={styles['slider']}></span>
-                                                    </label>
+                                                <div className={styles['container-attribute']}>
+                                                    <div className={styles['slider-label']}>
+                                                        О ТАЛАНТАХ
+                                                    </div>
+                                                    <div className={styles['switch-container']}>
+                                                        <label className={styles['switch']}>
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={showText}
+                                                                onChange={toggleTextVisibility}
+                                                            />
+                                                            <span className={styles['slider']}></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className={styles['container-attribute']}>
-                                                <div className={styles['slider-label']}>
-                                                    О ТАЛАНТАХ
-                                                </div>
-                                                <div className={styles['switch-container']}>
-                                                    <label className={styles['switch']}>
-                                                        <input
-                                                            type="checkbox"
-                                                            checked={showText}
-                                                            onChange={toggleTextVisibility}
-                                                        />
-                                                        <span className={styles['slider']}></span>
-                                                    </label>
-                                                </div>
-                                            </div>
+                                            <button onClick={() => setIsSettingsOpen(false)}
+                                                    className={styles.closeButton}>
+                                                Закрыть
+                                            </button>
                                         </div>
-                                        <button onClick={() => setIsSettingsOpen(false)} className={styles.closeButton}>
-                                            Закрыть
-                                        </button>
                                     </div>
-                                </div>
-                            )}
-                        </div>
-                    )}
+                                )}
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
+            )}
             {renderTalents()}
             {isUpgradeMode && (
                 <div className={styles.menu_container_bottom}>

@@ -10,7 +10,8 @@ import {useThemeStore} from "../entities/stores/useThemeStore";
 import styles from "./app.module.scss";
 import MaintenancePage from "../pages/maintenance/MaintenancePage";
 import axios from "axios";
-const CACHE_VERSION = '1.0';
+import {UnreadNewsProvider} from "../context/UnreadNewsContext";
+const CACHE_VERSION = '2.0';
 
 const App = () => {
     const { getCurrentTheme } = useThemeStore();
@@ -86,9 +87,11 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <I18nextProvider i18n={i18n}>
                 <CssBaseline />
-                <Grid item md={12} className={styles.app}>
-                    <Routing />
-                </Grid>
+                <UnreadNewsProvider>
+                    <Grid item md={12} className={styles.app}>
+                        <Routing />
+                    </Grid>
+                </UnreadNewsProvider>
             </I18nextProvider>
         </ThemeProvider>
     );

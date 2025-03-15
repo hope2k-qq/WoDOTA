@@ -58,7 +58,6 @@
   background-size: cover;
   margin: 0.6rem auto;
   border-radius: 7px;
-  overflow: hidden;
 }
 
 
@@ -780,13 +779,65 @@ input:checked + .slider:before {
   margin-bottom: 1rem;
 }
 
-/* Основные стили для кнопки */
+.shareInfo{
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: #15161d;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+  border-radius: 10px;
+}
+
+.button_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroNameInput,
+.heroDescriptionInput {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #1d1e24;
+  font-family: "Inter", serif;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+  color: #9b9db1;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.heroNameInput:focus,
+.heroDescriptionInput:focus {
+  border-color: #007bff; /* Синий цвет при фокусе */
+}
+
+.heroNameInput::placeholder,
+.heroDescriptionInput::placeholder {
+  color: #9b9db1;
+  font-weight:600;
+  font-family: "Inter", serif;
+}
+
+.heroDescriptionInput::placeholder {
+  font-weight: 400;
+}
+
+.heroDescriptionInput {
+  resize: none;
+}
+
 .saveButtonInModal {
-  background: #44b678; /* Светлый зеленый фон */
+  background: #44b678;
   color: white;
   font-family: "Inter", serif;
-  border: 3px solid #161720; /* Темная граница */
-  padding: 12px 24px; /* Отступы внутри кнопки */
+  border: 3px solid #161720;
+  padding: 12px 24px;
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
@@ -814,24 +865,75 @@ input:checked + .slider:before {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень для подсветки */
 }
 
-/* Стили для заблокированной кнопки */
-.saveButtonInModal:disabled {
-  background: #feb602; /* Желтый фон для заблокированной кнопки */
-  color: #333; /* Темный цвет текста */
+
+
+.shareButtonInModal {
+  background: #feb602;
+  color: #333;
   font-family: "Inter", serif;
   font-weight: 600;
-  cursor: not-allowed; /* Курсор недоступности */
-  transform: none; /* Нет анимации для заблокированной кнопки */
+  border: 3px solid #161720;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  > svg{
+    width: 16px;
+    height: 16px;
+    fill: #333;
+  }
 }
 
-/* Эффект при наведении на заблокированную кнопку */
-.saveButtonInModal:disabled:hover {
-  background-color: #feb602; /* Без изменений для заблокированной кнопки */
-  box-shadow: none; /* Убираем тень */
+.shareButtonInModal:hover {
+  background-color: #f79e00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень для подсветки */
+}
+.cross {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: calc(0% + 0.8rem);
+  right: calc(0% + 0.8rem);;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 }
 
+.cross .line {
+  position: absolute;
+}
+
+.cross > div:first-child {
+  transform: rotate(45deg);
+}
+
+.cross > div:last-child {
+  transform: rotate(-45deg);
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #9b9db1;
+  border-radius: 4px;
+}
 
 .ModalSaveButtonContainer{
+  position: relative;
   display: flex;
   gap: 1rem;
 }
@@ -893,7 +995,112 @@ input:checked + .slider:before {
   100% { opacity: 0; }
 }
 
-@media (max-width: 1548px) {
+
+.button_confirm{
+  background: linear-gradient(271.68deg, rgba(76, 175, 80, 0.8) 92.91%, rgba(76, 175, 80, 0.4) 177.8%);
+  color: white;
+  border: none;
+  font-family: "Inter", serif;
+  font-size: 18px;
+  font-weight: 600;
+  height: 42px;
+  padding: 0 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button_confirm:hover {
+  background-color: #39a44d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification {
+  position: fixed;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  bottom: 0;
+  margin: 0 1rem;
+  left: 0;
+  font-family: "Inter", serif;
+  padding: 5px 7px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1;
+  z-index: 9999;
+  border: 1px solid;
+  opacity: 100;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  gap: 8px;
+
+  &.show {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  &.hide {
+    animation: slideOut 0.2s ease-in forwards;
+  }
+
+  >svg{
+    border-radius: 6px;
+    padding:5px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.error{
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  >svg{
+    background-color: rgba(132, 32, 41, 0.2);
+    fill: #842029;
+  }
+}
+
+.success{
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  >svg{
+    background-color: rgba(15, 81, 50, 0.2);
+    fill: #0f5132;
+  }
+}
+
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+@media (max-width: 1542px) {
   .div_container{
     max-width: 1023px;
   }
@@ -919,7 +1126,7 @@ input:checked + .slider:before {
   }
 }
 
-@media (max-width: 1037px) {
+@media (max-width: 1031px) {
   .div_container{
     max-width: 512px;
   }

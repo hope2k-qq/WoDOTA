@@ -9,6 +9,8 @@ import { ReactComponent as LeaderboardIcon } from "../../assets/icons/leaderboar
 import { ReactComponent as VotesIcon } from "../../assets/icons/votes_icon.svg";
 import { ReactComponent as SteamIcon } from "../../assets/icons/steam_icon.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings_icon.svg";
+import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
+import {useUnreadNews} from "../../context/UnreadNewsContext";
 
 export const TopBar = () => {
     const { t } = useTranslation();
@@ -16,6 +18,16 @@ export const TopBar = () => {
     const location = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [logoSrc, setLogoSrc] = useState("/logo.png");
+    const { unreadNewsCount, setUnreadNewsCount } = useUnreadNews();
+
+    useEffect(() => {
+        // Получаем количество непрочитанных новостей из localStorage (или из контекста)
+        const storedUnreadNewsCount = localStorage.getItem('unreadNewsCount');
+        if (storedUnreadNewsCount) {
+            setUnreadNewsCount(Number(storedUnreadNewsCount));
+        }
+    }, [setUnreadNewsCount]);
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -32,7 +44,7 @@ export const TopBar = () => {
         if (!path) return true;
         const { pathname } = location;
         const isExactMatch = pathname === path;
-        const isHeroesSection = path === "/heroes" && (pathname.startsWith("/hero/") || pathname === "/");
+        const isHeroesSection =  path === "/heroes" && (pathname.startsWith("/hero/") || pathname === "/" || (pathname.startsWith("/hero-build/")));
         return isExactMatch || isHeroesSection;
     };
 
@@ -77,6 +89,11 @@ export const TopBar = () => {
                                             onNavigate={() => navigate('/votes')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
+                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/news')}>
+                            <TopBarMenuItem title={t('news')}
+                                            onNavigate={() => navigate('/news')} menuOpen={menuOpen}/>
+                            <MoreIcon/>
+                        </div>
                     </div>
                 </div>
             ) : (
@@ -101,11 +118,16 @@ export const TopBar = () => {
                         <div className={styles.line}></div>
                     </div>
                     <div className={styles.topbar_right}>
-                        <div>
-                            <SteamIcon />
+                        <div className={styles.news_container} onClick={ () => navigate('/news')}>
+                            <NewsIcon className={styles.news_icon}/>
+                            <div className={styles.news_badge}>{unreadNewsCount}</div>
+                        </div>
+
+                        <div className={styles.container_steam}>
+                            <SteamIcon/>
                             <div>ВОЙТИ</div>
                         </div>
-                        <div>
+                        <div className={styles.container_settings}>
                             <SettingsIcon />
                         </div>
                     </div>

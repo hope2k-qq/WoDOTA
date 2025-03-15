@@ -77,7 +77,7 @@
   align-items: center;
   gap: 1rem;
 
-  > div:first-child{
+  > .container_steam{
     background-color: #f4bf58;
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@
     font-family: "Inter", sans-serif;
     color: black;
     font-weight: 700;
-    cursor: pointer;
+    cursor: not-allowed;
 
     > svg{
       width: 26px;
@@ -103,7 +103,7 @@
       }
     }
   }
-  > div:last-child{
+  > .container_settings{
     background-color: #202127;
     display: flex;
     align-items: center;
@@ -112,6 +112,7 @@
     width: 43px;
     border-radius: 10px;
     cursor: pointer;
+    cursor: not-allowed;
 
     > svg{
       fill: #9b9db1;
@@ -192,6 +193,46 @@
   transform: rotate(-45deg);
 }
 
+.news_icon{
+  width: 22px;
+  height: auto;
+  fill: #9b9db1;
+}
+
+.news_container{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  &:hover{
+    cursor: pointer;
+    > svg{
+      fill: #f4bf58;
+    }
+  }
+}
+.news_badge {
+  font-family: "Inter", serif;
+  line-height: 1;
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  background-color: red;
+  color: white;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
 @media (max-width: 1450px) {
   .topbar_left {
     > img{
@@ -204,11 +245,11 @@
   }
   .topbar_right{
     gap: 0.7rem;
-    > div:first-child{
+    > .container_steam{
       padding: 0 1.8rem;
       height: 50px;
     }
-    > div:last-child{
+    > .container_settings{
       height: 40px;
       width: 40px;
 
@@ -233,7 +274,7 @@
   }
   .topbar_right{
     gap: 0.4rem;
-    > div:first-child{
+    > .container_steam{
       //display: flex;
       //justify-content: center;
       //align-items: center;
@@ -247,7 +288,7 @@
         //display: none;
       }
     }
-    > div:last-child{
+    > .container_settings{
       height: 38px;
       width: 38px;
 

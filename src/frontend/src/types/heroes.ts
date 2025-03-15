@@ -34,6 +34,7 @@ export interface Talent {
     level: string;
     imagePath: string;
     relatedTalent: RelatedTalent;
+    conflict?: string[];
 }
 
 export interface TalentsInformation {
@@ -57,6 +58,9 @@ export interface RenderTalentsProps {
     hero_name: string;
     talents_description: talentsDescription;
     talents_information: TalentsInformation;
+    buildCurrentTalentLevels?: { [key: string]: { [key: string]: number } };
+    buildUpgradeOrder?: string[];
+    isBuild?: boolean;
 }
 
 export interface AbilitiesSectionProps {

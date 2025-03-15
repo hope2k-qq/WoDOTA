@@ -66,7 +66,6 @@ export const HeroesPage: React.FC = () => {
                 const updatedUrls: { [key: string]: string | null } = {};
                 const imagePromises: Promise<void>[] = [];
 
-                // Работаем с объектом 'images' в базе
                 const imagesStore = db.transaction('heroes', 'readonly').objectStore('heroes');
                 for (const hero of data) {
                     const cachedImage = await imagesStore.get(hero.name);

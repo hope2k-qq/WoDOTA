@@ -167,7 +167,6 @@ const processHeroTalentByName = (talents, heroName) => {
                 }
                 return talentDetail.value.fields.reduce((acc, detail, index) => {
                     const getFieldName = (detail, index) => {
-                        // Dynamic name generation based on the field's purpose and index
                         switch (index) {
                             case 0: return 'id';
                             case 1: return 'talentInfo';
@@ -202,14 +201,42 @@ const processHeroTalentByName = (talents, heroName) => {
                     } else {
                         console.log(`Unhandled detail structure: ${JSON.stringify(detail)}`);
                     }
+                    
                     return acc;
                 }, {});
 
 
 
             }).flat();
+
+            const luaScript = fs.readFileSync(path.join(__dirname, '../assets', 'talents.lua'), 'utf8');
+            const heroRegex = new RegExp(
+                `if\\s+hero:GetUnitName\\(\\)\\s*==\\s*"npc_dota_hero_${heroKey}"\\s*then([\\s\\S]*?)(?=\\s*(elseif|else))`,
+                "g"
+            );
+
+            const modifierRegex = /modifier_\w+/g;
+
+            const talentConflicts = {};
+
+            let match;
+            while ((match = heroRegex.exec(luaScript)) !== null) {
+                const heroBlock = match[1];
+                
+                const conflicts = heroBlock.match(modifierRegex);
+                console.log(heroBlock)
+                if (conflicts.length > 0) {
+                    talentConflicts[heroKey] = Array.from(new Set(conflicts));
+                }
+            }
             
-            // console.log(talentDetails)
+            const conflictList = talentConflicts[heroKey] || [];
+
+            talentDetails.forEach(talent => {
+                if (conflictList.includes(talent.id)) {
+                    talent.conflict = conflictList.filter(conflict => conflict !== talent.id);
+                }
+            });
 
             result[level][talentIndex] = replaceWords(talentDetails, replacements_heroes);
         });

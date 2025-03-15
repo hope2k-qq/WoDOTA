@@ -1,0 +1,95 @@
+.div_container{
+  max-width: 1531px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  margin-top: 3rem;
+  font-family: "Inter", serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.menu_container{
+  margin: 0 1.25rem 0 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 15px 0;
+}
+
+.hero_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.heroNameContainer{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heroImg{
+  width: 85px;
+  height: auto;
+  border-radius: 7px;
+}
+
+.heroName{
+  color: #f4bf58;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.nameBuild{
+  color: white;
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 2.3rem;
+}
+.nameDescription{
+  color: gray;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.data{
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #b4b9c2;
+  line-height: 1;
+}
+
+@media (max-width: 1542px) {
+  .div_container{
+    max-width: 1023px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .title{
+    font-size: 2.3rem;
+  }
+
+  .nameBuild{
+    font-size: 1.7rem;
+  }
+
+}
+
+@media (max-width: 1031px) {
+  .div_container {
+    max-width: 512px;
+  }
+}

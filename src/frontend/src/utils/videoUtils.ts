@@ -30,7 +30,6 @@ const openIndexedDB = (): Promise<IDBDatabase> => {
     });
 };
 
-// Функция для сохранения видео в IndexedDB
 export const saveVideoToIndexedDB = async (name: string, videoBlob: Blob) => {
     try {
         const db = await openIndexedDB();
@@ -40,11 +39,11 @@ export const saveVideoToIndexedDB = async (name: string, videoBlob: Blob) => {
         store.put(videoBlob, name);
 
         transaction.oncomplete = () => {
-            console.log('Video saved to IndexedDB');
+            //console.log('Video saved to IndexedDB');
             localStorage.setItem(`video_${name}_timestamp`, Date.now().toString());
         };
     } catch (error) {
-        console.error('Error saving video to IndexedDB:', error);
+        //console.error('Error saving video to IndexedDB:', error);
     }
 };
 
@@ -58,10 +57,10 @@ export const deleteVideoFromIndexedDB = async (name: string) => {
         store.delete(name);
 
         transaction.oncomplete = () => {
-            console.log(`Video ${name} deleted from IndexedDB`);
+            //console.log(`Video ${name} deleted from IndexedDB`);
         };
     } catch (error) {
-        console.error('Error deleting video from IndexedDB:', error);
+        //console.error('Error deleting video from IndexedDB:', error);
     }
 };
 
@@ -88,13 +87,12 @@ export const getVideoFromIndexedDB = async (name: string): Promise<Blob | null> 
                 };
             })
             .catch((error) => {
-                console.error('Error retrieving video from IndexedDB:', error);
+                //console.error('Error retrieving video from IndexedDB:', error);
                 reject(error);
             });
     });
 };
 
-// Функция для удаления всех истекших видео из IndexedDB
 export const deleteExpiredVideos = async () => {
     try {
         const allKeys = Object.keys(localStorage).filter(key => key.startsWith('video_'));
@@ -104,49 +102,47 @@ export const deleteExpiredVideos = async () => {
             if (timestamp) {
                 const heroName = key.split('video_')[1].split('_timestamp')[0];
                 if (Date.now() - parseInt(timestamp) > 180000) {
-                    console.log(`Video for hero ${heroName} expired. Deleting from cache.`);
+                    //console.log(`Video for hero ${heroName} expired. Deleting from cache.`);
                     await deleteVideoFromIndexedDB(heroName);
                     localStorage.removeItem(key);
                 }
             }
         }
     } catch (error) {
-        console.error('Error deleting expired videos:', error);
+        //console.error('Error deleting expired videos:', error);
     }
 };
 
-// Функция для загрузки и кэширования видео
 export const fetchAndCacheVideo = async (
     name: string,
     setVideoBlob: (blob: Blob) => void
 ) => {
-    console.log(`Attempting to load video for hero: ${name}`);
+    //console.log(`Attempting to load video for hero: ${name}`);
 
-    await deleteExpiredVideos(); // Удаление устаревших видео
+    await deleteExpiredVideos();
 
-    // Проверка кеша внутри этой функции теперь не требуется
-    console.log('Video not found in cache, fetching from server...');
+    //console.log('Video not found in cache, fetching from server...');
     try {
         const videoUrl = await getVideoUrl(name);
         if (!videoUrl) {
-            console.error('Failed to generate video URL');
+            //console.error('Failed to generate video URL');
             throw new Error('Invalid video URL');
         }
 
         const response = await fetch(videoUrl);
 
         if (!response.ok) {
-            console.error('Failed to fetch video from server:', videoUrl);
+            //console.error('Failed to fetch video from server:', videoUrl);
             throw new Error('Video not found');
         }
 
         const videoBlob = await response.blob();
-        console.log(`Saving video to IndexedDB for ${name}`);
+        //console.log(`Saving video to IndexedDB for ${name}`);
         await saveVideoToIndexedDB(name, videoBlob);
 
         setVideoBlob(videoBlob);
     } catch (error) {
-        console.error('Error fetching or saving video:', error);
+        //console.error('Error fetching or saving video:', error);
     }
 
 };
