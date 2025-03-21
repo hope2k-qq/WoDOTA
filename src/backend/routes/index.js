@@ -8,6 +8,7 @@ const patchesRoutes = require('./patchesRoutes');
 const shopRoutes = require('./shopRoutes');
 const votesRoutes = require('./votesRoutes');
 const newsRoutes = require('./newsRoutes');
+const tournamentsRoutes = require('./tournamentsRoutes');
 
 
 router.use('/', homeRoutes);
@@ -18,5 +19,6 @@ router.use('/', patchesRoutes);
 router.use('/', shopRoutes);
 router.use('/', votesRoutes);
 router.use('/', newsRoutes);
+router.use('/', tournamentsRoutes);
 
 module.exports = router;

@@ -10,6 +10,7 @@ import { ReactComponent as VotesIcon } from "../../assets/icons/votes_icon.svg";
 import { ReactComponent as SteamIcon } from "../../assets/icons/steam_icon.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings_icon.svg";
 import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
+import { ReactComponent as TournamentIcon } from "../../assets/icons/TournamentIcon.svg";
 import {useUnreadNews} from "../../context/UnreadNewsContext";
 
 export const TopBar = () => {
@@ -94,6 +95,11 @@ export const TopBar = () => {
                                             onNavigate={() => navigate('/news')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
+                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/tournament')}>
+                            <TopBarMenuItem title={t('tournament')}
+                                            onNavigate={() => navigate('/tournament')} menuOpen={menuOpen}/>
+                            <MoreIcon/>
+                        </div>
                     </div>
                 </div>
             ) : (
@@ -111,6 +117,9 @@ export const TopBar = () => {
                         <TopBarMenuItem title={t('votes')}
                                         onNavigate={() => navigate('/votes')} isActive={activeIcon("/votes")}
                                         menuOpen={menuOpen} icon={<VotesIcon />}/>
+                        <TopBarMenuItem title={t('tournament')}
+                                        onNavigate={() => navigate('/tournament')} isActive={activeIcon("/tournament")}
+                                        menuOpen={menuOpen} icon={<TournamentIcon />}/>
                     </div>
                     <div className={styles.hamburger} onClick={toggleMenu}>
                         <div className={styles.line}></div>

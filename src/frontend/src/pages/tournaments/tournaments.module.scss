@@ -1,0 +1,65 @@
+.div{
+  background-color: #181920;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: "Inter", serif;
+  border-radius: 8px;
+}
+
+.tournament_name{
+  padding-top: 2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 3.2rem;
+  text-align: center;
+}
+.tournament_data_container{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-left: 24px;
+  gap: 0.1rem;
+}
+
+.tournament_data{
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.container_buttons_navigations{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 0;
+  border-radius: 10px 10px 0 0;
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 0.6rem 0;
+  width: 100%;
+  border-radius: 10px;
+  font-family: "Inter", serif;
+  font-size: 1.2rem;
+  background-color: #f3ca80;
+  color: #1a2330;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  line-height: 24px;
+
+  &:hover{
+    background-color: #f2d18f;
+  }
+
+  &.active {
+    cursor: default;
+    background-color: #ab8948;
+  }
+}

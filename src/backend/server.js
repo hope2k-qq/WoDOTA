@@ -10,6 +10,18 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
     ? process.env.ALLOWED_ORIGINS.split(',')
     : [];
 
+const allowedTokens = ['your-secure-token'];
+
+// app.use((req, res, next) => {
+//     const token = req.headers['authorization'];
+//
+//     if (!allowedTokens.includes(token)) {
+//         return res.status(403).json({ message: 'Не авторизован' }); 
+//     }
+//
+//     next(); 
+// });
+
 app.use(cors({
     origin: (origin, callback) => {
         if (allowedOrigins.includes(origin) || !origin) {
