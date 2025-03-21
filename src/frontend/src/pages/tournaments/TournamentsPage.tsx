@@ -4,7 +4,7 @@ import styles from './tournaments.module.scss';
 import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers"; // Стили для кнопок
 
 export const TournamentsPage: React.FC = () => {
-    const [activeSection, setActiveSection] = useState<string>('players'); // Стейт для выбранного раздела
+    const [activeSection, setActiveSection] = useState<string>('playoffs'); // Стейт для выбранного раздела
     const [data, setData] = useState<{ [key: string]: any }>({}); // Стейт для хранения данных каждого раздела
     const [loading, setLoading] = useState<boolean>(false); // Стейт для отслеживания загрузки данных
     const [error, setError] = useState<string | null>(null); // Стейт для отслеживания ошибок
@@ -21,6 +21,7 @@ export const TournamentsPage: React.FC = () => {
 
             try {
                 const response = await fetch(`${API_URL}/tournament/${section}`);
+                console.log(response)
                 if (!response.ok) {
                     throw new Error('Ошибка при загрузке данных');
                 }
@@ -73,8 +74,7 @@ export const TournamentsPage: React.FC = () => {
                 </button>
                 <button
                     className={`${styles.button} ${activeSection === 'playoffs' ? styles.active : ''}`}
-                    style={{cursor: "not-allowed"}}
-                    // onClick={() => handleSectionChange('playoffs')}
+                    onClick={() => handleSectionChange('playoffs')}
                 >
                     Плей-офф
                 </button>
@@ -94,7 +94,7 @@ export const TournamentsPage: React.FC = () => {
                 {activeSection === 'players' && data['players'] && <TournamentList data={data['players'].teams || []}/>}
                 {activeSection === 'qualifiers' && data['qualifiers'] &&
                     <TournamentQualifiers data={data['qualifiers'] || []}/>}
-                {activeSection === 'playoffs' && data['playoffs'] && <div>{JSON.stringify(data['playoffs'])}</div>}
+                {activeSection === 'playoffs' && data['playoffs'] &&  <TournamentQualifiers data={data['playoffs'] || []}/>}
                 {activeSection === 'final' && data['final'] && <div>{JSON.stringify(data['final'])}</div>}
             </div>
         </div>
