@@ -258,7 +258,7 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                 ) : (
                     selectedMap && (
                         <div>
-                            <div className={styles.maps_name}>Группы для карты: {selectedMap.map_name}</div>
+                            <div className={styles.maps_name}>Группы для: {selectedMap.map_name}</div>
                             {selectedMap.groups.length === 0 ? (
                                 <div className={styles.noGroupsMessage}>Группы отсутствуют</div>
                             ) : (
