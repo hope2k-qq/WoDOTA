@@ -11,6 +11,7 @@ import { ReactComponent as SteamIcon } from "../../assets/icons/steam_icon.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings_icon.svg";
 import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
 import { ReactComponent as TournamentIcon } from "../../assets/icons/TournamentIcon.svg";
+import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg";
 import {useUnreadNews} from "../../context/UnreadNewsContext";
 
 export const TopBar = () => {
@@ -120,6 +121,14 @@ export const TopBar = () => {
                         <TopBarMenuItem title={t('tournament')}
                                         onNavigate={() => navigate('/tournament')} isActive={activeIcon("/tournament")}
                                         menuOpen={menuOpen} icon={<TournamentIcon />}/>
+                        <TopBarMenuItem
+                            title={t('donate')}
+                            onNavigate={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}
+                            isActive={activeIcon("/wallet")}
+                            menuOpen={menuOpen}
+                            icon={<WalletIcon />}
+                        />
+
                     </div>
                     <div className={styles.hamburger} onClick={toggleMenu}>
                         <div className={styles.line}></div>
