@@ -4,7 +4,7 @@ import styles from './tournaments.module.scss';
 import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers"; // Стили для кнопок
 
 export const TournamentsPage: React.FC = () => {
-    const [activeSection, setActiveSection] = useState<string>('playoffs'); // Стейт для выбранного раздела
+    const [activeSection, setActiveSection] = useState<string>('final'); // Стейт для выбранного раздела
     const [data, setData] = useState<{ [key: string]: any }>({}); // Стейт для хранения данных каждого раздела
     const [loading, setLoading] = useState<boolean>(false); // Стейт для отслеживания загрузки данных
     const [error, setError] = useState<string | null>(null); // Стейт для отслеживания ошибок
@@ -80,8 +80,7 @@ export const TournamentsPage: React.FC = () => {
                 </button>
                 <button
                     className={`${styles.button} ${activeSection === 'final' ? styles.active : ''}`}
-                    style={{cursor: "not-allowed"}}
-                    // onClick={() => handleSectionChange('final')}
+                    onClick={() => handleSectionChange('final')}
                 >
                     Финал
                 </button>
@@ -95,7 +94,7 @@ export const TournamentsPage: React.FC = () => {
                 {activeSection === 'qualifiers' && data['qualifiers'] &&
                     <TournamentQualifiers data={data['qualifiers'] || []}/>}
                 {activeSection === 'playoffs' && data['playoffs'] &&  <TournamentQualifiers data={data['playoffs'] || []}/>}
-                {activeSection === 'final' && data['final'] && <div>{JSON.stringify(data['final'])}</div>}
+                {activeSection === 'final' && data['final'] && <TournamentQualifiers data={data['final'] || []}/>}
             </div>
         </div>
     );

@@ -19,8 +19,8 @@ export const getImageUrl = async (objectKey: string): Promise<string | null> => 
     try {
         const command = new GetObjectCommand({Bucket: 'assets', Key: objectKey});
         const signedUrl = await getSignedUrl(s3Client, command, {expiresIn: 3600});
-        return signedUrl; // Если объект существует, генерируем и возвращаем подписанный URL
+        return signedUrl;
     } catch (error) {
-        return null; // Если произошла ошибка при генерации URL
+        return null;
     }
 }

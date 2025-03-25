@@ -80,7 +80,7 @@ exports.getTournamentQualifiers = async (req, res) => {
                     avatar: playersInfo[team.dota_id2]?.avatar || null,
                     profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
                 },
-                total_points: 0, // Начальное значение очков
+                total_points: 0,
                 replays_points: 0
             }));
 
@@ -97,7 +97,8 @@ exports.getTournamentQualifiers = async (req, res) => {
                             return {
                                 team_id: teamData.team_id,
                                 team_info: updatedTeams[teamIndex],
-                                points: teamData.points
+                                points: teamData.points,
+                                place: teamData.place
                             };
                         }
                         return null;
@@ -118,7 +119,8 @@ exports.getTournamentQualifiers = async (req, res) => {
                                 return {
                                     team_id: teamData.team_id,
                                     points: teamData.points,
-                                    team_info: updatedTeams[teamIndex]
+                                    team_info: updatedTeams[teamIndex],
+                                    place: teamData.place
                                 };
                             }
                             return null;
@@ -171,7 +173,8 @@ exports.getTournamentPlayoffs = async (req, res) => {
                     avatar: playersInfo[team.dota_id2]?.avatar || null,
                     profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
                 },
-                total_points: 0
+                total_points: 0,
+                replays_points: 0,
             }));
 
             // Создаём массив карт с группами внутри
@@ -187,7 +190,8 @@ exports.getTournamentPlayoffs = async (req, res) => {
                             return {
                                 team_id: teamData.team_id,
                                 team_info: updatedTeams[teamIndex],
-                                points: teamData.points
+                                points: teamData.points,
+                                place: teamData.place
                             };
                         }
                         return null;
@@ -195,7 +199,123 @@ exports.getTournamentPlayoffs = async (req, res) => {
                 }))
             }));
 
-            res.json({ teams: updatedTeams, maps: mapsWithGroups });
+            let replays = tournamentData.replays
+                ? tournamentData.replays.map(replay => ({
+                    groups: replay.groups.map(group => ({
+                        group_name: group.group_name,
+                        teams: group.teams.map(teamData => {
+                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                            if (teamIndex !== -1) {
+                                // Добавляем очки из переигровок
+                                updatedTeams[teamIndex].replays_points += teamData.points;
+
+                                return {
+                                    team_id: teamData.team_id,
+                                    points: teamData.points,
+                                    team_info: updatedTeams[teamIndex],
+                                    place: teamData.place
+                                };
+                            }
+                            return null;
+                        }).filter(team => team !== null)
+                    }))
+                }))
+                : [];
+
+            res.json({ teams: updatedTeams, maps: mapsWithGroups, replays });
+        } catch (error) {
+            console.error("Ошибка обработки данных:", error);
+            res.status(500).json({ error: "Ошибка при обработке данных" });
+        }
+    });
+};
+
+exports.getTournamentFinal = async (req, res) => {
+    const filePath = path.join(__dirname, "../data/tournamentPlayersDuoFinal.json");
+
+    fs.readFile(filePath, "utf8", async (err, data) => {
+        if (err) {
+            return res.status(500).json({ error: "Ошибка при загрузке игроков" });
+        }
+
+        try {
+            let tournamentData = JSON.parse(data);
+            let steamIds = [];
+
+            // Собираем ID игроков
+            tournamentData.teams.forEach(team => {
+                steamIds.push(team.dota_id1.toString());
+                steamIds.push(team.dota_id2.toString());
+            });
+
+            // Получаем информацию о игроках
+            const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+
+            // Преобразуем команды, добавляя информацию об игроках
+            let updatedTeams = tournamentData.teams.map(team => ({
+                team_id: team.team_id,
+                player1_info: {
+                    player1: team.player1,
+                    dota_id1: team.dota_id1,
+                    avatar: playersInfo[team.dota_id1]?.avatar || null,
+                    profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
+                },
+                player2_info: {
+                    player2: team.player2,
+                    dota_id2: team.dota_id2,
+                    avatar: playersInfo[team.dota_id2]?.avatar || null,
+                    profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
+                },
+                total_points: 0,
+                replays_points: 0,
+            }));
+
+            // Создаём массив карт с группами внутри
+            let mapsWithGroups = tournamentData.maps.map(map => ({
+                map_name: map.map_name,
+                groups: map.groups.map(group => ({
+                    group_name: group.group_name,
+                    teams: group.teams.map(teamData => {
+                        const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                        if (teamIndex !== -1) {
+                            updatedTeams[teamIndex].total_points += teamData.points;
+
+                            return {
+                                team_id: teamData.team_id,
+                                team_info: updatedTeams[teamIndex],
+                                points: teamData.points,
+                                place: teamData.place
+                            };
+                        }
+                        return null;
+                    }).filter(team => team !== null)
+                }))
+            }));
+
+            let replays = tournamentData.replays
+                ? tournamentData.replays.map(replay => ({
+                    groups: replay.groups.map(group => ({
+                        group_name: group.group_name,
+                        teams: group.teams.map(teamData => {
+                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                            if (teamIndex !== -1) {
+                                // Добавляем очки из переигровок
+                                updatedTeams[teamIndex].replays_points += teamData.points;
+
+                                return {
+                                    team_id: teamData.team_id,
+                                    points: teamData.points,
+                                    team_info: updatedTeams[teamIndex],
+                                    place: teamData.place
+                                };
+                            }
+                            return null;
+                        }).filter(team => team !== null)
+                    }))
+                }))
+                : [];
+
+            res.json({ teams: updatedTeams, maps: mapsWithGroups, replays });
         } catch (error) {
             console.error("Ошибка обработки данных:", error);
             res.status(500).json({ error: "Ошибка при обработке данных" });

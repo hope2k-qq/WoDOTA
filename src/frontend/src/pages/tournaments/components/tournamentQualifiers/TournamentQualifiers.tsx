@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./touranament_qualifiers.module.scss";
+// import {getImageUrl} from "../../../../utils/r2Storage";
 
 
 interface Team {
@@ -26,6 +27,7 @@ interface Group {
         team_id: number;
         team_info: Team;
         points: number;
+        place: number;
     }[];
 }
 
@@ -35,6 +37,7 @@ interface ReplayGroup {
         team_id: number;
         team_info: Team;
         points: number;
+        place: number;
     }[];
 }
 
@@ -68,6 +71,23 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
         }));
     };
     const [updatedGroupPlayers, setUpdatedGroupPlayers] = useState<{ [key: string]: string }>({});
+
+    // const handleGetScreenshot = async (mapName: string, groupName: string): Promise<void> => {
+    //     try {
+    //         const objectKey = `tournament/final/${mapName}/${groupName}.png`;
+    //
+    //         const signedUrl = await getImageUrl(objectKey);
+    //
+    //         if (signedUrl) {
+    //             window.open(signedUrl, '_blank');
+    //         } else {
+    //             console.error("Unable to fetch screenshot.");
+    //         }
+    //     } catch (error) {
+    //         console.error("Error fetching screenshot:", error);
+    //     }
+    // };
+
 
     const handleGroupIdClick = (groupKey: string, originalName: string, dotaId: string) => {
         setUpdatedGroupPlayers((prev) => ({
@@ -197,14 +217,14 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                         <tbody>
                                         {group.teams
                                             .slice()
-                                            .sort((a, b) => b.points - a.points)
-                                            .map((teamData, index) => (
+                                            .sort((a, b) => a.place - b.place)
+                                            .map((teamData) => (
                                                 <tr key={teamData.team_id}>
                                                     <td>
                                                         <div className={styles.wreathContainer}>
                                                             <img src={"/wreath.png"} alt={"wreath"}
                                                                  className={styles.wreathIconGroup}/>
-                                                            <div className={styles.rankNumberGroup}>{index + 1}</div>
+                                                            <div className={styles.rankNumberGroup}>{teamData.place}</div>
                                                         </div>
                                                     </td>
                                                     <td>
@@ -278,15 +298,15 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                                 <tbody>
                                                 {group.teams
                                                     .slice()
-                                                    .sort((a, b) => b.points - a.points)
-                                                    .map((teamData, index) => (
+                                                    .sort((a, b) => a.place - b.place)
+                                                    .map((teamData) => (
                                                         <tr key={teamData.team_id}>
                                                             <td>
                                                                 <div className={styles.wreathContainer}>
                                                                     <img src={"/wreath.png"} alt={"wreath"}
                                                                          className={styles.wreathIconGroup}/>
                                                                     <div
-                                                                        className={styles.rankNumberGroup}>{index + 1}</div>
+                                                                        className={styles.rankNumberGroup}>{teamData.place}</div>
                                                                 </div>
                                                             </td>
                                                             <td>
@@ -332,6 +352,7 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                                     ))}
                                                 </tbody>
                                             </table>
+                                            {/*<button onClick={() => handleGetScreenshot(selectedMap.map_name, group.group_name)}></button>*/}
                                         </div>
                                     ))}
                                 </div>
