@@ -15,6 +15,7 @@ import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
 import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
+import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
 
 export const Routing = () => {
     return (
@@ -33,6 +34,7 @@ export const Routing = () => {
                             <Route path="/hero-build/:id" element={<HeroBuildPage />} />
                             <Route path="/news" element={<NewsPage />} />
                             <Route path="/tournament" element={<TournamentsPage />} />
+                            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                             {/*<Route path="/updates" element={<UpdatesPage />} />*/}
                             {/*<Route path="/shop" element={<ShopPage />} />*/}
                             <Route path="/votes" element={<VotesPage />} />

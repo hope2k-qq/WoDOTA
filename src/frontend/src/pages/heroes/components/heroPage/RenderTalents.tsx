@@ -674,7 +674,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const getTalentUpgradeNumbers = (part: string, baseKey: string) => {
         const numbers = upgradeOrder
             .filter((entry) => new RegExp(`^${part}-${baseKey}-`).test(entry))
-            .map((entry) => entry.split("-")[2])
+            .map((entry) => entry.split("-").pop())
             .join("/");
 
         if (numbers.length >= 7) {
