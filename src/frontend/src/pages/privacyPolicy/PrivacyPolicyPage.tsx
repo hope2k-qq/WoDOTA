@@ -5,7 +5,7 @@ export const PrivacyPolicyPage = () => {
     const [policyHtml, setPolicyHtml] = useState<string>("Загрузка...");
 
     useEffect(() => {
-        fetch("/privacy-policy.html")
+        fetch("/privacy-policy-info.html")
             .then((response) => response.text())
             .then((html) => setPolicyHtml(html))
             .catch((error) => {
