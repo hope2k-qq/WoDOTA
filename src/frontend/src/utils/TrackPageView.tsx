@@ -16,15 +16,8 @@ export const TrackPageView = () => {
             }
         }
 
-        let userId = localStorage.getItem("user_unique_id");
-        if (!userId) {
-            userId = `user_${Math.random().toString(36).slice(2, 11)}_${Date.now()}`;
-            localStorage.setItem("user_unique_id", userId);
-        }
 
         ReactGA.send({ hitType: "pageview", page: location.pathname });
-
-        ReactGA.set({ userId });
 
         return () => {};
     }, [location]);
