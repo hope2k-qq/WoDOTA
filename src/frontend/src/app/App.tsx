@@ -23,7 +23,6 @@ const App = () => {
         try {
             const databases = await indexedDB.databases();
 
-            // Для каждой базы данных вызываем deleteDatabase
             for (const db of databases) {
                 if (db.name) {
                     const request = indexedDB.deleteDatabase(db.name);

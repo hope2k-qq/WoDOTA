@@ -16,10 +16,15 @@ import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildP
 import {NewsPage} from "../pages/news/NewsPage";
 import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
 import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
+import {TrackPageView} from "../utils/TrackPageView";
+
+
+
 
 export const Routing = () => {
     return (
         <BrowserRouter>
+            <TrackPageView />
             <ScrollToTop />
             <div style={{ width: "100%", maxWidth: "100%", margin: "0 auto" }}>
                 <TopBar />

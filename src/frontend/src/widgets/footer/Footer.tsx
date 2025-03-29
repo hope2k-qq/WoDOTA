@@ -29,11 +29,13 @@ export const Footer: React.FC = () => {
                     <MessageIcon2 className={styles.icon2}/>
                     <EmailLink/>
                 </div>
-                <div className={styles.discord_container} onClick={() => window.open("https://discordapp.com/users/554572803580624897", "_blank")}>
+                <div className={styles.discord_container}
+                     onClick={() => window.open("https://discordapp.com/users/554572803580624897", "_blank")}>
                     <DiscrordIcon className={styles.discord}/>
                 </div>
             </div>
-            <div className={styles.text}>©{currentYear} WoDOTA.pro. Все права защищены.</div>
+            <div className={styles.text}>©{currentYear} WoDOTA. Все права защищены.</div>
+            <div className={styles.text}>Несанкционированное копирование запрещено.</div>
         </footer>
     );
 };

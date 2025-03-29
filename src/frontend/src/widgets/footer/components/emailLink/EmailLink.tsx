@@ -5,9 +5,9 @@ export const EmailLink: React.FC = () => {
     const [email, setEmail] = useState<string | null>(null);
 
     useEffect(() => {
-        const part1 = "wodota.help";
+        const part1 = "support";
         const part2 = "@";
-        const part3 = "gmail.com";
+        const part3 = "wodota.pro";
         setEmail(part1 + part2 + part3);
     }, []);
 
