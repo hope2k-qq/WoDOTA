@@ -1,0 +1,175 @@
+.about_section {
+  width: 100%;
+  display: flex;
+  font-family: "Inter", serif;
+}
+
+.image_container {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+}
+
+.background_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  > *{
+    transform: translateY(15%);
+  }
+}
+
+.container {
+  color: white;
+  max-width: 1000px;
+  z-index: 3;
+}
+
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  line-height: 1.03;
+}
+
+.worldOfDota {
+  font-size: 6rem;
+  display: block;
+  color: rgba(244, 191, 88, 1);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  opacity: 0.9 !important;
+}
+
+
+.text {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #9b9db1;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+.shadow_bottom {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: 0 - 2px;
+  background: linear-gradient(to bottom, #12131a00 30%, #12131a70 80%, #12131a 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shadow_top {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 0 - 2px;
+  background: linear-gradient(to top, #12131a00 30%, #12131a70 80%, #12131a 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+@media (max-width: 1600px) {
+  .container {
+    max-width: 900px;
+  }
+  .title{
+    font-size: 4rem;
+  }
+  .worldOfDota{
+    font-size: 5rem;
+  }
+  .text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 800px;
+    > *{
+      transform: translateY(70%);
+    }
+  }
+  .title{
+    font-size: 3.2rem;
+    line-height: 0.95;
+    margin: 0;
+  }
+  .worldOfDota{
+    font-size: 4.2rem;
+  }
+  .text {
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+  }
+  .image_container{
+    height: 70vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .image_container{
+    height: 45vh;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0 3rem;
+    > *{
+      transform: translateY(20%);
+    }
+  }
+  .title{
+    font-size: 2.9rem;
+  }
+  .worldOfDota{
+    font-size: 3.9rem;
+  }
+  .text {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 0 1.5rem;
+  }
+  .title{
+    font-size: 2.1rem;
+    line-height: 1.1;
+  }
+  .worldOfDota{
+    font-size: 2.7rem;
+  }
+  .text {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+

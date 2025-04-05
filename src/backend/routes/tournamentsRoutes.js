@@ -7,6 +7,6 @@ const cache = apicache.middleware;
 router.get('/tournament/players', cache('60 minutes'), tournamentsController.getTournamentList);
 router.get('/tournament/qualifiers', cache('60 minutes'), tournamentsController.getTournamentQualifiers);
 router.get('/tournament/playoffs', cache('60 minutes'), tournamentsController.getTournamentPlayoffs);
-router.get('/tournament/final', tournamentsController.getTournamentFinal);
+router.get('/tournament/final', cache('60 minutes'), tournamentsController.getTournamentFinal);
 
 module.exports = router

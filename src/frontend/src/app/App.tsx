@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import './app.module.scss';
 import {CssBaseline, Grid, ThemeProvider} from "@mui/material";
 import {Routing} from "../routes/Routing";
 import i18n from "../locales/i18n";

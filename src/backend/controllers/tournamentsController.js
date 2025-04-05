@@ -2,325 +2,453 @@
 const fs = require("fs");
 const { getPlayersInfoBySteamIds } = require("../services/playerService");
 
-exports.getTournamentList = async (req, res) => {
-    const filePath = path.join(__dirname, "../data/tournamentPlayersDuo.json");
+let cachedTournamentListData  = null;
+let cachedTournamentQualifiersData  = null;
+let cachedTournamentPlayoffsData  = null;
+let cachedTournamentFinal  = null;
+let updating = false;
 
-    fs.readFile(filePath, "utf8", async (err, data) => {
-        if (err) {
-            return res.status(500).json({ error: "Ошибка при загрузке игроков" });
-        }
+const updateTournamentListData = async (app) => {
+    try {
+        const filePath = path.join(__dirname, "../data/tournamentPlayersDuo.json");
 
-        try {
-            let tournamentData = JSON.parse(data);
-            let steamIds = [];
-            
-            tournamentData.teams.forEach(team => {
-                steamIds.push(team.dota_id1.toString());
-                steamIds.push(team.dota_id2.toString());
-            });
-            
-            const playersInfo = await getPlayersInfoBySteamIds(steamIds);
-            
-            tournamentData.teams = tournamentData.teams.map(team => ({
-                player1_info: {
-                    player1: team.player1,
-                    dota_id1: team.dota_id1,
-                    avatar: playersInfo[team.dota_id1]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                },
-                player2_info: {
-                    player2: team.player2,
-                    dota_id2: team.dota_id2,
-                    avatar: playersInfo[team.dota_id2]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                }
-            }));
+        fs.readFile(filePath, "utf8", async (err, data) => {
+            if (err) {
+                console.error("Ошибка при загрузке игроков:", err);
+                return;
+            }
 
-            res.json(tournamentData);
-        } catch (error) {
-            console.error("Ошибка обработки данных:", error);
-            res.status(500).json({ error: "Ошибка при обработке данных" });
-        }
-    });
+            try {
+                let tournamentData = JSON.parse(data);
+                let steamIds = [];
+
+                tournamentData.teams.forEach(team => {
+                    steamIds.push(team.dota_id1.toString());
+                    steamIds.push(team.dota_id2.toString());
+                });
+
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+
+                tournamentData.teams = tournamentData.teams.map(team => ({
+                    player1_info: {
+                        player1: team.player1,
+                        dota_id1: team.dota_id1,
+                        avatar: playersInfo[team.dota_id1]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
+                    },
+                    player2_info: {
+                        player2: team.player2,
+                        dota_id2: team.dota_id2,
+                        avatar: playersInfo[team.dota_id2]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
+                    }
+                }));
+
+                cachedTournamentListData = tournamentData;
+                console.log('Tournament list data updated');
+                const collection = app;
+                const currentDate = new Date().toISOString();
+
+                await collection.updateOne(
+                    { loc: 'https://wodota.pro/tournament' },
+                    {
+                        $set: {
+                            lastmod: currentDate,
+                        }
+                    }
+                );
+            } catch (error) {
+                console.error("Error processing tournament data:", error);
+            }
+        });
+    } catch (error) {
+        console.error("Error in updateTournamentListData:", error);
+    } finally {
+        updating = false;
+    }
 };
 
-exports.getTournamentQualifiers = async (req, res) => {
-    const filePath = path.join(__dirname, "../data/tournamentPlayersDuoQualifiers.json");
+const updateTournamentQualifiersData = async (app) => {
+    try {
+        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoQualifiers.json");
 
-    fs.readFile(filePath, "utf8", async (err, data) => {
-        if (err) {
-            return res.status(500).json({ error: "Ошибка при загрузке игроков" });
-        }
+        fs.readFile(filePath, "utf8", async (err, data) => {
+            if (err) {
+                console.error("Ошибка при загрузке игроков:", err);
+                return;
+            }
 
-        try {
-            let tournamentData = JSON.parse(data);
-            let steamIds = [];
-
-            // Собираем ID игроков
-            tournamentData.teams.forEach(team => {
-                steamIds.push(team.dota_id1.toString());
-                steamIds.push(team.dota_id2.toString());
-            });
-
-            // Получаем информацию о игроках
-            const playersInfo = await getPlayersInfoBySteamIds(steamIds);
-
-            // Преобразуем команды, добавляя информацию об игроках
-            let updatedTeams = tournamentData.teams.map(team => ({
-                team_id: team.team_id,
-                player1_info: {
-                    player1: team.player1,
-                    dota_id1: team.dota_id1,
-                    avatar: playersInfo[team.dota_id1]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                },
-                player2_info: {
-                    player2: team.player2,
-                    dota_id2: team.dota_id2,
-                    avatar: playersInfo[team.dota_id2]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                },
-                total_points: 0,
-                replays_points: 0
-            }));
-
-            // Создаём массив карт с группами внутри
-            let mapsWithGroups = tournamentData.maps.map(map => ({
-                map_name: map.map_name,
-                groups: map.groups.map(group => ({
-                    group_name: group.group_name,
-                    teams: group.teams.map(teamData => {
-                        const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                        if (teamIndex !== -1) {
-                            updatedTeams[teamIndex].total_points += teamData.points;
-
-                            return {
-                                team_id: teamData.team_id,
-                                team_info: updatedTeams[teamIndex],
-                                points: teamData.points,
-                                place: teamData.place
-                            };
-                        }
-                        return null;
-                    }).filter(team => team !== null)
-                }))
-            }));
-
-            let replays = tournamentData.replays
-                ? tournamentData.replays.map(replay => ({
-                    groups: replay.groups.map(group => ({
+            try {
+                let tournamentData = JSON.parse(data);
+                let steamIds = [];
+                
+                tournamentData.teams.forEach(team => {
+                    steamIds.push(team.dota_id1.toString());
+                    steamIds.push(team.dota_id2.toString());
+                });
+                
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+                
+                let updatedTeams = tournamentData.teams.map(team => ({
+                    team_id: team.team_id,
+                    player1_info: {
+                        player1: team.player1,
+                        dota_id1: team.dota_id1,
+                        avatar: playersInfo[team.dota_id1]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
+                    },
+                    player2_info: {
+                        player2: team.player2,
+                        dota_id2: team.dota_id2,
+                        avatar: playersInfo[team.dota_id2]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
+                    },
+                    total_points: 0,
+                    replays_points: 0
+                }));
+                
+                let mapsWithGroups = tournamentData.maps.map(map => ({
+                    map_name: map.map_name,
+                    groups: map.groups.map(group => ({
                         group_name: group.group_name,
                         teams: group.teams.map(teamData => {
                             const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
                             if (teamIndex !== -1) {
-                                // Добавляем очки из переигровок
-                                updatedTeams[teamIndex].replays_points += teamData.points;
+                                updatedTeams[teamIndex].total_points += teamData.points;
 
                                 return {
                                     team_id: teamData.team_id,
-                                    points: teamData.points,
                                     team_info: updatedTeams[teamIndex],
+                                    points: teamData.points,
                                     place: teamData.place
                                 };
                             }
                             return null;
                         }).filter(team => team !== null)
                     }))
-                }))
-                : [];
+                }));
 
-            res.json({ teams: updatedTeams, maps: mapsWithGroups, replays });
-        } catch (error) {
-            console.error("Ошибка обработки данных:", error);
-            res.status(500).json({ error: "Ошибка при обработке данных" });
-        }
-    });
+                let replays = tournamentData.replays
+                    ? tournamentData.replays.map(replay => ({
+                        groups: replay.groups.map(group => ({
+                            group_name: group.group_name,
+                            teams: group.teams.map(teamData => {
+                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                                if (teamIndex !== -1) {
+                                    updatedTeams[teamIndex].replays_points += teamData.points;
+
+                                    return {
+                                        team_id: teamData.team_id,
+                                        points: teamData.points,
+                                        team_info: updatedTeams[teamIndex],
+                                        place: teamData.place
+                                    };
+                                }
+                                return null;
+                            }).filter(team => team !== null)
+                        }))
+                    }))
+                    : [];
+                cachedTournamentQualifiersData = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
+                console.log('Tournament qualifiers data updated');
+                const collection = app;
+                const currentDate = new Date().toISOString();
+
+                await collection.updateOne(
+                    { loc: 'https://wodota.pro/tournament' },
+                    {
+                        $set: {
+                            lastmod: currentDate,
+                        }
+                    }
+                );
+            } catch (error) {
+                console.error("Error processing tournament data:", error);
+            }
+        });
+    } catch (error) {
+        console.error("Error in updateTournamentListData:", error);
+    } finally {
+        updating = false;
+    }
 };
 
-exports.getTournamentPlayoffs = async (req, res) => {
-    const filePath = path.join(__dirname, "../data/tournamentPlayersDuoPlayoffs.json");
+const updateTournamentPlayoffsData = async (app) => {
+    try {
+        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoPlayoffs.json");
 
-    fs.readFile(filePath, "utf8", async (err, data) => {
-        if (err) {
-            return res.status(500).json({ error: "Ошибка при загрузке игроков" });
-        }
+        fs.readFile(filePath, "utf8", async (err, data) => {
+            if (err) {
+                console.error("Ошибка при загрузке игроков:", err);
+                return;
+            }
 
-        try {
-            let tournamentData = JSON.parse(data);
-            let steamIds = [];
+            try {
+                let tournamentData = JSON.parse(data);
+                let steamIds = [];
 
-            // Собираем ID игроков
-            tournamentData.teams.forEach(team => {
-                steamIds.push(team.dota_id1.toString());
-                steamIds.push(team.dota_id2.toString());
-            });
+                // Собираем ID игроков
+                tournamentData.teams.forEach(team => {
+                    steamIds.push(team.dota_id1.toString());
+                    steamIds.push(team.dota_id2.toString());
+                });
 
-            // Получаем информацию о игроках
-            const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+                // Получаем информацию о игроках
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
 
-            // Преобразуем команды, добавляя информацию об игроках
-            let updatedTeams = tournamentData.teams.map(team => ({
-                team_id: team.team_id,
-                player1_info: {
-                    player1: team.player1,
-                    dota_id1: team.dota_id1,
-                    avatar: playersInfo[team.dota_id1]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                },
-                player2_info: {
-                    player2: team.player2,
-                    dota_id2: team.dota_id2,
-                    avatar: playersInfo[team.dota_id2]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                },
-                total_points: 0,
-                replays_points: 0,
-            }));
+                // Преобразуем команды, добавляя информацию об игроках
+                let updatedTeams = tournamentData.teams.map(team => ({
+                    team_id: team.team_id,
+                    player1_info: {
+                        player1: team.player1,
+                        dota_id1: team.dota_id1,
+                        avatar: playersInfo[team.dota_id1]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
+                    },
+                    player2_info: {
+                        player2: team.player2,
+                        dota_id2: team.dota_id2,
+                        avatar: playersInfo[team.dota_id2]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
+                    },
+                    total_points: 0,
+                    replays_points: 0,
+                }));
 
-            // Создаём массив карт с группами внутри
-            let mapsWithGroups = tournamentData.maps.map(map => ({
-                map_name: map.map_name,
-                groups: map.groups.map(group => ({
-                    group_name: group.group_name,
-                    teams: group.teams.map(teamData => {
-                        const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                        if (teamIndex !== -1) {
-                            updatedTeams[teamIndex].total_points += teamData.points;
-
-                            return {
-                                team_id: teamData.team_id,
-                                team_info: updatedTeams[teamIndex],
-                                points: teamData.points,
-                                place: teamData.place
-                            };
-                        }
-                        return null;
-                    }).filter(team => team !== null)
-                }))
-            }));
-
-            let replays = tournamentData.replays
-                ? tournamentData.replays.map(replay => ({
-                    groups: replay.groups.map(group => ({
+                // Создаём массив карт с группами внутри
+                let mapsWithGroups = tournamentData.maps.map(map => ({
+                    map_name: map.map_name,
+                    groups: map.groups.map(group => ({
                         group_name: group.group_name,
                         teams: group.teams.map(teamData => {
                             const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
                             if (teamIndex !== -1) {
-                                // Добавляем очки из переигровок
-                                updatedTeams[teamIndex].replays_points += teamData.points;
+                                updatedTeams[teamIndex].total_points += teamData.points;
 
                                 return {
                                     team_id: teamData.team_id,
-                                    points: teamData.points,
                                     team_info: updatedTeams[teamIndex],
+                                    points: teamData.points,
                                     place: teamData.place
                                 };
                             }
                             return null;
                         }).filter(team => team !== null)
                     }))
-                }))
-                : [];
+                }));
 
-            res.json({ teams: updatedTeams, maps: mapsWithGroups, replays });
-        } catch (error) {
-            console.error("Ошибка обработки данных:", error);
-            res.status(500).json({ error: "Ошибка при обработке данных" });
-        }
-    });
+                let replays = tournamentData.replays
+                    ? tournamentData.replays.map(replay => ({
+                        groups: replay.groups.map(group => ({
+                            group_name: group.group_name,
+                            teams: group.teams.map(teamData => {
+                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                                if (teamIndex !== -1) {
+                                    // Добавляем очки из переигровок
+                                    updatedTeams[teamIndex].replays_points += teamData.points;
+
+                                    return {
+                                        team_id: teamData.team_id,
+                                        points: teamData.points,
+                                        team_info: updatedTeams[teamIndex],
+                                        place: teamData.place
+                                    };
+                                }
+                                return null;
+                            }).filter(team => team !== null)
+                        }))
+                    }))
+                    : [];
+                
+                cachedTournamentPlayoffsData = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
+                console.log('Tournament playoffs data updated');
+                const collection = app;
+                const currentDate = new Date().toISOString();
+
+                await collection.updateOne(
+                    { loc: 'https://wodota.pro/tournament' },
+                    {
+                        $set: {
+                            lastmod: currentDate,
+                        }
+                    }
+                );
+            } catch (error) {
+                console.error("Error processing tournament data:", error);
+            }
+        });
+    } catch (error) {
+        console.error("Error in updateTournamentListData:", error);
+    } finally {
+        updating = false;
+    }
 };
 
-exports.getTournamentFinal = async (req, res) => {
-    const filePath = path.join(__dirname, "../data/tournamentPlayersDuoFinal.json");
+const updateTournamentFinalData = async (app) => {
+    try {
+        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoFinal.json");
 
-    fs.readFile(filePath, "utf8", async (err, data) => {
-        if (err) {
-            return res.status(500).json({ error: "Ошибка при загрузке игроков" });
-        }
+        fs.readFile(filePath, "utf8", async (err, data) => {
+            if (err) {
+                console.error("Ошибка при загрузке игроков:", err);
+                return;
+            }
 
-        try {
-            let tournamentData = JSON.parse(data);
-            let steamIds = [];
+            try {
+                let tournamentData = JSON.parse(data);
+                let steamIds = [];
 
-            // Собираем ID игроков
-            tournamentData.teams.forEach(team => {
-                steamIds.push(team.dota_id1.toString());
-                steamIds.push(team.dota_id2.toString());
-            });
+                // Собираем ID игроков
+                tournamentData.teams.forEach(team => {
+                    steamIds.push(team.dota_id1.toString());
+                    steamIds.push(team.dota_id2.toString());
+                });
 
-            // Получаем информацию о игроках
-            const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+                // Получаем информацию о игроках
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
 
-            // Преобразуем команды, добавляя информацию об игроках
-            let updatedTeams = tournamentData.teams.map(team => ({
-                team_id: team.team_id,
-                player1_info: {
-                    player1: team.player1,
-                    dota_id1: team.dota_id1,
-                    avatar: playersInfo[team.dota_id1]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                },
-                player2_info: {
-                    player2: team.player2,
-                    dota_id2: team.dota_id2,
-                    avatar: playersInfo[team.dota_id2]?.avatar || null,
-                    profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                },
-                total_points: 0,
-                replays_points: 0,
-            }));
+                // Преобразуем команды, добавляя информацию об игроках
+                let updatedTeams = tournamentData.teams.map(team => ({
+                    team_id: team.team_id,
+                    player1_info: {
+                        player1: team.player1,
+                        dota_id1: team.dota_id1,
+                        avatar: playersInfo[team.dota_id1]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
+                    },
+                    player2_info: {
+                        player2: team.player2,
+                        dota_id2: team.dota_id2,
+                        avatar: playersInfo[team.dota_id2]?.avatar || null,
+                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
+                    },
+                    total_points: 0,
+                    replays_points: 0,
+                }));
 
-            // Создаём массив карт с группами внутри
-            let mapsWithGroups = tournamentData.maps.map(map => ({
-                map_name: map.map_name,
-                groups: map.groups.map(group => ({
-                    group_name: group.group_name,
-                    teams: group.teams.map(teamData => {
-                        const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                        if (teamIndex !== -1) {
-                            updatedTeams[teamIndex].total_points += teamData.points;
-
-                            return {
-                                team_id: teamData.team_id,
-                                team_info: updatedTeams[teamIndex],
-                                points: teamData.points,
-                                place: teamData.place
-                            };
-                        }
-                        return null;
-                    }).filter(team => team !== null)
-                }))
-            }));
-
-            let replays = tournamentData.replays
-                ? tournamentData.replays.map(replay => ({
-                    groups: replay.groups.map(group => ({
+                // Создаём массив карт с группами внутри
+                let mapsWithGroups = tournamentData.maps.map(map => ({
+                    map_name: map.map_name,
+                    groups: map.groups.map(group => ({
                         group_name: group.group_name,
                         teams: group.teams.map(teamData => {
                             const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
                             if (teamIndex !== -1) {
-                                // Добавляем очки из переигровок
-                                updatedTeams[teamIndex].replays_points += teamData.points;
+                                updatedTeams[teamIndex].total_points += teamData.points;
 
                                 return {
                                     team_id: teamData.team_id,
-                                    points: teamData.points,
                                     team_info: updatedTeams[teamIndex],
+                                    points: teamData.points,
                                     place: teamData.place
                                 };
                             }
                             return null;
                         }).filter(team => team !== null)
                     }))
-                }))
-                : [];
+                }));
 
-            res.json({ teams: updatedTeams, maps: mapsWithGroups, replays });
-        } catch (error) {
-            console.error("Ошибка обработки данных:", error);
-            res.status(500).json({ error: "Ошибка при обработке данных" });
-        }
-    });
+                let replays = tournamentData.replays
+                    ? tournamentData.replays.map(replay => ({
+                        groups: replay.groups.map(group => ({
+                            group_name: group.group_name,
+                            teams: group.teams.map(teamData => {
+                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                                if (teamIndex !== -1) {
+                                    // Добавляем очки из переигровок
+                                    updatedTeams[teamIndex].replays_points += teamData.points;
+
+                                    return {
+                                        team_id: teamData.team_id,
+                                        points: teamData.points,
+                                        team_info: updatedTeams[teamIndex],
+                                        place: teamData.place
+                                    };
+                                }
+                                return null;
+                            }).filter(team => team !== null)
+                        }))
+                    }))
+                    : [];
+
+                cachedTournamentFinal = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
+                console.log('Tournament final data updated');
+                const collection = app;
+                const currentDate = new Date().toISOString();
+
+                await collection.updateOne(
+                    { loc: 'https://wodota.pro/tournament' },
+                    {
+                        $set: {
+                            lastmod: currentDate,
+                        }
+                    }
+                );
+            } catch (error) {
+                console.error("Error processing tournament data:", error);
+            }
+        });
+    } catch (error) {
+        console.error("Error in updateTournamentListData:", error);
+    } finally {
+        updating = false;
+    }
+};
+
+const updateDataSequentiallyTournament = async (app) => {
+    if (updating) return;
+
+    updating = true;
+
+    try {
+        await updateTournamentListData(app);
+        await updateTournamentQualifiersData(app);
+        await updateTournamentPlayoffsData(app);
+        await updateTournamentFinalData(app);
+    } catch (error) {
+        console.error('Error updating data sequentially:', error.message);
+    } finally {
+        updating = false;
+    }
+}
+
+const getTournamentList = (req, res) => {
+    if (cachedTournamentListData) {
+        res.json(cachedTournamentListData);
+    } else {
+        res.json([]);
+    }
+};
+
+const getTournamentQualifiers = (req, res) => {
+    if (cachedTournamentQualifiersData) {
+        res.json(cachedTournamentQualifiersData);
+    } else {
+        res.json([]);
+    }
+};
+
+const getTournamentPlayoffs = (req, res) => {
+    if (cachedTournamentPlayoffsData) {
+        res.json(cachedTournamentPlayoffsData);
+    } else {
+        res.json([]);
+    }
+};
+const getTournamentFinal = (req, res) => {
+    if (cachedTournamentFinal) {
+        res.json(cachedTournamentFinal);
+    } else {
+        res.json([]);
+    }
+};
+
+module.exports = {
+    updateDataSequentiallyTournament,
+    getTournamentList,
+    getTournamentQualifiers,
+    getTournamentPlayoffs,
+    getTournamentFinal,
 };
 
 

@@ -1,7 +1,18 @@
+import {HeroSection} from "./components/HeroSection";
+import {AboutSection} from "./components/AboutSection";
+import {FeaturesSection} from "./components/FeaturesSection";
+import HeroesSection from "./components/HeroesSection";
+import {JoinSection} from "./components/JoinSection";
+import styles from "./home.module.scss";
+
 export const HomePage = () => {
     return (
-        <div style={{background: "yellow", width: "100%", height: "100%"}} >
-            WoDOTA main
+        <div className={styles.div}>
+            <HeroSection />
+            <AboutSection />
+            <FeaturesSection />
+            <HeroesSection />
+            <JoinSection />
         </div>
     );
 };

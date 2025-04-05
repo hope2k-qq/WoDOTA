@@ -1,8 +1,12 @@
 ﻿const playerService = require('../services/playerService');
 const apiService = require('../services/apiService');
-const ratingTestData = require('../data/ratingTestData.json');
 
-const getRating = async (req, res) => {
+
+let cachedRatingData = null;
+let cachedArenaData = null;
+let updating = false;
+
+const updateRatingData = async (app) => {
     try {
         console.log('Fetching fresh rating data');
 
@@ -20,45 +24,31 @@ const getRating = async (req, res) => {
                 avatar: playerDetails.avatar,
                 profileUrl: playerDetails.profileUrl,
                 personaName: playerDetails.personaName,
-                rank: index + 1 
+                rank: index + 1
             };
         });
+        
+        cachedRatingData = players;
+        console.log('Rating data updated');
+        const collection = app;
+        const currentDate = new Date().toISOString();
 
-        // Отправляем ответ с данными игроков
-        res.json(players);
+        await collection.updateOne(
+            { loc: 'https://wodota.pro/leaderboard' },
+            {
+                $set: {
+                    lastmod: currentDate,
+                }
+            }
+        );
     } catch (error) {
         console.error('Error fetching rating data:', error.message);
-        res.status(500).send('Error fetching data');
+    } finally {
+        updating = false; 
     }
 };
 
-// const getRating = async (req, res) => {
-//     try {
-//         console.log('Fetching fresh rating data');
-//         const testPlayer = ratingTestData;
-//
-//
-//         res.json(testPlayer);
-//     } catch (error) {
-//         console.error('Error fetching rating data:', error.message);
-//         res.status(500).send('Error fetching data');
-//     }
-// };
-
-// const getArena = async (req, res) => {
-//     try {
-//         console.log('Fetching fresh rating data');
-//         const testPlayer = ratingTestData;
-//
-//
-//         res.json(testPlayer);
-//     } catch (error) {
-//         console.error('Error fetching rating data:', error.message);
-//         res.status(500).send('Error fetching data');
-//     }
-// };
-
-const getArena = async (req, res) => {
+const updateArenaData = async (app) => {
     try {
         console.log('Fetching fresh arena data');
         const playersData = await apiService.fetchArenaData();
@@ -106,59 +96,62 @@ const getArena = async (req, res) => {
                 playerGroup.rank = index + 1;
             });
         });
+        
+        cachedArenaData = playersByKey;
+        console.log('Arena data updated');
+        const collection = app;
+        const currentDate = new Date().toISOString();
 
-        res.json(playersByKey);
+        await collection.updateOne(
+            { loc: 'https://wodota.pro/leaderboard' },
+            {
+                $set: {
+                    lastmod: currentDate,
+                }
+            }
+        );
     } catch (error) {
         console.error('Error fetching arena data:', error.message);
-        res.status(500).send('Error fetching data');
+    } finally {
+        updating = false;
     }
 };
 
-// const getArena = async (req, res) => {
-//     try {
-//         console.log('Returning mock arena data');
-//
-//         const mockData = {
-//             "1": Array.from({ length: 150 }, (_, i) => ({
-//                 steamids: ["1017237020"],
-//                 wave_count: 25 + i,
-//                 heroes: ["npc_dota_hero_axe"],
-//                 avatars: ["https://avatars.steamstatic.com/3aafedd8ebb706ea1dbc9f4baed1595eaad69db8_full.jpg"],
-//                 profileUrls: ["https://steamcommunity.com/id/hope2k-/"],
-//                 personaNames: ["hope2k"],
-//                 rank: i + 1
-//             })),
-//             "2": Array.from({ length: 150 }, (_, i) => ({
-//                 steamids: ["1017237020", "1602096619"],
-//                 wave_count: 25 + i,
-//                 heroes: ["npc_dota_hero_axe", "npc_dota_hero_slark"],
-//                 avatars: ["https://avatars.steamstatic.com/3aafedd8ebb706ea1dbc9f4baed1595eaad69db8_full.jpg", "https://avatars.steamstatic.com/43373d024b67cc77935ec69e00d1aa263d5827c0_full.jpg"],
-//                 profileUrls: ["https://steamcommunity.com/id/hope2k-/", "https://steamcommunity.com/profiles/76561199562362347/"],
-//                 personaNames: ["瑰ルfailrun瑰ル", "tv/zaqual"],
-//                 rank: i + 1
-//             })),
-//             "3": Array.from({ length: 150 }, (_, i) => ({
-//                 steamids: ["1017237020", "1602096619", "120897386"],
-//                 wave_count: 25 + i,
-//                 heroes: ["npc_dota_hero_axe", "npc_dota_hero_slark", "npc_dota_hero_pudge"],
-//                 avatars: ["https://avatars.steamstatic.com/3aafedd8ebb706ea1dbc9f4baed1595eaad69db8_full.jpg", "https://avatars.steamstatic.com/43373d024b67cc77935ec69e00d1aa263d5827c0_full.jpg", "https://avatars.steamstatic.com/e653f3a7d1034c1b453262b5170acbfce0bc3e13_full.jpg"],
-//                 profileUrls: ["https://steamcommunity.com/id/hope2k-/", "https://steamcommunity.com/profiles/76561199562362347/", "https://steamcommunity.com/profiles/76561198081163114/"],
-//                 personaNames: ["瑰ルfailrun瑰ル", "tv/zaqual", "SoL.Rampage.VoR"],
-//                 rank: i + 1
-//             })),
-//         };
-//
-//         res.json(mockData);
-//     } catch (error) {
-//         console.error('Error returning mock arena data:', error.message);
-//         res.status(500).send('Error fetching data');
-//     }
-// };
+const updateDataSequentially = async (app) => {
+    if (updating) return;
+
+    updating = true;
+
+    try {
+        await updateRatingData(app);
+        await updateArenaData(app);
+
+    } catch (error) {
+        console.error('Error updating data sequentially:', error.message);
+    } finally {
+        updating = false;
+    }
+};
 
 
+const getRating = (req, res) => {
+    if (cachedRatingData) {
+        res.json(cachedRatingData);
+    } else {
+        res.json([]);
+    }
+};
 
+const getArena = (req, res) => {
+    if (cachedArenaData) {
+        res.json(cachedArenaData);
+    } else {
+        res.json({});
+    }
+};
 
 module.exports = {
+    updateDataSequentially,
     getRating,
     getArena
 };

@@ -92,7 +92,10 @@ export const NewsPage: React.FC = () => {
                 <div></div>
             ) : (
                 <div className={styles.container}>
-                    {news.map((item) => {
+                    {news
+                        .slice()
+                        .reverse()
+                        .map((item) => {
                         const isRead = JSON.parse(localStorage.getItem('readNews') || '[]').includes(item.id);
 
                         return (

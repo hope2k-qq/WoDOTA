@@ -46,7 +46,7 @@ export const TopBar = () => {
         if (!path) return true;
         const { pathname } = location;
         const isExactMatch = pathname === path;
-        const isHeroesSection =  path === "/heroes" && (pathname.startsWith("/hero/") || pathname === "/" || (pathname.startsWith("/hero-build/")));
+        const isHeroesSection =  path === "/heroes" && (pathname.startsWith("/hero/") || (pathname.startsWith("/hero-build/")));
         return isExactMatch || isHeroesSection;
     };
 
@@ -67,7 +67,7 @@ export const TopBar = () => {
             {menuOpen ? (
                 <div className={styles.topbar_open}>
                     <div className={styles.topbar} style={{backgroundColor: "#12131a", justifyContent: "space-between"}}>
-                        <div className={styles.topbar_left} style={{display: 'flex'}} onClick={() => handleNavigate('/heroes')}>
+                        <div className={styles.topbar_left} style={{display: 'flex'}} onClick={() => handleNavigate('/')}>
                             <img style={{width: '18rem'}} src={"/logo1.png"} alt="logo"/>
                         </div>
                         <div className={styles.cross} onClick={toggleMenu}>
@@ -105,7 +105,7 @@ export const TopBar = () => {
                 </div>
             ) : (
                 <div className={styles.topbar}>
-                    <div className={styles.topbar_left} onClick={() => navigate('/heroes')}>
+                    <div className={styles.topbar_left} onClick={() => navigate('/')}>
                         <img src={logoSrc} alt="logo"/>
                     </div>
                     <div className={`${styles.topbar_menu}`}>
@@ -136,7 +136,7 @@ export const TopBar = () => {
                         <div className={styles.line}></div>
                     </div>
                     <div className={styles.topbar_right}>
-                        <div className={styles.news_container} onClick={ () => navigate('/news')}>
+                        <div className={styles.news_container} onClick={() => navigate('/news')}>
                             <NewsIcon className={styles.news_icon}/>
                             <div className={styles.news_badge}>{unreadNewsCount}</div>
                         </div>

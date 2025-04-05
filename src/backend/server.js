@@ -5,12 +5,11 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
+const { updateVotesData } = require('./controllers/votesController');
+const { updateDataSequentially } = require('./controllers/leaderboardController');
+const { updateDataSequentiallyTournament } = require('./controllers/tournamentsController');
 
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-    ? process.env.ALLOWED_ORIGINS.split(',')
-    : [];
-
-const allowedTokens = ['your-secure-token'];
+// const allowedTokens = ['your-secure-token'];
 
 // app.use((req, res, next) => {
 //     const token = req.headers['authorization'];
@@ -21,6 +20,10 @@ const allowedTokens = ['your-secure-token'];
 //
 //     next(); 
 // });
+
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+    ? process.env.ALLOWED_ORIGINS.split(',')
+    : [];
 
 app.use(cors({
     origin: (origin, callback) => {
@@ -33,27 +36,53 @@ app.use(cors({
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 const uri = process.env.MONGODB_URI;
 
-MongoClient.connect(uri)
-    .then(client => {
+const startServer = async () => {
+    try {
+        const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log("Connected to MongoDB");
-        
+
         const db = client.db('BuildDB');
         app.locals.db = db.collection('builds');
-    })
-    .catch(error => {
+        app.locals.sitemap = db.collection('sitemap');
+        
+        const routes = require('./routes');
+        app.use('/', routes);
+        
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+
+            setInterval(async () => {
+                await updateVotesData(app.locals.sitemap);
+            }, 30 * 60 * 1000);
+            setInterval(async () => {
+                await updateDataSequentially(app.locals.sitemap);
+            }, 10 * 60 * 1000);
+            setInterval(async () => {
+                await updateDataSequentiallyTournament(app.locals.sitemap);
+            }, 60 * 60 * 1000);
+            updateDataSequentially(app.locals.sitemap);
+            updateVotesData(app.locals.sitemap);
+            updateDataSequentiallyTournament(app.locals.sitemap);
+        });
+        
+    } catch (error) {
         console.error("Error connecting to MongoDB:", error);
-    });
+    }
+};
+
+(async () => {
+    try {
+        await startServer();
+    } catch (error) {
+        console.error("Error starting the server:", error);
+    }
+})();
+
 app.get('/ping', (req, res) => {
     res.status(200).send('hope2k 22.02.2025 OK OK');
 });
 
-const routes = require('./routes');
-
-app.use('/', routes);
-
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+module.exports = app;

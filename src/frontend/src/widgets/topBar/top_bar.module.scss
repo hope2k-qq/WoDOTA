@@ -1,9 +1,15 @@
+
 .topbar {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 1rem;
   color: white;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
 }
 
 .topbar_left {
@@ -45,7 +51,7 @@
 .topbar_menu_open{
   display: flex;
   flex-direction: column;
-
+  padding-top: 108.5px;
 }
 
 .topbar_menu_item_open{

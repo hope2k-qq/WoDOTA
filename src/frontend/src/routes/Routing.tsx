@@ -1,6 +1,6 @@
 import {Grid} from "@mui/material";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-//import {HomePage} from "../pages/home/HomePage";
+import {HomePage} from "../pages/home/HomePage";
 //import {ProfilePage} from "../pages/profile/ProfilePage";
 import {LeaderboardPage} from "../pages/leaderboard/LeaderboardPage";
 import {HeroesPage} from "../pages/heroes/HeroesPage";
@@ -17,8 +17,20 @@ import {NewsPage} from "../pages/news/NewsPage";
 import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
 import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
+import { PageWrapper } from "./components/PageWrapper";
 
-
+const routes = [
+    { path: "/", element: <HomePage /> },
+    { path: "/leaderboard", element: <LeaderboardPage /> },
+    { path: "/heroes", element: <HeroesPage /> },
+    { path: "/hero/:name", element: <HeroPage /> },
+    { path: "/hero-build/:id", element: <HeroBuildPage /> },
+    { path: "/news", element: <NewsPage /> },
+    { path: "/tournament", element: <TournamentsPage /> },
+    { path: "/privacy-policy", element: <PrivacyPolicyPage /> },
+    { path: "/votes", element: <VotesPage /> },
+    { path: "*", element: <NotFoundPage /> },
+];
 
 
 export const Routing = () => {
@@ -26,24 +38,24 @@ export const Routing = () => {
         <BrowserRouter>
             <TrackPageView />
             <ScrollToTop />
-            <div style={{ width: "100%", maxWidth: "100%", margin: "0 auto" }}>
+            <div style={{ width: "100%", maxWidth: "100%", margin: "0 auto", position: "relative" }}>
                 <TopBar />
                 <Grid container style={{ width: "100%" }}>
                     <Grid item xs={12} style={{ minHeight: "120vh" }}>
                         <Routes>
-                            <Route path="/" element={<HeroesPage />} />
-                            {/*<Route path="/profile" element={<ProfilePage />} />*/}
-                            <Route path="/leaderboard" element={<LeaderboardPage />} />
-                            <Route path="/heroes" element={<HeroesPage />} />
-                            <Route path="/hero/:name" element={<HeroPage />} />
-                            <Route path="/hero-build/:id" element={<HeroBuildPage />} />
-                            <Route path="/news" element={<NewsPage />} />
-                            <Route path="/tournament" element={<TournamentsPage />} />
-                            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-                            {/*<Route path="/updates" element={<UpdatesPage />} />*/}
-                            {/*<Route path="/shop" element={<ShopPage />} />*/}
-                            <Route path="/votes" element={<VotesPage />} />
-                            <Route path="*" element={<NotFoundPage />} />
+                            {routes.map(({ path, element }) => (
+                                <Route
+                                    key={path}
+                                    path={path}
+                                    element={
+                                        path === "/" ? (
+                                            element
+                                        ) : (
+                                            <PageWrapper>{element}</PageWrapper>
+                                        )
+                                    }
+                                />
+                            ))}
                         </Routes>
                     </Grid>
                     <Grid item xs={12}>
