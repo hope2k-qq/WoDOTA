@@ -84,6 +84,7 @@ export const FeaturesSection: React.FC = () => {
                             </video>
                             <div className={styles.overlay}></div>
                             <div className={styles.shadow_bottom}></div>
+
                         </div>
                     </div>
                 </div>
