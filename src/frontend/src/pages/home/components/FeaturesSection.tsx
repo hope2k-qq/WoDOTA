@@ -79,7 +79,7 @@ export const FeaturesSection: React.FC = () => {
                         </div>
                         <div className={styles.container_image}>
                             <video autoPlay loop muted playsInline className={styles.featureImage}>
-                                <source src="https://wodota.pro/images/home/tournament.mp4" type="video/mp4"/>
+                                <source src="/tournament.mp4" type="video/mp4"/>
                                 Ваш браузер не поддерживает видео.
                             </video>
                             <div className={styles.overlay}></div>

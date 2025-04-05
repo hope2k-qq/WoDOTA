@@ -6,7 +6,7 @@ export const HeroSection: React.FC = () => {
     return (
         <div className={styles.hero_section}>
             <video autoPlay loop muted playsInline className={styles.background_video}>
-                <source src="https://wodota.pro/images/home/wodota.mp4" type="video/mp4"/>
+                <source src="/wodota.mp4" type="video/mp4"/>
                 Ваш браузер не поддерживает видео.
             </video>
             <div className={styles.overlay}></div>
