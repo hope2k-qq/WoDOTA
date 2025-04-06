@@ -82,7 +82,7 @@ export const NewsPage: React.FC = () => {
     }, [API_URL, updateUnreadNewsCount]);
 
 
-    if (loading) return <p>Загрузка...</p>;
+    if (loading) return <p></p>;
     if (error) return <p>Ошибка: {error}</p>;
 
     return (

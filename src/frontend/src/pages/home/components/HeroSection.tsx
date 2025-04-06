@@ -5,8 +5,8 @@ import { ReactComponent as SteamIcon } from "../../../assets/icons/steam_icon.sv
 export const HeroSection: React.FC = () => {
     return (
         <div className={styles.hero_section}>
-            <video autoPlay loop muted playsInline className={styles.background_video}>
-                <source src="/wodota.mp4" type="video/mp4"/>
+            <video autoPlay loop muted playsInline poster={"/wodota_poster.jpg"} preload={"auto"} className={styles.background_video}>
+                <source src="https://cdn.wodota.pro/home/wodota.mp4" type="video/mp4"/>
                 Ваш браузер не поддерживает видео.
             </video>
             <div className={styles.overlay}></div>

@@ -23,7 +23,7 @@ export const themes: Theme[] = [
             },
         },
         typography: {
-            fontFamily: 'Geometria, sans-serif',
+            fontFamily: 'Inter, serif',
         },
 
     }),
@@ -39,7 +39,7 @@ export const themes: Theme[] = [
             },
         },
         typography: {
-            fontFamily: 'Geometria, sans-serif',
+            fontFamily: 'Inter, serif',
         },
     })
 ];

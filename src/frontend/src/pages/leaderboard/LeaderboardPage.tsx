@@ -367,9 +367,7 @@ export const LeaderboardPage = () => {
                 </div>
                 ))}
             </div>
-                <div onClick={() =>console.log(openModalIndex)}>1</div>
-
-        <table className={styles.table}>
+                <table className={styles.table}>
                     <thead className={styles.tableHeader}>
                     <tr>
                         <th className={`${styles.cell} ${styles.rankCell}`}>Ранг</th>
@@ -487,7 +485,6 @@ export const LeaderboardPage = () => {
         <div className={styles.main_container}>
             <div className={styles.container_leaderboard}>
                 <div className={styles.title}>ТАБЛИЦА ЛИДЕРОВ</div>
-
                 <div className={styles.container_navigation} onClick={() => setOpenModalIndex(null)}>
                     <div className={styles.container_filter_navigation}>
                         <div className={styles.title_buttonGroup}>Выбери режим игры:</div>

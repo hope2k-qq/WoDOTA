@@ -15,7 +15,7 @@ export const FeaturesSection: React.FC = () => {
                     <div className={styles.featureContainer}>
                         <div className={styles.featureItem}>
                             <div className={styles.container_image}>
-                                <img src="https://wodota.pro/images/home/rating.webp" alt="rating" className={styles.featureImage}/>
+                                <img src="https://cdn.wodota.pro/home/rating.webp" alt="rating" className={styles.featureImage}/>
                                 <div className={styles.overlay}></div>
                                 <div className={styles.shadow_bottom}></div>
                             </div>
@@ -27,7 +27,7 @@ export const FeaturesSection: React.FC = () => {
                         </div>
                         <div className={styles.featureItem}>
                             <div className={styles.container_image}>
-                                <img src="https://wodota.pro/images/home/arena.webp" alt="arena" className={styles.featureImage}/>
+                                <img src="https://cdn.wodota.pro/home/arena.webp" alt="arena" className={styles.featureImage}/>
                                 <div className={styles.overlay}></div>
                                 <div className={styles.shadow_bottom}></div>
                             </div>
@@ -45,7 +45,7 @@ export const FeaturesSection: React.FC = () => {
                     <h2 className={styles.title}>ГЛУБОКАЯ ПРОРАБОТКА ГЕРОЕВ</h2>
                     <div className={`${styles.featureContainer} ${styles.featureContainerSolo}`}>
                         <div className={styles.container_image}>
-                            <img src="https://wodota.pro/images/home/talents.webp" alt="talents" className={styles.featureImage}/>
+                            <img src="https://cdn.wodota.pro/home/talents.webp" alt="talents" className={styles.featureImage}/>
                             <div className={styles.overlay}></div>
                             <div className={styles.shadow_bottom}></div>
                         </div>
@@ -78,8 +78,9 @@ export const FeaturesSection: React.FC = () => {
                             </button>
                         </div>
                         <div className={styles.container_image}>
-                            <video autoPlay loop muted playsInline className={styles.featureImage}>
-                                <source src="/tournament.mp4" type="video/mp4"/>
+                            <video autoPlay loop muted playsInline preload={"auto"} poster={"/tournament_poster.jpg"}
+                                   className={styles.featureImage}>
+                                <source src="https://cdn.wodota.pro/home/tournament.mp4" type="video/mp4"/>
                                 Ваш браузер не поддерживает видео.
                             </video>
                             <div className={styles.overlay}></div>

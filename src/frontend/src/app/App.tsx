@@ -16,7 +16,7 @@ const App = () => {
     const { getCurrentTheme } = useThemeStore();
     const theme = getCurrentTheme() || themes[0];
     const API_URL = process.env.REACT_APP_API_URL;
-    const [isMaintenance] = useState(false);
+    const [isMaintenance] = useState(true);
 
     const clearAllIndexedDB = async () => {
         try {

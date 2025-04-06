@@ -168,8 +168,8 @@ const HeroesSection: React.FC = () => {
     return (
         <section className={styles.heroes_section}>
             <div className={styles.container_video}>
-                <video autoPlay loop muted playsInline className={styles.background_video}>
-                    <source src="/wodota_heroes.mp4" type="video/mp4"/>
+                <video autoPlay loop muted playsInline preload={"auto"} poster={"/wodota_heroes_poster.webp"} className={styles.background_video}>
+                    <source src="https://cdn.wodota.pro/home/wodota_heroes.webm" type="video/webm"/>
                     Ваш браузер не поддерживает видео.
                 </video>
                 <div className={styles.shadow_top}></div>

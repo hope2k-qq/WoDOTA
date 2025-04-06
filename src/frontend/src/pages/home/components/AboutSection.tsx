@@ -5,7 +5,7 @@ export const AboutSection: React.FC = () => {
     return (
         <section className={styles.about_section}>
             <div className={styles.image_container}>
-                <img src={"https://wodota.pro/images/home/background_about.webp"} alt="about" className={styles.background_image}/>
+                <img src={"https://cdn.wodota.pro/home/background_about.webp"} alt="about" className={styles.background_image}/>
                 <div className={styles.shadow_top}></div>
                 <div className={styles.shadow_bottom}></div>
                 <div className={styles.overlay}>

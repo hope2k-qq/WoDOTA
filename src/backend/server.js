@@ -63,9 +63,28 @@ const startServer = async () => {
             setInterval(async () => {
                 await updateDataSequentiallyTournament(app.locals.sitemap);
             }, 60 * 60 * 1000);
-            updateDataSequentially(app.locals.sitemap);
-            updateVotesData(app.locals.sitemap);
-            updateDataSequentiallyTournament(app.locals.sitemap);
+            function executeWithDelay(fn, delay) {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        fn();
+                        resolve();
+                    }, delay);
+                });
+            }
+            
+            async function runSequentially() {
+                try {
+                    await executeWithDelay(() => updateDataSequentially(app.locals.sitemap), 0);
+                    
+                    await executeWithDelay(() => updateVotesData(app.locals.sitemap), 30000);
+                    
+                    await executeWithDelay(() => updateDataSequentiallyTournament(app.locals.sitemap), 30000);
+
+                } catch (err) {
+                    console.error("Ошибка при выполнении операций:", err);
+                }
+            }
+            runSequentially();
         });
         
     } catch (error) {
