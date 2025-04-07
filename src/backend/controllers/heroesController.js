@@ -492,7 +492,7 @@ exports.getHeroBuild = (req, res) => {
             if (!build) {
                 return res.status(404).json({ error: 'Build not found' });
             }
-            res.json(build);  // Отправляем найденный билд
+            res.json(build);
         })
         .catch(error => {
             console.error("Error fetching build:", error);

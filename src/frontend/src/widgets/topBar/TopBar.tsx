@@ -13,6 +13,7 @@ import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
 import { ReactComponent as TournamentIcon } from "../../assets/icons/TournamentIcon.svg";
 import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg";
 import {useUnreadNews} from "../../context/UnreadNewsContext";
+// import {Settings} from "./components/settings/Settings";
 
 export const TopBar = () => {
     const { t } = useTranslation();
@@ -21,9 +22,17 @@ export const TopBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [logoSrc, setLogoSrc] = useState("/logo.png");
     const { unreadNewsCount, setUnreadNewsCount } = useUnreadNews();
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
+    const toggleSettingsMenu = () => {
+        setIsSettingsOpen(!isSettingsOpen);
+    };
+
+    // const closeSettingsMenu = () => {
+    //     setIsSettingsOpen(false);
+    // };
 
     useEffect(() => {
-        // Получаем количество непрочитанных новостей из localStorage (или из контекста)
         const storedUnreadNewsCount = localStorage.getItem('unreadNewsCount');
         if (storedUnreadNewsCount) {
             setUnreadNewsCount(Number(storedUnreadNewsCount));
@@ -41,6 +50,7 @@ export const TopBar = () => {
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
 
     const activeIcon = (path: string) => {
         if (!path) return true;
@@ -145,12 +155,13 @@ export const TopBar = () => {
                             <SteamIcon/>
                             <div>ВОЙТИ</div>
                         </div>
-                        <div className={styles.container_settings}>
+                        <div className={styles.container_settings} onClick={toggleSettingsMenu}>
                             <SettingsIcon />
                         </div>
                     </div>
                 </div>
             )}
+            {/*<Settings isOpen={isSettingsOpen} closeMenu={closeSettingsMenu} />*/}
         </div>
     );
 };

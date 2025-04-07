@@ -47,6 +47,22 @@ const HeroPage: React.FC = () => {
     const [videoSrc, setVideoSrc] = useState<{ [key: string]: string }>({});
 
     useEffect(() => {
+        if (name) {
+            const formattedName = name
+                .split("_") // делим по _
+                .map(part =>
+                    part
+                        .split("-")
+                        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join("-")
+                )
+                .join(" ");
+
+            document.title = `WoDOTA (World of Dota) – ${formattedName}`;
+        }
+    }, [name]);
+
+    useEffect(() => {
         if (!name) return;
 
         const getUpdatedPath = async (src: string, heroName: string, key: string, extension: string): Promise<string[]> => {

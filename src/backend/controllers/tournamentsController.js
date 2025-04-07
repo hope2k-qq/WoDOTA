@@ -394,7 +394,7 @@ const updateTournamentFinalData = async (app) => {
         updating = false;
     }
 };
-
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const updateDataSequentiallyTournament = async (app) => {
     if (updating) return;
 
@@ -402,9 +402,13 @@ const updateDataSequentiallyTournament = async (app) => {
 
     try {
         await updateTournamentListData(app);
+        await delay(2000);
         await updateTournamentQualifiersData(app);
+        await delay(2000);
         await updateTournamentPlayoffsData(app);
+        await delay(2000);
         await updateTournamentFinalData(app);
+        await delay(2000);
     } catch (error) {
         console.error('Error updating data sequentially:', error.message);
     } finally {

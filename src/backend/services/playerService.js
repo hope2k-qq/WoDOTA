@@ -4,11 +4,9 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const getPlayersInfoBySteamIds = async (friendshipCodes) => {
     const apiKey = process.env.STEAM_API_KEY;
     const playerInfo = {};
-    const chunkSize = 50;
-    const maxConcurrentRequests = 5;
-
-    const { default: pLimit } = await import('p-limit');
-    const limit = pLimit(maxConcurrentRequests);
+    const chunkSize = 50
+    const chunksPerBatch = 50;
+    const batchDelay = 2000;
 
     const steamIds = friendshipCodes.map(code => (BigInt(code) + BigInt(76561197960265728)).toString());
 
@@ -17,42 +15,27 @@ const getPlayersInfoBySteamIds = async (friendshipCodes) => {
         chunks.push(steamIds.slice(i, i + chunkSize));
     }
 
-    const promises = [];
-    
-    const fetchWithRetry = async (url) => {
-        let retries = 5; 
-        let success = false;
-
-        while (!success && retries > 0) {
-            try {
-                const response = await axios.get(url);
-                
-                if (response.data.response.players.length > 0) {
-                    return response.data;
-                }
-                success = true; 
-            } catch (error) {
-                if (error.response && error.response.status === 429) {
-                    console.log('Rate limit exceeded, retrying...');
-                    await delay(1500);
-                    retries--;
-                } else {
-                    console.error('Error fetching data from Steam API:', error.message);
-                    break;
-                }
+    const fetchOnce = async (url) => {
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            if (error.response && error.response.status === 429) {
+                console.warn('Rate limit exceeded — skipping this chunk.');
+            } else {
+                console.error('Error fetching data from Steam API:', error.message);
             }
+            return null;
         }
-
-        return null;
     };
 
-    for (let i = 0; i < chunks.length; i++) {
-        const chunk = chunks[i];
-        const steamIdsString = chunk.join(',');
-        
-        promises.push(limit(async () => {
+    for (let i = 0; i < chunks.length; i += chunksPerBatch) {
+        const batchChunks = chunks.slice(i, i + chunksPerBatch);
+
+        for (const chunk of batchChunks) {
+            const steamIdsString = chunk.join(',');
             const url = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamIdsString}`;
-            const responseData = await fetchWithRetry(url);
+            const responseData = await fetchOnce(url);
 
             if (responseData) {
                 responseData.response.players.forEach(player => {
@@ -64,10 +47,13 @@ const getPlayersInfoBySteamIds = async (friendshipCodes) => {
                     };
                 });
             }
-        }));
+        }
+
+        if (i + chunksPerBatch < chunks.length) {
+            await delay(batchDelay);
+        }
     }
 
-    await Promise.all(promises);
     return playerInfo;
 };
 

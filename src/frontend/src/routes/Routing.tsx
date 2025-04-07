@@ -18,19 +18,22 @@ import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
 import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
 import { PageWrapper } from "./components/PageWrapper";
+import {DynamicTitle} from "./components/DynamicTitle";
 
 const routes = [
-    { path: "/", element: <HomePage /> },
-    { path: "/leaderboard", element: <LeaderboardPage /> },
-    { path: "/heroes", element: <HeroesPage /> },
-    { path: "/hero/:name", element: <HeroPage /> },
-    { path: "/hero-build/:id", element: <HeroBuildPage /> },
-    { path: "/news", element: <NewsPage /> },
-    { path: "/tournament", element: <TournamentsPage /> },
-    { path: "/privacy-policy", element: <PrivacyPolicyPage /> },
-    { path: "/votes", element: <VotesPage /> },
-    { path: "*", element: <NotFoundPage /> },
+    { path: "/", element: <HomePage />, title: "WoDOTA (World of Dota) – Водота, Ворлд оф Дота, кастомная игра Dota 2" },
+    { path: "/leaderboard", element: <LeaderboardPage />, title: "WoDOTA (World of Dota) - Таблица лидеров" },
+    { path: "/heroes", element: <HeroesPage />, title: "WoDOTA (World of Dota) - Герои" },
+    { path: "/hero/:name", element: <HeroPage />, title: "WoDOTA (World of Dota) - Герой" },
+    { path: "/hero-build/:id", element: <HeroBuildPage />, title: "WoDOTA (World of Dota) - Билд на героя" },
+    { path: "/news", element: <NewsPage />, title: "WoDOTA (World of Dota) - Новости" },
+    { path: "/tournament", element: <TournamentsPage />, title: "WoDOTA (World of Dota) - Турниры" },
+    { path: "/privacy-policy", element: <PrivacyPolicyPage />, title: "WoDOTA (World of Dota) - Политика конфиденциальности" },
+    { path: "/votes", element: <VotesPage />, title: "WoDOTA (World of Dota) - Голосования" },
+    { path: "*", element: <NotFoundPage />, title: "WoDOTA (World of Dota) - Страница не найдена" },
+
 ];
+
 
 
 export const Routing = () => {
@@ -43,16 +46,15 @@ export const Routing = () => {
                 <Grid container style={{ width: "100%" }}>
                     <Grid item xs={12} style={{ minHeight: "120vh" }}>
                         <Routes>
-                            {routes.map(({ path, element }) => (
+                            {routes.map(({ path, element, title }) => (
                                 <Route
                                     key={path}
                                     path={path}
                                     element={
-                                        path === "/" ? (
-                                            element
-                                        ) : (
-                                            <PageWrapper>{element}</PageWrapper>
-                                        )
+                                        <>
+                                            <DynamicTitle title={title} />
+                                            {path === "/" ? element : <PageWrapper>{element}</PageWrapper>}
+                                        </>
                                     }
                                 />
                             ))}

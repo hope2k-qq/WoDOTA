@@ -116,7 +116,7 @@ const updateArenaData = async (app) => {
         updating = false;
     }
 };
-
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const updateDataSequentially = async (app) => {
     if (updating) return;
 
@@ -124,8 +124,12 @@ const updateDataSequentially = async (app) => {
 
     try {
         await updateRatingData(app);
-        await updateArenaData(app);
 
+        await delay(2000);
+        
+        await updateArenaData(app);
+        
+        await delay(2000);
     } catch (error) {
         console.error('Error updating data sequentially:', error.message);
     } finally {
@@ -134,19 +138,30 @@ const updateDataSequentially = async (app) => {
 };
 
 
-const getRating = (req, res) => {
-    if (cachedRatingData) {
-        res.json(cachedRatingData);
-    } else {
-        res.json([]);
+const getRating = async (req, res) => {
+    try {
+        if (!cachedRatingData) {
+            await updateRatingData(req.app.locals.sitemap);
+        }
+
+        res.json(cachedRatingData || []);
+    } catch (error) {
+        console.error('Error in getRating:', error.message);
+        res.status(500).json({ error: 'Failed to fetch rating data' });
     }
 };
 
-const getArena = (req, res) => {
-    if (cachedArenaData) {
-        res.json(cachedArenaData);
-    } else {
-        res.json({});
+
+const getArena = async (req, res) => {
+    try {
+        if (!cachedArenaData) {
+            await updateArenaData(req.app.locals.sitemap);
+        }
+
+        res.json(cachedArenaData || []);
+    } catch (error) {
+        console.error('Error in getRating:', error.message);
+        res.status(500).json({ error: 'Failed to fetch rating data' });
     }
 };
 
