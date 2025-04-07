@@ -13,7 +13,7 @@ import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
 import { ReactComponent as TournamentIcon } from "../../assets/icons/TournamentIcon.svg";
 import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg";
 import {useUnreadNews} from "../../context/UnreadNewsContext";
-import {Settings} from "./components/settings/Settings";
+//import {Settings} from "./components/settings/Settings";
 
 export const TopBar = () => {
     const { t } = useTranslation();
@@ -28,9 +28,9 @@ export const TopBar = () => {
         setIsSettingsOpen(!isSettingsOpen);
     };
 
-    const closeSettingsMenu = () => {
-        setIsSettingsOpen(false);
-    };
+    // const closeSettingsMenu = () => {
+    //     setIsSettingsOpen(false);
+    // };
 
     useEffect(() => {
         const storedUnreadNewsCount = localStorage.getItem('unreadNewsCount');
@@ -161,7 +161,7 @@ export const TopBar = () => {
                     </div>
                 </div>
             )}
-            <Settings isOpen={isSettingsOpen} closeMenu={closeSettingsMenu} />
+            {/*<Settings isOpen={isSettingsOpen} closeMenu={closeSettingsMenu} />*/}
         </div>
     );
 };
