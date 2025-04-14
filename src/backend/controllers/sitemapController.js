@@ -30,7 +30,7 @@ exports.getSitemap = async (req, res) => {
             // Add alternate hreflang URLs if they exist
             if (page.alternate && page.alternate.length > 0) {
                 const alternates = page.alternate.map(alternate => ({
-                    'xhtml:link': {
+                    xhtml: {
                         _attr: { rel: 'alternate', hreflang: alternate.hreflang, href: alternate.href }
                     }
                 }));

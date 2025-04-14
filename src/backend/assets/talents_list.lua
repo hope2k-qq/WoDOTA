@@ -9367,7 +9367,7 @@ local herotalents = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {"modifier_woda_talent_regenhp1",3}},
 				{"empty_7"},
-				{"modifier_luna_10","#modifier_luna_10", 2, "luna/10", {}},
+				{"modifier_luna_13","#modifier_luna_13", 3, "luna/13", {}},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
@@ -9389,7 +9389,7 @@ local herotalents = {
 				{"empty_13"},
 				{"empty_14"},
 				{"empty_15"},
-				{"modifier_luna_13","#modifier_luna_13", 3, "luna/13", {}}
+				{"modifier_luna_10","#modifier_luna_10", 2, "luna/10", {}}
 			},
 			[7] = {
 				{"empty_17"},
