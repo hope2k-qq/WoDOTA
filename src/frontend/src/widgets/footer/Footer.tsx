@@ -4,14 +4,15 @@ import { ReactComponent as MessageIcon1 } from "../../assets/icons/MessageIcon1.
 import { ReactComponent as MessageIcon2 } from "../../assets/icons/MessageIcon2.svg";
 import { ReactComponent as DiscrordIcon } from "../../assets/icons/DiscordIcon.svg";
 import {EmailLink} from "./components/emailLink/EmailLink";
+import {useTranslation} from "react-i18next";
 
 
 export const Footer: React.FC = () => {
-
+    const { t } = useTranslation();
     const handleEmailClick = () => {
-        const emailPart1 = "wodota.help";
-        const emailPart2 = "gmail";
-        const emailPart3 = "com";
+        const emailPart1 = "support";
+        const emailPart2 = "wodota";
+        const emailPart3 = "pro";
         const email = `${emailPart1}@${emailPart2}.${emailPart3}`;
         window.location.href = `mailto:${email}`;
     };
@@ -34,8 +35,8 @@ export const Footer: React.FC = () => {
                     <DiscrordIcon className={styles.discord}/>
                 </div>
             </div>
-            <div className={styles.text}>©{currentYear} WoDOTA. Все права защищены.</div>
-            <div className={styles.text}>Несанкционированное копирование запрещено.</div>
+            <div className={styles.text}>©{currentYear} WoDOTA. {t('all_rights_reserved')}</div>
+            <div className={styles.text}>{t('copying_prohibited')}</div>
         </footer>
     );
 };

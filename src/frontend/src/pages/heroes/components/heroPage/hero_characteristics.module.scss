@@ -291,7 +291,6 @@
   display: block;
 }
 
-/* Центрируем заголовок */
 .attributeTitle {
   text-align: center;
   font-weight: bold;
@@ -300,21 +299,19 @@
   margin-bottom: 10px;
 }
 
-/* Контейнер для всех атрибутов */
 .attribute_container {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Один атрибут */
 .attribute_item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.25rem;
 }
 
-/* Левый блок с иконкой и названием */
 .attribute_icon {
   display: flex;
   align-items: center;
@@ -324,13 +321,11 @@
   color: #A9A9A9;
 }
 
-/* Стили для картинки */
 .attribute_icon img {
   width: 24px;
   height: 24px;
 }
 
-/* Правый блок с описанием */
 .attribute_description {
   flex: 1;
   text-align: left;

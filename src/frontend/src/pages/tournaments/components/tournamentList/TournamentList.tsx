@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from "./touranament_list.module.scss";
+import {useTranslation} from "react-i18next";
 
 interface Team {
     player1_info: {
@@ -21,6 +22,7 @@ interface TournamentListProps {
 }
 
 export const TournamentList: React.FC<TournamentListProps> = ({ data }) => {
+    const { t } = useTranslation();
     const [updatedPlayers, setUpdatedPlayers] = useState<{ [key: string]: string }>({});
 
 
@@ -38,8 +40,8 @@ export const TournamentList: React.FC<TournamentListProps> = ({ data }) => {
                 <thead>
                 <tr className={styles.table_info}>
                     <th>#</th>
-                    <th>Никнейм #1</th>
-                    <th>Никнейм #2</th>
+                    <th>{t('nickname')} #1</th>
+                    <th>{t('nickname')} #2</th>
                 </tr>
                 </thead>
                 <tbody>

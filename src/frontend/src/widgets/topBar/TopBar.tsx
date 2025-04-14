@@ -2,7 +2,7 @@ import styles from "./top_bar.module.scss";
 import { TopBarMenuItem } from "./components/TopBarMenuItem/TopBarMenuItem";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import { ReactComponent as MoreIcon } from "../../assets/icons/MoreIcon.svg";
 import { ReactComponent as HeroesIcon } from "../../assets/icons/heroes_icon.svg";
 import { ReactComponent as LeaderboardIcon } from "../../assets/icons/leaderboard_icon.svg";
@@ -13,7 +13,7 @@ import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
 import { ReactComponent as TournamentIcon } from "../../assets/icons/TournamentIcon.svg";
 import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg";
 import {useUnreadNews} from "../../context/UnreadNewsContext";
-//import {Settings} from "./components/settings/Settings";
+import {Settings} from "./components/settings/Settings";
 
 export const TopBar = () => {
     const { t } = useTranslation();
@@ -23,14 +23,15 @@ export const TopBar = () => {
     const [logoSrc, setLogoSrc] = useState("/logo.png");
     const { unreadNewsCount, setUnreadNewsCount } = useUnreadNews();
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+    const currentLang = location.pathname.split('/')[1];
 
     const toggleSettingsMenu = () => {
         setIsSettingsOpen(!isSettingsOpen);
     };
 
-    // const closeSettingsMenu = () => {
-    //     setIsSettingsOpen(false);
-    // };
+    const closeSettingsMenu = () => {
+        setIsSettingsOpen(false);
+    };
 
     useEffect(() => {
         const storedUnreadNewsCount = localStorage.getItem('unreadNewsCount');
@@ -68,7 +69,8 @@ export const TopBar = () => {
     }
 
     const handleNavigate = (path: string) => {
-        navigate(path);
+        const normalizedPath = path === '/' ? '' : path;
+        navigate(`/${currentLang}${normalizedPath}`);
         setMenuOpen(false);
     };
 
@@ -87,49 +89,54 @@ export const TopBar = () => {
                     </div>
                     <div className={styles.topbar_menu_open}>
                         <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/heroes')}>
-                            <TopBarMenuItem title={t('heroes_guides')}
-                                            onNavigate={() => navigate('/heroes')} menuOpen={menuOpen}/>
+                            <TopBarMenuItem title={t('heroes')}
+                                            onNavigate={() => handleNavigate('/heroes')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
                         <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/leaderboard')}>
                             <TopBarMenuItem title={t('leaderboard')}
-                                            onNavigate={() => navigate('/leaderboard')} menuOpen={menuOpen}/>
+                                            onNavigate={() => handleNavigate('/leaderboard')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
                         <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/votes')}>
                             <TopBarMenuItem title={t('votes')}
-                                            onNavigate={() => navigate('/votes')} menuOpen={menuOpen}/>
+                                            onNavigate={() => handleNavigate('/votes')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
                         <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/news')}>
                             <TopBarMenuItem title={t('news')}
-                                            onNavigate={() => navigate('/news')} menuOpen={menuOpen}/>
+                                            onNavigate={() => handleNavigate('/news')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
                         <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/tournament')}>
                             <TopBarMenuItem title={t('tournament')}
-                                            onNavigate={() => navigate('/tournament')} menuOpen={menuOpen}/>
+                                            onNavigate={() => handleNavigate('/tournament')} menuOpen={menuOpen}/>
+                            <MoreIcon/>
+                        </div>
+                        <div className={styles.topbar_menu_item_open} onClick={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}>
+                            <TopBarMenuItem title={t('donate')}
+                                            onNavigate={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')} menuOpen={menuOpen}/>
                             <MoreIcon/>
                         </div>
                     </div>
                 </div>
             ) : (
                 <div className={styles.topbar}>
-                    <div className={styles.topbar_left} onClick={() => navigate('/')}>
+                    <div className={styles.topbar_left} onClick={() => handleNavigate('/')}>
                         <img src={logoSrc} alt="logo"/>
                     </div>
                     <div className={`${styles.topbar_menu}`}>
-                        <TopBarMenuItem title={t('heroes_guides')}
-                                        onNavigate={() => navigate('/heroes')} isActive={activeIcon("/heroes")}
+                    <TopBarMenuItem title={t('heroes')}
+                                        onNavigate={() => handleNavigate('/heroes')} isActive={activeIcon("/heroes")}
                                         menuOpen={menuOpen} icon={<HeroesIcon />}/>
                         <TopBarMenuItem title={t('leaderboard')}
-                                        onNavigate={() => navigate('/leaderboard')}
+                                        onNavigate={() => handleNavigate('/leaderboard')}
                                         isActive={activeIcon("/leaderboard")} menuOpen={menuOpen} icon={<LeaderboardIcon />}/>
                         <TopBarMenuItem title={t('votes')}
-                                        onNavigate={() => navigate('/votes')} isActive={activeIcon("/votes")}
+                                        onNavigate={() => handleNavigate('/votes')} isActive={activeIcon("/votes")}
                                         menuOpen={menuOpen} icon={<VotesIcon />}/>
                         <TopBarMenuItem title={t('tournament')}
-                                        onNavigate={() => navigate('/tournament')} isActive={activeIcon("/tournament")}
+                                        onNavigate={() => handleNavigate('/tournament')} isActive={activeIcon("/tournament")}
                                         menuOpen={menuOpen} icon={<TournamentIcon />}/>
                         <TopBarMenuItem
                             title={t('donate')}
@@ -153,7 +160,7 @@ export const TopBar = () => {
 
                         <div className={styles.container_steam}>
                             <SteamIcon/>
-                            <div>ВОЙТИ</div>
+                            <div>{t('login')}</div>
                         </div>
                         <div className={styles.container_settings} onClick={toggleSettingsMenu}>
                             <SettingsIcon />
@@ -161,7 +168,8 @@ export const TopBar = () => {
                     </div>
                 </div>
             )}
-            {/*<Settings isOpen={isSettingsOpen} closeMenu={closeSettingsMenu} />*/}
+            {isSettingsOpen && <div className={styles.overlay}></div>}
+            <Settings isOpen={isSettingsOpen} closeMenu={closeSettingsMenu} />
         </div>
     );
 };

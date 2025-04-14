@@ -3,15 +3,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./features_section.module.scss";
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 export const FeaturesSection: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     return (
         <section className={styles.features_section}>
             <div className={styles.container}>
                 <div>
-                    <h2 className={styles.title}>РАЗНЫЕ РЕЖИМЫ ИГРЫ</h2>
+                    <h2 className={styles.title}>{t('game_modes')}</h2>
                     <div className={styles.featureContainer}>
                         <div className={styles.featureItem}>
                             <div className={styles.container_image}>
@@ -20,9 +22,8 @@ export const FeaturesSection: React.FC = () => {
                                 <div className={styles.shadow_bottom}></div>
                             </div>
                             <div className={styles.textBlock}>
-                                <h3 className={styles.modeTitle}>РЕЙТИНГОВЫЕ МАТЧИ</h3>
-                                <p className={styles.modeDescription}>Соревнуйтесь с другими игроками, повышайте свой
-                                    рейтинг и становитесь чемпионом, играя в одиночку или в дуо.</p>
+                                <h3 className={styles.modeTitle}>{t('ranked_matches')}</h3>
+                                <p className={styles.modeDescription}>{t('ranked_matches_description')}</p>
                             </div>
                         </div>
                         <div className={styles.featureItem}>
@@ -32,17 +33,15 @@ export const FeaturesSection: React.FC = () => {
                                 <div className={styles.shadow_bottom}></div>
                             </div>
                             <div className={styles.textBlock}>
-                                <h3 className={styles.modeTitle}>АРЕНА МОД</h3>
-                                <p className={styles.modeDescription}>Хотите поиграть в одиночку или в команде, фармя
-                                    крипов? Тогда режим «Арена» идеально вам подойдёт! В этом режиме вы будете фармить
-                                    волны крипов, стремясь занять место в топе.</p>
+                                <h3 className={styles.modeTitle}>{t('arena_mode')}</h3>
+                                <p className={styles.modeDescription}>{t('arena_mode_description')}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <h2 className={styles.title}>ГЛУБОКАЯ ПРОРАБОТКА ГЕРОЕВ</h2>
+                    <h2 className={styles.title}>{t('deep_heroes')}</h2>
                     <div className={`${styles.featureContainer} ${styles.featureContainerSolo}`}>
                         <div className={styles.container_image}>
                             <img src="https://cdn.wodota.pro/home/talents.webp" alt="talents" className={styles.featureImage}/>
@@ -50,31 +49,24 @@ export const FeaturesSection: React.FC = () => {
                             <div className={styles.shadow_bottom}></div>
                         </div>
                         <div className={styles.textBlockSolo}>
-                            <h3 className={styles.modeTitle} style={{marginTop: 0}}>УНИКАЛЬНЫЕ ТАЛАНТЫ И ГЕРОИ</h3>
+                            <h3 className={styles.modeTitle} style={{marginTop: 0}}>{t('unique_talents')}</h3>
                             <p className={styles.modeDescription}>
-                                Каждый герой обладает особыми талантами, а некоторые — уникальными способностями,
-                                которых нет в <strong>Dota 2</strong>.
-                                Более того, в игре представлены кастомные персонажи, полностью отсутствующие в
-                                оригинале!
-                                Это открывает безграничные возможности для тактики и новых игровых стилей, делая каждую
-                                битву по-настоящему уникальной.
+                                {t('unique_talents_description1')}{" "}<strong style={{ whiteSpace: "nowrap" }}>Dota 2</strong>{t('unique_talents_description2')}
                             </p>
                             <button className={styles.btn} onClick={() => navigate('/heroes')}>
-                                ВСЕ ГЕРОИ
+                                {t('all_heroes')}
                             </button>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h2 className={styles.title}>РЕГУЛЯРНЫЕ ТУРНИРЫ</h2>
+                    <h2 className={styles.title}>{t('regular_tournaments')}</h2>
                     <div className={`${styles.featureContainer} ${styles.featureContainerSolo}`}>
                         <div className={styles.textBlockSolo}>
-                            <h3 className={styles.modeTitle} style={{marginTop: 0}}>ПРОВЕРЬ СВОИ СИЛЫ В ТУРНИРАХ</h3>
-                            <p className={styles.modeDescription}>Принимайте участие в регулярных турнирах, соревнуйтесь
-                                с сильнейшими и
-                                завоевывайте призы. Покажите свои навыки в одиночных и командных соревнованиях!</p>
+                            <h3 className={styles.modeTitle} style={{marginTop: 0}}>{t('test_strength_tournaments')}</h3>
+                            <p className={styles.modeDescription}>{t('strength_tournaments_description')}</p>
                             <button className={styles.btn} onClick={() => navigate('/tournament')}>
-                                К ТУРНИРАМ
+                                {t('to_tournaments')}
                             </button>
                         </div>
                         <div className={styles.container_image}>
@@ -85,7 +77,6 @@ export const FeaturesSection: React.FC = () => {
                             </video>
                             <div className={styles.overlay}></div>
                             <div className={styles.shadow_bottom}></div>
-
                         </div>
                     </div>
                 </div>

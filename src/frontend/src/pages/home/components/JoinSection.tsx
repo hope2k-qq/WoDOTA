@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
 import styles from "./join.module.scss";
 import { ReactComponent as SteamIcon } from "../../../assets/icons/steam_icon.svg";
+import {useTranslation} from "react-i18next";
 
 export const JoinSection: React.FC = () => {
+    const { t } = useTranslation();
     const [subscriberCount, setSubscriberCount] = useState<number | null>(null);
     const API_URL = process.env.REACT_APP_API_URL;
     useEffect(() => {
@@ -31,8 +33,8 @@ export const JoinSection: React.FC = () => {
             <div className={styles.container}>
                 <div className={styles.container}>
                     <div>
-                        <span className={styles.text1}>ВСТУПАЙТЕ В</span>
-                        <span className={styles.text2}>СООБЩЕСТВО</span>
+                        <span className={styles.text1}>{t('join_community_part1')}</span>
+                        <span className={styles.text2}>{t('join_community_part2')}</span>
                         <a
                             href="https://steamcommunity.com/sharedfiles/filedetails/?id=2880603428"
                             target="_blank"
@@ -41,8 +43,8 @@ export const JoinSection: React.FC = () => {
                         >
                             <SteamIcon className={styles.icon}/>
                             <div className={styles.text_container}>
-                                <span className={styles.main_text}>ИГРАТЬ БЕСПЛАТНО</span>
-                                <span className={styles.sub_text}>СКАЧАТЬ В STEAM</span>
+                                <span className={styles.main_text}>{t('play_for_free')}</span>
+                                <span className={styles.sub_text}>{t('download_steam')}</span>
                             </div>
                         </a>
                     </div>
@@ -51,7 +53,7 @@ export const JoinSection: React.FC = () => {
                             <img src={"/subs_icon.png"} alt={"subs_icon"}/>
                         </div>
                         <span className={styles.count_subs}>{subscriberCount}</span>
-                        <span className={styles.title_subs}>КОЛИЧЕСТВО ПОДПИСЧИКОВ</span>
+                        <span className={styles.title_subs}>{t('subscriber_count')}</span>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import styles from "./leaderboard.module.scss";
 import axios from "axios";
 import React, {useEffect, useState, useCallback} from "react";
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
+import {useTranslation} from "react-i18next";
 
 interface Player {
     steamid: string;
@@ -23,6 +24,7 @@ interface PlayerGroup {
 }
 
 export const LeaderboardPage = () => {
+    const { t } = useTranslation();
     const [players, setPlayers] = useState<Player[]>([]);
     const [arenaPlayers, setArenaPlayers] = useState<Record<string, PlayerGroup[]>>({});
     const [loadingRating, setLoadingRating] = useState<boolean>(true);
@@ -137,7 +139,7 @@ export const LeaderboardPage = () => {
                         >
                             <img src={"/crown.png"} alt="crown" className={styles.crownIcon}/>
                             <div className={`${styles.topPlayersRank} 
-                            ${styles[`topPlayerCard${player.rank}_color`]}`}>{player.rank} МЕСТО
+                            ${styles[`topPlayerCard${player.rank}_color`]}`}>{player.rank} {t('place').toUpperCase()}
                             </div>
                             <div className={`${styles.topPlayersRankOverlay} 
                         ${styles[`topPlayerCard${player.rank}_color_stroke`]}`}>{player.rank}</div>
@@ -164,9 +166,9 @@ export const LeaderboardPage = () => {
                 <table className={styles.table}>
                     <thead className={styles.tableHeader}>
                     <tr>
-                        <th className={`${styles.cell} ${styles.rankCell}`}>Ранг</th>
-                        <th className={`${styles.cell} ${styles.playerCell}`}>Игрок</th>
-                        <th className={`${styles.cell} ${styles.ratingCell}`}>Рейтинг</th>
+                        <th className={`${styles.cell} ${styles.rankCell}`}>{t('rank')}</th>
+                        <th className={`${styles.cell} ${styles.playerCell}`}>{t('player')}</th>
+                        <th className={`${styles.cell} ${styles.ratingCell}`}>{t('rating')}</th>
                     </tr>
                     </thead>
                     <tbody className={styles.playersTable}>
@@ -362,7 +364,7 @@ export const LeaderboardPage = () => {
                             )}
                             <div className={styles.topPlayerRatingContainer}>
                                 <div className={styles.topPlayerRating}>{playerGroup.wave_count}</div>
-                                <div className={styles.ratingLabel}>Рейтинг</div>
+                                <div className={styles.ratingLabel}>{t('rating')}</div>
                             </div>
                 </div>
                 ))}
@@ -370,10 +372,10 @@ export const LeaderboardPage = () => {
                 <table className={styles.table}>
                     <thead className={styles.tableHeader}>
                     <tr>
-                        <th className={`${styles.cell} ${styles.rankCell}`}>Ранг</th>
-                        <th className={`${styles.cell} ${styles.playerCell}`}>Игрок</th>
-                        <th className={`${styles.cell} ${styles.ratingCell}`}>Герои</th>
-                        <th className={`${styles.cell} ${styles.ratingCell}`}>Рейтинг</th>
+                        <th className={`${styles.cell} ${styles.rankCell}`}>{t('rank')}</th>
+                        <th className={`${styles.cell} ${styles.playerCell}`}>{t('player')}</th>
+                        <th className={`${styles.cell} ${styles.ratingCell}`}>{t('heroes')}</th>
+                        <th className={`${styles.cell} ${styles.ratingCell}`}>{t('rating')}</th>
                     </tr>
                     </thead>
                     <tbody className={styles.playersTable}>
@@ -436,7 +438,7 @@ export const LeaderboardPage = () => {
                                     {playerGroup.heroes.filter(hero => hero).length > 1 && (
                                         <button onClick={() => handleShowAllHeroes(index)}
                                                 className={styles.showAllHeroesButton}>
-                                            {openModalIndex === index ? "Скрыть героев" : "Показать героев"}
+                                            {openModalIndex === index ? t('hide_heroes') : t('show_heroes')}
                                         </button>
                                     )}
 
@@ -484,22 +486,24 @@ export const LeaderboardPage = () => {
     return (
         <div className={styles.main_container}>
             <div className={styles.container_leaderboard}>
-                <div className={styles.title}>ТАБЛИЦА ЛИДЕРОВ</div>
+                <div className={styles.title}>{t('leaderboard')}</div>
                 <div className={styles.container_navigation} onClick={() => setOpenModalIndex(null)}>
                     <div className={styles.container_filter_navigation}>
-                        <div className={styles.title_buttonGroup}>Выбери режим игры:</div>
+                        <div className={styles.title_buttonGroup}>{t('choose_game_mode')}</div>
                         <div className={styles.buttonGroup}>
                             <button
                                 className={`${styles.button} ${selectedRating === "rating" ? styles.active : ""}`}
                                 onClick={() => handleRatingChange("rating")}
+                                style={{ textTransform: 'uppercase' }}
                             >
-                                РЕЙТИНГ
+                                {t('rating')}
                             </button>
                             <button
                                 className={`${styles.button} ${selectedRating === "arena" ? styles.active : ""}`}
                                 onClick={() => handleRatingChange("arena")}
+                                style={{ textTransform: 'uppercase' }}
                             >
-                                АРЕНА
+                                {t('arena')}
                             </button>
                         </div>
                         {selectedRating === "arena" && (
@@ -528,7 +532,7 @@ export const LeaderboardPage = () => {
                             <SearchIcon className={styles.search_icon}/>
                             <input
                                 type="text"
-                                placeholder="Поиск игрока..."
+                                placeholder={t('searching_player')}
                                 value={searchTerm}
                                 onChange={handleSearchChange}
                                 className={styles.search_input}

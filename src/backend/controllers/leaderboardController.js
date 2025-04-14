@@ -125,11 +125,11 @@ const updateDataSequentially = async (app) => {
     try {
         await updateRatingData(app);
 
-        await delay(2000);
+        await delay(3000);
         
         await updateArenaData(app);
         
-        await delay(2000);
+        await delay(3000);
     } catch (error) {
         console.error('Error updating data sequentially:', error.message);
     } finally {

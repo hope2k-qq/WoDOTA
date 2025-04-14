@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import { getImageUrl } from '../../../../utils/r2Storage';
 import { Talent, AddonData, RenderTalentsProps } from '../../../../types/heroes';
-import axios from 'axios';
 import styles from './render_talents.module.scss';
 import html2canvas from "html2canvas";
 import { ReactComponent as UpdateIcon } from "../../../../assets/icons/UpdateIcon.svg";
@@ -19,6 +18,8 @@ import {
     getCacheVersion,
     setCacheVersion
 } from "../../../../utils/dbUtils";
+import {useTranslation} from "react-i18next";
+import {useMyData} from "../../../../context/HeroesDataContext";
 
 interface TalentImage {
     text: string;
@@ -30,7 +31,8 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                          buildCurrentTalentLevels,
                                                          buildUpgradeOrder,
                                                          isBuild}) => {
-    const [generalTalents, setGeneralTalents] = useState<AddonData | null>(null);
+    const { t } = useTranslation();
+    const [localGeneralTalents, setLocalGeneralTalents] = useState<AddonData | null>(null);
     const [imageSrcs, setImageSrcs] = useState<{ [key: string]: string | null }>({});
     const [backgroundImages, setBackgroundImages] = useState<{ [key: string]: string | null }>({});
     const [isLoading, setIsLoading] = useState(false);
@@ -51,6 +53,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const API_URL = process.env.REACT_APP_API_URL;
     const [buildName, setBuildName] = useState('');
     const [buildDescription, setBuildDescription] = useState('');
+    const { generalTalents, languageReady } = useMyData();
     const saveGridAsImage = async () => {
         setIsLoading(true);
         if (!sectionsRef.current || sectionsRef.current.length === 0) {
@@ -192,16 +195,16 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
     const validateBuild = () => {
         if (upgradeOrder.length === 0) {
-            showNotification("Вы не распределили очки талантов!", "error");
+            showNotification(t('no_distribute_talent_points'), "error");
             return false;
         }
 
         if (buildName.length < 4) {
-            showNotification("Название не может быть меньше 4 символов!", "error");
+            showNotification(t('name_less_characters'), "error");
             return false;
         }
 
-        showNotification("Успешно скопировано в буфер обмена!", "success");
+        showNotification(t('copied_clipboard'), "success");
         return true;
     };
 
@@ -277,16 +280,16 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         const oneMinute = 60 * 1000;
         const formatTime = (time: number) => {
             if (time % 10 === 1 && time % 100 !== 11) {
-                return `${time} секунду`;
+                return `${time} ${t('second')}`;
             } else if ((time % 10 >= 2 && time % 10 <= 4) && (time % 100 < 10 || time % 100 >= 20)) {
-                return `${time} секунды`;
+                return `${time} ${t('seconds1')}`;
             } else {
-                return `${time} секунд`;
+                return `${time} ${t('seconds2')}`;
             }
         };
         if (lastSubmit && now - parseInt(lastSubmit, 10) < oneMinute) {
             const remainingTime = Math.ceil((oneMinute - (now - parseInt(lastSubmit, 10))) / 1000);
-            showNotification(`Вы можете создать новый билд через ${formatTime(remainingTime)}.`, "error");
+            showNotification(`${t('can_create')} ${formatTime(remainingTime)}.`, "error");
             return;
         }
 
@@ -378,27 +381,10 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
 
     useEffect(() => {
-        const fetchGeneralTalentsData = async () => {
-            const cachedData = sessionStorage.getItem('generalTalents');
-
-            if (cachedData) {
-                setGeneralTalents(JSON.parse(cachedData));
-                return;
-            }
-
-            try {
-                const response = await axios.get(`${API_URL}/general_talents`);
-                setGeneralTalents(response.data);
-                sessionStorage.setItem('generalTalents', JSON.stringify(response.data));
-            } catch (error) {
-                //console.error('Ошибка при получении данных:', error);
-            }
-        };
-
-        fetchGeneralTalentsData().catch((error) => {
-            //console.error('Promise rejected in fetchGeneralTalentsData:', error);
-        });
-    }, [API_URL]);
+        if (languageReady && generalTalents) {
+            setLocalGeneralTalents(generalTalents as AddonData); // безопасно приводим к типу
+        }
+    }, [generalTalents, languageReady]);
 
 
     const getBackgroundForHero = useCallback(async (part: string, hero_name: string): Promise<string | null> => {
@@ -569,11 +555,11 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         }
 
         // 🔹 Стандартные таланты (woda_talent_)
-        if (talent.includes('woda_talent_') && generalTalents) {
+        if (talent.includes('woda_talent_') && localGeneralTalents) {
             const baseKey = talent.substring(1);
             const currentLevel = currentTalentLevels?.[part]?.[baseKey] ?? -1;
             const key = `${baseKey}_${currentLevel >= 0 ? currentLevel : 0}`;
-            return generalTalents[key] || null;
+            return localGeneralTalents[key] || null;
         }
         return null;
     };
@@ -643,12 +629,12 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
 
 
-        if (baseKey.includes('woda_talent_') && generalTalents) {
+        if (baseKey.includes('woda_talent_') && localGeneralTalents) {
             const currentLevel = currentTalentLevels?.[part]?.[baseKey] ?? 0;
             const nextLevel = currentLevel + 1;
             const nextKey = `${baseKey}_${nextLevel}`;
 
-            if (!generalTalents[nextKey]) return false;
+            if (!localGeneralTalents[nextKey]) return false;
         }
 
         return true;
@@ -815,9 +801,9 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
 
     const talentData: { [key: number]: TalentImage } = {
-        1: { text: "Сила", image: "/str.png" },
-        2: { text: "Ловкость", image: "/agi.png" },
-        3: { text: "Интеллект", image: "/int.png" },
+        1: { text: t('strength'), image: "/str.png" },
+        2: { text: t('agility'), image: "/agi.png" },
+        3: { text: t('intelligence'), image: "/int.png" },
     };
 
     // const getImageForHero = async (talent: Talent) => {
@@ -999,8 +985,8 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                             </div>
                             {part === partInfo && (!isBuild ? isUpgradeMode : true) && (
                                 <div className={styles.talentSection_info}>
-                                    <div>Доступно для распределения: {40 - getTotalUpgradedTalentCount()}</div>
-                                    <div>Всего талантов: {getTotalUpgradedTalentCount()}</div>
+                                    <div>{t('available_distribution')} {40 - getTotalUpgradedTalentCount()}</div>
+                                    <div>{t('total_talents')} {getTotalUpgradedTalentCount()}</div>
                                 </div>
                             )}
                         </div>
@@ -1013,7 +999,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     return(
         <div>
             {!isBuild && (
-                <div className={styles.render_talents_title}>О ТАЛАНТАХ:</div>
+                <div className={styles.render_talents_title}>{t('about_talents')}</div>
             )}
             {!isBuild && (
                 <div className={styles.div_container}>
@@ -1031,20 +1017,20 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                             onClick={() => setIsUpgradeMode(!isUpgradeMode)}
                             className={styles.toggleUpgrade}
                         >
-                            {isUpgradeMode ? "Отмена" : "Начать прокачку"}
+                            {isUpgradeMode ? t('cancel') : t('start_improving')}
                         </button>
                         {isUpgradeMode && (
                             <div className={styles.additionalButtons}>
                                 <div className={styles.back_container} onClick={removeLastUpgrade}><BackIcon/></div>
                                 <button onClick={resetAllTalents} className={styles.resetButton}>
                                     <UpdateIcon className={styles.icon} style={{transform: `rotate(${rotation}deg)`}}/>
-                                    <span>Сбросить</span>
-                                    <span>&nbsp;все таланты</span>
+                                    <span>{t('reset_talents_part1')}</span>
+                                    <span>&nbsp;{t('reset_talents_part2')}</span>
                                 </button>
                                 <button onClick={() => setIsSaveModalOpen(true)} className={styles.saveButton}>
                                     <SaveIcon className={styles.icon}/>
                                     <div className={styles.separator}></div>
-                                    <span>Сохранить</span>
+                                    <span>{t('save')}</span>
                                 </button>
                                 <div className={styles.settings} onClick={() => setIsSettingsOpen(true)}>
                                     <SettingsIcon/>
@@ -1056,14 +1042,14 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                 <div className={styles.line}></div>
                                                 <div className={styles.line}></div>
                                             </div>
-                                            <div className={styles.settings_tittle}>Как сохранить?</div>
+                                            <div className={styles.settings_tittle}>{t('how_save')}</div>
 
                                             <div className={styles.ModalSaveButtonContainer}>
                                                 <button onClick={saveGridAsImage}
                                                         className={styles.saveButtonInModal}>
                                                     {isLoading ? (
                                                         <>
-                                                            <span>Загрузка</span>
+                                                            <span>{t('downloading')}</span>
                                                             <span className={styles.dots}>
                                                         <span className={styles.dot}>.</span>
                                                         <span className={styles.dot}>.</span>
@@ -1071,26 +1057,26 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                     </span>
                                                         </>
                                                     ) : (
-                                                        'Скачать'
+                                                        t('download')
                                                     )}
                                                 </button>
                                                 <button className={styles.shareButtonInModal}
                                                         onClick={toggleFormShare}>
                                                     <ShareIcon/>
-                                                    Поделиться
+                                                    {t('share')}
                                                 </button>
                                                 {isOpenShare && (
                                                     <div className={styles.shareInfo}>
                                                         <input
                                                             type="text"
-                                                            placeholder="Название билда"
+                                                            placeholder={t('build_name')}
                                                             maxLength={100}
                                                             className={styles.heroNameInput}
                                                             value={buildName}
                                                             onChange={handleNameChange}
                                                         />
                                                         <textarea
-                                                            placeholder="Описание билда"
+                                                            placeholder={t('build_description')}
                                                             className={styles.heroDescriptionInput}
                                                             maxLength={5000}
                                                             rows={3}
@@ -1100,7 +1086,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                         <div className={styles.button_container}>
                                                             <button className={styles.button_confirm}
                                                                     onClick={createHeroBuild}>
-                                                                Сохранить билд
+                                                                {t('save_build')}
                                                             </button>
                                                         </div>
                                                     </div>
@@ -1109,7 +1095,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
                                             <button onClick={() => setIsSaveModalOpen(false)}
                                                     className={styles.closeButton}>
-                                                Отмена
+                                                {t('cancel')}
                                             </button>
                                         </div>
                                     </div>
@@ -1118,11 +1104,11 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                 {isSettingsOpen && (
                                     <div className={styles.modalOverlay} onClick={() => setIsSettingsOpen(false)}>
                                         <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                                            <div className={styles.settings_tittle}>Настройки</div>
+                                            <div className={styles.settings_tittle}>{t('settings')}</div>
                                             <div className={styles.additionalButtonsWrapper}>
                                                 <div className={styles['container-attribute']}>
                                                     <div className={styles['slider-label']}>
-                                                        ЦИФРЫ
+                                                        {t('numbers')}
                                                     </div>
                                                     <div className={styles['switch-container']}>
                                                         <label className={styles['switch']}>
@@ -1137,7 +1123,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                 </div>
                                                 <div className={styles['container-attribute']}>
                                                     <div className={styles['slider-label']}>
-                                                        О ТАЛАНТАХ
+                                                        {t('about_talents')}
                                                     </div>
                                                     <div className={styles['switch-container']}>
                                                         <label className={styles['switch']}>
@@ -1153,7 +1139,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                             </div>
                                             <button onClick={() => setIsSettingsOpen(false)}
                                                     className={styles.closeButton}>
-                                                Закрыть
+                                                {t('close')}
                                             </button>
                                         </div>
                                     </div>
@@ -1170,7 +1156,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                             className={`${styles.saveButton} ${styles.saveButtonDisplay}`}>
                         <SaveIcon className={styles.icon}/>
                         <div className={styles.separator}></div>
-                        <span>Сохранить</span>
+                        <span>{t('save')}</span>
                     </button>
                 </div>
             )}

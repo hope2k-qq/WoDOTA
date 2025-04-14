@@ -3,16 +3,23 @@ const path = require('path');
 
 const replacements_heroes = require('../config/replacements_heroes');
 
-const filePath = path.join(__dirname, '../assets', 'addon_russian.txt');
-const additionalAbilitiesFilePath = path.join(__dirname, '../data', 'heroesAttributesMissing.json');
-
-
+const langMap = {
+    ru: 'russian',
+    en: 'english',
+    cs: 'english',
+    uk: 'ukrainian',
+};
 
 function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
     try {
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        let fileContent = null;
+        if (filePath.includes('english')) {
+            fileContent = fs.readFileSync(filePath, 'utf-16le');
+        } else {
+            fileContent = fs.readFileSync(filePath, 'utf-8');
+        }
+        
         const lines = fileContent.split('\n').filter(line => line.trim() !== '');
-
         const heroTalentsData = {};
         const abilitiesData = {};
 
@@ -76,11 +83,16 @@ function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
     }
 }
 
-function loadAdditionalAbilities() {
+function loadAdditionalAbilities(lang) {
     try {
+        function getAddonFilePath(langCode) {
+            const langFull = langMap[langCode] || 'english';
+            return path.join(__dirname, '../data', `heroes_attributes_missing_${langFull}.json`);
+        }
+        let additionalAbilitiesFilePath = getAddonFilePath(lang);
         const fileContent = fs.readFileSync(additionalAbilitiesFilePath, 'utf-8');
+        
         const additionalAbilities = JSON.parse(fileContent);
-
         return additionalAbilities;
     } catch (error) {
         console.error('Error reading additional abilities file:', error.message);
@@ -90,7 +102,12 @@ function loadAdditionalAbilities() {
 
 function parseAddonFile(filePath) {
     try {
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        let fileContent = null;
+        if (filePath.includes('english')) {
+            fileContent = fs.readFileSync(filePath, 'utf-16le');
+        } else {
+            fileContent = fs.readFileSync(filePath, 'utf-8');
+        }
         const lines = fileContent.split('\n').filter(line => line.trim() !== '');
 
         const generalTalentsData = {};
@@ -116,10 +133,15 @@ function parseAddonFile(filePath) {
     }
 }
 
-function getHeroData(heroName, abilityNames = []) {
+function getHeroData(heroName, abilityNames = [], lang) {
     let heroTalentsData = {};
     let abilitiesData = {};
 
+    function getAddonFilePath(langCode) {
+        const langFull = langMap[langCode] || 'english';
+        return path.join(__dirname, '../assets', `addon_${langFull}.txt`);
+    }
+    const filePath = getAddonFilePath(lang);
     try {
         for (const [key, value] of Object.entries(replacements_heroes)) {
             if (value === 'aghanim' || value === 'roshan') {
@@ -144,15 +166,14 @@ function getHeroData(heroName, abilityNames = []) {
             }
             return abilityName;
         });
-        
         ({ heroTalentsData, abilitiesData } = parseAddonFileForHero(filePath, heroName, updatedAbilityNames));
     } catch (error) {
         console.error('Error:', error.message);
     }
 
 
-    const additionalAbilities = loadAdditionalAbilities();
-
+    const additionalAbilities = loadAdditionalAbilities(lang);
+    console.log(additionalAbilities)
     for (const [key, value] of Object.entries(additionalAbilities)) {
         const abilityKey = key.replace('DOTA_Tooltip_ability_', '');
         if (
@@ -167,16 +188,21 @@ function getHeroData(heroName, abilityNames = []) {
     return { heroTalentsData, abilitiesData };
 }
 
-function getGeneralTalentsData() {
+function getGeneralTalentsData(lang) {
     let generalTalentsData = {};
+    function getAddonFilePath(langCode) {
+        const langFull = langMap[langCode] || 'english';
+        return path.join(__dirname, '../assets', `addon_${langFull}.txt`);
+    }
+    const filePath = getAddonFilePath(lang);
 
     try {
-        generalTalentsData = parseAddonFile(filePath); // Получаем данные о талантах
+        generalTalentsData = parseAddonFile(filePath);
     } catch (error) {
         console.error('Error:', error.message);
     }
 
-    return generalTalentsData; // Возвращаем только данные о талантах
+    return generalTalentsData;
 }
 
 module.exports = {

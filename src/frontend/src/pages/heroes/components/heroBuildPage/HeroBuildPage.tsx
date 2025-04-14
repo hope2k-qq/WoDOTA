@@ -6,8 +6,10 @@ import RenderTalents from "../heroPage/RenderTalents";
 import {openDB} from "idb";
 import {getImageUrl} from "../../../../utils/r2Storage";
 import styles from './hero_build_page.module.scss';
+import {useTranslation} from "react-i18next";
 
 export const HeroBuildPage: React.FC = () => {
+    const { t } = useTranslation();
     const { id } = useParams<{ id: string }>();
     const [heroInformation, setHeroInformation] = useState<HeroInformation | null>(null);
     const [heroName, setHeroName] = useState<string | null>(null);
@@ -133,7 +135,7 @@ export const HeroBuildPage: React.FC = () => {
 
     return (
         <div>
-            <div className={styles.title}>БИЛД НА ГЕРОЯ</div>
+            <div className={styles.title}>{t('hero_build')}</div>
             {heroImage && heroName && createdAt &&
                 <div className={styles.div_container}>
                     <div className={styles.menu_container}>

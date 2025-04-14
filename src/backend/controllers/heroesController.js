@@ -71,7 +71,7 @@ exports.getHeroAttribute = (req, res) => {
 
 exports.getHeroData = (req, res) => {
     try {
-        const heroName = decodeURIComponent(req.params.id); // Имя героя
+        const heroName = decodeURIComponent(req.params.id);
         const abilityNames = abilitiesService.getHeroAbilities()[heroName];
         const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
         const heroAttributes = getHeroAttributes(heroName);
@@ -228,7 +228,7 @@ exports.getHeroData = (req, res) => {
     }
 };
 
-exports.getAllHeroesData = (req, res) => {
+exports.getAllHeroesData = (req, res, lang) => {
     try {
         const allHeroNames = getAllHeroesService.getHeroesData();
         const allHeroesData = {};
@@ -236,13 +236,14 @@ exports.getAllHeroesData = (req, res) => {
         allHeroNames.forEach(heroName => {
             const abilityNames = abilitiesService.getHeroAbilities()[heroName];
             const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
+            console.log(heroTalentsInformation)
             const heroAttributes = getHeroAttributes(heroName);
 
             if (!abilityNames) {
                 return;
             }
 
-            const heroData = textService.getHeroData(heroName, abilityNames);
+            const heroData = textService.getHeroData(heroName, abilityNames, lang);
             const heroTalentsDescription = heroData.heroTalentsData;
             const heroAbilitiesData = heroData.abilitiesData;
             const abilitiesWithDetails = {};
@@ -384,7 +385,7 @@ exports.getAllHeroesData = (req, res) => {
             };
         });
 
-        const filePath = path.join(__dirname, 'heroesData.json');
+        const filePath = path.join(__dirname, `heroesData_${lang}.json`);
         fs.writeFileSync(filePath, JSON.stringify(allHeroesData, null, 2), 'utf8');
 
         res.json(allHeroesData);
@@ -394,9 +395,9 @@ exports.getAllHeroesData = (req, res) => {
     }
 };
 
-const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, 'heroesData.json'), 'utf8'));
 
-exports.getAllHeroesDataJson = (req, res) => {
+exports.getAllHeroesDataJson = (req, res, lang) => {
+    const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, `heroesData_${lang}.json`), 'utf8'));
     res.json(jsonData);
 };
 

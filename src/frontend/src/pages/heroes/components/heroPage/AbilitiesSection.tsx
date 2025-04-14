@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styles from "./abilities_section.module.scss";
 import { formatAbilityDescription } from '../../../../utils/formatAbilityDescription';
 import { AbilitiesSectionProps } from '../../../../types/heroes';
+import {useTranslation} from "react-i18next";
 
 
 
 
 const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName, abilities, abilitiesSrcs, videoSrc, imageSrc, heroAbilities }) => {
-
+    const { t } = useTranslation();
     const [selectedAbility, setSelectedAbility] = useState<string | null>(null);
 
     const [isFading, setIsFading] = useState(false); // Стейт для контроля анимации
@@ -57,7 +58,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({ heroName, abilities
 
         return (
             <div>
-                <div className={styles.render_talents_title}>СПОСОБНОСТИ:</div>
+                <div className={styles.render_talents_title}>{t('abilities')}</div>
                 <div className={styles.render2Container}>
                     <div className={styles.render2AbilityWrapper}>
                         <div

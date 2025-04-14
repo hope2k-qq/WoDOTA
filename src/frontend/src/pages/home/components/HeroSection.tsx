@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./hero_section.module.scss";
 import { ReactComponent as SteamIcon } from "../../../assets/icons/steam_icon.svg";
+import {useTranslation} from "react-i18next";
 
 export const HeroSection: React.FC = () => {
+    const { t } = useTranslation();
     return (
         <div className={styles.hero_section}>
             <video autoPlay loop muted playsInline poster={"/wodota_poster.jpg"} preload={"auto"} className={styles.background_video}>
@@ -14,13 +16,11 @@ export const HeroSection: React.FC = () => {
             <div className={styles.overlay_content}>
                 <h1 className={styles.title}>
                     WORLD OF DOTA<span className={styles.whiteText}><span className={styles.dash}> - </span>
-                    <br className={styles.mobileBreak} />ЛУЧШАЯ КАСТОМНАЯ ИГРА</span>
+                    <br className={styles.mobileBreak} />{t('best_custom_game')}</span>
                 </h1>
-
                 <p className={styles.description}>
-                    «Добро пожаловать в World of Dota – уникальную кастомную игру, вдохновленную {" "}
-                    <strong>Dota 2</strong>. Сражайтесь с друзьями, изучайте героев, каждый из которых обладает
-                    множеством уникальных талантов!»
+                    {t('description_part1')} {" "}
+                    <strong style={{ whiteSpace: "nowrap" }}>Dota 2</strong>{t('description_part2')}
                 </p>
 
                 <a
@@ -31,8 +31,8 @@ export const HeroSection: React.FC = () => {
                 >
                     <SteamIcon className={styles.icon}/>
                     <div className={styles.text_container}>
-                        <span className={styles.main_text}>ИГРАТЬ БЕСПЛАТНО</span>
-                        <span className={styles.sub_text}>СКАЧАТЬ В STEAM</span>
+                        <span className={styles.main_text}>{t('play_for_free')}</span>
+                        <span className={styles.sub_text}>{t('download_steam')}</span>
                     </div>
                 </a>
 

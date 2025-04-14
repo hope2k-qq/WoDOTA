@@ -5,7 +5,7 @@ const replacements_heroes = require('../config/replacements_heroes');
 
 let herotalents = null;
 
-const filePath2 = path.join(__dirname, '../assets', 'talents.lua');
+const filePath2 = path.join(__dirname, '../assets', 'talents_list.lua');
 
 const loadHeroTalents = () => {
     try {

@@ -9,8 +9,8 @@
 //     }
 // };
 
-exports.getGeneralTalentsData = (req, res) => {
-    const jsonData = textService.getGeneralTalentsData();
+exports.getGeneralTalentsData = (req, res, lang) => {
+    const jsonData = textService.getGeneralTalentsData(lang);
     if (jsonData) {
         res.json(jsonData);
     } else {

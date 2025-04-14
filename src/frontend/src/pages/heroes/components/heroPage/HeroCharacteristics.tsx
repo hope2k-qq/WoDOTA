@@ -1,19 +1,10 @@
 import {AbilitiesPropsCharacteristics} from '../../../../types/heroes';
 import styles from "./hero_characteristics.module.scss";
+import {useTranslation} from "react-i18next";
 
 
 export const HeroCharacteristics: React.FC<AbilitiesPropsCharacteristics> = ({ heroName, characteristics }) => {
-    // const [characteristics, setCharacteristics] = useState<CharacteristicsData | null>(null);
-
-    // useEffect(() => {
-    //     axios.get(`${API_URL}/hero/${heroName}`)
-    //         .then(response => {
-    //             setCharacteristics(response.data.characteristics);
-    //         })
-    //         .catch(error => {
-    //             console.error('Error fetching hero data:', error);
-    //         });
-    // }, [API_URL, heroName]);
+    const { t } = useTranslation();
 
     return (
         <div className={styles.hero_characteristics_main}>
@@ -21,55 +12,54 @@ export const HeroCharacteristics: React.FC<AbilitiesPropsCharacteristics> = ({ h
                 <div className={styles.hero_characteristics_wrapper}>
                     <div className={styles.left_block}>
                         <div className={styles.attribute_block}>
-                            <div className={styles.attribute_title}>СИЛА</div>
+                            <div className={styles.attribute_title}>{t('strength').toUpperCase()}</div>
                             <div className={styles.attribute_value}>
                                 <img src='/str.png' alt='strength'/>
                                 <div>{characteristics.attributebasestrength} + {characteristics.attributestrengthgain}</div>
                             </div>
                         </div>
                         <div className={styles.attribute_block}>
-                            <div className={styles.attribute_title}>ЛОВКОСТЬ</div>
+                            <div className={styles.attribute_title}>{t('agility').toUpperCase()}</div>
                             <div className={styles.attribute_value}>
                                 <img src='/agi.png' alt='agility'/>
                                 <div>{characteristics.attributebaseagility} + {characteristics.attributeagilitygain}</div>
                             </div>
                         </div>
                         <div className={styles.attribute_block}>
-                            <div className={styles.attribute_title}>ИНТЕЛЛЕКТ</div>
+                            <div className={styles.attribute_title}>{t('intelligence').toUpperCase()}</div>
                             <div className={styles.attribute_value}>
                                 <img src='/int.png' alt='intelligence'/>
                                 <div>{characteristics.attributebaseintelligence} + {characteristics.attributeintelligencegain}</div>
                             </div>
                         </div>
                         <div className={styles.info_block_attribute}>
-                            <div className={styles.attributeTitle}>АТРИБУТЫ</div>
+                            <div className={styles.attributeTitle}>{t('attributes')}</div>
                             <div className={styles.attribute_container}>
                                 <div className={styles.attribute_item}>
                                     <div className={styles.attribute_icon}>
                                         <img src='/str.png' alt='strength'/>
-                                        <div>Сила</div>
+                                        <div>{t('strength').toUpperCase()}</div>
                                     </div>
                                     <div className={styles.attribute_description}>
-                                        Каждое очко силы даёт +22 к здоровью и +0,09 к его восстановлению.
+                                        {t('attribute_description_strength')}
                                     </div>
                                 </div>
                                 <div className={styles.attribute_item}>
                                     <div className={styles.attribute_icon}>
                                         <img src='/agi.png' alt='agility'/>
-                                        <div>Ловкость</div>
+                                        <div>{t('agility').toUpperCase()}</div>
                                     </div>
                                     <div className={styles.attribute_description}>
-                                        Каждое очко ловкости даёт +1 к скорости атаки и +0,16 к броне.
+                                        {t('attribute_description_agility')}
                                     </div>
                                 </div>
                                 <div className={styles.attribute_item}>
                                     <div className={styles.attribute_icon}>
                                         <img src='/int.png' alt='intelligence'/>
-                                        <div>Интеллект</div>
+                                        <div>{t('intelligence').toUpperCase()}</div>
                                     </div>
                                     <div className={styles.attribute_description}>
-                                        Каждое очко интеллекта увеличивает запас маны на 12, её восстановление на 0,05 и
-                                        сопротивление магии на 0,1%.
+                                        {t('attribute_description_intelligence')}
                                     </div>
                                 </div>
                             </div>
@@ -82,67 +72,63 @@ export const HeroCharacteristics: React.FC<AbilitiesPropsCharacteristics> = ({ h
                             <div>
                                 <img src="/icon_damage.png" alt="Attack Damage"/>
                                 <div>{characteristics.attackdamagemin} - {characteristics.attackdamagemax}</div>
-                                <div className={styles.tooltip}>Урон</div>
+                                <div className={styles.tooltip}>{t('damage')}</div>
                             </div>
                             <div>
                                 <img src="/icon_armor.png" alt="Armor"/>
                                 <div>{characteristics.armorphysical}</div>
-                                <div className={styles.tooltip}>Броня</div>
+                                <div className={styles.tooltip}>{t('armor')}</div>
                             </div>
                             <div>
                                 <img src="/icon_movement_speed.png" alt="Movement Speed"/>
                                 <div>{characteristics.movementspeed}</div>
-                                <div className={styles.tooltip}>Скорость передвижения</div>
+                                <div className={styles.tooltip}>{t('movement_speed')}</div>
                             </div>
                             <div>
-                                <img src="/icon_attack_time.png" alt="Attack Rate"/>
+                                <img src="/icon_attack_time.png" alt="Base Attack Time"/>
                                 <div>{characteristics.attackrate}</div>
-                                <div className={styles.tooltip}>Базовый интервал атак</div>
+                                <div className={styles.tooltip}>{t('base_attack_time')}</div>
                             </div>
                             <div>
                                 <img src="/icon_base_attack_speed.png" alt="Base Attack Speed"/>
                                 <div>{characteristics.baseattackspeed}</div>
-                                <div className={styles.tooltip}>Скорость атаки</div>
+                                <div className={styles.tooltip}>{t('attack_speed')}</div>
                             </div>
                             <div>
                                 <img src="/icon_attack_range.png" alt="Attack Range"/>
                                 <div>{characteristics.attackrange}</div>
-                                <div className={styles.tooltip}>Дальность атаки</div>
+                                <div className={styles.tooltip}>{t('attack_range')}</div>
                             </div>
                         </div>
 
 
                         <div className={styles.health_mana_block}>
                             <div className={styles.health_block}>
-                                <div className={styles.stat_title}>ЗАПАС ЗДОРОВЬЯ</div>
+                                <div className={styles.stat_title}>{t('max_health')}</div>
                                 <div className={styles.stat_health_container}>
                                     <div className={styles.healthValue}>{characteristics.health}</div>
                                     <div className={styles.healthRegen}>{characteristics.healthregen}</div>
                                 </div>
                             </div>
                             <div className={styles.mana_block}>
-                                <div className={styles.stat_title}>ЗАПАС МАНЫ</div>
+                                <div className={styles.stat_title}>{t('max_mana')}</div>
                                 <div className={styles.stat_mana_container}>
                                     <div className={styles.manaValue}>{characteristics.mana}</div>
                                     <div className={styles.manaRegen}>{characteristics.manaregen}</div>
                                 </div>
                             </div>
                             <div className={styles.infoBlock}>
-                                <div className={styles.infoBlockTitle}>ЗДОРОВЬЕ И МАНА</div>
+                                <div className={styles.infoBlockTitle}>{t('health_mana')}</div>
                                 <div className={styles.stat_health_container}>
-                                    <div className={styles.healthValue}>ЗАПАС ЗДОРОВЬЯ</div>
-                                    <div className={styles.healthRegen}>ВОССТАНОВЛЕНИЕ</div>
+                                    <div className={styles.healthValue}>{t('max_health')}</div>
+                                    <div className={styles.healthRegen}>{t('health_regen')}</div>
                                 </div>
-                                <div className={styles.infoBlockText}>Чем больше у героя здоровья, тем больше урона он может получить, прежде чем умрёт.
-                                    Каждое очко силы увеличивает запас здоровья и скорость его восстановления.
-                                </div>
+                                <div className={styles.infoBlockText}>{t('health_regen_description')}</div>
                                 <div className={styles.stat_mana_container}>
-                                    <div className={styles.manaValue}>ЗАПАС МАНЫ</div>
-                                    <div className={styles.manaRegen}>ВОССТАНОВЛЕНИЕ</div>
+                                    <div className={styles.manaValue}>{t('max_mana')}</div>
+                                    <div className={styles.manaRegen}>{t('mana_regen')}</div>
                                 </div>
-                                <div className={styles.infoBlockText}>Мана расходуется при использовании способностей. Каждое очко интеллекта увеличивает
-                                    запас маны и скорость её восстановления.
-                                </div>
+                                <div className={styles.infoBlockText}>{t('mana_regen_description')}</div>
                             </div>
                         </div>
                     </div>

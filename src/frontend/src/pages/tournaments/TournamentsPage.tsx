@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { TournamentList } from "./components/tournamentList/TournamentList";
 import styles from './tournaments.module.scss';
-import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers"; // Стили для кнопок
+import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers";
+import {useTranslation} from "react-i18next"; // Стили для кнопок
 
 export const TournamentsPage: React.FC = () => {
+    const { t } = useTranslation();
     const [activeSection, setActiveSection] = useState<string>('final'); // Стейт для выбранного раздела
     const [data, setData] = useState<{ [key: string]: any }>({}); // Стейт для хранения данных каждого раздела
     const [loading, setLoading] = useState<boolean>(false); // Стейт для отслеживания загрузки данных
@@ -53,40 +55,38 @@ export const TournamentsPage: React.FC = () => {
         <div className={styles.div}>
             <div className={styles.tournament_name}>WOD BEST DUO CUP</div>
             <div className={styles.tournament_data_container}>
-                <div className={styles.tournament_data}>Даты проведения: 21-23 Марта 2025.</div>
-                <div className={styles.tournament_data}>Регистрация открыта до 20 Марта 2025.</div>
-                <div className={styles.tournament_data}>Призовой фонд: 20000 RUB + 124000 Монет + 2 Новых Эксклюзивных
-                    Эффекта.
-                </div>
+                <div className={styles.tournament_data}>{t('event_dates')}</div>
+                <div className={styles.tournament_data}>{t('registration')}</div>
+                <div className={styles.tournament_data}>{t('prize_pool')}</div>
             </div>
             <div className={styles.container_buttons_navigations}>
                 <button
                     className={`${styles.button} ${activeSection === 'players' ? styles.active : ''}`}
                     onClick={() => handleSectionChange('players')}
                 >
-                    Все игроки
+                    {t('all_players')}
                 </button>
                 <button
                     className={`${styles.button} ${activeSection === 'qualifiers' ? styles.active : ''}`}
                     onClick={() => handleSectionChange('qualifiers')}
                 >
-                    Отборочный этап
+                    {t('qualifying_stage')}
                 </button>
                 <button
                     className={`${styles.button} ${activeSection === 'playoffs' ? styles.active : ''}`}
                     onClick={() => handleSectionChange('playoffs')}
                 >
-                    Плей-офф
+                    {t('playoff')}
                 </button>
                 <button
                     className={`${styles.button} ${activeSection === 'final' ? styles.active : ''}`}
                     onClick={() => handleSectionChange('final')}
                 >
-                    Финал
+                    {t('final')}
                 </button>
             </div>
 
-            {loading && <p>Загрузка...</p>}
+            {loading && <p></p>}
             {error && <p>Ошибка: {error}</p>}
 
             <div className={styles.sectionContent}>

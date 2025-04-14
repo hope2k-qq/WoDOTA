@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import styles from './hero_page.module.scss';
 import { HeroScenePage } from './components/heroScenePage/HeroScenePage';
 import AbilitiesSection from './AbilitiesSection';
@@ -17,6 +17,8 @@ import {
     fetchVideoFromURL,
     cleanExpiredCache,
 } from '../../../../utils/indexedDBUtils';
+import {useTranslation} from "react-i18next";
+import {useMyData} from "../../../../context/HeroesDataContext";
 
 type AttributeType = 'int' | 'str' | 'agi' | 'uni';
 
@@ -32,6 +34,7 @@ interface Hero {
 }
 
 const HeroPage: React.FC = () => {
+    const { t } = useTranslation();
     const { name } = useParams<{ name: string }>();
     const [heroInformation, setHeroInformation] = useState<HeroInformation | null>(null);
     const [attribute, setAttribute] = useState<AttributeType | null>(null);
@@ -45,6 +48,7 @@ const HeroPage: React.FC = () => {
     } | null>(null);
     const [imageSrc, setImageSrc] = useState<{ [key: string]: string }>({});
     const [videoSrc, setVideoSrc] = useState<{ [key: string]: string }>({});
+    const { heroesData, languageReady } = useMyData();
 
     useEffect(() => {
         if (name) {
@@ -77,7 +81,7 @@ const HeroPage: React.FC = () => {
             for (const key of keys) {
                 const imagePaths = await getUpdatedPath('images', name, key, "webp");
 
-                let shouldLoadVideo = true; // Флаг для загрузки видео
+                let shouldLoadVideo = true;
 
                 // Обработка кэша изображений
                 if (imagePaths.length > 0) {
@@ -201,40 +205,31 @@ const HeroPage: React.FC = () => {
     }, [API_URL, name]);
 
 
-    const fetchHeroDataFromCache = (heroName: string) => {
-        const cachedData = localStorage.getItem('heroesData');
-
-        if (cachedData) {
-            const heroesData = JSON.parse(cachedData);
-
-            const heroData = heroesData[heroName];
-
-            if (heroData) {
-                //console.log('Данные героя:', heroData);
-                setIsLoading(false);
-                return heroData;
-            } else {
-                //console.log('Герой не найден в данных');
-                return null;
-            }
-        }
-
-        //console.log('Данные не найдены в localStorage');
-        return null;
-    };
-
     useEffect(() => {
         let data;
         if(name){
+            const fetchHeroDataFromCache = (heroName: string) => {
+                if (heroesData) {
+                    const heroData = heroesData[heroName];
+                    if (heroData) {
+                        setIsLoading(false);
+                        return heroData;
+                    } else {
+                        return null;
+                    }
+                }
+
+                return null;
+            };
             data = fetchHeroDataFromCache(name);
         }
         if (data) {
             setHeroInformation(data);
             setHeroAbilities(data.abilities);
-        } else {
-            //console.log('Нет данных для героя:', name);
         }
-    }, [name]);
+    }, [name, heroesData]);
+
+
 
 
 
@@ -265,24 +260,27 @@ const HeroPage: React.FC = () => {
     }, []);
 
 
+
     const attributeData: Record<AttributeType, AttributeData> = {
         'int': {
-            text: 'ИНТЕЛЛЕКТ',
+            text: t('intelligence').toUpperCase(),
             image: '/int.png'
         },
         'str': {
-            text: 'СИЛА',
+            text: t('strength').toUpperCase(),
             image: '/str.png'
         },
         'agi': {
-            text: 'ЛОВКОСТЬ',
+            text: t('agility').toUpperCase(),
             image: '/agi.png'
         },
         'uni': {
-            text: 'УНИВЕРСАЛЬНЫЙ',
+            text: t('universal').toUpperCase(),
             image: '/uni.png'
         }
     };
+
+    if (!languageReady) return <div></div>;
 
     const renderAttribute = (attribute: AttributeType) => {
         const attributeInfo = attributeData[attribute];
@@ -293,14 +291,13 @@ const HeroPage: React.FC = () => {
             </div>
         );
     };
-
     return (
         <div className={styles.div}>
             <div className={styles.heroSceneContainer}>
                 <HeroScenePage heroName={name || 'slark'}/>
                 <div className={styles.overlayBlock}>
                     {isLoading ? (
-                        <div>Загрузка...</div>
+                        <div></div>
                     ) : (
                         <div>
                             {attribute ? renderAttribute(attribute) : <p>Атрибут не найден</p>}
@@ -310,14 +307,16 @@ const HeroPage: React.FC = () => {
                         {name ? name.replace(/_/g, ' ').toUpperCase() : 'SLARK'}
                     </div>
                     <Abilities heroName={name || 'slark'} abilities={heroInformation?.abilities || {}}
-                               abilitiesSrcs={abilitiesSrcs} videoSrc={videoSrc} imageSrc={imageSrc} heroAbilities={heroAbilities} />
-                    <HeroCharacteristics heroName={name || 'slark'} characteristics={heroInformation?.characteristics  || {}}/>
+                               abilitiesSrcs={abilitiesSrcs} videoSrc={videoSrc} imageSrc={imageSrc}
+                               heroAbilities={heroAbilities}/>
+                    <HeroCharacteristics heroName={name || 'slark'}
+                                         characteristics={heroInformation?.characteristics || {}}/>
                 </div>
                 {/*<HeroDifferences/>*/}
             </div>
             <div className={styles.render_talents_container}>
                 {isLoading ? (
-                    <div>Загрузка...</div>
+                    <div></div>
                 ) : (
                     <RenderTalents
                         hero_name={name || 'slark'}
@@ -331,7 +330,7 @@ const HeroPage: React.FC = () => {
                                                         abilities={heroInformation?.abilities || {}}
                                                         abilitiesSrcs={abilitiesSrcs}
                                                         videoSrc={videoSrc} imageSrc={imageSrc}
-                                                        heroAbilities={heroAbilities} />}
+                                                        heroAbilities={heroAbilities}/>}
 
             </div>
         </div>

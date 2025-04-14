@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './news.module.scss';
 import { useUnreadNews } from '../../context/UnreadNewsContext';
 import { ReactComponent as CheckmarkIcon } from "../../assets/icons/CheckmarkIcon.svg";
+import {useTranslation} from "react-i18next";
 
 interface NewsItem {
     id: number;
@@ -11,6 +12,7 @@ interface NewsItem {
 }
 
 export const NewsPage: React.FC = () => {
+    const { t } = useTranslation();
     const [news, setNews] = useState<NewsItem[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -87,7 +89,7 @@ export const NewsPage: React.FC = () => {
 
     return (
         <div className={styles.main_container}>
-            <div className={styles.title_main}>НОВОСТИ</div>
+            <div className={styles.title_main}>{t('news')}</div>
             {news.length === 0 ? (
                 <div></div>
             ) : (

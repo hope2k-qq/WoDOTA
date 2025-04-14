@@ -20,6 +20,9 @@
 }
 
 .title{
+  margin-top: 7px;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
   color: white;
 }
 
@@ -33,21 +36,10 @@
   flex-direction: column;
 }
 
-.closeBtn {
-  background: red;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.closeBtn:hover {
-  background: darkred;
-}
 
 .languageTitle {
-  font-size: 16px;
+  color: #9b9db1;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -59,34 +51,89 @@
 }
 
 .selectedLanguage {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
+  background: linear-gradient(104.52deg, hsla(0, 0%, 85%, .235) -158%, hsla(0, 0%, 85%, .04) -55.77%);
+  color: white;
   text-align: center;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .languageList {
   position: absolute;
+  font-weight: bold;
   top: 100%;
+  margin-top: 0.2rem;
   left: 0;
+  font-size: 16px;
   width: 100%;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background: #1f2027;
   border-radius: 5px;
+  color: #fff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+
 }
 
 .languageItem {
-  padding: 10px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.languageItem:hover {
-  background-color: #e6e6e6;
+.languageItemContainer:hover {
+  opacity: 0.6;
 }
+
+.languageItemContainer{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  padding: 15px 20px;
+  transition: opacity 0.3s ease;
+
+  > img{
+    width: 30px;
+    height: 20px;
+    border-radius:3px;
+  }
+}
+
+.close_container{
+  right: calc(0% + 1rem);
+  top: calc(0% + 1rem);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 9px;
+  background: linear-gradient(104.52deg, hsla(0, 0%, 85%, .329) -158%, hsla(0, 0%, 85%, .056) -55.77%);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  > img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.close_container:hover > img {
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+}
+
+.close_container:not(:hover) > img {
+  transition: transform 0s ease;
+}
+
+
+
+

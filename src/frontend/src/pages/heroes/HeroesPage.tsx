@@ -5,6 +5,7 @@ import { getImageUrl } from '../../utils/r2Storage';
 import styles from './heroes_page.module.scss';
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
 import {openDB} from "idb";
+import {useTranslation} from "react-i18next";
 
 interface Hero {
     name: string;
@@ -13,6 +14,7 @@ interface Hero {
 }
 
 export const HeroesPage: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [heroes, setHeroes] = useState<Hero[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -133,10 +135,10 @@ export const HeroesPage: React.FC = () => {
     }
 
     const attributeTranslations: { [key: string]: string } = {
-        str: 'СИЛА',
-        agi: 'ЛОВКОСТЬ',
-        int: 'ИНТЕЛЛЕКТ',
-        uni: 'УНИВЕРСАЛ'
+        str: t('strength'),
+        agi: t('agility'),
+        int: t('intelligence'),
+        uni: t('universal')
     };
 
     const getAttributeImage = (attr: string) => {
@@ -203,13 +205,13 @@ export const HeroesPage: React.FC = () => {
 
     return (
         <div className={styles['main-container']}>
-            <div className={styles.title}>ВЫБЕРИТЕ ГЕРОЯ</div>
+            <div className={styles.title}>{t('choose_hero')}</div>
             <div className={styles['container']}>
                 <div className={styles['filter-container']}>
-                    <div className={styles['filter-label']}>Фильтр</div>
+                    <div className={styles['filter-label']}>{t('filter')}</div>
                     <div className={styles['filter-container_center']}>
                         <div className={styles['container-attribute']}>
-                            <div className={styles['attribute-label']}>Кастомный</div>
+                            <div className={styles['attribute-label']}>{t('custom')}</div>
                             <div className={styles['switch-container']}>
                                 <label className={styles['switch']}>
                                     <input
@@ -223,7 +225,7 @@ export const HeroesPage: React.FC = () => {
                         </div>
 
                         <div className={styles['container-attribute']}>
-                            <div className={styles['attribute-label']}>Атрибут</div>
+                            <div className={styles['attribute-label']}>{t('attribute')}</div>
                             <div className={styles['filter-buttons']}>
                                 {['str', 'agi', 'int', 'uni'].map((attr) => (
                                     <img
@@ -280,7 +282,7 @@ export const HeroesPage: React.FC = () => {
                         </div>
                     ) : (
                         <div className={styles['no-heroes-found-container']}>
-                            <div>Герои не найдены</div>
+                            <div>{t('heroes_not_found')}</div>
                         </div>
 
                     )

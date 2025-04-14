@@ -4,6 +4,7 @@ import { openDB } from 'idb';
 import styles from "./heroes_section.module.scss";
 import {useNavigate} from "react-router-dom";
 import {getImageUrl} from "../../../utils/r2Storage";
+import {useTranslation} from "react-i18next";
 
 
 const HeroCard: React.FC<{ hero: any; imageUrl: string | null }> = ({ hero, imageUrl }) => {
@@ -48,6 +49,7 @@ const HeroCard: React.FC<{ hero: any; imageUrl: string | null }> = ({ hero, imag
 
 
 const HeroesSection: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [imageUrl, setImageUrl] = useState<{ [key: string]: string | null }>({});
     // const [heroes, setHeroes] = useState<any[]>([]); // Store all heroes
@@ -176,18 +178,11 @@ const HeroesSection: React.FC = () => {
                 <div className={styles.shadow_bottom}></div>
                 <div className={styles.overlay}></div>
                 <div className={styles.container_text}>
-                    <span className={styles.text1}>КОГО ВЫ</span>
-                    <span className={styles.text2}>ВЫБЕРИТЕ?</span>
-                    <p className={styles.description}>Во вселенной World of Dota (основанной на Dota 2) представлено
-                        множество разнообразных героев, каждый из которых
-                        обладает уникальными способностями и игровым стилем.
-                        Игровой стиль может изменяться в зависимости от того,
-                        как вы решите прокачать таланты и какие предметы выберете
-                        для своего героя. Это позволяет игрокам адаптировать персонажей
-                        под свою стратегию или же нужду команды, что делает каждый матч
-                        уникальным и непредсказуемым.</p>
+                    <span className={styles.text1}>{t('who_choose_part1')}</span>
+                    <span className={styles.text2}>{t('who_choose_part2')}</span>
+                    <p className={styles.description}>{t('who_choose_description')}</p>
                     <button className={styles.btn} onClick={() => navigate('/heroes')}>
-                        ВСЕ ГЕРОИ
+                        {t('all_heroes')}
                     </button>
                 </div>
             </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./about_section.module.scss";
+import {useTranslation} from "react-i18next";
 
 export const AboutSection: React.FC = () => {
+    const { t } = useTranslation();
     return (
         <section className={styles.about_section}>
             <div className={styles.image_container}>
@@ -11,15 +13,10 @@ export const AboutSection: React.FC = () => {
                 <div className={styles.overlay}>
                     <div className={styles.container}>
                         <h2 className={styles.title}>
-                            ЧТО ТАКОЕ <span className={styles.worldOfDota}>WORLD OF DOTA?</span>
+                            {t('what_is')}<span className={styles.worldOfDota}>WORLD OF DOTA?</span>
                         </h2>
                         <p className={styles.text}>
-                            World of Dota – это кастомная игра на всеми любимую игру <strong>Dota 2</strong>.
-                            Мы взяли все самое лучшее из Dota 2 и добавили уникальные механики, чтобы
-                            создать незабываемые моменты для игроков. Если вы любите стратегии и
-                            командные игры, World of Dota – для вас! Испытайте новые тактики и билды, исследуйте
-                            свежие возможности и докажите своё мастерство в World of Dota.
-                            Готовы ли вы войти в бой и стать легендой?
+                            {t('favorite_game_part1')}{" "}<strong style={{ whiteSpace: "nowrap" }}>Dota 2</strong>{t('favorite_game_part2')}
                         </p>
                     </div>
                 </div>

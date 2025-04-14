@@ -1,13 +1,15 @@
 import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import styles from "./votes.module.scss";
+import {useTranslation} from "react-i18next";
 
 interface HeroVote {
     hero_name: string;
-    votes: string;  // Голоса приходят как строка, нужно будет преобразовать в число
+    votes: string;
 }
 
 export const VotesPage = () => {
+    const { t } = useTranslation();
     const [votes, setVotes] = useState<HeroVote[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -48,7 +50,7 @@ export const VotesPage = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.title}>Голосование за героев</div>
+            <div className={styles.title}>{t('voting_heroes')}</div>
             <div className={styles.grid}>
                 {votes.map((vote, index) => {
                     const voteCount = parseInt(vote.votes, 10);

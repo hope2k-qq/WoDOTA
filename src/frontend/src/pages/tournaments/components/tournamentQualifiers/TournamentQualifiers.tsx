@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./touranament_qualifiers.module.scss";
+import {useTranslation} from "react-i18next";
 // import {getImageUrl} from "../../../../utils/r2Storage";
 
 
@@ -62,6 +63,7 @@ interface TournamentQualifiersProps {
 
 
 export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data }) => {
+    const { t } = useTranslation();
     const [updatedPlayers, setUpdatedPlayers] = useState<{ [key: string]: string }>({});
     const [showReplays, setShowReplays] = useState(false);
     const handleIdClick = (key: string, originalName: string, dotaId: string) => {
@@ -106,14 +108,14 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
             <table className={styles.table}>
                 <thead>
                 <tr className={styles.table_info}>
-                    <th>Место</th>
+                    <th>{t('place')}</th>
                     <th>
-                        <div>Никнейм #1</div>
+                        <div>{t('nickname')} #1</div>
                     </th>
                     <th>
-                        <div>Никнейм #2</div>
+                        <div>{t('nickname')} #2</div>
                     </th>
-                    <th>Очки</th>
+                    <th>{t('points')}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -180,7 +182,7 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                             onClick={() => handleMapClick(map)}
                             className={`${styles.button}  ${!showReplays && selectedMap?.map_name === map.map_name ? styles.active : ''}`}
                         >
-                            {map.map_name}
+                            {t('map')} {map.map_name}
                         </button>
                     ))}
                     {data.replays?.length > 0 && (
@@ -193,7 +195,7 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                             }}
                             className={`${styles.button} ${showReplays ? styles.active : ''}`}
                         >
-                            Переигровки
+                            {t('replays')}
                         </button>
                     )}
                 </div>
@@ -209,9 +211,9 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Никнейм #1</th>
-                                            <th>Никнейм #2</th>
-                                            <th>Очки</th>
+                                            <th>{t('nickname')} #1</th>
+                                            <th>{t('nickname')} #2</th>
+                                            <th>{t('points')}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -278,9 +280,9 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                 ) : (
                     selectedMap && (
                         <div>
-                            <div className={styles.maps_name}>Группы для: {selectedMap.map_name}</div>
+                            <div className={styles.maps_name}>{t('groups_for_map')} {selectedMap.map_name}</div>
                             {selectedMap.groups.length === 0 ? (
-                                <div className={styles.noGroupsMessage}>Группы отсутствуют</div>
+                                <div className={styles.noGroupsMessage}>{t('groups_missing')}</div>
                             ) : (
                                 <div className={styles.groups_grid}>
                                     {selectedMap.groups.map((group, index) => (
@@ -290,9 +292,9 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                                 <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Никнейм #1</th>
-                                                    <th>Никнейм #2</th>
-                                                    <th>Очки</th>
+                                                    <th>{t('nickname')} #1</th>
+                                                    <th>{t('nickname')} #2</th>
+                                                    <th>{t('points')}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>

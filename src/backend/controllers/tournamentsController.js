@@ -402,13 +402,13 @@ const updateDataSequentiallyTournament = async (app) => {
 
     try {
         await updateTournamentListData(app);
-        await delay(2000);
+        await delay(3000);
         await updateTournamentQualifiersData(app);
-        await delay(2000);
+        await delay(3000);
         await updateTournamentPlayoffsData(app);
-        await delay(2000);
+        await delay(3000);
         await updateTournamentFinalData(app);
-        await delay(2000);
+        await delay(3000);
     } catch (error) {
         console.error('Error updating data sequentially:', error.message);
     } finally {

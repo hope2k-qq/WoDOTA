@@ -1,55 +1,79 @@
 import React, { useState, useEffect } from 'react';
 import styles from './settings.module.scss';
 import { useTranslation } from "react-i18next";
+import { useNavigate } from 'react-router-dom';
 
 export const Settings = ({ isOpen, closeMenu }: { isOpen: boolean, closeMenu: () => void }) => {
-    const { i18n } = useTranslation();
-    const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);  // Инициализируем с текущим языком из i18n
-    const [isOpenLanguage, setIsOpenLanguage] = useState(false); // Состояние для открытия/закрытия списка языков
+    const { i18n, t } = useTranslation();
+    const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+    const [isOpenLanguage, setIsOpenLanguage] = useState(false);
+    const navigate = useNavigate();
 
-    // Список доступных языков
-    const languages = i18n.languages;
+    const languageOptions = [
+        { code: 'ru', label: 'RUSSIAN', icon: '/ru.svg' },
+        { code: 'en', label: 'ENGLISH', icon: '/en.svg' },
+        { code: 'uk', label: 'UKRAINE', icon: '/uk.svg' },
+        { code: 'cs', label: 'CZECH REPUBLIC', icon: '/cs.svg' },
+    ];
 
-    // Функция для изменения выбранного языка
-    const handleSelectLanguage = (language: string) => {
-        setSelectedLanguage(language); // Обновляем состояние выбранного языка
-        i18n.changeLanguage(language); // Меняем язык в i18n
-        setIsOpenLanguage(false); // Закрываем список после выбора
+
+    const handleSelectLanguage = (languageCode: string) => {
+        setSelectedLanguage(languageCode);
+        i18n.changeLanguage(languageCode);
+
+        const currentPath = window.location.pathname.split('/').slice(2).join('/');
+
+        const newPath = currentPath ? `/${languageCode}/${currentPath}` : `/${languageCode}`;
+        setIsOpenLanguage(false);
+        navigate(newPath);
     };
 
-    // Функция для переключения открытого состояния списка
+
     const toggleLanguageList = () => {
-        setIsOpenLanguage(!isOpenLanguage);
+        setIsOpenLanguage(prev => !prev);
     };
 
-    // Для обновления языка в случае, если i18n.language изменится
     useEffect(() => {
-        setSelectedLanguage(i18n.language); // Если язык изменится, обновляем состояние
+        setSelectedLanguage(i18n.language);
     }, [i18n.language]);
 
     return (
         <div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
-            <h3 className={styles.title}>НАСТРОЙКИ WoDOTA</h3>
+            <div className={styles.close_container} onClick={closeMenu}>
+                <img src={"/close.svg"} alt={"close"}/>
+            </div>
+            <h3 className={styles.title}>{t('settings').toUpperCase()} WoDOTA</h3>
             <div className={styles.menuContent}>
                 <div className={styles.off_container}>
-                    <div>ОТКЛЮЧЕНИЕ АНИМАЦИЙ</div>
-                </div>
-                <div className={styles.off_container}>
-                    <div className={styles.languageTitle}>ЯЗЫК</div>
+                    <div className={styles.languageTitle}>{t('language').toUpperCase()}</div>
                     <div className={styles.languageSelector} onClick={toggleLanguageList}>
                         <div className={styles.selectedLanguage}>
-                            {/* Отображаем выбранный язык */}
-                            <div onClick={() => console.log(i18n.languages)}>{selectedLanguage}</div>
+                            <div className={styles.languageItemContainer}>
+                                <img
+                                    src={languageOptions.find(lang => lang.code === selectedLanguage)?.icon}
+                                    alt={selectedLanguage}
+                                />
+                                <div className={styles.languageItem}>
+                                    {languageOptions.find(lang => lang.code === selectedLanguage)?.label}
+                                </div>
+                            </div>
+
                         </div>
                         {isOpenLanguage && (
                             <div className={styles.languageList}>
-                                {languages.map((language, index) => (
-                                    <div
-                                        key={index}
-                                        className={styles.languageItem}
-                                        onClick={() => handleSelectLanguage(language)}
-                                    >
-                                        {language} {/* Отображаем код языка (например, 'en', 'ru') */}
+                                {languageOptions.map(({code, label, icon}) => (
+                                    <div className={styles.languageItemContainer}
+                                         key={code}
+                                         onClick={() => {
+                                             handleSelectLanguage(code);
+                                             toggleLanguageList();
+                                         }}>
+                                        <img src={icon} alt={label}/>
+                                        <div
+                                            className={styles.languageItem}
+                                        >
+                                            {label}
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -57,7 +81,6 @@ export const Settings = ({ isOpen, closeMenu }: { isOpen: boolean, closeMenu: ()
                     </div>
                 </div>
             </div>
-            <button onClick={closeMenu} className={styles.closeBtn}>Закрыть</button>
         </div>
     );
 };
