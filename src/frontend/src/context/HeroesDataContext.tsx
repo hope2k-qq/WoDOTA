@@ -30,7 +30,6 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         await i18n.changeLanguage(lang);
         localStorage.setItem("language", lang);
         setLanguage(lang);
-        setLanguageReady(true);
 
         try {
             const response = await axios.get(`${API_URL}/heroesAllDataJson/${lang}`);
@@ -49,6 +48,7 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         } catch (error) {
             console.error("Ошибка при загрузке generalTalents:", error);
         }
+        setLanguageReady(true);
     };
 
     const clearAllIndexedDB = async () => {

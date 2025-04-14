@@ -206,7 +206,6 @@ const LanguageRedirect = () => {
             navigate(newPath, { replace: true });
         }
     }, [pathname, navigate]);
-
     return null;
 };
 
