@@ -38,20 +38,28 @@ const getPlayersInfoBySteamIds = async (friendshipCodes, steamCollection) => {
         chunks.push(steamIdsToFetch.slice(i, i + chunkSize));
     }
 
-    const fetchOnce = async (url) => {
-        try {
-            const response = await axios.get(url);
-            return response.data;
-        } catch (error) {
-            if (error.response && error.response.status === 429) {
-                console.warn('Rate limit exceeded — skipping this chunk.');
-            } else {
-                console.error('Error fetching Steam API:', error.message);
+    const fetchOnce = async (url, maxRetries = 3) => {
+        for (let attempt = 0; attempt <= maxRetries; attempt++) {
+            try {
+                const response = await axios.get(url);
+                return response.data;
+            } catch (error) {
+                if (error.response && error.response.status === 429) {
+                    const delayTime = 2000 * (attempt + 1);
+                    console.warn(`Rate limit exceeded (429) — retrying in ${delayTime / 1000}s... [Attempt ${attempt + 1}]`);
+                    await delay(delayTime);
+                } else {
+                    console.error('Error fetching Steam API:', error.message);
+                    break; 
+                }
             }
-            return null;
         }
+
+        console.warn('Max retries reached — skipping this chunk.');
+        return null;
     };
-    
+
+
     for (const chunk of chunks) {
         const steamIdsString = chunk.join(',');
         const url = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamIdsString}`;

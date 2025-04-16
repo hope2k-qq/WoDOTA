@@ -24,13 +24,13 @@ exports.getSitemap = async (req, res) => {
             const urlObj = [
                 { loc: page.loc },
                 { lastmod: page.lastmod },
-                { priority: page.priority }
+                { priority: parseFloat(page.priority).toFixed(1) }
             ];
 
             // Add alternate hreflang URLs if they exist
             if (page.alternate && page.alternate.length > 0) {
                 const alternates = page.alternate.map(alternate => ({
-                    xhtml: {
+                    link: {
                         _attr: { rel: 'alternate', hreflang: alternate.hreflang, href: alternate.href }
                     }
                 }));

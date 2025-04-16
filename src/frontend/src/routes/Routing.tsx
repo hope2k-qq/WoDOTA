@@ -33,16 +33,16 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
         path: "/",
         element: <HomePage />,
         title: {
-            en: "WoDOTA (World of Dota) – A custom Dota 2 game",
+            en: "WoDOTA (World of Dota) – WoDOTA, World of Dota, a custom Dota 2 game",
             ru: "WoDOTA (World of Dota) – Водота, Ворлд оф Дота, кастомная игра Dota 2",
-            uk: "WoDOTA (World of Dota) – Водота, кастомна гра Dota 2",
-            cs: "WoDOTA (World of Dota) – Svět Dota 2"
+            uk: "WoDOTA (World of Dota) – Водота, Ворлд оф Дота, кастомна гра Dota 2",
+            cs: "WoDOTA (World of Dota) – WoDOTA, World of Dota, kastomní hra Dota 2"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "WoDOTA (World of Dota) is a unique game based on Dota 2. In it, players can test their skills in various modes, unlocking the potential of each hero through numerous unique talents.",
+            ru: "WoDOTA (World of Dota) — уникальная игра на базе Dota 2. В ней игроки могут испытать свои силы в различных режимах, раскрывая потенциал каждого героя через множество уникальных талантов.",
+            uk: "WoDOTA (World of Dota) — унікальна гра на базі Dota 2. У ній гравці можуть випробувати свої сили в різних режимах, розкриваючи потенціал кожного героя через безліч унікальних талантів.",
+            cs: "WoDOTA (World of Dota) je unikátní hra založená na Dota 2. V ní si hráči mohou vyzkoušet své síly v různých režimech, odkrývajíc potenciál každého hrdiny prostřednictvím mnoha jedinečných talentů."
         }
     },
     {
