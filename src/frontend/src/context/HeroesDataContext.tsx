@@ -4,9 +4,8 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 const API_IP = process.env.REACT_APP_API_IP;
-const CACHE_VERSION = '10.0';
+const CACHE_VERSION = '13.0';
 
-// ——— Тип контекста ———
 type MyDataContextType = {
     language: string | null;
     heroesData: any | null;
@@ -86,6 +85,21 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
             localStorage.clear();
             sessionStorage.clear();
             await clearAllIndexedDB();
+            document.cookie.split(";").forEach(cookie => {
+                const eqPos = cookie.indexOf("=");
+                const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+                document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+            });
+            if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                await Promise.all(cacheNames.map(cache => caches.delete(cache)));
+            }
+            if ("serviceWorker" in navigator) {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                for (const registration of registrations) {
+                    await registration.unregister();
+                }
+            }
         };
         const cachedVersion = localStorage.getItem("cacheVersion");
         if (cachedVersion !== CACHE_VERSION) {

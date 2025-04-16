@@ -6,15 +6,13 @@ let cachedRatingData = null;
 let cachedArenaData = null;
 let updating = false;
 
-const updateRatingData = async (app) => {
+const updateRatingData = async (app, steam_data) => {
     try {
         console.log('Fetching fresh rating data');
 
         const playersData = await apiService.fetchRatingData();
-
         const steamIds = playersData.map(player => player.steamid);
-        const playersInfo = await playerService.getPlayersInfoBySteamIds(steamIds);
-
+        const playersInfo = await playerService.getPlayersInfoBySteamIds(steamIds, steam_data);
         const players = playersData.map((player, index) => {
             const playerDetails = playersInfo[player.steamid] || { avatar: null, profileUrl: null, personaName: null };
 
@@ -48,7 +46,7 @@ const updateRatingData = async (app) => {
     }
 };
 
-const updateArenaData = async (app) => {
+const updateArenaData = async (app, steam_data) => {
     try {
         console.log('Fetching fresh arena data');
         const playersData = await apiService.fetchArenaData();
@@ -78,7 +76,7 @@ const updateArenaData = async (app) => {
         });
 
         const friendCodesArray = Array.from(allFriendCodes);
-        const playerDetails = await playerService.getPlayersInfoBySteamIds(friendCodesArray);
+        const playerDetails = await playerService.getPlayersInfoBySteamIds(friendCodesArray, steam_data);
 
         Object.keys(playersByKey).forEach(key => {
             playersByKey[key].forEach(playerGroup => {
@@ -117,17 +115,17 @@ const updateArenaData = async (app) => {
     }
 };
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const updateDataSequentially = async (app) => {
+const updateDataSequentially = async (app, steam_data) => {
     if (updating) return;
 
     updating = true;
 
     try {
-        await updateRatingData(app);
+        await updateRatingData(app, steam_data);
 
         await delay(3000);
         
-        await updateArenaData(app);
+        await updateArenaData(app, steam_data);
         
         await delay(3000);
     } catch (error) {
@@ -141,7 +139,7 @@ const updateDataSequentially = async (app) => {
 const getRating = async (req, res) => {
     try {
         if (!cachedRatingData) {
-            await updateRatingData(req.app.locals.sitemap);
+            await updateRatingData(req.app.locals.sitemap, req.app.locals.steam_data_players);
         }
 
         res.json(cachedRatingData || []);

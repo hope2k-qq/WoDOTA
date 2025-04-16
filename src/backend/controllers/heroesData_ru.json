@@ -57052,10 +57052,10 @@
         ],
         "4": [
           {
-            "id": "modifier_luna_5",
-            "talentInfo": "#modifier_luna_5",
-            "level": "1",
-            "imagePath": "luna/5",
+            "id": "modifier_luna_4",
+            "talentInfo": "#modifier_luna_4",
+            "level": "3",
+            "imagePath": "luna/4",
             "relatedTalent": {}
           },
           {
@@ -57111,10 +57111,10 @@
             }
           },
           {
-            "id": "modifier_luna_4",
-            "talentInfo": "#modifier_luna_4",
-            "level": "3",
-            "imagePath": "luna/4",
+            "id": "modifier_luna_5",
+            "talentInfo": "#modifier_luna_5",
+            "level": "1",
+            "imagePath": "luna/5",
             "relatedTalent": {}
           },
           {
@@ -57496,6 +57496,36 @@
           }
         }
       },
+      "luna_lunar_orbit": {
+        "name": "Lunar Orbit",
+        "description": "Создаёт вокруг владельца %rotating_glaives% глефы, которые вращаются в радиусе %rotating_glaives_movement_radius% от него. Попав по врагу, глефа нанесёт ему долю от урона владельца.",
+        "rotating_glaives_duration": "ДЛИТЕЛЬНОСТЬ:",
+        "rotating_glaives_hit_radius": "РАДИУС ВРАЩЕНИЯ:",
+        "rotating_glaives_collision_damage": "%УРОН ОТ ПОПАДАНИЯ:",
+        "rotating_glaives_damage_reduction": "%СНИЖЕНИЕ УРОНА:",
+        "values": {
+          "rotating_glaives_duration": "5 6 7 8",
+          "rotating_glaives": "4",
+          "rotating_glaives_movement_radius": "250",
+          "rotating_glaives_hit_radius": "175",
+          "rotating_glaives_collision_damage": "18 22 26 30",
+          "rotating_glaives_speed": "160",
+          "abilitycooldown": "40 35 30 25",
+          "abilitymanacost": "65 70 75 80"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "rotating_glaives_duration": "ДЛИТЕЛЬНОСТЬ:",
+            "rotating_glaives_hit_radius": "РАДИУС ВРАЩЕНИЯ:",
+            "rotating_glaives_collision_damage": "УРОН ОТ ПОПАДАНИЯ:"
+          },
+          "values": {
+            "rotating_glaives_duration": "5 / 6 / 7 / 8",
+            "rotating_glaives_hit_radius": "175",
+            "rotating_glaives_collision_damage": "18% / 22% / 26% / 30%"
+          }
+        }
+      },
       "luna_moon_glaive": {
         "name": "Moon Glaives",
         "description": "Заклинает глефы героя, позволяя им отскакивать по нескольким врагам. Каждый следующий отскок наносит меньше урона.",
@@ -57519,27 +57549,6 @@
             "range": "500",
             "bounces": "3 / 4 / 5 / 6",
             "damage_reduction_percent": "60% / 55% / 50% / 45%"
-          }
-        }
-      },
-      "luna_lunar_blessing": {
-        "name": "Lunar Blessing",
-        "lore": "Богиня луны благоволит своим последователям.",
-        "description": "Повышает урон от атак союзников неподалёку на %damage_bonus% за каждый уровень владельца, а на него действует вдвое сильнее. Ночью работает по всей карте и увеличивает обзор владельца на %night_vision% + %night_level_vision% за его уровень.",
-        "radius": "РАДИУС АУРЫ:",
-        "values": {
-          "damage_bonus": "1",
-          "self_mult": "2",
-          "night_vision": "250",
-          "night_level_vision": "25",
-          "radius": "1200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "radius": "РАДИУС АУРЫ:"
-          },
-          "values": {
-            "radius": "1200"
           }
         }
       },

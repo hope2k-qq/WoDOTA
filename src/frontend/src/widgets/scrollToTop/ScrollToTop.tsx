@@ -5,10 +5,10 @@ const ScrollToTop = () => {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0); // Прокручиваем страницу наверх
-    }, [pathname]); // Выполняется каждый раз, когда меняется путь
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
-    return null; // Этот компонент не рендерит ничего
+    return null;
 };
 
 export default ScrollToTop;

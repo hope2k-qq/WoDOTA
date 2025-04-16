@@ -57052,10 +57052,10 @@
         ],
         "4": [
           {
-            "id": "modifier_luna_5",
-            "talentInfo": "#modifier_luna_5",
-            "level": "1",
-            "imagePath": "luna/5",
+            "id": "modifier_luna_4",
+            "talentInfo": "#modifier_luna_4",
+            "level": "3",
+            "imagePath": "luna/4",
             "relatedTalent": {}
           },
           {
@@ -57111,10 +57111,10 @@
             }
           },
           {
-            "id": "modifier_luna_4",
-            "talentInfo": "#modifier_luna_4",
-            "level": "3",
-            "imagePath": "luna/4",
+            "id": "modifier_luna_5",
+            "talentInfo": "#modifier_luna_5",
+            "level": "1",
+            "imagePath": "luna/5",
             "relatedTalent": {}
           },
           {
@@ -57496,6 +57496,36 @@
           }
         }
       },
+      "luna_lunar_orbit": {
+        "name": "Lunar Orbit",
+        "description": "Створює навколо власника %rotating_glaives% гліфи, які обертаються в радіусі %rotating_glaives_movement_radius% від нього. Потрапивши по ворогові, гліфа завдасть йому частку від шкоди власника.",
+        "rotating_glaives_duration": "ТРИВАЛЬНІСТЬ:",
+        "rotating_glaives_hit_radius": "РАДІУС ОБЕРТАННЯ:",
+        "rotating_glaives_collision_damage": "%УРОН ВІД ПОПАДАННЯ:",
+        "rotating_glaives_damage_reduction": "%ЗНИЖЕННЯ УРОНУ:",
+        "values": {
+          "rotating_glaives_duration": "5 6 7 8",
+          "rotating_glaives": "4",
+          "rotating_glaives_movement_radius": "250",
+          "rotating_glaives_hit_radius": "175",
+          "rotating_glaives_collision_damage": "18 22 26 30",
+          "rotating_glaives_speed": "160",
+          "abilitycooldown": "40 35 30 25",
+          "abilitymanacost": "65 70 75 80"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "rotating_glaives_duration": "ТРИВАЛЬНІСТЬ:",
+            "rotating_glaives_hit_radius": "РАДІУС ОБЕРТАННЯ:",
+            "rotating_glaives_collision_damage": "УРОН ВІД ПОПАДАННЯ:"
+          },
+          "values": {
+            "rotating_glaives_duration": "5 / 6 / 7 / 8",
+            "rotating_glaives_hit_radius": "175",
+            "rotating_glaives_collision_damage": "18% / 22% / 26% / 30%"
+          }
+        }
+      },
       "luna_moon_glaive": {
         "name": "Moon Glaives",
         "description": "Заклинає гліфи героя, дозволяючи їм відскакувати по кількох ворогах. Кожен наступний відскок завдає менше шкоди.",
@@ -57519,27 +57549,6 @@
             "range": "500",
             "bounces": "3 / 4 / 5 / 6",
             "damage_reduction_percent": "60% / 55% / 50% / 45%"
-          }
-        }
-      },
-      "luna_lunar_blessing": {
-        "name": "Lunar Blessing",
-        "lore": "Богиня місяця благоволить своїм послідовникам.",
-        "description": "Підвищує збитки від атак союзників неподалік %damage_bonus% за кожен рівень власника, а на нього діє вдвічі сильніше. Вночі працює по всій карті і збільшує огляд власника на %night_vision% + %night_level_vision% за його рівень.",
-        "radius": "РАДІУС АУРИ:",
-        "values": {
-          "damage_bonus": "1",
-          "self_mult": "2",
-          "night_vision": "250",
-          "night_level_vision": "25",
-          "radius": "1200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "radius": "РАДІУС АУРИ:"
-          },
-          "values": {
-            "radius": "1200"
           }
         }
       },

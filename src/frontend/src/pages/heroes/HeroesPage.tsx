@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import { getImageUrl } from '../../utils/r2Storage';
 import styles from './heroes_page.module.scss';
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
@@ -16,6 +16,7 @@ interface Hero {
 export const HeroesPage: React.FC = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const location = useLocation();
     const [heroes, setHeroes] = useState<Hero[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -26,6 +27,7 @@ export const HeroesPage: React.FC = () => {
     const [showCustomOnly, setShowCustomOnly] = useState<boolean>(false);
     const API_URL = process.env.REACT_APP_API_URL;
     const CACHE_VERSION = 4;
+    const currentLang = location.pathname.split('/')[1];
 
     useEffect(() => {
         const cachedVersion = localStorage.getItem('cache-version');
@@ -259,7 +261,7 @@ export const HeroesPage: React.FC = () => {
                             {filteredHeroes.map((hero, index) => (
                                 <div
                                     key={index}
-                                    onClick={() => navigate(`/hero/${hero.name}`)}
+                                    onClick={() => navigate(`/${currentLang}/hero/${hero.name}`)}
                                     className={styles['hero-card']}
                                 >
                                     <img
@@ -303,7 +305,7 @@ export const HeroesPage: React.FC = () => {
                                 {sortedGroupedHeroes[attr].map((hero, index) => (
                                     <div
                                         key={index}
-                                        onClick={() => navigate(`/hero/${hero.name}`)}
+                                        onClick={() => navigate(`/${currentLang}/hero/${hero.name}`)}
                                         className={styles['hero-card']}
                                     >
                                         <img

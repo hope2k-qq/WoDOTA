@@ -57047,10 +57047,10 @@
         ],
         "4": [
           {
-            "id": "modifier_luna_5",
-            "talentInfo": "#modifier_luna_5",
-            "level": "1",
-            "imagePath": "luna/5",
+            "id": "modifier_luna_4",
+            "talentInfo": "#modifier_luna_4",
+            "level": "3",
+            "imagePath": "luna/4",
             "relatedTalent": {}
           },
           {
@@ -57106,10 +57106,10 @@
             }
           },
           {
-            "id": "modifier_luna_4",
-            "talentInfo": "#modifier_luna_4",
-            "level": "3",
-            "imagePath": "luna/4",
+            "id": "modifier_luna_5",
+            "talentInfo": "#modifier_luna_5",
+            "level": "1",
+            "imagePath": "luna/5",
             "relatedTalent": {}
           },
           {
@@ -57491,6 +57491,36 @@
           }
         }
       },
+      "luna_lunar_orbit": {
+        "name": "Lunar Orbit",
+        "description": "Creates %rotating_glaives% glaives that rotate %rotating_glaives_movement_radius% radius around Luna. Any enemy unit that collides with a glaive will take a percentage of Luna's Attack Damage.",
+        "rotating_glaives_duration": "DURATION:",
+        "rotating_glaives_hit_radius": "COLLISION RADIUS:",
+        "rotating_glaives_collision_damage": "%COLLISION DAMAGE:",
+        "rotating_glaives_damage_reduction": "%DAMAGE REDUCTION:",
+        "values": {
+          "rotating_glaives_duration": "5 6 7 8",
+          "rotating_glaives": "4",
+          "rotating_glaives_movement_radius": "250",
+          "rotating_glaives_hit_radius": "175",
+          "rotating_glaives_collision_damage": "18 22 26 30",
+          "rotating_glaives_speed": "160",
+          "abilitycooldown": "40 35 30 25",
+          "abilitymanacost": "65 70 75 80"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "rotating_glaives_duration": "DURATION:",
+            "rotating_glaives_hit_radius": "COLLISION RADIUS:",
+            "rotating_glaives_collision_damage": "COLLISION DAMAGE:"
+          },
+          "values": {
+            "rotating_glaives_duration": "5 / 6 / 7 / 8",
+            "rotating_glaives_hit_radius": "175",
+            "rotating_glaives_collision_damage": "18% / 22% / 26% / 30%"
+          }
+        }
+      },
       "luna_moon_glaive": {
         "name": "Moon Glaives",
         "description": "Empowers Luna's glaives, causing her attacks to bounce between enemy units. Deals less damage with each bounce.",
@@ -57514,27 +57544,6 @@
             "range": "500",
             "bounces": "3 / 4 / 5 / 6",
             "damage_reduction_percent": "60% / 55% / 50% / 45%"
-          }
-        }
-      },
-      "luna_lunar_blessing": {
-        "name": "Lunar Blessing",
-        "lore": "The Goddess of the Moon smiles upon her kin.",
-        "description": "Increases damage from nearby allies' attacks by %damage_bonus% per owner's level, and affects the owner twice as much. At night, it works across the entire map and increases the owner's vision by %night_vision% + %night_level_vision% per owner's level.",
-        "radius": "BLESSING RADIUS:",
-        "values": {
-          "damage_bonus": "1",
-          "self_mult": "2",
-          "night_vision": "250",
-          "night_level_vision": "25",
-          "radius": "1200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "radius": "BLESSING RADIUS:"
-          },
-          "values": {
-            "radius": "1200"
           }
         }
       },

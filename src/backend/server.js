@@ -43,11 +43,11 @@ const startServer = async () => {
     try {
         const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log("Connected to MongoDB");
-
+        
         const db = client.db('BuildDB');
         app.locals.db = db.collection('builds');
         app.locals.sitemap = db.collection('sitemap');
-        
+        app.locals.steam_data_players = db.collection('steam_data_players');
         const routes = require('./routes');
         app.use('/', routes);
         
@@ -57,17 +57,17 @@ const startServer = async () => {
             setInterval(async () => {
                 await updateVotesData(app.locals.sitemap);
             }, 5 * 60 * 1000);
-            // setInterval(async () => {
-            //     await updateDataSequentially(app.locals.sitemap);
-            // }, 10 * 60 * 1000);
-            // setInterval(async () => {
-            //     await updateDataSequentiallyTournament(app.locals.sitemap);
-            // }, 999 * 60 * 1000);
+            setInterval(async () => {
+                await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
+            }, 5 * 60 * 1000);
+            setInterval(async () => {
+                await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
+            }, 999 * 60 * 1000);
             async function runSequentially() {
                 try {
                     await updateVotesData(app.locals.sitemap);
-                    // await updateDataSequentially(app.locals.sitemap);
-                    // await updateDataSequentiallyTournament(app.locals.sitemap)
+                    await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
+                    await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players)
                 } catch (err) {
                     console.error("Ошибка при выполнении операций:", err);
                 }

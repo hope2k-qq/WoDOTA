@@ -8,7 +8,7 @@ let cachedTournamentPlayoffsData  = null;
 let cachedTournamentFinal  = null;
 let updating = false;
 
-const updateTournamentListData = async (app) => {
+const updateTournamentListData = async (app, steam_data) => {
     try {
         const filePath = path.join(__dirname, "../data/tournamentPlayersDuo.json");
 
@@ -27,7 +27,7 @@ const updateTournamentListData = async (app) => {
                     steamIds.push(team.dota_id2.toString());
                 });
 
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
 
                 tournamentData.teams = tournamentData.teams.map(team => ({
                     player1_info: {
@@ -68,7 +68,7 @@ const updateTournamentListData = async (app) => {
     }
 };
 
-const updateTournamentQualifiersData = async (app) => {
+const updateTournamentQualifiersData = async (app, steam_data) => {
     try {
         const filePath = path.join(__dirname, "../data/tournamentPlayersDuoQualifiers.json");
 
@@ -87,7 +87,7 @@ const updateTournamentQualifiersData = async (app) => {
                     steamIds.push(team.dota_id2.toString());
                 });
                 
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
                 
                 let updatedTeams = tournamentData.teams.map(team => ({
                     team_id: team.team_id,
@@ -173,7 +173,7 @@ const updateTournamentQualifiersData = async (app) => {
     }
 };
 
-const updateTournamentPlayoffsData = async (app) => {
+const updateTournamentPlayoffsData = async (app, steam_data) => {
     try {
         const filePath = path.join(__dirname, "../data/tournamentPlayersDuoPlayoffs.json");
 
@@ -194,7 +194,7 @@ const updateTournamentPlayoffsData = async (app) => {
                 });
 
                 // Получаем информацию о игроках
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
 
                 // Преобразуем команды, добавляя информацию об игроках
                 let updatedTeams = tournamentData.teams.map(team => ({
@@ -284,7 +284,7 @@ const updateTournamentPlayoffsData = async (app) => {
     }
 };
 
-const updateTournamentFinalData = async (app) => {
+const updateTournamentFinalData = async (app, steam_data) => {
     try {
         const filePath = path.join(__dirname, "../data/tournamentPlayersDuoFinal.json");
 
@@ -305,7 +305,7 @@ const updateTournamentFinalData = async (app) => {
                 });
 
                 // Получаем информацию о игроках
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds);
+                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
 
                 // Преобразуем команды, добавляя информацию об игроках
                 let updatedTeams = tournamentData.teams.map(team => ({
@@ -395,19 +395,19 @@ const updateTournamentFinalData = async (app) => {
     }
 };
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const updateDataSequentiallyTournament = async (app) => {
+const updateDataSequentiallyTournament = async (app, steam_data) => {
     if (updating) return;
 
     updating = true;
 
     try {
-        await updateTournamentListData(app);
+        await updateTournamentListData(app, steam_data);
         await delay(3000);
-        await updateTournamentQualifiersData(app);
+        await updateTournamentQualifiersData(app, steam_data);
         await delay(3000);
-        await updateTournamentPlayoffsData(app);
+        await updateTournamentPlayoffsData(app, steam_data);
         await delay(3000);
-        await updateTournamentFinalData(app);
+        await updateTournamentFinalData(app, steam_data);
         await delay(3000);
     } catch (error) {
         console.error('Error updating data sequentially:', error.message);

@@ -9422,7 +9422,7 @@ local herotalents = {
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
-				{"modifier_luna_5","#modifier_luna_5", 1, "luna/5", {}},
+				{"modifier_luna_4","#modifier_luna_4", 3, "luna/4", {}},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"empty_10"},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
@@ -9432,7 +9432,7 @@ local herotalents = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
 				{"empty_11"},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {"modifier_woda_talent_attackspeed1",3}},
-				{"modifier_luna_4","#modifier_luna_4", 3, "luna/4", {}},
+				{"modifier_luna_5","#modifier_luna_5", 1, "luna/5", {}},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
 			[6] = {

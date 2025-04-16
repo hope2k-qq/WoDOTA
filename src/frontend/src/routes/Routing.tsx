@@ -1,7 +1,7 @@
 import {Grid} from "@mui/material";
 import {BrowserRouter, Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import {HomePage} from "../pages/home/HomePage";
-//import {LeaderboardPage} from "../pages/leaderboard/LeaderboardPage";
+import {LeaderboardPage} from "../pages/leaderboard/LeaderboardPage";
 import {HeroesPage} from "../pages/heroes/HeroesPage";
 import {VotesPage} from "../pages/votes/VotesPage";
 import HeroPage from "../pages/heroes/components/heroPage/HeroPage";
@@ -11,7 +11,7 @@ import {Footer} from "../widgets/footer/Footer";
 import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
-//import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
+import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
 import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
 import { PageWrapper } from "./components/PageWrapper";
@@ -45,22 +45,22 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
         }
     },
-    // {
-    //     path: "/leaderboard",
-    //     element: <LeaderboardPage />,
-    //     title: {
-    //         en: "WoDOTA – Leaderboard",
-    //         ru: "WoDOTA (World of Dota) - Таблица лидеров",
-    //         uk: "WoDOTA – Лідерборд",
-    //         cs: "WoDOTA – Tabulka výsledků"
-    //     },
-    //     description: {
-    //         en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-    //         ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-    //         uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-    //         cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
-    //     }
-    // },
+    {
+        path: "/leaderboard",
+        element: <LeaderboardPage />,
+        title: {
+            en: "WoDOTA – Leaderboard",
+            ru: "WoDOTA (World of Dota) - Таблица лидеров",
+            uk: "WoDOTA – Лідерборд",
+            cs: "WoDOTA – Tabulka výsledků"
+        },
+        description: {
+            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
+            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
+            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
+            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+        }
+    },
     {
         path: "/heroes",
         element: <HeroesPage />,
@@ -125,22 +125,22 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
         }
     },
-    // {
-    //     path: "/tournament",
-    //     element: <TournamentsPage />,
-    //     title: {
-    //         en: "WoDOTA – Tournaments",
-    //         ru: "WoDOTA (World of Dota) - Турниры",
-    //         uk: "WoDOTA – Турніри",
-    //         cs: "WoDOTA – Turnaje"
-    //     },
-    //     description: {
-    //         en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-    //         ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-    //         uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-    //         cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
-    //     }
-    // },
+    {
+        path: "/tournament",
+        element: <TournamentsPage />,
+        title: {
+            en: "WoDOTA – Tournaments",
+            ru: "WoDOTA (World of Dota) - Турниры",
+            uk: "WoDOTA – Турніри",
+            cs: "WoDOTA – Turnaje"
+        },
+        description: {
+            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
+            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
+            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
+            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+        }
+    },
     {
         path: "/privacy-policy",
         element: <PrivacyPolicyPage />,
@@ -194,7 +194,10 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
 const LanguageRedirect = () => {
     const { pathname } = useLocation();
     const navigate = useNavigate();
+
     useEffect(() => {
+        if (!i18n.isInitialized) return;
+
         const segments = pathname.split('/');
         const langPrefix = segments[1];
 
@@ -206,6 +209,7 @@ const LanguageRedirect = () => {
             navigate(newPath, { replace: true });
         }
     }, [pathname, navigate]);
+
     return null;
 };
 
@@ -273,8 +277,8 @@ export const Routing = () => {
 
     return (
         <BrowserRouter>
-            <TrackPageView />
             <ScrollToTop />
+            <TrackPageView />
             <LanguageRedirect />
             <div style={{ width: "100%", maxWidth: "100%", margin: "0 auto", position: "relative" }}>
                 <TopBar />
