@@ -47178,6 +47178,32 @@
           }
         }
       },
+      "techies_minefield_sign": {
+        "name": "Minefield Sign",
+        "description": "На %lifetime% сек. встановлює застережливу табличку, міни в області дії якої невразливі. Не можна ставити більше однієї таблички одночасно.",
+        "lifetime": "ТРИВАЛЬНІСТЬ ТАБЛИЧКИ:",
+        "lore": "Дивися під ноги!",
+        "aura_radius": "РАДІУС ДІЇ:",
+        "values": {
+          "aura_radius": "500",
+          "lifetime": "60",
+          "minefield_duration": "10",
+          "trigger_radius": "200",
+          "abilitycastrange": "10",
+          "abilitymanacost": "0",
+          "abilitycooldown": "60"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "aura_radius": "РАДІУС ДІЇ:",
+            "lifetime": "ТРИВАЛЬНІСТЬ ТАБЛИЧКИ:"
+          },
+          "values": {
+            "aura_radius": "500",
+            "lifetime": "60"
+          }
+        }
+      },
       "techies_land_mines": {
         "name": "Proximity Mines",
         "lore": "Нічний кошмар Тотерина!",
@@ -55599,6 +55625,42 @@
             "radius": "450",
             "base_damage": "75",
             "max_health_damage_pct": "3%"
+          }
+        }
+      },
+      "kez_switch_weapons": {
+        "name": "Switch Discipline",
+        "lore": "Колишні послідовники Шодо, очільники ордену казураїв, можуть без зусиль обирати з-поміж двох дисциплін бойової майстерності — між саями та клинком.",
+        "description": "<b><font color='#F2A93E'>Зміна дисципліни</font></b>\\nБоривітер перемикається між своїми казурайською катаною і саями ордену Шодо.\n\nЗалежно від спорядженої зброї він здобуває різні можливості та здібності. Рівень здібностей підвищується разом, а якщо здібність застосувати, то альтернативна збройова здібність теж починає заряджатися.\n\nЗарядка Зміни дисципліни зменшується на %cooldown_reduction_per_level% с за рівень героя.",
+        "katana_base_attack_time": "БАЗОВИЙ ІНТЕРВАЛ АТАК (КАТАНА):",
+        "katana_attack_range": "ДАЛЬНІСТЬ АТАКИ (КАТАНА):",
+        "katana_bonus_damage": "%ДОП. УРОН (КАТАНА):",
+        "sai_base_attack_time": "БАЗОВИЙ ІНТЕРВАЛ АТАК (САЙ):",
+        "sai_attack_range": "ДАЛЬНІСТЬ АТАКИ (САЙ):",
+        "values": {
+          "katana_attack_range": "225",
+          "katana_base_attack_time": "2",
+          "katana_bonus_damage": "20",
+          "sai_attack_range": "150",
+          "sai_base_attack_time": "1.5",
+          "cooldown_reduction_per_level": "0.2",
+          "scepter_cooldown_timer": "3",
+          "abilitycooldown": "8"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "katana_attack_range": "ДАЛЬНІСТЬ АТАКИ (КАТАНА):",
+            "katana_base_attack_time": "БАЗОВИЙ ІНТЕРВАЛ АТАК (КАТАНА):",
+            "katana_bonus_damage": "ДОП. УРОН (КАТАНА):",
+            "sai_attack_range": "ДАЛЬНІСТЬ АТАКИ (САЙ):",
+            "sai_base_attack_time": "БАЗОВИЙ ІНТЕРВАЛ АТАК (САЙ):"
+          },
+          "values": {
+            "katana_attack_range": "225",
+            "katana_base_attack_time": "2",
+            "katana_bonus_damage": "20%",
+            "sai_attack_range": "150",
+            "sai_base_attack_time": "1.5"
           }
         }
       },

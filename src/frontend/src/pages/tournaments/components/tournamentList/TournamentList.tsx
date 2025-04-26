@@ -52,7 +52,7 @@ export const TournamentList: React.FC<TournamentListProps> = ({ data }) => {
                             <div className={styles.container_table_data}>
                                 <div className={styles.player_container}>
                                     <img src={team.player1_info.avatar} alt={"avatar"} className={styles.avatar}/>
-                                    <div>{updatedPlayers[`player1-${index}`] || team.player1_info.player1}</div>
+                                    <div className={styles.ellipsis}>{updatedPlayers[`player1-${index}`] || team.player1_info.player1}</div>
                                 </div>
                                 <div className={`${styles.id} ${updatedPlayers[`player1-${index}`] === team.player1_info.dota_id1 ? styles.active : ''}`}
                                      onClick={() => handleIdClick(`player1-${index}`, team.player1_info.player1, team.player1_info.dota_id1)}>
@@ -64,7 +64,7 @@ export const TournamentList: React.FC<TournamentListProps> = ({ data }) => {
                             <div className={styles.container_table_data}>
                                 <div className={styles.player_container}>
                                     <img src={team.player2_info.avatar} alt={"avatar"} className={styles.avatar}/>
-                                    <div>{updatedPlayers[`player2-${index}`] || team.player2_info.player2}</div>
+                                    <div className={styles.ellipsis}>{updatedPlayers[`player2-${index}`] || team.player2_info.player2}</div>
                                 </div>
                                 <div  className={`${styles.id} ${updatedPlayers[`player2-${index}`] === team.player2_info.dota_id2 ? styles.active : ''}`}
                                       onClick={() => handleIdClick(`player2-${index}`, team.player2_info.player2, team.player2_info.dota_id2)}>

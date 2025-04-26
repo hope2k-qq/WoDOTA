@@ -4,7 +4,7 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 const API_IP = process.env.REACT_APP_API_IP;
-const CACHE_VERSION = '13.0';
+const CACHE_VERSION = '18.0';
 
 type MyDataContextType = {
     language: string | null;
@@ -50,29 +50,79 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         setLanguageReady(true);
     };
 
+    // const clearAllIndexedDB = async () => {
+    //     try {
+    //         const databases = await indexedDB.databases();
+    //
+    //         for (const db of databases) {
+    //             if (db.name) {
+    //                 const request = indexedDB.deleteDatabase(db.name);
+    //
+    //                 request.onerror = (event) => {
+    //                     //console.error(`Ошибка при удалении базы данных ${db.name}`);
+    //                 };
+    //
+    //                 request.onsuccess = () => {
+    //                     //console.log(`База данных ${db.name} успешно удалена`);
+    //                 };
+    //             } else {
+    //                 //console.warn('Имя базы данных отсутствует, пропускаем удаление');
+    //             }
+    //         }
+    //
+    //         //console.log('Все базы данных удалены');
+    //     } catch (error) {
+    //         //console.error('Ошибка при удалении баз данных:', error);
+    //     }
+    // };
     const clearAllIndexedDB = async () => {
         try {
+            // Получаем список всех баз данных
             const databases = await indexedDB.databases();
 
+            // Перебираем все базы данных
             for (const db of databases) {
                 if (db.name) {
-                    const request = indexedDB.deleteDatabase(db.name);
+                    // Открываем базу данных для получения доступа к её хранилищам
+                    const request = indexedDB.open(db.name);
+
+                    request.onsuccess = (event: Event) => {
+                        const target = event.target as IDBRequest;
+                        if (target.result) {
+                            const dbInstance = target.result;
+
+                            // Перебираем все объектные хранилища в базе данных
+                            const objectStoreNames: DOMStringList = dbInstance.objectStoreNames;
+
+                            // Преобразуем DOMStringList в массив
+                            const objectStoreNamesArray = Array.from(objectStoreNames);
+
+                            objectStoreNamesArray.forEach((storeName: string) => {
+                                // Начинаем транзакцию для удаления данных в каждом хранилище
+                                const transaction = dbInstance.transaction(storeName, 'readwrite');
+                                const store = transaction.objectStore(storeName);
+
+                                // Очищаем хранилище
+                                store.clear();
+                                console.log(`Хранилище ${storeName} в базе данных ${db.name} очищено`);
+                            });
+
+                            // Закрываем базу данных после очистки
+                            dbInstance.close();
+                        } else {
+                            console.error(`Не удалось открыть базу данных ${db.name}`);
+                        }
+                    };
 
                     request.onerror = (event) => {
-                        //console.error(`Ошибка при удалении базы данных ${db.name}`);
+                        console.error(`Ошибка при открытии базы данных ${db.name}`, event);
                     };
-
-                    request.onsuccess = () => {
-                        //console.log(`База данных ${db.name} успешно удалена`);
-                    };
-                } else {
-                    //console.warn('Имя базы данных отсутствует, пропускаем удаление');
                 }
             }
 
-            //console.log('Все базы данных удалены');
+            console.log('Все базы данных очищены');
         } catch (error) {
-            //console.error('Ошибка при удалении баз данных:', error);
+            console.error('Ошибка при очистке баз данных:', error);
         }
     };
 

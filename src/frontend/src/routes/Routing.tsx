@@ -20,6 +20,7 @@ import {useEffect} from "react";
 import { Navigate } from "react-router-dom";
 import {Helmet} from "react-helmet-async";
 import {useMyData} from "../context/HeroesDataContext";
+import {useTranslation} from "react-i18next";
 
 interface RouteTitle {
     en: string;
@@ -33,160 +34,160 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
         path: "/",
         element: <HomePage />,
         title: {
-            en: "WoDOTA (World of Dota) – WoDOTA, World of Dota, a custom Dota 2 game",
-            ru: "WoDOTA (World of Dota) – Водота, Ворлд оф Дота, кастомная игра Dota 2",
-            uk: "WoDOTA (World of Dota) – Водота, Ворлд оф Дота, кастомна гра Dota 2",
-            cs: "WoDOTA (World of Dota) – WoDOTA, World of Dota, kastomní hra Dota 2"
+            en: "World of Dota (WoDOTA) is a custom game for Dota 2",
+            ru: "World of Dota (WoDOTA) — Водота, Ворлд оф Дота, кастомная игра Dota 2",
+            uk: "World of Dota (WoDOTA) — Водота, Ворлд оф Дота, кастомна гра Dota 2",
+            cs: "World of Dota (WoDOTA) je custom hra pro Dota 2"
         },
         description: {
-            en: "WoDOTA (World of Dota) is a unique game based on Dota 2. In it, players can test their skills in various modes, unlocking the potential of each hero through numerous unique talents.",
-            ru: "WoDOTA (World of Dota) — уникальная игра на базе Dota 2. В ней игроки могут испытать свои силы в различных режимах, раскрывая потенциал каждого героя через множество уникальных талантов.",
-            uk: "WoDOTA (World of Dota) — унікальна гра на базі Dota 2. У ній гравці можуть випробувати свої сили в різних режимах, розкриваючи потенціал кожного героя через безліч унікальних талантів.",
-            cs: "WoDOTA (World of Dota) je unikátní hra založená na Dota 2. V ní si hráči mohou vyzkoušet své síly v různých režimech, odkrývajíc potenciál každého hrdiny prostřednictvím mnoha jedinečných talentů."
+            en: "World of Dota (WoDOTA) is a unique game based on Dota 2. In it, players can test their strength in various modes, revealing the potential of each hero through a variety of unique talents.",
+            ru: "World of Dota (WoDOTA) — уникальная игра на базе Dota 2. В ней игроки могут испытать свои силы в различных режимах, раскрывая потенциал каждого героя через множество уникальных талантов.",
+            uk: "World of Dota (WoDOTA) — унікальна гра на базі Dota 2. У ній гравці можуть випробувати свої сили в різних режимах, розкриваючи потенціал кожного героя через безліч унікальних талантів.",
+            cs: "World of Dota (WoDOTA) je jedinečná hra založená na Dota 2. V ní si hráči mohou vyzkoušet své síly v různých režimech a odhalit potenciál každého hrdiny prostřednictvím mnoha unikátních talentů."
         }
     },
     {
         path: "/leaderboard",
         element: <LeaderboardPage />,
         title: {
-            en: "WoDOTA – Leaderboard",
-            ru: "WoDOTA (World of Dota) - Таблица лидеров",
-            uk: "WoDOTA – Лідерборд",
-            cs: "WoDOTA – Tabulka výsledků"
+            en: "World of Dota (WoDOTA) — Leaderboard",
+            ru: "World of Dota (WoDOTA) — Таблица лидеров",
+            uk: "World of Dota (WoDOTA) — Таблиця лідерів",
+            cs: "World of Dota (WoDOTA) — Tabulka lídrů"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Check out the World of Dota (WoDOTA) leaderboard — find out who’s the best in this custom Dota 2 mode!",
+            ru: "Ознакомьтесь с таблицей лидеров World of Dota (WoDOTA) — узнайте, кто лучший в этом кастомном режиме Dota 2!",
+            uk: "Перегляньте таблицю лідерів World of Dota (WoDOTA) — дізнайтеся, хто найкращий у цьому кастомному режимі Dota 2!",
+            cs: "Prohlédněte si tabulku lídrů World of Dota (WoDOTA) — zjistěte, kdo je nejlepší v tomto customním režimu Dota 2!"
         }
     },
     {
         path: "/heroes",
         element: <HeroesPage />,
         title: {
-            en: "WoDOTA – Heroes",
-            ru: "WoDOTA (World of Dota) - Герои",
-            uk: "WoDOTA – Герої",
-            cs: "WoDOTA – Hrdinové"
+            en: "World of Dota (WoDOTA) — Heroes",
+            ru: "World of Dota (WoDOTA) — Герои",
+            uk: "World of Dota (WoDOTA) — Герої",
+            cs: "World of Dota (WoDOTA) — Hrdinové"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Discover the unique heroes of World of Dota (WoDOTA) — each with special abilities and talents!",
+            ru: "Откройте для себя уникальных героев World of Dota (WoDOTA) — каждый с особыми способностями и талантами!",
+            uk: "Познайте унікальних героїв World of Dota (WoDOTA) — кожен з особливими здібностями та талантами!",
+            cs: "Objevte jedinečné hrdiny World of Dota (WoDOTA) — každý s unikátními schopnostmi a talenty!"
         }
     },
     {
         path: "/hero/:name",
         element: <HeroPage />,
         title: {
-            en: "WoDOTA – Hero",
-            ru: "WoDOTA (World of Dota) - Герой",
-            uk: "WoDOTA – Герой",
-            cs: "WoDOTA – Hrdina"
+            en: "World of Dota (WoDOTA) — Hero",
+            ru: "World of Dota (WoDOTA) — Герой",
+            uk: "World of Dota (WoDOTA) — Герой",
+            cs: "World of Dota (WoDOTA) — Hrdina"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Discover the hero's unique abilities and talents!",
+            ru: "Откройте уникальные способности и таланты героя!",
+            uk: "Відкрийте унікальні здібності та таланти героя!",
+            cs: "Objevte jedinečné schopnosti a talenty hrdiny!"
         }
     },
     {
         path: "/hero-build/:id",
         element: <HeroBuildPage />,
         title: {
-            en: "WoDOTA – Hero Build",
-            ru: "WoDOTA (World of Dota) - Билд на героя",
-            uk: "WoDOTA – Білд на героя",
-            cs: "WoDOTA – Stavba hrdiny"
+            en: "World of Dota (WoDOTA) — Hero Build",
+            ru: "World of Dota (WoDOTA) — Билд на героя",
+            uk: "World of Dota (WoDOTA) — Білд на героя",
+            cs: "World of Dota (WoDOTA) — Build pro hrdinu"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Hero build in World of Dota (WoDOTA) — the perfect way to diversify your gameplay!",
+            ru: "Билд для героя в World of Dota (WoDOTA) — идеальный вариант, чтобы разнообразить игру!",
+            uk: "Білд для героя в World of Dota (WoDOTA) — ідеальний варіант для різноманітності гри!",
+            cs: "Build pro hrdinu ve World of Dota (WoDOTA) — ideální způsob, jak zpestřit hru!"
         }
     },
     {
         path: "/news",
         element: <NewsPage />,
         title: {
-            en: "WoDOTA – News",
-            ru: "WoDOTA (World of Dota) - Новости",
-            uk: "WoDOTA – Новини",
-            cs: "WoDOTA – Novinky"
+            en: "World of Dota (WoDOTA) — News",
+            ru: "World of Dota (WoDOTA) — Новости",
+            uk: "World of Dota (WoDOTA) — Новини",
+            cs: "World of Dota (WoDOTA) — Novinky"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Stay updated with the latest news and updates on the WoDOTA website!",
+            ru: "Следите за последними новостями и обновлениями на сайте WoDOTA!",
+            uk: "Слідкуйте за останніми новинами та оновленнями на сайті WoDOTA!",
+            cs: "Sledujte nejnovější zprávy a aktualizace na webu WoDOTA!"
         }
     },
     {
         path: "/tournament",
         element: <TournamentsPage />,
         title: {
-            en: "WoDOTA – Tournaments",
-            ru: "WoDOTA (World of Dota) - Турниры",
-            uk: "WoDOTA – Турніри",
-            cs: "WoDOTA – Turnaje"
+            en: "World of Dota (WoDOTA) — Tournaments",
+            ru: "World of Dota (WoDOTA) — Турниры",
+            uk: "World of Dota (WoDOTA) — Турніри",
+            cs: "World of Dota (WoDOTA) — Turnaje"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Tournaments in World of Dota (WoDOTA) — compete, win, and make history!",
+            ru: "Турниры в World of Dota (WoDOTA) — соревнуйтесь, побеждайте и становитесь легендой!",
+            uk: "Турніри у World of Dota (WoDOTA) — змагайтеся, перемагайте та ставайте легендою!",
+            cs: "Turnaje ve World of Dota (WoDOTA) — soutěžte, vítězte a pište historii!."
         }
     },
     {
         path: "/privacy-policy",
         element: <PrivacyPolicyPage />,
         title: {
-            en: "WoDOTA – Privacy Policy",
-            ru: "WoDOTA (World of Dota) - Политика конфиденциальности",
-            uk: "WoDOTA – Політика конфіденційності",
-            cs: "WoDOTA – Zásady ochrany osobních údajů"
+            en: "World of Dota (WoDOTA) — Privacy Policy",
+            ru: "World of Dota (WoDOTA) — Политика конфиденциальности",
+            uk: "World of Dota (WoDOTA) — Політика конфіденційності",
+            cs: "World of Dota (WoDOTA) — Zásady ochrany osobních údajů"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Learn how WoDOTA collects, uses, and protects your personal data.",
+            ru: "Узнайте, как WoDOTA собирает, использует и защищает ваши персональные данные.",
+            uk: "Дізнайтеся, як WoDOTA збирає, використовує та захищає ваші персональні дані.",
+            cs: "Zjistěte, jak WoDOTA shromažďuje, používá a chrání vaše osobní údaje."
         }
     },
     {
         path: "/votes",
         element: <VotesPage />,
         title: {
-            en: "WoDOTA – Votes",
-            ru: "WoDOTA (World of Dota) - Голосования",
-            uk: "WoDOTA – Голосування",
-            cs: "WoDOTA – Hlasování"
+            en: "World of Dota (WoDOTA) — Votes",
+            ru: "World of Dota (WoDOTA) — Голосования",
+            uk: "World of Dota (WoDOTA) — Голосування",
+            cs: "World of Dota (WoDOTA) — Hlasování"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "Participate in World of Dota (WoDOTA) votes for new heroes!",
+            ru: "Участвуйте в голосованиях World of Dota (WoDOTA) за новых героев!",
+            uk: "Беріть участь у голосуваннях World of Dota (WoDOTA) за нових героїв!",
+            cs: "Hlasujte ve World of Dota (WoDOTA) pro nové hrdiny!"
         }
     },
     {
         path: "*",
         element: <NotFoundPage />,
         title: {
-            en: "WoDOTA – Page Not Found",
-            ru: "WoDOTA (World of Dota) - Страница не найдена",
-            uk: "WoDOTA – Сторінка не знайдена",
-            cs: "WoDOTA – Stránka nenalezena"
+            en: "World of Dota (WoDOTA) – Page Not Found",
+            ru: "World of Dota (WoDOTA) - Страница не найдена",
+            uk: "World of Dota (WoDOTA) – Сторінка не знайдена",
+            cs: "World of Dota (WoDOTA) – Stránka nenalezena"
         },
         description: {
-            en: "WoDOTA is a custom Dota 2 game with unique heroes and gameplay mechanics.",
-            ru: "WoDOTA – это кастомная игра Dota 2 с уникальными героями и механиками игрового процесса.",
-            uk: "WoDOTA – це кастомна гра Dota 2 з унікальними героями та механікою гри.",
-            cs: "WoDOTA je vlastní hra Dota 2 s unikátními hrdiny a herními mechanikami."
+            en: "The page you are looking for does not exist or has been moved. Return to the WoDOTA homepage.",
+            ru: "Страница, которую вы ищете, не существует или была перемещена. Вернитесь на главную страницу WoDOTA.",
+            uk: "Сторінка, яку ви шукаєте, не існує або була переміщена. Поверніться на головну сторінку WoDOTA.",
+            cs: "Stránka, kterou hledáte, neexistuje nebo byla přesunuta. Vraťte se na hlavní stránku WoDOTA."
         }
     }
 ];
@@ -214,6 +215,7 @@ const LanguageRedirect = () => {
 };
 
 const LanguageSwitchingRoutes = () => {
+    const { t } = useTranslation();
     const { pathname } = useLocation();
     const languagePrefix = pathname.split('/')[1];
     const lang: keyof RouteTitle = ['en', 'uk', 'ru', 'cs'].includes(languagePrefix) ? languagePrefix as keyof RouteTitle : localStorage.getItem("language") as keyof RouteTitle;
@@ -248,7 +250,7 @@ const LanguageSwitchingRoutes = () => {
                                     <title>{title[lang]}</title>
                                     <meta name="description" content={description[lang]}/>
                                     <meta property="og:title" content={title[lang]}/>
-                                    <meta property="og:description" content={description[lang]}/>
+                                    <meta property="og:description" content={t('og_description')}/>
                                     <meta property="og:locale" content={lang}/>
                                     <meta property="og:url"
                                           content={`https://wodota.pro/${lang}${path.replace(/\/$/, '')}`}/>

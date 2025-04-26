@@ -1180,6 +1180,37 @@ input:checked + .slider:before {
     max-width: 100%;
     margin: 0 1.5rem;
   }
+  .upgradeNumber{
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .upgradeNumber{
+    font-size: 22px;
+  }
+  .menu {
+    max-width: 315px;
+    width: 315px;
+    > div {
+      font-size: 0.85rem;
+      padding: 0.75rem;
+    }
+  }
+  .menu_type_left_location{
+    left: calc(0% - 77px) !important;
+  }
+
+  .menu_type_right_location{
+    right: calc(0% - 77px) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .upgradeNumber{
+    font-size: 20px;
+  }
 }
 
 

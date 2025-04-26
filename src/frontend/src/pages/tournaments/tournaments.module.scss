@@ -1,8 +1,11 @@
 .div{
-  background-color: #181920;
+  margin: 0 2rem;
+}
+
+.container{
   max-width: 1600px;
+  background-color: #181920;
   margin: 0 auto;
-  font-family: "Inter", serif;
   border-radius: 8px;
 }
 
@@ -20,12 +23,13 @@
   flex-direction: column;
   margin-top: 2rem;
   margin-left: 24px;
+  margin-right: 24px;
   gap: 0.1rem;
 }
 
 .tournament_data{
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
 }
 
@@ -33,16 +37,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 35px 0;
+  padding: 55px 0;
   border-radius: 10px 10px 0 0;
   gap: 15px;
-  max-width: 1000px;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  margin: 0 2rem;
 }
 
 .button {
   padding: 0.6rem 0;
-  width: 100%;
+  min-width: 200px;
   border-radius: 10px;
   font-family: "Inter", serif;
   font-size: 1.2rem;
@@ -61,5 +65,62 @@
   &.active {
     cursor: default;
     background-color: #ab8948;
+  }
+}
+
+@media (max-width: 1400px) {
+  .tournament_name{
+    font-size: 2.8rem;
+  }
+  .tournament_data{
+    font-size: 0.95rem;
+  }
+  .button{
+    font-size: 1.1rem;
+    min-width: 180px;
+  }
+  .container_buttons_navigations{
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .div{
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tournament_name{
+    font-size: 2.3rem;
+  }
+  .tournament_data{
+    font-size: 0.85rem;
+  }
+  .tournament_data_container{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .div{
+    margin: 0;
+  }
+  .container_buttons_navigations {
+    padding: 35px 0;
+  }
+  .tournament_name{
+    font-size: 1.9rem;
+  }
+  .tournament_data{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .tournament_data_container{
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
   }
 }

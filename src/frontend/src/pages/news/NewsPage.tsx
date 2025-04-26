@@ -12,7 +12,7 @@ interface NewsItem {
 }
 
 export const NewsPage: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n  } = useTranslation();
     const [news, setNews] = useState<NewsItem[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -66,14 +66,12 @@ export const NewsPage: React.FC = () => {
     }, [openNewsIds, heights]);
 
     useEffect(() => {
-        // Загрузка новостей с сервера
-        fetch(`${API_URL}/news`)
+        fetch(`${API_URL}/news/${i18n.language}`)
             .then((res) => res.json())
             .then((data) => {
                 const fetchedNews = Array.isArray(data) ? data : data.news || [];
                 setNews(fetchedNews);
 
-                // Обновляем количество непрочитанных новостей
                 updateUnreadNewsCount(fetchedNews.map((news: NewsItem) => news.id));
             })
             .catch((err) => {
@@ -81,7 +79,7 @@ export const NewsPage: React.FC = () => {
                 setError(err.message);
             })
             .finally(() => setLoading(false));
-    }, [API_URL, updateUnreadNewsCount]);
+    }, [API_URL, updateUnreadNewsCount, i18n.language]);
 
 
     if (loading) return <p></p>;

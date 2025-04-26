@@ -108,7 +108,7 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
             <table className={styles.table}>
                 <thead>
                 <tr className={styles.table_info}>
-                    <th>{t('place')}</th>
+                    <th><div className={styles.th_place}>{t('place')}</div><div className={styles.th_lattice}>#</div></th>
                     <th>
                         <div>{t('nickname')} #1</div>
                     </th>
@@ -137,33 +137,53 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                             </td>
                             <td>
                                 <div className={styles.container_table_data}>
+                                    <img
+                                        src={team.player1_info.avatar}
+                                        alt="avatar"
+                                        className={styles.avatar}
+                                        onClick={() => {
+                                            if (team.player1_info.profileUrl) {
+                                                window.open(team.player1_info.profileUrl, '_blank');
+                                            }
+                                        }}
+                                    />
                                     <div className={styles.player_container}>
-                                        <img src={team.player1_info.avatar} alt="avatar" className={styles.avatar}/>
-                                        <div>{updatedPlayers[`player1-${index}`] || team.player1_info.player1}</div>
-                                    </div>
-                                    <div
-                                        className={`${styles.id} ${
-                                            updatedPlayers[`player1-${index}`] === team.player1_info.dota_id1 ? styles.active : ""
-                                        }`}
-                                        onClick={() => handleIdClick(`player1-${index}`, team.player1_info.player1, team.player1_info.dota_id1)}
-                                    >
-                                        ID
+                                        <div
+                                            className={styles.ellipsis}>{updatedPlayers[`player1-${index}`] || team.player1_info.player1}</div>
+                                        <div
+                                            className={`${styles.id} ${
+                                                updatedPlayers[`player1-${index}`] === team.player1_info.dota_id1 ? styles.active : ""
+                                            }`}
+                                            onClick={() => handleIdClick(`player1-${index}`, team.player1_info.player1, team.player1_info.dota_id1)}
+                                        >
+                                            ID
+                                        </div>
                                     </div>
                                 </div>
                             </td>
                             <td>
                                 <div className={styles.container_table_data}>
+                                    <img
+                                        src={team.player2_info.avatar}
+                                        alt="avatar"
+                                        className={styles.avatar}
+                                        onClick={() => {
+                                            if (team.player2_info.profileUrl) {
+                                                window.open(team.player2_info.profileUrl, '_blank');
+                                            }
+                                        }}
+                                    />
                                     <div className={styles.player_container}>
-                                        <img src={team.player2_info.avatar} alt="avatar" className={styles.avatar}/>
-                                        <div>{updatedPlayers[`player2-${index}`] || team.player2_info.player2}</div>
-                                    </div>
-                                    <div
-                                        className={`${styles.id} ${
-                                            updatedPlayers[`player2-${index}`] === team.player2_info.dota_id2 ? styles.active : ""
-                                        }`}
-                                        onClick={() => handleIdClick(`player2-${index}`, team.player2_info.player2, team.player2_info.dota_id2)}
-                                    >
-                                        ID
+                                        <div
+                                            className={styles.ellipsis}>{updatedPlayers[`player2-${index}`] || team.player2_info.player2}</div>
+                                        <div
+                                            className={`${styles.id} ${
+                                                updatedPlayers[`player2-${index}`] === team.player2_info.dota_id2 ? styles.active : ""
+                                            }`}
+                                            onClick={() => handleIdClick(`player2-${index}`, team.player2_info.player2, team.player2_info.dota_id2)}
+                                        >
+                                            ID
+                                        </div>
                                     </div>
                                 </div>
                             </td>
@@ -175,48 +195,50 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                 </tbody>
             </table>
             <div>
-                <div className={styles.container_buttons_map}>
+                <div className={styles.btn_container}>
+                    <div className={styles.container_buttons_map}>
                     {data.maps.map((map, index) => (
-                        <button
-                            key={index}
-                            onClick={() => handleMapClick(map)}
-                            className={`${styles.button}  ${!showReplays && selectedMap?.map_name === map.map_name ? styles.active : ''}`}
-                        >
-                            {t('map')} {map.map_name}
-                        </button>
-                    ))}
-                    {data.replays?.length > 0 && (
-                        <button
-                            onClick={() => {
-                                setShowReplays(true);
-                                if (showReplays) {
-                                    setSelectedMap(null);
-                                }
-                            }}
-                            className={`${styles.button} ${showReplays ? styles.active : ''}`}
-                        >
-                            {t('replays')}
-                        </button>
-                    )}
+                            <button
+                                key={index}
+                                onClick={() => handleMapClick(map)}
+                                className={`${styles.button}  ${!showReplays && selectedMap?.map_name === map.map_name ? styles.active : ''}`}
+                            >
+                                {t('map')} {map.map_name}
+                            </button>
+                        ))}
+                        {data.replays?.length > 0 && (
+                            <button
+                                onClick={() => {
+                                    setShowReplays(true);
+                                    if (showReplays) {
+                                        setSelectedMap(null);
+                                    }
+                                }}
+                                className={`${styles.button} ${showReplays ? styles.active : ''}`}
+                            >
+                                {t('replays')}
+                            </button>
+                        )}
+                    </div>
                 </div>
                 {showReplays ? (
                     <div>
                         <div className={styles.maps_name}>Переигровки</div>
                         {data.replays.map((replay, replayIndex) => (
-                        <div className={styles.groups_grid}>
-                            {replay.groups.map((group, index) => (
-                                <div key={index} className={styles.group_container}>
-                                    <div className={styles.group_name}>Группа: {group.group_name}</div>
-                                    <table className={styles.table_group}>
-                                        <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>{t('nickname')} #1</th>
-                                            <th>{t('nickname')} #2</th>
-                                            <th>{t('points')}</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
+                            <div className={styles.groups_grid}>
+                                {replay.groups.map((group, index) => (
+                                    <div key={index} className={styles.group_container}>
+                                        <div className={styles.group_name}>Группа: {group.group_name}</div>
+                                        <table className={styles.table_group}>
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>{t('nickname')} #1</th>
+                                                <th>{t('nickname')} #2</th>
+                                                <th>{t('points')}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
                                         {group.teams
                                             .slice()
                                             .sort((a, b) => a.place - b.place)
@@ -230,38 +252,76 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div className={styles.container_table_data}>
-                                                            <div className={styles.player_container_group}>
-                                                                <img src={teamData.team_info.player1_info.avatar}
-                                                                     alt="avatar"
-                                                                     className={styles.avatarGroup}/>
-                                                                <div>{updatedGroupPlayers[`group-${group.group_name}-player1-${index}`] || teamData.team_info.player1_info.player1}</div>
-                                                            </div>
-                                                            <div
-                                                                className={`${styles.id} ${
-                                                                    updatedGroupPlayers[`group-${group.group_name}-player1-${index}`] === teamData.team_info.player1_info.dota_id1 ? styles.active : ""
-                                                                }`}
-                                                                onClick={() => handleGroupIdClick(`group-${group.group_name}-player1-${index}`, teamData.team_info.player1_info.player1, teamData.team_info.player1_info.dota_id1)}
-                                                            >
-                                                                ID
+                                                        <div className={styles.container_table_data_group}>
+                                                            <img
+                                                                src={teamData.team_info.player1_info.avatar}
+                                                                alt="avatar"
+                                                                className={styles.avatarGroup}
+                                                                onClick={() => {
+                                                                    if (teamData.team_info.player1_info.profileUrl) {
+                                                                        window.open(teamData.team_info.player1_info.profileUrl, '_blank');
+                                                                    }
+                                                                }}
+                                                            />
+                                                            <div className={styles.player_container}>
+                                                                <div className={styles.ellipsis}>
+                                                                    {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player1`] ||
+                                                                        teamData.team_info.player1_info.player1}
+                                                                </div>
+                                                                <div
+                                                                    className={`${styles.id} ${
+                                                                        updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player1`] ===
+                                                                        teamData.team_info.player1_info.dota_id1
+                                                                            ? styles.active
+                                                                            : ""
+                                                                    }`}
+                                                                    onClick={() =>
+                                                                        handleGroupIdClick(
+                                                                            `group-${group.group_name}-team-${teamData.team_id}-player1`,
+                                                                            teamData.team_info.player1_info.player1,
+                                                                            teamData.team_info.player1_info.dota_id1
+                                                                        )
+                                                                    }
+                                                                >
+                                                                    ID
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div className={styles.container_table_data}>
-                                                            <div className={styles.player_container_group}>
-                                                                <img src={teamData.team_info.player2_info.avatar}
-                                                                     alt="avatar"
-                                                                     className={styles.avatarGroup}/>
-                                                                <div>{updatedGroupPlayers[`group-${group.group_name}-player2-${index}`] || teamData.team_info.player2_info.player2}</div>
-                                                            </div>
-                                                            <div
-                                                                className={`${styles.id} ${
-                                                                    updatedGroupPlayers[`group-${group.group_name}-player2-${index}`] === teamData.team_info.player2_info.dota_id2 ? styles.active : ""
-                                                                }`}
-                                                                onClick={() => handleGroupIdClick(`group-${group.group_name}-player2-${index}`, teamData.team_info.player2_info.player2, teamData.team_info.player2_info.dota_id2)}
-                                                            >
-                                                                ID
+                                                        <div className={styles.container_table_data_group}>
+                                                            <img
+                                                                src={teamData.team_info.player2_info.avatar}
+                                                                alt="avatar"
+                                                                className={styles.avatarGroup}
+                                                                onClick={() => {
+                                                                    if (teamData.team_info.player2_info.profileUrl) {
+                                                                        window.open(teamData.team_info.player2_info.profileUrl, '_blank');
+                                                                    }
+                                                                }}
+                                                            />
+                                                            <div className={styles.player_container}>
+                                                                <div className={styles.ellipsis}>
+                                                                    {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player2`] ||
+                                                                        teamData.team_info.player2_info.player2}
+                                                                </div>
+                                                                <div
+                                                                    className={`${styles.id} ${
+                                                                        updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player2`] ===
+                                                                        teamData.team_info.player2_info.dota_id2
+                                                                            ? styles.active
+                                                                            : ""
+                                                                    }`}
+                                                                    onClick={() =>
+                                                                        handleGroupIdClick(
+                                                                            `group-${group.group_name}-team-${teamData.team_id}-player2`,
+                                                                            teamData.team_info.player2_info.player2,
+                                                                            teamData.team_info.player2_info.dota_id2
+                                                                        )
+                                                                    }
+                                                                >
+                                                                    ID
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -270,11 +330,11 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                                     </td>
                                                 </tr>
                                             ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            ))}
-                        </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ))}
+                            </div>
                         ))}
                     </div>
                 ) : (
@@ -287,7 +347,7 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                 <div className={styles.groups_grid}>
                                     {selectedMap.groups.map((group, index) => (
                                         <div key={index} className={styles.group_container}>
-                                            <div className={styles.group_name}>Группа: {group.group_name}</div>
+                                        <div className={styles.group_name}>Группа: {group.group_name}</div>
                                             <table className={styles.table_group}>
                                                 <thead>
                                                 <tr>
@@ -312,40 +372,80 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <div className={styles.container_table_data}>
-                                                                    <div className={styles.player_container_group}>
-                                                                        <img src={teamData.team_info.player1_info.avatar}
-                                                                             alt="avatar"
-                                                                             className={styles.avatarGroup}/>
-                                                                        <div>{updatedGroupPlayers[`group-${group.group_name}-player1-${index}`] || teamData.team_info.player1_info.player1}</div>
-                                                                    </div>
-                                                                    <div
-                                                                        className={`${styles.id} ${
-                                                                            updatedGroupPlayers[`group-${group.group_name}-player1-${index}`] === teamData.team_info.player1_info.dota_id1 ? styles.active : ""
-                                                                        }`}
-                                                                        onClick={() => handleGroupIdClick(`group-${group.group_name}-player1-${index}`, teamData.team_info.player1_info.player1, teamData.team_info.player1_info.dota_id1)}
-                                                                    >
-                                                                        ID
+                                                                <div className={styles.container_table_data_group}>
+                                                                    <img
+                                                                        src={teamData.team_info.player1_info.avatar}
+                                                                        alt="avatar"
+                                                                        className={styles.avatarGroup}
+                                                                        onClick={() => {
+                                                                            if (teamData.team_info.player1_info.profileUrl) {
+                                                                                window.open(teamData.team_info.player1_info.profileUrl, '_blank');
+                                                                            }
+                                                                        }}
+                                                                    />
+                                                                    <div className={styles.player_container}>
+                                                                        <div className={styles.ellipsis}>
+                                                                            {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player1`] ||
+                                                                                teamData.team_info.player1_info.player1}
+                                                                        </div>
+                                                                        <div
+                                                                            className={`${styles.id} ${
+                                                                                updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player1`] ===
+                                                                                teamData.team_info.player1_info.dota_id1
+                                                                                    ? styles.active
+                                                                                    : ""
+                                                                            }`}
+                                                                            onClick={() =>
+                                                                                handleGroupIdClick(
+                                                                                    `group-${group.group_name}-team-${teamData.team_id}-player1`,
+                                                                                    teamData.team_info.player1_info.player1,
+                                                                                    teamData.team_info.player1_info.dota_id1
+                                                                                )
+                                                                            }
+                                                                        >
+                                                                            ID
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+
                                                             </td>
                                                             <td>
-                                                                <div className={styles.container_table_data}>
-                                                                    <div className={styles.player_container_group}>
-                                                                        <img src={teamData.team_info.player2_info.avatar}
-                                                                             alt="avatar"
-                                                                             className={styles.avatarGroup}/>
-                                                                        <div>{updatedGroupPlayers[`group-${group.group_name}-player2-${index}`] || teamData.team_info.player2_info.player2}</div>
-                                                                    </div>
-                                                                    <div
-                                                                        className={`${styles.id} ${
-                                                                            updatedGroupPlayers[`group-${group.group_name}-player2-${index}`] === teamData.team_info.player2_info.dota_id2 ? styles.active : ""
-                                                                        }`}
-                                                                        onClick={() => handleGroupIdClick(`group-${group.group_name}-player2-${index}`, teamData.team_info.player2_info.player2, teamData.team_info.player2_info.dota_id2)}
-                                                                    >
-                                                                        ID
+                                                                <div className={styles.container_table_data_group}>
+                                                                    <img
+                                                                        src={teamData.team_info.player2_info.avatar}
+                                                                        alt="avatar"
+                                                                        className={styles.avatarGroup}
+                                                                        onClick={() => {
+                                                                            if (teamData.team_info.player2_info.profileUrl) {
+                                                                                window.open(teamData.team_info.player2_info.profileUrl, '_blank');
+                                                                            }
+                                                                        }}
+                                                                    />
+                                                                    <div className={styles.player_container}>
+                                                                        <div className={styles.ellipsis}>
+                                                                        {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player2`] ||
+                                                                                teamData.team_info.player2_info.player2}
+                                                                        </div>
+                                                                        <div
+                                                                            className={`${styles.id} ${
+                                                                                updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player2`] ===
+                                                                                teamData.team_info.player2_info.dota_id2
+                                                                                    ? styles.active
+                                                                                    : ""
+                                                                            }`}
+                                                                            onClick={() =>
+                                                                                handleGroupIdClick(
+                                                                                    `group-${group.group_name}-team-${teamData.team_id}-player2`,
+                                                                                    teamData.team_info.player2_info.player2,
+                                                                                    teamData.team_info.player2_info.dota_id2
+                                                                                )
+                                                                            }
+                                                                        >
+                                                                            ID
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+
                                                             </td>
                                                             <td className={styles.points_group}>
                                                                 <div>{teamData.points}</div>
@@ -362,7 +462,6 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                         </div>
                     )
                 )}
-
 
 
             </div>

@@ -47176,6 +47176,32 @@
           }
         }
       },
+      "techies_minefield_sign": {
+        "name": "Minefield Sign",
+        "description": "Plant a warning sign, causing mines within its radius to be invulnerable. Only one sign can exist at a time. Lasts %lifetime% seconds.",
+        "lifetime": "SIGN DURATION:",
+        "lore": "Watch your step!",
+        "aura_radius": "EFFECT RADIUS:",
+        "values": {
+          "aura_radius": "500",
+          "lifetime": "60",
+          "minefield_duration": "10",
+          "trigger_radius": "200",
+          "abilitycastrange": "10",
+          "abilitymanacost": "0",
+          "abilitycooldown": "60"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "aura_radius": "EFFECT RADIUS:",
+            "lifetime": "SIGN DURATION:"
+          },
+          "values": {
+            "aura_radius": "500",
+            "lifetime": "60"
+          }
+        }
+      },
       "techies_land_mines": {
         "name": "Proximity Mines",
         "lore": "The bane of Toterin!",
@@ -55594,6 +55620,42 @@
             "radius": "450",
             "base_damage": "75",
             "max_health_damage_pct": "3%"
+          }
+        }
+      },
+      "kez_switch_weapons": {
+        "name": "Switch Discipline",
+        "lore": "As former followers of the Shodo, the leaders of the Kazurai Order can switch effortlessly between twin disciplines of martial mastery over sai and blade.",
+        "description": "Kez switches between his Kazurai Katana and Shodo Sai.\n\nHe gains different attack capabilities and abilities based on the weapon equipped. The abilities level up together, and when an ability is used, the associated alternate weapon ability also goes on cooldown.\n\nSwitch Discipline cooldown decreases by %cooldown_reduction_per_level%s per Hero level.",
+        "katana_base_attack_time": "KATANA BASE ATTACK TIME:",
+        "katana_attack_range": "KATANA ATTACK RANGE:",
+        "katana_bonus_damage": "%KATANA BONUS DAMAGE:",
+        "sai_base_attack_time": "SAI BASE ATTACK TIME:",
+        "sai_attack_range": "SAI ATTACK RANGE:",
+        "values": {
+          "katana_attack_range": "225",
+          "katana_base_attack_time": "2",
+          "katana_bonus_damage": "20",
+          "sai_attack_range": "150",
+          "sai_base_attack_time": "1.5",
+          "cooldown_reduction_per_level": "0.2",
+          "scepter_cooldown_timer": "3",
+          "abilitycooldown": "8"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "katana_attack_range": "KATANA ATTACK RANGE:",
+            "katana_base_attack_time": "KATANA BASE ATTACK TIME:",
+            "katana_bonus_damage": "KATANA BONUS DAMAGE:",
+            "sai_attack_range": "SAI ATTACK RANGE:",
+            "sai_base_attack_time": "SAI BASE ATTACK TIME:"
+          },
+          "values": {
+            "katana_attack_range": "225",
+            "katana_base_attack_time": "2",
+            "katana_bonus_damage": "20%",
+            "sai_attack_range": "150",
+            "sai_base_attack_time": "1.5"
           }
         }
       },

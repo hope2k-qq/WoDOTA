@@ -22,7 +22,6 @@
   background: none;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  //padding: 15px;
   text-align: center;
   width: 230px;
 }
@@ -95,37 +94,55 @@
   }
 }
 
-@media (max-width: 600px) {
-  .title{
-    font-size: 2rem;
-  }
+@media (max-width: 800px) {
   .card{
-    width: 210px;
+    width: 150px;
   }
-
   .voteText{
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .progressBarContainer{
-    padding: 5px 0;
+    padding: 4px 0;
   }
   .container{
     padding: 0 10px;
   }
-}
-
-@media (max-width: 550px) {
   .title{
     font-size: 1.7rem;
   }
-  .card{
-    width: 200px;
+}
+
+@media (max-width: 600px) {
+  .grid{
+    gap: 10px;
   }
-
-
+  .card{
+    width: 135px;
+  }
+  .voteText{
+    font-size: 0.8rem;
+  }
   .progressBarContainer{
-    padding: 5px 0;
+    padding: 3px 0;
+  }
+  .title{
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .card{
+    width: 120px;
+  }
+  .voteText{
+    font-size: 0.75rem;
+  }
+  .progressBarContainer{
+    padding: 3px 0;
+  }
+  .container{
+    padding: 0 5px;
   }
 }
 

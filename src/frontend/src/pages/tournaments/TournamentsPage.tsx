@@ -53,48 +53,52 @@ export const TournamentsPage: React.FC = () => {
 
     return (
         <div className={styles.div}>
-            <div className={styles.tournament_name}>WOD BEST DUO CUP</div>
-            <div className={styles.tournament_data_container}>
-                <div className={styles.tournament_data}>{t('event_dates')}</div>
-                <div className={styles.tournament_data}>{t('registration')}</div>
-                <div className={styles.tournament_data}>{t('prize_pool')}</div>
-            </div>
-            <div className={styles.container_buttons_navigations}>
-                <button
-                    className={`${styles.button} ${activeSection === 'players' ? styles.active : ''}`}
-                    onClick={() => handleSectionChange('players')}
-                >
-                    {t('all_players')}
-                </button>
-                <button
-                    className={`${styles.button} ${activeSection === 'qualifiers' ? styles.active : ''}`}
-                    onClick={() => handleSectionChange('qualifiers')}
-                >
-                    {t('qualifying_stage')}
-                </button>
-                <button
-                    className={`${styles.button} ${activeSection === 'playoffs' ? styles.active : ''}`}
-                    onClick={() => handleSectionChange('playoffs')}
-                >
-                    {t('playoff')}
-                </button>
-                <button
-                    className={`${styles.button} ${activeSection === 'final' ? styles.active : ''}`}
-                    onClick={() => handleSectionChange('final')}
-                >
-                    {t('final')}
-                </button>
-            </div>
+            <div className={styles.container}>
+                <div className={styles.tournament_name}>WOD BEST DUO CUP</div>
+                <div className={styles.tournament_data_container}>
+                    <div className={styles.tournament_data}>{t('event_dates')}</div>
+                    <div className={styles.tournament_data}>{t('registration')}</div>
+                    <div className={styles.tournament_data}>{t('prize_pool')}</div>
+                </div>
+                <div className={styles.container_buttons_navigations}>
+                    <button
+                        className={`${styles.button} ${activeSection === 'players' ? styles.active : ''}`}
+                        onClick={() => handleSectionChange('players')}
+                    >
+                        {t('all_players')}
+                    </button>
+                    <button
+                        className={`${styles.button} ${activeSection === 'qualifiers' ? styles.active : ''}`}
+                        onClick={() => handleSectionChange('qualifiers')}
+                    >
+                        {t('qualifying_stage')}
+                    </button>
+                    <button
+                        className={`${styles.button} ${activeSection === 'playoffs' ? styles.active : ''}`}
+                        onClick={() => handleSectionChange('playoffs')}
+                    >
+                        {t('playoff')}
+                    </button>
+                    <button
+                        className={`${styles.button} ${activeSection === 'final' ? styles.active : ''}`}
+                        onClick={() => handleSectionChange('final')}
+                    >
+                        {t('final')}
+                    </button>
+                </div>
 
-            {loading && <p></p>}
-            {error && <p>Ошибка: {error}</p>}
+                {loading && <p></p>}
+                {error && <p>Ошибка: {error}</p>}
 
-            <div className={styles.sectionContent}>
-                {activeSection === 'players' && data['players'] && <TournamentList data={data['players'].teams || []}/>}
-                {activeSection === 'qualifiers' && data['qualifiers'] &&
-                    <TournamentQualifiers data={data['qualifiers'] || []}/>}
-                {activeSection === 'playoffs' && data['playoffs'] &&  <TournamentQualifiers data={data['playoffs'] || []}/>}
-                {activeSection === 'final' && data['final'] && <TournamentQualifiers data={data['final'] || []}/>}
+                <div className={styles.sectionContent}>
+                    {activeSection === 'players' && data['players'] &&
+                        <TournamentList data={data['players'].teams || []}/>}
+                    {activeSection === 'qualifiers' && data['qualifiers'] &&
+                        <TournamentQualifiers data={data['qualifiers'] || []}/>}
+                    {activeSection === 'playoffs' && data['playoffs'] &&
+                        <TournamentQualifiers data={data['playoffs'] || []}/>}
+                    {activeSection === 'final' && data['final'] && <TournamentQualifiers data={data['final'] || []}/>}
+                </div>
             </div>
         </div>
     );

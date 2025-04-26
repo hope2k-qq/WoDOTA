@@ -10,7 +10,7 @@
   border-collapse: separate;
   border-spacing: 0 8px;
   font-family: "Inter", serif;
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
   table-layout: fixed;
 }
 
@@ -24,7 +24,7 @@
   padding: 16px;
 }
 .table td:first-child{
-  padding: 5px;
+  padding: 5px 0 5px 5px;
 }
 
 .table th:last-child,
@@ -50,7 +50,7 @@
 
 .table th:nth-child(2),
 .table td:nth-child(2){
-  padding: 12px 12px 12px 0;
+  padding: 12px 12px 12px 5px;
 }
 
 .points {
@@ -111,7 +111,16 @@
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 0.6rem;
+}
+
+.container_table_data_group{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  gap: 0.3rem;
 }
 
 .playoff_team {
@@ -172,6 +181,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
+  margin-left: 0.5rem;
 
   &:hover{
     color: #f4bf58;
@@ -182,30 +192,34 @@
   color: #f4bf58;
 }
 
-.avatar{
+.avatar {
   width: 48px;
   height: 48px;
   border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.avatarGroup{
+.avatarGroup {
   width: 34px;
   height: 34px;
   border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.avatar:hover, .avatarGroup:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
 
 .player_container{
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-}
-
-.player_container_group{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
 }
 
 .table_group{
@@ -281,6 +295,10 @@
   flex-direction: column;
 }
 
+.btn_container{
+  margin: 0 auto;
+}
+
 .container_buttons_map{
   display: flex;
   align-items: center;
@@ -288,13 +306,13 @@
   padding: 55px 0;
   border-radius: 10px 10px 0 0;
   gap: 15px;
-  max-width: 700px;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  margin: 0 1rem;
 }
 
 .button {
   padding: 0.6rem 0;
-  width: 100%;
+  min-width: 200px;
   border-radius: 10px;
   font-family: "Inter", serif;
   font-size: 1.2rem;
@@ -335,6 +353,231 @@
   font-size: 2.2rem;
   padding-bottom: 4rem;
   text-align: center;
+}
+
+.th_lattice{
+  display: none;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1400px) {
+  .groups_grid {
+    gap: 20px 0;
+    padding: 0;
+  }
+  .table_group{
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+    max-width: 100%;
+  }
+  .button{
+    font-size: 1.1rem;
+    min-width: 180px;
+  }
+  .container_buttons_map{
+    padding: 35px 0;
+    gap: 10px;
+  }
+  .maps_name{
+    font-size: 1.9rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .table{
+    padding: 0 1rem 1rem 1rem;
+  }
+  .table th{
+    font-size: 1.3rem;
+  }
+  .table td{
+    font-size: 1.2rem;
+  }
+  .avatar{
+    width: 44px;
+    height: 44px;
+  }
+  .wreathIcon{
+    width: 60px;
+  }
+  .table th:first-child,
+  .table td:first-child{
+    width:95px;
+  }
+  .table th:last-child,
+  .table td:last-child{
+    width:85px;
+    padding: 9px;
+  }
+  .table th:nth-child(3),
+  .table td:nth-child(3){
+    padding: 9px 0 9px 9px;
+  }
+
+  .table th:nth-child(2),
+  .table td:nth-child(2){
+    padding: 9px 9px 9px 0;
+  }
+  .rankNumber{
+    font-size: 15px;
+  }
+  .groups_grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .maps_name{
+    font-size: 1.7rem;
+    margin-bottom: 2.5rem;
+  }
+  .group_name{
+    font-size: 1.15rem;
+  }
+  .table th{
+    font-size: 1.1rem;
+  }
+  .table td{
+    font-size: 1rem;
+  }
+  .avatar{
+    width: 40px;
+    height: 40px;
+  }
+  .wreathIcon{
+    width: 55px;
+  }
+  .rankNumber{
+    font-size: 14px;
+  }
+  .table th:first-child,
+  .table td:first-child{
+    width:85px;
+  }
+  .table th:last-child,
+  .table td:last-child{
+    width:75px;
+    padding: 7px;
+  }
+  .table th:nth-child(3),
+  .table td:nth-child(3){
+    padding: 7px 0 7px 7px;
+  }
+
+  .table th:nth-child(2),
+  .table td:nth-child(2){
+    padding: 7px 7px 7px 5px;
+  }
+
+  .points{
+    font-size: 0.9rem !important;
+  }
+  > div {
+    border-radius: 7px;
+  }
+}
+@media (max-width: 750px) {
+  .table{
+    padding: 0 0.3rem 0.3rem 0.3rem;
+  }
+  .table th{
+    font-size: 1rem;
+  }
+  .table td{
+    font-size: 0.9rem;
+  }
+  .wreathIcon{
+    display: none;
+  }
+  .rankNumber{
+    font-size: 13px;
+  }
+  .table th:first-child,
+  .table td:first-child{
+    width:25px;
+  }
+  .table th:first-child{
+    padding: 5px;
+  }
+  .table th:last-child,
+  .table td:last-child{
+    width:55px;
+    padding: 5px;
+  }
+  .table th:nth-child(3),
+  .table td:nth-child(3){
+    padding: 5px 0 5px 5px;
+  }
+
+  .table th:nth-child(2),
+  .table td:nth-child(2){
+    padding: 5px 5px 5px 5px;
+  }
+  .th_lattice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .th_place{
+    display: none;
+  }
+  .avatar{
+    width: 30px;
+    height: 30px;
+  }
+  .player_container{
+    gap: 0.3rem;
+  }
+  .table_group{
+    padding: 0.25rem 0.2rem 0.2rem 0.2rem;
+  }
+  .table_group td{
+    font-size: 0.8rem;
+  }
+
+  .table_group th{
+    font-size: 0.9rem;
+  }
+  .table_group th:first-child,
+  .table_group td:first-child {
+    width: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  .table_group th:last-child,
+  .table_group td:last-child {
+    width: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  .avatarGroup{
+    width: 30px;
+    height: 30px;
+  }
+  .wreathIconGroup{
+   display: none;
+  }
+  .table_group th:nth-child(2),
+  .table_group td:nth-child(2){
+    padding: 3px 3px 3px 2px;
+  }
+
+  .table_group th:nth-child(3),
+  .table_group td:nth-child(3){
+    padding: 3px 2px 3px 3px;
+  }
+  .points {
+    font-size: 0.85rem !important;
+    > div {
+      padding:  0;
+      margin: 0 0.2rem;
+    }
+  }
 }
 
 

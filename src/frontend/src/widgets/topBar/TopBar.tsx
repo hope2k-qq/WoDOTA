@@ -25,6 +25,13 @@ export const TopBar = () => {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
     const currentLang = location.pathname.split('/')[1];
 
+    const langDisplayMap: { [key: string]: string } = {
+        cs: 'CZ',
+        en: 'EN',
+        uk: 'UA',
+        ru: 'RU'
+    };
+    const langLabel = langDisplayMap[currentLang] || currentLang.toUpperCase();
     const toggleSettingsMenu = () => {
         setIsSettingsOpen(!isSettingsOpen);
     };
@@ -88,35 +95,62 @@ export const TopBar = () => {
                         </div>
                     </div>
                     <div className={styles.topbar_menu_open}>
-                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/heroes')}>
-                            <TopBarMenuItem title={t('heroes')}
-                                            onNavigate={() => handleNavigate('/heroes')} menuOpen={menuOpen}/>
-                            <MoreIcon/>
+                        <div className={styles.menu_item_open_top}>
+                            <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/heroes')}>
+                                <TopBarMenuItem title={t('heroes').toUpperCase()}
+                                                onNavigate={() => handleNavigate('/heroes')} menuOpen={menuOpen}/>
+                                <MoreIcon/>
+                            </div>
+                            <div className={styles.topbar_menu_item_open}
+                                 onClick={() => handleNavigate('/leaderboard')}>
+                                <TopBarMenuItem title={t('leaderboard')}
+                                                onNavigate={() => handleNavigate('/leaderboard')} menuOpen={menuOpen}/>
+                                <MoreIcon/>
+                            </div>
+                            <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/votes')}>
+                                <TopBarMenuItem title={t('votes')}
+                                                onNavigate={() => handleNavigate('/votes')} menuOpen={menuOpen}/>
+                                <MoreIcon/>
+                            </div>
+                            <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/news')}>
+                                <TopBarMenuItem title={t('news')}
+                                                onNavigate={() => handleNavigate('/news')} menuOpen={menuOpen}/>
+                                <MoreIcon/>
+                            </div>
+                            <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/tournament')}>
+                                <TopBarMenuItem title={t('tournament')}
+                                                onNavigate={() => handleNavigate('/tournament')} menuOpen={menuOpen}/>
+                                <MoreIcon/>
+                            </div>
+                            <div className={styles.topbar_menu_item_open}
+                                 onClick={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}>
+                                <TopBarMenuItem title={t('donate')}
+                                                onNavigate={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}
+                                                menuOpen={menuOpen}/>
+                                <MoreIcon/>
+                            </div>
                         </div>
-                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/leaderboard')}>
-                            <TopBarMenuItem title={t('leaderboard')}
-                                            onNavigate={() => handleNavigate('/leaderboard')} menuOpen={menuOpen}/>
-                            <MoreIcon/>
-                        </div>
-                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/votes')}>
-                            <TopBarMenuItem title={t('votes')}
-                                            onNavigate={() => handleNavigate('/votes')} menuOpen={menuOpen}/>
-                            <MoreIcon/>
-                        </div>
-                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/news')}>
-                            <TopBarMenuItem title={t('news')}
-                                            onNavigate={() => handleNavigate('/news')} menuOpen={menuOpen}/>
-                            <MoreIcon/>
-                        </div>
-                        <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/tournament')}>
-                            <TopBarMenuItem title={t('tournament')}
-                                            onNavigate={() => handleNavigate('/tournament')} menuOpen={menuOpen}/>
-                            <MoreIcon/>
-                        </div>
-                        <div className={styles.topbar_menu_item_open} onClick={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}>
-                            <TopBarMenuItem title={t('donate')}
-                                            onNavigate={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')} menuOpen={menuOpen}/>
-                            <MoreIcon/>
+                        <div className={styles.menu_item_open_bottom}>
+                            <div className={styles.menu_item_steam_container}>
+                                <div className={styles.container_steam}>
+                                    <SteamIcon/>
+                                    <div>{t('login')}</div>
+                                </div>
+                                <div className={styles.container_settings} onClick={toggleSettingsMenu}>
+                                    <SettingsIcon/>
+                                </div>
+                            </div>
+                            <a
+                                href="https://steamcommunity.com/sharedfiles/filedetails/?id=2880603428"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.cta_button}
+                            >
+                                <SteamIcon className={styles.icon}/>
+                                <div className={styles.text_container}>
+                                    <span className={styles.main_text}>{t('play_for_free')}</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -124,28 +158,30 @@ export const TopBar = () => {
                 <div className={styles.topbar}>
                     <div className={styles.topbar_left} onClick={() => handleNavigate('/')}>
                         <img src={logoSrc} alt="logo"/>
+                        <span className={styles.logo_language}>{langLabel}</span>
                     </div>
                     <div className={`${styles.topbar_menu}`}>
-                    <TopBarMenuItem title={t('heroes')}
+                        <TopBarMenuItem title={t('heroes').toUpperCase()}
                                         onNavigate={() => handleNavigate('/heroes')} isActive={activeIcon("/heroes")}
-                                        menuOpen={menuOpen} icon={<HeroesIcon />}/>
+                                        menuOpen={menuOpen} icon={<HeroesIcon/>}/>
                         <TopBarMenuItem title={t('leaderboard')}
                                         onNavigate={() => handleNavigate('/leaderboard')}
-                                        isActive={activeIcon("/leaderboard")} menuOpen={menuOpen} icon={<LeaderboardIcon />}/>
+                                        isActive={activeIcon("/leaderboard")} menuOpen={menuOpen}
+                                        icon={<LeaderboardIcon/>}/>
                         <TopBarMenuItem title={t('votes')}
                                         onNavigate={() => handleNavigate('/votes')} isActive={activeIcon("/votes")}
-                                        menuOpen={menuOpen} icon={<VotesIcon />}/>
+                                        menuOpen={menuOpen} icon={<VotesIcon/>}/>
                         <TopBarMenuItem title={t('tournament')}
-                                        onNavigate={() => handleNavigate('/tournament')} isActive={activeIcon("/tournament")}
-                                        menuOpen={menuOpen} icon={<TournamentIcon />}/>
+                                        onNavigate={() => handleNavigate('/tournament')}
+                                        isActive={activeIcon("/tournament")}
+                                        menuOpen={menuOpen} icon={<TournamentIcon/>}/>
                         <TopBarMenuItem
                             title={t('donate')}
                             onNavigate={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}
                             isActive={activeIcon("/wallet")}
                             menuOpen={menuOpen}
-                            icon={<WalletIcon />}
+                            icon={<WalletIcon/>}
                         />
-
                     </div>
                     <div className={styles.hamburger} onClick={toggleMenu}>
                         <div className={styles.line}></div>

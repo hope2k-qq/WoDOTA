@@ -47178,6 +47178,32 @@
           }
         }
       },
+      "techies_minefield_sign": {
+        "name": "Minefield Sign",
+        "description": "На %lifetime% сек. устанавливает предостерегающую табличку, мины в области действия которой неуязвимы. Нельзя ставить больше одной таблички одновременно.",
+        "lifetime": "ДЛИТЕЛЬНОСТЬ ТАБЛИЧКИ:",
+        "lore": "Смотри под ноги!",
+        "aura_radius": "РАДИУС ДЕЙСТВИЯ:",
+        "values": {
+          "aura_radius": "500",
+          "lifetime": "60",
+          "minefield_duration": "10",
+          "trigger_radius": "200",
+          "abilitycastrange": "10",
+          "abilitymanacost": "0",
+          "abilitycooldown": "60"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "aura_radius": "РАДИУС ДЕЙСТВИЯ:",
+            "lifetime": "ДЛИТЕЛЬНОСТЬ ТАБЛИЧКИ:"
+          },
+          "values": {
+            "aura_radius": "500",
+            "lifetime": "60"
+          }
+        }
+      },
       "techies_land_mines": {
         "name": "Proximity Mines",
         "lore": "Ночной кошмар Тотерина!",
@@ -55599,6 +55625,42 @@
             "radius": "450",
             "base_damage": "75",
             "max_health_damage_pct": "3%"
+          }
+        }
+      },
+      "kez_switch_weapons": {
+        "name": "Switch Discipline",
+        "lore": "Главы казураев, как бывшие члены ордена Шодо, могут на лету переключаться между катаной и сай, демонстрируя мастерское владение двумя боевыми стилями.",
+        "description": "Герой меняет боевой стиль, переключаясь между катаной казураев и сай Шодо.\n\nУ каждого стиля свои способности и характеристики атаки. Способности, занимающие одну ячейку, имеют общие уровни и перезарядки для обоих стилей.\n\nПерезарядка этой способности уменьшается на %cooldown_reduction_per_level% сек. с каждым уровнем героя.",
+        "katana_base_attack_time": "БАЗОВЫЙ ИНТЕРВАЛ АТАК (КАТАНА):",
+        "katana_attack_range": "ДАЛЬНОСТЬ АТАКИ (КАТАНА):",
+        "katana_bonus_damage": "%ДОП. УРОН (КАТАНА):",
+        "sai_base_attack_time": "БАЗОВЫЙ ИНТЕРВАЛ АТАК (САЙ):",
+        "sai_attack_range": "ДАЛЬНОСТЬ АТАКИ (САЙ):",
+        "values": {
+          "katana_attack_range": "225",
+          "katana_base_attack_time": "2",
+          "katana_bonus_damage": "20",
+          "sai_attack_range": "150",
+          "sai_base_attack_time": "1.5",
+          "cooldown_reduction_per_level": "0.2",
+          "scepter_cooldown_timer": "3",
+          "abilitycooldown": "8"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "katana_attack_range": "ДАЛЬНОСТЬ АТАКИ (КАТАНА):",
+            "katana_base_attack_time": "БАЗОВЫЙ ИНТЕРВАЛ АТАК (КАТАНА):",
+            "katana_bonus_damage": "ДОП. УРОН (КАТАНА):",
+            "sai_attack_range": "ДАЛЬНОСТЬ АТАКИ (САЙ):",
+            "sai_base_attack_time": "БАЗОВЫЙ ИНТЕРВАЛ АТАК (САЙ):"
+          },
+          "values": {
+            "katana_attack_range": "225",
+            "katana_base_attack_time": "2",
+            "katana_bonus_damage": "20%",
+            "sai_attack_range": "150",
+            "sai_base_attack_time": "1.5"
           }
         }
       },

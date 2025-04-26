@@ -91,6 +91,7 @@
   height: 21px;
   margin-right: 4px;
   margin-left: 1px;
+  margin-bottom: 1px;
 }
 
 .attribute-icon{
@@ -418,6 +419,9 @@ input:checked + .slider:before {
   .filter-label, .attribute-label{
     font-size: 18px;
   }
+  .category-heroes{
+    gap: 0.3rem 0.45rem;
+  }
 
   .container-attribute{
     gap: 0.5rem;
@@ -479,6 +483,28 @@ input:checked + .slider:before {
   }
   .no-heroes-found-container{
     font-size: 1.5rem;
+  }
+  .category-heroes{
+    gap: 0.2rem 0.35rem;
+  }
+}
+
+@media (max-width: 550px){
+  .category-heroes{
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  }
+  .search-category-heroes{
+    grid-template-columns: repeat(auto-fit, minmax(115px, 115px));
+  }
+  .hero-name {
+    font-size: 10px;
+  }
+  .attribute-image{
+    width: 15px;
+    height: 15px;
+    margin-right: 2px;
+    margin-left: 1px;
+    margin-bottom: 2px;
   }
 }
 
