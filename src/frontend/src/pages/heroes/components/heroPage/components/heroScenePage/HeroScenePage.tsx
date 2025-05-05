@@ -50,7 +50,7 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
 
     useEffect(() => {
         const loadVideoFromNetwork = async () => {
-            if (imageLoaded && !cache) { // Загружаем только если изображение загружено
+            if ((imageLoaded || currentHero === 'jakiro') && !cache) {
                 await fetchAndCacheVideo(currentHero, setVideoBlob);
                 setVideoLoaded(true);
             }
@@ -78,7 +78,7 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
                     onLoad={handleImageLoad}
                 />
             )}
-            {imageLoaded && videoLoaded && (
+            {(imageLoaded || currentHero === 'jakiro') && videoLoaded && (
                 <video
                     ref={videoRef}
                     className={`${styles.heroVideo} ${styles[currentHero.replace(/'/g, '')] || ''}`}
