@@ -70,7 +70,7 @@ export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
     return (
         <div className={styles.canvasContainer}>
             <div className={styles.diagonalOverlay}></div>
-            {!(imageLoaded && videoLoaded) && !cache && (
+            {!(imageLoaded && videoLoaded) && !cache && currentHero !== 'jakiro' && (
                 <img
                     src={imageUrl || ""}
                     alt={`${currentHero}`}

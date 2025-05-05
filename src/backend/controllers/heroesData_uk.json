@@ -79,7 +79,7 @@
             "id": "modifier_woda_talent_quickhp",
             "talentInfo": "#woda_talent_quickhp",
             "level": "3",
-            "imagePath": "quickhp",
+            "imagePath": "quickhpquickhp",
             "relatedTalent": {}
           },
           {
@@ -3483,6 +3483,48 @@
       "modifier_lone_druid_22_1": "Нова Активна Здатність: <b><font color='#eabe10'>Spotlight, uh, Moonlight</font></b> \n\n Б'є випадкових ворогів неподалік променями від здатності Moonlight. Інтелект збільшує кількість променів. \n\n Інтелекту для Одного Променя: <b><font color='#eabe10'>25</font></b> \n Час Перезарядки: 80 сек."
     },
     "abilities": {
+      "lone_druid_spirit_bear": {
+        "name": "Summon Spirit Bear",
+        "description": "Закликає могутнього духа-ведмедя. Він не може атакувати, якщо відстань до власника більше%distance_silence%.\\nУ ведмедя є здібності Savage Roar і Entangling Claws.",
+        "bear_hp": "ЗДОРОВ'Я ВЕДМЕДЯ:",
+        "bear_regen_tooltip": "ВІДНОВЛЕННЯ ЗДОРОВ'Я ВЕДМЕДЯ:",
+        "bear_bat": "БАЗОВИЙ ІНТЕРВАЛ АТАК:",
+        "bear_armor": "БРОНЯ ВЕДМЕДЯ:",
+        "movespeed_tooltip": "ШВИДКІСТЬ ПЕРЕДВИЖЕННЯ ВЕДМЕДЯ:",
+        "lore": "Вічний компаньйон Сілли єдиний з його духом і серцем, приходячи йому на допомогу в будь-який час.",
+        "entangle": "Entangling Claws",
+        "entangle_hero_duration": "ТРИВАЛЬНІСТЬ:",
+        "values": {
+          "bear_hp": "1100 1400 1700 2000",
+          "bear_regen_tooltip": "5 6 7 8",
+          "bear_armor": "3 4 5 6",
+          "backlash_damage": "20",
+          "bear_bat": "1.75 1.65 1.55 1.45",
+          "movespeed_tooltip": "300 310 320 330",
+          "scale": "0.65 0.72 0.78 0.85",
+          "bonus_hp_per_level": "50",
+          "bonus_damage_per_level": "5",
+          "distance_silence": "1100",
+          "abilitycooldown": "50",
+          "abilitymanacost": "75"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "bear_hp": "ЗДОРОВ'Я ВЕДМЕДЯ:",
+            "bear_regen_tooltip": "ВІДНОВЛЕННЯ ЗДОРОВ'Я ВЕДМЕДЯ:",
+            "bear_armor": "БРОНЯ ВЕДМЕДЯ:",
+            "bear_bat": "БАЗОВИЙ ІНТЕРВАЛ АТАК:",
+            "movespeed_tooltip": "ШВИДКІСТЬ ПЕРЕДВИЖЕННЯ ВЕДМЕДЯ:"
+          },
+          "values": {
+            "bear_hp": "1100 / 1400 / 1700 / 2000",
+            "bear_regen_tooltip": "5 / 6 / 7 / 8",
+            "bear_armor": "3 / 4 / 5 / 6",
+            "bear_bat": "1.75 / 1.65 / 1.55 / 1.45",
+            "movespeed_tooltip": "300 / 310 / 320 / 330"
+          }
+        }
+      },
       "lone_druid_spirit_link": {
         "name": "Spirit Link",
         "description": "Аура збільшує швидкість атаки і вампіризм власника і всіх підконтрольних істот.",
@@ -52851,6 +52893,69 @@
             "path_duration": "3 / 3.5 / 4 / 4.5",
             "path_radius": "150",
             "damage": "50"
+          }
+        }
+      },
+      "jakiro_liquid_fire": {
+        "name": "Liquid Fire",
+        "description": "<b><font color='#F2A93E'>Рідке полум’я</font></b>\\nДодавши до своєї атаки вогонь, Джакіро обпікає ворогів у області дії та сповільнює їхні атаки.",
+        "lore": "Ліва паща Джакіро відкривається, знищуючи все на своєму шляху.",
+        "note0": "Діє як на істот, так і на споруди.",
+        "slow_attack_speed_pct": "ЗАУВАГА АТАКИ:",
+        "damage": "ВОГНІВИЙ УРОН:",
+        "duration": "ТРИВАЛЬНІСТЬ:",
+        "radius": "РАДІУС:",
+        "values": {
+          "slow_attack_speed_pct": "-30 -40 -50 -60",
+          "radius": "300",
+          "damage": "20 30 40 50",
+          "tick_rate": "0.5",
+          "building_dmg_pct": "75",
+          "duration": "5",
+          "abilitycooldown": "13 12 11 10",
+          "abilitycastrange": "600"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "slow_attack_speed_pct": "ЗАУВАГА АТАКИ:",
+            "radius": "РАДІУС:",
+            "damage": "ВОГНІВИЙ УРОН:",
+            "duration": "ТРИВАЛЬНІСТЬ:"
+          },
+          "values": {
+            "slow_attack_speed_pct": "-30 / -40 / -50 / -60",
+            "radius": "300",
+            "damage": "20 / 30 / 40 / 50",
+            "duration": "5"
+          }
+        }
+      },
+      "jakiro_liquid_ice": {
+        "name": "Liquid Frost",
+        "description": "<b><font color='#F2A93E'>Криготеча</font></b>\\nАтаки Джакіро морозять ворогів, сповільнюючи їхній рух на %duration% с та збільшуючи шкоду, яку вони зазнають від атак і здібностей Джакіро. Ефект не діє на споруди.",
+        "duration": "ТРИВАЛЬНІСТЬ:",
+        "movement_slow": "%ЗАУВАГА ПЕРЕДВИЖЕННЯ:",
+        "radius": "РАДІУС:",
+        "bonus_instance_damage_from_other_abilities": "ЗБІЛЬШЕННЯ УРОНУ:",
+        "values": {
+          "movement_slow": "-15 -20 -25 -30",
+          "bonus_instance_damage_from_other_abilities": "12 18 24 30",
+          "duration": "4",
+          "tick_rate": "0.5",
+          "damage": "10 15 20 25",
+          "abilitycooldown": "13 12 11 10",
+          "abilitycastrange": "600"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "movement_slow": "ЗАУВАГА ПЕРЕДВИЖЕННЯ:",
+            "bonus_instance_damage_from_other_abilities": "ЗБІЛЬШЕННЯ УРОНУ:",
+            "duration": "ТРИВАЛЬНІСТЬ:"
+          },
+          "values": {
+            "movement_slow": "-15% / -20% / -25% / -30%",
+            "bonus_instance_damage_from_other_abilities": "12 / 18 / 24 / 30",
+            "duration": "4"
           }
         }
       },

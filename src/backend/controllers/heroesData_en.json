@@ -79,7 +79,7 @@
             "id": "modifier_woda_talent_quickhp",
             "talentInfo": "#woda_talent_quickhp",
             "level": "3",
-            "imagePath": "quickhp",
+            "imagePath": "quickhpquickhp",
             "relatedTalent": {}
           },
           {
@@ -3483,6 +3483,48 @@
       "modifier_lone_druid_22_1": "New Active Ability: <b><font color='#eabe10'>Spotlight, uh, Moonlight</font></b> \n\n Hits random nearby enemies with beams from the Moonlight ability. Intellect increases the number of rays. \n\n Intellect per Beam: <b><font color='#eabe10'>25</font></b> \n Cooldown: 80 seconds"
     },
     "abilities": {
+      "lone_druid_spirit_bear": {
+        "name": "Summon Spirit Bear",
+        "description": "Summons a powerful Spirit Bear companion. If the bear moves %distance_silence% distance away from the Lone Druid, it cannot attack. \\nSpirit Bear has the Savage Roar and Entangling Claws abilities.",
+        "bear_hp": "BEAR HP:",
+        "bear_regen_tooltip": "BEAR HP REGEN:",
+        "bear_bat": "BEAR BASE ATTACK TIME:",
+        "bear_armor": "BEAR ARMOR:",
+        "movespeed_tooltip": "BEAR MOVESPEED:",
+        "lore": "Sylla's lifelong companion is symbiotic with his spirit and heart, coming to aid him in any time of need.",
+        "entangle": "Entangling Claws",
+        "entangle_hero_duration": "DURATION:",
+        "values": {
+          "bear_hp": "1100 1400 1700 2000",
+          "bear_regen_tooltip": "5 6 7 8",
+          "bear_armor": "3 4 5 6",
+          "backlash_damage": "20",
+          "bear_bat": "1.75 1.65 1.55 1.45",
+          "movespeed_tooltip": "300 310 320 330",
+          "scale": "0.65 0.72 0.78 0.85",
+          "bonus_hp_per_level": "50",
+          "bonus_damage_per_level": "5",
+          "distance_silence": "1100",
+          "abilitycooldown": "50",
+          "abilitymanacost": "75"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "bear_hp": "BEAR HP:",
+            "bear_regen_tooltip": "BEAR HP REGEN:",
+            "bear_armor": "BEAR ARMOR:",
+            "bear_bat": "BEAR BASE ATTACK TIME:",
+            "movespeed_tooltip": "BEAR MOVESPEED:"
+          },
+          "values": {
+            "bear_hp": "1100 / 1400 / 1700 / 2000",
+            "bear_regen_tooltip": "5 / 6 / 7 / 8",
+            "bear_armor": "3 / 4 / 5 / 6",
+            "bear_bat": "1.75 / 1.65 / 1.55 / 1.45",
+            "movespeed_tooltip": "300 / 310 / 320 / 330"
+          }
+        }
+      },
       "lone_druid_spirit_link": {
         "name": "Spirit Link",
         "description": "Aura of increased Attack Speed and lifesteal for the owner and all creatures they control.",
@@ -52846,6 +52888,69 @@
             "path_duration": "3 / 3.5 / 4 / 4.5",
             "path_radius": "150",
             "damage": "50"
+          }
+        }
+      },
+      "jakiro_liquid_fire": {
+        "name": "Liquid Fire",
+        "description": "Jakiro burns his enemies in an area of effect with fire added to his attack, while slowing their attacks.",
+        "lore": "The left maw of Jakiro opens, laying waste to any in its path.",
+        "note0": "Works on both units and buildings.",
+        "slow_attack_speed_pct": "ATTACK SLOW:",
+        "damage": "BURN DAMAGE:",
+        "duration": "DURATION:",
+        "radius": "RADIUS:",
+        "values": {
+          "slow_attack_speed_pct": "-30 -40 -50 -60",
+          "radius": "300",
+          "damage": "20 30 40 50",
+          "tick_rate": "0.5",
+          "building_dmg_pct": "75",
+          "duration": "5",
+          "abilitycooldown": "13 12 11 10",
+          "abilitycastrange": "600"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "slow_attack_speed_pct": "ATTACK SLOW:",
+            "radius": "RADIUS:",
+            "damage": "BURN DAMAGE:",
+            "duration": "DURATION:"
+          },
+          "values": {
+            "slow_attack_speed_pct": "-30 / -40 / -50 / -60",
+            "radius": "300",
+            "damage": "20 / 30 / 40 / 50",
+            "duration": "5"
+          }
+        }
+      },
+      "jakiro_liquid_ice": {
+        "name": "Liquid Frost",
+        "description": "Jakiro's attacks chill his enemies, slowing movement for %duration% seconds and increasing damage taken from Jakiro's attacks and abilities. This effect does not apply to buildings.",
+        "duration": "DURATION:",
+        "movement_slow": "%MOVEMENT SLOW:",
+        "radius": "RADIUS:",
+        "bonus_instance_damage_from_other_abilities": "BONUS DAMAGE:",
+        "values": {
+          "movement_slow": "-15 -20 -25 -30",
+          "bonus_instance_damage_from_other_abilities": "12 18 24 30",
+          "duration": "4",
+          "tick_rate": "0.5",
+          "damage": "10 15 20 25",
+          "abilitycooldown": "13 12 11 10",
+          "abilitycastrange": "600"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "movement_slow": "MOVEMENT SLOW:",
+            "bonus_instance_damage_from_other_abilities": "BONUS DAMAGE:",
+            "duration": "DURATION:"
+          },
+          "values": {
+            "movement_slow": "-15% / -20% / -25% / -30%",
+            "bonus_instance_damage_from_other_abilities": "12 / 18 / 24 / 30",
+            "duration": "4"
           }
         }
       },
