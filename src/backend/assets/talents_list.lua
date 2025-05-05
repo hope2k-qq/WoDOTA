@@ -65,7 +65,7 @@ local herotalents = {
 			},
 			[3] = {
 				{"empty_6"},
-				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 3, "quickhp", {}},
+				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 3, "quickhpquickhp", {}},
 				{"modifier_crystal_maiden_3","#modifier_crystal_maiden_3", 2, "crystal_maiden/3", {}},
 				{"empty_8"},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}

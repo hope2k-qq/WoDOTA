@@ -236,7 +236,6 @@ exports.getAllHeroesData = (req, res, lang) => {
         allHeroNames.forEach(heroName => {
             const abilityNames = abilitiesService.getHeroAbilities()[heroName];
             const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
-            console.log(heroTalentsInformation)
             const heroAttributes = getHeroAttributes(heroName);
 
             if (!abilityNames) {

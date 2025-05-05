@@ -25,7 +25,6 @@ const loadHeroTalents = () => {
         if (!herotalents) {
             throw new Error('No herotalents found in talents.lua');
         }
-
         herotalents = processHerotalents(herotalents);
     } catch (error) {
         console.error('Error parsing Lua:', error);
@@ -224,7 +223,6 @@ const processHeroTalentByName = (talents, heroName) => {
                 const heroBlock = match[1];
                 
                 const conflicts = heroBlock.match(modifierRegex);
-                console.log(heroBlock)
                 if (conflicts.length > 0) {
                     talentConflicts[heroKey] = Array.from(new Set(conflicts));
                 }
