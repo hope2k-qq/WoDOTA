@@ -13,7 +13,7 @@ const updateVotesData = async (app) => {
         const response = await axios.get('https://data.worldofdota.net/data/get_heroes_votes.php');
 
         cachedVotesData = response.data
-            .filter(hero => parseInt(hero.votes, 10) !== 500000)
+            .filter(hero => parseInt(hero.votes, 10) <= 450000)
             .map(hero => {
                 const heroName = hero.hero_name.replace('npc_dota_hero_', '');
                 const replacedHeroName = replacements_heroes[heroName] || heroName;

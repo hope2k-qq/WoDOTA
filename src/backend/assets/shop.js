@@ -7,7 +7,7 @@ var current_tab_shop = "ShopMenuButtonPlus"
 var PLAYER_DATA = CustomNetTables.GetTableValue("woda_player_data", String(Players.GetLocalPlayer()));
 
 // votes variables
-var HERO_VOTES_TABLE_MAX_COUNT = 500000 // max count votes
+var HERO_VOTES_TABLE_MAX_COUNT = 450000 // max count votes
 
 CustomNetTables.SubscribeNetTableListener( "woda_player_data", UpdatePlayerData );
 function UpdatePlayerData(table, key, data) 

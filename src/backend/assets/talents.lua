@@ -108,10 +108,13 @@ function wodatalents:talent_learn(params)
         end
     end
     if hero:GetUnitName() == "npc_dota_hero_lone_druid" then
-        if playerstalents[params.PlayerID]["modifier_lone_druid_1"] ~= nil then
+        if playerstalents[params.PlayerID]["modifier_lone_druid_7"] ~= nil then
             if params.talentname == "modifier_lone_druid_17" then return end
+            if params.talentname == "modifier_lone_druid_9" then return end
+        elseif playerstalents[params.PlayerID]["modifier_lone_druid_9"] ~= nil then
+            if params.talentname == "modifier_lone_druid_7" then return end
         elseif playerstalents[params.PlayerID]["modifier_lone_druid_17"] ~= nil then
-            if params.talentname == "modifier_lone_druid_1" then return end
+            if params.talentname == "modifier_lone_druid_7" then return end
         end
     end
     if hero:GetUnitName() == "npc_dota_hero_windrunner" then
@@ -133,6 +136,13 @@ function wodatalents:talent_learn(params)
             if params.talentname == "modifier_zuus_19" then return end
         elseif playerstalents[params.PlayerID]["modifier_zuus_19"] ~= nil then
             if params.talentname == "modifier_zuus_1" then return end
+        end
+    end
+    if hero:GetUnitName() == "npc_dota_hero_axe" then
+        if playerstalents[params.PlayerID]["modifier_axe_16"] ~= nil then
+            if params.talentname == "modifier_axe_9" then return end
+        elseif playerstalents[params.PlayerID]["modifier_axe_9"] ~= nil then
+            if params.talentname == "modifier_axe_16" then return end
         end
     end
 	if wodatalents:FindTalent(params.talentname, hero:GetUnitName()) then return end

@@ -21,6 +21,7 @@ import { Navigate } from "react-router-dom";
 import {Helmet} from "react-helmet-async";
 import {useMyData} from "../context/HeroesDataContext";
 import {useTranslation} from "react-i18next";
+//import {ArenaPage} from "../pages/games/arena/ArenaPage";
 
 interface RouteTitle {
     en: string;
@@ -34,13 +35,13 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
         path: "/",
         element: <HomePage />,
         title: {
-            en: "World of Dota (WoDOTA) is a custom game for Dota 2",
+            en: "World of Dota (WoDOTA) is a custom games for Dota 2",
             ru: "World of Dota (WoDOTA) — Водота, Ворлд оф Дота, кастомная игра Dota 2",
             uk: "World of Dota (WoDOTA) — Водота, Ворлд оф Дота, кастомна гра Dota 2",
             cs: "World of Dota (WoDOTA) je custom hra pro Dota 2"
         },
         description: {
-            en: "World of Dota (WoDOTA) is a unique game based on Dota 2. In it, players can test their strength in various modes, revealing the potential of each hero through a variety of unique talents.",
+            en: "World of Dota (WoDOTA) is a unique games based on Dota 2. In it, players can test their strength in various modes, revealing the potential of each hero through a variety of unique talents.",
             ru: "World of Dota (WoDOTA) — уникальная игра на базе Dota 2. В ней игроки могут испытать свои силы в различных режимах, раскрывая потенциал каждого героя через множество уникальных талантов.",
             uk: "World of Dota (WoDOTA) — унікальна гра на базі Dota 2. У ній гравці можуть випробувати свої сили в різних режимах, розкриваючи потенціал кожного героя через безліч унікальних талантів.",
             cs: "World of Dota (WoDOTA) je jedinečná hra založená na Dota 2. V ní si hráči mohou vyzkoušet své síly v různých režimech a odhalit potenciál každého hrdiny prostřednictvím mnoha unikátních talentů."
@@ -142,6 +143,22 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "Turnaje ve World of Dota (WoDOTA) — soutěžte, vítězte a pište historii!."
         }
     },
+    // {
+    //     path: "/games",
+    //     element: <ArenaPage />,
+    //     title: {
+    //         en: "World of Dota (WoDOTA) — Heroes",
+    //         ru: "World of Dota (WoDOTA) — Герои",
+    //         uk: "World of Dota (WoDOTA) — Герої",
+    //         cs: "World of Dota (WoDOTA) — Hrdinové"
+    //     },
+    //     description: {
+    //         en: "Discover the unique heroes of World of Dota (WoDOTA) — each with special abilities and talents!",
+    //         ru: "Откройте для себя уникальных героев World of Dota (WoDOTA) — каждый с особыми способностями и талантами!",
+    //         uk: "Познайте унікальних героїв World of Dota (WoDOTA) — кожен з особливими здібностями та талантами!",
+    //         cs: "Objevte jedinečné hrdiny World of Dota (WoDOTA) — každý s unikátními schopnostmi a talenty!"
+    //     }
+    // },
     {
         path: "/privacy-policy",
         element: <PrivacyPolicyPage />,

@@ -1332,43 +1332,14 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
-		"AbilityCooldown"				"8"
+		"AbilityChargeRestoreTime"				"8"
 		"AbilityManaCost"				"100"
 
 		"AbilityValues"
 		{
+            "AbilityCharges"            "1"
 			"crush_radius"				"350"
 			"crush_extra_slow"			"-10 -15 -20 -25"
-			"crush_attack_slow_tooltip"		"-20 -25 -30 -35"
-			"crush_extra_slow_duration"		"3 4 5 6"
-			"stun_duration"				"0.8"
-			"puddle_duration"			"3 4 5 6"
-			"puddle_radius"				"250"
-			"crush_damage"				"70 140 210 280"
-		}
-	}
-
-	"slardar_slithereen_crush_custom_2"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/npc_dota_hero_slardar_custom/slardar_slithereen_crush_custom"
-		"AbilityTextureName"			"slardar_slithereen_crush"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
-		"FightRecapLevel"				"1"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
-		"AbilityManaCost"				"100"
-		"AbilityCharges"				"2"
-		"AbilityChargeRestoreTime"		"11"
-
-		"AbilityValues"
-		{
-			"crush_radius"				"350"
-			"crush_extra_slow"			"-20 -25 -30 -35"
 			"crush_attack_slow_tooltip"		"-20 -25 -30 -35"
 			"crush_extra_slow_duration"		"3 4 5 6"
 			"stun_duration"				"0.8"
@@ -1437,7 +1408,7 @@
 		"AbilityCastRange"				"1300"
 		"AbilityCastPoint"				"0.4"
 		"AbilityCooldown"				"18 17 16 15"
-		"AbilityManaCost"				"100"
+		"AbilityManaCost"				"90"
 		"AbilityValues"
 		{
 			"radius"					"225"
@@ -1678,11 +1649,12 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastAnimation"			"ACT_DOTA_SLARK_POUNCE"
-		"AbilityCooldown"				"24.0 20.0 16.0 12.0"
+		"AbilityChargeRestoreTime"				"24.0 20.0 16.0 12.0"
 		"AbilityManaCost"				"75 75 75 75"
 
 		"AbilityValues"
 		{
+            "AbilityCharges"            "1"
 			"pounce_damage"				"0"
 			"pounce_distance"			"700"
 			"pounce_speed"				"933.33"
@@ -1690,33 +1662,6 @@
 			"pounce_radius"				"120"
 			"leash_duration"			"1.4 1.7 2 2.3"
 			"leash_radius"				"400"
-		}
-	}
-
-	"slark_pounce_custom_2"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/npc_dota_hero_slark_custom/slark_pounce_custom"
-		"AbilityTextureName"			"slark_pounce"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityCastAnimation"			"ACT_DOTA_SLARK_POUNCE"
-		"AbilityManaCost"				"75 75 75 75"
-		"AbilityCharges"				"2"
-		"AbilityChargeRestoreTime"		"22.0 18.0 14.0 10.0"
-
-		"AbilityValues"
-		{
-			"pounce_damage"				"0"
-			"pounce_distance"			"700"
-			"pounce_speed"				"933.33"
-			"pounce_acceleration"		"7000.0"
-			"pounce_radius"				"120"
-			"leash_duration"			"1.4 1.7 2 2.3"
-			"leash_radius"				"400"
-			"essence_stacks"			"0 1 2 3"
 		}
 	}
 
@@ -2617,7 +2562,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityCastRange"				"200 250 300"
+		"AbilityCastRange"				"200"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityManaCost"				"75 75 75"
@@ -2845,11 +2790,12 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.6"
-		"AbilityCooldown"				"75 65 55 45"
+		"AbilityChargeRestoreTime"				"75 65 55 45"
 		"AbilityManaCost"				"120 140 160 180"
 		
 		"AbilityValues"
 		{
+            "AbilityCharges"            "1"
 			"tombstone_health"					"10 12 14 16"
 			"hits_to_destroy_tooltip"			"4 5 6 7"
 			"duration"							"30.0"
@@ -2881,40 +2827,7 @@
 			"radius"					"400"
 		}
 	}
-
-	"undying_tombstone_custom_2"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/npc_dota_hero_undying_custom/undying_tombstone_custom"
-		"AbilityTextureName"			"undying_tombstone"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"FightRecapLevel"				"1"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-
-		"AbilityCastAnimation"			"ACT_DOTA_UNDYING_TOMBSTONE"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.6"
-		"AbilityManaCost"				"120 140 160 180"
-		"AbilityCharges"				"2"
-		"AbilityChargeRestoreTime"		"75 65 55 45"
-		
-		"AbilityValues"
-		{
-			"tombstone_health"					"10 12 14 16"
-			"hits_to_destroy_tooltip"			"4 5 6 7"
-			"duration"							"30.0"
-			"radius"				"1200"
-			"health_threshold_pct_tooltip"		"40"
-			"zombie_interval"		"8 7.2 6.4 5.6"
-			"zombie_damage_tooltip"			"68"
-
-			"attack_hero"					"2"
-			"attack_unit"					"0.5"
-		}
-	}
-
+    
 	"undying_flesh_golem_custom"
 	{
 		"BaseClass"						"ability_lua"
@@ -3567,60 +3480,6 @@
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"0"
 		"AbilityCharges"				"1 2 3 4"
-		"AbilityManaCost"				"80"
-		"AbilityChargeRestoreTime"		"38"
-
-		"AbilityValues"
-		{
-			"damage" 					"25 50 75 100"
-			"haunt_duration"			"5"
-			"siphon_buffer"				"250"
-		}
-	}
-	"death_prophet_spirit_siphon_custom_2"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/npc_dota_hero_death_prophet_custom/death_prophet_spirit_siphon_custom"
-		"AbilityTextureName"			"death_prophet_spirit_siphon"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityCastAnimation"			"ACT_DOTA_DP_SPIRIT_SIPHON"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"0"
-		"AbilityCharges"				"2 3 4 5"
-		"AbilityManaCost"				"80"
-		"AbilityChargeRestoreTime"		"38"
-
-		"AbilityValues"
-		{
-			"damage" 					"25 50 75 100"
-			"haunt_duration"			"5"
-			"siphon_buffer"				"250"
-		}
-	}
-	"death_prophet_spirit_siphon_custom_3"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/npc_dota_hero_death_prophet_custom/death_prophet_spirit_siphon_custom"
-		"AbilityTextureName"			"death_prophet_spirit_siphon"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityCastAnimation"			"ACT_DOTA_DP_SPIRIT_SIPHON"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"0"
-		"AbilityCharges"				"3 4 5 6"
 		"AbilityManaCost"				"80"
 		"AbilityChargeRestoreTime"		"38"
 
@@ -4293,41 +4152,15 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"AbilityCastRange"				"625 700 775 850"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"14"
+		"AbilityChargeRestoreTime"		"14"
 		"AbilityManaCost"				"70 90 110 130"
 
 		"AbilityValues"
 		{
+            "AbilityCharges"                "1"
 			"vision_range"			        "250"
 			"duration"				        "2.5 3 3.5 4"
 			"radius"				        "150"
-            "sprout_damage"					"70 140 210 280"
-			"sprout_damage_radius"			"275"
-		}
-	}
-
-	"furion_sprout_custom_charges"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/npc_dota_hero_furion_custom/furion_sprout_custom"
-		"AbilityTextureName"			"furion_sprout"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"MaxLevel"						"2"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-		"AbilityCastRange"				"850"
-		"AbilityCastPoint"				"0.2"
-		"AbilityManaCost"				"130"
-		"AbilityCharges"				"2 3"
-		"AbilityChargeRestoreTime"		"14"
-
-		"AbilityValues"
-		{
-			"vision_range"				"250"
-			"duration"					"6"
-			"radius"					"150"
             "sprout_damage"					"70 140 210 280"
 			"sprout_damage_radius"			"275"
 		}
@@ -6091,7 +5924,7 @@
 		"BaseClass"                     "ability_lua"
         "ScriptFile"                    "heroes/npc_dota_hero_lone_druid_custom/lone_druid_spirit_bear_custom" 
 		"AbilityTextureName"            "lone_druid_spirit_bear" 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"DisplayAdditionalHeroes"		"1"
 
 		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
@@ -8690,7 +8523,7 @@
         "AbilityTextureName"            "abaddon_death_coil"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange"				"600 625 650 675"
@@ -11533,30 +11366,31 @@
         "BaseClass"                                 "ability_lua"
         "ScriptFile"					            "heroes/npc_dota_hero_jakiro_custom/jakiro_liquid_fire_custom"
         "AbilityTextureName"                        "jakiro_liquid_fire"
-		"AbilityBehavior"				            "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				            "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitDamageType"			            "DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam"			            "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_DEAD"
 		"SpellImmunityType"				            "SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			            "SPELL_DISPELLABLE_YES"
-		"AbilityCooldown"				            "12"
+		"AbilityCooldown"				            "13 12 11 10"
 		"AbilityCastRange"				            "600"
 		"AbilityCastPoint"				            "0.0 0.0 0.0 0.0"
-        "MaxLevel"                                  "2"
+        "MaxLevel"                                  "4"
 		"AbilityCastAnimation"		                "ACT_DOTA_CAST_ABILITY_3"
+        "LinkedAbility"					            "jakiro_liquid_ice_custom"
 		"AbilityValues"
 		{
-			"slow_attack_speed_pct"                 "-25 -50"
+			"slow_attack_speed_pct"                 "-30 -40 -50 -60"
 			"radius"				
 			{
 				"value"		                        "300"
 				"affected_by_aoe_increase"	        "1"
 			}
-			"damage"                                "25 50"
+			"damage"                                "20 30 40 50"
 			"tick_rate"				                "0.5"
 			"building_dmg_pct"		                "75"
-            "duration"                              "4"
+            "duration"                              "5"
 		}		
 	}
 
@@ -11565,24 +11399,26 @@
         "BaseClass"                                         "ability_lua"
         "ScriptFile"					                    "heroes/npc_dota_hero_jakiro_custom/jakiro_liquid_ice_custom"
         "AbilityTextureName"                                "jakiro_liquid_ice"
-		"AbilityBehavior"				                    "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				                    "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitDamageType"			                    "DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam"			                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		                    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_DEAD"
 		"SpellImmunityType"				                    "SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			                    "SPELL_DISPELLABLE_YES"
-		"AbilityCooldown"				                    "12"
+		"AbilityCooldown"				                    "13 12 11 10"
 		"AbilityCastRange"				                    "600"
 		"AbilityCastPoint"				                    "0.0 0.0 0.0 0.0"
-        "MaxLevel"                                          "2"
+        "MaxLevel"                                          "4"
 		"AbilityCastAnimation"		                        "ACT_DOTA_CAST_ABILITY_3"
+        "LinkedAbility"					                    "jakiro_liquid_fire_custom"
 		"AbilityValues"
 		{
-            "movement_slow" 	                            "-15 -30"
-            "bonus_instance_damage_from_other_abilities"	"15 30"
+            "movement_slow" 	                            "-15 -20 -25 -30"
+            "bonus_instance_damage_from_other_abilities"	"12 18 24 30"
             "duration"                                      "4"
             "tick_rate"				                        "0.5"
+            "damage"                                        "10 15 20 25"
 		}		
 	}
 
@@ -12908,7 +12744,6 @@
             "push_length"                    "600"
 		}
 	}
-
     "winter_wyvern_frozen_cemetery"
 	{
 		"BaseClass"                     "ability_lua"
@@ -12932,6 +12767,260 @@
             "damage_percent"            "600"
             "radius"                    "575"
             "duration"                  "10"
+		}
+	}
+    "axe_berserkers_call_custom"
+	{
+		"BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_axe_custom/axe_berserkers_call_custom"
+        "AbilityTextureName"            "axe_berserkers_call"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastPoint"				"0.3"
+ 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCooldown"				"17 15 13 11"
+		"AbilityDamage"					"0 0 0 0"
+		"AbilityManaCost"				"80 90 100 110"	
+		"AbilityValues"
+		{
+			"radius"
+			{
+				"value"							"315"
+				"affected_by_aoe_increase"		"1"
+			}
+			"bonus_armor"						"12 13 14 15"
+			"duration"							"1.8 2.1 2.4 2.7"
+		}
+	}
+	"axe_battle_hunger_custom"
+	{
+		"BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_axe_custom/axe_battle_hunger_custom"
+        "AbilityTextureName"            "axe_battle_hunger"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+ 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCooldown"				"20 15 10 5"
+		"AbilityManaCost"				"50 60 70 80"		
+		"AbilityCastRange"				"700 775 850 925"
+		"AbilityValues"
+		{
+			"duration"								"12.0"
+			"slow"									"-15 -20 -25 -30"
+			"damage_per_second"	
+			{
+				"value"								"12 18 24 30"
+				"CalculateSpellDamageTooltip" 		"1"
+			}
+			"armor_multiplier"						"1"
+		}		
+	}
+	"axe_counter_helix_custom"
+	{
+		"BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_axe_custom/axe_counter_helix_custom"
+        "AbilityTextureName"            "axe_counter_helix"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Hero_Axe.CounterHelix"
+        "HasScepterUpgrade"             "1"
+		"IsBreakable"					"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+			"damage"					"100 120 140 160"
+			"trigger_attacks"			"7 6 5 4"
+			"radius"					
+			{
+				"value"						"275"
+				"affected_by_aoe_increase"	"1"
+			}
+			"AbilityCooldown"				"0.3"
+		}
+	}
+	"axe_culling_blade_custom"
+	{
+		"BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_axe_custom/axe_culling_blade_custom"
+        "AbilityTextureName"            "axe_culling_blade"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"80 75 70"
+		"AbilityManaCost"				"100 125 150"		
+		"AbilityCastRange"				"175"
+		"AbilityValues"
+		{
+			"damage"					"275 375 475"
+			"speed_bonus"				"20 25 30"
+			"armor_bonus"				"20 25 30"
+			"speed_duration"			"6"
+			"speed_aoe"						
+			{
+				"value"						"900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"charge_speed"					"1200"
+		}
+	}
+    "lina_dragon_slave_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_lina_custom/lina_dragon_slave_custom"
+        "AbilityTextureName"            "lina_dragon_slave"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastRange"				"1075"
+		"AbilityCastPoint"				"0.35"
+		"AbilityDuration"				"0.6875 0.6875 0.6875 0.6875"
+		"AbilityManaCost"				"100 110 120 130"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
+		{
+			"dragon_slave_damage"           "85 165 245 325"
+			"dragon_slave_speed"		    "1200"
+			"dragon_slave_width_initial"	
+			{
+				"value"		                "275"
+				"affected_by_aoe_increase"	"1"
+			}
+			"dragon_slave_width_end"		
+			{
+				"value"			            "200"
+				"affected_by_aoe_increase"	"1"
+			}
+			"dragon_slave_distance"			"1075"
+			"AbilityCooldown"		        "11 10 9 8"
+		}
+	}
+    "lina_light_strike_array_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_lina_custom/lina_light_strike_array_custom"
+        "AbilityTextureName"            "lina_light_strike_array"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+		"AbilityCooldown"				"13 11 9 7"
+		"AbilityManaCost"				"100 110 120 130"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
+		{
+            "light_strike_array_aoe"	
+            {
+                "value"                             "250"
+                "affected_by_aoe_increase"	        "1"
+            }
+            "light_strike_array_delay_time"	        "0.5"
+            "light_strike_array_stun_duration"	    "1.0 1.4 1.8 2.2"
+            "light_strike_array_damage"	            "110 160 210 260"
+		}
+	}
+    "lina_fiery_soul_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_lina_custom/lina_fiery_soul_custom"
+        "AbilityTextureName"            "lina_fiery_soul"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"					"1"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+			"fiery_soul_attack_speed_bonus"	        "8 16 24 32"
+			"fiery_soul_move_speed_bonus"	        "1.0 1.5 2 2.5"
+			"fiery_soul_max_stacks"				    "7"
+			"fiery_soul_stack_duration"			    "18"		
+		}
+	}
+    "lina_laguna_blade_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_lina_custom/lina_laguna_blade_custom"
+        "AbilityTextureName"            "lina_laguna_blade"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
+		"AbilityManaCost"				"150 300 450"
+		"AbilityValues"
+		{
+			"damage"                    "500 700 900"
+			"damage_delay"				"0.25"
+			"AbilityCooldown"           "70 60 50"
+		}
+	}
+    "lina_flame_cloak_custom"
+	{
+        "BaseClass"                             "ability_lua"
+        "ScriptFile"					        "heroes/npc_dota_hero_lina_custom/lina_flame_cloak_custom"
+        "AbilityTextureName"                    "lina_flame_cloak"
+		"AbilityBehavior"				        "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			        "SPELL_DISPELLABLE_NO"
+		"MaxLevel"						        "1"
+		"AbilityCooldown"				        "25"
+		"AbilityCastPoint"				        "0.0"
+		"AbilityManaCost"				        "50"
+        "AbilityCastAnimation"		            "ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		        "DEFAULT"
+		"AbilityValues"
+		{
+			"flame_cloak_duration"				"7"
+			"magic_resistance"					"35"
+			"spell_amp"							"35"
+			"visualzdelta"						"100"
+			"zchangespeed"						"350"					
+		}
+	}
+    "lina_brand_of_fire_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"					"heroes/npc_dota_hero_lina_custom/lina_brand_of_fire_custom"
+        "AbilityTextureName"            "lina_1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"100"
+        "MaxLevel"                      "3"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
+		{
+            "radius"                    "250"
+            "duration"                  "10"
+            "stun_duration"             "2"
+            "damage"                    "100 200 300"
+            "damage_delay"              "0.5"
 		}
 	}
 }

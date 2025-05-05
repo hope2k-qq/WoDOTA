@@ -16,7 +16,7 @@ export const VotesPage = () => {
 
     const API_URL = process.env.REACT_APP_API_URL;
 
-    const maxVotes = 500000;
+    const maxVotes = 450000;
 
     const fetchHeroVotes = useCallback(async () => {
         if (!API_URL) {
