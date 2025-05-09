@@ -65,7 +65,7 @@ local herotalents = {
 			},
 			[3] = {
 				{"empty_6"},
-				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 3, "quickhpquickhp", {}},
+				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 3, "quickhp", {}},
 				{"modifier_crystal_maiden_3","#modifier_crystal_maiden_3", 2, "crystal_maiden/3", {}},
 				{"empty_8"},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
@@ -9940,7 +9940,7 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
 				{"empty_9"},
-				{"modifier_lina_18","#modifier_lina_18", 2, "lina/18", {}},
+				{"modifier_lina_19","#modifier_lina_19", 2, "lina/19", {}},
 				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
@@ -9948,7 +9948,7 @@ local herotalents = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_lina_19","#modifier_lina_19", 2, "lina/19", {}},
+				{"modifier_lina_18","#modifier_lina_18", 2, "lina/18", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
