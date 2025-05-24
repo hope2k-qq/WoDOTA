@@ -21,6 +21,7 @@ import { Navigate } from "react-router-dom";
 import {Helmet} from "react-helmet-async";
 import {useMyData} from "../context/HeroesDataContext";
 import {useTranslation} from "react-i18next";
+//import {HeroBuildCreatePage} from "../pages/heroes/components/heroCreateBuildPage/HeroCreateBuildPage";
 //import {ArenaPage} from "../pages/games/arena/ArenaPage";
 
 interface RouteTitle {
@@ -95,6 +96,22 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "Objevte jedinečné schopnosti a talenty hrdiny!"
         }
     },
+    // {
+    //     path: "/hero-build/create",
+    //     element: <HeroBuildCreatePage />,
+    //     title: {
+    //         en: "World of Dota (WoDOTA) — Hero Build",
+    //         ru: "World of Dota (WoDOTA) — Билд на героя",
+    //         uk: "World of Dota (WoDOTA) — Білд на героя",
+    //         cs: "World of Dota (WoDOTA) — Build pro hrdinu"
+    //     },
+    //     description: {
+    //         en: "Hero build in World of Dota (WoDOTA) — the perfect way to diversify your gameplay!",
+    //         ru: "Билд для героя в World of Dota (WoDOTA) — идеальный вариант, чтобы разнообразить игру!",
+    //         uk: "Білд для героя в World of Dota (WoDOTA) — ідеальний варіант для різноманітності гри!",
+    //         cs: "Build pro hrdinu ve World of Dota (WoDOTA) — ideální způsob, jak zpestřit hru!"
+    //     }
+    // },
     {
         path: "/hero-build/:id",
         element: <HeroBuildPage />,

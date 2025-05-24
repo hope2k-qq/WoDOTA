@@ -9,6 +9,8 @@
     'vengefulspirit': 'vengeful_spirit',
     'antimage': 'anti-mage',
     'zuus': 'zeus',
+    'doom_bringer': 'doom',
+    'windrunner': 'windranger',
 };
 
 module.exports = replacements_heroes;

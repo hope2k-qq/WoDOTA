@@ -173,7 +173,6 @@ function getHeroData(heroName, abilityNames = [], lang) {
 
 
     const additionalAbilities = loadAdditionalAbilities(lang);
-    console.log(additionalAbilities)
     for (const [key, value] of Object.entries(additionalAbilities)) {
         const abilityKey = key.replace('DOTA_Tooltip_ability_', '');
         if (

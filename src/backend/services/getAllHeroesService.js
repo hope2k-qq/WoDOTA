@@ -21,7 +21,7 @@ const getAllHeroesService = {
 
             heroNames.push(heroName);
         }
-
+        
         return heroNames;
     }
 };
