@@ -7682,14 +7682,14 @@ local herotalents = {
 			[6] = {
 				{"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-				{"modifier_nyx_assassin_6","#modifier_nyx_assassin_6", 1, "nyx_assassin/6", {}},
+				{"empty_14"},
 				{"empty_15"},
-				{"empty_16"}
+				{"modifier_nyx_assassin_7","#modifier_nyx_assassin_7", 1, "nyx_assassin/7", {}}
 			},
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_nyx_assassin_7","#modifier_nyx_assassin_7", 1, "nyx_assassin/7", {}},
+				{"modifier_nyx_assassin_6","#modifier_nyx_assassin_6", 1, "nyx_assassin/6", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}

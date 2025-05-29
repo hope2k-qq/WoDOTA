@@ -52,34 +52,41 @@ export const VotesPage = () => {
         <div className={styles.container}>
             <div className={styles.title}>{t('voting_heroes')}</div>
             <div className={styles.grid}>
-                {votes.map((vote, index) => {
-                    const voteCount = parseInt(vote.votes, 10);
-                    const votePercentage = Math.min((voteCount / maxVotes) * 100, 100);
+                {votes
+                    .slice()
+                    .sort((a, b) => parseInt(b.votes, 10) - parseInt(a.votes, 10))
+                    .map((vote, index) => {
+                        const voteCount = parseInt(vote.votes, 10);
+                        const votePercentage = Math.min((voteCount / maxVotes) * 100, 100);
 
-                    return (
-                        <div key={index} className={styles.card}>
-                            <img
-                                src={`https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/heroes/${vote.hero_name}.png`}
-                                alt={vote.hero_name}
-                                className={styles.image}
-                            />
-                            <div className={styles.info}>
-                                {/*<div className={styles.heroName}>{vote.hero_name.toUpperCase()}</div>*/}
-                                <div className={styles.voteContainer}>
-                                    <div className={styles.progressBarContainer}>
-                                        <div
-                                            className={styles.progressBar}
-                                            style={{ width: `${votePercentage}%` }}
-                                        />
-                                        <div className={styles.voteText}>
-                                            {voteCount} / {maxVotes}
+                        return (
+                            <div key={index} className={styles.card}>
+                                <img
+                                    src={`https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/heroes/${vote.hero_name}.png`}
+                                    alt={vote.hero_name}
+                                    className={styles.image}
+                                />
+                                <div className={styles.info}>
+                                    <div className={styles.voteContainer}>
+                                        <div className={styles.progressBarContainer}>
+                                            <div
+                                                className={styles.progressBar}
+                                                style={{
+                                                    width: `${votePercentage}%`,
+                                                    backgroundColor: voteCount >= 450000 ? '#d9a600' : '#4caf50',
+                                                }}
+                                            />
+                                            <div className={styles.voteText}>
+                                                {voteCount >= 450000
+                                                    ? t('in_development')
+                                                    : `${voteCount} / ${maxVotes}`}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
             </div>
         </div>
     );

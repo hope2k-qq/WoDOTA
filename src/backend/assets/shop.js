@@ -776,10 +776,16 @@ function InitHeroVotes()
     $("#HeroListVotes").RemoveAndDeleteChildren()
     let heroes_votes = CustomNetTables.GetTableValue("heroes_votes", "heroes_votes")
     let heroes_table = GenerateTableVotes(heroes_votes)
-
-    for (var i = 0; i < Object.keys(HERO_VOTES_TABLE).length; i++) 
+    let heroesArray = [];
+    for (let hero_id in HERO_VOTES_TABLE) 
     {
-        CreateHeroPanelVotes($("#HeroListVotes"), HERO_VOTES_TABLE[i], heroes_table[HERO_VOTES_TABLE[i]])
+        let heroName = HERO_VOTES_TABLE[hero_id];
+        heroesArray.push({name: heroName, votes: heroes_table[heroName] || 0});
+    }
+    heroesArray.sort((a, b) => b.votes - a.votes);
+    for (let i = 0; i < heroesArray.length; i++) 
+    {
+        CreateHeroPanelVotes($("#HeroListVotes"), heroesArray[i].name, heroesArray[i].votes);
     }
 }
 
