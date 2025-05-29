@@ -54,15 +54,15 @@ const startServer = async () => {
         app.listen(port, () => {
             console.log(`Server is running on port ${port}`);
 
-            // setInterval(async () => {
-            //     await updateVotesData(app.locals.sitemap);
-            // }, 5 * 60 * 1000);
-            // setInterval(async () => {
-            //     await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
-            // }, 5 * 60 * 1000);
-            // setInterval(async () => {
-            //     await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
-            // }, 999 * 60 * 1000);
+            setInterval(async () => {
+                await updateVotesData(app.locals.sitemap);
+            }, 5 * 60 * 1000);
+            setInterval(async () => {
+                await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
+            }, 5 * 60 * 1000);
+            setInterval(async () => {
+                await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
+            }, 999 * 60 * 1000);
             async function runSequentially() {
                 try {
                     await updateVotesData(app.locals.sitemap);
