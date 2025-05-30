@@ -3,6 +3,8 @@ import axios from "axios";
 import React, {useEffect, useState, useCallback} from "react";
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
 import {useTranslation} from "react-i18next";
+import {openDB} from "idb";
+import {getImageUrl} from "../../utils/r2Storage";
 
 interface Player {
     steamid: string;
@@ -34,6 +36,103 @@ export const LeaderboardPage = () => {
     const [arenaGroup, setArenaGroup] = useState<string>("1");
     const [searchTerm, setSearchTerm] = useState("");
     const API_URL = process.env.REACT_APP_API_URL;
+    const [imageUrl, setImageUrl] = useState<{ [key: string]: string | null }>({});
+    const CACHE_VERSION = 4;
+
+    useEffect(() => {
+        const cachedVersion = localStorage.getItem('cache-version');
+
+        if (cachedVersion !== CACHE_VERSION.toString()) {
+            localStorage.clear();
+
+            openDB('heroes-db', CACHE_VERSION, {
+                upgrade(db, oldVersion, newVersion) {
+                    if (newVersion !== null && newVersion > oldVersion) {
+                        if (!db.objectStoreNames.contains('heroes')) {
+                            db.createObjectStore('heroes');
+                        }
+                    }
+                }
+            }).then(() => {
+                localStorage.setItem('cache-version', CACHE_VERSION.toString());
+            }).catch(err => {
+                console.error('Error during DB upgrade:', err);
+            });
+        }
+
+        const dbPromise = openDB('heroes-db', CACHE_VERSION, {
+            upgrade(db, oldVersion, newVersion) {
+                if (newVersion !== null && newVersion > oldVersion) {
+                    if (!db.objectStoreNames.contains('heroes')) {
+                        db.createObjectStore('heroes');
+                    }
+                }
+            }
+        });
+
+        const fetchHeroesData = async () => {
+            try {
+                const response = await axios.get(`${API_URL}/heroes`);
+                const data = response.data;
+                // setHeroes(data);
+
+                const db = await dbPromise;
+                const updatedUrls: { [key: string]: string | null } = {};
+                const imagePromises: Promise<void>[] = [];
+
+                const imagesStore = db.transaction('heroes', 'readonly').objectStore('heroes');
+                for (const hero of data) {
+                    const cachedImage = await imagesStore.get(hero.name);
+                    if (cachedImage) {
+                        updatedUrls[hero.name] = URL.createObjectURL(cachedImage);
+                    } else {
+                        updatedUrls[hero.name] = null;
+                    }
+                }
+
+                // setLoading(false);
+                setImageUrl(updatedUrls);
+
+                for (const hero of data) {
+                    if (!updatedUrls[hero.name]) {
+                        imagePromises.push(
+                            (async () => {
+                                const url = await getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`);
+                                if (url) {
+                                    const response = await fetch(url);
+                                    const imageBlob = await response.blob();
+
+                                    const imagesStore = db.transaction('heroes', 'readwrite').objectStore('heroes');
+                                    await imagesStore.put(imageBlob, hero.name);
+
+                                    updatedUrls[hero.name] = URL.createObjectURL(imageBlob);
+
+                                    setImageUrl(prevState => ({
+                                        ...prevState,
+                                        [hero.name]: updatedUrls[hero.name],
+                                    }));
+                                } else {
+                                    console.error(`Image URL for hero ${hero.name} not found.`);
+                                }
+                            })()
+                        );
+                    }
+                }
+
+                await Promise.all(imagePromises);
+
+            } catch (error) {
+                console.error('Error fetching hero data:', error);
+                // setError('Failed to fetch hero data.');
+            } finally {
+                // setLoading(false);
+            }
+        };
+
+        fetchHeroesData().catch(err => {
+            console.error('Error in fetchHeroesData:', err);
+        });
+    }, [API_URL]);
 
     const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
 
@@ -110,8 +209,7 @@ export const LeaderboardPage = () => {
     ) || [];
 
     const handleHeroClick = (hero: string) => {
-        const heroName = hero.replace("npc_dota_hero_", "");
-        window.open(`/hero/${heroName}`, "_blank");
+        window.open(`/hero/${hero}`, "_blank");
     };
 
     if (loadingRating) {
@@ -267,10 +365,7 @@ export const LeaderboardPage = () => {
                                                 {playerGroup.heroes[idx] && (
                                                     <div className={styles.topPlayerHeroesContainer}>
                                                         <img
-                                                            src={`https://cdn.dota2.com/apps/dota2/images/heroes/${playerGroup.heroes[idx].replace(
-                                                                "npc_dota_hero_",
-                                                                ""
-                                                            )}_full.png`}
+                                                            src={imageUrl[playerGroup.heroes[idx]] || ""}
                                                             onClick={() => handleHeroClick(playerGroup.heroes[idx])}
                                                             alt={playerGroup.heroes[idx]}
                                                             className={`${styles.heroIconTop} ${styles[`heroIcon_border_${playerGroup.rank}`]}`}
@@ -294,17 +389,13 @@ export const LeaderboardPage = () => {
                                                 </div>
                                                 <div className={styles.topPlayerHeroesContainer}>
                                                     <img
-                                                        src={`https://cdn.dota2.com/apps/dota2/images/heroes/${playerGroup.heroes[0].replace(
-                                                            "npc_dota_hero_",
-                                                            ""
-                                                        )}_full.png`}
+                                                        src={imageUrl[playerGroup.heroes[0]] || ""}
                                                         alt={playerGroup.heroes[0]}
                                                         onClick={() => handleHeroClick(playerGroup.heroes[0])}
                                                         className={`${styles.heroIconTop} ${styles[`heroIcon_border_${playerGroup.rank}`]}`}
                                                     />
                                                 </div>
                                             </div>
-
 
                                             <div>
                                                 <div
@@ -322,10 +413,7 @@ export const LeaderboardPage = () => {
                                                     {playerGroup.heroes.slice(1, 3).map((hero, idx) => (
                                                         <img
                                                             key={idx + 1}
-                                                            src={`https://cdn.dota2.com/apps/dota2/images/heroes/${hero.replace(
-                                                                "npc_dota_hero_",
-                                                                ""
-                                                            )}_full.png`}
+                                                            src={imageUrl[hero] || ""}
                                                             alt={hero}
                                                             onClick={() => handleHeroClick(hero)}
                                                             className={`${styles.heroIconTop} ${styles[`heroIcon_border_${playerGroup.rank}`]}`}
@@ -349,10 +437,7 @@ export const LeaderboardPage = () => {
                                     </div>
                                     <div className={styles.topPlayerHeroesContainer}>
                                         <img
-                                            src={`https://cdn.dota2.com/apps/dota2/images/heroes/${playerGroup.heroes[0].replace(
-                                                "npc_dota_hero_",
-                                                ""
-                                            )}_full.png`}
+                                            src={imageUrl[playerGroup.heroes[0]] || ""}
                                             alt={playerGroup.heroes[0]}
                                             onClick={() => handleHeroClick(playerGroup.heroes[0])}
                                             className={`${styles.heroIconTop} ${styles[`heroIcon_border_${playerGroup.rank}`]}`}
@@ -424,10 +509,7 @@ export const LeaderboardPage = () => {
                                             .map((hero, idx) => (
                                                 <img
                                                     key={idx}
-                                                    src={`https://cdn.dota2.com/apps/dota2/images/heroes/${hero.replace(
-                                                        "npc_dota_hero_",
-                                                        ""
-                                                    )}_full.png`}
+                                                    src={imageUrl[hero] || ""}
                                                     alt={hero}
                                                     onClick={() => handleHeroClick(hero)}
                                                     className={`${styles.heroIcon} ${styles.heroIcon_border_table}`}
@@ -456,10 +538,7 @@ export const LeaderboardPage = () => {
                                                         .map((hero, idx) => (
                                                             <img
                                                                 key={idx}
-                                                                src={`https://cdn.dota2.com/apps/dota2/images/heroes/${hero.replace(
-                                                                    "npc_dota_hero_",
-                                                                    ""
-                                                                )}_full.png`}
+                                                                src={imageUrl[hero] || ""}
                                                                 alt={hero}
                                                                 onClick={() => handleHeroClick(playerGroup.heroes[idx])}
                                                                 className={styles.modalHeroIcon}

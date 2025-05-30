@@ -1,4 +1,10 @@
 ﻿const axios = require('axios');
+const replacements_heroes = require('../config/replacements_heroes');
+
+const cleanHeroName = (hero) => {
+    const name = hero.replace('npc_dota_hero_', '');
+    return replacements_heroes[name] || name;
+};
 
 const fetchRatingData = async () => {
     try {
@@ -13,7 +19,19 @@ const fetchRatingData = async () => {
 const fetchArenaData = async () => {
     try {
         const response = await axios.get('https://data.worldofdota.net/data/get_top_rating_pve_arena.php');
-        return response.data;
+        const rawData = response.data;
+        const cleanedData = {};
+        for (const key in rawData) {
+            if (Array.isArray(rawData[key])) {
+                cleanedData[key] = rawData[key].map(entry => ({
+                    ...entry,
+                    hero_1: cleanHeroName(entry.hero_1),
+                    hero_2: cleanHeroName(entry.hero_2),
+                    hero_3: cleanHeroName(entry.hero_3),
+                }));
+            }
+        }
+        return cleanedData;
     } catch (error) {
         console.error('Error fetching arena data:', error.message);
         throw new Error('Failed to fetch arena data');

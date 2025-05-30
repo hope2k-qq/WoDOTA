@@ -62,11 +62,22 @@ export const TopBar = () => {
 
     const activeIcon = (path: string) => {
         if (!path) return true;
+
         const { pathname } = location;
-        const isExactMatch = pathname === path;
-        const isHeroesSection =  path === "/heroes" && (pathname.startsWith("/hero/") || (pathname.startsWith("/hero-build/")));
+
+        const pathParts = pathname.split('/');
+        const langPrefix = pathParts.length > 1 ? `/${pathParts[1]}` : '';
+
+        const isExactMatch = pathname === `${langPrefix}${path}`;
+
+        const isHeroesSection = path === "/heroes" && (
+            pathname.startsWith(`${langPrefix}/hero/`) ||
+            pathname.startsWith(`${langPrefix}/hero-build/`)
+        );
+
         return isExactMatch || isHeroesSection;
     };
+
 
 
 
