@@ -8,6 +8,7 @@ app.use(express.json());
 const { updateVotesData } = require('./controllers/votesController');
 const { updateDataSequentially } = require('./controllers/leaderboardController');
 const { updateDataSequentiallyTournament } = require('./controllers/tournamentsController');
+const { updateCreatorsVideosData } = require('./controllers/youtubeController');
 
 // const allowedTokens = ['your-secure-token'];
 
@@ -63,11 +64,15 @@ const startServer = async () => {
             setInterval(async () => {
                 await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
             }, 999 * 60 * 1000);
+            setInterval(async () => {
+                await updateCreatorsVideosData(app.locals.sitemap);
+            }, 60 * 60 * 1000);
             async function runSequentially() {
                 try {
                     await updateVotesData(app.locals.sitemap);
                     await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
-                    await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players)
+                    await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
+                    await updateCreatorsVideosData(app.locals.sitemap);
                 } catch (err) {
                     console.error("Ошибка при выполнении операций:", err);
                 }

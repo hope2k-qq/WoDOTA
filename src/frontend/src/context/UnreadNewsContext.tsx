@@ -1,4 +1,3 @@
-// context/UnreadNewsContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 interface UnreadNewsContextType {
@@ -14,28 +13,22 @@ export const UnreadNewsProvider: React.FC<{ children: ReactNode }> = ({ children
     const [unreadNewsCount, setUnreadNewsCount] = useState<number>(0);
     const API_URL = process.env.REACT_APP_API_URL;
 
-    // Загружаем количество непрочитанных новостей из localStorage и API при старте приложения
     useEffect(() => {
         const loadNewsData = async () => {
             try {
-                // Получаем новости с сервера
-                const res = await fetch(`${API_URL}/news`);
+                const res = await fetch(`${API_URL}/news/en`);
                 const data = await res.json();
 
                 const fetchedNews = Array.isArray(data) ? data : data.news || [];
 
-                // Получаем из localStorage, какие новости уже прочитаны
                 const storedReadNews = JSON.parse(localStorage.getItem('readNews') || '[]');
 
-                // Определяем непрочитанные новости
                 const unreadNewsIds = fetchedNews
                     .map((news: { id: number }) => news.id)
                     .filter((id: number) => !storedReadNews.includes(id));
 
-                // Обновляем количество непрочитанных новостей
                 setUnreadNewsCount(unreadNewsIds.length);
 
-                // Сохраняем количество непрочитанных новостей в localStorage
                 localStorage.setItem('unreadNewsCount', unreadNewsIds.length.toString());
 
             } catch (err) {
@@ -46,26 +39,21 @@ export const UnreadNewsProvider: React.FC<{ children: ReactNode }> = ({ children
         loadNewsData();
     }, [API_URL]);
 
-    // Функция для обновления количества непрочитанных новостей
     const updateUnreadNewsCount = (newsIds: number[]) => {
         const storedReadNews = JSON.parse(localStorage.getItem('readNews') || '[]');
 
-        // Определяем непрочитанные новости
         const unreadNewsIds = newsIds.filter((id) => !storedReadNews.includes(id));
         setUnreadNewsCount(unreadNewsIds.length);
 
-        // Сохраняем количество непрочитанных новостей в localStorage
         localStorage.setItem('unreadNewsCount', unreadNewsIds.length.toString());
     };
 
-    // Помечаем новость как прочитанную
     const markNewsAsRead = (id: number) => {
         const storedReadNews = JSON.parse(localStorage.getItem('readNews') || '[]');
         if (!storedReadNews.includes(id)) {
             storedReadNews.push(id);
             localStorage.setItem('readNews', JSON.stringify(storedReadNews));
 
-            // Обновляем количество непрочитанных новостей
             updateUnreadNewsCount([]);
         }
     };
@@ -79,7 +67,6 @@ export const UnreadNewsProvider: React.FC<{ children: ReactNode }> = ({ children
     );
 };
 
-// Хук для использования контекста
 export const useUnreadNews = (): UnreadNewsContextType => {
     const context = useContext(UnreadNewsContext);
     if (!context) {

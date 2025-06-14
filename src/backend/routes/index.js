@@ -12,7 +12,7 @@ const tournamentsRoutes = require('./tournamentsRoutes');
 const sitemapRoutes = require('./sitemapRoutes');
 const subscribersRoutes = require('./subscribersRoutes');
 const itemsRoutes = require('./itemsRoutes');
-const twitchRoutes = require('./twitchRoutes');
+const youtubeRoutes = require('./youtubeRoutes');
 
 router.use('/', homeRoutes);
 router.use('/', heroesRoutes);
@@ -26,6 +26,6 @@ router.use('/', tournamentsRoutes);
 router.use('/', sitemapRoutes);
 router.use('/', subscribersRoutes);
 router.use('/', itemsRoutes);
-router.use('/', twitchRoutes);
+router.use('/', youtubeRoutes);
 
 module.exports = router;
