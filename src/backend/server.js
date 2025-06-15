@@ -69,9 +69,9 @@ const startServer = async () => {
             }, 60 * 60 * 1000);
             async function runSequentially() {
                 try {
-                    // await updateVotesData(app.locals.sitemap);
-                    // await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
-                    // await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
+                    await updateVotesData(app.locals.sitemap);
+                    await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
+                    await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
                     await updateCreatorsVideosData(app.locals.sitemap);
                 } catch (err) {
                     console.error("Ошибка при выполнении операций:", err);
