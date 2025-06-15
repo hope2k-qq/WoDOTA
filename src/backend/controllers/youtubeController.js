@@ -3,7 +3,7 @@
 let cachedCreatorsVideosData = null;
 let updating = false;
 
-const API_KEY = 'AIzaSyA1x-6Wt5qQqlRez9PDuKEnRBa26Sl0Xjs';
+const API_KEY = process.env.YOUTUBE_API_KEY;
 
 const KEYWORDS = ['world of dota', 'wodota', 'ворлд оф дота', 'водота', 'worldofdota', 'wodota', 'ворлдофдота'];
 const CHANNEL_IDS = [
