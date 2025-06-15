@@ -79,18 +79,23 @@ async function filterOutLiveAndStreamRecords(videos) {
     if (videos.length === 0) return [];
 
     const videoIds = videos.map(v => v.snippet.resourceId.videoId).join(',');
-    const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,liveStreamingDetails&id=${videoIds}&key=${API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,liveStreamingDetails,contentDetails&id=${videoIds}&key=${API_KEY}`;
     const response = await axios.get(url);
 
     const filteredVideoIds = response.data.items
         .filter(video => {
             const snippet = video.snippet;
             const liveDetails = video.liveStreamingDetails;
+            const duration = video.contentDetails.duration;
             
             if (snippet.liveBroadcastContent !== 'none') {
                 return false;
             }
             if (liveDetails && liveDetails.actualEndTime) {
+                return false;
+            }
+            const seconds = parseISO8601Duration(duration);
+            if (seconds <= 61) {
                 return false;
             }
             return true;
@@ -99,6 +104,21 @@ async function filterOutLiveAndStreamRecords(videos) {
 
     return videos.filter(v => filteredVideoIds.includes(v.snippet.resourceId.videoId));
 }
+
+function parseISO8601Duration(duration) {
+    const regex = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/;
+    const match = duration.match(regex);
+    if (!match) return 0;
+
+    const hours = match[1] ? parseInt(match[1], 10) : 0;
+    const minutes = match[2] ? parseInt(match[2], 10) : 0;
+    const seconds = match[3] ? parseInt(match[3], 10) : 0;
+
+    return hours * 3600 + minutes * 60 + seconds;
+}
+
+
+
 
 function filterByKeywords(videos, keywords) {
     const lowerKeywords = keywords.map(k => k.toLowerCase());
