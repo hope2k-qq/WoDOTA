@@ -20,6 +20,8 @@ const CHANNEL_IDS2 = [
     'UCS618757Yo1vOBsFvdulcUw', //Drainblade
     'UCqjKGSC3YsNJSQOQGZZSH5g', //raze1x6
     'UCYaGSZCnij0ereDzFaPYpkg', //luikapov
+    'UCn5XpY0AoF7KSMplGHvKqkg', //Shidorobi
+    'UCrY4xd3S9Rar3OFTZpmMsIQ', //Paradox_1s
 ];
 
 async function getUploadsPlaylistId(channelId) {
@@ -87,11 +89,13 @@ async function filterOutLiveAndStreamRecords(videos) {
             const snippet = video.snippet;
             const liveDetails = video.liveStreamingDetails;
             const duration = video.contentDetails.duration;
-            
-            if (snippet.liveBroadcastContent !== 'none') {
-                return false;
-            }
-            if (liveDetails && liveDetails.actualEndTime) {
+            const publishedAt = new Date(snippet.publishedAt);
+            const actualStart = liveDetails?.actualStartTime ? new Date(liveDetails.actualStartTime) : null;
+            const isPremiere = actualStart && publishedAt.getTime() === actualStart.getTime();
+            if (
+                (snippet.liveBroadcastContent !== 'none' ||
+                    (liveDetails && liveDetails.actualEndTime)) && !isPremiere
+            ) {
                 return false;
             }
             const seconds = parseISO8601Duration(duration);
