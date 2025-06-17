@@ -58,7 +58,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 108.5px;
+  padding-top: 102.5px;
   height: 100%;
 }
 
@@ -89,7 +89,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  gap: 0.3rem;
+  gap: 0.7rem;
   background-color: rgb(18, 19, 26);
   padding: 0.6rem 0;
 }
@@ -494,6 +494,11 @@ body.no-scroll {
   }
 }
 
+@media (min-width: 900px) {
+  .topbar_menu_open{
+    padding-top: 108.5px;
+  }
+}
 
 @media (max-width: 900px) {
   .topbar_left {
