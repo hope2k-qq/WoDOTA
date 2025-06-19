@@ -69,7 +69,7 @@ export const CreatorsVideosPage = () => {
                         <div className={styles.info}>
                         <div>
                                 <div className={styles.authorInfo}>
-                                    <a href={video.authorUrl} target="_blank" rel="noopener noreferrer">
+                                    <a href={video.authorUrl} target="_blank" rel="noopener noreferrer" className={styles.imageWrapperAvatar}>
                                         <img
                                             // src={video.authorAvatar}
                                             src={`${API_URL}/youtube/image-proxy?url=${encodeURIComponent(video.authorAvatar)}`}

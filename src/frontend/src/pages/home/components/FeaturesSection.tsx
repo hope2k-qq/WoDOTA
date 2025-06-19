@@ -2,12 +2,14 @@ import React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./features_section.module.scss";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 
 export const FeaturesSection: React.FC = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const location = useLocation();
+    const lang = location.pathname.split('/')[1];
 
     return (
         <section className={styles.features_section}>
@@ -53,7 +55,7 @@ export const FeaturesSection: React.FC = () => {
                             <p className={styles.modeDescription}>
                                 {t('unique_talents_description1')}{" "}<strong style={{ whiteSpace: "nowrap" }}>Dota 2</strong>{t('unique_talents_description2')}
                             </p>
-                            <button className={styles.btn} onClick={() => navigate('/heroes')}>
+                            <button className={styles.btn} onClick={() => navigate(`/${lang}/heroes`)}>
                                 {t('all_heroes')}
                             </button>
                         </div>
@@ -65,7 +67,7 @@ export const FeaturesSection: React.FC = () => {
                         <div className={styles.textBlockSolo}>
                             <h3 className={styles.modeTitle} style={{marginTop: 0}}>{t('test_strength_tournaments')}</h3>
                             <p className={styles.modeDescription}>{t('strength_tournaments_description')}</p>
-                            <button className={styles.btn} onClick={() => navigate('/tournament')}>
+                            <button className={styles.btn} onClick={() => navigate(`/${lang}/tournament`)}>
                                 {t('to_tournaments')}
                             </button>
                         </div>

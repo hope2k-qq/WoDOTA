@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { openDB } from 'idb';
 import styles from "./heroes_section.module.scss";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {getImageUrl} from "../../../utils/r2Storage";
 import {useTranslation} from "react-i18next";
 
 
 const HeroCard: React.FC<{ hero: any; imageUrl: string | null }> = ({ hero, imageUrl }) => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const lang = location.pathname.split('/')[1];
     const getAttributeImage = (attr: string) => {
         switch (attr) {
             case 'str':
@@ -25,7 +27,7 @@ const HeroCard: React.FC<{ hero: any; imageUrl: string | null }> = ({ hero, imag
     };
     return (
         <div
-            onClick={() => navigate(`/hero/${hero.name}`)}
+            onClick={() => navigate(`/${lang}/hero/${hero.name}`)}
             className={styles['hero-card']}
         >
             <img
@@ -51,6 +53,8 @@ const HeroCard: React.FC<{ hero: any; imageUrl: string | null }> = ({ hero, imag
 const HeroesSection: React.FC = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const location = useLocation();
+    const lang = location.pathname.split('/')[1];
     const [imageUrl, setImageUrl] = useState<{ [key: string]: string | null }>({});
     // const [heroes, setHeroes] = useState<any[]>([]); // Store all heroes
     const [groupedHeroes, setGroupedHeroes] = useState<any[][]>([]); // Store groups of heroes
@@ -142,8 +146,7 @@ const HeroesSection: React.FC = () => {
 
                 await Promise.all(imagePromises);
 
-                // After data fetch, split heroes into 5 random groups
-                const shuffledHeroes = data.sort(() => Math.random() - 0.5); // Shuffle heroes randomly
+                const shuffledHeroes = data.sort(() => Math.random() - 0.5);
                 const groups: any[][] = [];
                 const groupSize = Math.ceil(shuffledHeroes.length / 5);
 
@@ -151,7 +154,7 @@ const HeroesSection: React.FC = () => {
                     groups.push(shuffledHeroes.splice(0, groupSize));
                 }
 
-                setGroupedHeroes(groups); // Set the groups of heroes
+                setGroupedHeroes(groups);
 
             } catch (error) {
                 console.error('Error fetching hero data:', error);
@@ -181,7 +184,7 @@ const HeroesSection: React.FC = () => {
                     <span className={styles.text1}>{t('who_choose_part1')}</span>
                     <span className={styles.text2}>{t('who_choose_part2')}</span>
                     <p className={styles.description}>{t('who_choose_description')}</p>
-                    <button className={styles.btn} onClick={() => navigate('/heroes')}>
+                    <button className={styles.btn} onClick={() => navigate(`/${lang}/heroes`)}>
                         {t('all_heroes')}
                     </button>
                 </div>
