@@ -1575,7 +1575,7 @@
     {
         "AbilityValues"
         {
-            "mana_reduction_pct"          "10"
+            "mana_reduction_pct"          "-10"
             "cast_range_bonus"            "200 240"
             "bonus_mana_regen"            "6 9"
         }
@@ -1649,7 +1649,7 @@
         {   
             "health_restoration"        "20"
             "bat_reduce"                "10 15"
-            "intelligence_pct"          "10"
+            "intelligence_pct"          "-10"
         }
     }
 
@@ -7938,7 +7938,7 @@
 		{				
 			"bonus_damage"			"75"				
 			"spell_lifesteal"		"20"	
-			"manacost_per_hit"		"120"
+			"manacost_per_hit"		"150"
 		}
 	}
 
@@ -8348,6 +8348,7 @@
 			"slow_duration"				"3"
 			"bonus_spell_damage"		"250"
             "min_damage_to_activate"	"100"
+            "spell_crit_multiplier"     "35"
 		}
 	}
 
@@ -8803,6 +8804,10 @@
     {
         "ItemSellable"                  "1"
         "ItemCost"                      "1400"
+        "AbilityValues"
+        {
+            "damage_pct"        "50"
+        }
     }
     "item_martyrs_plate_custom"     
     {

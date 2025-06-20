@@ -94,7 +94,7 @@ export const HeroSection: React.FC = () => {
                             >
                                 <img src={video.images} alt={video.title} className={styles.image}/>
                                 <div className={styles.shadow_bottom_2}></div>
-                                <div className={styles.overlay2}></div>
+                                {/*<div className={styles.overlay2}></div>*/}
                                 <div className={styles.info}>
                                     <div className={styles.info_container}>
                                         <div className={styles.authorInfo}>

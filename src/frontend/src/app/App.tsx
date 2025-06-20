@@ -15,7 +15,8 @@ import {MyDataProvider, useMyData} from "../context/HeroesDataContext";
 const App = () => {
     const { getCurrentTheme } = useThemeStore();
     const theme = getCurrentTheme() || themes[0];
-    const [isMaintenance] = useState(false);
+    const maintenance = process.env.REACT_APP_MAINTENANCE_MODE === 'true';
+    const [isMaintenance] = useState(maintenance);
     useEffect(() => {
         setThemeVariables(theme);
     }, [theme]);

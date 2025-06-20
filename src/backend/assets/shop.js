@@ -807,13 +807,8 @@ function CreateHeroPanelVotes(panel, hero_name, votes)
     var HeroVoteMainPanel = $.CreatePanel("Panel", panel, "");
     HeroVoteMainPanel.AddClass("HeroVotePanel");
 
-    $.CreatePanel("MoviePanel", HeroVoteMainPanel, 'portrait_' + hero_name, {
-        class: "hero_portrait_hover_votes",
-        src: "file://{resources}/videos/heroes/" + hero_name + ".webm",
-        repeat: "true",
-        hittest: "false",
-        autoplay: "onload"
-    });
+    var HeroImage = $.CreatePanel(`DOTAHeroImage`, HeroVoteMainPanel, 'portrait_' + hero_name, {scaling: "stretch-to-cover-preserve-aspect", heroname : String(hero_name), tabindex : "auto", class: "hero_portrait_hover_votes", heroimagestyle : "portrait"});
+    ShowHero(HeroImage, hero_name) 
 
     let panel_votes_count = $.CreatePanel("Panel", HeroVoteMainPanel, "");
     panel_votes_count.AddClass("panel_votes_count")

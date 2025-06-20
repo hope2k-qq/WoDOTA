@@ -112,7 +112,6 @@ export const TopBar = () => {
                             <div className={styles.topbar_menu_item_open_sub_c}>
                                 <div className={styles.topbar_menu_item_open_sub_top}>
                                     <TopBarMenuItem title={t('game')} menuOpen={menuOpen}/>
-                                    <MoreIcon/>
                                 </div>
                                 <div className={styles.topbar_menu_item_open_sub_c_bottom}
                                      style={{borderBottom: '1px solid rgba(128, 128, 128, 0.5)'}}>
