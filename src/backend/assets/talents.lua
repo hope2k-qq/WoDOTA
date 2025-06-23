@@ -145,6 +145,17 @@ function wodatalents:talent_learn(params)
             if params.talentname == "modifier_axe_16" then return end
         end
     end
+
+    if hero:GetUnitName() == "npc_dota_hero_phoenix" then
+        if playerstalents[params.PlayerID]["modifier_phoenix_15"] ~= nil then
+            if params.talentname == "modifier_phoenix_1" then return end
+            if params.talentname == "modifier_phoenix_14" then return end
+            if params.talentname == "modifier_phoenix_12" then return end
+        elseif playerstalents[params.PlayerID]["modifier_phoenix_1"] ~= nil or playerstalents[params.PlayerID]["modifier_phoenix_14"] ~= nil or playerstalents[params.PlayerID]["modifier_phoenix_12"] ~= nil then
+            if params.talentname == "modifier_phoenix_15" then return end
+        end
+    end
+
 	if wodatalents:FindTalent(params.talentname, hero:GetUnitName()) then return end
 	
     local talent_branch = wodatalents:GetTalentBranch(params.talentname, hero:GetUnitName())

@@ -22,6 +22,7 @@ import {Helmet} from "react-helmet-async";
 import {useMyData} from "../context/HeroesDataContext";
 import {useTranslation} from "react-i18next";
 import {CreatorsVideosPage} from "../pages/creators/videos/CreatorsVideosPage";
+//import {ShopPage} from "../pages/shop/ShopPage";
 //import {HeroBuildCreatePage} from "../pages/heroes/components/heroCreateBuildPage/HeroCreateBuildPage";
 //import {ArenaPage} from "../pages/games/arena/ArenaPage";
 
@@ -177,6 +178,22 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "Nejlepší obsah a videa o World of Dota"
         }
     },
+    // {
+    //     path: "/shop",
+    //     element: <ShopPage />,
+    //     title: {
+    //         en: "World of Dota (WoDOTA) — WoDOTA CONTENT",
+    //         ru: "World of Dota (WoDOTA) — WoDOTA КОНТЕНТ",
+    //         uk: "World of Dota (WoDOTA) — WoDOTA КОНТЕНТ",
+    //         cs: "World of Dota (WoDOTA) — WoDOTA OBSAH"
+    //     },
+    //     description: {
+    //         en: "The best content and videos about World of Dota",
+    //         ru: "Лучший контент и видео по World of Dota",
+    //         uk: "Найкращий контент і відео по World of Dota",
+    //         cs: "Nejlepší obsah a videa o World of Dota"
+    //     }
+    // },
     // {
     //     path: "/games",
     //     element: <ArenaPage />,

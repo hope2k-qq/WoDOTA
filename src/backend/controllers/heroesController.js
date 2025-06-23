@@ -10,18 +10,15 @@ const { getHeroAttributes } = require('../services/attributesService');
 
 exports.getHeroes = (req, res) => {
     try {
-        // Получаем данные о героях
         const heroesData = getAllHeroesService.getHeroesData();
         if (!heroesData || heroesData.length === 0) {
             return res.status(500).json({ error: 'Heroes data not available' });
         }
-
-        // Загружаем дополнительные атрибуты героев
+        
         const attributesFilePath = path.join(__dirname, '..', 'data', 'heroesAttributes.json');
         const rawAttributesData = fs.readFileSync(attributesFilePath, 'utf-8');
         const attributesData = JSON.parse(rawAttributesData);
-
-        // Создаем объект маппинга имен героев на их данные
+        
         const attributesMap = attributesData.reduce((acc, { name, primary_attr, custom_hero }) => {
             acc[name] = {
                 primary_attr: primary_attr || 'unknown',
@@ -29,15 +26,13 @@ exports.getHeroes = (req, res) => {
             };
             return acc;
         }, {});
-
-        // Формируем массив героев с атрибутами
+        
         const heroesWithAttributes = heroesData.map(hero => ({
             name: hero,
             primary_attr: attributesMap[hero]?.primary_attr || 'unknown',
             custom_hero: attributesMap[hero]?.custom_hero || false
         }));
-
-        // Сортируем героев по имени
+        
         heroesWithAttributes.sort((a, b) => a.name.localeCompare(b.name));
 
         res.json(heroesWithAttributes);
@@ -94,7 +89,7 @@ exports.getHeroData = (req, res) => {
                 abilitiesWithDetails[ability] = {};
 
                 abilityKeys.forEach(key => {
-                    let fieldName = key.replace(`${abilityPrefix}`, '').toLowerCase(); // Приводим ключ к нижнему регистру
+                    let fieldName = key.replace(`${abilityPrefix}`, '').toLowerCase();
                     if (fieldName === '_custom' || fieldName === '') {
                         abilitiesWithDetails[ability]['name'] = heroAbilitiesData[key];
                     } else if (fieldName.startsWith('_custom_')) {
@@ -214,8 +209,7 @@ exports.getHeroData = (req, res) => {
         if (!heroTalentsInformation && Object.keys(abilitiesWithDetails).length === 0) {
             return res.status(404).json({ error: `Hero ${heroName} not found or has no data` });
         }
-
-        // Возвращаем данные о герое
+        
         res.json({
             talents_information: heroTalentsInformation || null,
             talents_description: heroTalentsDescription || null,

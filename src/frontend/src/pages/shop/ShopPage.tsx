@@ -1,5 +1,4 @@
 import React, { useEffect, useState, CSSProperties, useCallback } from 'react';
-import { Scene } from './components/scene/Scene';
 import { getImageUrl } from '../../utils/r2Storage';
 
 interface Item {
@@ -14,7 +13,6 @@ const itemTypes = ['Items_Five', 'Items_pets', 'Items_emblems', 'Items_tips'] as
 type ItemType = typeof itemTypes[number];
 
 export const ShopPage: React.FC = () => {
-    const [showScene, setShowScene] = useState(false);
     const [items, setItems] = useState<Item[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -24,9 +22,6 @@ export const ShopPage: React.FC = () => {
     const [localizationData, setLocalizationData] = useState<{ [key: string]: string }>({});
     const [imageUrls, setImageUrls] = useState<{ [key: string]: string }>({}); // Состояние для URL изображений
 
-    const handleToggleScene = () => {
-        setShowScene(!showScene);
-    };
 
     const API_URL = process.env.REACT_APP_API_URL;
 
@@ -118,11 +113,6 @@ export const ShopPage: React.FC = () => {
 
     return (
         <div style={styles.container}>
-            <button onClick={handleToggleScene}>
-                {showScene ? 'Hide Scene' : 'Show Scene'}
-            </button>
-            {showScene && <Scene />}
-
             <div style={styles.buttonContainer}>
                 {itemTypes.map((type) => (
                     <button

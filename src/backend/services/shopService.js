@@ -2,7 +2,7 @@
 const path = require('path');
 
 function extractItems() {
-    const filePath = path.join(__dirname, '../assets', 'shop.js');
+    const filePath = path.join(__dirname, '../assets', 'shop_items_information.js');
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
     const itemNames = ['Items_Five', 'Items_pets', 'Items_emblems', 'Items_tips'];

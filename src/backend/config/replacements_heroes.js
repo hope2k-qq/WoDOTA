@@ -11,6 +11,7 @@
     'zuus': 'zeus',
     'doom_bringer': 'doom',
     'windrunner': 'windranger',
+    'wisp': 'io',
 };
 
 module.exports = replacements_heroes;

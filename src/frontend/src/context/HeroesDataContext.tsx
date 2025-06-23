@@ -4,7 +4,7 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 const API_IP = process.env.REACT_APP_API_IP;
-const CACHE_VERSION = '31.0';
+const CACHE_VERSION = '42.0';
 
 type MyDataContextType = {
     language: string | null;
@@ -77,7 +77,6 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     // };
     const clearAllIndexedDB = async () => {
         try {
-            // Получаем список всех баз данных
             const databases = await indexedDB.databases();
 
             // Перебираем все базы данных
@@ -132,7 +131,15 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
     useEffect(() => {
         const clearAllCaches = async () => {
-            localStorage.clear();
+            const preservedLocalStorage: {
+                unreadNewsCount: string | null;
+                i18nextLng: string | null;
+                language: string | null;
+            } = {
+                unreadNewsCount: localStorage.getItem("unreadNewsCount"),
+                i18nextLng: localStorage.getItem("i18nextLng"),
+                language: localStorage.getItem("language")
+            };
             sessionStorage.clear();
             await clearAllIndexedDB();
             document.cookie.split(";").forEach(cookie => {
@@ -150,6 +157,13 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                     await registration.unregister();
                 }
             }
+            localStorage.clear();
+            Object.entries(preservedLocalStorage).forEach(([key, value]) => {
+                if (value !== null) {
+                    localStorage.setItem(key, value);
+
+                }
+            });
         };
         const cachedVersion = localStorage.getItem("cacheVersion");
         if (cachedVersion !== CACHE_VERSION) {
