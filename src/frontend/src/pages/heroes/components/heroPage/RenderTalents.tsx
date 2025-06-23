@@ -691,8 +691,10 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         if (upgradeOrder.length === 0) return;
 
         const lastUpgrade = upgradeOrder[upgradeOrder.length - 1];
-        const [part, baseKey] = lastUpgrade.split("-");
-
+        const firstDashIndex = lastUpgrade.indexOf("-");
+        const lastDashIndex = lastUpgrade.lastIndexOf("-");
+        const part = lastUpgrade.slice(0, firstDashIndex);
+        const baseKey = lastUpgrade.slice(firstDashIndex + 1, lastDashIndex);
         setUpgradeOrder((prevOrder) => prevOrder.slice(0, -1));
 
         setCurrentTalentLevels((prev) => {
