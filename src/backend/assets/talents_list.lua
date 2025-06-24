@@ -10142,12 +10142,12 @@ local herotalents = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
 				{"empty_7"},
-				{"modifier_phoenix_3","#modifier_phoenix_3", 3, "phoenix/3", {}},
+				{"modifier_phoenix_4","#modifier_phoenix_4", 2, "phoenix/4", {}},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
-				{"modifier_phoenix_4","#modifier_phoenix_4", 2, "phoenix/4", {}},
+				{"modifier_phoenix_3","#modifier_phoenix_3", 3, "phoenix/3", {}},
 				{"empty_9"},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
@@ -10229,21 +10229,21 @@ local herotalents = {
 			[1] = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
-				{"modifier_phoenix_15","#modifier_phoenix_15", 2, "phoenix/15", {}},
+				{"modifier_phoenix_15","#modifier_phoenix_15", 3, "phoenix/15", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
 				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_phoenix_16","#modifier_phoenix_16", 3, "phoenix/16", {"modifier_phoenix_15",2}},
+				{"modifier_phoenix_16","#modifier_phoenix_16", 2, "phoenix/16", {"modifier_phoenix_15",3}},
 				{"empty_3"},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"empty_7"},
-				{"modifier_phoenix_17","#modifier_phoenix_17", 2, "phoenix/17", {"modifier_phoenix_16",3}},
+				{"modifier_phoenix_17","#modifier_phoenix_17", 2, "phoenix/17", {"modifier_phoenix_16",2}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
