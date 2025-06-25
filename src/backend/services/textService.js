@@ -153,17 +153,20 @@ function getHeroData(heroName, abilityNames = [], lang) {
                 break;
             }
         }
-        
+
         const updatedAbilityNames = abilityNames.map(abilityName => {
+            const prefix = abilityName.split('_')[0];
+
             for (const [key, value] of Object.entries(replacements_heroes)) {
                 if (value === 'aghanim' || value === 'roshan') {
                     continue;
                 }
 
-                if (abilityName.includes(value)) {
+                if (prefix === value) {
                     return abilityName.replace(value, key);
                 }
             }
+
             return abilityName;
         });
         ({ heroTalentsData, abilitiesData } = parseAddonFileForHero(filePath, heroName, updatedAbilityNames));
@@ -183,7 +186,7 @@ function getHeroData(heroName, abilityNames = [], lang) {
             abilitiesData[key] = value;
         }
     }
-
+    
     return { heroTalentsData, abilitiesData };
 }
 

@@ -2562,6 +2562,30 @@
       "modifier_omniknight_21_1": "Нова Пасивна Здатність: <b><font color='#eabe10'>Omnipresent</font></b> \n\n Втрата власника цієї аури по ворогові збільшується на 1% за кожні 0.5 секунд, що ворог провів у ній. \n\n Максимальна Додаткова шкода: <b><font color='#eabe10'>20%</font></b> \n Радіус: 700"
     },
     "abilities": {
+      "omniknight_purification": {
+        "name": "Purification",
+        "description": "Миттєво зцілює союзну істоту і завдає шкоди ворогам навколо неї.",
+        "lore": "Жерці Всезнання майстерно позбавляють братів по зброї від скверни.",
+        "heal": "ЛІКУВАННЯ/УРОН:",
+        "radius": "РАДІУС УРОНА:",
+        "values": {
+          "heal": "90 160 230 300",
+          "radius": "260",
+          "abilitycastrange": "550",
+          "abilitycooldown": "18 16 14 12",
+          "abilitymanacost": "80 95 110 125"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "heal": "ЛІКУВАННЯ/УРОН:",
+            "radius": "РАДІУС УРОНА:"
+          },
+          "values": {
+            "heal": "90 / 160 / 230 / 300",
+            "radius": "260"
+          }
+        }
+      },
       "omniknight_martyr": {
         "name": "Repel",
         "description": "<b><font color='#F2A93E'>Відбиття</font></b>\\nДає цілі імунітет до негативних ефектів, а також додаткову силу та регенерацію здоров’я відповідно до кількості негативних ефектів на ній.",
@@ -4457,6 +4481,7 @@
           "radius": "325",
           "duration": "3 4 5 6",
           "abilitycooldown": "15 14 13 12",
+          "abilityduration": "3 4 5 6",
           "abilitymanacost": "50"
         },
         "valuesInfo": {
@@ -4579,14 +4604,14 @@
             "id": "empty_2"
           },
           {
-            "id": "empty_3"
-          },
-          {
             "id": "modifier_drow_ranger_1",
             "talentInfo": "#modifier_drow_ranger_1",
             "level": "3",
             "imagePath": "drow_ranger/1",
             "relatedTalent": {}
+          },
+          {
+            "id": "empty_3"
           },
           {
             "id": "modifier_woda_talent_cloak",
@@ -4618,14 +4643,14 @@
             "relatedTalent": {}
           },
           {
+            "id": "empty_8"
+          },
+          {
             "id": "modifier_drow_ranger_3",
             "talentInfo": "#modifier_drow_ranger_3",
             "level": "2",
             "imagePath": "drow_ranger/3",
             "relatedTalent": {}
-          },
-          {
-            "id": "empty_8"
           },
           {
             "id": "modifier_woda_talent_sasha",
@@ -4650,14 +4675,14 @@
             }
           },
           {
-            "id": "empty_9"
+            "id": "modifier_drow_ranger_5",
+            "talentInfo": "#modifier_drow_ranger_5",
+            "level": "2",
+            "imagePath": "drow_ranger/5",
+            "relatedTalent": {}
           },
           {
-            "id": "modifier_drow_ranger_4",
-            "talentInfo": "#modifier_drow_ranger_4",
-            "level": "1",
-            "imagePath": "drow_ranger/4",
-            "relatedTalent": {}
+            "id": "empty_9"
           },
           {
             "id": "modifier_woda_talent_octar",
@@ -4689,14 +4714,14 @@
             "id": "empty_10"
           },
           {
-            "id": "empty_11"
+            "id": "modifier_drow_ranger_4",
+            "talentInfo": "#modifier_drow_ranger_4",
+            "level": "1",
+            "imagePath": "drow_ranger/4",
+            "relatedTalent": {}
           },
           {
-            "id": "modifier_drow_ranger_5",
-            "talentInfo": "#modifier_drow_ranger_5",
-            "level": "2",
-            "imagePath": "drow_ranger/5",
-            "relatedTalent": {}
+            "id": "empty_11"
           },
           {
             "id": "modifier_woda_talent_str5",
@@ -4945,10 +4970,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_drow_ranger_16",
-            "talentInfo": "#modifier_drow_ranger_16",
+            "id": "modifier_drow_ranger_13",
+            "talentInfo": "#modifier_drow_ranger_13",
             "level": "1",
-            "imagePath": "drow_ranger/16",
+            "imagePath": "drow_ranger/13",
             "relatedTalent": {}
           },
           {
@@ -4973,10 +4998,10 @@
             "id": "empty_18"
           },
           {
-            "id": "modifier_drow_ranger_13",
-            "talentInfo": "#modifier_drow_ranger_13",
+            "id": "modifier_drow_ranger_16",
+            "talentInfo": "#modifier_drow_ranger_16",
             "level": "1",
-            "imagePath": "drow_ranger/13",
+            "imagePath": "drow_ranger/16",
             "relatedTalent": {}
           },
           {
@@ -6240,6 +6265,35 @@
           }
         }
       },
+      "witch_doctor_voodoo_restoration": {
+        "name": "Voodoo Restoration",
+        "description": "Герой направляє свої чари на лікування найближчих союзників, а ворогам завдає шкоди. Витрачає ману кожну секунду дії цієї здатності.",
+        "mana_per_second": "МАНИ В СЕКУНДУ:",
+        "radius": "РАДІУС:",
+        "heal": "ЛІКУВАННЯ/УРОН:",
+        "lore": "Фокуси Жарвакко можуть не тільки зачарувати ворогів, але й зцілити від різних хвороб.",
+        "note0": "Лікування та нанесення шкоди відбуваються кожні%heal_interval% секунди.",
+        "values": {
+          "mana_per_second": "8 12 16 20",
+          "radius": "500 550 600 650",
+          "heal": "15 25 35 45",
+          "heal_interval": "0.33",
+          "abilitycooldown": "0",
+          "abilitymanacost": "35 40 45 50"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "mana_per_second": "МАНИ В СЕКУНДУ:",
+            "radius": "РАДІУС:",
+            "heal": "ЛІКУВАННЯ/УРОН:"
+          },
+          "values": {
+            "mana_per_second": "8 / 12 / 16 / 20",
+            "radius": "500 / 550 / 600 / 650",
+            "heal": "15 / 25 / 35 / 45"
+          }
+        }
+      },
       "witch_doctor_maledict": {
         "name": "Maledict",
         "description": "Накладає пристріт на всіх ворожих героїв у невеликій області, після чого вони отримують шкоду кожну секунду. Крім цього, кожні 4 секунди їм наноситься періодичний збиток, що залежить від кількості здоров'я, втраченого",
@@ -7081,244 +7135,7 @@
       "modifier_shadow_fiend_21_0": "Shadowraze завдає шкоди від Атак.",
       "modifier_shadow_fiend_21_1": "Shadowraze завдає <b><font color='#eabe10'>Втрата від Атак</font></b>."
     },
-    "abilities": {
-      "shadow_fiend_shadowraze1": {
-        "name": "Shadowraze",
-        "description": "Герой спустошує ділянку землі прямо перед собою, завдаючи шкоди всім ворогам у зоні дії. Накладає на жертву ефект, що збільшується, збільшує шкоду від цієї здатності з кожним її потраплянням, а також зменшує швидкість пересування і поворот. Максимум ефектів: 10",
-        "shadowraze_damage": "БАЗОВИЙ УРОН:",
-        "shadowraze_radius": "РАДІУС:",
-        "shadowraze_range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-        "stack_bonus_damage": "ДОП. УРОН ЗА ВРЯДАННЯ:",
-        "duration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:",
-        "movement_speed_pct": "%ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
-        "turn_rate_pct": "%ЗАУВАГА ПОВЕРНЕННЯ:",
-        "lore": "Фірмовий метод збирання душ.",
-        "note0": "Тривалість ефекту оновлюється при кожному накладанні.",
-        "values": {
-          "shadowraze_damage": "90 140 190 240",
-          "shadowraze_radius": "250",
-          "shadowraze_range": "250",
-          "shadowraze_cooldown": "3",
-          "stack_bonus_damage": "50 60 70 80",
-          "duration": "5",
-          "movement_speed_pct": "0",
-          "turn_rate_pct": "0",
-          "abilitymanacost": "75 80 85 90",
-          "abilitycooldown": "13"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "shadowraze_damage": "БАЗОВИЙ УРОН:",
-            "shadowraze_radius": "РАДІУС:",
-            "shadowraze_range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-            "stack_bonus_damage": "ДОП. УРОН ЗА ВРЯДАННЯ:",
-            "duration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:"
-          },
-          "values": {
-            "shadowraze_damage": "90 / 140 / 190 / 240",
-            "shadowraze_radius": "250",
-            "shadowraze_range": "250",
-            "stack_bonus_damage": "50 / 60 / 70 / 80",
-            "duration": "5"
-          }
-        }
-      },
-      "shadow_fiend_shadowraze2": {
-        "name": "Shadowraze",
-        "description": "Герой спустошує ділянку землі прямо перед собою, завдаючи шкоди всім ворогам у зоні дії. Накладає на жертву ефект, що збільшується, збільшує шкоду від цієї здатності з кожним її потраплянням, а також зменшує швидкість пересування і поворот. Максимум ефектів: 10",
-        "shadowraze_damage": "БАЗОВИЙ УРОН:",
-        "shadowraze_radius": "РАДІУС:",
-        "shadowraze_range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-        "stack_bonus_damage": "ДОП. УРОН ЗА ВРЯДАННЯ:",
-        "duration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:",
-        "movement_speed_pct": "%ЗАУВАГА ПЕРЕДВИЖЕННЯ:",
-        "turn_rate_pct": "%ЗАУВАГА ПОВЕРНЕННЯ:",
-        "lore": "Фірмовий метод збирання душ.",
-        "note0": "Тривалість ефекту оновлюється при кожному накладанні.",
-        "values": {
-          "shadowraze_damage": "90 140 190 240",
-          "shadowraze_radius": "250",
-          "shadowraze_range": "450",
-          "shadowraze_cooldown": "3",
-          "stack_bonus_damage": "50 60 70 80",
-          "duration": "5",
-          "movement_speed_pct": "0",
-          "turn_rate_pct": "0",
-          "abilitymanacost": "75 80 85 90",
-          "abilitycooldown": "13"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "shadowraze_damage": "БАЗОВИЙ УРОН:",
-            "shadowraze_radius": "РАДІУС:",
-            "shadowraze_range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-            "stack_bonus_damage": "ДОП. УРОН ЗА ВРЯДАННЯ:",
-            "duration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:"
-          },
-          "values": {
-            "shadowraze_damage": "90 / 140 / 190 / 240",
-            "shadowraze_radius": "250",
-            "shadowraze_range": "450",
-            "stack_bonus_damage": "50 / 60 / 70 / 80",
-            "duration": "5"
-          }
-        }
-      },
-      "shadow_fiend_shadowraze3": {
-        "name": "Shadowraze",
-        "description": "Герой спустошує ділянку землі прямо перед собою, завдаючи шкоди всім ворогам у зоні дії. Накладає на жертву ефект, що збільшується, збільшує шкоду від цієї здатності з кожним її потраплянням, а також зменшує швидкість пересування і поворот. Максимум ефектів: 10",
-        "shadowraze_damage": "БАЗОВИЙ УРОН:",
-        "shadowraze_radius": "РАДІУС:",
-        "shadowraze_range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-        "stack_bonus_damage": "ДОП. УРОН ЗА ВРЯДАННЯ:",
-        "duration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:",
-        "movement_speed_pct": "%ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
-        "turn_rate_pct": "%ЗАУВАГА ПОВЕРНЕННЯ:",
-        "lore": "Фірмовий метод збирання душ.",
-        "note0": "Тривалість ефекту оновлюється при кожному накладанні.",
-        "values": {
-          "shadowraze_damage": "90 140 190 240",
-          "shadowraze_radius": "250",
-          "shadowraze_range": "700",
-          "shadowraze_cooldown": "3",
-          "stack_bonus_damage": "50 60 70 80",
-          "duration": "5",
-          "movement_speed_pct": "0",
-          "turn_rate_pct": "0",
-          "abilitymanacost": "75 80 85 90",
-          "abilitycooldown": "13"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "shadowraze_damage": "БАЗОВИЙ УРОН:",
-            "shadowraze_radius": "РАДІУС:",
-            "shadowraze_range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-            "stack_bonus_damage": "ДОП. УРОН ЗА ВРЯДАННЯ:",
-            "duration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:"
-          },
-          "values": {
-            "shadowraze_damage": "90 / 140 / 190 / 240",
-            "shadowraze_radius": "250",
-            "shadowraze_range": "700",
-            "stack_bonus_damage": "50 / 60 / 70 / 80",
-            "duration": "5"
-          }
-        }
-      },
-      "shadow_fiend_frenzy": {
-        "name": "Свято Душ",
-        "description": "Герой збільшує швидкість руху та атаки на %duration% секунд. Протягом цього ефекту максимальна кількість душ у здатності Некромантія збільшується на %soul_cost%, але по його завершенню власник втрачає таку ж кількість душ.",
-        "note0": "Не можна активувати, якщо душ недостатньо.",
-        "bonus_attack_speed": "ДОДАТКОВА ШВИДКІСТЬ АТАКИ:",
-        "bonus_move_speed": "%ДОДАТКОВА ШВИДКІСТЬ РУХУ:",
-        "soul_cost": "ВИТРАТИ ДУШ:",
-        "values": {
-          "bonus_attack_speed": "40 50 60 70",
-          "bonus_move_speed": "5 7 9 11",
-          "duration": "8",
-          "soul_cost": "5",
-          "abilitycooldown": "21",
-          "abilitymanacost": "60 65 70 75"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "bonus_attack_speed": "ДОДАТКОВА ШВИДКІСТЬ АТАКИ:",
-            "bonus_move_speed": "ДОДАТКОВА ШВИДКІСТЬ РУХУ:",
-            "soul_cost": "ВИТРАТИ ДУШ:"
-          },
-          "values": {
-            "bonus_attack_speed": "40 / 50 / 60 / 70",
-            "bonus_move_speed": "5% / 7% / 9% / 11%",
-            "soul_cost": "5"
-          }
-        }
-      },
-      "shadow_fiend_dark_lord": {
-        "name": "Presence of the Dark Lord",
-        "description": "Присутність героя знижує броню найближчих ворогів. Кожна смерть ворожого героя поблизу посилює зниження броні на %bonus_armor_per_stack% на %kill_buff_duration% сек.",
-        "presence_armor_reduction": "ЗНИЖЕННЯ БРОНІ:",
-        "presence_radius": "РАДІУС:",
-        "lore": "Навіть просто будучи поруч, Невермор роз'їдає душу.",
-        "values": {
-          "presence_armor_reduction": "-2 -3 -4 -5",
-          "presence_radius": "1200",
-          "bonus_armor_per_stack": "2",
-          "kill_buff_duration": "20",
-          "abilitycastrange": "1200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "presence_armor_reduction": "ЗНИЖЕННЯ БРОНІ:",
-            "presence_radius": "РАДІУС:"
-          },
-          "values": {
-            "presence_armor_reduction": "-2 / -3 / -4 / -5",
-            "presence_radius": "1200"
-          }
-        }
-      },
-      "shadow_fiend_requiem": {
-        "name": "Requiem of Souls",
-        "description": "Герой випускає зібрані душі в хвилях демонічної енергії. Істоти біля нього можуть отримати шкоду від декількох хвиль. За кожну зачеплену хвилю на жертву накладається %requiem_slow_duration% сек. уповільнення, зменшення .).Створює одну хвилю енергії за кожну душу, захоплену за допомогою Necromastery.\n\nЯкщо герой загине, то ця здатність спрацює автоматично незалежно від її готовності.",
-        "damage": "УРОН:",
-        "requiem_reduction_ms": "%ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
-        "requiem_reduction_mres": "Зменшення опору МАГІЇ:",
-        "abilitycastpoint": "ВИКОРИСТАННЯ:",
-        "lore": "Заточені душі тих, хто загинув у колишніх битвах, набувають свободи, щоб мстиво переслідувати своїх колишніх союзників.",
-        "note0": "Одна хвиля створюється за кожні%requiem_soul_conversion% душі.",
-        "note1": "Здатність не накладає страх і уповільнення, якщо спрацювала при смерті.",
-        "values": {
-          "damage": "80 120 160",
-          "requiem_radius": "1000",
-          "requiem_reduction_ms": "-20 -25 -30",
-          "requiem_reduction_mres": "-5 -10 -15",
-          "requiem_slow_duration": "0.7",
-          "requiem_slow_duration_max": "2.15",
-          "requiem_reduction_radius": "700",
-          "requiem_soul_conversion": "1",
-          "requiem_line_width_start": "125",
-          "requiem_line_width_end": "350",
-          "requiem_line_speed": "700",
-          "soul_death_release": "0.5",
-          "abilitymanacost": "150 175 200",
-          "abilitycooldown": "100 90 80"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "damage": "УРОН:",
-            "requiem_reduction_ms": "ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
-            "requiem_reduction_mres": "Зменшення опору МАГІЇ:"
-          },
-          "values": {
-            "damage": "80 / 120 / 160",
-            "requiem_reduction_ms": "-20% / -25% / -30%",
-            "requiem_reduction_mres": "-5 / -10 / -15"
-          }
-        }
-      },
-      "shadow_fiend_necromastery": {
-        "name": "Necromastery",
-        "description": "Герой краде душу кожного вбитого ворога, отримуючи бонус до атаки. Після смерті випускає 40%% від них.",
-        "necromastery_damage_per_soul": "УРОНА ЗА ДУШУ:",
-        "necromastery_max_souls": "МАКС. ДУШ:",
-        "lore": "Зібрані душі ковзають по межі Безодні, посилюючи Невермора і дозволяючи йому й надалі поповнювати свою колекцію.",
-        "values": {
-          "necromastery_damage_per_soul": "1 2 3 4",
-          "necromastery_max_souls": "20",
-          "necromastery_soul_release": "0.7"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "necromastery_damage_per_soul": "УРОНА ЗА ДУШУ:",
-            "necromastery_max_souls": "МАКС. ДУШ:"
-          },
-          "values": {
-            "necromastery_damage_per_soul": "1 / 2 / 3 / 4",
-            "necromastery_max_souls": "20"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "525",
       "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
@@ -9881,18 +9698,21 @@
           "cast_range_scepter": "2200",
           "abilitycastrange": "700",
           "abilitycooldown": "10",
+          "abilityduration": "4.5",
           "abilitymanacost": "100 105 110 115"
         },
         "valuesInfo": {
           "descriptions": {
             "gush_damage": "УРОН:",
             "movement_speed": "ЗАУВАГА:",
-            "negative_armor": "ЗНИЖЕННЯ БРОНІ:"
+            "negative_armor": "ЗНИЖЕННЯ БРОНІ:",
+            "abilityduration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:"
           },
           "values": {
             "gush_damage": "110 / 160 / 210 / 260",
             "movement_speed": "-30%",
-            "negative_armor": "3 / 4 / 5 / 6"
+            "negative_armor": "3 / 4 / 5 / 6",
+            "abilityduration": "4.5"
           }
         }
       },
@@ -13450,145 +13270,7 @@
       "modifier_nature's_prophet_21_2": "Збільшення Втрат від Заклинань на 1%/<b><font color='#eabe10'>2%</font></b>/3% за кожне Дерево навколо Героя. \n\n Радіус: 1200",
       "modifier_nature's_prophet_21_3": "Збільшення Втрат від Заклинань на 1%/2%/<b><font color='#eabe10'>3%</font></b> за кожне Дерево навколо Героя. \n\n Радіус: 1200"
     },
-    "abilities": {
-      "nature's_prophet_sprout": {
-        "name": "Sprout",
-        "description": "Оточує істоту кільцем дерев, утримуючи її на місці. Дає огляд у радіусі%vision_range%.",
-        "lore": "Тих, хто намагається здолати вартових лісів, незмінно оточують густі зарості.",
-        "note0": "Можна застосувати як істоту, так і землю.",
-        "note1": "Дерева, створені цією здатністю, взаємодіють зі здібностями як звичайні.",
-        "note2": "Якщо використовувати Tango на дерево від цієї здатності, відновиться вдвічі більше здоров'я.",
-        "duration": "ТРИВАЛЬНІСТЬ:",
-        "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-        "sprout_damage": "УРОН:",
-        "sprout_damage_inteval": "ІНТЕРВАЛ УРОНУ:",
-        "charges": "Sprout",
-        "charges_description": "Оточує істоту кільцем дерев, утримуючи її на місці. Дає огляд у радіусі%vision_range%.",
-        "charges_lore": "Тих, хто намагається подолати сторожа лісів, незмінно оточують густі зарості.",
-        "charges_note0": "Можна застосувати як істоту, так і землю.",
-        "charges_note1": "Дерева, створені цією здатністю, взаємодіють зі здібностями як звичайні.",
-        "charges_note2": "Якщо використовувати Tango на дерево від цієї здатності, відновиться вдвічі більше здоров'я.",
-        "charges_duration": "ТРИВАЛЬНІСТЬ:",
-        "charges_abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-        "values": {
-          "AbilityCharges": "1",
-          "vision_range": "250",
-          "duration": "2.5 3 3.5 4",
-          "radius": "150",
-          "sprout_damage": "70 135 200 265",
-          "sprout_damage_radius": "275",
-          "abilitycastrange": "625 700 775 850",
-          "abilitymanacost": "70 90 110 130"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "duration": "ТРИВАЛЬНІСТЬ:",
-            "sprout_damage": "УРОН:",
-            "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:"
-          },
-          "values": {
-            "duration": "2.5 / 3 / 3.5 / 4",
-            "sprout_damage": "70 / 135 / 200 / 265",
-            "abilitycastrange": "625 / 700 / 775 / 850"
-          }
-        }
-      },
-      "nature's_prophet_teleportation": {
-        "name": "Teleportation",
-        "description": "<b><font color='#F2A93E'>Телепортація</font></b>\\nПереносить у будь-яку точку на мапі. Отримує бар’єр після прибуття на місце.",
-        "lore": "Провісник невтомно вартує ліси, готовий миттю прийти на порятунок.",
-        "note0": "Мана і зарядка витрачаються, коли чаклування завершено. Провісник Природи не витрачатиме ману і зарядку, якщо чаклування переривається.",
-        "note1": "Коли розпочинається чаклування, то з’являється ефект на цільовому місці, який бачать союзники і вороги.",
-        "barrier": "БАР’ЄР:",
-        "buff_duration": "ТРИВАЛІСТЬ:",
-        "values": {
-          "buff_duration": "15",
-          "barrier": "70 130 190 250",
-          "abilitycastrange": "0",
-          "abilitycooldown": "65 55 45 35",
-          "abilitymanacost": "50 60 70 80"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "buff_duration": "ТРИВАЛІСТЬ:",
-            "barrier": "БАР’ЄР:"
-          },
-          "values": {
-            "buff_duration": "15",
-            "barrier": "70 / 130 / 190 / 250"
-          }
-        }
-      },
-      "nature's_prophet_force_of_nature": {
-        "name": "Nature's Call",
-        "description": "Перетворює дерева у вибраній області в підконтрольних ентів.",
-        "lore": "Веродиція наділила стража лісів здатністю закликати ентів - міфічних розумних воїнів природи.",
-        "note0": "Ентів не може з'явитися більше, ніж дерев у зоні дії здатності.",
-        "duration": "ЧАС ЖИТТЯ ЕНТІВ:",
-        "max_treants": "КІЛЬКІСТЬ ЕНТІВ:",
-        "treant_health_tooltip": "ЗДОРОВ'Я ЕНТА:",
-        "treant_dmg_tooltip": "УРОН ЕНТА:",
-        "values": {
-          "area_of_effect": "150 225 300 375",
-          "max_treants": "1 2",
-          "duration": "35",
-          "treant_health_tooltip": "500 750 1000",
-          "treant_dmg_tooltip": "24 36 48",
-          "treant_hp_bonus": "825",
-          "treant_damage_bonus": "27 39 51 63",
-          "abilitycastrange": "750",
-          "abilitycooldown": "37",
-          "abilitymanacost": "150"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "max_treants": "КІЛЬКІСТЬ ЕНТІВ:",
-            "duration": "ЧАС ЖИТТЯ ЕНТІВ:",
-            "treant_health_tooltip": "ЗДОРОВ'Я ЕНТА:",
-            "treant_dmg_tooltip": "УРОН ЕНТА:"
-          },
-          "values": {
-            "max_treants": "1 / 2",
-            "duration": "35",
-            "treant_health_tooltip": "500 / 750 / 1000",
-            "treant_dmg_tooltip": "24 / 36 / 48"
-          }
-        }
-      },
-      "nature's_prophet_wrath_of_nature": {
-        "name": "Wrath of Nature",
-        "description": "Викликає потік енергії, що скаче по видимим ворогам на всій карті. Він завдає жертвам шкоди, що збільшується з кожним зачепленим ворогом.",
-        "lore": "Герой волає до Веродиції, звертаючи її гнів проти тих, хто наважився розоряти природу.",
-        "note0": "Не діє на ворогів, яких не видно.",
-        "note1": "Можна застосовувати через міні-карту; при цьому вибирається найближча можлива мета.",
-        "max_targets": "МАКС. ЦІЛІВ:",
-        "damage": "БАЗОВИЙ УРОН:",
-        "damage_percent_add": "%ДОП. УРОН ЗА СКАЧОК:",
-        "values": {
-          "max_targets": "18",
-          "damage": "115 150 185",
-          "damage_percent_add": "10",
-          "jump_delay": "0.25",
-          "kill_damage": "6",
-          "kill_damage_duration": "50",
-          "abilitycastrange": "0",
-          "abilitycooldown": "85",
-          "abilitymanacost": "130 160 190"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "max_targets": "МАКС. ЦІЛІВ:",
-            "damage": "БАЗОВИЙ УРОН:",
-            "damage_percent_add": "ДОП. УРОН ЗА СКАЧОК:"
-          },
-          "values": {
-            "max_targets": "18",
-            "damage": "115 / 150 / 185",
-            "damage_percent_add": "10%"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "600",
       "attributeprimary": "DOTA_ATTRIBUTE_ALL",
@@ -16154,6 +15836,34 @@
       "modifier_death_prophet_21_1": "Exorcism завдає <b><font color='#eabe10'>Магічний</font></b> Втрата, а не Фізичний. \n\n Нова Пасивна Здатність: <b><font color='#eabe10'>Astral Mind</font></b> \n\n Astral Mind Зменшує Опір Магії супротивників у радіусі 1200 навколо Героя: <b><font color='#eabe10'>10%</font></b>"
     },
     "abilities": {
+      "death_prophet_carrion_swarm": {
+        "name": "Crypt Swarm",
+        "description": "Посилає вперед зграю крилатих тварин, які завдають шкоди ворогам на своєму шляху.",
+        "lore": "Під час своїх подорожей у потойбічний світ Кробелус забирає із собою душі проклятих, матеріалізуючи їх зграєю кажанів у нашому світі.",
+        "note0": "Зачіпає істот на відстані до 1100 одиниць.",
+        "range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
+        "damage": "УРОН:",
+        "values": {
+          "start_radius": "110",
+          "end_radius": "300",
+          "damage": "80 140 200 260",
+          "range": "810",
+          "speed": "1100",
+          "abilitycastrange": "600",
+          "abilitycooldown": "10 9 8 7",
+          "abilitymanacost": "80 90 100 110"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "УРОН:",
+            "range": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:"
+          },
+          "values": {
+            "damage": "80 / 140 / 200 / 260",
+            "range": "810"
+          }
+        }
+      },
       "death_prophet_silence": {
         "name": "Silence",
         "description": "Випускає снаряд, який забороняє ворогам у зазначеній області застосовувати здібності.",
@@ -16167,6 +15877,7 @@
           "projectile_speed": "1400",
           "abilitycastrange": "900",
           "abilitycooldown": "15 14 13 12",
+          "abilityduration": "2 2.5 3 3.5",
           "abilitymanacost": "80 90 100 110"
         },
         "valuesInfo": {
@@ -16279,7 +15990,7 @@
       "healthregen": "2.5",
       "attackdamagemin": "61",
       "attackdamagemax": "71",
-      "armorphysical": "4.7",
+      "armorphysical": "3.7",
       "baseattackspeed": "122",
       "attackrate": "1.7"
     }
@@ -17055,6 +16766,7 @@
           "creep_damage_multiplier": "2",
           "abilitycastrange": "650",
           "abilitycooldown": "10 8 6 4",
+          "abilityduration": "21 24 27 30",
           "abilitymanacost": "100"
         },
         "valuesInfo": {
@@ -19232,6 +18944,44 @@
       "modifier_terrorblade_21_1": "<b><font color='#ff0000'> Забирає Metamorphosis і Conjure Image. \n\n Сила не дає Здоров'я. Спритність не дає Швидкість Атаки. </font></b> \n\n Здоров'я: <b><font color='#eabe10'>16</font></b> за 1 Інтелект \n\n Швидкість Атаки: <b><font color='#eabe10'>1</font></b> за 1 Інтелект"
     },
     "abilities": {
+      "terrorblade_reflection": {
+        "name": "Reflection",
+        "description": "Створює невразливих темних двійників усіх ворожих героїв у зазначеній області. Кожен двійник атакує свою мету і зменшує її швидкість пересування.",
+        "lore": "Заточений у Колодязі душ, демон-мародер зрозумів сенс стародавньої приказки: «Твій найлютіший ворог — це ти сам». Тепер він навчає цього інших.",
+        "illusion_duration": "ТРИВАЛЬНІСТЬ:",
+        "illusion_outgoing_damage": "%УРОН ДВІЙНИКА:",
+        "move_slow": "%ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
+        "radius": "РАДІУС:",
+        "note0": "Двійники є невразливими ілюзіями.",
+        "note1": "Двійники атакують лише вихідних героїв.",
+        "attack_slow": "ЗАУВАГА АТАКИ:",
+        "values": {
+          "illusion_duration": "5",
+          "illusion_outgoing_damage": "55 70 85 100",
+          "move_slow": "-15 -20 -25 -30",
+          "attack_slow": "-15 -20 -25 -30",
+          "radius": "500",
+          "abilitycastrange": "700",
+          "abilitymanacost": "60 65 70 75",
+          "abilitycooldown": "25 22 19 16"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "illusion_duration": "ТРИВАЛЬНІСТЬ:",
+            "illusion_outgoing_damage": "УРОН ДВІЙНИКА:",
+            "move_slow": "ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
+            "attack_slow": "ЗАУВАГА АТАКИ:",
+            "radius": "РАДІУС:"
+          },
+          "values": {
+            "illusion_duration": "5",
+            "illusion_outgoing_damage": "55% / 70% / 85% / 100%",
+            "move_slow": "-15% / -20% / -25% / -30%",
+            "attack_slow": "-15 / -20 / -25 / -30",
+            "radius": "500"
+          }
+        }
+      },
       "terrorblade_conjure_image": {
         "name": "Conjure Image",
         "description": "Створює ілюзію героя, яка завдає шкоди.",
@@ -19335,8 +19085,8 @@
       "mana": "315",
       "manaregen": "1.0",
       "healthregen": "2.5",
-      "attackdamagemin": "53",
-      "attackdamagemax": "59",
+      "attackdamagemin": "51",
+      "attackdamagemax": "57",
       "armorphysical": "9.2",
       "baseattackspeed": "135",
       "attackrate": "1.5"
@@ -20085,117 +19835,7 @@
       "modifier_vengeful_spirit_21_0": "Нова Активна Здатність: Magic Meteor \n\n Після невеликої затримки вражає область метеоритом який завдає всім противникам в області Магічна Втрата і приголомшує. Ігнорує опір ефектам. \n\n Втрата: 150% від Magic Miss \n Оглушення: 150% від Magic Missile \n Час Перезарядки: 45 сек.",
       "modifier_vengeful_spirit_21_1": "Нова Активна Здатність: <b><font color='#eabe10'>Magic Meteor</font></b> \n\n Після невеликої затримки вражає область метеоритом, який завдає всім противникам в області Магічна Втрата і оглушує Ігнорує опір ефектам \n\n Втрата: <b><font color='#eabe10'>150%</font></b> від Magic Missile \n Оглушення: <b><font color='#eabe10'>150%</font></b> від Magic Missile \n Час Перезарядки: 45 сек."
     },
-    "abilities": {
-      "vengeful_spirit_magic_missile": {
-        "name": "Magic Missile",
-        "description": "Випускає у ворога магічний снаряд, який оглушує і завдає шкоди. \n У режимі Arena герой отримує Ману від Таланту в кінці кожного раунду.",
-        "lore": "Найпростіший скайрасський прийом - магічний снаряд - основний інструмент помсти Шендел.",
-        "magic_missile_stun": "ТРИВАЛЬНІСТЬ ОГЛУШЕННЯ:",
-        "magic_missile_damage": "УРОН:",
-        "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
-        "values": {
-          "magic_missile_stun": "1.1 1.2 1.3 1.4",
-          "magic_missile_damage": "90 180 270 360",
-          "abilitycooldown": "14 13 12 11",
-          "abilitymanacost": "100 110 120 130",
-          "abilitycastrange": "650"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "magic_missile_stun": "ТРИВАЛЬНІСТЬ ОГЛУШЕННЯ:",
-            "magic_missile_damage": "УРОН:",
-            "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:"
-          },
-          "values": {
-            "magic_missile_stun": "1.1 / 1.2 / 1.3 / 1.4",
-            "magic_missile_damage": "90 / 180 / 270 / 360",
-            "abilitycastrange": "650"
-          }
-        }
-      },
-      "vengeful_spirit_wave_of_terror": {
-        "name": "Wave of Terror",
-        "description": "<b><font color='#F2A93E'>Хвиля страху</font></b>\\nМстива Душа вигукує злісний клич, який ослаблює загальну шкоду від атаки та броню ворогів і дає огляд місцевості на своєму шляху.",
-        "lore": "Несамовитий голос Шендел попереджає про її наближення.",
-        "armor_reduction": "ЗНИЖЕННЯ БРОНІ:",
-        "attack_reduction": "%ЗМЕНШЕННЯ ШКОДИ ВІД АТАКИ:",
-        "abilityduration": "ТРИВАЛЬНІСТЬ ЕФЕКТУ:",
-        "vision_duration": "ТРИВАЛЬНІСТЬ ОГЛЯДУ:",
-        "values": {
-          "armor_reduction": "-2 -3 -4 -5",
-          "attack_reduction": "-10 -15 -20 -25",
-          "damage": "85 100 115 130",
-          "duration": "17",
-          "vision_aoe": "350",
-          "vision_duration": "4",
-          "abilitycastrange": "1400",
-          "abilitycooldown": "17",
-          "abilitymanacost": "25 30 35 40"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "armor_reduction": "ЗНИЖЕННЯ БРОНІ:",
-            "attack_reduction": "ЗМЕНШЕННЯ ШКОДИ ВІД АТАКИ:",
-            "vision_duration": "ТРИВАЛЬНІСТЬ ОГЛЯДУ:"
-          },
-          "values": {
-            "armor_reduction": "-2 / -3 / -4 / -5",
-            "attack_reduction": "-10% / -15% / -20% / -25%",
-            "vision_duration": "4"
-          }
-        }
-      },
-      "vengeful_spirit_command_aura": {
-        "name": "Vengeance Aura",
-        "description": "Присутність героя збільшує шкоду союзних героїв неподалік.",
-        "lore": "Адже не всі поділяють спрагу помсти, що всепоглинає, проте надмірний фанатизм надихає на подвиги.",
-        "bonus_base_damage": "%ДОП. БАЗОВИЙ УРОН:",
-        "aura_radius": "РАДІУС:",
-        "values": {
-          "bonus_base_damage": "10 16 22 28",
-          "aura_radius": "1200",
-          "abilitycastrange": "1200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "bonus_base_damage": "ДОП. БАЗОВИЙ УРОН:",
-            "aura_radius": "РАДІУС:"
-          },
-          "values": {
-            "bonus_base_damage": "10% / 16% / 22% / 28%",
-            "aura_radius": "1200"
-          }
-        }
-      },
-      "vengeful_spirit_nether_swap": {
-        "name": "Nether Swap",
-        "description": "<b><font color='#F2A93E'>Підміна</font></b>\\nМиттєво міняється позицією із союзним або ворожим героєм. Перериває чаклування цілі. Підмінені ворожі істоти зазнають шкоди. Мстива Душа й союзні підмінені істоти отримують бар’єр, що дорівнює завданій шкоді.",
-        "lore": "Мучеництво — мізерна плата за помсту.",
-        "note0": "Діє на істот з імунітетом до чарів.",
-        "note1": "Закляття знищить дерева поблизу цілі та самої героїні.",
-        "note2": "Чаклування заклинань перервано Підміною.",
-        "damage_reduction_duration": "ТРИВАЛІСТЬ БАР’ЄРА:",
-        "damage": "ШКОДА/БАР’ЄР:",
-        "values": {
-          "damage_reduction": "0",
-          "damage_reduction_duration": "10",
-          "damage": "150 300 450",
-          "abilitycastrange": "800 950 1100",
-          "abilitycooldown": "50 40 30",
-          "abilitymanacost": "100 150 200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "damage_reduction_duration": "ТРИВАЛІСТЬ БАР’ЄРА:",
-            "damage": "ШКОДА/БАР’ЄР:"
-          },
-          "values": {
-            "damage_reduction_duration": "10",
-            "damage": "150 / 300 / 450"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "400",
       "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
@@ -20213,7 +19853,7 @@
       "attackdamagemin": "51",
       "attackdamagemax": "57",
       "armorphysical": "4.2",
-      "baseattackspeed": "135",
+      "baseattackspeed": "125",
       "attackrate": "1.7"
     }
   },
@@ -21849,7 +21489,133 @@
       "modifier_legion_commander_21_0": "Збільшення Втрат від Заклинань: 1% за 10 Втрата Duel \n\n Застосування Duel створює магічне поле, що завдає противникам магічні збитки кожну секунду. \n\n Втрата: 100% від Урона Атаки \n Радіус: 500",
       "modifier_legion_commander_21_1": "Збільшення Втрат від Заклинань: <b><font color='#eabe10'>1%</font></b> за 10 Втрата Duel \n\n Застосування Duel створює магічне поле, що завдає противникам магічні збитки кожну секунду. \n\n Втрата: <b><font color='#eabe10'>100%</font></b> від Урона Атаки \n Радіус: 500"
     },
-    "abilities": {},
+    "abilities": {
+      "legion_commander_overwhelming_odds": {
+        "name": "Overwhelming Odds",
+        "description": "<b><font color='#F2A93E'>Чисельна перевага</font></b>\\nОбертає чисельну перевагу ворога проти нього самого: командувачка завдає шкоди й за кожну вражену ворожу істоту чи героя отримує додаткову швидкість атаки. Прикликані істоти та ілюзії отримують шкоду, що дорівнює частині їхнього поточного здоров’я. Можна чаклувати під час Дуелі.",
+        "lore": "Лучники Стоунхолла завжди в розпорядженні Тресдин.",
+        "radius": "РАДІУС:",
+        "damage": "БАЗОВИЙ УРОН:",
+        "damage_per_unit": "УРОН ЗА КРИПА:",
+        "damage_per_hero": "УРОН ЗА ГЕРОЯ:",
+        "illusion_dmg_pct": "%УРОН ІЛЮЗІЯМ:",
+        "bonus_attack_speed": "ДОП. ШВИДКІСТЬ АТАКИ:",
+        "duration": "ТРИВАЛЬНІСТЬ:",
+        "values": {
+          "damage": "35 65 95 125",
+          "damage_per_unit": "14 16 18 20",
+          "damage_per_hero": "35 65 95 125",
+          "illusion_dmg_pct": "25",
+          "bonus_attack_speed": "65 90 115 140",
+          "duration": "5",
+          "radius": "600",
+          "abilitycooldown": "15",
+          "abilitycastrange": "1000",
+          "abilitymanacost": "100 110 120 130"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "БАЗОВИЙ УРОН:",
+            "damage_per_unit": "УРОН ЗА КРИПА:",
+            "damage_per_hero": "УРОН ЗА ГЕРОЯ:",
+            "illusion_dmg_pct": "УРОН ІЛЮЗІЯМ:",
+            "bonus_attack_speed": "ДОП. ШВИДКІСТЬ АТАКИ:",
+            "duration": "ТРИВАЛЬНІСТЬ:",
+            "radius": "РАДІУС:"
+          },
+          "values": {
+            "damage": "35 / 65 / 95 / 125",
+            "damage_per_unit": "14 / 16 / 18 / 20",
+            "damage_per_hero": "35 / 65 / 95 / 125",
+            "illusion_dmg_pct": "25%",
+            "bonus_attack_speed": "65 / 90 / 115 / 140",
+            "duration": "5",
+            "radius": "600"
+          }
+        }
+      },
+      "legion_commander_press_the_attack": {
+        "name": "Press The Attack",
+        "description": "<b><font color='#F2A93E'>Рішучий натиск</font></b>\\nЗнімає негативні ефекти з вибраної союзної істоти, а також на короткий час збільшує швидкість руху й дає регенерацію здоров’я.\\n\\nТИП РОЗВІЮВАННЯ: сильне",
+        "lore": "Згуртуючий горн Бронзового легіону здатний надихнути будь-кого.",
+        "duration": "ТРИВАЛЬНІСТЬ:",
+        "move_speed": "%ДОП. ШВИДКІСТЬ ПЕРЕДВИЖЕННЯ:",
+        "hp_regen": "ВІДНОВЛЕННЯ ЗДОРОВ'Я:",
+        "values": {
+          "duration": "5",
+          "move_speed": "10 14 18 22",
+          "hp_regen": "30 40 50 60",
+          "abilitycastrange": "700",
+          "abilitycooldown": "16 15 14 13",
+          "abilitymanacost": "110"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "ТРИВАЛЬНІСТЬ:",
+            "move_speed": "ДОП. ШВИДКІСТЬ ПЕРЕДВИЖЕННЯ:",
+            "hp_regen": "ВІДНОВЛЕННЯ ЗДОРОВ'Я:"
+          },
+          "values": {
+            "duration": "5",
+            "move_speed": "10% / 14% / 18% / 22%",
+            "hp_regen": "30 / 40 / 50 / 60"
+          }
+        }
+      },
+      "legion_commander_moment_of_courage": {
+        "name": "Moment of Courage",
+        "description": "Може миттєво відповісти на ворожу атаку контратакою з додатковим вампіризмом.",
+        "lore": "Тресдін знає, що ворог найбільш вразливий після свого найжорстокішого удару.",
+        "trigger_chance": "%ШАНС КОНТРАТАКИ:",
+        "hp_leech_percent": "%ВАМПІРИЗМ:",
+        "values": {
+          "trigger_chance": "20",
+          "buff_duration": "1",
+          "hp_leech_percent": "25 35 45 55",
+          "abilitycooldown": "2.7 2.3 1.9 1.5"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "trigger_chance": "ШАНС КОНТРАТАКИ:",
+            "hp_leech_percent": "ВАМПІРИЗМ:"
+          },
+          "values": {
+            "trigger_chance": "20%",
+            "hp_leech_percent": "25% / 35% / 45% / 55%"
+          }
+        }
+      },
+      "legion_commander_duel": {
+        "name": "Duel",
+        "description": "Викликає обраного ворожого героя на дуель, в якій суперники змушені атакувати один одного невеликий проміжок часу. Вони не можуть застосовувати здібності або використовувати предмети. Якщо один з героїв загине під час дуелі, переможець отримає постійний бонус. У режимі Arena герой отримує 25% втрати Duel в кінці кожного раунду.",
+        "duration": "ТРИВАЛЬНІСТЬ:",
+        "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
+        "reward_damage": "ДОДАТКОВИЙ УРОН:",
+        "note0": "Дуель закінчиться, якщо учасники розійдуться на відстань 2000 одиниць.",
+        "note1": "Якщо виграти дуель, герой отримає ефект Press the Attack.",
+        "lore": "Одинковий поєдинок з воїном Стоунхолла вважається великою честю.",
+        "values": {
+          "duration": "3.5 3.75 4",
+          "reward_damage": "10 14 18",
+          "victory_range": "2000",
+          "abilitycastrange": "200",
+          "abilitymanacost": "75",
+          "abilitycooldown": "70"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "ТРИВАЛЬНІСТЬ:",
+            "reward_damage": "ДОДАТКОВИЙ УРОН:",
+            "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:"
+          },
+          "values": {
+            "duration": "3.5 / 3.75 / 4",
+            "reward_damage": "10 / 14 / 18",
+            "abilitycastrange": "200"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "150",
       "attributeprimary": "DOTA_ATTRIBUTE_STRENGTH",
@@ -22620,7 +22386,122 @@
       "modifier_lion_21_0": "Earth Spike спрацьовує повторно у точці застосування через 5 секунд. \n\n Повторне оглушення на 50% коротше.",
       "modifier_lion_21_1": "Earth Spike спрацьовує повторно у точці застосування через <b><font color='#eabe10'>5</font></b> секунд. \n\n Повторне оглушення на 50% коротше."
     },
-    "abilities": {},
+    "abilities": {
+      "lion_impale": {
+        "name": "Earth Spike",
+        "description": "З землі проривається смуга кам'яних шипів. Вони підкидають ворогів у повітря, а по приземленні оглушують їх і завдають шкоди.",
+        "lore": "Демонолог здійснює свій демонічний завіт, відкриваючи тріщину в пекло.",
+        "note0": "Швидкість шпильок — %speed% одиниць за секунду.",
+        "duration": "ТРИВАЛЬНІСТЬ ОГЛУХНЕННЯ:",
+        "damage": "УРОН:",
+        "values": {
+          "damage": "100 160 220 280",
+          "width": "125",
+          "duration": "1.4 1.6 1.8 2",
+          "length_buffer": "275",
+          "speed": "2800",
+          "abilitycastrange": "575",
+          "abilitymanacost": "90 110 130 150",
+          "abilitycooldown": "11"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "УРОН:",
+            "duration": "ТРИВАЛЬНІСТЬ ОГЛУХНЕННЯ:"
+          },
+          "values": {
+            "damage": "100 / 160 / 220 / 280",
+            "duration": "1.4 / 1.6 / 1.8 / 2"
+          }
+        }
+      },
+      "lion_voodoo": {
+        "name": "Hex",
+        "description": "Перетворює ворога на нешкідливого звірятка, блокуючи всі його здібності.",
+        "lore": "Демонолог змушений розділяти своє перетворення з незгодними, закручуючи та їхню сутність.",
+        "note0": "Миттєво знищує ілюзії.",
+        "note1": "Жертва має базову швидкість%movespeed%, але не втрачає ефектів, що дають максимальну швидкість.",
+        "duration": "ТРИВАЛЬНІСТЬ:",
+        "values": {
+          "duration": "1.4 1.6 1.8 2",
+          "movespeed": "120",
+          "abilitycastrange": "600",
+          "abilitymanacost": "125 150 175 200",
+          "abilitycooldown": "24 21 18 15"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "ТРИВАЛЬНІСТЬ:"
+          },
+          "values": {
+            "duration": "1.4 / 1.6 / 1.8 / 2"
+          }
+        }
+      },
+      "lion_mana_drain": {
+        "name": "Mana Drain",
+        "description": "ПЕРЕРУВАНА - поглинає магічну енергію мети, з кожною секундою передаючи її ману власнику здібності.",
+        "lore": "Наймолодші маги - не більше ніж джерело магічної сили для демонолога.",
+        "note0": "Моментально знищує ілюзії і не дає жертвам піти в невидимість.",
+        "duration": "ТРИВАЛЬНІСТЬ:",
+        "mana_per_second": "МАНИ В СЕКУНДУ:",
+        "break_distance": "ВІДСТАНЬ РОЗРИВУ:",
+        "movespeed": "%ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
+        "values": {
+          "duration": "5",
+          "mana_per_second": "30 60 90 120",
+          "break_distance": "1100",
+          "tick_interval": "0.1",
+          "movespeed": "15 20 25 30",
+          "abilitycastrange": "850",
+          "abilitychanneltime": "5.1",
+          "abilitycooldown": "15 13 11 9",
+          "abilitymanacost": "0"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "ТРИВАЛЬНІСТЬ:",
+            "mana_per_second": "МАНИ В СЕКУНДУ:",
+            "break_distance": "ВІДСТАНЬ РОЗРИВУ:",
+            "movespeed": "ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:"
+          },
+          "values": {
+            "duration": "5",
+            "mana_per_second": "30 / 60 / 90 / 120",
+            "break_distance": "1100",
+            "movespeed": "15% / 20% / 25% / 30%"
+          }
+        }
+      },
+      "lion_finger_of_death": {
+        "name": "Finger of Death",
+        "description": "Розриває ворожу істоту, намагаючись вивернути її навиворіт. Завдає великої шкоди, яка збільшується з кожним убитим цією здатністю ворогом. \n У режимі Arena герой отримує Втрату Finger of Death",
+        "lore": "Знівечена рука демонолога є джерелом його великої сили, здатної втопити жертв чаклунською могутністю.",
+        "note0": "Між застосуванням здатності та нанесенням шкоди є затримка в %damage_delay% сек., що дає можливість уникнути шкоди.",
+        "note1": "Втрата здатності збільшиться, якщо ворожий герой помре протягом %grace_period% сек. після отримання втрат від неї.",
+        "damage": "УРОН:",
+        "damage_per_kill": "ДОП. УРОН ЗА Вбивство:",
+        "values": {
+          "damage": "500 625 750",
+          "damage_per_kill": "40",
+          "grace_period": "3",
+          "damage_delay": "0.25",
+          "abilitycastrange": "900",
+          "abilitycooldown": "80 60 40",
+          "abilitymanacost": "200 350 500"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "УРОН:",
+            "damage_per_kill": "ДОП. УРОН ЗА Вбивство:"
+          },
+          "values": {
+            "damage": "500 / 625 / 750",
+            "damage_per_kill": "40"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "600",
       "attributeprimary": "DOTA_ATTRIBUTE_INTELLECT",
@@ -29832,6 +29713,34 @@
           }
         }
       },
+      "spectre_dispersion": {
+        "name": "Dispersion",
+        "description": "Втрата, нанесена власнику здібності, відбивається на її ворогів, не завдаючи йому пошкоджень. Ефект слабшає з відстанню. \n У режимі Arena герой завдає 50% Втрат Dispersion.",
+        "lore": "Складне завдання стоїть перед противниками Меркуріал - убити тінь мечем і магією.",
+        "note0": "Втрата, що відображається, не завдається власнику можливості.",
+        "note1": "Ілюзії не мають цієї здатності.",
+        "note2": "Відбита шкода повертається незниженим і має той же тип, що й нанесена.",
+        "damage_reflection_pct": "%ВІДРАЗУВАНИЙ УРОН:",
+        "min_radius": "МІН. РАДІУС:",
+        "max_radius": "МАКС. РАДІУС:",
+        "values": {
+          "damage_reflection_pct": "6 7 8 9",
+          "min_radius": "400",
+          "max_radius": "800"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage_reflection_pct": "ВІДРАЗУВАНИЙ УРОН:",
+            "min_radius": "МІН. РАДІУС:",
+            "max_radius": "МАКС. РАДІУС:"
+          },
+          "values": {
+            "damage_reflection_pct": "6% / 7% / 8% / 9%",
+            "min_radius": "400",
+            "max_radius": "800"
+          }
+        }
+      },
       "spectre_reality": {
         "name": "Reality",
         "description": "Герой змінюється місцями з обраною ілюзією від Haunt і кидає в нього кинджал від Spectral Dagger.",
@@ -32448,7 +32357,155 @@
       "modifier_ancient_apparition_21_0": "Ice Blast не летить до точки застосування, натомість здатність можна заряджати. Заряд споживатиме ману кожні пів секунди. Чим довше ви заряджаєте Ice Blast, тим вище буде Втрата від Обмороження та Радіус дії. \n\n Збільшення Втрата від Обмороження за Заряд: 32 \n\n Витрати Мани за Заряд: 10% від Максимальної Мани",
       "modifier_ancient_apparition_21_1": "Ice Blast не летить до точки застосування, натомість здатність можна <b><font color='#eabe10'>заряджати</font></b>. Заряд споживатиме ману кожні пів секунди. Чим довше ви заряджаєте Ice Blast, тим вище буде Втрата від Обмороження та Радіус дії. \n Витрати Мани за Заряд: 10% від Максимальної Мани"
     },
-    "abilities": {},
+    "abilities": {
+      "ancient_apparition_cold_feet": {
+        "name": "Cold Feet",
+        "description": "Накладає на ворога морозне закляття, чому той отримує періодичну шкоду. Ефект розвіється, якщо мета відійде досить далеко від точки застосування здатності. В іншому випадку через 4 секунди мета буде оглушена і примороз.",
+        "lore": "Присутність Калдра звертає оточуючих у морозну порожнечу, погрожуючи замкнути їх у крижаній в'язниці надовго.",
+        "note0": "Завдає шкоди кожні півсекунди.",
+        "damage": "УРОН У СЕКУНДУ:",
+        "stun_duration": "ТРИВАЛЬНІСТЬ ОГЛУШЕННЯ:",
+        "break_distance": "ВІДСТАНЬ РОЗРИВУ:",
+        "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:",
+        "values": {
+          "duration": "4",
+          "damage": "30 50 70 90",
+          "break_distance": "715",
+          "stun_duration": "1.6 2 2.4 2.8",
+          "abilitycastrange": "700 800 900 1000",
+          "abilitycooldown": "15 13 11 9",
+          "abilitymanacost": "125"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "УРОН У СЕКУНДУ:",
+            "break_distance": "ВІДСТАНЬ РОЗРИВУ:",
+            "stun_duration": "ТРИВАЛЬНІСТЬ ОГЛУШЕННЯ:",
+            "abilitycastrange": "ДАЛЬНІСТЬ ЗАСТОСУВАННЯ:"
+          },
+          "values": {
+            "damage": "30 / 50 / 70 / 90",
+            "break_distance": "715",
+            "stun_duration": "1.6 / 2 / 2.4 / 2.8",
+            "abilitycastrange": "700 / 800 / 900 / 1000"
+          }
+        }
+      },
+      "ancient_apparition_ice_vortex": {
+        "name": "Ice Vortex",
+        "description": "Створює вихор крижаної енергії, який завдає ворогам в області дії шкоди, уповільнює їх і збільшує отримувану ними магічну шкоду.",
+        "lore": "Крижані, пекучі вітри підкоряються забаганку Калдра, остуджуючи поле битви.",
+        "note0": "Дає огляд невеликої області.",
+        "movement_speed_pct": "%ЗАУВАГА:",
+        "spell_resist_pct": "%ЗНИЖЕННЯ ОПОРУ:",
+        "radius": "РАДІУС Вихору:",
+        "vortex_duration": "ТРИВАЛЬНІСТЬ:",
+        "shard_dps": "УРОН У СЕКУНДУ:",
+        "values": {
+          "AbilityCooldown": "10 8 6 4",
+          "radius": "275",
+          "drag_speed": "40 50 60 70",
+          "movement_speed_pct": "-8 -10 -12 -14",
+          "spell_resist_pct": "-8 -10 -12 -14",
+          "vision_aoe": "200 220 240 260",
+          "vortex_duration": "6 8 10 12",
+          "shard_dps": "12 18 24 30",
+          "abilitycastrange": "1200",
+          "abilitymanacost": "40 50 60 70",
+          "abilitycooldown": "10 8 6 4"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "radius": "РАДІУС Вихору:",
+            "movement_speed_pct": "ЗАУВАГА:",
+            "spell_resist_pct": "ЗНИЖЕННЯ ОПОРУ:",
+            "vortex_duration": "ТРИВАЛЬНІСТЬ:",
+            "shard_dps": "УРОН У СЕКУНДУ:"
+          },
+          "values": {
+            "radius": "275",
+            "movement_speed_pct": "-8% / -10% / -12% / -14%",
+            "spell_resist_pct": "-8% / -10% / -12% / -14%",
+            "vortex_duration": "6 / 8 / 10 / 12",
+            "shard_dps": "12 / 18 / 24 / 30"
+          }
+        }
+      },
+      "ancient_apparition_chilling_touch": {
+        "name": "Chilling Touch",
+        "description": "Збільшує дальність наступної атаки. Вона завдає значної магічної шкоди і уповільнює жертву.",
+        "lore": "Використовуючи вічне знання, Калдр зачаровує свої атаки холодом.",
+        "damage": "УРОН:",
+        "slow": "%ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
+        "duration": "ТРИМІСТЬ ЗАУВАЖЕННЯ:",
+        "attack_range_bonus": "ДОП. ДАЛЬНІСТЬ АТАКИ:",
+        "values": {
+          "damage": "40 80 120 160",
+          "slow": "-100",
+          "duration": "0.7 0.8 0.9 1",
+          "attack_range_bonus": "60 120 180 240",
+          "AbilityManaCost": "30 40 50 60",
+          "AbilityCooldown": "12 9 6 3",
+          "abilitymanacost": "30 40 50 60",
+          "abilitycooldown": "12 9 6 3"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "УРОН:",
+            "slow": "ЗАУВАЖЕННЯ ПЕРЕДВИЖЕННЯ:",
+            "duration": "ТРИМІСТЬ ЗАУВАЖЕННЯ:",
+            "attack_range_bonus": "ДОП. ДАЛЬНІСТЬ АТАКИ:"
+          },
+          "values": {
+            "damage": "40 / 80 / 120 / 160",
+            "slow": "-100%",
+            "duration": "0.7 / 0.8 / 0.9 / 1",
+            "attack_range_bonus": "60 / 120 / 180 / 240"
+          }
+        }
+      },
+      "ancient_apparition_ice_blast": {
+        "name": "Ice Blast",
+        "description": "Відправляє снаряд у напрямку обраної точки на карті. Повторне застосування запускає крижану кулю, яка вибухне там, де знаходився снаряд на момент активації. Чим далі він пролетить, тим більше буде радіус вибуху. на шляху крижаної кулі, застигає кров, чому вони не можуть лікуватися і відновлювати здоров'я. Якщо здоров'я враженої мети впаде нижче певного рівня, вона миттєво розіб'ється на уламки.",
+        "lore": "Крижані бурі минулих епох вириваються з холодних кінцівок Калдра, обрушуючись на світ і перетворюючи його мешканців на пам'ятники вічної могутності холоду.",
+        "note0": "Після застосування ця здатність замінюється на іншу, яка відправить крижану кулю у вказану область.",
+        "note1": "Діаметр вибуху =%radius_min% +%radius_grow% * час польоту, але не більше%radius_max%. Ширина кулі в польоті —%path_radius%.",
+        "note2": "Вбивство зараховується тому, чия шкода розсипала ціль на уламки.",
+        "note3": "Ілюзії не гинуть при перетині порога вбивства.",
+        "note4": "Ефект здатності запобігає будь-якому лікуванню, у тому числі від фонтану, але не від здібностей Sunder, Time Lapse і Supernova.",
+        "frostbite_duration": "ТРИВАЛЬНІСТЬ ОБМОРОЖЕННЯ:",
+        "dot_damage": "УРОН ВІД ОБМОРОЖЕННЯ В СЕК.:",
+        "kill_pct": "%ЗДОРОВ'Я ДЛЯ Вбивства:",
+        "release_custom": "Release",
+        "release_custom_description": "Запускає крижану кулю в поточне розташування снаряда.",
+        "values": {
+          "radius_min": "275",
+          "radius_grow": "50",
+          "radius_max": "1000",
+          "path_radius": "275",
+          "frostbite_duration": "3 4 5",
+          "dot_damage": "12.5 20 32",
+          "speed": "1500",
+          "kill_pct": "12 13 14",
+          "target_sight_radius": "500",
+          "abilitycastrange": "0",
+          "abilitycooldown": "60 50 40",
+          "abilitymanacost": "175"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "frostbite_duration": "ТРИВАЛЬНІСТЬ ОБМОРОЖЕННЯ:",
+            "dot_damage": "УРОН ВІД ОБМОРОЖЕННЯ В СЕК.:",
+            "kill_pct": "ЗДОРОВ'Я ДЛЯ Вбивства:"
+          },
+          "values": {
+            "frostbite_duration": "3 / 4 / 5",
+            "dot_damage": "12.5 / 20 / 32",
+            "kill_pct": "12% / 13% / 14%"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "675",
       "attributeprimary": "DOTA_ATTRIBUTE_INTELLECT",
@@ -33254,6 +33311,7 @@
           "slow_attack_speed_primary": "-30 -40 -50 -60",
           "aoe_damage": "80 120 160 200",
           "abilitycastrange": "575 600 625 650",
+          "abilityduration": "4",
           "abilitymanacost": "110 120 130 140",
           "abilitycooldown": "7"
         },
@@ -35204,8 +35262,8 @@
         }
       },
       "dazzle_nothl_projection": {
-        "name": "Nothl Projection",
         "description": "<b><font color='#F2A93E'>Нотльська проекція</font></b>\nДазл покидає своє тіло й вирушає в королівство Нотл як невразливий дух, що може застосовувати чари, атакувати й використовувати предмети, лишаючи своє тіло у світі з видимим зв’язком. Під час дії базові здібності Дазла посилюються: Отруйний дотик перетворює ворогів, Порожня могила лікує після завершення дії, а Хвиля тіней має коротшу зарядку. Ефект можна завершити раніше, після чого Дазл повернеться до свого тіла.",
+        "name": "Nothl Projection",
         "shard_description": "Нотльську проекцію можна застосувати, коли Дазла знерухомлено. Збільшує лікування, здійснене в королівстві Нотл.",
         "note1": "Душа Дазла не може атакувати споруди.",
         "min_duration": "МІН. ТРИВАЛІСТЬ:",
@@ -36028,146 +36086,7 @@
       "modifier_wraith_king_21_0": "Точність Атак Підконтрольних Істот: 100% \n\n Мана: 750",
       "modifier_wraith_king_21_1": "Точність Атак Підконтрольних Істот: <b><font color='#eabe10'>100%</font></b> \n\n Мана: <b><font color='#eabe10'>750</font></b>"
     },
-    "abilities": {
-      "wraith_king_hellfire_blast": {
-        "name": "Wraithfire Blast",
-        "description": "<b><font color='#F2A93E'>Примарний вогонь</font></b>\\nКороль запускає у ворога згусток примарного вогню, який завдає шкоди та приголомшує ціль, після чого ворог сповільнюється й отримує періодичну шкоду. Прикликані навколо цілі скелети отримують додаткову швидкість руху і швидкість атаки на час дії негативного ефекту.",
-        "lore": "Остаріон прикликає духів своїх нечестивих предків, щоби знищити ворога.",
-        "note0": "Прикликаних скелетів можна нацькувати на певну ціль, застосувавши на неї здібність Wraithfire Blast.",
-        "blast_stun_duration": "ДІЯ ПРИГОЛОМШЕННЯ:",
-        "blast_dot_duration": "ТРИВ. УПОВІЛЬНЕННЯ:",
-        "blast_slow": "%СПОВІЛЬНЕННЯ РУХУ:",
-        "blast_dot_damage": "ШКОДА ЗА СЕКУНДУ:",
-        "bonus_move_speed": "ДОД. ШВИДКІСТЬ РУХУ СКЕЛЕТІВ:",
-        "bonus_attack_speed": "ДОД. ШВИДКІСТЬ АТАКИ СКЕЛЕТІВ:",
-        "values": {
-          "blast_speed": "1200",
-          "blast_stun_duration": "1 1.2 1.4 1.6",
-          "blast_dot_duration": "2",
-          "blast_slow": "-20",
-          "blast_dot_damage": "20 40 60 80",
-          "bonus_move_speed": "25",
-          "bonus_attack_speed": "25",
-          "abilitycastrange": "525",
-          "abilitycooldown": "17 14 11 8",
-          "abilitymanacost": "95 110 125 140"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "blast_stun_duration": "ДІЯ ПРИГОЛОМШЕННЯ:",
-            "blast_dot_duration": "ТРИВ. УПОВІЛЬНЕННЯ:",
-            "blast_slow": "СПОВІЛЬНЕННЯ РУХУ:",
-            "blast_dot_damage": "ШКОДА ЗА СЕКУНДУ:",
-            "bonus_move_speed": "ДОД. ШВИДКІСТЬ РУХУ СКЕЛЕТІВ:",
-            "bonus_attack_speed": "ДОД. ШВИДКІСТЬ АТАКИ СКЕЛЕТІВ:"
-          },
-          "values": {
-            "blast_stun_duration": "1 / 1.2 / 1.4 / 1.6",
-            "blast_dot_duration": "2",
-            "blast_slow": "-20%",
-            "blast_dot_damage": "20 / 40 / 60 / 80",
-            "bonus_move_speed": "25",
-            "bonus_attack_speed": "25"
-          }
-        }
-      },
-      "wraith_king_vampiric_aura": {
-        "name": "Vampiric Spirit",
-        "description": "<b><font color='#F2A93E'>Вампірський дух</font></b>\\nВідновлює здоров’я відповідно до шкоди Короля-Духа по ворожих істотах. Можна чаклувати для прикликання скелетів. Скелети відроджуються один раз після вбивства.\n\nСкелети завдають більше шкоди героям.\n\nВампіризм від кріпів зменшено на %creep_lifesteal_reduction_pct%%%.\n\n Скелетами можна керувати.",
-        "lore": "Своїм клинком Король-дух висмоктує життя з ворогів, щоби підживити власну примарну ауру.",
-        "note0": "Прикликані скелети автоматично атакуватимуть будь-яку істоту, позначену Примарним вогнем.",
-        "note1": "Поєднується з іншими ефектами вампіризму.",
-        "vampiric_aura": "%ВАМПІРИЗМ:",
-        "max_skeleton_charges": "МАКС. СКЕЛЕТIВ:",
-        "skeleton_duration": "ТРИВАЛІСТЬ ЖИТТЯ СКЕЛЕТА:",
-        "skeleton_damage_tooltip": "ШКОДА СКЕЛЕТА:",
-        "skeleton_bonus_hero_damage": "%ДОД. ШКОДА СКЕЛЕТІВ ПО ГЕРОЯХ:",
-        "values": {
-          "vampiric_aura": "15 20 25 30",
-          "creep_lifesteal_reduction_pct": "40",
-          "skeleton_duration": "40",
-          "max_skeleton_charges": "1 2 3 4",
-          "spawn_interval": "0.25",
-          "reincarnate_time": "3",
-          "gold_bounty": "5",
-          "xp_bounty": "5",
-          "skeleton_damage_tooltip": "30",
-          "skeleton_building_damage_reduction": "35",
-          "skeleton_bonus_hero_damage": "25",
-          "abilitymanacost": "70 80 90 100",
-          "abilitycooldown": "40"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "vampiric_aura": "ВАМПІРИЗМ:",
-            "skeleton_duration": "ТРИВАЛІСТЬ ЖИТТЯ СКЕЛЕТА:",
-            "max_skeleton_charges": "МАКС. СКЕЛЕТIВ:",
-            "skeleton_damage_tooltip": "ШКОДА СКЕЛЕТА:",
-            "skeleton_bonus_hero_damage": "ДОД. ШКОДА СКЕЛЕТІВ ПО ГЕРОЯХ:"
-          },
-          "values": {
-            "vampiric_aura": "15% / 20% / 25% / 30%",
-            "skeleton_duration": "40",
-            "max_skeleton_charges": "1 / 2 / 3 / 4",
-            "skeleton_damage_tooltip": "30",
-            "skeleton_bonus_hero_damage": "25%"
-          }
-        }
-      },
-      "wraith_king_mortal_strike": {
-        "name": "Mortal Strike",
-        "description": "<b><font color='#F2A93E'>Смертельний удар</font></b>\\nКороль пасивно завдає додаткової шкоди до атаки. Має зарядку.",
-        "lore": "Один удар — один труп.",
-        "crit_mult": "%КРИТИЧНА ШКОДА:",
-        "values": {
-          "crit_mult": "130 170 210 250",
-          "abilitycooldown": "5.5 5 4.5 4"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "crit_mult": "КРИТИЧНА ШКОДА:"
-          },
-          "values": {
-            "crit_mult": "130% / 170% / 210% / 250%"
-          }
-        }
-      },
-      "wraith_king_reincarnation": {
-        "name": "Reincarnation",
-        "description": "<b><font color='#F2A93E'>Переродження</font></b>\\nКороль-Дух переформовується після загибелі, що дозволяє йому постати з мертвих під час бою. Після смерті ворожі істоти в радіусі %slow_radius% сповільняться.",
-        "lore": "Багато хто намагався покінчити з Королем-духом, але йому чомусь не лежиться в могилі.",
-        "note0": "Король не відродиться, якщо для цього бракуватиме мани.",
-        "note1": "Воскресає з повним здоров’ям і маною.",
-        "reincarnate_time": "ЧАС ПЕРЕРОДЖЕННЯ:",
-        "movespeed": "%СПОВІЛЬНЕННЯ РУХУ:",
-        "attackslow": "УПОВІЛЬНЕННЯ АТАКИ:",
-        "slow_duration": "ТРИВ. УПОВІЛЬНЕННЯ:",
-        "values": {
-          "reincarnate_time": "3",
-          "slow_radius": "900",
-          "movespeed": "-75",
-          "attackslow": "-75",
-          "slow_duration": "5",
-          "abilitymanacost": "180",
-          "abilitycastrange": "600",
-          "abilitycooldown": "180 150 120"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "reincarnate_time": "ЧАС ПЕРЕРОДЖЕННЯ:",
-            "movespeed": "СПОВІЛЬНЕННЯ РУХУ:",
-            "attackslow": "УПОВІЛЬНЕННЯ АТАКИ:",
-            "slow_duration": "ТРИВ. УПОВІЛЬНЕННЯ:"
-          },
-          "values": {
-            "reincarnate_time": "3",
-            "movespeed": "-75%",
-            "attackslow": "-75",
-            "slow_duration": "5"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "150",
       "attributeprimary": "DOTA_ATTRIBUTE_STRENGTH",
@@ -46833,6 +46752,53 @@
           }
         }
       },
+      "marci_companion_run": {
+        "name": "Rebound",
+        "description": "Герой зближується з обраним союзником і відскакує від нього у вказаному напрямку на обрану відстань. Відштовхнувшись від мети здібності, герой стрибає в обрану точку, завдаючи шкоди всім ворогам навколо місця приземлення і приголомшуючи їх.\\n\\nСоюзник, від якого відштовхнулися, отримає % ally_movespeed_pct%%% до швидкості пересування на %ally_buff_duration% сек.",
+        "lore": "Скориставшись другом або ворогом, Марсі може увірватися в саму гущу битви.",
+        "note0": "Мінімальна дальність стрибка - %min_jump_distance%.",
+        "note1": "Початкова мета може уникнути ривка героя.",
+        "note2": "Цю здатність не можна відобразити.",
+        "impact_damage": "УРОН ПО ОБЛАСТІ:",
+        "debuff_duration": "ТРИВАЛЬНІСТЬ ОГЛУШЕННЯ:",
+        "max_jump_distance": "ДАЛЬНІСТЬ СКАЧКУ І ЗАСТОСУВАННЯ:",
+        "values": {
+          "AbilityCooldown": "24 20 16 12",
+          "move_speed": "1700",
+          "min_jump_distance": "0",
+          "max_jump_distance": "450 550 650 750",
+          "AbilityCastRange": "450 550 650 750",
+          "landing_radius": "275",
+          "impact_damage": "80 160 240 320",
+          "debuff_duration": "0.8 1.1 1.4 1.7",
+          "min_lob_travel_time": "0.1",
+          "max_lob_travel_time": "0.2",
+          "min_height_above_lowest": "250",
+          "min_height_above_highest": "200",
+          "min_acceleration": "6000",
+          "max_acceleration": "6000",
+          "vector_preview_radius": "100",
+          "ally_buff_duration": "4",
+          "ally_movespeed_pct": "25",
+          "impact_position_offset": "64",
+          "target_abort_distance": "700",
+          "abilitymanacost": "70 80 90 100",
+          "abilitycooldown": "24 20 16 12",
+          "abilitycastrange": "450 550 650 750"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "max_jump_distance": "ДАЛЬНІСТЬ СКАЧКУ І ЗАСТОСУВАННЯ:",
+            "impact_damage": "УРОН ПО ОБЛАСТІ:",
+            "debuff_duration": "ТРИВАЛЬНІСТЬ ОГЛУШЕННЯ:"
+          },
+          "values": {
+            "max_jump_distance": "450 / 550 / 650 / 750",
+            "impact_damage": "80 / 160 / 240 / 320",
+            "debuff_duration": "0.8 / 1.1 / 1.4 / 1.7"
+          }
+        }
+      },
       "marci_guardian": {
         "name": "Sidekick",
         "description": "Відданість власника здібності дозволяє йому виживати в бою, даруючи собі і союзному герою загальний вампіризм і збитки від атак. Власник отримує лише половину бонусу поки що здатність не активна. Вампіризм кожного героя виліковує їх обох.",
@@ -51497,8 +51463,8 @@
       "mana": "339",
       "manaregen": "1.1",
       "healthregen": "3.5",
-      "attackdamagemin": "67",
-      "attackdamagemax": "73",
+      "attackdamagemin": "65",
+      "attackdamagemax": "71",
       "armorphysical": "5.7",
       "baseattackspeed": "122",
       "attackrate": "1.7"
@@ -55407,8 +55373,8 @@
       "mana": "375",
       "manaregen": "1.8",
       "healthregen": "2.3",
-      "attackdamagemin": "39",
-      "attackdamagemax": "46",
+      "attackdamagemin": "40",
+      "attackdamagemax": "47",
       "armorphysical": "4.3",
       "baseattackspeed": "120",
       "attackrate": "1.7"
@@ -57888,11 +57854,11 @@
       }
     },
     "talents_description": {
-      "modifier_io_1_0": "<b><font color='#ff0000'> Видаляє Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether не можна використовувати на союзників. </font></b> \n\n Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Віднімає у ворога 30 здоров'я за секунду. \n\n Відновлення здоров'я та все отримане лікування віднімає здоров'я у зв'язаного ворога: 60%.",
-      "modifier_io_1_1": "<b><font color='#ff0000'> Видаляє Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether не можна використовувати на союзників. </font></b> \n\n Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Віднімає у ворога <b><font color='#eabe10'>30</font></b> здоров'я за секунду. \n\n Відновлення здоров'я та все отримане лікування віднімає здоров'я у зв'язаного ворога: <b><font color='#eabe10'>60%</font></b>.",
-      "modifier_io_2_0": "Зв'язок Tether працює на всіх зачеплених ворогів. \n\n Відновлення здоров'я: 5/10",
-      "modifier_io_2_1": "Зв'язок Tether працює <b><font color='#eabe10'>на всіх</font></b> зачеплених ворогів. \n\n Відновлення здоров'я: <b><font color='#eabe10'>5</font></b>/10",
-      "modifier_io_2_2": "Зв'язок Tether працює <b><font color='#eabe10'>на всіх</font></b> зачеплених ворогів. \n\n Відновлення здоров'я: 5/<b><font color='#eabe10'>10</font></b>",
+      "modifier_io_1_0": "<b><font color='#ff0000'> Видаляє Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether не можна використовувати на союзників. </font></b> \n\n Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Віднімає у ворога 30 здоров'я за секунду. \n\n Відновлення здоров'я та все отримане лікування віднімає здоров'я у зв'язаного ворога: 45%.",
+      "modifier_io_1_1": "<b><font color='#ff0000'> Видаляє Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether не можна використовувати на союзників. </font></b> \n\n Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Віднімає у ворога <b><font color='#eabe10'>30</font></b> здоров'я за секунду. \n\n Відновлення здоров'я та все отримане лікування віднімає здоров'я у зв'язаного ворога: <b><font color='#eabe10'>45%</font></b>.",
+      "modifier_io_2_0": "Зв'язок Tether працює на всіх зачеплених ворогів. \n\n Відновлення здоров'я: 8/16",
+      "modifier_io_2_1": "Зв'язок Tether працює <b><font color='#eabe10'>на всіх</font></b> зачеплених ворогів. \n\n Відновлення здоров'я: <b><font color='#eabe10'>8</font></b>/16",
+      "modifier_io_2_2": "Зв'язок Tether працює <b><font color='#eabe10'>на всіх</font></b> зачеплених ворогів. \n\n Відновлення здоров'я: 8/<b><font color='#eabe10'>16</font></b>",
       "modifier_io_3_0": "Overcharge збільшує броню та опір магії як власнику, так і пов’язаному за допомогою Tether союзнику. Зменшує характеристики ворогів. \n\n Збільшення броні: 3/6 \n Збільшення опору магії: 7%/14%",
       "modifier_io_3_1": "Overcharge збільшує броню та опір магії як власнику, так і пов’язаному за допомогою Tether союзнику. Зменшує характеристики ворогів. \n\n Збільшення броні: <b><font color='#eabe10'>3</font></b>/6 \n Збільшення опору магії: <b><font color='#eabe10'>7%</font></b>/14%",
       "modifier_io_3_2": "Overcharge збільшує броню та опір магії як власнику, так і пов’язаному за допомогою Tether союзнику. Зменшує характеристики ворогів. \n\n Збільшення броні: 3/<b><font color='#eabe10'>6</font></b> \n Збільшення опору магії: 7%/<b><font color='#eabe10'>14%</font></b>",
@@ -58022,7 +57988,8 @@
           "spirit_duration": "19",
           "spirit_amount": "5",
           "AbilityManaCost": "100 110 120 130",
-          "AbilityCooldown": "26 24 22 20"
+          "AbilityCooldown": "26 24 22 20",
+          "abilityduration": "19"
         },
         "valuesInfo": {
           "descriptions": {
@@ -58851,9 +58818,9 @@
       "modifier_phoenix_6_1": "Dying Light працює з <b><font color='#eabe10'>максимальною</font></b> силою під час Supernova. \n\n Dying Light також <b><font color='#eabe10'>спрацьовує</font></b> на всі уражені цілі Sun Ray.",
       "modifier_phoenix_7_0": "Зменшення Часу Перезарядки Supernova: 60 сек. \n\n Sun Ray і Supernova можна використовувати одночасно.",
       "modifier_phoenix_7_1": "Зменшення Часу Перезарядки Supernova: <b><font color='#eabe10'>60</font></b> сек. \n\n Sun Ray і Supernova можна використовувати <b><font color='#eabe10'>одночасно</font></b>.",
-      "modifier_phoenix_8_0": "<b><font color='#ff0000'> Видаляє Sun Ray. </font></b> \n\n Icarus Dive не витрачає Здоров'я. \n\n Зменшення Часу Перезарядки Icarus Dive: 10/15 сек. \n\n Зменшує Час Перезарядки Icarus Dive на 5 сек., якщо у героя більше ніж 300 Спритності.",
-      "modifier_phoenix_8_1": "<b><font color='#ff0000'> Видаляє Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>не витрачає</font></b> Здоров'я. \n\n Зменшення Часу Перезарядки Icarus Dive: <b><font color='#eabe10'>10</font></b>/15 сек. \n\n Зменшує Час Перезарядки Icarus Dive на <b><font color='#eabe10'>5</font></b> сек., якщо у героя більше ніж <b><font color='#eabe10'>300 Спритності</font></b>.",
-      "modifier_phoenix_8_2": "<b><font color='#ff0000'> Видаляє Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>не витрачає</font></b> Здоров'я. \n\n Зменшення Часу Перезарядки Icarus Dive: 10/<b><font color='#eabe10'>15</font></b> сек. \n\n Зменшує Час Перезарядки Icarus Dive на <b><font color='#eabe10'>5</font></b> сек., якщо у героя більше ніж <b><font color='#eabe10'>300 Спритності</font></b>.",
+      "modifier_phoenix_8_0": "<b><font color='#ff0000'> Видаляє Sun Ray. </font></b> \n\n Icarus Dive не витрачає Здоров'я. \n\n Зменшення Часу Перезарядки Icarus Dive: 8/12 сек. \n\n Зменшує Час Перезарядки Icarus Dive на 5 сек., якщо у героя більше ніж 300 Спритності.",
+      "modifier_phoenix_8_1": "<b><font color='#ff0000'> Видаляє Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>не витрачає</font></b> Здоров'я. \n\n Зменшення Часу Перезарядки Icarus Dive: <b><font color='#eabe10'>8</font></b>/12 сек. \n\n Зменшує Час Перезарядки Icarus Dive на <b><font color='#eabe10'>5</font></b> сек., якщо у героя більше ніж <b><font color='#eabe10'>300 Спритності</font></b>.",
+      "modifier_phoenix_8_2": "<b><font color='#ff0000'> Видаляє Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>не витрачає</font></b> Здоров'я. \n\n Зменшення Часу Перезарядки Icarus Dive: 8/<b><font color='#eabe10'>12</font></b> сек. \n\n Зменшує Час Перезарядки Icarus Dive на <b><font color='#eabe10'>5</font></b> сек., якщо у героя більше ніж <b><font color='#eabe10'>300 Спритності</font></b>.",
       "modifier_phoenix_9_0": "Збільшення Швидкості Атаки під час Icarus Dive: 150/225/300",
       "modifier_phoenix_9_1": "Збільшення Швидкості Атаки під час Icarus Dive: <b><font color='#eabe10'>150</font></b>/225/300",
       "modifier_phoenix_9_2": "Збільшення Швидкості Атаки під час Icarus Dive: 150/<b><font color='#eabe10'>225</font></b>/300",
@@ -59017,6 +58984,7 @@
           "turn_rate": "25",
           "abilitycastrange": "1200",
           "abilitycooldown": "30",
+          "abilityduration": "6",
           "abilitymanacost": "100 110 120 130"
         },
         "valuesInfo": {
@@ -59025,14 +58993,16 @@
             "base_damage": "БАЗОВА ШКОДА ЗА СЕКУНДУ:",
             "hp_perc_damage": "МАКС. ШКОДА ВІД ЗДОРОВ’Я:",
             "base_heal": "БАЗОВЕ ЛІКУВАННЯ ЗА СЕКУНДУ:",
-            "hp_perc_heal": "МАКС. ЛІКУВАННЯ:"
+            "hp_perc_heal": "МАКС. ЛІКУВАННЯ:",
+            "abilityduration": "МАКС. ТРИВАЛІСТЬ:"
           },
           "values": {
             "hp_cost_perc_per_second": "6%",
             "base_damage": "14 / 20 / 26 / 32",
             "hp_perc_damage": "1% / 2.75% / 4.5% / 6.25%",
             "base_heal": "7 / 10 / 13 / 16",
-            "hp_perc_heal": "0.5% / 1% / 1.5% / 2%"
+            "hp_perc_heal": "0.5% / 1% / 1.5% / 2%",
+            "abilityduration": "6"
           }
         }
       },
@@ -59066,6 +59036,7 @@
           "egg_duration": "6",
           "abilitycastrange": "500",
           "abilitycooldown": "120",
+          "abilityduration": "6",
           "abilitymanacost": "150 200 250"
         },
         "valuesInfo": {
@@ -59073,13 +59044,15 @@
             "aura_radius": "РАДІУС:",
             "damage_per_sec": "ШКОДА ЗА СЕКУНДУ:",
             "stun_duration": "ТРИВАЛІСТЬ ОГЛУШЕННЯ:",
-            "max_hero_attacks": "АТАК ДЛЯ ЗНИЩЕННЯ:"
+            "max_hero_attacks": "АТАК ДЛЯ ЗНИЩЕННЯ:",
+            "abilityduration": "ТРИВАЛІСТЬ:"
           },
           "values": {
             "aura_radius": "1200",
             "damage_per_sec": "60 / 90 / 120",
             "stun_duration": "1.6 / 2 / 2.4",
-            "max_hero_attacks": "6 / 8 / 10"
+            "max_hero_attacks": "6 / 8 / 10",
+            "abilityduration": "6"
           }
         }
       }
@@ -59418,10 +59391,10 @@
             "id": "empty_7"
           },
           {
-            "id": "modifier_razor_10",
-            "talentInfo": "#modifier_razor_10",
-            "level": "3",
-            "imagePath": "razor/10",
+            "id": "modifier_razor_11",
+            "talentInfo": "#modifier_razor_11",
+            "level": "2",
+            "imagePath": "razor/11",
             "relatedTalent": {}
           },
           {
@@ -59464,10 +59437,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_razor_11",
-            "talentInfo": "#modifier_razor_11",
-            "level": "2",
-            "imagePath": "razor/11",
+            "id": "modifier_razor_12",
+            "talentInfo": "#modifier_razor_12",
+            "level": "3",
+            "imagePath": "razor/12",
             "relatedTalent": {}
           },
           {
@@ -59493,10 +59466,10 @@
             "id": "empty_11"
           },
           {
-            "id": "modifier_razor_12",
-            "talentInfo": "#modifier_razor_12",
-            "level": "3",
-            "imagePath": "razor/12",
+            "id": "modifier_razor_13",
+            "talentInfo": "#modifier_razor_13",
+            "level": "1",
+            "imagePath": "razor/13",
             "relatedTalent": {}
           },
           {
@@ -59532,10 +59505,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_razor_13",
-            "talentInfo": "#modifier_razor_13",
-            "level": "1",
-            "imagePath": "razor/13",
+            "id": "modifier_razor_10",
+            "talentInfo": "#modifier_razor_10",
+            "level": "3",
+            "imagePath": "razor/10",
             "relatedTalent": {}
           },
           {
@@ -59803,10 +59776,10 @@
       "modifier_razor_4_1": "Герой блокує частину шкоди, отриманої спереду та з боків за допомогою Storm Surge. Вимикається втомою. \n\n Зниження Шкоди Спереду: <b><font color='#eabe10'>8%</font></b>/12%/16% \n Зниження Шкоди Збоку: <b><font color='#eabe10'>4%</font></b>/6%/8%",
       "modifier_razor_4_2": "Герой блокує частину шкоди, отриманої спереду та з боків за допомогою Storm Surge. Вимикається втомою. \n\n Зниження Шкоди Спереду: 8%/<b><font color='#eabe10'>12%</font></b>/16% \n Зниження Шкоди Збоку: 4%/<b><font color='#eabe10'>6%</font></b>/8%",
       "modifier_razor_4_3": "Герой блокує частину шкоди, отриманої спереду та з боків за допомогою Storm Surge. Вимикається втомою. \n\n Зниження Шкоди Спереду: 8%/12%/<b><font color='#eabe10'>16%</font></b> \n Зниження Шкоди Збоку: 4%/6%/<b><font color='#eabe10'>8%</font></b>",
-      "modifier_razor_5_0": "Збільшення Шкоди Storm Surge: 30%/45%/60% від Шкоди Атаки",
-      "modifier_razor_5_1": "Збільшення Шкоди Storm Surge: <b><font color='#eabe10'>30%</font></b>/45%/60% від Шкоди Атаки",
-      "modifier_razor_5_2": "Збільшення Шкоди Storm Surge: 30%/<b><font color='#eabe10'>45%</font></b>/60% від Шкоди Атаки",
-      "modifier_razor_5_3": "Збільшення Шкоди Storm Surge: 30%/45%/<b><font color='#eabe10'>60%</font></b> від Шкоди Атаки",
+      "modifier_razor_5_0": "Збільшення Шкоди Storm Surge: 30%/60%/90% від Шкоди Атаки",
+      "modifier_razor_5_1": "Збільшення Шкоди Storm Surge: <b><font color='#eabe10'>30%</font></b>/60%/90% від Шкоди Атаки",
+      "modifier_razor_5_2": "Збільшення Шкоди Storm Surge: 30%/<b><font color='#eabe10'>60%</font></b>/90% від Шкоди Атаки",
+      "modifier_razor_5_3": "Збільшення Шкоди Storm Surge: 30%/60%/<b><font color='#eabe10'>90%</font></b> від Шкоди Атаки",
       "modifier_razor_6_0": "Поки діє здібність Eye of the Storm, шанс влучання блискавки Storm Surge збільшується на 18%, її перезарядка зменшується на 2 секунди, а сама блискавка б’є по всім ворогам у радіусі 500.",
       "modifier_razor_6_1": "Поки діє здібність Eye of the Storm, шанс влучання блискавки Storm Surge збільшується на <b><font color='#eabe10'>18%</font></b>, її перезарядка зменшується на <b><font color='#eabe10'>2</font></b> секунди, а сама блискавка б’є по всім ворогам у радіусі <b><font color='#eabe10'>500</font></b>.",
       "modifier_razor_7_0": "Прибирає обмеження на максимальну кількість ефектів Eye of the Storm. \n\n Зменшення Інтервалу Ударів Eye of the Storm: 0.1 сек. \n\n Eye of the Storm атакує одразу 2 цілі.",
@@ -59821,15 +59794,15 @@
       "modifier_razor_10_1": "<b><font color='#ff0000'> Прибирає Eye of the Storm. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Armor Link</font></b> \n\n Створює електричний зв’язок з вибраним ворожим героєм, передаючи його броню власнику здібності. Поки зв’язок діє, атаки не переривають пересування. Використання нового зв’язку завершує поточний зв’язок. \n\n Тривалість Зв’язку: 10 сек. \n Тривалість Ефекту: 10 сек. \n Швидкість Зміни Броні: <b><font color='#eabe10'>0.5</font></b>/0.75/1 \n Перезарядка: <b><font color='#eabe10'>40</font></b>/30/20 сек.",
       "modifier_razor_10_2": "<b><font color='#ff0000'> Прибирає Eye of the Storm. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Armor Link</font></b> \n\n Створює електричний зв’язок з вибраним ворожим героєм, передаючи його броню власнику здібності. Поки зв’язок діє, атаки не переривають пересування. Використання нового зв’язку завершує поточний зв’язок. \n\n Тривалість Зв’язку: 10 сек. \n Тривалість Ефекту: 10 сек. \n Швидкість Зміни Броні: 0.5/<b><font color='#eabe10'>0.75</font></b>/1 \n Перезарядка: 40/<b><font color='#eabe10'>30</font></b>/20 сек.",
       "modifier_razor_10_3": "<b><font color='#ff0000'> Прибирає Eye of the Storm. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Armor Link</font></b> \n\n Створює електричний зв’язок з вибраним ворожим героєм, передаючи його броню власнику здібності. Поки зв’язок діє, атаки не переривають пересування. Використання нового зв’язку завершує поточний зв’язок. \n\n Тривалість Зв’язку: 10 сек. \n Тривалість Ефекту: 10 сек. \n Швидкість Зміни Броні: 0.5/0.75/<b><font color='#eabe10'>1</font></b> \n Перезарядка: 40/30/<b><font color='#eabe10'>20</font></b> сек.",
-      "modifier_razor_11_0": "Зв’язки одразу дають бонус, як при 1/2 секундах утримання.",
-      "modifier_razor_11_1": "Зв’язки одразу дають бонус, як при <b><font color='#eabe10'>1</font></b>/2 секундах утримання.",
-      "modifier_razor_11_2": "Зв’язки одразу дають бонус, як при 1/<b><font color='#eabe10'>2</font></b> секундах утримання.",
+      "modifier_razor_11_0": "Зв’язки одразу дають бонус, як при 2/4 секундах утримання.",
+      "modifier_razor_11_1": "Зв’язки одразу дають бонус, як при <b><font color='#eabe10'>2</font></b>/4 секундах утримання.",
+      "modifier_razor_11_2": "Зв’язки одразу дають бонус, як при 2/<b><font color='#eabe10'>4</font></b> секундах утримання.",
       "modifier_razor_12_0": "<b><font color='#ff0000'> Прибирає Plasma Field. </font></b> \n\n Нова Активна Здібність: Spell Link \n\n Створює електричний зв’язок з вибраним ворожим героєм, передаючи його урон від заклинань власнику здібності. Поки зв’язок діє, атаки не переривають пересування. Використання нового зв’язку завершує поточний зв’язок. \n\n Тривалість Зв’язку: 10 сек. \n Тривалість Ефекту: 10 сек. \n Швидкість Зміни Урону від Заклинань: 1%/1.5%/2% \n Перезарядка: 40/30/20 сек.",
       "modifier_razor_12_1": "<b><font color='#ff0000'> Прибирає Plasma Field. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Spell Link</font></b> \n\n Створює електричний зв’язок з вибраним ворожим героєм, передаючи його урон від заклинань власнику здібності. Поки зв’язок діє, атаки не переривають пересування. Використання нового зв’язку завершує поточний зв’язок. \n\n Тривалість Зв’язку: 10 сек. \n Тривалість Ефекту: 10 сек. \n Швидкість Зміни Урону від Заклинань: <b><font color='#eabe10'>1%</font></b>/1.5%/2% \n Перезарядка: <b><font color='#eabe10'>40</font></b>/30/20 сек.",
       "modifier_razor_12_2": "<b><font color='#ff0000'> Прибирає Plasma Field. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Spell Link</font></b> \n\n Створює електричний зв’язок з вибраним ворожим героєм, передаючи його урон від заклинань власнику здібності. Поки зв’язок діє, атаки не переривають пересування. Використання нового зв’язку завершує поточний зв’язок. \n\n Тривалість Зв’язку: 10 сек. \n Тривалість Ефекту: 10 сек. \n Швидкість Зміни Урону від Заклинань: 1%/<b><font color='#eabe10'>1.5%</font></b>/2% \n Перезарядка: 40/<b><font color='#eabe10'>30</font></b>/20 сек.",
       "modifier_razor_12_3": "<b><font color='#ff0000'> Прибирає Plasma Field. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Spell Link</font></b> \n\n Створює електричний зв’язок з вибраним ворожим героєм, передаючи його урон від заклинань власнику здібності. Поки зв’язок діє, атаки не переривають пересування. Використання нового зв’язку завершує поточний зв’язок. \n\n Тривалість Зв’язку: 10 сек. \n Тривалість Ефекту: 10 сек. \n Швидкість Зміни Урону від Заклинань: 1%/1.5%/<b><font color='#eabe10'>2%</font></b> \n Перезарядка: 40/30/<b><font color='#eabe10'>20</font></b> сек.",
-      "modifier_razor_13_0": "Збільшення Тривалості Ефектів Зв’язку: 3 сек.",
-      "modifier_razor_13_1": "Збільшення Тривалості Ефектів Зв’язку: <b><font color='#eabe10'>3</font></b> сек.",
+      "modifier_razor_13_0": "Збільшення Тривалості Ефектів Зв'язку: 3 сек. \n\n Здоров'я: 400",
+      "modifier_razor_13_1": "Збільшення Тривалості Ефектів Зв'язку: <b><font color='#eabe10'>3</font></b> сек. \n\n Здоров'я: <b><font color='#eabe10'>400</font></b>",
       "modifier_razor_14_0": "Збільшення Базової Швидкості Атаки і Швидкості Руху на 4% за кожен унікальний ефект Зв’язку на герої. \n\n Зв’язки створюються миттєво.",
       "modifier_razor_14_1": "Збільшення Базової Швидкості Атаки і Швидкості Руху на <b><font color='#eabe10'>4%</font></b> за кожен унікальний ефект Зв’язку на герої. \n\n Зв’язки створюються <b><font color='#eabe10'>миттєво</font></b>.",
       "modifier_razor_15_0": "Зменшення Часу Перезарядки Plasma Field: 1/2 сек.",
@@ -59988,7 +59961,7 @@
           "radius": "500",
           "duration": "30",
           "strike_interval": "0.7 0.6 0.5",
-          "armor_reduction": "-0.7",
+          "armor_reduction": "-0.8",
           "damage": "60 75 90",
           "max_debuffs": "25",
           "abilitycooldown": "80 70 60",
@@ -60006,7 +59979,7 @@
             "radius": "500",
             "duration": "30",
             "strike_interval": "0.7 / 0.6 / 0.5",
-            "armor_reduction": "-0.7",
+            "armor_reduction": "-0.8",
             "damage": "60 / 75 / 90"
           }
         }
@@ -60639,10 +60612,10 @@
             "id": "empty_11"
           },
           {
-            "id": "modifier_void_spirit_19",
-            "talentInfo": "#modifier_void_spirit_19",
-            "level": "1",
-            "imagePath": "void_spirit/19",
+            "id": "modifier_void_spirit_20",
+            "talentInfo": "#modifier_void_spirit_20",
+            "level": "3",
+            "imagePath": "void_spirit/20",
             "relatedTalent": {}
           },
           {
@@ -60672,10 +60645,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_void_spirit_20",
-            "talentInfo": "#modifier_void_spirit_20",
-            "level": "3",
-            "imagePath": "void_spirit/20",
+            "id": "modifier_void_spirit_19",
+            "talentInfo": "#modifier_void_spirit_19",
+            "level": "1",
+            "imagePath": "void_spirit/19",
             "relatedTalent": {}
           },
           {
@@ -60760,18 +60733,18 @@
       "modifier_void_spirit_16_2": "Сила, Ловкість: 5/<b><font color='#eabe10'>10</font></b>",
       "modifier_void_spirit_17_0": "<b><font color='#ff0000'> Земля. </font></b> \n\n Dissimilate застосовує Звичайне Розсіювання і відновлює Здоров’я: 250",
       "modifier_void_spirit_17_1": "<b><font color='#ff0000'> Земля. </font></b> \n\n Dissimilate застосовує <b><font color='#eabe10'>Звичайне Розсіювання</font></b> і відновлює Здоров’я: <b><font color='#eabe10'>250</font></b>",
-      "modifier_void_spirit_18_0": "Збільшення шкоди Dissimilate: 4%/8%/12% від Поточної Мани",
-      "modifier_void_spirit_18_1": "Збільшення шкоди Dissimilate: <b><font color='#eabe10'>4%</font></b>/8%/12% від Поточної Мани",
-      "modifier_void_spirit_18_2": "Збільшення шкоди Dissimilate: 4%/<b><font color='#eabe10'>8%</font></b>/12% від Поточної Мани",
-      "modifier_void_spirit_18_3": "Збільшення шкоди Dissimilate: 4%/8%/<b><font color='#eabe10'>12%</font></b> від Поточної Мани",
+      "modifier_void_spirit_18_0": "Збільшення шкоди Dissimilate: 4%/6%/8% від Поточної Мани",
+      "modifier_void_spirit_18_1": "Збільшення шкоди Dissimilate: <b><font color='#eabe10'>4%</font></b>/6%/8% від Поточної Мани",
+      "modifier_void_spirit_18_2": "Збільшення шкоди Dissimilate: 4%/<b><font color='#eabe10'>6%</font></b>/8% від Поточної Мани",
+      "modifier_void_spirit_18_3": "Збільшення шкоди Dissimilate: 4%/6%/<b><font color='#eabe10'>8%</font></b> від Поточної Мани",
       "modifier_void_spirit_19_0": "Збільшення Зарядів Resonant Pulse: 1",
       "modifier_void_spirit_19_1": "Збільшення Зарядів Resonant Pulse: <b><font color='#eabe10'>1</font></b>",
-      "modifier_void_spirit_20_0": "Dissimilate створює додаткове зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: 1/1.5/2 сек.",
-      "modifier_void_spirit_20_1": "Dissimilate створює <b><font color='#eabe10'>додаткове</font></b> зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: <b><font color='#eabe10'>1</font></b>/1.5/2 сек.",
-      "modifier_void_spirit_20_2": "Dissimilate створює <b><font color='#eabe10'>додаткове</font></b> зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: 1/<b><font color='#eabe10'>1.5</font></b>/2 сек.",
-      "modifier_void_spirit_20_3": "Dissimilate створює <b><font color='#eabe10'>додаткове</font></b> зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: 1/1.5/<b><font color='#eabe10'>2</font></b> сек.",
-      "modifier_void_spirit_21_0": "Нова Активна Здібність: Dissimilate Burst \n\n Після невеликої затримки завдає вибух від здібності Dissimilate у вказаній точці. \n\n Шкода: 150% від Шкоди Dissimilate \n Час Перезарядки: 22 сек. \n Дальність Використання: 700 \n Витрати Мани: 120",
-      "modifier_void_spirit_21_1": "Нова Активна Здібність: <b><font color='#eabe10'>Dissimilate Burst</font></b> \n\n Після невеликої затримки завдає вибух від здібності Dissimilate у вказаній точці. \n\n Шкода: <b><font color='#eabe10'>150%</font></b> від Шкоди Dissimilate \n Час Перезарядки: 22 сек. \n Дальність Використання: 700 \n Витрати Мани: 120"
+      "modifier_void_spirit_20_0": "Dissimilate створює додаткове зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: 0.5/1/1.5 сек.",
+      "modifier_void_spirit_20_1": "Dissimilate створює <b><font color='#eabe10'>додаткове</font></b> зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: <b><font color='#eabe10'>0.5</font></b>/1/1.5 сек.",
+      "modifier_void_spirit_20_2": "Dissimilate створює <b><font color='#eabe10'>додаткове</font></b> зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: 0.5/<b><font color='#eabe10'>1</font></b>/1.5 сек.",
+      "modifier_void_spirit_20_3": "Dissimilate створює <b><font color='#eabe10'>додаткове</font></b> зовнішнє коло. \n\n Dissimilate накладає на ворогів Оцепеніння: 0.5/1/<b><font color='#eabe10'>1.5</font></b> сек.",
+      "modifier_void_spirit_21_0": "Нова Активна Здібність: Dissimilate Burst \n\n Після невеликої затримки завдає вибух від здібності Dissimilate у вказаній точці. \n\n Шкода: 150% від Шкоди Dissimilate \n Час Перезарядки: 26 сек. \n Дальність Використання: 700 \n Витрати Мани: 120",
+      "modifier_void_spirit_21_1": "Нова Активна Здібність: <b><font color='#eabe10'>Dissimilate Burst</font></b> \n\n Після невеликої затримки завдає вибух від здібності Dissimilate у вказаній точці. \n\n Шкода: <b><font color='#eabe10'>150%</font></b> від Шкоди Dissimilate \n Час Перезарядки: 26 сек. \n Дальність Використання: 700 \n Витрати Мани: 120"
     },
     "abilities": {
       "void_spirit_aether_remnant": {
@@ -60849,7 +60822,7 @@
           "artifice_duration_override_tooltip": "0",
           "artifice_pct_effectiveness_tooltip": "0",
           "double pull": "0",
-          "abilitycooldown": "20 17 14 11",
+          "abilitycooldown": "22 20 18 16",
           "abilitymanacost": "120"
         },
         "valuesInfo": {
@@ -60914,7 +60887,7 @@
         "movement_slow_pct": "%СПОВІЛЬНЕННЯ РУХУ:",
         "values": {
           "radius": "170",
-          "AbilityChargeRestoreTime": "25 20 15",
+          "AbilityChargeRestoreTime": "30 25 20",
           "min_travel_distance": "200",
           "max_travel_distance": "800 900 1000",
           "pop_damage_delay": "1.25",

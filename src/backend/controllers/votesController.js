@@ -11,8 +11,16 @@ const updateVotesData = async (app) => {
     try {
         console.log('Fetching fresh vote data');
         const response = await axios.get('https://data.worldofdota.net/data/get_heroes_votes.php');
-
+        const mustIncludeHeroes = [
+            'npc_dota_hero_void_spirit',
+            'npc_dota_hero_wisp',
+            'npc_dota_hero_razor',
+            'npc_dota_hero_phoenix',
+        ];
         cachedVotesData = response.data
+            .filter(hero => {
+                return !mustIncludeHeroes.includes(hero.hero_name);
+            })
             .map(hero => {
                 const heroName = hero.hero_name.replace('npc_dota_hero_', '');
                 const replacedHeroName = replacements_heroes[heroName] || heroName;

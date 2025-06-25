@@ -2562,6 +2562,30 @@
       "modifier_omniknight_21_1": "New Passive Ability: <b><font color='#eabe10'>Omnipresent</font></b> \n\n The owner of this aura's damage to the enemy increases by 1% for every 0.5 seconds that the enemy spends in it. \n\n Maximum Additional Damage: <b><font color='#eabe10'>20%</font></b> \n Radius: 700"
     },
     "abilities": {
+      "omniknight_purification": {
+        "name": "Purification",
+        "description": "Instantly heals a friendly unit and damages all nearby enemy units.",
+        "lore": "Priests of the Omniscience are adept at removing impurities from fellow warriors.",
+        "heal": "HEAL/DAMAGE:",
+        "radius": "DAMAGE RADIUS:",
+        "values": {
+          "heal": "90 160 230 300",
+          "radius": "260",
+          "abilitycastrange": "550",
+          "abilitycooldown": "18 16 14 12",
+          "abilitymanacost": "80 95 110 125"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "heal": "HEAL/DAMAGE:",
+            "radius": "DAMAGE RADIUS:"
+          },
+          "values": {
+            "heal": "90 / 160 / 230 / 300",
+            "radius": "260"
+          }
+        }
+      },
       "omniknight_martyr": {
         "name": "Repel",
         "description": "Grants Debuff Immunity to the target, as well as bonus Strength and HP Regen based on the amount of Debuffs on them.",
@@ -4457,6 +4481,7 @@
           "radius": "325",
           "duration": "3 4 5 6",
           "abilitycooldown": "15 14 13 12",
+          "abilityduration": "3 4 5 6",
           "abilitymanacost": "50"
         },
         "valuesInfo": {
@@ -4579,14 +4604,14 @@
             "id": "empty_2"
           },
           {
-            "id": "empty_3"
-          },
-          {
             "id": "modifier_drow_ranger_1",
             "talentInfo": "#modifier_drow_ranger_1",
             "level": "3",
             "imagePath": "drow_ranger/1",
             "relatedTalent": {}
+          },
+          {
+            "id": "empty_3"
           },
           {
             "id": "modifier_woda_talent_cloak",
@@ -4618,14 +4643,14 @@
             "relatedTalent": {}
           },
           {
+            "id": "empty_8"
+          },
+          {
             "id": "modifier_drow_ranger_3",
             "talentInfo": "#modifier_drow_ranger_3",
             "level": "2",
             "imagePath": "drow_ranger/3",
             "relatedTalent": {}
-          },
-          {
-            "id": "empty_8"
           },
           {
             "id": "modifier_woda_talent_sasha",
@@ -4650,14 +4675,14 @@
             }
           },
           {
-            "id": "empty_9"
+            "id": "modifier_drow_ranger_5",
+            "talentInfo": "#modifier_drow_ranger_5",
+            "level": "2",
+            "imagePath": "drow_ranger/5",
+            "relatedTalent": {}
           },
           {
-            "id": "modifier_drow_ranger_4",
-            "talentInfo": "#modifier_drow_ranger_4",
-            "level": "1",
-            "imagePath": "drow_ranger/4",
-            "relatedTalent": {}
+            "id": "empty_9"
           },
           {
             "id": "modifier_woda_talent_octar",
@@ -4689,14 +4714,14 @@
             "id": "empty_10"
           },
           {
-            "id": "empty_11"
+            "id": "modifier_drow_ranger_4",
+            "talentInfo": "#modifier_drow_ranger_4",
+            "level": "1",
+            "imagePath": "drow_ranger/4",
+            "relatedTalent": {}
           },
           {
-            "id": "modifier_drow_ranger_5",
-            "talentInfo": "#modifier_drow_ranger_5",
-            "level": "2",
-            "imagePath": "drow_ranger/5",
-            "relatedTalent": {}
+            "id": "empty_11"
           },
           {
             "id": "modifier_woda_talent_str5",
@@ -4945,10 +4970,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_drow_ranger_16",
-            "talentInfo": "#modifier_drow_ranger_16",
+            "id": "modifier_drow_ranger_13",
+            "talentInfo": "#modifier_drow_ranger_13",
             "level": "1",
-            "imagePath": "drow_ranger/16",
+            "imagePath": "drow_ranger/13",
             "relatedTalent": {}
           },
           {
@@ -4973,10 +4998,10 @@
             "id": "empty_18"
           },
           {
-            "id": "modifier_drow_ranger_13",
-            "talentInfo": "#modifier_drow_ranger_13",
+            "id": "modifier_drow_ranger_16",
+            "talentInfo": "#modifier_drow_ranger_16",
             "level": "1",
-            "imagePath": "drow_ranger/13",
+            "imagePath": "drow_ranger/16",
             "relatedTalent": {}
           },
           {
@@ -6240,6 +6265,35 @@
           }
         }
       },
+      "witch_doctor_voodoo_restoration": {
+        "name": "Voodoo Restoration",
+        "description": "Witch Doctor focuses his magic to heal nearby allied units and damaging enemies, costing Witch Doctor mana every second Voodoo Restoration is active.",
+        "mana_per_second": "MANA PER SEC:",
+        "radius": "RADIUS:",
+        "heal": "HEAL/DAMAGE:",
+        "lore": "Zharvakko's hocus pocus is not limited only to hexxing his opponents and is quite adept at curing ailments.",
+        "note0": "Healing/Damage is done in %heal_interval% second intervals.",
+        "values": {
+          "mana_per_second": "8 12 16 20",
+          "radius": "500 550 600 650",
+          "heal": "15 25 35 45",
+          "heal_interval": "0.33",
+          "abilitycooldown": "0",
+          "abilitymanacost": "35 40 45 50"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "mana_per_second": "MANA PER SEC:",
+            "radius": "RADIUS:",
+            "heal": "HEAL/DAMAGE:"
+          },
+          "values": {
+            "mana_per_second": "8 / 12 / 16 / 20",
+            "radius": "500 / 550 / 600 / 650",
+            "heal": "15 / 25 / 35 / 45"
+          }
+        }
+      },
       "witch_doctor_maledict": {
         "name": "Maledict",
         "description": "Curses all enemy Heroes in a small area, causing them to take a set amount of damage each second, as well as bursts of damage every 4 seconds based on how much health they have lost since the curse began.",
@@ -7081,244 +7135,7 @@
       "modifier_shadow_fiend_21_0": "Shadowraze deals Attack Damage.",
       "modifier_shadow_fiend_21_1": "Shadowraze deals <b><font color='#eabe10'>Attack Damage</font></b>."
     },
-    "abilities": {
-      "shadow_fiend_shadowraze1": {
-        "name": "Shadowraze",
-        "description": "Shadow Fiend razes the ground directly in front of him, dealing damage to enemy units in the area. Adds a stacking damage amplifier on the target that causes the enemy to take bonus Shadowraze damage per stack. Each consecutive stack also decreases turn rate and movement speed. Maximum effects: 10",
-        "shadowraze_damage": "BASE DAMAGE:",
-        "shadowraze_radius": "RADIUS:",
-        "shadowraze_range": "CAST RANGE:",
-        "stack_bonus_damage": "BONUS PER STACK:",
-        "duration": "STACK DURATION:",
-        "movement_speed_pct": "%MOVESPEED REDUCTION:",
-        "turn_rate_pct": "%TURN RATE REDUCTION:",
-        "lore": "Nevermore's trademark for harvesting souls.",
-        "note0": "Stack duration refreshes on stack gain.",
-        "values": {
-          "shadowraze_damage": "90 140 190 240",
-          "shadowraze_radius": "250",
-          "shadowraze_range": "250",
-          "shadowraze_cooldown": "3",
-          "stack_bonus_damage": "50 60 70 80",
-          "duration": "5",
-          "movement_speed_pct": "0",
-          "turn_rate_pct": "0",
-          "abilitymanacost": "75 80 85 90",
-          "abilitycooldown": "13"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "shadowraze_damage": "BASE DAMAGE:",
-            "shadowraze_radius": "RADIUS:",
-            "shadowraze_range": "CAST RANGE:",
-            "stack_bonus_damage": "BONUS PER STACK:",
-            "duration": "STACK DURATION:"
-          },
-          "values": {
-            "shadowraze_damage": "90 / 140 / 190 / 240",
-            "shadowraze_radius": "250",
-            "shadowraze_range": "250",
-            "stack_bonus_damage": "50 / 60 / 70 / 80",
-            "duration": "5"
-          }
-        }
-      },
-      "shadow_fiend_shadowraze2": {
-        "name": "Shadowraze",
-        "description": "Shadow Fiend razes the ground directly in front of him, dealing damage to enemy units in the area. Adds a stacking damage amplifier on the target that causes the enemy to take bonus Shadowraze damage per stack. Each consecutive stack also decreases turn rate and movement speed. Maximum effects: 10",
-        "shadowraze_damage": "BASE DAMAGE:",
-        "shadowraze_radius": "RADIUS:",
-        "shadowraze_range": "CAST RANGE:",
-        "stack_bonus_damage": "BONUS PER STACK:",
-        "duration": "STACK DURATION:",
-        "movement_speed_pct": "%MOVESPEED REDUCTION:",
-        "turn_rate_pct": "%TURN RATE REDUCTION:",
-        "lore": "Nevermore's trademark for harvesting souls.",
-        "note0": "Stack duration refreshes on stack gain.",
-        "values": {
-          "shadowraze_damage": "90 140 190 240",
-          "shadowraze_radius": "250",
-          "shadowraze_range": "450",
-          "shadowraze_cooldown": "3",
-          "stack_bonus_damage": "50 60 70 80",
-          "duration": "5",
-          "movement_speed_pct": "0",
-          "turn_rate_pct": "0",
-          "abilitymanacost": "75 80 85 90",
-          "abilitycooldown": "13"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "shadowraze_damage": "BASE DAMAGE:",
-            "shadowraze_radius": "RADIUS:",
-            "shadowraze_range": "CAST RANGE:",
-            "stack_bonus_damage": "BONUS PER STACK:",
-            "duration": "STACK DURATION:"
-          },
-          "values": {
-            "shadowraze_damage": "90 / 140 / 190 / 240",
-            "shadowraze_radius": "250",
-            "shadowraze_range": "450",
-            "stack_bonus_damage": "50 / 60 / 70 / 80",
-            "duration": "5"
-          }
-        }
-      },
-      "shadow_fiend_shadowraze3": {
-        "name": "Shadowraze",
-        "description": "Shadow Fiend razes the ground directly in front of him, dealing damage to enemy units in the area. Adds a stacking damage amplifier on the target that causes the enemy to take bonus Shadowraze damage per stack. Each consecutive stack also decreases turn rate and movement speed. Maximum effects: 10",
-        "shadowraze_damage": "BASE DAMAGE:",
-        "shadowraze_radius": "RADIUS:",
-        "shadowraze_range": "CAST RANGE:",
-        "stack_bonus_damage": "BONUS PER STACK:",
-        "duration": "STACK DURATION:",
-        "movement_speed_pct": "%MOVESPEED REDUCTION:",
-        "turn_rate_pct": "%TURN RATE REDUCTION:",
-        "lore": "Nevermore's trademark for harvesting souls.",
-        "note0": "Stack duration refreshes on stack gain.",
-        "values": {
-          "shadowraze_damage": "90 140 190 240",
-          "shadowraze_radius": "250",
-          "shadowraze_range": "700",
-          "shadowraze_cooldown": "3",
-          "stack_bonus_damage": "50 60 70 80",
-          "duration": "5",
-          "movement_speed_pct": "0",
-          "turn_rate_pct": "0",
-          "abilitymanacost": "75 80 85 90",
-          "abilitycooldown": "13"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "shadowraze_damage": "BASE DAMAGE:",
-            "shadowraze_radius": "RADIUS:",
-            "shadowraze_range": "CAST RANGE:",
-            "stack_bonus_damage": "BONUS PER STACK:",
-            "duration": "STACK DURATION:"
-          },
-          "values": {
-            "shadowraze_damage": "90 / 140 / 190 / 240",
-            "shadowraze_radius": "250",
-            "shadowraze_range": "700",
-            "stack_bonus_damage": "50 / 60 / 70 / 80",
-            "duration": "5"
-          }
-        }
-      },
-      "shadow_fiend_frenzy": {
-        "name": "Feast of Souls",
-        "description": "The hero increases movement and attack speed for %duration% seconds. During this effect, the maximum souls from Necromastery increase by %soul_cost%, but at the end the owner loses the same amount of souls.",
-        "note0": "Cannot be activated if there are not enough souls.",
-        "bonus_attack_speed": "BONUS ATTACK SPEED:",
-        "bonus_move_speed": "%BONUS MOVEMENT SPEED:",
-        "soul_cost": "SOUL COST:",
-        "values": {
-          "bonus_attack_speed": "40 50 60 70",
-          "bonus_move_speed": "5 7 9 11",
-          "duration": "8",
-          "soul_cost": "5",
-          "abilitycooldown": "21",
-          "abilitymanacost": "60 65 70 75"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "bonus_attack_speed": "BONUS ATTACK SPEED:",
-            "bonus_move_speed": "BONUS MOVEMENT SPEED:",
-            "soul_cost": "SOUL COST:"
-          },
-          "values": {
-            "bonus_attack_speed": "40 / 50 / 60 / 70",
-            "bonus_move_speed": "5% / 7% / 9% / 11%",
-            "soul_cost": "5"
-          }
-        }
-      },
-      "shadow_fiend_dark_lord": {
-        "name": "Presence of the Dark Lord",
-        "description": "Shadow Fiend's presence reduces the armor of nearby enemies. Every enemy hero killed nearby further improves armor reduction by %bonus_armor_per_stack% for %kill_buff_duration%s.",
-        "presence_armor_reduction": "ARMOR REDUCTION:",
-        "presence_radius": "RADIUS:",
-        "lore": "Even being near Nevermore eats away at one's soul.",
-        "values": {
-          "presence_armor_reduction": "-2 -3 -4 -5",
-          "presence_radius": "1200",
-          "bonus_armor_per_stack": "2",
-          "kill_buff_duration": "20",
-          "abilitycastrange": "1200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "presence_armor_reduction": "ARMOR REDUCTION:",
-            "presence_radius": "RADIUS:"
-          },
-          "values": {
-            "presence_armor_reduction": "-2 / -3 / -4 / -5",
-            "presence_radius": "1200"
-          }
-        }
-      },
-      "shadow_fiend_requiem": {
-        "name": "Requiem of Souls",
-        "description": "Shadow Fiend gathers his captured souls to release them as lines of demonic energy. Units near Shadow Fiend when the souls are released can be damaged by several lines of energy. Any unit damaged by Requiem of Souls will be feared and have its movement speed and magic resistance reduced for %requiem_slow_duration% seconds for each line hit up to a maximum of %requiem_slow_duration_max%. Lines of energy are created for every soul captured through Necromastery. \n\n Requiem of Souls is automatically cast whenever Shadow Fiend dies, regardless of its cooldown.",
-        "damage": "DAMAGE:",
-        "requiem_reduction_ms": "%MOVEMENT REDUCTION:",
-        "requiem_reduction_mres": "%MAGIC RESIST REDUCTION:",
-        "abilitycastpoint": "CAST DELAY:",
-        "lore": "The captured souls of those past slain are released to ravage their former allies.",
-        "note0": "One line is generated from Shadow Fiend for every %requiem_soul_conversion% souls in his possession.",
-        "note1": "Fear and movement slow do not apply when if the Requiem was released on death.",
-        "values": {
-          "damage": "80 120 160",
-          "requiem_radius": "1000",
-          "requiem_reduction_ms": "-20 -25 -30",
-          "requiem_reduction_mres": "-5 -10 -15",
-          "requiem_slow_duration": "0.7",
-          "requiem_slow_duration_max": "2.15",
-          "requiem_reduction_radius": "700",
-          "requiem_soul_conversion": "1",
-          "requiem_line_width_start": "125",
-          "requiem_line_width_end": "350",
-          "requiem_line_speed": "700",
-          "soul_death_release": "0.5",
-          "abilitymanacost": "150 175 200",
-          "abilitycooldown": "100 90 80"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "damage": "DAMAGE:",
-            "requiem_reduction_ms": "MOVEMENT REDUCTION:",
-            "requiem_reduction_mres": "MAGIC RESIST REDUCTION:"
-          },
-          "values": {
-            "damage": "80 / 120 / 160",
-            "requiem_reduction_ms": "-20% / -25% / -30%",
-            "requiem_reduction_mres": "-5% / -10% / -15%"
-          }
-        }
-      },
-      "shadow_fiend_necromastery": {
-        "name": "Necromastery",
-        "description": "Shadow Fiend steals the soul from units he kills, gaining bonus damage. On death, he releases 40% of them from bondage.",
-        "necromastery_damage_per_soul": "DAMAGE PER SOUL:",
-        "necromastery_max_souls": "MAX SOULS:",
-        "lore": "Harvested souls swirl in and out of the Abysm, empowering the Shadow Fiend to increase the size of his collection.",
-        "values": {
-          "necromastery_damage_per_soul": "1 2 3 4",
-          "necromastery_max_souls": "20",
-          "necromastery_soul_release": "0.7"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "necromastery_damage_per_soul": "DAMAGE PER SOUL:",
-            "necromastery_max_souls": "MAX SOULS:"
-          },
-          "values": {
-            "necromastery_damage_per_soul": "1 / 2 / 3 / 4",
-            "necromastery_max_souls": "20"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "525",
       "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
@@ -9881,18 +9698,21 @@
           "cast_range_scepter": "2200",
           "abilitycastrange": "700",
           "abilitycooldown": "10",
+          "abilityduration": "4.5",
           "abilitymanacost": "100 105 110 115"
         },
         "valuesInfo": {
           "descriptions": {
             "gush_damage": "DAMAGE:",
             "movement_speed": "SLOW:",
-            "negative_armor": "ARMOR REDUCTION:"
+            "negative_armor": "ARMOR REDUCTION:",
+            "abilityduration": "DEBUFF DURATION:"
           },
           "values": {
             "gush_damage": "110 / 160 / 210 / 260",
             "movement_speed": "-30%",
-            "negative_armor": "3 / 4 / 5 / 6"
+            "negative_armor": "3 / 4 / 5 / 6",
+            "abilityduration": "4.5"
           }
         }
       },
@@ -13450,145 +13270,7 @@
       "modifier_nature's_prophet_21_2": "Increase Spell Damage by 1%/<b><font color='#eabe10'>2%</font></b>/3% for each Tree around the Hero. \n\n Radius: 1200",
       "modifier_nature's_prophet_21_3": "Increase Spell Damage by 1%/2%/<b><font color='#eabe10'>3%</font></b> for each Tree around the Hero. \n\n Radius: 1200"
     },
-    "abilities": {
-      "nature's_prophet_sprout": {
-        "name": "Sprout",
-        "description": "Sprouts a ring of trees around a unit, trapping it in place, and providing vision in a %vision_range% radius.",
-        "lore": "Verdant overgrowth is a common ailment reported by Nature's Prophet's attackers.",
-        "note0": "Sprout can be cast on any unit, or the ground.",
-        "note1": "Trees created by Sprout have the same interactions with abilities as regular trees.",
-        "note2": "A Tango that consumes a tree created by Sprout provides double the heal duration.",
-        "duration": "DURATION:",
-        "abilitycastrange": "CAST RANGE:",
-        "sprout_damage": "SPROUT DAMAGE:",
-        "sprout_damage_inteval": "SPROUT DAMAGE INTERVAL:",
-        "charges": "Sprout",
-        "charges_description": "Sprouts a ring of trees around a unit, trapping it in place, and providing vision in a %vision_range% radius.",
-        "charges_lore": "Verdant overgrowth is a common ailment reported by Nature's Prophet's attackers.",
-        "charges_note0": "Sprout can be cast on any unit, or the ground.",
-        "charges_note1": "Trees created by Sprout have the same interactions with abilities as regular trees.",
-        "charges_note2": "A Tango that consumes a tree created by Sprout provides double the heal duration.",
-        "charges_duration": "DURATION:",
-        "charges_abilitycastrange": "CAST RANGE:",
-        "values": {
-          "AbilityCharges": "1",
-          "vision_range": "250",
-          "duration": "2.5 3 3.5 4",
-          "radius": "150",
-          "sprout_damage": "70 135 200 265",
-          "sprout_damage_radius": "275",
-          "abilitycastrange": "625 700 775 850",
-          "abilitymanacost": "70 90 110 130"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "duration": "DURATION:",
-            "sprout_damage": "SPROUT DAMAGE:",
-            "abilitycastrange": "CAST RANGE:"
-          },
-          "values": {
-            "duration": "2.5 / 3 / 3.5 / 4",
-            "sprout_damage": "70 / 135 / 200 / 265",
-            "abilitycastrange": "625 / 700 / 775 / 850"
-          }
-        }
-      },
-      "nature's_prophet_teleportation": {
-        "name": "Teleportation",
-        "description": "Teleports to any point on the map. Gains a barrier after arriving to its destination.",
-        "lore": "The Prophet keeps his sentinel over the forest, protecting it when in need.",
-        "note0": "Mana and cooldown take effect when the cast is completed.  Nature's Prophet will not use any mana or waste the cooldown if the spell is interrupted while casting.",
-        "note1": "When the cast begins, an effect is created at the target location, which is visible to allies and enemies.",
-        "barrier": "BARRIER:",
-        "buff_duration": "DURATION:",
-        "values": {
-          "buff_duration": "15",
-          "barrier": "70 130 190 250",
-          "abilitycastrange": "0",
-          "abilitycooldown": "65 55 45 35",
-          "abilitymanacost": "50 60 70 80"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "buff_duration": "DURATION:",
-            "barrier": "BARRIER:"
-          },
-          "values": {
-            "buff_duration": "15",
-            "barrier": "70 / 130 / 190 / 250"
-          }
-        }
-      },
-      "nature's_prophet_force_of_nature": {
-        "name": "Nature's Call",
-        "description": "Converts an area of trees into Treants under the command of Nature's Prophet.",
-        "lore": "Verodicia bestowed the Prophet with the ability to summon the Treant Guard, a mythical sentient army of the wild.",
-        "note0": "Nature's Call can only create as many treants as there are trees in the target area.",
-        "duration": "TREANT DURATION:",
-        "max_treants": "TREANT COUNT:",
-        "treant_health_tooltip": "TREANT HEALTH:",
-        "treant_dmg_tooltip": "TREANT DAMAGE:",
-        "values": {
-          "area_of_effect": "150 225 300 375",
-          "max_treants": "1 2",
-          "duration": "35",
-          "treant_health_tooltip": "500 750 1000",
-          "treant_dmg_tooltip": "24 36 48",
-          "treant_hp_bonus": "825",
-          "treant_damage_bonus": "27 39 51 63",
-          "abilitycastrange": "750",
-          "abilitycooldown": "37",
-          "abilitymanacost": "150"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "max_treants": "TREANT COUNT:",
-            "duration": "TREANT DURATION:",
-            "treant_health_tooltip": "TREANT HEALTH:",
-            "treant_dmg_tooltip": "TREANT DAMAGE:"
-          },
-          "values": {
-            "max_treants": "1 / 2",
-            "duration": "35",
-            "treant_health_tooltip": "500 / 750 / 1000",
-            "treant_dmg_tooltip": "24 / 36 / 48"
-          }
-        }
-      },
-      "nature's_prophet_wrath_of_nature": {
-        "name": "Wrath of Nature",
-        "description": "Damaging energy bounces around the map, striking enemies close to the cast point that are in vision. Each enemy hit beyond the first adds damage.",
-        "lore": "Nature's Prophet calls Verodicia's fury to strike down those who might ravage the wilderness.",
-        "note0": "Wrath of Nature will not hit units out of vision.",
-        "note1": "Can be cast through the minimap; the nearest valid target will be selected.",
-        "max_targets": "MAX TARGETS:",
-        "damage": "DAMAGE:",
-        "damage_percent_add": "%ADDED DAMAGE PER BOUNCE:",
-        "values": {
-          "max_targets": "18",
-          "damage": "115 150 185",
-          "damage_percent_add": "10",
-          "jump_delay": "0.25",
-          "kill_damage": "6",
-          "kill_damage_duration": "50",
-          "abilitycastrange": "0",
-          "abilitycooldown": "85",
-          "abilitymanacost": "130 160 190"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "max_targets": "MAX TARGETS:",
-            "damage": "DAMAGE:",
-            "damage_percent_add": "ADDED DAMAGE PER BOUNCE:"
-          },
-          "values": {
-            "max_targets": "18",
-            "damage": "115 / 150 / 185",
-            "damage_percent_add": "10%"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "600",
       "attributeprimary": "DOTA_ATTRIBUTE_ALL",
@@ -16138,6 +15820,34 @@
       "modifier_death_prophet_21_1": "Exorcism deals <b><font color='#eabe10'>Magic</font></b> Damage, not Physical. \n\n New Passive Ability: <b><font color='#eabe10'>Astral Mind</font></b> \n\n Astral Mind Reduces the Magic Resistance of enemies within a 1200 radius around the Hero: <b><font color='#eabe10'>10%</font></b>"
     },
     "abilities": {
+      "death_prophet_carrion_swarm": {
+        "name": "Crypt Swarm",
+        "description": "Sends a swarm of winged beasts to savage enemy units in front of Death Prophet.",
+        "lore": "Krobelus' many trips to the grave gather a flock of the damned.",
+        "note0": "Can hit units up to 1110 range away.",
+        "range": "CAST RANGE:",
+        "damage": "DAMAGE:",
+        "values": {
+          "start_radius": "110",
+          "end_radius": "300",
+          "damage": "80 140 200 260",
+          "range": "810",
+          "speed": "1100",
+          "abilitycastrange": "600",
+          "abilitycooldown": "10 9 8 7",
+          "abilitymanacost": "80 90 100 110"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "DAMAGE:",
+            "range": "CAST RANGE:"
+          },
+          "values": {
+            "damage": "80 / 140 / 200 / 260",
+            "range": "810"
+          }
+        }
+      },
       "death_prophet_silence": {
         "name": "Silence",
         "description": "Fires a projectile that prevents enemy units in a target area from casting spells.",
@@ -16151,6 +15861,7 @@
           "projectile_speed": "1400",
           "abilitycastrange": "900",
           "abilitycooldown": "15 14 13 12",
+          "abilityduration": "2 2.5 3 3.5",
           "abilitymanacost": "80 90 100 110"
         },
         "valuesInfo": {
@@ -16263,7 +15974,7 @@
       "healthregen": "2.5",
       "attackdamagemin": "61",
       "attackdamagemax": "71",
-      "armorphysical": "4.7",
+      "armorphysical": "3.7",
       "baseattackspeed": "122",
       "attackrate": "1.7"
     }
@@ -17039,6 +16750,7 @@
           "creep_damage_multiplier": "2",
           "abilitycastrange": "650",
           "abilitycooldown": "10 8 6 4",
+          "abilityduration": "21 24 27 30",
           "abilitymanacost": "100"
         },
         "valuesInfo": {
@@ -19214,6 +18926,44 @@
       "modifier_terrorblade_21_1": "<b><font color='#ff0000'> Removes Metamorphosis and Conjure Image. \n\n Strength does not grant Health. Agility does not grant Attack Speed. </font></b> \n\n Health: <b><font color='#eabe10'>16</font></b> for 1 Intelligence \n\n Attack Speed: <b><font color='#eabe10'>1</font></b> for 1 Intelligence"
     },
     "abilities": {
+      "terrorblade_reflection": {
+        "name": "Reflection",
+        "description": "Terrorblade brings forth an invulnerable dark reflection of all enemy heroes in a target area. Affected enemy heroes are slowed and attacked by their reflection.",
+        "lore": "In the fractal prison of Foulfell, Terrorblade learned the truth of this old tale: you are your own worst enemy.  Now it is a lesson he teaches others.",
+        "illusion_duration": "REFLECTION DURATION:",
+        "illusion_outgoing_damage": "%REFLECTION DAMAGE:",
+        "move_slow": "%MOVEMENT SLOW:",
+        "radius": "RADIUS:",
+        "note0": "Reflections are untargetable, invulnerable illusions, that will be destroyed if the slow debuff is removed.",
+        "note1": "Reflections can only attack their source.",
+        "attack_slow": "ATTACK SPEED SLOW:",
+        "values": {
+          "illusion_duration": "5",
+          "illusion_outgoing_damage": "55 70 85 100",
+          "move_slow": "-15 -20 -25 -30",
+          "attack_slow": "-15 -20 -25 -30",
+          "radius": "500",
+          "abilitycastrange": "700",
+          "abilitymanacost": "60 65 70 75",
+          "abilitycooldown": "25 22 19 16"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "illusion_duration": "REFLECTION DURATION:",
+            "illusion_outgoing_damage": "REFLECTION DAMAGE:",
+            "move_slow": "MOVEMENT SLOW:",
+            "attack_slow": "ATTACK SPEED SLOW:",
+            "radius": "RADIUS:"
+          },
+          "values": {
+            "illusion_duration": "5",
+            "illusion_outgoing_damage": "55% / 70% / 85% / 100%",
+            "move_slow": "-15% / -20% / -25% / -30%",
+            "attack_slow": "-15 / -20 / -25 / -30",
+            "radius": "500"
+          }
+        }
+      },
       "terrorblade_conjure_image": {
         "name": "Conjure Image",
         "description": "Creates an illusion of Terrorblade that deals damage.",
@@ -19317,8 +19067,8 @@
       "mana": "315",
       "manaregen": "1.0",
       "healthregen": "2.5",
-      "attackdamagemin": "53",
-      "attackdamagemax": "59",
+      "attackdamagemin": "51",
+      "attackdamagemax": "57",
       "armorphysical": "9.2",
       "baseattackspeed": "135",
       "attackrate": "1.5"
@@ -20067,117 +19817,7 @@
       "modifier_vengeful_spirit_21_0": "New Active Ability: Magic Meteor \n\n After a short delay, strikes an area with a meteorite that deals Magic Damage to all enemies in the area and stuns. Ignores status resistance. \n\n Damage: 150% of Magic Missile \n Stun: 150% of Magic Missile \n Cooldown: 45 seconds",
       "modifier_vengeful_spirit_21_1": "New Active Ability: <b><font color='#eabe10'>Magic Meteor</font></b> \n\n After a short delay, strikes an area with a meteorite that deals Magic Damage to all enemies in the area and stuns. Ignores status resistance. \n\n Damage: <b><font color='#eabe10'>150%</font></b> of Magic Missile \n Stun: <b><font color='#eabe10'>150%</font></b> of Magic Missile \n Cooldown: 45 seconds"
     },
-    "abilities": {
-      "vengeful_spirit_magic_missile": {
-        "name": "Magic Missile",
-        "description": "Fires a magic missile at an enemy unit, stunning and dealing damage. \n In Arena mode, the hero gains Mana from Talent at the end of each round.",
-        "lore": "A simple Skywrath technique, the magic missile is Shendel's primary tool for vengeance.",
-        "magic_missile_stun": "STUN DURATION:",
-        "magic_missile_damage": "DAMAGE:",
-        "abilitycastrange": "CAST RANGE:",
-        "values": {
-          "magic_missile_stun": "1.1 1.2 1.3 1.4",
-          "magic_missile_damage": "90 180 270 360",
-          "abilitycooldown": "14 13 12 11",
-          "abilitymanacost": "100 110 120 130",
-          "abilitycastrange": "650"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "magic_missile_stun": "STUN DURATION:",
-            "magic_missile_damage": "DAMAGE:",
-            "abilitycastrange": "CAST RANGE:"
-          },
-          "values": {
-            "magic_missile_stun": "1.1 / 1.2 / 1.3 / 1.4",
-            "magic_missile_damage": "90 / 180 / 270 / 360",
-            "abilitycastrange": "650"
-          }
-        }
-      },
-      "vengeful_spirit_wave_of_terror": {
-        "name": "Wave of Terror",
-        "description": "Vengeful Spirit lets loose a wicked cry, weakening the total attack damage and armor of enemies, and giving vision of the path ahead.",
-        "lore": "Shendel's haunting voice hints at her approaching vindication.",
-        "armor_reduction": "ARMOR REDUCTION:",
-        "attack_reduction": "%ATTACK DAMAGE REDUCTION:",
-        "abilityduration": "DEBUFF DURATION:",
-        "vision_duration": "VISION DURATION:",
-        "values": {
-          "armor_reduction": "-2 -3 -4 -5",
-          "attack_reduction": "-10 -15 -20 -25",
-          "damage": "85 100 115 130",
-          "duration": "17",
-          "vision_aoe": "350",
-          "vision_duration": "4",
-          "abilitycastrange": "1400",
-          "abilitycooldown": "17",
-          "abilitymanacost": "25 30 35 40"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "armor_reduction": "ARMOR REDUCTION:",
-            "attack_reduction": "ATTACK DAMAGE REDUCTION:",
-            "vision_duration": "VISION DURATION:"
-          },
-          "values": {
-            "armor_reduction": "-2 / -3 / -4 / -5",
-            "attack_reduction": "-10% / -15% / -20% / -25%",
-            "vision_duration": "4"
-          }
-        }
-      },
-      "vengeful_spirit_command_aura": {
-        "name": "Vengeance Aura",
-        "description": "Vengeful Spirit's presence increases the damage of nearby friendly heroes.",
-        "lore": "Although they may not share her undying passion for revenge, allies do draw on her fanaticism in combat.",
-        "bonus_base_damage": "%BASE DAMAGE BONUS:",
-        "aura_radius": "RADIUS:",
-        "values": {
-          "bonus_base_damage": "10 16 22 28",
-          "aura_radius": "1200",
-          "abilitycastrange": "1200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "bonus_base_damage": "BASE DAMAGE BONUS:",
-            "aura_radius": "RADIUS:"
-          },
-          "values": {
-            "bonus_base_damage": "10% / 16% / 22% / 28%",
-            "aura_radius": "1200"
-          }
-        }
-      },
-      "vengeful_spirit_nether_swap": {
-        "name": "Nether Swap",
-        "description": "Instantaneously swaps positions with a target Hero, friend or enemy. Nether Swap interrupts channeling abilities on the target. Enemy Swapped units take damage. Vengeful Spirit and allied swapped units gain a barrier equal to the damage dealt.",
-        "lore": "Martyrdom is a small price to pay for vengeance.",
-        "note0": "Works on Spell Immune units.",
-        "note1": "Trees near Vengeful Spirit and the target will be destroyed when the spell is cast.",
-        "note2": "Channeling spells are interrupted by Nether Swap.",
-        "damage_reduction_duration": "SHIELD DURATION:",
-        "damage": "DAMAGE/SHIELD:",
-        "values": {
-          "damage_reduction": "0",
-          "damage_reduction_duration": "10",
-          "damage": "150 300 450",
-          "abilitycastrange": "800 950 1100",
-          "abilitycooldown": "50 40 30",
-          "abilitymanacost": "100 150 200"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "damage_reduction_duration": "SHIELD DURATION:",
-            "damage": "DAMAGE/SHIELD:"
-          },
-          "values": {
-            "damage_reduction_duration": "10",
-            "damage": "150 / 300 / 450"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "400",
       "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
@@ -20195,7 +19835,7 @@
       "attackdamagemin": "51",
       "attackdamagemax": "57",
       "armorphysical": "4.2",
-      "baseattackspeed": "135",
+      "baseattackspeed": "125",
       "attackrate": "1.7"
     }
   },
@@ -21831,7 +21471,133 @@
       "modifier_legion_commander_21_0": "Increase Spell Damage: 1% per 10 Duel Damage \n\n Casting Duel creates a magical field that deals magical damage to enemies every second. \n\n Damage: 100% of Attack Damage \n Radius: 500",
       "modifier_legion_commander_21_1": "Increase Spell Damage: <b><font color='#eabe10'>1%</font></b> per 10 Duel Damage \n\n Casting Duel creates a magical field that deals magical damage to enemies every second. \n\n Damage: <b><font color='#eabe10'>100%</font></b> of Attack Damage \n Radius: 500"
     },
-    "abilities": {},
+    "abilities": {
+      "legion_commander_overwhelming_odds": {
+        "name": "Overwhelming Odds",
+        "description": "Turns the enemies' numbers against them, dealing damage per unit or per hero and granting you bonus attack speed . Deals bonus damage to illusions and summoned units as a percent of their current health. Can be cast during Duel.",
+        "lore": "The archers of Stonehall are ready at Tresdin's command.",
+        "radius": "RADIUS:",
+        "damage": "BASE DAMAGE:",
+        "damage_per_unit": "DAMAGE PER CREEP:",
+        "damage_per_hero": "DAMAGE PER HERO:",
+        "illusion_dmg_pct": "%ILLUSION DAMAGE:",
+        "bonus_attack_speed": "BONUS ATTACK SPEED:",
+        "duration": "DURATION:",
+        "values": {
+          "damage": "35 65 95 125",
+          "damage_per_unit": "14 16 18 20",
+          "damage_per_hero": "35 65 95 125",
+          "illusion_dmg_pct": "25",
+          "bonus_attack_speed": "65 90 115 140",
+          "duration": "5",
+          "radius": "600",
+          "abilitycooldown": "15",
+          "abilitycastrange": "1000",
+          "abilitymanacost": "100 110 120 130"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "BASE DAMAGE:",
+            "damage_per_unit": "DAMAGE PER CREEP:",
+            "damage_per_hero": "DAMAGE PER HERO:",
+            "illusion_dmg_pct": "ILLUSION DAMAGE:",
+            "bonus_attack_speed": "BONUS ATTACK SPEED:",
+            "duration": "DURATION:",
+            "radius": "RADIUS:"
+          },
+          "values": {
+            "damage": "35 / 65 / 95 / 125",
+            "damage_per_unit": "14 / 16 / 18 / 20",
+            "damage_per_hero": "35 / 65 / 95 / 125",
+            "illusion_dmg_pct": "25%",
+            "bonus_attack_speed": "65 / 90 / 115 / 140",
+            "duration": "5",
+            "radius": "600"
+          }
+        }
+      },
+      "legion_commander_press_the_attack": {
+        "name": "Press The Attack",
+        "description": "Removes debuffs and disables from the target friendly unit, and grants bonus movement speed and health regen for a short time.\\n\\nDISPEL TYPE: Strong Dispel",
+        "lore": "The rallying horn of the Bronze Legion is able to inspire any heart.",
+        "duration": "DURATION:",
+        "move_speed": "%BONUS MOVE SPEED:",
+        "hp_regen": "HP REGEN:",
+        "values": {
+          "duration": "5",
+          "move_speed": "10 14 18 22",
+          "hp_regen": "30 40 50 60",
+          "abilitycastrange": "700",
+          "abilitycooldown": "16 15 14 13",
+          "abilitymanacost": "110"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "DURATION:",
+            "move_speed": "BONUS MOVE SPEED:",
+            "hp_regen": "HP REGEN:"
+          },
+          "values": {
+            "duration": "5",
+            "move_speed": "10% / 14% / 18% / 22%",
+            "hp_regen": "30 / 40 / 50 / 60"
+          }
+        }
+      },
+      "legion_commander_moment_of_courage": {
+        "name": "Moment of Courage",
+        "description": "When attacked, Legion Commander has a chance to immediately counterattack with bonus lifesteal.",
+        "lore": "Tresdin knows that an enemy's most vulnerable moment often follows their fiercest stroke.",
+        "trigger_chance": "%CHANCE TO COUNTERATTACK:",
+        "hp_leech_percent": "%LIFESTEAL:",
+        "values": {
+          "trigger_chance": "20",
+          "buff_duration": "1",
+          "hp_leech_percent": "25 35 45 55",
+          "abilitycooldown": "2.7 2.3 1.9 1.5"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "trigger_chance": "CHANCE TO COUNTERATTACK:",
+            "hp_leech_percent": "LIFESTEAL:"
+          },
+          "values": {
+            "trigger_chance": "20%",
+            "hp_leech_percent": "25% / 35% / 45% / 55%"
+          }
+        }
+      },
+      "legion_commander_duel": {
+        "name": "Duel",
+        "description": "Legion Commander and the target enemy hero are forced to attack each other for a short duration.  Neither hero can use items or abilities.  If either hero dies during the duration, the hero winning the Duel gains permanent bonus damage. \n In Arena mode, the hero takes 25% Duel Damage at the end of each round.",
+        "duration": "DURATION:",
+        "abilitycastrange": "CAST RANGE:",
+        "reward_damage": "BONUS DAMAGE:",
+        "note0": "Duels will end if the units are pushed 2000 units apart.",
+        "note1": "Winning a Duel automatically casts Press the Attack on yourself.",
+        "lore": "To face a soldier of Stonehall in single combat is a challenge few can resist.",
+        "values": {
+          "duration": "3.5 3.75 4",
+          "reward_damage": "10 14 18",
+          "victory_range": "2000",
+          "abilitycastrange": "200",
+          "abilitymanacost": "75",
+          "abilitycooldown": "70"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "DURATION:",
+            "reward_damage": "BONUS DAMAGE:",
+            "abilitycastrange": "CAST RANGE:"
+          },
+          "values": {
+            "duration": "3.5 / 3.75 / 4",
+            "reward_damage": "10 / 14 / 18",
+            "abilitycastrange": "200"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "150",
       "attributeprimary": "DOTA_ATTRIBUTE_STRENGTH",
@@ -22602,7 +22368,122 @@
       "modifier_lion_21_0": "Earth Spike re-triggers at the cast point after 5 seconds. \n\n Re-stun duration is 50% shorter.",
       "modifier_lion_21_1": "Earth Spike re-triggers at the cast point after <b><font color='#eabe10'>5</font></b> seconds. \n\n Re-stun duration is 50% shorter."
     },
-    "abilities": {},
+    "abilities": {
+      "lion_impale": {
+        "name": "Earth Spike",
+        "description": "Rock spikes burst from the earth along a straight path. Enemy units are hurled into the air, then are stunned and take damage when they fall.",
+        "lore": "The Demon Witch exercises his demonic covenant, opening a fissure from hell.",
+        "note0": "The spikes move at %speed% units per second.",
+        "duration": "STUN DURATION:",
+        "damage": "DAMAGE:",
+        "values": {
+          "damage": "100 160 220 280",
+          "width": "125",
+          "duration": "1.4 1.6 1.8 2",
+          "length_buffer": "275",
+          "speed": "2800",
+          "abilitycastrange": "575",
+          "abilitymanacost": "90 110 130 150",
+          "abilitycooldown": "11"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "DAMAGE:",
+            "duration": "STUN DURATION:"
+          },
+          "values": {
+            "damage": "100 / 160 / 220 / 280",
+            "duration": "1.4 / 1.6 / 1.8 / 2"
+          }
+        }
+      },
+      "lion_voodoo": {
+        "name": "Hex",
+        "description": "Transforms an enemy unit into a harmless beast, with all special abilities disabled.",
+        "lore": "Lion is compelled to share his transfiguration, twisting the essence of those who oppose him.",
+        "note0": "Instantly destroys illusions.",
+        "note1": "The target will have a base movement speed of %movespeed%, but buffs granting maximum movement speed won't be disabled.",
+        "duration": "DURATION:",
+        "values": {
+          "duration": "1.4 1.6 1.8 2",
+          "movespeed": "120",
+          "abilitycastrange": "600",
+          "abilitymanacost": "125 150 175 200",
+          "abilitycooldown": "24 21 18 15"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "DURATION:"
+          },
+          "values": {
+            "duration": "1.4 / 1.6 / 1.8 / 2"
+          }
+        }
+      },
+      "lion_mana_drain": {
+        "name": "Mana Drain",
+        "description": "CHANNELED - Absorbs the magical energies of a target enemy unit by taking mana from it every second.",
+        "lore": "Lesser magi are nothing more than a source of magical restoration for the Demon Witch.",
+        "note0": "Instantly destroys illusions and prevents heroes from going invisible.",
+        "duration": "CHANNEL TIME:",
+        "mana_per_second": "MANA PER SECOND:",
+        "break_distance": "BREAK DISTANCE:",
+        "movespeed": "%MOVEMENT SLOW:",
+        "values": {
+          "duration": "5",
+          "mana_per_second": "30 60 90 120",
+          "break_distance": "1100",
+          "tick_interval": "0.1",
+          "movespeed": "15 20 25 30",
+          "abilitycastrange": "850",
+          "abilitychanneltime": "5.1",
+          "abilitycooldown": "15 13 11 9",
+          "abilitymanacost": "0"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "CHANNEL TIME:",
+            "mana_per_second": "MANA PER SECOND:",
+            "break_distance": "BREAK DISTANCE:",
+            "movespeed": "MOVEMENT SLOW:"
+          },
+          "values": {
+            "duration": "5",
+            "mana_per_second": "30 / 60 / 90 / 120",
+            "break_distance": "1100",
+            "movespeed": "15% / 20% / 25% / 30%"
+          }
+        }
+      },
+      "lion_finger_of_death": {
+        "name": "Finger of Death",
+        "description": "Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n In Arena mode, the hero takes Finger of Death Damage at the end of each round.",
+        "lore": "Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force.",
+        "note0": "Finger of Death has a %damage_delay% delay before the damage is applied after the spell is cast, allowing certain abilities to avoid the damage.",
+        "note1": "Finger of Death only gains damage if the enemy hero dies within %grace_period% seconds of being affected by Finger of Death.",
+        "damage": "DAMAGE:",
+        "damage_per_kill": "DAMAGE PER KILL:",
+        "values": {
+          "damage": "500 625 750",
+          "damage_per_kill": "40",
+          "grace_period": "3",
+          "damage_delay": "0.25",
+          "abilitycastrange": "900",
+          "abilitycooldown": "80 60 40",
+          "abilitymanacost": "200 350 500"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "DAMAGE:",
+            "damage_per_kill": "DAMAGE PER KILL:"
+          },
+          "values": {
+            "damage": "500 / 625 / 750",
+            "damage_per_kill": "40"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "600",
       "attributeprimary": "DOTA_ATTRIBUTE_INTELLECT",
@@ -29814,6 +29695,34 @@
           }
         }
       },
+      "spectre_dispersion": {
+        "name": "Dispersion",
+        "description": "Damage done to Spectre is reflected on her enemies, leaving her unharmed. The effect lessens with distance. \n In Arena mode, the hero deals 50% Dispersion Damage.",
+        "lore": "A daunting task lies before enemies of Mercurial - killing a shadow with blade and magic.",
+        "note0": "The reflected damage is not dealt to Spectre.",
+        "note1": "Illusions don't get this ability.",
+        "note2": "Damage is reflected before reductions, and is returned as the same damage type.",
+        "damage_reflection_pct": "%DAMAGE REFLECTED:",
+        "min_radius": "MIN RADIUS:",
+        "max_radius": "MAX RADIUS:",
+        "values": {
+          "damage_reflection_pct": "6 7 8 9",
+          "min_radius": "400",
+          "max_radius": "800"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage_reflection_pct": "DAMAGE REFLECTED:",
+            "min_radius": "MIN RADIUS:",
+            "max_radius": "MAX RADIUS:"
+          },
+          "values": {
+            "damage_reflection_pct": "6% / 7% / 8% / 9%",
+            "min_radius": "400",
+            "max_radius": "800"
+          }
+        }
+      },
       "spectre_reality": {
         "name": "Reality",
         "description": "Spectre exchanges places with a chosen Haunt and casts the current level of Spectral Dagger on the haunt's target.",
@@ -32430,7 +32339,155 @@
       "modifier_ancient_apparition_21_0": "Ice Blast does not fly to the cast point, instead the ability can be charged. The charge will consume mana every half second. The longer you charge Ice Blast, the higher the Frostbite Damage and Radius. \n\n Increase Frostbitten Damage per Charge: 32 \n\n Mana Cost per Charge: 10% of Max Mana",
       "modifier_ancient_apparition_21_1": "Ice Blast does not fly to the cast point, instead the ability can be <b><font color='#eabe10'>charged</font></b>. The charge will consume mana every half second. The longer you charge Ice Blast, the higher the Frostbite Damage and Radius. \n\n Increase Frostbitten Damage per Charge: <b><font color='#eabe10'>32</font></b> \n\n Mana Cost per Charge: 10% of Max Mana"
     },
-    "abilities": {},
+    "abilities": {
+      "ancient_apparition_cold_feet": {
+        "name": "Cold Feet",
+        "description": "Places a frozen hex on an enemy unit that deals damage over time, but can be dispelled by moving away from the initial cast point.  If the enemy unit doesn't move outside of the given range, it will be stunned and frozen in place after 4 seconds.",
+        "lore": "Kaldr's presence draws those around him into a frozen void, threatening to lock them in an icy prison for eternity.",
+        "note0": "Deals damage every half second.",
+        "damage": "DAMAGE PER SECOND:",
+        "stun_duration": "STUN DURATION:",
+        "break_distance": "BREAK DISTANCE:",
+        "abilitycastrange": "CAST RANGE:",
+        "values": {
+          "duration": "4",
+          "damage": "30 50 70 90",
+          "break_distance": "715",
+          "stun_duration": "1.6 2 2.4 2.8",
+          "abilitycastrange": "700 800 900 1000",
+          "abilitycooldown": "15 13 11 9",
+          "abilitymanacost": "125"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "DAMAGE PER SECOND:",
+            "break_distance": "BREAK DISTANCE:",
+            "stun_duration": "STUN DURATION:",
+            "abilitycastrange": "CAST RANGE:"
+          },
+          "values": {
+            "damage": "30 / 50 / 70 / 90",
+            "break_distance": "715",
+            "stun_duration": "1.6 / 2 / 2.4 / 2.8",
+            "abilitycastrange": "700 / 800 / 900 / 1000"
+          }
+        }
+      },
+      "ancient_apparition_ice_vortex": {
+        "name": "Ice Vortex",
+        "description": "Creates a vortex of icy energy that deals damage, slows and increases magic damage done to enemies in its range.",
+        "lore": "Frozen, caustic winds are at the whim of Kaldr, chilling the field of battle.",
+        "note0": "Provides vision in a small area where it is placed.",
+        "movement_speed_pct": "%SLOW:",
+        "spell_resist_pct": "%INCREASED MAGIC DAMAGE:",
+        "radius": "RADIUS:",
+        "vortex_duration": "DURATION:",
+        "shard_dps": "DAMAGE PER SECOND:",
+        "values": {
+          "AbilityCooldown": "10 8 6 4",
+          "radius": "275",
+          "drag_speed": "40 50 60 70",
+          "movement_speed_pct": "-8 -10 -12 -14",
+          "spell_resist_pct": "-8 -10 -12 -14",
+          "vision_aoe": "200 220 240 260",
+          "vortex_duration": "6 8 10 12",
+          "shard_dps": "12 18 24 30",
+          "abilitycastrange": "1200",
+          "abilitymanacost": "40 50 60 70",
+          "abilitycooldown": "10 8 6 4"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "radius": "RADIUS:",
+            "movement_speed_pct": "SLOW:",
+            "spell_resist_pct": "INCREASED MAGIC DAMAGE:",
+            "vortex_duration": "DURATION:",
+            "shard_dps": "DAMAGE PER SECOND:"
+          },
+          "values": {
+            "radius": "275",
+            "movement_speed_pct": "-8% / -10% / -12% / -14%",
+            "spell_resist_pct": "-8% / -10% / -12% / -14%",
+            "vortex_duration": "6 / 8 / 10 / 12",
+            "shard_dps": "12 / 18 / 24 / 30"
+          }
+        }
+      },
+      "ancient_apparition_chilling_touch": {
+        "name": "Chilling Touch",
+        "description": "Enhances Ancient Apparition's attack with increased range, heavy magic damage, and movement slow.",
+        "lore": "The Ancient Apparition's eternal knowledge brings a frigid enchantment to his attacks.",
+        "damage": "DAMAGE:",
+        "slow": "%MOVEMENT SLOW:",
+        "duration": "SLOW DURATION:",
+        "attack_range_bonus": "ATTACK RANGE BONUS:",
+        "values": {
+          "damage": "40 80 120 160",
+          "slow": "-100",
+          "duration": "0.7 0.8 0.9 1",
+          "attack_range_bonus": "60 120 180 240",
+          "AbilityManaCost": "30 40 50 60",
+          "AbilityCooldown": "12 9 6 3",
+          "abilitymanacost": "30 40 50 60",
+          "abilitycooldown": "12 9 6 3"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "DAMAGE:",
+            "slow": "MOVEMENT SLOW:",
+            "duration": "SLOW DURATION:",
+            "attack_range_bonus": "ATTACK RANGE BONUS:"
+          },
+          "values": {
+            "damage": "40 / 80 / 120 / 160",
+            "slow": "-100%",
+            "duration": "0.7 / 0.8 / 0.9 / 1",
+            "attack_range_bonus": "60 / 120 / 180 / 240"
+          }
+        }
+      },
+      "ancient_apparition_ice_blast": {
+        "name": "Ice Blast",
+        "description": "Launches a tracer toward any location on the battlefield, which must be triggered again to mark the area to be blasted by a damaging explosion of hail. The further the tracer travels, the larger the explosion will be. Enemies caught in the explosion, or who touch the icy ball of hail as it travels, are Frostbitten, taking damage and prevented from regenerating or healing. If a Frostbitten unit's health drops below a certain percentage, they will instantly shatter.",
+        "lore": "Ice storms from ages past flow through Kaldr's frosty limbs, crashing into the world and turning its inhabitants into monuments to his eternal power.",
+        "note0": "Upon cast, this ability is replaced by Release, used to stop the tracer on the target area.",
+        "note1": "The area of effect is %radius_min% + %radius_grow%*TimeTraveled, capped at %radius_max%.  The freeze area along the path is %path_radius%.",
+        "note2": "Kill will be granted to the source of the damage that triggers the shatter.",
+        "note3": "The shatter effect doesn't work on illusions.",
+        "note4": "The HP Freeze prevents most kinds of healing, including the fountain, except Sunder, Time Lapse and Supernova.",
+        "frostbite_duration": "FROSTBITTEN DURATION:",
+        "dot_damage": "FROSTBITTEN DAMAGE PER SECOND:",
+        "kill_pct": "%SHATTER HEALTH THRESHOLD:",
+        "release_custom": "Release",
+        "release_custom_description": "Releases the ice blast to explode at the tracer's current location.",
+        "values": {
+          "radius_min": "275",
+          "radius_grow": "50",
+          "radius_max": "1000",
+          "path_radius": "275",
+          "frostbite_duration": "3 4 5",
+          "dot_damage": "12.5 20 32",
+          "speed": "1500",
+          "kill_pct": "12 13 14",
+          "target_sight_radius": "500",
+          "abilitycastrange": "0",
+          "abilitycooldown": "60 50 40",
+          "abilitymanacost": "175"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "frostbite_duration": "FROSTBITTEN DURATION:",
+            "dot_damage": "FROSTBITTEN DAMAGE PER SECOND:",
+            "kill_pct": "SHATTER HEALTH THRESHOLD:"
+          },
+          "values": {
+            "frostbite_duration": "3 / 4 / 5",
+            "dot_damage": "12.5 / 20 / 32",
+            "kill_pct": "12% / 13% / 14%"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "675",
       "attributeprimary": "DOTA_ATTRIBUTE_INTELLECT",
@@ -33236,6 +33293,7 @@
           "slow_attack_speed_primary": "-30 -40 -50 -60",
           "aoe_damage": "80 120 160 200",
           "abilitycastrange": "575 600 625 650",
+          "abilityduration": "4",
           "abilitymanacost": "110 120 130 140",
           "abilitycooldown": "7"
         },
@@ -35184,6 +35242,35 @@
             "damage": "85 / 105 / 125 / 145"
           }
         }
+      },
+      "dazzle_nothl_projection": {
+        "description": "Dazzle departs his body, traveling through the Nothl Realm as an invulnerable spirit that can cast spells, attack, and use items, leaving his body behind in the world with a visible tether. The effect can be ended early, and Dazzle returns to the body at the end.",
+        "values": {
+          "min_duration": "5",
+          "max_duration": "12",
+          "initial_travel_speed": "1200",
+          "soul_return_time": "0.75",
+          "soul_return_min_speed": "500",
+          "leash_start": "1600",
+          "base_leash_pull": "50",
+          "leash_increase": "1.5",
+          "poison_touch_hex": "1.4 1.6 1.8",
+          "shallow_grave_heal": "225 300 375",
+          "shadow_wave_cdr": "30 40 50",
+          "castable_while_disabled": {
+            "special_bonus_shard": "1"
+          },
+          "healing_amp": {
+            "special_bonus_shard": "20"
+          },
+          "abilitycooldown": "70 60 50",
+          "abilitymanacost": "100 150 200",
+          "abilitycastrange": "450"
+        },
+        "valuesInfo": {
+          "descriptions": {},
+          "values": {}
+        }
       }
     },
     "characteristics": {
@@ -35950,146 +36037,7 @@
       "modifier_wraith_king_21_0": "Attack Accuracy of Controlled Creatures: 100% \n\n Mana: 750",
       "modifier_wraith_king_21_1": "Attack Accuracy of Controlled Creatures: <b><font color='#eabe10'>100%</font></b> \n\n Mana: <b><font color='#eabe10'>750</font></b>"
     },
-    "abilities": {
-      "wraith_king_hellfire_blast": {
-        "name": "Wraithfire Blast",
-        "description": "Wraith King sears an enemy unit with spectral fire, dealing damage and stunning, then dealing damage over time and slowing the target. Summoned skeletons around the target will receive bonus movement and attack speed for the duration of the debuff.",
-        "lore": "Ostarion calls on his damned lineage, laying waste to his opponents.",
-        "note0": "If Wraith King has summoned skeletons, casting Wraithfire Blast on a target will order all of the skeletons to attack that target.",
-        "blast_stun_duration": "STUN DURATION:",
-        "blast_dot_duration": "SLOW DURATION:",
-        "blast_slow": "%MOVEMENT SLOW:",
-        "blast_dot_damage": "DAMAGE PER SECOND:",
-        "bonus_move_speed": "SKELETON MOVEMENT SPEED BONUS:",
-        "bonus_attack_speed": "SKELETON ATTACK SPEED BONUS:",
-        "values": {
-          "blast_speed": "1200",
-          "blast_stun_duration": "1 1.2 1.4 1.6",
-          "blast_dot_duration": "2",
-          "blast_slow": "-20",
-          "blast_dot_damage": "20 40 60 80",
-          "bonus_move_speed": "25",
-          "bonus_attack_speed": "25",
-          "abilitycastrange": "525",
-          "abilitycooldown": "17 14 11 8",
-          "abilitymanacost": "95 110 125 140"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "blast_stun_duration": "STUN DURATION:",
-            "blast_dot_duration": "SLOW DURATION:",
-            "blast_slow": "MOVEMENT SLOW:",
-            "blast_dot_damage": "DAMAGE PER SECOND:",
-            "bonus_move_speed": "SKELETON MOVEMENT SPEED BONUS:",
-            "bonus_attack_speed": "SKELETON ATTACK SPEED BONUS:"
-          },
-          "values": {
-            "blast_stun_duration": "1 / 1.2 / 1.4 / 1.6",
-            "blast_dot_duration": "2",
-            "blast_slow": "-20%",
-            "blast_dot_damage": "20 / 40 / 60 / 80",
-            "bonus_move_speed": "25",
-            "bonus_attack_speed": "25"
-          }
-        }
-      },
-      "wraith_king_vampiric_aura": {
-        "name": "Vampiric Spirit",
-        "description": "Restore health based on the damage Wraith King deals when attacking enemy units. Can be cast to summon skeletons with Vampiric Spirit. Skeletons respawn once when killed.\n\nLifesteal from creeps is reduced by %creep_lifesteal_reduction_pct%%%. \n\n Skeletons can be controlled.",
-        "lore": "Wraith King's blade drains his enemy's essence to feed his aura.",
-        "note0": "Summoned skeletons will automatically attack any unit targeted by Wraithfire Blast.",
-        "note1": "Stacks additively with other sources of Lifesteal.",
-        "vampiric_aura": "%LIFESTEAL:",
-        "max_skeleton_charges": "MAX SKELETONS:",
-        "skeleton_duration": "SKELETON DURATION:",
-        "skeleton_damage_tooltip": "SKELETON DAMAGE:",
-        "skeleton_bonus_hero_damage": "%SKELETON HERO BONUS DAMAGE:",
-        "values": {
-          "vampiric_aura": "15 20 25 30",
-          "creep_lifesteal_reduction_pct": "40",
-          "skeleton_duration": "40",
-          "max_skeleton_charges": "1 2 3 4",
-          "spawn_interval": "0.25",
-          "reincarnate_time": "3",
-          "gold_bounty": "5",
-          "xp_bounty": "5",
-          "skeleton_damage_tooltip": "30",
-          "skeleton_building_damage_reduction": "35",
-          "skeleton_bonus_hero_damage": "25",
-          "abilitymanacost": "70 80 90 100",
-          "abilitycooldown": "40"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "vampiric_aura": "LIFESTEAL:",
-            "skeleton_duration": "SKELETON DURATION:",
-            "max_skeleton_charges": "MAX SKELETONS:",
-            "skeleton_damage_tooltip": "SKELETON DAMAGE:",
-            "skeleton_bonus_hero_damage": "SKELETON HERO BONUS DAMAGE:"
-          },
-          "values": {
-            "vampiric_aura": "15% / 20% / 25% / 30%",
-            "skeleton_duration": "40",
-            "max_skeleton_charges": "1 / 2 / 3 / 4",
-            "skeleton_damage_tooltip": "30",
-            "skeleton_bonus_hero_damage": "25%"
-          }
-        }
-      },
-      "wraith_king_mortal_strike": {
-        "name": "Mortal Strike",
-        "description": "Wraith King passively deals bonus damage on an attack with a cooldown.",
-        "lore": "One blow to crush a foe.",
-        "crit_mult": "%CRITICAL DAMAGE:",
-        "values": {
-          "crit_mult": "130 170 210 250",
-          "abilitycooldown": "5.5 5 4.5 4"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "crit_mult": "CRITICAL DAMAGE:"
-          },
-          "values": {
-            "crit_mult": "130% / 170% / 210% / 250%"
-          }
-        }
-      },
-      "wraith_king_reincarnation": {
-        "name": "Reincarnation",
-        "description": "Wraith King's form regroups after death, allowing him to resurrect when killed in battle.  Upon death, enemy units in a %slow_radius% radius will be slowed.",
-        "lore": "Conspirators against the Wraith King wonder why he never stays dead.",
-        "note0": "Wraith King won't revive if he doesn't have enough mana.",
-        "note1": "Revives with full HP and Mana.",
-        "reincarnate_time": "REINCARNATION TIME:",
-        "movespeed": "%MOVEMENT SLOW:",
-        "attackslow": "ATTACK SPEED SLOW:",
-        "slow_duration": "SLOW DURATION:",
-        "values": {
-          "reincarnate_time": "3",
-          "slow_radius": "900",
-          "movespeed": "-75",
-          "attackslow": "-75",
-          "slow_duration": "5",
-          "abilitymanacost": "180",
-          "abilitycastrange": "600",
-          "abilitycooldown": "180 150 120"
-        },
-        "valuesInfo": {
-          "descriptions": {
-            "reincarnate_time": "REINCARNATION TIME:",
-            "movespeed": "MOVEMENT SLOW:",
-            "attackslow": "ATTACK SPEED SLOW:",
-            "slow_duration": "SLOW DURATION:"
-          },
-          "values": {
-            "reincarnate_time": "3",
-            "movespeed": "-75%",
-            "attackslow": "-75",
-            "slow_duration": "5"
-          }
-        }
-      }
-    },
+    "abilities": {},
     "characteristics": {
       "attackrange": "150",
       "attributeprimary": "DOTA_ATTRIBUTE_STRENGTH",
@@ -46712,6 +46660,53 @@
           }
         }
       },
+      "marci_companion_run": {
+        "name": "Rebound",
+        "description": "Marci bounds to the targeted allied unit, choosing a direction and distance she will spring away from it. Upon reaching the unit, Marci lunges to her final destination, damaging and stunning enemies where she lands.\\n\\n The ally receives %ally_movespeed_pct%%% bonus movement speed for %ally_buff_duration%s.",
+        "lore": "With a friendly or brazen boost, Marci can find her way into the midst of any fight.",
+        "note0": "Has %min_jump_distance% minimum jump distance.",
+        "note1": "Marci's initial run to her target unit can be disjointed.",
+        "note2": "Does not trigger spell reflect.",
+        "impact_damage": "IMPACT DAMAGE:",
+        "debuff_duration": "STUN DURATION:",
+        "max_jump_distance": "CAST / JUMP RANGE:",
+        "values": {
+          "AbilityCooldown": "24 20 16 12",
+          "move_speed": "1700",
+          "min_jump_distance": "0",
+          "max_jump_distance": "450 550 650 750",
+          "AbilityCastRange": "450 550 650 750",
+          "landing_radius": "275",
+          "impact_damage": "80 160 240 320",
+          "debuff_duration": "0.8 1.1 1.4 1.7",
+          "min_lob_travel_time": "0.1",
+          "max_lob_travel_time": "0.2",
+          "min_height_above_lowest": "250",
+          "min_height_above_highest": "200",
+          "min_acceleration": "6000",
+          "max_acceleration": "6000",
+          "vector_preview_radius": "100",
+          "ally_buff_duration": "4",
+          "ally_movespeed_pct": "25",
+          "impact_position_offset": "64",
+          "target_abort_distance": "700",
+          "abilitymanacost": "70 80 90 100",
+          "abilitycooldown": "24 20 16 12",
+          "abilitycastrange": "450 550 650 750"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "max_jump_distance": "CAST / JUMP RANGE:",
+            "impact_damage": "IMPACT DAMAGE:",
+            "debuff_duration": "STUN DURATION:"
+          },
+          "values": {
+            "max_jump_distance": "450 / 550 / 650 / 750",
+            "impact_damage": "80 / 160 / 240 / 320",
+            "debuff_duration": "0.8 / 1.1 / 1.4 / 1.7"
+          }
+        }
+      },
       "marci_guardian": {
         "name": "Sidekick",
         "description": "Marci's loyalty helps ensure survival, imbuing a chosen allied hero and herself with shared lifesteal and attack damage. If Marci and her ally are further apart from each other than %max_partner_distance%, the ally receives no bonuses and Marci only gets %max_partner_penalty%%% until they get close again. Marci's lifesteal also heals her ally and the ally lifesteal also heals Marci.",
@@ -51373,8 +51368,8 @@
       "mana": "339",
       "manaregen": "1.1",
       "healthregen": "3.5",
-      "attackdamagemin": "67",
-      "attackdamagemax": "73",
+      "attackdamagemin": "65",
+      "attackdamagemax": "71",
       "armorphysical": "5.7",
       "baseattackspeed": "122",
       "attackrate": "1.7"
@@ -55283,8 +55278,8 @@
       "mana": "375",
       "manaregen": "1.8",
       "healthregen": "2.3",
-      "attackdamagemin": "39",
-      "attackdamagemax": "46",
+      "attackdamagemin": "40",
+      "attackdamagemax": "47",
       "armorphysical": "4.3",
       "baseattackspeed": "120",
       "attackrate": "1.7"
@@ -57764,11 +57759,11 @@
       }
     },
     "talents_description": {
-      "modifier_io_1_0": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. Drains 30 health per second from the enemy. \n\n Health regeneration and all received healing drain the tethered enemy's health: 60%.",
-      "modifier_io_1_1": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. Drains <b><font color='#eabe10'>30</font></b> health per second from the enemy. \n\n Health regeneration and all received healing drain the tethered enemy's health: <b><font color='#eabe10'>60%</font></b>.",
-      "modifier_io_2_0": "Tether connection works on all affected enemies. \n\n Health Regeneration: 5/10",
-      "modifier_io_2_1": "Tether connection works <b><font color='#eabe10'>on all</font></b> affected enemies. \n\n Health Regeneration: <b><font color='#eabe10'>5</font></b>/10",
-      "modifier_io_2_2": "Tether connection works <b><font color='#eabe10'>on all</font></b> affected enemies. \n\n Health Regeneration: 5/<b><font color='#eabe10'>10</font></b>",
+      "modifier_io_1_0": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. Drains 30 health per second from the enemy. \n\n Health regeneration and all received healing drain the tethered enemy's health: 45%.",
+      "modifier_io_1_1": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. Drains <b><font color='#eabe10'>30</font></b> health per second from the enemy. \n\n Health regeneration and all received healing drain the tethered enemy's health: <b><font color='#eabe10'>45%</font></b>.",
+      "modifier_io_2_0": "Tether connection works on all affected enemies. \n\n Health Regeneration: 8/16",
+      "modifier_io_2_1": "Tether connection works <b><font color='#eabe10'>on all</font></b> affected enemies. \n\n Health Regeneration: <b><font color='#eabe10'>8</font></b>/16",
+      "modifier_io_2_2": "Tether connection works <b><font color='#eabe10'>on all</font></b> affected enemies. \n\n Health Regeneration: 8/<b><font color='#eabe10'>16</font></b>",
       "modifier_io_3_0": "Overcharge increases Armor and Magic Resistance for both the owner and the tethered ally. Reduces enemy stats. \n\n Armor Increase: 3/6 \n Magic Resistance Increase: 7%/14%",
       "modifier_io_3_1": "Overcharge increases Armor and Magic Resistance for both the owner and the tethered ally. Reduces enemy stats. \n\n Armor Increase: <b><font color='#eabe10'>3</font></b>/6 \n Magic Resistance Increase: <b><font color='#eabe10'>7%</font></b>/14%",
       "modifier_io_3_2": "Overcharge increases Armor and Magic Resistance for both the owner and the tethered ally. Reduces enemy stats. \n\n Armor Increase: 3/<b><font color='#eabe10'>6</font></b> \n Magic Resistance Increase: 7%/<b><font color='#eabe10'>14%</font></b>",
@@ -57898,7 +57893,8 @@
           "spirit_duration": "19",
           "spirit_amount": "5",
           "AbilityManaCost": "100 110 120 130",
-          "AbilityCooldown": "26 24 22 20"
+          "AbilityCooldown": "26 24 22 20",
+          "abilityduration": "19"
         },
         "valuesInfo": {
           "descriptions": {
@@ -58727,9 +58723,9 @@
       "modifier_phoenix_6_1": "Dying Light operates at <b><font color='#eabe10'>full</font></b> strength during Supernova. \n\n Dying Light also <b><font color='#eabe10'>triggers</font></b> on all Sun Ray affected targets.",
       "modifier_phoenix_7_0": "Reduces Supernova Cooldown: 60 sec \n\n Sun Ray and Supernova can be used simultaneously.",
       "modifier_phoenix_7_1": "Reduces Supernova Cooldown: <b><font color='#eabe10'>60</font></b> sec \n\n Sun Ray and Supernova can be used <b><font color='#eabe10'>simultaneously</font></b>.",
-      "modifier_phoenix_8_0": "<b><font color='#ff0000'> Removes Sun Ray. </font></b> \n\n Icarus Dive does not consume Health. \n\n Icarus Dive Cooldown Reduction: 10/15 sec. \n\n Reduces Icarus Dive Cooldown by 5 sec if the hero has more than 300 Agility.",
-      "modifier_phoenix_8_1": "<b><font color='#ff0000'> Removes Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>does not consume</font></b> Health. \n\n Icarus Dive Cooldown Reduction: <b><font color='#eabe10'>10</font></b>/15 sec. \n\n Reduces Icarus Dive Cooldown by <b><font color='#eabe10'>5</font></b> sec if the hero has more than <b><font color='#eabe10'>300 Agility</font></b>.",
-      "modifier_phoenix_8_2": "<b><font color='#ff0000'> Removes Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>does not consume</font></b> Health. \n\n Icarus Dive Cooldown Reduction: 10/<b><font color='#eabe10'>15</font></b> sec. \n\n Reduces Icarus Dive Cooldown by <b><font color='#eabe10'>5</font></b> sec if the hero has more than <b><font color='#eabe10'>300 Agility</font></b>.",
+      "modifier_phoenix_8_0": "<b><font color='#ff0000'> Removes Sun Ray. </font></b> \n\n Icarus Dive does not consume Health. \n\n Icarus Dive Cooldown Reduction: 8/12 sec. \n\n Reduces Icarus Dive Cooldown by 5 sec if the hero has more than 300 Agility.",
+      "modifier_phoenix_8_1": "<b><font color='#ff0000'> Removes Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>does not consume</font></b> Health. \n\n Icarus Dive Cooldown Reduction: <b><font color='#eabe10'>8</font></b>/12 sec. \n\n Reduces Icarus Dive Cooldown by <b><font color='#eabe10'>5</font></b> sec if the hero has more than <b><font color='#eabe10'>300 Agility</font></b>.",
+      "modifier_phoenix_8_2": "<b><font color='#ff0000'> Removes Sun Ray. </font></b> \n\n Icarus Dive <b><font color='#eabe10'>does not consume</font></b> Health. \n\n Icarus Dive Cooldown Reduction: 8/<b><font color='#eabe10'>12</font></b> sec. \n\n Reduces Icarus Dive Cooldown by <b><font color='#eabe10'>5</font></b> sec if the hero has more than <b><font color='#eabe10'>300 Agility</font></b>.",
       "modifier_phoenix_9_0": "Increases Attack Speed during Icarus Dive: 150/225/300",
       "modifier_phoenix_9_1": "Increases Attack Speed during Icarus Dive: <b><font color='#eabe10'>150</font></b>/225/300",
       "modifier_phoenix_9_2": "Increases Attack Speed during Icarus Dive: 150/<b><font color='#eabe10'>225</font></b>/300",
@@ -58893,6 +58889,7 @@
           "turn_rate": "25",
           "abilitycastrange": "1200",
           "abilitycooldown": "30",
+          "abilityduration": "6",
           "abilitymanacost": "100 110 120 130"
         },
         "valuesInfo": {
@@ -58901,14 +58898,16 @@
             "base_damage": "BASE DAMAGE PER SECOND:",
             "hp_perc_damage": "MAX HP DAMAGE:",
             "base_heal": "BASE HEAL PER SECOND:",
-            "hp_perc_heal": "MAX HP HEAL:"
+            "hp_perc_heal": "MAX HP HEAL:",
+            "abilityduration": "MAX DURATION:"
           },
           "values": {
             "hp_cost_perc_per_second": "6%",
             "base_damage": "14 / 20 / 26 / 32",
             "hp_perc_damage": "1% / 2.75% / 4.5% / 6.25%",
             "base_heal": "7 / 10 / 13 / 16",
-            "hp_perc_heal": "0.5% / 1% / 1.5% / 2%"
+            "hp_perc_heal": "0.5% / 1% / 1.5% / 2%",
+            "abilityduration": "6"
           }
         }
       },
@@ -58942,6 +58941,7 @@
           "egg_duration": "6",
           "abilitycastrange": "500",
           "abilitycooldown": "120",
+          "abilityduration": "6",
           "abilitymanacost": "150 200 250"
         },
         "valuesInfo": {
@@ -58949,13 +58949,15 @@
             "aura_radius": "RADIUS:",
             "damage_per_sec": "DAMAGE PER SECOND:",
             "stun_duration": "STUN DURATION:",
-            "max_hero_attacks": "HITS TO DESTROY:"
+            "max_hero_attacks": "HITS TO DESTROY:",
+            "abilityduration": "DURATION:"
           },
           "values": {
             "aura_radius": "1200",
             "damage_per_sec": "60 / 90 / 120",
             "stun_duration": "1.6 / 2 / 2.4",
-            "max_hero_attacks": "6 / 8 / 10"
+            "max_hero_attacks": "6 / 8 / 10",
+            "abilityduration": "6"
           }
         }
       }
@@ -59294,10 +59296,10 @@
             "id": "empty_7"
           },
           {
-            "id": "modifier_razor_10",
-            "talentInfo": "#modifier_razor_10",
-            "level": "3",
-            "imagePath": "razor/10",
+            "id": "modifier_razor_11",
+            "talentInfo": "#modifier_razor_11",
+            "level": "2",
+            "imagePath": "razor/11",
             "relatedTalent": {}
           },
           {
@@ -59340,10 +59342,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_razor_11",
-            "talentInfo": "#modifier_razor_11",
-            "level": "2",
-            "imagePath": "razor/11",
+            "id": "modifier_razor_12",
+            "talentInfo": "#modifier_razor_12",
+            "level": "3",
+            "imagePath": "razor/12",
             "relatedTalent": {}
           },
           {
@@ -59369,10 +59371,10 @@
             "id": "empty_11"
           },
           {
-            "id": "modifier_razor_12",
-            "talentInfo": "#modifier_razor_12",
-            "level": "3",
-            "imagePath": "razor/12",
+            "id": "modifier_razor_13",
+            "talentInfo": "#modifier_razor_13",
+            "level": "1",
+            "imagePath": "razor/13",
             "relatedTalent": {}
           },
           {
@@ -59408,10 +59410,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_razor_13",
-            "talentInfo": "#modifier_razor_13",
-            "level": "1",
-            "imagePath": "razor/13",
+            "id": "modifier_razor_10",
+            "talentInfo": "#modifier_razor_10",
+            "level": "3",
+            "imagePath": "razor/10",
             "relatedTalent": {}
           },
           {
@@ -59679,10 +59681,10 @@
       "modifier_razor_4_1": "The hero blocks part of the damage received from the front and sides with Storm Surge. Disabled by exhaustion. \n\n Front Damage Reduction: <b><font color='#eabe10'>8%</font></b>/12%/16% \n Side Damage Reduction: <b><font color='#eabe10'>4%</font></b>/6%/8%",
       "modifier_razor_4_2": "The hero blocks part of the damage received from the front and sides with Storm Surge. Disabled by exhaustion. \n\n Front Damage Reduction: 8%/<b><font color='#eabe10'>12%</font></b>/16% \n Side Damage Reduction: 4%/<b><font color='#eabe10'>6%</font></b>/8%",
       "modifier_razor_4_3": "The hero blocks part of the damage received from the front and sides with Storm Surge. Disabled by exhaustion. \n\n Front Damage Reduction: 8%/12%/<b><font color='#eabe10'>16%</font></b> \n Side Damage Reduction: 4%/6%/<b><font color='#eabe10'>8%</font></b>",
-      "modifier_razor_5_0": "Increases Storm Surge Damage: 30%/45%/60% of Attack Damage",
-      "modifier_razor_5_1": "Increases Storm Surge Damage: <b><font color='#eabe10'>30%</font></b>/45%/60% of Attack Damage",
-      "modifier_razor_5_2": "Increases Storm Surge Damage: 30%/<b><font color='#eabe10'>45%</font></b>/60% of Attack Damage",
-      "modifier_razor_5_3": "Increases Storm Surge Damage: 30%/45%/<b><font color='#eabe10'>60%</font></b> of Attack Damage",
+      "modifier_razor_5_0": "Increases Storm Surge Damage: 30%/60%/90% of Attack Damage",
+      "modifier_razor_5_1": "Increases Storm Surge Damage: <b><font color='#eabe10'>30%</font></b>/60%/90% of Attack Damage",
+      "modifier_razor_5_2": "Increases Storm Surge Damage: 30%/<b><font color='#eabe10'>60%</font></b>/90% of Attack Damage",
+      "modifier_razor_5_3": "Increases Storm Surge Damage: 30%/60%/<b><font color='#eabe10'>90%</font></b> of Attack Damage",
       "modifier_razor_6_0": "While Eye of the Storm is active, the chance of Storm Surge lightning strike increases by 18%, its cooldown is reduced by 2 seconds, and the lightning hits all enemies within a 500 radius.",
       "modifier_razor_6_1": "While Eye of the Storm is active, the chance of Storm Surge lightning strike increases by <b><font color='#eabe10'>18%</font></b>, its cooldown is reduced by <b><font color='#eabe10'>2</font></b> seconds, and the lightning hits all enemies within a <b><font color='#eabe10'>500</font></b> radius.",
       "modifier_razor_7_0": "Removes the limit on the maximum number of Eye of the Storm effects. \n\n Reduces Eye of the Storm hit interval by 0.1 sec. \n\n Eye of the Storm attacks 2 targets at once.",
@@ -59697,15 +59699,15 @@
       "modifier_razor_10_1": "<b><font color='#ff0000'> Removes Eye of the Storm. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Armor Link</font></b> \n\n Creates an electric link with a chosen enemy hero, transferring their armor to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. \n\n Link Duration: 10 sec. \n Effect Duration: 10 sec. \n Armor Change Rate: <b><font color='#eabe10'>0.5</font></b>/0.75/1 \n Cooldown: <b><font color='#eabe10'>40</font></b>/30/20 sec.",
       "modifier_razor_10_2": "<b><font color='#ff0000'> Removes Eye of the Storm. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Armor Link</font></b> \n\n Creates an electric link with a chosen enemy hero, transferring their armor to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. \n\n Link Duration: 10 sec. \n Effect Duration: 10 sec. \n Armor Change Rate: 0.5/<b><font color='#eabe10'>0.75</font></b>/1 \n Cooldown: 40/<b><font color='#eabe10'>30</font></b>/20 sec.",
       "modifier_razor_10_3": "<b><font color='#ff0000'> Removes Eye of the Storm. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Armor Link</font></b> \n\n Creates an electric link with a chosen enemy hero, transferring their armor to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. \n\n Link Duration: 10 sec. \n Effect Duration: 10 sec. \n Armor Change Rate: 0.5/0.75/<b><font color='#eabe10'>1</font></b> \n Cooldown: 40/30/<b><font color='#eabe10'>20</font></b> sec.",
-      "modifier_razor_11_0": "Links immediately grant the bonus as if maintained for 1/2 seconds.",
-      "modifier_razor_11_1": "Links immediately grant the bonus as if maintained for <b><font color='#eabe10'>1</font></b>/2 seconds.",
-      "modifier_razor_11_2": "Links immediately grant the bonus as if maintained for 1/<b><font color='#eabe10'>2</font></b> seconds.",
+      "modifier_razor_11_0": "Links immediately grant the bonus as if maintained for 2/4 seconds.",
+      "modifier_razor_11_1": "Links immediately grant the bonus as if maintained for <b><font color='#eabe10'>2</font></b>/4 seconds.",
+      "modifier_razor_11_2": "Links immediately grant the bonus as if maintained for 2/<b><font color='#eabe10'>4</font></b> seconds.",
       "modifier_razor_12_0": "<b><font color='#ff0000'> Removes Plasma Field. </font></b> \n\n New Active Ability: Spell Link \n\n Creates an electric link with a chosen enemy hero, transferring their spell damage to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. \n\n Link Duration: 10 sec. \n Effect Duration: 10 sec. \n Spell Damage Change Rate: 1%/1.5%/2% \n Cooldown: 40/30/20 sec.",
       "modifier_razor_12_1": "<b><font color='#ff0000'> Removes Plasma Field. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Spell Link</font></b> \n\n Creates an electric link with a chosen enemy hero, transferring their spell damage to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. \n\n Link Duration: 10 sec. \n Effect Duration: 10 sec. \n Spell Damage Change Rate: <b><font color='#eabe10'>1%</font></b>/1.5%/2% \n Cooldown: <b><font color='#eabe10'>40</font></b>/30/20 sec.",
       "modifier_razor_12_2": "<b><font color='#ff0000'> Removes Plasma Field. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Spell Link</font></b> \n\n Creates an electric link with a chosen enemy hero, transferring their spell damage to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. \n\n Link Duration: 10 sec. \n Effect Duration: 10 sec. \n Spell Damage Change Rate: 1%/<b><font color='#eabe10'>1.5%</font></b>/2% \n Cooldown: 40/<b><font color='#eabe10'>30</font></b>/20 sec.",
       "modifier_razor_12_3": "<b><font color='#ff0000'> Removes Plasma Field. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Spell Link</font></b> \n\n Creates an electric link with a chosen enemy hero, transferring their spell damage to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. \n\n Link Duration: 10 sec. \n Effect Duration: 10 sec. \n Spell Damage Change Rate: 1%/1.5%/<b><font color='#eabe10'>2%</font></b> \n Cooldown: 40/30/<b><font color='#eabe10'>20</font></b> sec.",
-      "modifier_razor_13_0": "Increases Link Effect Duration: 3 sec.",
-      "modifier_razor_13_1": "Increases Link Effect Duration: <b><font color='#eabe10'>3</font></b> sec.",
+      "modifier_razor_13_0": "Increased Link Effect Duration: 3 sec. \n\n Health: 400",
+      "modifier_razor_13_1": "Increased Link Effect Duration: <b><font color='#eabe10'>3</font></b> sec. \n\n Health: <b><font color='#eabe10'>400</font></b>",
       "modifier_razor_14_0": "Increases Base Attack Speed and Movement Speed by 4% for each unique Link effect on the hero. \n\n Links are created instantly.",
       "modifier_razor_14_1": "Increases Base Attack Speed and Movement Speed by <b><font color='#eabe10'>4%</font></b> for each unique Link effect on the hero. \n\n Links are created <b><font color='#eabe10'>instantly</font></b>.",
       "modifier_razor_15_0": "Reduces Plasma Field Cooldown: 1/2 sec.",
@@ -59864,7 +59866,7 @@
           "radius": "500",
           "duration": "30",
           "strike_interval": "0.7 0.6 0.5",
-          "armor_reduction": "-0.7",
+          "armor_reduction": "-0.8",
           "damage": "60 75 90",
           "max_debuffs": "25",
           "abilitycooldown": "80 70 60",
@@ -59882,7 +59884,7 @@
             "radius": "500",
             "duration": "30",
             "strike_interval": "0.7 / 0.6 / 0.5",
-            "armor_reduction": "-0.7",
+            "armor_reduction": "-0.8",
             "damage": "60 / 75 / 90"
           }
         }
@@ -60515,10 +60517,10 @@
             "id": "empty_11"
           },
           {
-            "id": "modifier_void_spirit_19",
-            "talentInfo": "#modifier_void_spirit_19",
-            "level": "1",
-            "imagePath": "void_spirit/19",
+            "id": "modifier_void_spirit_20",
+            "talentInfo": "#modifier_void_spirit_20",
+            "level": "3",
+            "imagePath": "void_spirit/20",
             "relatedTalent": {}
           },
           {
@@ -60548,10 +60550,10 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_void_spirit_20",
-            "talentInfo": "#modifier_void_spirit_20",
-            "level": "3",
-            "imagePath": "void_spirit/20",
+            "id": "modifier_void_spirit_19",
+            "talentInfo": "#modifier_void_spirit_19",
+            "level": "1",
+            "imagePath": "void_spirit/19",
             "relatedTalent": {}
           },
           {
@@ -60636,18 +60638,18 @@
       "modifier_void_spirit_16_2": "Strength, Agility: 5/<b><font color='#eabe10'>10</font></b>",
       "modifier_void_spirit_17_0": "<b><font color='#ff0000'> Earth. </font></b> \n\n Dissimilate applies a Basic Dispel and restores Health: 250",
       "modifier_void_spirit_17_1": "<b><font color='#ff0000'> Earth. </font></b> \n\n Dissimilate applies a <b><font color='#eabe10'>Basic Dispel</font></b> and restores Health: <b><font color='#eabe10'>250</font></b>",
-      "modifier_void_spirit_18_0": "Increases Dissimilate Damage: 4%/8%/12% of Current Mana",
-      "modifier_void_spirit_18_1": "Increases Dissimilate Damage: <b><font color='#eabe10'>4%</font></b>/8%/12% of Current Mana",
-      "modifier_void_spirit_18_2": "Increases Dissimilate Damage: 4%/<b><font color='#eabe10'>8%</font></b>/12% of Current Mana",
-      "modifier_void_spirit_18_3": "Increases Dissimilate Damage: 4%/8%/<b><font color='#eabe10'>12%</font></b> of Current Mana",
+      "modifier_void_spirit_18_0": "Increases Dissimilate Damage: 4%/6%/8% of Current Mana",
+      "modifier_void_spirit_18_1": "Increases Dissimilate Damage: <b><font color='#eabe10'>4%</font></b>/6%/8% of Current Mana",
+      "modifier_void_spirit_18_2": "Increases Dissimilate Damage: 4%/<b><font color='#eabe10'>6%</font></b>/8% of Current Mana",
+      "modifier_void_spirit_18_3": "Increases Dissimilate Damage: 4%/6%/<b><font color='#eabe10'>8%</font></b> of Current Mana",
       "modifier_void_spirit_19_0": "Increases Resonant Pulse Charges: 1",
       "modifier_void_spirit_19_1": "Increases Resonant Pulse Charges: <b><font color='#eabe10'>1</font></b>",
-      "modifier_void_spirit_20_0": "Dissimilate creates an additional outer circle. \n\n Dissimilate stuns enemies: 1/1.5/2 sec.",
-      "modifier_void_spirit_20_1": "Dissimilate creates an <b><font color='#eabe10'>additional</font></b> outer circle. \n\n Dissimilate stuns enemies: <b><font color='#eabe10'>1</font></b>/1.5/2 sec.",
-      "modifier_void_spirit_20_2": "Dissimilate creates an <b><font color='#eabe10'>additional</font></b> outer circle. \n\n Dissimilate stuns enemies: 1/<b><font color='#eabe10'>1.5</font></b>/2 sec.",
-      "modifier_void_spirit_20_3": "Dissimilate creates an <b><font color='#eabe10'>additional</font></b> outer circle. \n\n Dissimilate stuns enemies: 1/1.5/<b><font color='#eabe10'>2</font></b> sec.",
-      "modifier_void_spirit_21_0": "New Active Ability: Dissimilate Burst \n\n After a short delay, triggers a Dissimilate explosion at the target location. \n\n Damage: 150% of Dissimilate Damage \n Cooldown: 22 sec \n Cast Range: 700 \n Mana Cost: 120",
-      "modifier_void_spirit_21_1": "New Active Ability: <b><font color='#eabe10'>Dissimilate Burst</font></b> \n\n After a short delay, triggers a Dissimilate explosion at the target location. \n\n Damage: <b><font color='#eabe10'>150%</font></b> of Dissimilate Damage \n Cooldown: 22 sec \n Cast Range: 700 \n Mana Cost: 120"
+      "modifier_void_spirit_20_0": "Dissimilate creates an additional outer circle. \n\n Dissimilate stuns enemies: 0.5/1/1.5 sec.",
+      "modifier_void_spirit_20_1": "Dissimilate creates an <b><font color='#eabe10'>additional</font></b> outer circle. \n\n Dissimilate stuns enemies: <b><font color='#eabe10'>0.5</font></b>/1/1.5 sec.",
+      "modifier_void_spirit_20_2": "Dissimilate creates an <b><font color='#eabe10'>additional</font></b> outer circle. \n\n Dissimilate stuns enemies: 0.5/<b><font color='#eabe10'>1</font></b>/1.5 sec.",
+      "modifier_void_spirit_20_3": "Dissimilate creates an <b><font color='#eabe10'>additional</font></b> outer circle. \n\n Dissimilate stuns enemies: 0.5/1/<b><font color='#eabe10'>1.5</font></b> sec.",
+      "modifier_void_spirit_21_0": "New Active Ability: Dissimilate Burst \n\n After a short delay, triggers a Dissimilate explosion at the target location. \n\n Damage: 150% of Dissimilate Damage \n Cooldown: 26 sec \n Cast Range: 700 \n Mana Cost: 120",
+      "modifier_void_spirit_21_1": "New Active Ability: <b><font color='#eabe10'>Dissimilate Burst</font></b> \n\n After a short delay, triggers a Dissimilate explosion at the target location. \n\n Damage: <b><font color='#eabe10'>150%</font></b> of Dissimilate Damage \n Cooldown: 26 sec \n Cast Range: 700 \n Mana Cost: 120"
     },
     "abilities": {
       "void_spirit_aether_remnant": {
@@ -60725,7 +60727,7 @@
           "artifice_duration_override_tooltip": "0",
           "artifice_pct_effectiveness_tooltip": "0",
           "double pull": "0",
-          "abilitycooldown": "20 17 14 11",
+          "abilitycooldown": "22 20 18 16",
           "abilitymanacost": "120"
         },
         "valuesInfo": {
@@ -60790,7 +60792,7 @@
         "movement_slow_pct": "%MOVEMENT SLOW:",
         "values": {
           "radius": "170",
-          "AbilityChargeRestoreTime": "25 20 15",
+          "AbilityChargeRestoreTime": "30 25 20",
           "min_travel_distance": "200",
           "max_travel_distance": "800 900 1000",
           "pop_damage_delay": "1.25",

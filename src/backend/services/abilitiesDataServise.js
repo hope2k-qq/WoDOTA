@@ -81,6 +81,7 @@ const extractExtraFields = (fileContent, abilityName) => {
         "abilitycastrange",
         "abilitymanacost",
         "abilitychanneltime",
+        "abilityduration",
     ];
 
     // Регулярка для поиска блока способности

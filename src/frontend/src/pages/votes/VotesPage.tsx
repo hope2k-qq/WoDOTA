@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import styles from "./votes.module.scss";
 import {useTranslation} from "react-i18next";
+import heroReplacements from '../../data/replacements_heroes.json';
 
 interface HeroVote {
     hero_name: string;
@@ -58,12 +59,13 @@ export const VotesPage = () => {
                     .map((vote, index) => {
                         const voteCount = parseInt(vote.votes, 10);
                         const votePercentage = Math.min((voteCount / maxVotes) * 100, 100);
-
+                        const heroNameKey = vote.hero_name as keyof typeof heroReplacements.heroes;
+                        const heroName = heroReplacements.heroes[heroNameKey] || vote.hero_name;
                         return (
                             <div key={index} className={styles.card}>
                                 <img
-                                    src={`https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/heroes/${vote.hero_name}.png`}
-                                    alt={vote.hero_name}
+                                    src={`https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/heroes/${heroName}.png`}
+                                    alt={heroName}
                                     className={styles.image}
                                 />
                                 <div className={styles.info}>
