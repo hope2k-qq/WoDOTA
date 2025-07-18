@@ -1,9 +1,9 @@
-// pages/NewsPage.tsx
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './news.module.scss';
 import { useUnreadNews } from '../../context/UnreadNewsContext';
 import { ReactComponent as CheckmarkIcon } from "../../assets/icons/CheckmarkIcon.svg";
 import {useTranslation} from "react-i18next";
+import Cookies from 'js-cookie';
 
 interface NewsItem {
     id: number;
@@ -96,7 +96,9 @@ export const NewsPage: React.FC = () => {
                         .slice()
                         .reverse()
                         .map((item) => {
-                        const isRead = JSON.parse(localStorage.getItem('readNews') || '[]').includes(item.id);
+                            const storedReadNewsStr = Cookies.get('readNews');
+                            const storedReadNews = storedReadNewsStr ? JSON.parse(storedReadNewsStr) : [];
+                            const isRead = storedReadNews.includes(item.id);
 
                         return (
                             <div

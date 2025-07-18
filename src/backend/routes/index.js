@@ -13,6 +13,7 @@ const sitemapRoutes = require('./sitemapRoutes');
 const subscribersRoutes = require('./subscribersRoutes');
 const itemsRoutes = require('./itemsRoutes');
 const youtubeRoutes = require('./youtubeRoutes');
+const authRoutes = require('./authRoutes');
 
 router.use('/', homeRoutes);
 router.use('/', heroesRoutes);
@@ -27,5 +28,6 @@ router.use('/', sitemapRoutes);
 router.use('/', subscribersRoutes);
 router.use('/', itemsRoutes);
 router.use('/', youtubeRoutes);
+router.use('/', authRoutes);
 
 module.exports = router;

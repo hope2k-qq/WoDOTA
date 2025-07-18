@@ -11,6 +11,7 @@ import MaintenancePage from "../pages/maintenance/MaintenancePage";
 import {UnreadNewsProvider} from "../context/UnreadNewsContext";
 import {HelmetProvider} from "react-helmet-async";
 import {MyDataProvider, useMyData} from "../context/HeroesDataContext";
+import {UserProvider} from "../context/UserContext";
 
 const App = () => {
     const { getCurrentTheme } = useThemeStore();
@@ -33,11 +34,13 @@ const App = () => {
                 <I18nextProvider i18n={i18n}>
                     <CssBaseline />
                     <MyDataProvider>
-                        <UnreadNewsProvider>
-                            <Grid item md={12} className={styles.app}>
-                                <InnerApp />
-                            </Grid>
-                        </UnreadNewsProvider>
+                        <UserProvider>
+                            <UnreadNewsProvider>
+                                <Grid item md={12} className={styles.app}>
+                                    <InnerApp />
+                                </Grid>
+                            </UnreadNewsProvider>
+                        </UserProvider>
                     </MyDataProvider>
                 </I18nextProvider>
             </ThemeProvider>
@@ -48,7 +51,9 @@ const App = () => {
 const InnerApp = () => {
     const { languageReady } = useMyData();
 
-    return languageReady ? <Routing /> : null;
+    return languageReady ? (
+            <Routing />
+    ) : null;
 };
 
 export default App;

@@ -16,6 +16,7 @@ import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg"
 import { ReactComponent as FireIcon } from "../../assets/icons/FireIcon.svg";
 import {useUnreadNews} from "../../context/UnreadNewsContext";
 import {Settings} from "./components/settings/Settings";
+import {useUser} from "../../context/UserContext";
 
 export const TopBar = () => {
     const { t } = useTranslation();
@@ -23,9 +24,27 @@ export const TopBar = () => {
     const location = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [logoSrc, setLogoSrc] = useState("/logo.png");
-    const { unreadNewsCount, setUnreadNewsCount } = useUnreadNews();
+    const { unreadNewsCount } = useUnreadNews();
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
     const currentLang = location.pathname.split('/')[1];
+    const { user, loading } = useUser();
+    const API_URL = process.env.REACT_APP_API_URL;
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            setLogoSrc(window.innerWidth <= 1200 ? "/3logo.png" : "/logo1.png");
+        };
+
+        window.addEventListener("resize", handleResize);
+        handleResize();
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    if (loading) return null;
+    const loginUrl = `${API_URL}/auth/steam`;
+
+
 
     const langDisplayMap: { [key: string]: string } = {
         cs: 'CZ',
@@ -42,24 +61,6 @@ export const TopBar = () => {
         setIsSettingsOpen(false);
     };
 
-    useEffect(() => {
-        const storedUnreadNewsCount = localStorage.getItem('unreadNewsCount');
-        if (storedUnreadNewsCount) {
-            setUnreadNewsCount(Number(storedUnreadNewsCount));
-        }
-    }, [setUnreadNewsCount]);
-
-
-    useEffect(() => {
-        const handleResize = () => {
-            setLogoSrc(window.innerWidth <= 1200 ? "/3logo.png" : "/logo1.png");
-        };
-
-        window.addEventListener("resize", handleResize);
-        handleResize();
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
 
     const activeIcon = (path: string) => {
@@ -159,10 +160,17 @@ export const TopBar = () => {
                         </div>
                         <div className={styles.menu_item_open_bottom}>
                             <div className={styles.menu_item_steam_container}>
-                                <div className={styles.container_steam}>
-                                    <SteamIcon/>
-                                    <div>{t('login')}</div>
-                                </div>
+                                {!user ? (
+                                    <a href={loginUrl} className={styles.container_steam}>
+                                        <SteamIcon />
+                                        <div>{t('login')}</div>
+                                    </a>
+                                ) : (
+                                    <div className={styles.container_user}>
+                                        <img src={user.avatar} alt={user.name} className={styles.avatar} />
+                                        <span className={styles.name}>{user.name}</span>
+                                    </div>
+                                )}
                                 <div className={styles.container_settings} onClick={toggleSettingsMenu}>
                                     <SettingsIcon/>
                                 </div>
@@ -214,18 +222,25 @@ export const TopBar = () => {
                         <div className={styles.line}></div>
                     </div>
                     <div className={styles.topbar_right}>
-                        <div className={styles.news_container} onClick={() => navigate('/news')}>
+                        <div className={styles.news_container} onClick={() => handleNavigate('/news')}>
                             <NewsIcon className={styles.news_icon}/>
                             {unreadNewsCount > 0 && (
                                 <div className={styles.news_badge}>{unreadNewsCount}</div>
                             )}
                         </div>
-                        <div className={styles.container_steam}>
-                            <SteamIcon/>
-                            <div>{t('login')}</div>
-                        </div>
+                        {!user ? (
+                            <a href={loginUrl} className={styles.container_steam}>
+                                <SteamIcon />
+                                <div>{t('login')}</div>
+                            </a>
+                        ) : (
+                            <div className={styles.container_user}>
+                                <img src={user.avatar} alt={user.name} className={styles.avatar}/>
+                                <span className={styles.name}>{user.name}</span>
+                            </div>
+                        )}
                         <div className={styles.container_settings} onClick={toggleSettingsMenu}>
-                            <SettingsIcon />
+                            <SettingsIcon/>
                         </div>
                     </div>
                 </div>

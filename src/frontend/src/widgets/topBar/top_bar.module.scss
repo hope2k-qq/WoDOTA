@@ -156,7 +156,8 @@
     font-family: "Inter", sans-serif;
     color: black;
     font-weight: 700;
-    cursor: not-allowed;
+    cursor: pointer;
+    text-decoration: none;
 
     > svg{
       width: 26px;
@@ -265,6 +266,7 @@
   width: 22px;
   height: auto;
   fill: #9b9db1;
+  transition: fill 0.3s ease;
 }
 
 .news_container{
@@ -274,6 +276,7 @@
   position: relative;
   padding-bottom: 7px;
   padding-right: 7px;
+
   &:hover{
     cursor: pointer;
     > svg{
@@ -335,7 +338,8 @@ body.no-scroll {
     font-family: "Inter", sans-serif;
     color: black;
     font-weight: 700;
-    cursor: not-allowed;
+    cursor: pointer;
+    text-decoration: none;
 
     > svg{
       width: 26px;
@@ -351,21 +355,34 @@ body.no-scroll {
       }
     }
   }
+  >.container_user {
+    gap: 8px;
+    width: 290px;
+
+    > .avatar {
+      width: 38px;
+      height: 38px;
+    }
+
+    > .name {
+      font-size: 15px;
+    }
+  }
   > .container_settings{
     background-color: #202127;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 48px;
-    width: 48px;
+    height: 45px;
+    width: 45px;
     border-radius: 10px;
     cursor: pointer;
 
 
     > svg{
       fill: #9b9db1;
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
     }
     &:hover {
       filter: brightness(1.1);
@@ -424,6 +441,38 @@ body.no-scroll {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+.container_user {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  width: 170px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #9b9db1;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+
+  &:hover{
+    color: #f4bf58;
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 1450px) {
   .topbar_left {
     > img{
@@ -450,6 +499,23 @@ body.no-scroll {
         height: 24px;
       }
     }
+  }
+  .container_user {
+    gap: 6px;
+    width: 160px;
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+  .news_container{
+    padding-bottom: 7px;
+    padding-right: 3px;
   }
 }
 
@@ -492,6 +558,19 @@ body.no-scroll {
       }
     }
   }
+  .container_user {
+    gap: 5px;
+    width: 150px;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .name {
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -523,5 +602,6 @@ body.no-scroll {
     display: none;
   }
 }
+
 
 

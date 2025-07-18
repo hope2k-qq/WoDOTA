@@ -2,9 +2,8 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import i18n from "../locales/i18n";
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
 const API_IP = process.env.REACT_APP_API_IP;
-const CACHE_VERSION = '44.0';
+const CACHE_VERSION = '46.0';
 
 type MyDataContextType = {
     language: string | null;
@@ -14,21 +13,29 @@ type MyDataContextType = {
     reloadData: (lang?: string) => Promise<void>;
 };
 
-// ——— Контекст ———
 const MyDataContext = createContext<MyDataContextType | undefined>(undefined);
 
-// ——— Провайдер ———
 export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [language, setLanguage] = useState<string | null>(null);
     const [heroesData, setHeroesData] = useState<any | null>(null);
     const [generalTalents, setGeneralTalents] = useState<any | null>(null);
     const [languageReady, setLanguageReady] = useState(false);
+    const API_URL = process.env.REACT_APP_API_URL;
 
-    const reloadData = async (langParam?: string) => {
+    const reloadData = React.useCallback(async (langParam?: string) => {
         const lang = langParam || await getDefaultLanguage();
         await i18n.changeLanguage(lang);
         localStorage.setItem("language", lang);
         setLanguage(lang);
+
+        try {
+            await axios.post(`${API_URL}/account/settings`,
+                { language: lang },
+                { withCredentials: true }
+            );
+        } catch (err) {
+            console.warn("Не удалось сохранить язык на сервере (возможно пользователь неавторизован):", err);
+        }
 
         try {
             const response = await axios.get(`${API_URL}/heroesAllDataJson/${lang}`);
@@ -48,7 +55,7 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
             console.error("Ошибка при загрузке generalTalents:", error);
         }
         setLanguageReady(true);
-    };
+    }, [API_URL]);
 
     // const clearAllIndexedDB = async () => {
     //     try {
@@ -126,44 +133,26 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     };
 
 
-
-
-
     useEffect(() => {
         const clearAllCaches = async () => {
-            const preservedLocalStorage: {
-                unreadNewsCount: string | null;
-                i18nextLng: string | null;
-                language: string | null;
-            } = {
-                unreadNewsCount: localStorage.getItem("unreadNewsCount"),
-                i18nextLng: localStorage.getItem("i18nextLng"),
-                language: localStorage.getItem("language")
-            };
+            localStorage.clear();
             sessionStorage.clear();
             await clearAllIndexedDB();
-            document.cookie.split(";").forEach(cookie => {
-                const eqPos = cookie.indexOf("=");
-                const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
-                document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
-            });
-            if ('caches' in window) {
-                const cacheNames = await caches.keys();
-                await Promise.all(cacheNames.map(cache => caches.delete(cache)));
-            }
-            if ("serviceWorker" in navigator) {
-                const registrations = await navigator.serviceWorker.getRegistrations();
-                for (const registration of registrations) {
-                    await registration.unregister();
-                }
-            }
-            localStorage.clear();
-            Object.entries(preservedLocalStorage).forEach(([key, value]) => {
-                if (value !== null) {
-                    localStorage.setItem(key, value);
-
-                }
-            });
+            // document.cookie.split(";").forEach(cookie => {
+            //     const eqPos = cookie.indexOf("=");
+            //     const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+            //     document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+            // });
+            // if ('caches' in window) {
+            //     const cacheNames = await caches.keys();
+            //     await Promise.all(cacheNames.map(cache => caches.delete(cache)));
+            // }
+            // if ("serviceWorker" in navigator) {
+            //     const registrations = await navigator.serviceWorker.getRegistrations();
+            //     for (const registration of registrations) {
+            //         await registration.unregister();
+            //     }
+            // }
         };
         const cachedVersion = localStorage.getItem("cacheVersion");
         if (cachedVersion !== CACHE_VERSION) {
@@ -172,7 +161,8 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         } else{
             setLanguageReady(true);
         }
-    }, []);
+    }, [reloadData]);
+
 
     return (
         <MyDataContext.Provider value={{ language, heroesData, generalTalents, languageReady, reloadData }}>

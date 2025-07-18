@@ -1,14 +1,20 @@
 ﻿const express = require('express');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const { MongoClient } = require('mongodb');
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
+app.use(cookieParser());
 const { updateVotesData } = require('./controllers/votesController');
 const { updateDataSequentially } = require('./controllers/leaderboardController');
 const { updateDataSequentiallyTournament } = require('./controllers/tournamentsController');
 const { updateCreatorsVideosData } = require('./controllers/youtubeController');
+const passport = require('./middleware/passport');
+
+
+app.use(passport.initialize());
 
 // const allowedTokens = ['your-secure-token'];
 
@@ -34,9 +40,11 @@ app.use(cors({
             callback(new Error('Не разрешено по CORS'), false);
         }
     },
+    credentials: true,
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 const uri = process.env.MONGODB_URI;
 
@@ -49,6 +57,7 @@ const startServer = async () => {
         app.locals.db = db.collection('builds');
         app.locals.sitemap = db.collection('sitemap');
         app.locals.steam_data_players = db.collection('steam_data_players');
+        app.locals.steam_users = db.collection('steam_users');
         const routes = require('./routes');
         app.use('/', routes);
         

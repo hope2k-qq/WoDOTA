@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import styles from './settings.module.scss';
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom';
+import {useUser} from "../../../../context/UserContext";
+import { ReactComponent as QuitIcon } from "../../../../assets/icons/QuitIcon.svg";
 
 export const Settings = ({ isOpen, closeMenu }: { isOpen: boolean, closeMenu: () => void }) => {
     const { i18n, t } = useTranslation();
+    const { setUser, setShowNumbers, setShowText } = useUser();
+    const { user } = useUser();
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
     const [isOpenLanguage, setIsOpenLanguage] = useState(false);
     const navigate = useNavigate();
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const languageOptions = [
         { code: 'ru', label: 'RUSSIAN', icon: '/ru.svg' },
@@ -21,12 +26,44 @@ export const Settings = ({ isOpen, closeMenu }: { isOpen: boolean, closeMenu: ()
         setSelectedLanguage(languageCode);
         i18n.changeLanguage(languageCode);
 
-        const currentPath = window.location.pathname.split('/').slice(2).join('/');
+        fetch(`${API_URL}/account/settings`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ language: languageCode })
+        }).then(res => {
+            if (!res.ok) {
+                console.error('Ошибка при обновлении языка на сервере');
+            }
+        }).catch(err => {
+            console.error('Ошибка сети при отправке языка:', err);
+        });
 
+        const currentPath = window.location.pathname.split('/').slice(2).join('/');
         const newPath = currentPath ? `/${languageCode}/${currentPath}` : `/${languageCode}`;
         setIsOpenLanguage(false);
         navigate(newPath);
     };
+
+    const handleLogout = async () => {
+
+        try {
+            await fetch(`${API_URL}/auth/logout`, {
+                method: 'POST',
+                credentials: 'include',
+            });
+
+            setUser(null);
+            setShowNumbers(true);
+            setShowText(true);
+
+        } catch (error) {
+            console.error('Ошибка сети при выходе:', error);
+        }
+    };
+
 
 
     const toggleLanguageList = () => {
@@ -80,6 +117,22 @@ export const Settings = ({ isOpen, closeMenu }: { isOpen: boolean, closeMenu: ()
                         )}
                     </div>
                 </div>
+                {user && (
+                    <div className={styles.off_container}>
+                        <div className={styles.languageTitle}>{t('steam_account')}</div>
+                        <div className={styles.userContainer}>
+                            <div className={styles.userInfoWrapper}>
+                                <div className={styles.userInfo}>
+                                    <img src={user.avatar} alt={user.name} className={styles.avatar}/>
+                                    <span className={styles.userName}>{user.name}</span>
+                                </div>
+                                <div className={styles.closeIconWrapper} onClick={handleLogout}>
+                                    <QuitIcon className={styles.closeIcon}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

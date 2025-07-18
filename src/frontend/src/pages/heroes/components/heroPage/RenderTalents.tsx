@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import { getImageUrl } from '../../../../utils/r2Storage';
 import { Talent, AddonData, RenderTalentsProps } from '../../../../types/heroes';
+import { useUser  } from '../../../../context/UserContext';
 import styles from './render_talents.module.scss';
 import html2canvas from "html2canvas";
 import { ReactComponent as UpdateIcon } from "../../../../assets/icons/UpdateIcon.svg";
@@ -39,6 +40,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const [isUpgradeMode, setIsUpgradeMode] = useState(false);
     const [currentTalentLevels, setCurrentTalentLevels] = useState<{ [key: string]: { [key: string]: number } }>({});
     const [upgradeOrder, setUpgradeOrder] = useState<string[]>([]);
+    const { user, showNumbers: ctxShowNumbers, showText: ctxShowText } = useUser();
     const [showNumbers, setShowNumbers] = useState(true);
     const [showText, setShowText] = useState(true);
     const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -54,6 +56,16 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const [buildName, setBuildName] = useState('');
     const [buildDescription, setBuildDescription] = useState('');
     const { generalTalents, languageReady } = useMyData();
+    useEffect(() => {
+        if (user) {
+            setShowNumbers(ctxShowNumbers);
+            setShowText(ctxShowText);
+        } else {
+            setShowNumbers(true);
+            setShowText(true);
+        }
+    }, [user, ctxShowNumbers, ctxShowText]);
+
     const saveGridAsImage = async () => {
         setIsLoading(true);
         if (!sectionsRef.current || sectionsRef.current.length === 0) {
@@ -370,19 +382,37 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
 
 
-    // Функция для переключения видимости текста
     const toggleTextVisibility = () => {
         setShowText(prevState => !prevState);
     };
     const toggleNumbersVisibility = () => {
         setShowNumbers(prevState => !prevState);
     };
+    const updateSettingsOnServer = (settings: { showText?: boolean; showNumbers?: boolean }) => {
+        fetch(`${API_URL}/account/settings`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(settings),
+        })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Failed to update settings');
+                }
+            })
+            .catch(err => {
+                console.error('Ошибка при обновлении настроек:', err);
+            });
+    };
+
 
 
 
     useEffect(() => {
         if (languageReady && generalTalents) {
-            setLocalGeneralTalents(generalTalents as AddonData); // безопасно приводим к типу
+            setLocalGeneralTalents(generalTalents as AddonData);
         }
     }, [generalTalents, languageReady]);
 
@@ -937,7 +967,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                             <div key={`${rowIndex}-${colIndex}`}
                                                  className={`${styles.square} ${menuClassArrow}`}
                                                  onClick={() => item && isUpgradeMode && !isBuild && isUpgradeAllowed && upgradeTalent(item.talentInfo, rowIndex, part)}>
-                                                {showText && text ? (
+                                                {(!isUpgradeMode || (isUpgradeMode && showText)) && text ? (
                                                     <div
                                                         className={`${styles.menu} ${menuClass} ${menuClass2} ${menuClass3}`}>
                                                         <div dangerouslySetInnerHTML={{__html:  formatText(text)}}/>
@@ -963,7 +993,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                                 <>
                                                                     <div className={styles.progressBar}
                                                                          style={{width: calculateProgressBarWidth(item.talentInfo, part)}}/>
-                                                                    {showNumbers && (
+                                                                    {showNumbers && isUpgradeMode && (
                                                                         <div className={styles.upgradeNumber}>
                                                                             {getTalentUpgradeNumbers(part, item.talentInfo.substring(1))}
                                                                         </div>
@@ -1139,7 +1169,10 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button onClick={() => setIsSettingsOpen(false)}
+                                            <button onClick={() => {
+                                                updateSettingsOnServer({ showText, showNumbers });
+                                                setIsSettingsOpen(false);
+                                            }}
                                                     className={styles.closeButton}>
                                                 {t('close')}
                                             </button>

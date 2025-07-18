@@ -1,18 +1,23 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import Cookies from 'js-cookie';
+import {useUser} from "./UserContext";
 
 interface UnreadNewsContextType {
     unreadNewsCount: number;
     setUnreadNewsCount: React.Dispatch<React.SetStateAction<number>>;
     updateUnreadNewsCount: (newsIds: number[]) => void;
     markNewsAsRead: (id: number) => void;
+    allNewsIds: number[];
+    setAllNewsIds: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
 const UnreadNewsContext = createContext<UnreadNewsContextType | undefined>(undefined);
 
 export const UnreadNewsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [unreadNewsCount, setUnreadNewsCount] = useState<number>(0);
+    const [allNewsIds, setAllNewsIds] = useState<number[]>([]);
     const API_URL = process.env.REACT_APP_API_URL;
-
+    const { user, loading  } = useUser();
     useEffect(() => {
         const loadNewsData = async () => {
             try {
@@ -20,45 +25,89 @@ export const UnreadNewsProvider: React.FC<{ children: ReactNode }> = ({ children
                 const data = await res.json();
 
                 const fetchedNews = Array.isArray(data) ? data : data.news || [];
+                const fetchedNewsIds = fetchedNews.map((news: { id: number }) => news.id);
+                setAllNewsIds(fetchedNewsIds);
 
-                const storedReadNews = JSON.parse(localStorage.getItem('readNews') || '[]');
+                const localRead = Cookies.get('readNews');
+                const localReadNews = localRead ? JSON.parse(localRead) : [];
 
-                const unreadNewsIds = fetchedNews
-                    .map((news: { id: number }) => news.id)
-                    .filter((id: number) => !storedReadNews.includes(id));
+                let mergedReadNews = [...localReadNews];
 
-                setUnreadNewsCount(unreadNewsIds.length);
+                if (user) {
+                    const serverReadRes = await fetch(`${API_URL}/account/news/read`, { credentials: 'include' });
+                    const serverReadData = await serverReadRes.json();
+                    const serverReadNews = serverReadData.readNews || [];
 
-                localStorage.setItem('unreadNewsCount', unreadNewsIds.length.toString());
+                    mergedReadNews = Array.from(new Set([...localReadNews, ...serverReadNews]));
+
+                    if (serverReadNews.length !== mergedReadNews.length) {
+                        await fetch(`${API_URL}/account/settings`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            credentials: 'include',
+                            body: JSON.stringify({ readNews: mergedReadNews }),
+                        });
+                    }
+
+                    Cookies.set('readNews', JSON.stringify(mergedReadNews));
+                }
+
+                const unread = fetchedNewsIds.filter((id: number) => !mergedReadNews.includes(id));
+                setUnreadNewsCount(unread.length);
+                Cookies.set('unreadNewsCount', unread.length.toString());
 
             } catch (err) {
                 console.error("Ошибка загрузки новостей:", err);
             }
         };
 
-        loadNewsData();
-    }, [API_URL]);
+        if (!loading) {
+            loadNewsData();
+        }
+    }, [API_URL, loading, user]);
 
     const updateUnreadNewsCount = (newsIds: number[]) => {
-        const storedReadNews = JSON.parse(localStorage.getItem('readNews') || '[]');
+        const storedReadNewsStr = Cookies.get('readNews');
+        const storedReadNews = storedReadNewsStr ? JSON.parse(storedReadNewsStr) : [];
 
         const unreadNewsIds = newsIds.filter((id) => !storedReadNews.includes(id));
         setUnreadNewsCount(unreadNewsIds.length);
-
-        localStorage.setItem('unreadNewsCount', unreadNewsIds.length.toString());
+        Cookies.set('unreadNewsCount', unreadNewsIds.length.toString());
     };
 
-    const markNewsAsRead = (id: number) => {
-        const storedReadNews = JSON.parse(localStorage.getItem('readNews') || '[]');
-        if (!storedReadNews.includes(id)) {
-            storedReadNews.push(id);
-            localStorage.setItem('readNews', JSON.stringify(storedReadNews));
+    const markNewsAsRead = async (id: number) => {
+        const storedReadNewsStr = Cookies.get('readNews');
+        const storedReadNews = storedReadNewsStr ? JSON.parse(storedReadNewsStr) : [];
 
-            updateUnreadNewsCount([]);
+        if (!storedReadNews.includes(id)) {
+            const updatedReadNews = [...storedReadNews, id];
+            Cookies.set('readNews', JSON.stringify(updatedReadNews));
+            updateUnreadNewsCount(allNewsIds);
+
+
+            if (user) {
+                try {
+                    await fetch(`${API_URL}/account/settings`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        credentials: 'include',
+                        body: JSON.stringify({ readNews: updatedReadNews }),
+                    });
+                } catch (error) {
+                    console.error('Ошибка при сохранении прочитанных новостей:', error);
+                }
+            }
         }
     };
 
-    const value = { unreadNewsCount, setUnreadNewsCount, updateUnreadNewsCount, markNewsAsRead };
+    const value = {
+        unreadNewsCount,
+        setUnreadNewsCount,
+        updateUnreadNewsCount,
+        markNewsAsRead,
+        allNewsIds,
+        setAllNewsIds,
+    };
 
     return (
         <UnreadNewsContext.Provider value={value}>

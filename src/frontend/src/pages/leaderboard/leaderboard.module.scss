@@ -701,6 +701,7 @@
 
 .topPlayerCard3_color_stroke {
   -webkit-text-stroke: 2px #cd853f;
+  transform: translateY(18px) !important;
 }
 
 .topPlayerCard1_color_fill {
@@ -747,22 +748,21 @@
 
 /* Для топ-3 справа */
 .topPlayerCard3 {
-  order: 1; /* Перемещаем вправо */
-  margin-top: 12rem; /* Левая позиция */
+  order: 1;
+  margin-top: 12rem;
 }
 
 .topPlayersRankOverlay{
   position: absolute;
-  bottom: 100%; /* Ставим на верхнюю границу карточки */
+  bottom: 100%;
   right: 5%;
   line-height: 1;
-  font-size: 150px; /* Размер шрифта для цифры */
+  font-size: 150px;
   font-weight: bold;
   transform: translateY(20px);
-  color: transparent; /* Сам текст прозрачный */
-  //-webkit-text-stroke: 2px #9b9db1; /* Обводка золотым цветом */
-  text-shadow: none; /* Убираем тень */
-  white-space: nowrap; /* Не переносить текст на новую строку */
+  color: transparent;
+  text-shadow: none;
+  white-space: nowrap;
 }
 
 .topPlayerRatingContainer{
