@@ -21,13 +21,14 @@ const fetchArenaData = async () => {
         const response = await axios.get('https://data.worldofdota.net/data/get_top_rating_pve_arena.php');
         const rawData = response.data;
         const cleanedData = {};
+
         for (const key in rawData) {
-            if (Array.isArray(rawData[key])) {
+            if (Array.isArray(rawData[key]) && key !== "hero") {
                 cleanedData[key] = rawData[key].map(entry => ({
                     ...entry,
-                    hero_1: cleanHeroName(entry.hero_1),
-                    hero_2: cleanHeroName(entry.hero_2),
-                    hero_3: cleanHeroName(entry.hero_3),
+                    hero_1: entry.hero_1 ? cleanHeroName(entry.hero_1) : entry.hero_1,
+                    hero_2: entry.hero_2 ? cleanHeroName(entry.hero_2) : entry.hero_2,
+                    hero_3: entry.hero_3 ? cleanHeroName(entry.hero_3) : entry.hero_3,
                 }));
             }
         }
@@ -37,6 +38,7 @@ const fetchArenaData = async () => {
         throw new Error('Failed to fetch arena data');
     }
 };
+
 
 module.exports = {
     fetchRatingData,

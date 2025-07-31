@@ -16,6 +16,7 @@ const updateVotesData = async (app) => {
             'npc_dota_hero_wisp',
             'npc_dota_hero_razor',
             'npc_dota_hero_phoenix',
+            'npc_dota_hero_sniper',
         ];
         cachedVotesData = response.data
             .filter(hero => {
