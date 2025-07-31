@@ -7,8 +7,8 @@ exports.getPatches = async (req, res) => {
     try {
         const patch = {};
         
-        const itemsOld = fs.readFileSync(path.join(__dirname, '../assets/npc_items_custom.txt'), 'utf-8');
-        const itemsNew = fs.readFileSync(path.join(__dirname, '../assets/npc_items_custom1.txt'), 'utf-8');
+        const itemsOld = fs.readFileSync(path.join(__dirname, '../assets/npc_items_custom1.txt'), 'utf-8');
+        const itemsNew = fs.readFileSync(path.join(__dirname, '../assets/npc_items_custom.txt'), 'utf-8');
 
         const itemsData = extractAbilityValues(itemsOld);
         const updatedItemsData = extractAbilityValues(itemsNew);
@@ -16,7 +16,7 @@ exports.getPatches = async (req, res) => {
         patch.items = createPatchItems(itemsData, updatedItemsData);
 
         const heroesOld = fs.readFileSync(path.join(__dirname, '../assets/addon_russian1.txt'), 'utf-8');
-        const heroesNew = fs.readFileSync(path.join(__dirname, '../assets/addon_russian2.txt'), 'utf-8');
+        const heroesNew = fs.readFileSync(path.join(__dirname, '../assets/addon_russian.txt'), 'utf-8');
 
         const heroesData =  extractHeroModifiers(heroesOld);
         const updatedHeroesData = extractHeroModifiers(heroesNew);

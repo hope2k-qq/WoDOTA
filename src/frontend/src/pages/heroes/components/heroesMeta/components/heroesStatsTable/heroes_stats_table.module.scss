@@ -1,0 +1,97 @@
+.miniTableWrapper {
+  background: #1d1d22;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.miniTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: fixed;
+}
+
+.td{
+  padding: 4px;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.th{
+  padding: 4px;
+  color: white;
+  font-size: 14px;
+}
+
+.miniTable th:nth-child(1),
+.miniTable td:nth-child(1) {
+  width: 50%;
+}
+
+.miniTable th:nth-child(2),
+.miniTable td:nth-child(2) {
+  width: 25%;
+}
+
+.miniTable th:nth-child(3),
+.miniTable td:nth-child(3) {
+  width: 25%;
+}
+
+.miniTable tbody tr:nth-child(even) {
+  background: #24242b;
+}
+
+.miniTable tbody tr:hover {
+  background: #2b2b34;
+}
+
+.td_hero{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  color: #f4bf58;
+  font-size: 13px;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.td_img {
+  width: 55px;
+  height: auto;
+  object-fit: contain;
+}
+
+.td_value{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: 22%;
+  gap: 5px;
+}
+
+
+.icon{
+  width: 10px;
+  height: 10px;
+}
+
+.icon_top{
+  fill: #a9cf54;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.icon_worst{
+  fill: #c23c2a;
+}

@@ -67,7 +67,6 @@ export const HeroBuildPage: React.FC = () => {
 
     const fetchHeroImageFromCache = async (heroName: string) => {
         try {
-            // Открываем базу данных heroes-db и доступ к хранилищу heroes
             const db = await openDB('heroes-db', 4, {
                 upgrade(db) {
                     // Убедитесь, что хранилище heroes существует

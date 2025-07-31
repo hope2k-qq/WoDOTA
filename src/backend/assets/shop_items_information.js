@@ -59,7 +59,7 @@ var Items_plus =
     //["1056", "coin", "500", "nydp7", "nydp7"],
 ] 
 
-// Последний юзабельный айди 918
+// Последний юзабельный айди 925
 
 var Items_Backround =
 [
@@ -398,9 +398,9 @@ var Items_emblems =
     ["865", "coin", "99999", "emblem_89", "emblem_89", true], // BP ONLY
     ["863", "coin", "99999", "emblem_87", "emblem_87", true], // WODA TOURNAMENT
     ["918", "coin", "99999", "emblem_92", "emblem_92", true], // SEASON REWARD
-    
+    ["924", "coin", "99999", "emblem_98", "emblem_98", true], // SEASON REWARD
+    ["925", "coin", "99999", "emblem_99", "emblem_99", true], // SEASON REWARD
    
-    
     ["205", "coin", "500", "emblem_41", "emblem_41"],
     ["200", "coin", "500", "emblem_37", "emblem_37"],
     ["178", "coin", "500", "emblem_15", "emblem_15"],
@@ -413,6 +413,9 @@ var Items_emblems =
     ["728", "coin", "500", "emblem_55", "emblem_55"],
     ["847", "coin", "500", "emblem_71", "emblem_71"],
     ["851", "coin", "500", "emblem_75", "emblem_75"],
+    ["919", "coin", "500", "emblem_93", "emblem_93"],
+    ["920", "coin", "500", "emblem_94", "emblem_94"],
+    ["921", "coin", "500", "emblem_95", "emblem_95"],
     ["176", "coin", "500", "emblem_13", "emblem_13"],
     ["841", "coin", "500", "emblem_65", "emblem_65"],
     ["860", "coin", "1500", "emblem_84", "emblem_84"],
@@ -458,8 +461,10 @@ var Items_emblems =
     ["434", "coin", "5000", "emblem_43", "emblem_43"],
     ["206", "coin", "5000", "emblem_44", "emblem_44"],
     ["706", "coin", "5000", "emblem_50", "emblem_50"],
-    ["722", "coin", "5000", "emblem_51", "emblem_51"],
     ["723", "coin", "5000", "emblem_52", "emblem_52"],
+    ["922", "coin", "5000", "emblem_96", "emblem_96"],
+    ["722", "coin", "5000", "emblem_51", "emblem_51"],
+    ["923", "coin", "5000", "emblem_97", "emblem_97"],
 
     ["858", "coin", "5000", "emblem_82", "emblem_82"],
     ["867", "coin", "5000", "emblem_91", "emblem_91"],
@@ -643,7 +648,6 @@ var HERO_VOTES_TABLE =
     "npc_dota_hero_shadow_shaman",
     "npc_dota_hero_silencer",
     "npc_dota_hero_snapfire",
-    "npc_dota_hero_sniper",
     "npc_dota_hero_storm_spirit",
     "npc_dota_hero_sven",
     "npc_dota_hero_templar_assassin",

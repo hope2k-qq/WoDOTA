@@ -5,7 +5,7 @@ function extractItems() {
     const filePath = path.join(__dirname, '../assets', 'shop_items_information.js');
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
-    const itemNames = ['Items_Five', 'Items_pets', 'Items_emblems', 'Items_tips'];
+    const itemNames = ['Items_Five', 'Items_pets', 'Items_emblems', 'Items_tips', 'Items_Backround'];
 
     const itemConfigs = {
         Items_Five: {
@@ -18,6 +18,9 @@ function extractItems() {
             properties: ['id', 'currency', 'value', 'icon', 'localizationKey'],
         },
         Items_tips: {
+            properties: ['id', 'currency', 'value', 'icon', 'localizationKey'],
+        },
+        Items_Backround: {
             properties: ['id', 'currency', 'value', 'icon', 'localizationKey'],
         },
     };
@@ -59,7 +62,15 @@ function extractItems() {
 
                 if (rawData.trim() !== '[]') {
                     const parsedData = JSON.parse(rawData);
-                    return parsedData.map(arr => createItemObject(arr, itemName));
+
+                    const filteredData = parsedData.filter(arr => {
+                        return !(
+                            (arr[1] === 'coin' && arr[2] === '99999') ||
+                            arr[2] === '0'
+                        );
+                    });
+                    
+                    return filteredData.map(arr => createItemObject(arr, itemName));
                 } else {
                     console.warn(`Empty array ${itemName}, nothing will be extracted.`);
                 }

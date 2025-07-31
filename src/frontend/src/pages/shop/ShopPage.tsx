@@ -1,5 +1,8 @@
-import React, { useEffect, useState, CSSProperties, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { getImageUrl } from '../../utils/r2Storage';
+import styles from './shop.module.scss';
+import { ReactComponent as BonusIcon } from "../../assets/icons/BonusIcon.svg";
+import { ReactComponent as StatsIcon } from "../../assets/icons/StatsIcon.svg";
 
 interface Item {
     id: string;
@@ -9,38 +12,48 @@ interface Item {
     localizationKey: string;
 }
 
-const itemTypes = ['Items_Five', 'Items_pets', 'Items_emblems', 'Items_tips'] as const;
+const itemTypes = ['Items_Five', 'Items_pets', 'Items_emblems', 'Items_tips', 'Items_Backround'] as const;
 type ItemType = typeof itemTypes[number];
 
 export const ShopPage: React.FC = () => {
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const [items, setItems] = useState<Item[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [selectedItemType, setSelectedItemType] = useState<ItemType>('Items_Five');
-    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedType, setSelectedType] = useState<ItemType>('Items_Five');
     const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-    const [localizationData, setLocalizationData] = useState<{ [key: string]: string }>({});
-    const [imageUrls, setImageUrls] = useState<{ [key: string]: string }>({}); // Состояние для URL изображений
+    const [localization, setLocalization] = useState<Record<string, string>>({});
+    const [imageUrls, setImageUrls] = useState<Record<string, string>>({});
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedCurrency, setSelectedCurrency] = useState("RUB");
+    const [supportAmount, setSupportAmount] = useState(100);
 
+    const currencies = [
+        { code: "RUB", label: "₽", name: "Рубли" },
+        { code: "USD", label: "$", name: "Доллары" },
+        { code: "EUR", label: "€", name: "Евро" },
+        { code: "UAH", label: "₴", name: "Гривны" },
+        { code: "TON", label: "TON", name: "TON" },
+        { code: "TRX", label: "TRX", name: "TRX" },
+        { code: "USDT_TON", label: "USDT", name: "USDT (TON)" },
+    ];
 
-    const API_URL = process.env.REACT_APP_API_URL;
+    const convertedBonuses = Math.floor(supportAmount * 10);
 
-    const fetchItems = useCallback(async (itemType: ItemType) => {
+    const fetchItems = useCallback(async (type: ItemType) => {
         if (!API_URL) {
             setError('API_URL is not defined');
             return;
         }
 
-        setLoading(true);
-        setError(null);
         try {
-            const response = await fetch(`${API_URL}/shop`);
-            if (!response.ok) {
-                setError('Failed to fetch items');
-                return;
-            }
-            const data = await response.json();
-            setItems(data[itemType] || []);
+            setLoading(true);
+            setError(null);
+            const res = await fetch(`${API_URL}/shop`);
+            if (!res.ok) throw new Error('Failed to fetch items');
+            const data = await res.json();
+            setItems(data[type] || []);
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -48,79 +61,192 @@ export const ShopPage: React.FC = () => {
         }
     }, [API_URL]);
 
-    const fetchLocalizationData = useCallback(async () => {
+    const fetchLocalization = useCallback(async () => {
         if (!API_URL) {
             setError('API_URL is not defined');
             return;
         }
 
         try {
-            const response = await fetch(`${API_URL}/text_data`);
-            if (!response.ok) {
-                setError('Failed to fetch localization data');
-                return;
-            }
-            const data = await response.json();
-            setLocalizationData(data);
-        } catch (error) {
-            console.error('Error loading localization data:', error);
-            setError('Error loading localization data');
+            const res = await fetch(`${API_URL}/text_data`);
+            if (!res.ok) throw new Error('Failed to fetch localization data');
+            const data = await res.json();
+            setLocalization(data);
+        } catch (err: any) {
+            setError(err.message);
         }
     }, [API_URL]);
 
-    useEffect(() => {
-        (async () => {
-            await fetchItems(selectedItemType);
-            await fetchLocalizationData();
-        })();
-    }, [selectedItemType, fetchItems, fetchLocalizationData]);
+    const fetchImages = useCallback(async (items: Item[]) => {
+        const urls: Record<string, string> = {};
+
+        await Promise.all(items.map(async (item) => {
+            const base = `images/shop/${item.icon}`;
+            urls[item.id] = await getImageUrl(`${base}.webp`) || '';
+            urls[`${item.id}_open`] = await getImageUrl(`${base}_open.webp`) || '';
+        }));
+
+        setImageUrls(urls);
+    }, []);
 
     useEffect(() => {
-        const loadImageUrls = async () => {
-            const urls: { [key: string]: string } = {};
+        fetchItems(selectedType);
+        fetchLocalization();
+    }, [selectedType, fetchItems, fetchLocalization]);
 
-            for (const item of items) {
-                const url = (await getImageUrl(`images/shop/${item.icon}.webp`)) || '';
-                const openUrl = (await getImageUrl(`images/shop/${item.icon}_open.webp`)) || '';
-                urls[item.id] = url;
-                urls[item.id + '_open'] = openUrl;
-            }
-
-            setImageUrls(urls);
-        };
-
+    useEffect(() => {
         if (items.length > 0) {
-            loadImageUrls();
+            fetchImages(items);
         }
-    }, [items]);
+    }, [items, fetchImages]);
 
-
-
-    const openModal = (item: Item) => {
-        setSelectedItem(item);
-        setModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
+    const handleBuy = () => {
+        if (!selectedItem) return;
+        const name = localization[selectedItem.localizationKey] || selectedItem.localizationKey;
+        alert(`You bought ${name}!`);
         setSelectedItem(null);
     };
 
-    const handleBuy = () => {
-        alert(`You bought ${localizationData[selectedItem?.localizationKey!] || selectedItem?.localizationKey}!`);
-        closeModal();
-    };
+    const renderItemName = (key: string) => localization[key] || key;
 
     return (
-        <div style={styles.container}>
-            <div style={styles.buttonContainer}>
+        <div className={styles.shopPage}>
+            <div className={styles.donationSection}>
+                <div className={styles.donationStep}>
+                    <div className={styles.stepContent}>
+                        <h3>Поддержка сайта</h3>
+                        <p>
+                            Вы можете пожертвовать любую сумму — она автоматически преобразуется в бонусы, которые можно
+                            использовать внутри сайта.
+                        </p>
+                        <p className={styles.stepNoteRed}>
+                            Пожертвование направляется исключительно <strong>на финансирование разработки и поддержки
+                            сайта</strong>, <u>не передаётся разработчику кастомной игры</u> и <strong>не является
+                            приобретением игровых монет либо иной внутриигровой валюты</strong>.
+                        </p>
+
+
+                        <div className={styles.bonusSteps}>
+                            <div className={styles.stepItem}>
+                                <BonusIcon className={styles.stepIcon}/>
+                                <div>
+                                    <h4>1. Поддержка сайта</h4>
+                                    <p>Ваше пожертвование помогает оплачивать серверы, развивать новые функции и
+                                        улучшать работу сайта для всех пользователей.</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.stepItem}>
+                                <BonusIcon className={styles.stepIcon}/>
+                                <div>
+                                    <h4>2. Начисление бонусов</h4>
+                                    <p>За каждый 1 RUB (или эквивалент в другой валюте) вы получаете 1 бонус. Начисление
+                                        происходит автоматически. Бонусы не являются платёжным средством и не подлежат
+                                        обмену на реальные деньги.</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.stepItem}>
+                                <StatsIcon className={styles.stepIcon}/>
+                                <div>
+                                    <h4>3. Использование бонусов</h4>
+                                    <p>Вы можете использовать бонусы для получения дополнительной информации — например,
+                                        статистики, собранной вручную на основе открытых данных. Мы стараемся обеспечить
+                                        актуальность, однако статистика может содержать неточности и не гарантирует 100%
+                                        точности.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button className={styles.supportButton} onClick={() => setModalOpen(true)}>
+                            Поддержать
+                        </button>
+
+                        {modalOpen && (
+                            <div className={styles.modalOverlay} onClick={() => setModalOpen(false)}>
+                                <div className={styles.modalContent2} onClick={(e) => e.stopPropagation()}>
+                                    <h2>Поддержать проект</h2>
+
+                                    {/* Верхняя часть: валюты */}
+                                    <div className={styles.currencyCards}>
+                                        {currencies.map((cur) => (
+                                            <div
+                                                key={cur.code}
+                                                className={`${styles.currencyCard} ${selectedCurrency === cur.code ? styles.active : ""}`}
+                                                onClick={() => setSelectedCurrency(cur.code)}
+                                            >
+                                                <span className={styles.icon}>{cur.label}</span>
+                                                <span className={styles.name}>{cur.name}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Нижняя часть: поле + бонусы */}
+                                    <div className={styles.bottomRow}>
+                                        <div className={styles.inputSection}>
+                                            <label htmlFor="supportAmount">Сумма:</label>
+                                            <input
+                                                id="supportAmount"
+                                                type="number"
+                                                min={1}
+                                                value={supportAmount}
+                                                onChange={(e) => setSupportAmount(Number(e.target.value))}
+                                                placeholder="Введите сумму"
+                                            />
+                                        </div>
+                                        <div className={styles.bonusDisplay}>
+                                            Вы получите <strong>{convertedBonuses}</strong> бонусов
+                                        </div>
+                                    </div>
+
+                                    <button className={styles.closeBtn} onClick={() => setModalOpen(false)}>
+                                        Закрыть
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <div className={styles.donationStep}>
+                    {/*<div className={styles.stepNumber}>*/}
+                    {/*    <div className={styles.outerRing}>*/}
+                    {/*        <div className={styles.slot1}></div>*/}
+                    {/*        <div className={styles.slot2}></div>*/}
+                    {/*    </div>*/}
+                    {/*    <div className={styles.innerRing}>*/}
+                    {/*        <div className={styles.slot1} style={{backgroundColor: "black"}}></div>*/}
+                    {/*        <div className={styles.slot2} style={{backgroundColor: "green"}}></div>*/}
+                    {/*    </div>*/}
+                    {/*    <div className={styles.number}>1</div>*/}
+                    {/*</div>*/}
+
+                    <div className={styles.stepContent}>
+                        <h3>Поддержка разработчика кастомной игры</h3>
+                        <p>
+                            Вы можете <strong>приобрести игровые монеты</strong>, которые используются для покупки
+                            визуальных эффектов и других внутриигровых предметов.
+                        </p>
+                        <p className={styles.stepNoteRed}>
+                            Оплата монет и любых других товаров или услуг осуществляется через сторонний ресурс и
+                            направляется в пользу <strong>разработчика кастомной игры</strong>. <u>Сайт не участвует в
+                            приёме платежей, не контролирует процесс оплаты и не несёт ответственности за любые
+                            транзакции, совершаемые на сторонней платформе</u>.
+                        </p>
+                        <button className={styles.buyCoinsButton}>
+                            Купить монеты
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className={styles.typeSelector}>
                 {itemTypes.map((type) => (
                     <button
                         key={type}
-                        onClick={() => setSelectedItemType(type)}
-                        style={{
-                            backgroundColor: selectedItemType === type ? '#ddd' : '#fff',
-                        }}
+                        className={`${styles.typeButton} ${selectedType === type ? styles.active : ''}`}
+                        onClick={() => setSelectedType(type)}
                     >
                         {type}
                     </button>
@@ -130,20 +256,34 @@ export const ShopPage: React.FC = () => {
             {loading ? (
                 <p>Loading...</p>
             ) : error ? (
-                <p>Error: {error}</p>
+                <p className={styles.error}>Error: {error}</p>
             ) : (
                 <div>
-                    <h2>{selectedItemType} Items</h2>
-                    <ul>
+                    <h2>{selectedType} Items</h2>
+                    <ul className={styles.itemList}>
                         {items.map((item) => (
-                            <li key={item.id}>
-                                <strong>{localizationData[item.localizationKey] || item.localizationKey}:</strong> {item.value} {item.currency}
+                            <li key={item.id} className={styles.item}>
                                 <img
-                                    src={imageUrls[item.id] || undefined}
-                                    alt={localizationData[item.localizationKey] || item.localizationKey}
+                                    src={imageUrls[item.id]}
+                                    alt={renderItemName(item.localizationKey)}
+                                    className={styles.itemImage}
                                 />
-                                <button style={{ cursor: 'pointer' }} onClick={() => openModal(item)}>
-                                    Buy
+                                <strong className={styles.itemText}>{renderItemName(item.localizationKey)}</strong>
+
+                                <div className={styles.itemPriceWrapper}>
+                                    <div className={styles.itemPrice}>
+                                        <span className={styles.priceLabel}>Цена:</span>
+                                        <div className={styles.itemCurrencyBox}>
+                                            <img src="/wodacoin.png" alt="wodacoin" className={styles.itemIcon}/>
+                                            <span className={styles.itemValue}>{item.value}</span>
+                                        </div>
+                                    </div>
+                                    <span className={styles.priceNote}>Внутриигровая валюта</span>
+                                </div>
+
+
+                                <button className={styles.detailsButton} onClick={() => setSelectedItem(item)}>
+                                    Подробнее
                                 </button>
                             </li>
                         ))}
@@ -151,69 +291,43 @@ export const ShopPage: React.FC = () => {
                 </div>
             )}
 
-            {modalOpen && selectedItem && (
-                <div style={styles.modalOverlay}>
-                    <div style={styles.modal}>
-                        <button onClick={closeModal} style={styles.closeButton}>✖</button>
-                        <h2>{localizationData[selectedItem.localizationKey] || selectedItem.localizationKey}</h2>
-                        <img
-                            src={imageUrls[selectedItem.id + '_open'] || undefined}
-                            alt={localizationData[selectedItem.localizationKey] || selectedItem.localizationKey}
-                            style={styles.modalImage}
-                        />
-                        <p>Price: {selectedItem.value} {selectedItem.currency}</p>
-                        <button onClick={handleBuy}>Buy</button>
+            {selectedItem && (
+                <div className={styles.modal}>
+                    <div className={styles.modalContent}>
+                        <button className={styles.closeButton} onClick={() => setSelectedItem(null)}>✖</button>
+                        <h2 className={styles.modalTitle}>{renderItemName(selectedItem.localizationKey)}</h2>
+                        <div className={styles.modalBody}>
+                            <img
+                                src={imageUrls[`${selectedItem.id}_open`]}
+                                alt={renderItemName(selectedItem.localizationKey)}
+                                className={styles.modalImage}
+                            />
+
+                            <div className={styles.modalDetails}>
+                                <p className={styles.modalDescription}>
+                                    Уникальный эффект для героя.
+                                </p>
+
+                                <div className={styles.priceAndBuyContainer}>
+                                    <div className={styles.itemPriceWrapper}>
+                                        <div className={styles.itemPrice}>
+                                            <span className={styles.priceLabel}>Цена:</span>
+                                            <div className={styles.itemCurrencyBox}>
+                                                <img src="/wodacoin.png" alt="wodacoin" className={styles.itemIcon}/>
+                                                <span className={styles.itemValue}>{selectedItem.value}</span>
+                                            </div>
+                                        </div>
+                                        <span className={styles.priceNote}>Внутриигровая валюта</span>
+                                    </div>
+
+                                    <button className={styles.detailsButton} onClick={handleBuy}>Купить</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            )}
 
+            )}
         </div>
     );
-};
-
-const styles: { [key: string]: CSSProperties } = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        height: 'auto',
-        minHeight: '100vh',
-        backgroundColor: '#202125',
-    },
-    buttonContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    modalOverlay: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    modal: {
-        backgroundColor: '#fff',
-        padding: '20px',
-        borderRadius: '8px',
-        position: 'relative',
-        minWidth: '300px',
-    },
-    modalImage: {
-        width: '100%',
-        height: 'auto',
-    },
-    closeButton: {
-        position: 'absolute',
-        top: '10px',
-        right: '10px',
-        background: 'transparent',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '18px',
-    },
 };

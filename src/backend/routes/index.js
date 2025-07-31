@@ -14,6 +14,7 @@ const subscribersRoutes = require('./subscribersRoutes');
 const itemsRoutes = require('./itemsRoutes');
 const youtubeRoutes = require('./youtubeRoutes');
 const authRoutes = require('./authRoutes');
+const metaRoutes = require('./metaRoutes');
 
 router.use('/', homeRoutes);
 router.use('/', heroesRoutes);
@@ -29,5 +30,6 @@ router.use('/', subscribersRoutes);
 router.use('/', itemsRoutes);
 router.use('/', youtubeRoutes);
 router.use('/', authRoutes);
+router.use('/', metaRoutes);
 
 module.exports = router;
