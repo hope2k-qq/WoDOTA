@@ -129,6 +129,42 @@ const loadHeroTalentByName = (heroName) => {
     }
 };
 
+function parseLuaFile(luaContent, targetVariable = '_G.LockedTalents') {
+    const regex = new RegExp(`${targetVariable}\\s*=\\s*\\{([\\s\\S]*?)^\\}`, 'm');
+    const match = luaContent.match(regex);
+
+    if (!match) {
+        throw new Error(`Переменная ${targetVariable} не найдена`);
+    }
+
+    let content = `{${match[1]}}`;
+    
+    content = content
+        .replace(/--.*$/gm, '')
+        .replace(/\["([^"]+)"\]\s*=/g, '"$1":')
+        .replace(/(\w+)\s*=/g, '"$1":')
+        .replace(/,\s*}/g, '}')
+        .replace(/,\s*]/g, ']')
+        .replace(/'/g, '"');
+    
+    content = content.replace(/\{([^{}]*)\}/g, (match, content) => {
+        const items = content.split(',').map(s => s.trim());
+        if (items.every(item => /^"[^"]+"$/.test(item))) {
+            return `[${items.join(', ')}]`;
+        }
+        return `{${content}}`;
+    });
+
+    try {
+        return JSON.parse(content);
+    } catch (e) {
+        throw new Error('Ошибка парсинга JSON: ' + e.message);
+    }
+}
+
+
+
+
 const processHeroTalentByName = (talents, heroName) => {
     let heroKey = heroName.replace('npc_dota_hero_', '');
     for (const [key, value] of Object.entries(replacements_heroes)) {
@@ -149,8 +185,7 @@ const processHeroTalentByName = (talents, heroName) => {
     }
 
     const result = {};
-
-    // Убираем имя героя из результата, просто возвращаем таланты
+    
     heroField.value.fields.forEach(levelField => {
         const level = levelField.key.value;
         if (!result[level]) {
@@ -207,32 +242,13 @@ const processHeroTalentByName = (talents, heroName) => {
 
 
             }).flat();
-
-            const luaScript = fs.readFileSync(path.join(__dirname, '../assets', 'talents.lua'), 'utf8');
-            const heroRegex = new RegExp(
-                `if\\s+hero:GetUnitName\\(\\)\\s*==\\s*"npc_dota_hero_${heroKey}"\\s*then([\\s\\S]*?)(?=\\s*(elseif|else))`,
-                "g"
-            );
-
-            const modifierRegex = /modifier_\w+/g;
-
-            const talentConflicts = {};
-
-            let match;
-            while ((match = heroRegex.exec(luaScript)) !== null) {
-                const heroBlock = match[1];
-                
-                const conflicts = heroBlock.match(modifierRegex);
-                if (conflicts.length > 0) {
-                    talentConflicts[heroKey] = Array.from(new Set(conflicts));
-                }
-            }
-            
-            const conflictList = talentConflicts[heroKey] || [];
-
+            const luaScript = fs.readFileSync(path.join(__dirname, '../assets', 'talents_list.lua'), 'utf8');
+            const lockedTalents = parseLuaFile(luaScript);
+            const conflictMap = lockedTalents[`npc_dota_hero_${heroKey}`] || {};
             talentDetails.forEach(talent => {
-                if (conflictList.includes(talent.id)) {
-                    talent.conflict = conflictList.filter(conflict => conflict !== talent.id);
+                const conflicts = conflictMap[talent.id];
+                if (Array.isArray(conflicts)) {
+                    talent.conflict = conflicts.filter(c => c !== talent.id);
                 }
             });
 

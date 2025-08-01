@@ -3,7 +3,7 @@ import i18n from "../locales/i18n";
 import axios from "axios";
 
 const API_IP = process.env.REACT_APP_API_IP;
-const CACHE_VERSION = '51.0';
+const CACHE_VERSION = '52.0';
 
 type MyDataContextType = {
     language: string | null;
@@ -38,7 +38,7 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         }
 
         try {
-            const response = await axios.get(`${API_URL}/heroesAllDataJson/${lang}`);
+            const response = await axios.get(`${API_URL}/heroesAllDataJson/${lang}?v=${CACHE_VERSION}`)
             const data = response.data;
             setHeroesData(data);
             localStorage.setItem("heroesData", JSON.stringify(data));
@@ -48,7 +48,7 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         }
 
         try {
-            const response = await axios.get(`${API_URL}/general_talents/${lang}`);
+            const response = await axios.get(`${API_URL}/general_talents/${lang}?v=${CACHE_VERSION}`);
             setGeneralTalents(response.data);
             localStorage.setItem("generalTalents", JSON.stringify(response.data));
         } catch (error) {
