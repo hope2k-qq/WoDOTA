@@ -4451,7 +4451,7 @@
           "tree_width": "75",
           "vision_radius": "400",
           "vision_duration": "3.34",
-          "abilitycastrange": "2000",
+          "abilitycastrange": "2500",
           "abilitycooldown": "11 10 9 8",
           "abilitychanneltime": "1",
           "abilitymanacost": "90 100 110 120"
@@ -11563,13 +11563,14 @@
         "description": "Gives Pudge a guaranteed damage block against all types of attack. Passively grants bonus strength that increases each time Pudge kills an enemy Hero or it dies in his vicinity. Flesh Heap is retroactive, meaning it can gain charges before it is skilled, which then become active. \n In Arena mode, the hero gains a Stack of Flesh Heap at the end of each round.",
         "lore": "The Butcher gives new meaning to the words 'meat shield.'",
         "damage_block": "DAMAGE BLOCK:",
+        "duration": "DURATION:",
         "flesh_heap_strength_buff_amount": "STRENGTH BONUS:",
         "flesh_heap_range": "RANGE:",
         "values": {
-          "damage_block": "7 10 13 16",
+          "damage_block": "8 14 20 26",
           "flesh_heap_strength_buff_amount": "0.4 0.6 0.8 1",
           "flesh_heap_range": "450",
-          "duration": "5 6 7 8",
+          "duration": "4 5 6 7",
           "abilitycooldown": "20 19 18 17",
           "abilitymanacost": "35 50 65 80"
         },
@@ -11577,12 +11578,14 @@
           "descriptions": {
             "damage_block": "DAMAGE BLOCK:",
             "flesh_heap_strength_buff_amount": "STRENGTH BONUS:",
-            "flesh_heap_range": "RANGE:"
+            "flesh_heap_range": "RANGE:",
+            "duration": "DURATION:"
           },
           "values": {
-            "damage_block": "7 / 10 / 13 / 16",
+            "damage_block": "8 / 14 / 20 / 26",
             "flesh_heap_strength_buff_amount": "0.4 / 0.6 / 0.8 / 1",
-            "flesh_heap_range": "450"
+            "flesh_heap_range": "450",
+            "duration": "4 / 5 / 6 / 7"
           }
         }
       },
@@ -35073,10 +35076,10 @@
       }
     },
     "talents_description": {
-      "modifier_dazzle_1_0": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: Good Juju \n\n Using items after 0.5s creates an area under the hero where enemies take Pure Damage per second: 50 + 2%/3%/4% of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggle items. </font></b>",
-      "modifier_dazzle_1_1": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Good Juju</font></b> \n\n Using items after 0.5s creates an area under the hero where enemies take Pure Damage per second: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>2%</font></b>/3%/4% of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggle items. </font></b>",
-      "modifier_dazzle_1_2": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Good Juju</font></b> \n\n Using items after 0.5s creates an area under the hero where enemies take Pure Damage per second: <b><font color='#eabe10'>50</font></b> + 2%/<b><font color='#eabe10'>3%</font></b>/4% of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggle items. </font></b>",
-      "modifier_dazzle_1_3": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Good Juju</font></b> \n\n Using items after 0.5s creates an area under the hero where enemies take Pure Damage per second: <b><font color='#eabe10'>50</font></b> + 2%/3%/<b><font color='#eabe10'>4%</font></b> of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggle items. </font></b>",
+      "modifier_dazzle_1_0": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: Good Juju \n\n Using items triggers, after 0.5s, an area under the hero that deals Pure Damage per second to enemies: 50 + 1.5%/2.5%/3.5% of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggleable items. </font></b>",
+      "modifier_dazzle_1_1": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Good Juju</font></b> \n\n Using items triggers, after 0.5s, an area under the hero that deals Pure Damage per second to enemies: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>1.5%</font></b>/2.5%/3.5% of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggleable items. </font></b>",
+      "modifier_dazzle_1_2": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Good Juju</font></b> \n\n Using items triggers, after 0.5s, an area under the hero that deals Pure Damage per second to enemies: <b><font color='#eabe10'>50</font></b> + 1.5%/<b><font color='#eabe10'>2.5%</font></b>/3.5% of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggleable items. </font></b>",
+      "modifier_dazzle_1_3": "<b><font color='#ff0000'>Removes all abilities.</font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Good Juju</font></b> \n\n Using items triggers, after 0.5s, an area under the hero that deals Pure Damage per second to enemies: <b><font color='#eabe10'>50</font></b> + 1.5%/2.5%/<b><font color='#eabe10'>3.5%</font></b> of Max Health \n\n Radius: 300 \n Duration: 4s \n\n <b><font color='#ff0000'> Does not work on toggleable items. </font></b>",
       "modifier_dazzle_2_0": "Reduce Item Cooldown: 15%/30%",
       "modifier_dazzle_2_1": "Reduce Item Cooldown: <b><font color='#eabe10'>15%</font></b>/30%",
       "modifier_dazzle_2_2": "Reduce Item Cooldown: 15%/<b><font color='#eabe10'>30%</font></b>",
@@ -44964,10 +44967,10 @@
             "id": "empty_3"
           },
           {
-            "id": "modifier_techies_2",
-            "talentInfo": "#modifier_techies_2",
-            "level": "3",
-            "imagePath": "techies/2",
+            "id": "modifier_techies_4",
+            "talentInfo": "#modifier_techies_4",
+            "level": "1",
+            "imagePath": "techies/4",
             "relatedTalent": {}
           },
           {
@@ -45035,13 +45038,13 @@
             "id": "empty_9"
           },
           {
-            "id": "modifier_techies_4",
-            "talentInfo": "#modifier_techies_4",
-            "level": "1",
-            "imagePath": "techies/4",
+            "id": "modifier_techies_2",
+            "talentInfo": "#modifier_techies_2",
+            "level": "3",
+            "imagePath": "techies/2",
             "relatedTalent": {
-              "relatedTalentName": "modifier_techies_2",
-              "requiredTalentLevel": "3"
+              "relatedTalentName": "modifier_techies_4",
+              "requiredTalentLevel": "1"
             }
           },
           {
@@ -45079,8 +45082,8 @@
             "level": "2",
             "imagePath": "techies/5",
             "relatedTalent": {
-              "relatedTalentName": "modifier_techies_4",
-              "requiredTalentLevel": "1"
+              "relatedTalentName": "modifier_techies_2",
+              "requiredTalentLevel": "3"
             }
           },
           {
@@ -61521,12 +61524,12 @@
       }
     },
     "talents_description": {
-      "modifier_sniper_1_0": "Headshot can be activated. \n\n The hero fires a shotgun in a cone-shaped area, performing 1 attack on all affected targets. Guarantees Headshot on enemies. After firing, the hero becomes silenced for 3 seconds. Silence duration is reduced by status resistance. \n\n Shot Range: 450 \n Cooldown: 3 sec.",
-      "modifier_sniper_1_1": "Headshot can be activated. \n\n The hero fires a shotgun in a cone-shaped area, performing <b><font color='#eabe10'>1</font></b> attack on all affected targets. Guarantees <b><font color='#eabe10'>Headshot</font></b> on enemies. After firing, the hero becomes silenced for 3 seconds. Silence duration is reduced by status resistance. \n\n Shot Range: <b><font color='#eabe10'>450</font></b> \n Cooldown: 3 sec.",
-      "modifier_sniper_2_0": "<b><font color='#ff0000'> Maximum attack speed is 150. </font></b> \n\n Headshot Damage Bonus: 30/60/90 + 1.5 per Strength",
-      "modifier_sniper_2_1": "<b><font color='#ff0000'> Maximum attack speed is <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Headshot Damage Bonus: <b><font color='#eabe10'>30</font></b>/60/90 + <b><font color='#eabe10'>1.5</font></b> per <b><font color='#eabe10'>1 Strength</font></b>",
-      "modifier_sniper_2_2": "<b><font color='#ff0000'> Maximum attack speed is <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Headshot Damage Bonus: 30/<b><font color='#eabe10'>60</font></b>/90 + <b><font color='#eabe10'>1.5</font></b> per <b><font color='#eabe10'>1 Strength</font></b>",
-      "modifier_sniper_2_3": "<b><font color='#ff0000'> Maximum attack speed is <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Headshot Damage Bonus: 30/60/<b><font color='#eabe10'>90</font></b> + <b><font color='#eabe10'>1.5</font></b> per <b><font color='#eabe10'>1 Strength</font></b>",
+      "modifier_sniper_1_0": "Headshot can be activated. \n\n The hero fires a shotgun in a cone-shaped area, performing 1 attack on all affected targets. Guarantees Headshot on enemies. After firing, the hero becomes disarmed for 3 seconds. Silence duration is reduced by status resistance. \n\n Shot Range: 450 \n Cooldown: 6 sec.",
+      "modifier_sniper_1_1": "Headshot can be activated. \n\n The hero fires a shotgun in a cone-shaped area, performing <b><font color='#eabe10'>1</font></b> attack on all affected targets. Guarantees <b><font color='#eabe10'>Headshot</font></b> on enemies. After firing, the hero becomes disarmed for 3 seconds. Silence duration is reduced by status resistance. \n\n Shot Range: <b><font color='#eabe10'>450</font></b> \n Cooldown: 6 sec.",
+      "modifier_sniper_2_0": "<b><font color='#ff0000'> Maximum attack speed is 150. </font></b> \n\n Headshot Damage Bonus: 0/30/60 + 1.5 per Strength",
+      "modifier_sniper_2_1": "<b><font color='#ff0000'> Maximum attack speed is <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Headshot Damage Bonus: <b><font color='#eabe10'>0</font></b>/30/60 + <b><font color='#eabe10'>1.5</font></b> per <b><font color='#eabe10'>1 Strength</font></b>",
+      "modifier_sniper_2_2": "<b><font color='#ff0000'> Maximum attack speed is <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Headshot Damage Bonus: 0/<b><font color='#eabe10'>30</font></b>/60 + <b><font color='#eabe10'>1.5</font></b> per <b><font color='#eabe10'>1 Strength</font></b>",
+      "modifier_sniper_2_3": "<b><font color='#ff0000'> Maximum attack speed is <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Headshot Damage Bonus: 0/30/<b><font color='#eabe10'>60</font></b> + <b><font color='#eabe10'>1.5</font></b> per <b><font color='#eabe10'>1 Strength</font></b>",
       "modifier_sniper_3_0": "<b><font color='#ff0000'> Grenade. \n\n Removes Assassinate. </font></b> \n\n New Active Ability: Molotov Cocktail \n\n The hero throws a grenade at the target area, igniting enemies and dealing magic damage. \n\n Damage: 2%/3%/4% of Max Health \n Radius: 375 \n Burn Duration: 2 sec. \n Area Duration: 8 sec. \n Mana Cost: 50 \n Cooldown: 20 sec.",
       "modifier_sniper_3_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Assassinate. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Molotov Cocktail</font></b> \n\n The hero throws a grenade at the target area, igniting enemies and dealing magic damage. \n\n Damage: <b><font color='#eabe10'>2%</font></b>/3%/4% of Max Health \n Radius: 375 \n Burn Duration: <b><font color='#eabe10'>2</font></b> sec. \n Area Duration: <b><font color='#eabe10'>8</font></b> sec. \n Mana Cost: 50 \n Cooldown: 20 sec.",
       "modifier_sniper_3_2": "<b><font color='#ff0000'> Grenade. \n\n Removes Assassinate. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Molotov Cocktail</font></b> \n\n The hero throws a grenade at the target area, igniting enemies and dealing magic damage. \n\n Damage: 2%/<b><font color='#eabe10'>3%</font></b>/4% of Max Health \n Radius: 375 \n Burn Duration: <b><font color='#eabe10'>2</font></b> sec. \n Area Duration: <b><font color='#eabe10'>8</font></b> sec. \n Mana Cost: 50 \n Cooldown: 20 sec.",
@@ -61542,13 +61545,13 @@
       "modifier_sniper_6_2": "Bonus Cast Range: 100/<b><font color='#eabe10'>200</font></b> \n\n Cooldown Reduction: 5%/<b><font color='#eabe10'>10%</font></b>",
       "modifier_sniper_7_0": "<b><font color='#ff0000'> Maximum attack speed is 150. </font></b> \n\n Increased Headshot Slow Duration: 1 sec. \n\n Increased Headshot Knockback Distance: 50",
       "modifier_sniper_7_1": "<b><font color='#ff0000'> Maximum attack speed is <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Increased Headshot Slow Duration: <b><font color='#eabe10'>1</font></b> sec. \n\n Increased Headshot Knockback Distance: <b><font color='#eabe10'>50</font></b>",
-      "modifier_sniper_8_0": "Take Aim increases Attack Speed on activation: 30/60/90",
-      "modifier_sniper_8_1": "Take Aim increases Attack Speed on activation: <b><font color='#eabe10'>30</font></b>/60/90",
-      "modifier_sniper_8_2": "Take Aim increases Attack Speed on activation: 30/<b><font color='#eabe10'>60</font></b>/90",
-      "modifier_sniper_8_3": "Take Aim increases Attack Speed on activation: 30/60/<b><font color='#eabe10'>90</font></b>",
-      "modifier_sniper_9_0": "Increases Take Aim Duration: 1/2 sec.",
-      "modifier_sniper_9_1": "Increases Take Aim Duration: <b><font color='#eabe10'>1</font></b>/2 sec.",
-      "modifier_sniper_9_2": "Increases Take Aim Duration: 1/<b><font color='#eabe10'>2</font></b> sec.",
+      "modifier_sniper_8_0": "Take Aim increases Attack Speed on activation: 25/50/75",
+      "modifier_sniper_8_1": "Take Aim increases Attack Speed on activation: <b><font color='#eabe10'>25</font></b>/50/75",
+      "modifier_sniper_8_2": "Take Aim increases Attack Speed on activation: 25/<b><font color='#eabe10'>50</font></b>/75",
+      "modifier_sniper_8_3": "Take Aim increases Attack Speed on activation: 25/50/<b><font color='#eabe10'>75</font></b>",
+      "modifier_sniper_9_0": "Increases Take Aim Duration: 0.75/1.5 sec.",
+      "modifier_sniper_9_1": "Increases Take Aim Duration: <b><font color='#eabe10'>0.75</font></b>/1.5 sec.",
+      "modifier_sniper_9_2": "Increases Take Aim Duration: 0.75/<b><font color='#eabe10'>1.5</font></b> sec.",
       "modifier_sniper_10_0": "<b><font color='#ff0000'> Grenade. \n\n Removes Shrapnel. </font></b> \n\n New Active Ability: Smoke Grenade \n\n The hero throws a grenade into the target area, creating a smoke screen. Enemies inside the smoke miss attacks and cannot use abilities. \n\n Radius: 375 \n Miss Chance: 100% \n Duration: 8 sec. \n Mana Cost: 50 \n Cooldown: 20 sec.",
       "modifier_sniper_10_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Shrapnel. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Smoke Grenade</font></b> \n\n The hero throws a grenade into the target area, creating a smoke screen. Enemies inside the smoke miss attacks and cannot use abilities. \n\n Radius: 375 \n Miss Chance: <b><font color='#eabe10'>100%</font></b> \n Duration: <b><font color='#eabe10'>8</font></b> sec. \n Mana Cost: 50 \n Cooldown: 20 sec.",
       "modifier_sniper_11_0": "Kills with Assassinate increase Agility: 1/2 \n\n Kills with Assassinate increase Attack Range: 5/10 \n\n Kills made before learning the talent also count.",
@@ -61567,23 +61570,23 @@
       "modifier_sniper_15_1": "Shrapnel Cooldown Reduction: <b><font color='#eabe10'>10</font></b>/15/20 sec.",
       "modifier_sniper_15_2": "Shrapnel Cooldown Reduction: 10/<b><font color='#eabe10'>15</font></b>/20 sec.",
       "modifier_sniper_15_3": "Shrapnel Cooldown Reduction: 10/15/<b><font color='#eabe10'>20</font></b> sec.",
-      "modifier_sniper_16_0": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: Concussive Grenade \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: 50 + 50%/75%/100% of Attack Damage \n Radius: 375 \n Movement Slow: 50% \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
-      "modifier_sniper_16_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>50%</font></b>/75%/100% of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
-      "modifier_sniper_16_2": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + 50%/<b><font color='#eabe10'>75%</font></b>/100% of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
-      "modifier_sniper_16_3": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + 50%/75%/<b><font color='#eabe10'>100%</font></b> of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
+      "modifier_sniper_16_0": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: Concussive Grenade \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: 50 + 50%/100%/150% of Attack Damage \n Radius: 375 \n Movement Slow: 50% \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
+      "modifier_sniper_16_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>50%</font></b>/100%/150% of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
+      "modifier_sniper_16_2": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + 50%/<b><font color='#eabe10'>100%</font></b>/150% of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
+      "modifier_sniper_16_3": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + 50%/100%/<b><font color='#eabe10'>150%</font></b> of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
       "modifier_sniper_17_0": "<b><font color='#ff0000'> Grenade. \n\n Removes Headshot. </font></b> \n\n New Active Ability: Flashbang Grenade \n\n The hero throws a grenade into the target area, reducing enemy vision and stunning them. \n\n Radius: 375 \n Vision Reduction: 75% \n Stun Duration: 1.5 sec. \n Mana Cost: 50 \n Cooldown: 20 sec. \n\n\n If you learn 4 grenades: \n\n Using a grenade reduces the cooldown of other grenades by 2 sec.",
       "modifier_sniper_17_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Headshot. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Flashbang Grenade</font></b> \n\n The hero throws a grenade into the target area, reducing enemy vision and stunning them. \n\n Radius: 375 \n Vision Reduction: <b><font color='#eabe10'>75%</font></b> \n Stun Duration: <b><font color='#eabe10'>1.5</font></b> sec. \n Mana Cost: 50 \n Cooldown: 20 sec. \n\n\n If you learn 4 grenades: \n\n Using a grenade reduces the cooldown of other grenades by <b><font color='#eabe10'>2</font></b> sec.",
-      "modifier_sniper_18_0": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 2/3/4 sec. </font></b> \n\n Shrapnel Damage Increase: 20/40/60",
-      "modifier_sniper_18_1": "<b><font color='#ff0000'> Shrapnel Duration Reduction: <b><font color='#eabe10'>2</font></b>/3/4 sec. </font></b> \n\n Shrapnel Damage Increase: <b><font color='#eabe10'>20</font></b>/40/60",
-      "modifier_sniper_18_2": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 2/<b><font color='#eabe10'>3</font></b>/4 sec. </font></b> \n\n Shrapnel Damage Increase: 20/<b><font color='#eabe10'>40</font></b>/60",
-      "modifier_sniper_18_3": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 2/3/<b><font color='#eabe10'>4</font></b> sec. </font></b> \n\n Shrapnel Damage Increase: 20/40/<b><font color='#eabe10'>60</font></b>",
+      "modifier_sniper_18_0": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 1/2/3 sec. </font></b> \n\n Shrapnel Damage Increase: 20/40/60 \n\n Shrapnel Activation Delay Reduction: 0.3/0.6/0.9 sec.",
+      "modifier_sniper_18_1": "<b><font color='#ff0000'> Shrapnel Duration Reduction: <b><font color='#eabe10'>1</font></b>/2/3 sec. </font></b> \n\n Shrapnel Damage Increase: <b><font color='#eabe10'>20</font></b>/40/60 \n\n Shrapnel Activation Delay Reduction: <b><font color='#eabe10'>0.3</font></b>/0.6/0.9 sec.",
+      "modifier_sniper_18_2": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 1/<b><font color='#eabe10'>2</font></b>/3 sec. </font></b> \n\n Shrapnel Damage Increase: 20/<b><font color='#eabe10'>40</font></b>/60 \n\n Shrapnel Activation Delay Reduction: 0.3/<b><font color='#eabe10'>0.6</font></b>/0.9 sec.",
+      "modifier_sniper_18_3": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 1/2/<b><font color='#eabe10'>3</font></b> sec. </font></b> \n\n Shrapnel Damage Increase: 20/40/<b><font color='#eabe10'>60</font></b> \n\n Shrapnel Activation Delay Reduction: 0.3/0.6/<b><font color='#eabe10'>0.9</font></b> sec.",
       "modifier_sniper_19_0": "Shrapnel Radius Increase: 125 \n\n Shrapnel Damage Increase: 50% of Mana Regeneration",
       "modifier_sniper_19_1": "Shrapnel Radius Increase: <b><font color='#eabe10'>125</font></b> \n\n Shrapnel Damage Increase: <b><font color='#eabe10'>50%</font></b> of Mana Regeneration",
-      "modifier_sniper_20_0": "Shrapnel Charge Increase: 1/2",
-      "modifier_sniper_20_1": "Shrapnel Charge Increase: <b><font color='#eabe10'>1</font></b>/2",
-      "modifier_sniper_20_2": "Shrapnel Charge Increase: 1/<b><font color='#eabe10'>2</font></b>",
-      "modifier_sniper_21_0": "Effects of multiple Shrapnels stack.",
-      "modifier_sniper_21_1": "Effects of multiple Shrapnels <b><font color='#eabe10'>stack</font></b>."
+      "modifier_sniper_20_0": "Increases Shrapnel Charges: 1/2 \n\n Reduces Ability Cast Point: 25%/50%",
+      "modifier_sniper_20_1": "Increases Shrapnel Charges: <b><font color='#eabe10'>1</font></b>/2 \n\n Reduces Ability Cast Point: <b><font color='#eabe10'>25%</font></b>/50%",
+      "modifier_sniper_20_2": "Increases Shrapnel Charges: 1/<b><font color='#eabe10'>2</font></b> \n\n Reduces Ability Cast Point: 25%/<b><font color='#eabe10'>50%</font></b>",
+      "modifier_sniper_21_0": "Effects of multiple Shrapnel stack. \n\n Assassinate Damage Increase: 500",
+      "modifier_sniper_21_1": "Effects of multiple Shrapnel <b><font color='#eabe10'>stack</font></b>. \n\n Assassinate Damage Increase: <b><font color='#eabe10'>500</font></b>"
     },
     "abilities": {
       "sniper_shrapnel": {

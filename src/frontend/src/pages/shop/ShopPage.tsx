@@ -111,46 +111,44 @@ export const ShopPage: React.FC = () => {
 
     return (
         <div className={styles.shopPage}>
-            <div className={styles.donationSection}>
-                <div className={styles.donationStep}>
-                    <div className={styles.stepContent}>
-                        <h3>Поддержка сайта</h3>
-                        <p>
-                            Вы можете пожертвовать любую сумму — она автоматически преобразуется в бонусы, которые можно
-                            использовать внутри сайта.
-                        </p>
-                        <p className={styles.stepNoteRed}>
-                            Пожертвование направляется исключительно <strong>на финансирование разработки и поддержки
-                            сайта</strong>, <u>не передаётся разработчику кастомной игры</u> и <strong>не является
-                            приобретением игровых монет либо иной внутриигровой валюты</strong>.
-                        </p>
+            <h1 className={styles.title}>МАГАЗИН</h1>
+            <div className={styles.section}>
+                <div className={styles.block}>
+                    <div className={styles.blockContent}>
+                        <h2 className={styles.blockHeading}>Поддержка сайта</h2>
+                        {/*<p>*/}
+                        {/*    Вы можете пожертвовать любую сумму — она автоматически преобразуется в бонусы, которые можно*/}
+                        {/*    использовать внутри сайта.*/}
+                        {/*</p>*/}
+                        {/*<p className={styles.stepNoteRed}>*/}
+                        {/*    Пожертвование направляется исключительно <strong>на финансирование разработки и поддержки*/}
+                        {/*    сайта</strong>, <u>не передаётся разработчику кастомной игры</u> и <strong>не является*/}
+                        {/*    приобретением игровых монет либо иной внутриигровой валюты</strong>.*/}
+                        {/*</p>*/}
 
 
-                        <div className={styles.bonusSteps}>
-                            <div className={styles.stepItem}>
-                                <BonusIcon className={styles.stepIcon}/>
+                        <div className={styles.steps}>
+                            <div className={styles.step}>
                                 <div>
-                                    <h4>1. Поддержка сайта</h4>
-                                    <p>Ваше пожертвование помогает оплачивать серверы, развивать новые функции и
+                                    <h4 className={styles.stepTitle}>1. Поддержка сайта</h4>
+                                    <p className={styles.stepDescription}>Ваше пожертвование помогает оплачивать серверы, развивать новые функции и
                                         улучшать работу сайта для всех пользователей.</p>
                                 </div>
                             </div>
 
-                            <div className={styles.stepItem}>
-                                <BonusIcon className={styles.stepIcon}/>
+                            <div className={styles.step}>
                                 <div>
-                                    <h4>2. Начисление бонусов</h4>
-                                    <p>За каждый 1 RUB (или эквивалент в другой валюте) вы получаете 1 бонус. Начисление
+                                    <h4 className={styles.stepTitle}>2. Начисление бонусов</h4>
+                                    <p className={styles.stepDescription}>За каждый 1 RUB (или эквивалент в другой валюте) вы получаете 1 бонус. Начисление
                                         происходит автоматически. Бонусы не являются платёжным средством и не подлежат
                                         обмену на реальные деньги.</p>
                                 </div>
                             </div>
 
-                            <div className={styles.stepItem}>
-                                <StatsIcon className={styles.stepIcon}/>
+                            <div className={styles.step}>
                                 <div>
-                                    <h4>3. Использование бонусов</h4>
-                                    <p>Вы можете использовать бонусы для получения дополнительной информации — например,
+                                    <h4 className={styles.stepTitle}>3. Использование бонусов</h4>
+                                    <p className={styles.stepDescription}>Вы можете использовать бонусы для получения дополнительной информации — например,
                                         статистики, собранной вручную на основе открытых данных. Мы стараемся обеспечить
                                         актуальность, однако статистика может содержать неточности и не гарантирует 100%
                                         точности.</p>
@@ -209,18 +207,6 @@ export const ShopPage: React.FC = () => {
                     </div>
                 </div>
                 <div className={styles.donationStep}>
-                    {/*<div className={styles.stepNumber}>*/}
-                    {/*    <div className={styles.outerRing}>*/}
-                    {/*        <div className={styles.slot1}></div>*/}
-                    {/*        <div className={styles.slot2}></div>*/}
-                    {/*    </div>*/}
-                    {/*    <div className={styles.innerRing}>*/}
-                    {/*        <div className={styles.slot1} style={{backgroundColor: "black"}}></div>*/}
-                    {/*        <div className={styles.slot2} style={{backgroundColor: "green"}}></div>*/}
-                    {/*    </div>*/}
-                    {/*    <div className={styles.number}>1</div>*/}
-                    {/*</div>*/}
-
                     <div className={styles.stepContent}>
                         <h3>Поддержка разработчика кастомной игры</h3>
                         <p>

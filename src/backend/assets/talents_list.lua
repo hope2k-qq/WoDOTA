@@ -8096,7 +8096,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_techies_2","#modifier_techies_2", 3, "techies/2", {}},
+				{"modifier_techies_4","#modifier_techies_4", 1, "techies/4", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -8110,14 +8110,14 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
 				{"empty_9"},
-				{"modifier_techies_4","#modifier_techies_4", 1, "techies/4", {"modifier_techies_2",3}},
+				{"modifier_techies_2","#modifier_techies_2", 3, "techies/2", {"modifier_techies_4",1}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
 				{"empty_10"},
-				{"modifier_techies_5","#modifier_techies_5", 2, "techies/5", {"modifier_techies_4",1}},
+				{"modifier_techies_5","#modifier_techies_5", 2, "techies/5", {"modifier_techies_2",3}},
 				{"empty_11"},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
 			},

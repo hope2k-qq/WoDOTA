@@ -22,8 +22,8 @@ import {Helmet} from "react-helmet-async";
 import {useMyData} from "../context/HeroesDataContext";
 import {useTranslation} from "react-i18next";
 import {CreatorsVideosPage} from "../pages/creators/videos/CreatorsVideosPage";
-// import {ShopPage} from "../pages/shop/ShopPage";
-// import {HeroesMetaPage} from "../pages/heroes/components/heroesMeta/HeroesMetaPage";
+import {ShopPage} from "../pages/shop/ShopPage";
+import {HeroesMetaPage} from "../pages/heroes/components/heroesMeta/HeroesMetaPage";
 //import {HeroBuildCreatePage} from "../pages/heroes/components/heroCreateBuildPage/HeroCreateBuildPage";
 //import {ArenaPage} from "../pages/games/arena/ArenaPage";
 

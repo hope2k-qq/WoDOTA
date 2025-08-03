@@ -4451,7 +4451,7 @@
           "tree_width": "75",
           "vision_radius": "400",
           "vision_duration": "3.34",
-          "abilitycastrange": "2000",
+          "abilitycastrange": "2500",
           "abilitycooldown": "11 10 9 8",
           "abilitychanneltime": "1",
           "abilitymanacost": "90 100 110 120"
@@ -11563,13 +11563,14 @@
         "description": "Здатність гарантовано блокує частину втрати від будь-яких типів атак, а також дає додаткову силу за кожного вбитого або загиблого поблизу ворожого героя. Ефекти накопичуються з початку гри, але герой отримає силу тільки після вивчення способу. отримує Стак Flesh Heap наприкінці кожного раунду.",
         "lore": "М'ясник не з чуток знає, як це бути товстошкірим.",
         "damage_block": "БЛОК УРОНУ:",
+        "duration": "ТРИВАЛЬНІСТЬ:",
         "flesh_heap_strength_buff_amount": "ДОП. СИЛА:",
         "flesh_heap_range": "РАДІУС:",
         "values": {
-          "damage_block": "7 10 13 16",
+          "damage_block": "8 14 20 26",
           "flesh_heap_strength_buff_amount": "0.4 0.6 0.8 1",
           "flesh_heap_range": "450",
-          "duration": "5 6 7 8",
+          "duration": "4 5 6 7",
           "abilitycooldown": "20 19 18 17",
           "abilitymanacost": "35 50 65 80"
         },
@@ -11577,12 +11578,14 @@
           "descriptions": {
             "damage_block": "БЛОК УРОНУ:",
             "flesh_heap_strength_buff_amount": "ДОП. СИЛА:",
-            "flesh_heap_range": "РАДІУС:"
+            "flesh_heap_range": "РАДІУС:",
+            "duration": "ТРИВАЛЬНІСТЬ:"
           },
           "values": {
-            "damage_block": "7 / 10 / 13 / 16",
+            "damage_block": "8 / 14 / 20 / 26",
             "flesh_heap_strength_buff_amount": "0.4 / 0.6 / 0.8 / 1",
-            "flesh_heap_range": "450"
+            "flesh_heap_range": "450",
+            "duration": "4 / 5 / 6 / 7"
           }
         }
       },
@@ -35091,10 +35094,10 @@
       }
     },
     "talents_description": {
-      "modifier_dazzle_1_0": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: Good Juju \n\n Через 0.5 сек. після використання предмета створюється область під героєм, у якій вороги отримують Чисту Шкоду за секунду: 50 + 2%/3%/4% від Макс. Здоров’я \n\n Радіус: 300 \n Тривалість: 4 сек. \n\n <b><font color='#ff0000'> Не працює з перемикачуваними предметами. </font></b>",
-      "modifier_dazzle_1_1": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: <b><font color='#eabe10'>Good Juju</font></b> \n\n Через 0.5 сек. після використання предмета створюється область під героєм, у якій вороги отримують Чисту Шкоду за секунду: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>2%</font></b>/3%/4% від Макс. Здоров’я \n\n Радіус: 300 \n Тривалість: 4 сек. \n\n <b><font color='#ff0000'> Не працює з перемикачуваними предметами. </font></b>",
-      "modifier_dazzle_1_2": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: <b><font color='#eabe10'>Good Juju</font></b> \n\n Через 0.5 сек. після використання предмета створюється область під героєм, у якій вороги отримують Чисту Шкоду за секунду: <b><font color='#eabe10'>50</font></b> + 2%/<b><font color='#eabe10'>3%</font></b>/4% від Макс. Здоров’я \n\n Радіус: 300 \n Тривалість: 4 сек. \n\n <b><font color='#ff0000'> Не працює з перемикачуваними предметами. </font></b>",
-      "modifier_dazzle_1_3": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: <b><font color='#eabe10'>Good Juju</font></b> \n\n Через 0.5 сек. після використання предмета створюється область під героєм, у якій вороги отримують Чисту Шкоду за секунду: <b><font color='#eabe10'>50</font></b> + 2%/3%/<b><font color='#eabe10'>4%</font></b> від Макс. Здоров’я \n\n Радіус: 300 \n Тривалість: 4 сек. \n\n <b><font color='#ff0000'> Не працює з перемикачуваними предметами. </font></b>",
+      "modifier_dazzle_1_0": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: Good Juju \n\n Використання предметів через 0.5 с створює під героєм зону, в якій вороги щосекунди отримують Чисту Шкоду: 50 + 1.5%/2.5%/3.5% від Максимального Здоров’я \n\n Радіус: 300 \n Тривалість: 4 с \n\n <b><font color='#ff0000'> Не працює на перемикані предмети. </font></b>",
+      "modifier_dazzle_1_1": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: <b><font color='#eabe10'>Good Juju</font></b> \n\n Використання предметів через 0.5 с створює під героєм зону, в якій вороги щосекунди отримують Чисту Шкоду: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>1.5%</font></b>/2.5%/3.5% від Максимального Здоров’я \n\n Радіус: 300 \n Тривалість: 4 с \n\n <b><font color='#ff0000'> Не працює на перемикані предмети. </font></b>",
+      "modifier_dazzle_1_2": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: <b><font color='#eabe10'>Good Juju</font></b> \n\n Використання предметів через 0.5 с створює під героєм зону, в якій вороги щосекунди отримують Чисту Шкоду: <b><font color='#eabe10'>50</font></b> + 1.5%/<b><font color='#eabe10'>2.5%</font></b>/3.5% від Максимального Здоров’я \n\n Радіус: 300 \n Тривалість: 4 с \n\n <b><font color='#ff0000'> Не працює на перемикані предмети. </font></b>",
+      "modifier_dazzle_1_3": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b> \n\n Нова Пасивна Здібність: <b><font color='#eabe10'>Good Juju</font></b> \n\n Використання предметів через 0.5 с створює під героєм зону, в якій вороги щосекунди отримують Чисту Шкоду: <b><font color='#eabe10'>50</font></b> + 1.5%/2.5%/<b><font color='#eabe10'>3.5%</font></b> від Максимального Здоров’я \n\n Радіус: 300 \n Тривалість: 4 с \n\n <b><font color='#ff0000'> Не працює на перемикані предмети. </font></b>",
       "modifier_dazzle_2_0": "Зменшення Часу Перезаряджання Предметів: 15%/30%",
       "modifier_dazzle_2_1": "Зменшення Часу Перезаряджання Предметів: <b><font color='#eabe10'>15%</font></b>/30%",
       "modifier_dazzle_2_2": "Зменшення Часу Перезаряджання Предметів: 15%/<b><font color='#eabe10'>30%</font></b>",
@@ -45056,10 +45059,10 @@
             "id": "empty_3"
           },
           {
-            "id": "modifier_techies_2",
-            "talentInfo": "#modifier_techies_2",
-            "level": "3",
-            "imagePath": "techies/2",
+            "id": "modifier_techies_4",
+            "talentInfo": "#modifier_techies_4",
+            "level": "1",
+            "imagePath": "techies/4",
             "relatedTalent": {}
           },
           {
@@ -45127,13 +45130,13 @@
             "id": "empty_9"
           },
           {
-            "id": "modifier_techies_4",
-            "talentInfo": "#modifier_techies_4",
-            "level": "1",
-            "imagePath": "techies/4",
+            "id": "modifier_techies_2",
+            "talentInfo": "#modifier_techies_2",
+            "level": "3",
+            "imagePath": "techies/2",
             "relatedTalent": {
-              "relatedTalentName": "modifier_techies_2",
-              "requiredTalentLevel": "3"
+              "relatedTalentName": "modifier_techies_4",
+              "requiredTalentLevel": "1"
             }
           },
           {
@@ -45171,8 +45174,8 @@
             "level": "2",
             "imagePath": "techies/5",
             "relatedTalent": {
-              "relatedTalentName": "modifier_techies_4",
-              "requiredTalentLevel": "1"
+              "relatedTalentName": "modifier_techies_2",
+              "requiredTalentLevel": "3"
             }
           },
           {
@@ -61616,12 +61619,12 @@
       }
     },
     "talents_description": {
-      "modifier_sniper_1_0": "Headshot можна активувати. \n\n Герой стріляє з дробовика по конічній області дії, завдаючи 1 атаку всім ураженим цілям. Гарантовано застосовує Headshot до ворогів. Після пострілу герой отримує безсилля на 3 секунди. Тривалість безсилля зменшується опором до ефектів. \n\n Дальність Пострілу: 450 \n Перезарядка: 3 сек.",
-      "modifier_sniper_1_1": "Headshot можна активувати. \n\n Герой стріляє з дробовика по конічній області дії, завдаючи <b><font color='#eabe10'>1</font></b> атаку всім ураженим цілям. Гарантовано застосовує <b><font color='#eabe10'>Headshot</font></b> до ворогів. Після пострілу герой отримує безсилля на 3 секунди. Тривалість безсилля зменшується опором до ефектів. \n\n Дальність Пострілу: <b><font color='#eabe10'>450</font></b> \n Перезарядка: 3 сек.",
-      "modifier_sniper_2_0": "<b><font color='#ff0000'> Максимальна швидкість атаки — 150. </font></b> \n\n Додатковий Урон від Headshot: 30/60/90 + 1.5 за кожну Силу",
-      "modifier_sniper_2_1": "<b><font color='#ff0000'> Максимальна швидкість атаки — <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Додатковий Урон від Headshot: <b><font color='#eabe10'>30</font></b>/60/90 + <b><font color='#eabe10'>1.5</font></b> за <b><font color='#eabe10'>1 Сили</font></b>",
-      "modifier_sniper_2_2": "<b><font color='#ff0000'> Максимальна швидкість атаки — <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Додатковий Урон від Headshot: 30/<b><font color='#eabe10'>60</font></b>/90 + <b><font color='#eabe10'>1.5</font></b> за <b><font color='#eabe10'>1 Сили</font></b>",
-      "modifier_sniper_2_3": "<b><font color='#ff0000'> Максимальна швидкість атаки — <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Додатковий Урон від Headshot: 30/60/<b><font color='#eabe10'>90</font></b> + <b><font color='#eabe10'>1.5</font></b> за <b><font color='#eabe10'>1 Сили</font></b>",
+      "modifier_sniper_1_0": "Headshot можна активувати. \n\n Герой стріляє з дробовика по конічній області дії, завдаючи 1 атаку всім ураженим цілям. Гарантовано застосовує Headshot до ворогів. Після пострілу герой отримує безсилля на 3 секунди. Тривалість безсилля зменшується опором до ефектів. \n\n Дальність Пострілу: 450 \n Перезарядка: 6 сек.",
+      "modifier_sniper_1_1": "Headshot можна активувати. \n\n Герой стріляє з дробовика по конічній області дії, завдаючи <b><font color='#eabe10'>1</font></b> атаку всім ураженим цілям. Гарантовано застосовує <b><font color='#eabe10'>Headshot</font></b> до ворогів. Після пострілу герой отримує безсилля на 3 секунди. Тривалість безсилля зменшується опором до ефектів. \n\n Дальність Пострілу: <b><font color='#eabe10'>450</font></b> \n Перезарядка: 6 сек.",
+      "modifier_sniper_2_0": "<b><font color='#ff0000'> Максимальна швидкість атаки — 150. </font></b> \n\n Додатковий Урон від Headshot: 0/30/60 + 1.5 за кожну Силу",
+      "modifier_sniper_2_1": "<b><font color='#ff0000'> Максимальна швидкість атаки — <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Додатковий Урон від Headshot: <b><font color='#eabe10'>0</font></b>/30/60 + <b><font color='#eabe10'>1.5</font></b> за <b><font color='#eabe10'>1 Сили</font></b>",
+      "modifier_sniper_2_2": "<b><font color='#ff0000'> Максимальна швидкість атаки — <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Додатковий Урон від Headshot: 0/<b><font color='#eabe10'>30</font></b>/60 + <b><font color='#eabe10'>1.5</font></b> за <b><font color='#eabe10'>1 Сили</font></b>",
+      "modifier_sniper_2_3": "<b><font color='#ff0000'> Максимальна швидкість атаки — <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Додатковий Урон від Headshot: 0/30/<b><font color='#eabe10'>60</font></b> + <b><font color='#eabe10'>1.5</font></b> за <b><font color='#eabe10'>1 Сили</font></b>",
       "modifier_sniper_3_0": "<b><font color='#ff0000'> Граната. \n\n Замінює Assassinate. </font></b> \n\n Нова Активна Здібність: Molotov Cocktail \n\n Герой кидає у вказану область гранату, яка підпалює ворогів та завдає магічної шкоди. \n\n Шкода: 2%/3%/4% від Макс. Здоров’я \n Радіус: 375 \n Тривалість Горіння: 2 сек. \n Тривалість Зони: 8 сек. \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
       "modifier_sniper_3_1": "<b><font color='#ff0000'> Граната. \n\n Замінює Assassinate. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Molotov Cocktail</font></b> \n\n Герой кидає у вказану область гранату, яка підпалює ворогів та завдає магічної шкоди. \n\n Шкода: <b><font color='#eabe10'>2%</font></b>/3%/4% від Макс. Здоров’я \n Радіус: 375 \n Тривалість Горіння: <b><font color='#eabe10'>2</font></b> сек. \n Тривалість Зони: <b><font color='#eabe10'>8</font></b> сек. \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
       "modifier_sniper_3_2": "<b><font color='#ff0000'> Граната. \n\n Замінює Assassinate. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Molotov Cocktail</font></b> \n\n Герой кидає у вказану область гранату, яка підпалює ворогів та завдає магічної шкоди. \n\n Шкода: 2%/<b><font color='#eabe10'>3%</font></b>/4% від Макс. Здоров’я \n Радіус: 375 \n Тривалість Горіння: <b><font color='#eabe10'>2</font></b> сек. \n Тривалість Зони: <b><font color='#eabe10'>8</font></b> сек. \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
@@ -61637,13 +61640,13 @@
       "modifier_sniper_6_2": "Додаткова Дальність Заклять: 100/<b><font color='#eabe10'>200</font></b> \n\n Зменшення Перезарядки: 5%/<b><font color='#eabe10'>10%</font></b>",
       "modifier_sniper_7_0": "<b><font color='#ff0000'> Максимальна швидкість атаки — 150. </font></b> \n\n Збільшення Тривалості Сповільнення Headshot: 1 сек. \n\n Збільшення Відстані Відштовхування Headshot: 50",
       "modifier_sniper_7_1": "<b><font color='#ff0000'> Максимальна швидкість атаки — <b><font color='#eabe10'>150</font></b>. </font></b> \n\n Збільшення Тривалості Сповільнення Headshot: <b><font color='#eabe10'>1</font></b> сек. \n\n Збільшення Відстані Відштовхування Headshot: <b><font color='#eabe10'>50</font></b>",
-      "modifier_sniper_8_0": "Take Aim при активації збільшує Швидкість Атаки: 30/60/90",
-      "modifier_sniper_8_1": "Take Aim при активації збільшує Швидкість Атаки: <b><font color='#eabe10'>30</font></b>/60/90",
-      "modifier_sniper_8_2": "Take Aim при активації збільшує Швидкість Атаки: 30/<b><font color='#eabe10'>60</font></b>/90",
-      "modifier_sniper_8_3": "Take Aim при активації збільшує Швидкість Атаки: 30/60/<b><font color='#eabe10'>90</font></b>",
-      "modifier_sniper_9_0": "Збільшення Тривалості Take Aim: 1/2 сек.",
-      "modifier_sniper_9_1": "Збільшення Тривалості Take Aim: <b><font color='#eabe10'>1</font></b>/2 сек.",
-      "modifier_sniper_9_2": "Збільшення Тривалості Take Aim: 1/<b><font color='#eabe10'>2</font></b> сек.",
+      "modifier_sniper_8_0": "Take Aim при активації збільшує Швидкість Атаки: 25/50/75",
+      "modifier_sniper_8_1": "Take Aim при активації збільшує Швидкість Атаки: <b><font color='#eabe10'>25</font></b>/50/75",
+      "modifier_sniper_8_2": "Take Aim при активації збільшує Швидкість Атаки: 25/<b><font color='#eabe10'>50</font></b>/75",
+      "modifier_sniper_8_3": "Take Aim при активації збільшує Швидкість Атаки: 25/50/<b><font color='#eabe10'>75</font></b>",
+      "modifier_sniper_9_0": "Збільшення Тривалості Take Aim: 0.75/1.5 сек.",
+      "modifier_sniper_9_1": "Збільшення Тривалості Take Aim: <b><font color='#eabe10'>0.75</font></b>/1.5 сек.",
+      "modifier_sniper_9_2": "Збільшення Тривалості Take Aim: 0.75/<b><font color='#eabe10'>1.5</font></b> сек.",
       "modifier_sniper_10_0": "<b><font color='#ff0000'> Граната. \n\n Замінює Shrapnel. </font></b> \n\n Нова Активна Здібність: Smoke Grenade \n\n Герой кидає в зазначену область гранату, яка створює димову завісу. Противники всередині завіси промахуються атаками та не можуть використовувати здібності. \n\n Радіус: 375 \n Шанс Промаху: 100% \n Тривалість: 8 сек. \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
       "modifier_sniper_10_1": "<b><font color='#ff0000'> Граната. \n\n Замінює Shrapnel. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Smoke Grenade</font></b> \n\n Герой кидає в зазначену область гранату, яка створює димову завісу. Противники всередині завіси промахуються атаками та не можуть використовувати здібності. \n\n Радіус: 375 \n Шанс Промаху: <b><font color='#eabe10'>100%</font></b> \n Тривалість: <b><font color='#eabe10'>8</font></b> сек. \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
       "modifier_sniper_11_0": "Вбивства за допомогою Assassinate збільшують Спритність: 1/2 \n\n Вбивства за допомогою Assassinate збільшують Дальність Атаки: 5/10 \n\n Вбивства до вивчення таланту також враховуються.",
@@ -61662,23 +61665,23 @@
       "modifier_sniper_15_1": "Зменшення Часу Перезарядки Shrapnel: <b><font color='#eabe10'>10</font></b>/15/20 сек.",
       "modifier_sniper_15_2": "Зменшення Часу Перезарядки Shrapnel: 10/<b><font color='#eabe10'>15</font></b>/20 сек.",
       "modifier_sniper_15_3": "Зменшення Часу Перезарядки Shrapnel: 10/15/<b><font color='#eabe10'>20</font></b> сек.",
-      "modifier_sniper_16_0": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: Concussive Grenade \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: 50 + 50%/75%/100% від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: 50% \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
-      "modifier_sniper_16_1": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>50%</font></b>/75%/100% від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: <b><font color='#eabe10'>50%</font></b> \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
-      "modifier_sniper_16_2": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: <b><font color='#eabe10'>50</font></b> + 50%/<b><font color='#eabe10'>75%</font></b>/100% від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: <b><font color='#eabe10'>50%</font></b> \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
-      "modifier_sniper_16_3": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: <b><font color='#eabe10'>50</font></b> + 50%/75%/<b><font color='#eabe10'>100%</font></b> від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: <b><font color='#eabe10'>50%</font></b> \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
+      "modifier_sniper_16_0": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: Concussive Grenade \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: 50 + 50%/100%/150% від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: 50% \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
+      "modifier_sniper_16_1": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>50%</font></b>/100%/150% від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: <b><font color='#eabe10'>50%</font></b> \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
+      "modifier_sniper_16_2": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: <b><font color='#eabe10'>50</font></b> + 50%/<b><font color='#eabe10'>100%</font></b>/150% від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: <b><font color='#eabe10'>50%</font></b> \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
+      "modifier_sniper_16_3": "<b><font color='#ff0000'> Граната. \n\n Забирає Take Aim. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n Герой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування. \n\n Шкода: <b><font color='#eabe10'>50</font></b> + 50%/100%/<b><font color='#eabe10'>150%</font></b> від Шкоди Атаки \n Радіус: 375 \n Уповільнення Пересування: <b><font color='#eabe10'>50%</font></b> \n Тривалість: 2 сек. \n Відстань Відштовхування: 475 \n Витрати Мани: 50 \n Перезарядка: 20 сек.",
       "modifier_sniper_17_0": "<b><font color='#ff0000'> Граната. \n\n Забирає Headshot. </font></b> \n\n Нова Активна Здібність: Flashbang Grenade \n\n Герой кидає гранату в зазначену область, яка зменшує огляд ворогів та оглушує їх. \n\n Радіус: 375 \n Зменшення Огляду: 75% \n Тривалість Оглушення: 1.5 сек. \n Витрати Мани: 50 \n Перезарядка: 20 сек. \n\n\n Якщо вивчено 4 гранати, то: \n\n Використання Гранат зменшує Перезарядку інших Гранат: 2 сек.",
       "modifier_sniper_17_1": "<b><font color='#ff0000'> Граната. \n\n Забирає Headshot. </font></b> \n\n Нова Активна Здібність: <b><font color='#eabe10'>Flashbang Grenade</font></b> \n\n Герой кидає гранату в зазначену область, яка зменшує огляд ворогів та оглушує їх. \n\n Радіус: 375 \n Зменшення Огляду: <b><font color='#eabe10'>75%</font></b> \n Тривалість Оглушення: <b><font color='#eabe10'>1.5</font></b> сек. \n Витрати Мани: 50 \n Перезарядка: 20 сек. \n\n\n Якщо вивчено 4 гранати, то: \n\n Використання Гранат зменшує Перезарядку інших Гранат: <b><font color='#eabe10'>2</font></b> сек.",
-      "modifier_sniper_18_0": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: 2/3/4 сек. </font></b> \n\n Збільшення Шкоди Shrapnel: 20/40/60",
-      "modifier_sniper_18_1": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: <b><font color='#eabe10'>2</font></b>/3/4 сек. </font></b> \n\n Збільшення Шкоди Shrapnel: <b><font color='#eabe10'>20</font></b>/40/60",
-      "modifier_sniper_18_2": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: 2/<b><font color='#eabe10'>3</font></b>/4 сек. </font></b> \n\n Збільшення Шкоди Shrapnel: 20/<b><font color='#eabe10'>40</font></b>/60",
-      "modifier_sniper_18_3": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: 2/3/<b><font color='#eabe10'>4</font></b> сек. </font></b> \n\n Збільшення Шкоди Shrapnel: 20/40/<b><font color='#eabe10'>60</font></b>",
+      "modifier_sniper_18_0": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: 1/2/3 сек. </font></b> \n\n Збільшення Шкоди Shrapnel: 20/40/60 \n\n Зменшення Затримки Активації Shrapnel: 0.3/0.6/0.9 сек.",
+      "modifier_sniper_18_1": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: <b><font color='#eabe10'>1</font></b>/2/3 сек. </font></b> \n\n Збільшення Шкоди Shrapnel: <b><font color='#eabe10'>20</font></b>/40/60 \n\n Зменшення Затримки Активації Shrapnel: <b><font color='#eabe10'>0.3</font></b>/0.6/0.9 сек.",
+      "modifier_sniper_18_2": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: 1/<b><font color='#eabe10'>2</font></b>/3 сек. </font></b> \n\n Збільшення Шкоди Shrapnel: 20/<b><font color='#eabe10'>40</font></b>/60 \n\n Зменшення Затримки Активації Shrapnel: 0.3/<b><font color='#eabe10'>0.6</font></b>/0.9 сек.",
+      "modifier_sniper_18_3": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: 1/2/<b><font color='#eabe10'>3</font></b> сек. </font></b> \n\n Збільшення Шкоди Shrapnel: 20/40/<b><font color='#eabe10'>60</font></b> \n\n Зменшення Затримки Активації Shrapnel: 0.3/0.6/<b><font color='#eabe10'>0.9</font></b> сек.",
       "modifier_sniper_19_0": "Збільшення Радіуса Shrapnel: 125 \n\n Збільшення Шкоди Shrapnel: 50% від Відновлення Мани",
       "modifier_sniper_19_1": "Збільшення Радіуса Shrapnel: <b><font color='#eabe10'>125</font></b> \n\n Збільшення Шкоди Shrapnel: <b><font color='#eabe10'>50%</font></b> від Відновлення Мани",
-      "modifier_sniper_20_0": "Збільшення Зарядів Shrapnel: 1/2",
-      "modifier_sniper_20_1": "Збільшення Зарядів Shrapnel: <b><font color='#eabe10'>1</font></b>/2",
-      "modifier_sniper_20_2": "Збільшення Зарядів Shrapnel: 1/<b><font color='#eabe10'>2</font></b>",
-      "modifier_sniper_21_0": "Ефекти кількох Shrapnel підсумовуються.",
-      "modifier_sniper_21_1": "Ефекти кількох Shrapnel <b><font color='#eabe10'>підсумовуються</font></b>."
+      "modifier_sniper_20_0": "Збільшує кількість Зарядів Shrapnel: 1/2 \n\n Зменшує затримку перед застосуванням здібностей: 25%/50%",
+      "modifier_sniper_20_1": "Збільшує кількість Зарядів Shrapnel: <b><font color='#eabe10'>1</font></b>/2 \n\n Зменшує затримку перед застосуванням здібностей: <b><font color='#eabe10'>25%</font></b>/50%",
+      "modifier_sniper_20_2": "Збільшує кількість Зарядів Shrapnel: 1/<b><font color='#eabe10'>2</font></b> \n\n Зменшує затримку перед застосуванням здібностей: 25%/<b><font color='#eabe10'>50%</font></b>",
+      "modifier_sniper_21_0": "Ефекти кількох Shrapnel складаються. \n\n Збільшення Шкоди Assassinate: 500",
+      "modifier_sniper_21_1": "Ефекти кількох Shrapnel <b><font color='#eabe10'>складаються</font></b>. \n\n Збільшення Шкоди Assassinate: <b><font color='#eabe10'>500</font></b>"
     },
     "abilities": {
       "sniper_shrapnel": {

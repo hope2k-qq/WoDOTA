@@ -99,7 +99,7 @@ async function filterOutLiveAndStreamRecords(videos) {
                 return false;
             }
             const seconds = parseISO8601Duration(duration);
-            if (seconds <= 61) {
+            if (seconds <= 181) {
                 return false;
             }
             return true;
