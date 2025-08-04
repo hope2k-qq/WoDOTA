@@ -7,10 +7,16 @@ export const formatAbilityDescription = (
     formattedDescription = formattedDescription.replace(/\n\n/g, '<br /><br />');
     formattedDescription = formattedDescription.replace(/\n/g, '<br />');
 
-    formattedDescription = formattedDescription.replace(/%([a-zA-Z0-9_]+)%/g, (match, placeholder) => {
-        if (abilityValues[placeholder.toLowerCase()]) {
-            return `<span style="color: #ffcc00; font-weight: bold;">${abilityValues[placeholder.toLowerCase()]}</span>`;
+    formattedDescription = formattedDescription.replace(/%([a-zA-Z0-9_]+)%%?/g, (match, placeholder) => {
+        const key = placeholder.toLowerCase();
+        const value = abilityValues[key];
+
+        if (value !== undefined) {
+            const isPercent = match.endsWith('%%');
+            const displayValue = isPercent ? `${value}%` : value;
+            return `<span style="color: #ffcc00; font-weight: bold;">${displayValue}</span>`;
         }
+
         return match;
     });
 
