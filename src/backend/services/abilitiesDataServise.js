@@ -101,8 +101,8 @@ const extractExtraFields = (fileContent, abilityName) => {
     let match;
 
     while ((match = fieldRegex.exec(abilityBlock)) !== null) {
-        const field = match[1].trim().toLowerCase(); // Приводим ключ в lowercase
-        const value = match[2].trim(); // Оставляем значение без изменений или тоже можно .toLowerCase()
+        const field = match[1].trim().toLowerCase();
+        const value = match[2].trim().toLowerCase();
 
         // Добавляем только разрешённые поля
         if (allowedFields.includes(field)) {
@@ -154,13 +154,12 @@ const extractNestedBlock = (text, startIndex) => {
     }
     return null;
 };
-
 const parseBlock = (block) => {
     const result = {};
     const regex = /"([^"]+)"\s*({[^}]*}|".*?")/gs;
 
     for (const match of block.matchAll(regex)) {
-        const key = match[1];
+        const key = match[1].toLowerCase();
         const valueBlock = match[2].trim();
 
         if (valueBlock.startsWith('{')) {
