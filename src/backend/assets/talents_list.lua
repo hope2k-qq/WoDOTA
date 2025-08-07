@@ -2206,29 +2206,29 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_bounty_hunter_19","#modifier_bounty_hunter_19", 3, "bounty_hunter/19", {}},
+				{"modifier_bounty_hunter_17","#modifier_bounty_hunter_17", 2, "bounty_hunter/17", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
-				{"empty_7"},
 				{"modifier_bounty_hunter_7","#modifier_bounty_hunter_7", 2, "bounty_hunter/7", {}},
+				{"empty_7"},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
+				{"modifier_bounty_hunter_16","#modifier_bounty_hunter_16", 2, "bounty_hunter/16", {}},
 				{"empty_9"},
-				{"modifier_bounty_hunter_2","#modifier_bounty_hunter_2", 3, "bounty_hunter/2", {}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
-				{"empty_10"},
-				{"empty_11"},
 				{"modifier_bounty_hunter_6","#modifier_bounty_hunter_6", 2, "bounty_hunter/6", {}},
+				{"empty_11"},
+				{"empty_12"},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
 			},
 			[6] = {
@@ -2236,7 +2236,7 @@ local herotalents = {
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
 				{"empty_14"},
 				{"empty_15"},
-				{"modifier_bounty_hunter_3","#modifier_bounty_hunter_3", 1, "bounty_hunter/3", {}}
+				{"modifier_bounty_hunter_2","#modifier_bounty_hunter_2", 3, "bounty_hunter/2", {}}
 			},
 			[7] = {
 				{"empty_17"},
@@ -2315,14 +2315,14 @@ local herotalents = {
 			[3] = {
 				{"empty_6"},
 				{"empty_7"},
-				{"modifier_bounty_hunter_20","#modifier_bounty_hunter_20", 3, "bounty_hunter/20", {}},
+				{"modifier_bounty_hunter_20","#modifier_bounty_hunter_20", 2, "bounty_hunter/20", {}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_bounty_hunter_3","#modifier_bounty_hunter_3", 3, "bounty_hunter/3", {}},
 				{"empty_9"},
-				{"modifier_bounty_hunter_17","#modifier_bounty_hunter_17", 2, "bounty_hunter/17", {}},
 				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
@@ -2330,20 +2330,20 @@ local herotalents = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_bounty_hunter_18","#modifier_bounty_hunter_18", 3, "bounty_hunter/18", {}},
+				{"modifier_bounty_hunter_21","#modifier_bounty_hunter_21", 1, "bounty_hunter/21", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
-				{"modifier_bounty_hunter_16","#modifier_bounty_hunter_16", 1, "bounty_hunter/16", {}},
 				{"empty_15"},
-				{"empty_16"}
+				{"empty_16"},
+				{"modifier_bounty_hunter_19","#modifier_bounty_hunter_19", 3, "bounty_hunter/19", {}}
 			},
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_bounty_hunter_21","#modifier_bounty_hunter_21", 1, "bounty_hunter/21", {}},
+				{"modifier_bounty_hunter_18","#modifier_bounty_hunter_18", 1, "bounty_hunter/18", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -4996,7 +4996,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_juggernaut_2","#modifier_juggernaut_2", 2, "juggernaut/2", {}},
+				{"modifier_juggernaut_2","#modifier_juggernaut_2", 3, "juggernaut/2", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -5004,7 +5004,7 @@ local herotalents = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
 				{"empty_8"},
-				{"modifier_juggernaut_3","#modifier_juggernaut_3", 2, "juggernaut/3", {}},
+				{"modifier_juggernaut_3","#modifier_juggernaut_3", 1, "juggernaut/3", {}},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {

@@ -59,7 +59,7 @@ var Items_plus =
     //["1056", "coin", "500", "nydp7", "nydp7"],
 ] 
 
-// Последний юзабельный айди 925
+// Последний юзабельный айди 926
 
 var Items_Backround =
 [
@@ -401,6 +401,7 @@ var Items_emblems =
     ["924", "coin", "99999", "emblem_98", "emblem_98", true], // SEASON REWARD
     ["925", "coin", "99999", "emblem_99", "emblem_99", true], // SEASON REWARD
    
+    ["926", "coin", "500", "emblem_100", "emblem_100"],
     ["205", "coin", "500", "emblem_41", "emblem_41"],
     ["200", "coin", "500", "emblem_37", "emblem_37"],
     ["178", "coin", "500", "emblem_15", "emblem_15"],
