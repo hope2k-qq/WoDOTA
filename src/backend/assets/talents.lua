@@ -1,4 +1,4 @@
-require("libs/talents_list")
+require("configs/talents_list")
 
 if WodaTalents == nil then 
 	_G.WodaTalents = class({})

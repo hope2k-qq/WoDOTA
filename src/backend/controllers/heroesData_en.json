@@ -7138,7 +7138,244 @@
       "modifier_shadow_fiend_21_0": "Shadowraze deals Attack Damage.",
       "modifier_shadow_fiend_21_1": "Shadowraze deals <b><font color='#eabe10'>Attack Damage</font></b>."
     },
-    "abilities": {},
+    "abilities": {
+      "shadow_fiend_shadowraze1": {
+        "name": "Shadowraze",
+        "description": "Shadow Fiend razes the ground directly in front of him, dealing damage to enemy units in the area. Adds a stacking damage amplifier on the target that causes the enemy to take bonus Shadowraze damage per stack. Each consecutive stack also decreases turn rate and movement speed. Maximum effects: 10",
+        "shadowraze_damage": "BASE DAMAGE:",
+        "shadowraze_radius": "RADIUS:",
+        "shadowraze_range": "CAST RANGE:",
+        "stack_bonus_damage": "BONUS PER STACK:",
+        "duration": "STACK DURATION:",
+        "movement_speed_pct": "%MOVESPEED REDUCTION:",
+        "turn_rate_pct": "%TURN RATE REDUCTION:",
+        "lore": "Nevermore's trademark for harvesting souls.",
+        "note0": "Stack duration refreshes on stack gain.",
+        "values": {
+          "shadowraze_damage": "90 140 190 240",
+          "shadowraze_radius": "250",
+          "shadowraze_range": "250",
+          "shadowraze_cooldown": "3",
+          "stack_bonus_damage": "50 60 70 80",
+          "duration": "5",
+          "movement_speed_pct": "0",
+          "turn_rate_pct": "0",
+          "abilitymanacost": "75 80 85 90",
+          "abilitycooldown": "13"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "shadowraze_damage": "BASE DAMAGE:",
+            "shadowraze_radius": "RADIUS:",
+            "shadowraze_range": "CAST RANGE:",
+            "stack_bonus_damage": "BONUS PER STACK:",
+            "duration": "STACK DURATION:"
+          },
+          "values": {
+            "shadowraze_damage": "90 / 140 / 190 / 240",
+            "shadowraze_radius": "250",
+            "shadowraze_range": "250",
+            "stack_bonus_damage": "50 / 60 / 70 / 80",
+            "duration": "5"
+          }
+        }
+      },
+      "shadow_fiend_shadowraze2": {
+        "name": "Shadowraze",
+        "description": "Shadow Fiend razes the ground directly in front of him, dealing damage to enemy units in the area. Adds a stacking damage amplifier on the target that causes the enemy to take bonus Shadowraze damage per stack. Each consecutive stack also decreases turn rate and movement speed. Maximum effects: 10",
+        "shadowraze_damage": "BASE DAMAGE:",
+        "shadowraze_radius": "RADIUS:",
+        "shadowraze_range": "CAST RANGE:",
+        "stack_bonus_damage": "BONUS PER STACK:",
+        "duration": "STACK DURATION:",
+        "movement_speed_pct": "%MOVESPEED REDUCTION:",
+        "turn_rate_pct": "%TURN RATE REDUCTION:",
+        "lore": "Nevermore's trademark for harvesting souls.",
+        "note0": "Stack duration refreshes on stack gain.",
+        "values": {
+          "shadowraze_damage": "90 140 190 240",
+          "shadowraze_radius": "250",
+          "shadowraze_range": "450",
+          "shadowraze_cooldown": "3",
+          "stack_bonus_damage": "50 60 70 80",
+          "duration": "5",
+          "movement_speed_pct": "0",
+          "turn_rate_pct": "0",
+          "abilitymanacost": "75 80 85 90",
+          "abilitycooldown": "13"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "shadowraze_damage": "BASE DAMAGE:",
+            "shadowraze_radius": "RADIUS:",
+            "shadowraze_range": "CAST RANGE:",
+            "stack_bonus_damage": "BONUS PER STACK:",
+            "duration": "STACK DURATION:"
+          },
+          "values": {
+            "shadowraze_damage": "90 / 140 / 190 / 240",
+            "shadowraze_radius": "250",
+            "shadowraze_range": "450",
+            "stack_bonus_damage": "50 / 60 / 70 / 80",
+            "duration": "5"
+          }
+        }
+      },
+      "shadow_fiend_shadowraze3": {
+        "name": "Shadowraze",
+        "description": "Shadow Fiend razes the ground directly in front of him, dealing damage to enemy units in the area. Adds a stacking damage amplifier on the target that causes the enemy to take bonus Shadowraze damage per stack. Each consecutive stack also decreases turn rate and movement speed. Maximum effects: 10",
+        "shadowraze_damage": "BASE DAMAGE:",
+        "shadowraze_radius": "RADIUS:",
+        "shadowraze_range": "CAST RANGE:",
+        "stack_bonus_damage": "BONUS PER STACK:",
+        "duration": "STACK DURATION:",
+        "movement_speed_pct": "%MOVESPEED REDUCTION:",
+        "turn_rate_pct": "%TURN RATE REDUCTION:",
+        "lore": "Nevermore's trademark for harvesting souls.",
+        "note0": "Stack duration refreshes on stack gain.",
+        "values": {
+          "shadowraze_damage": "90 140 190 240",
+          "shadowraze_radius": "250",
+          "shadowraze_range": "700",
+          "shadowraze_cooldown": "3",
+          "stack_bonus_damage": "50 60 70 80",
+          "duration": "5",
+          "movement_speed_pct": "0",
+          "turn_rate_pct": "0",
+          "abilitymanacost": "75 80 85 90",
+          "abilitycooldown": "13"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "shadowraze_damage": "BASE DAMAGE:",
+            "shadowraze_radius": "RADIUS:",
+            "shadowraze_range": "CAST RANGE:",
+            "stack_bonus_damage": "BONUS PER STACK:",
+            "duration": "STACK DURATION:"
+          },
+          "values": {
+            "shadowraze_damage": "90 / 140 / 190 / 240",
+            "shadowraze_radius": "250",
+            "shadowraze_range": "700",
+            "stack_bonus_damage": "50 / 60 / 70 / 80",
+            "duration": "5"
+          }
+        }
+      },
+      "shadow_fiend_frenzy": {
+        "name": "Feast of Souls",
+        "description": "The hero increases movement and attack speed for %duration% seconds. During this effect, the maximum souls from Necromastery increase by %soul_cost%, but at the end the owner loses the same amount of souls.",
+        "note0": "Cannot be activated if there are not enough souls.",
+        "bonus_attack_speed": "BONUS ATTACK SPEED:",
+        "bonus_move_speed": "%BONUS MOVEMENT SPEED:",
+        "soul_cost": "SOUL COST:",
+        "values": {
+          "bonus_attack_speed": "40 50 60 70",
+          "bonus_move_speed": "5 7 9 11",
+          "duration": "8",
+          "soul_cost": "5",
+          "abilitycooldown": "21",
+          "abilitymanacost": "60 65 70 75"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "bonus_attack_speed": "BONUS ATTACK SPEED:",
+            "bonus_move_speed": "BONUS MOVEMENT SPEED:",
+            "soul_cost": "SOUL COST:"
+          },
+          "values": {
+            "bonus_attack_speed": "40 / 50 / 60 / 70",
+            "bonus_move_speed": "5% / 7% / 9% / 11%",
+            "soul_cost": "5"
+          }
+        }
+      },
+      "shadow_fiend_dark_lord": {
+        "name": "Presence of the Dark Lord",
+        "description": "Shadow Fiend's presence reduces the armor of nearby enemies. Every enemy hero killed nearby further improves armor reduction by %bonus_armor_per_stack% for %kill_buff_duration%s.",
+        "presence_armor_reduction": "ARMOR REDUCTION:",
+        "presence_radius": "RADIUS:",
+        "lore": "Even being near Nevermore eats away at one's soul.",
+        "values": {
+          "presence_armor_reduction": "-2 -3 -4 -5",
+          "presence_radius": "1200",
+          "bonus_armor_per_stack": "2",
+          "kill_buff_duration": "20",
+          "abilitycastrange": "1200"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "presence_armor_reduction": "ARMOR REDUCTION:",
+            "presence_radius": "RADIUS:"
+          },
+          "values": {
+            "presence_armor_reduction": "-2 / -3 / -4 / -5",
+            "presence_radius": "1200"
+          }
+        }
+      },
+      "shadow_fiend_requiem": {
+        "name": "Requiem of Souls",
+        "description": "Shadow Fiend gathers his captured souls to release them as lines of demonic energy. Units near Shadow Fiend when the souls are released can be damaged by several lines of energy. Any unit damaged by Requiem of Souls will be feared and have its movement speed and magic resistance reduced for %requiem_slow_duration% seconds for each line hit up to a maximum of %requiem_slow_duration_max%. Lines of energy are created for every soul captured through Necromastery. \n\n Requiem of Souls is automatically cast whenever Shadow Fiend dies, regardless of its cooldown.",
+        "damage": "DAMAGE:",
+        "requiem_reduction_ms": "%MOVEMENT REDUCTION:",
+        "requiem_reduction_mres": "%MAGIC RESIST REDUCTION:",
+        "abilitycastpoint": "CAST DELAY:",
+        "lore": "The captured souls of those past slain are released to ravage their former allies.",
+        "note0": "One line is generated from Shadow Fiend for every %requiem_soul_conversion% souls in his possession.",
+        "note1": "Fear and movement slow do not apply when if the Requiem was released on death.",
+        "values": {
+          "damage": "80 120 160",
+          "requiem_radius": "1000",
+          "requiem_reduction_ms": "-20 -25 -30",
+          "requiem_reduction_mres": "-5 -10 -15",
+          "requiem_slow_duration": "0.7",
+          "requiem_slow_duration_max": "2.15",
+          "requiem_reduction_radius": "700",
+          "requiem_soul_conversion": "1",
+          "requiem_line_width_start": "125",
+          "requiem_line_width_end": "350",
+          "requiem_line_speed": "700",
+          "soul_death_release": "0.5",
+          "abilitymanacost": "150 175 200",
+          "abilitycooldown": "100 90 80"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage": "DAMAGE:",
+            "requiem_reduction_ms": "MOVEMENT REDUCTION:",
+            "requiem_reduction_mres": "MAGIC RESIST REDUCTION:"
+          },
+          "values": {
+            "damage": "80 / 120 / 160",
+            "requiem_reduction_ms": "-20% / -25% / -30%",
+            "requiem_reduction_mres": "-5% / -10% / -15%"
+          }
+        }
+      },
+      "shadow_fiend_necromastery": {
+        "name": "Necromastery",
+        "description": "Shadow Fiend steals the soul from units he kills, gaining bonus damage. On death, he releases 40% of them from bondage.",
+        "necromastery_damage_per_soul": "DAMAGE PER SOUL:",
+        "necromastery_max_souls": "MAX SOULS:",
+        "lore": "Harvested souls swirl in and out of the Abysm, empowering the Shadow Fiend to increase the size of his collection.",
+        "values": {
+          "necromastery_damage_per_soul": "1 2 3 4",
+          "necromastery_max_souls": "20",
+          "necromastery_soul_release": "0.7"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "necromastery_damage_per_soul": "DAMAGE PER SOUL:",
+            "necromastery_max_souls": "MAX SOULS:"
+          },
+          "values": {
+            "necromastery_damage_per_soul": "1 / 2 / 3 / 4",
+            "necromastery_max_souls": "20"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "525",
       "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
@@ -11761,10 +11998,10 @@
             }
           },
           {
-            "id": "modifier_bounty_hunter_16",
-            "talentInfo": "#modifier_bounty_hunter_16",
+            "id": "modifier_bounty_hunter_6",
+            "talentInfo": "#modifier_bounty_hunter_6",
             "level": "2",
-            "imagePath": "bounty_hunter/16",
+            "imagePath": "bounty_hunter/6",
             "relatedTalent": {}
           },
           {
@@ -11797,14 +12034,14 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_bounty_hunter_6",
-            "talentInfo": "#modifier_bounty_hunter_6",
-            "level": "2",
-            "imagePath": "bounty_hunter/6",
-            "relatedTalent": {}
+            "id": "empty_11"
           },
           {
-            "id": "empty_11"
+            "id": "modifier_bounty_hunter_16",
+            "talentInfo": "#modifier_bounty_hunter_16",
+            "level": "2",
+            "imagePath": "bounty_hunter/16",
+            "relatedTalent": {}
           },
           {
             "id": "empty_12"
@@ -12324,10 +12561,10 @@
       "modifier_bounty_hunter_1_0": "Attack with Jinada deals Cleave Damage: 50%/100%",
       "modifier_bounty_hunter_1_1": "Attack with Jinada deals Cleave Damage: <b><font color='#eabe10'>50%</font></b>/100%",
       "modifier_bounty_hunter_1_2": "Attack with Jinada deals Cleave Damage: 50%/<b><font color='#eabe10'>100%</font></b>",
-      "modifier_bounty_hunter_2_0": "Shuriken Toss performs an Attack on the primary target. \n\n Increased Slow Duration of Shuriken Toss: 0/1/2 sec. \n\n Power: 7/14/21",
-      "modifier_bounty_hunter_2_1": "Shuriken Toss performs a <b><font color='#eabe10'>Attack</font></b> on the primary target. \n\n Increased Slow Duration of Shuriken Toss: <b><font color='#eabe10'>0</font></b>/1/2 sec. \n\n Power: <b><font color='#eabe10'>7</font></b>/14/21",
-      "modifier_bounty_hunter_2_2": "Shuriken Toss performs a <b><font color='#eabe10'>Attack</font></b> on the primary target. \n\n Increased Slow Duration of Shuriken Toss: 0/<b><font color='#eabe10'>1</font></b>/2 sec. \n\n Power: 7/<b><font color='#eabe10'>14</font></b>/21",
-      "modifier_bounty_hunter_2_3": "Shuriken Toss performs a <b><font color='#eabe10'>Attack</font></b> on the primary target. \n\n Increased Slow Duration of Shuriken Toss: 0/1/<b><font color='#eabe10'>2</font></b> sec. \n\n Power: 7/14/<b><font color='#eabe10'>21</font></b>",
+      "modifier_bounty_hunter_2_0": "Shuriken Toss performs an Attack on the primary target. \n\n Increased Slow Duration of Shuriken Toss: 0/1/2 sec. \n\n Strength: 10/20/30",
+      "modifier_bounty_hunter_2_1": "Shuriken Toss performs a <b><font color='#eabe10'>Attack</font></b> on the primary target. \n\n Increased Slow Duration of Shuriken Toss: <b><font color='#eabe10'>0</font></b>/1/2 sec. \n\n Strength: <b><font color='#eabe10'>10</font></b>/20/30",
+      "modifier_bounty_hunter_2_2": "Shuriken Toss performs a <b><font color='#eabe10'>Attack</font></b> on the primary target. \n\n Increased Slow Duration of Shuriken Toss: 0/<b><font color='#eabe10'>1</font></b>/2 sec. \n\n Strength: 10/<b><font color='#eabe10'>20</font></b>/30",
+      "modifier_bounty_hunter_2_3": "Shuriken Toss performs a <b><font color='#eabe10'>Attack</font></b> on the primary target. \n\n Increased Slow Duration of Shuriken Toss: 0/1/<b><font color='#eabe10'>2</font></b> sec. \n\n Strength: 10/20/<b><font color='#eabe10'>30</font></b>",
       "modifier_bounty_hunter_3_0": "Track grants unobstructed Vision: 500/1000/1500 \n\n Bonus Cast Range: 50/100/150 \n\n Ability Cast Delay Reduction: 10%/20%/30%",
       "modifier_bounty_hunter_3_1": "Track grants unobstructed Vision: <b><font color='#eabe10'>500</font></b>/1000/1500 \n\n Bonus Cast Range: <b><font color='#eabe10'>50</font></b>/100/150 \n\n Ability Cast Delay Reduction: <b><font color='#eabe10'>10%</font></b>/20%/30%",
       "modifier_bounty_hunter_3_2": "Track grants unobstructed Vision: 500/<b><font color='#eabe10'>1000</font></b>/1500 \n\n Bonus Cast Range: 50/<b><font color='#eabe10'>100</font></b>/150 \n\n Ability Cast Delay Reduction: 10%/<b><font color='#eabe10'>20%</font></b>/30%",
@@ -12338,12 +12575,12 @@
       "modifier_bounty_hunter_4_3": "Bonus Gold from Creep kills: 2/4/<b><font color='#eabe10'>6</font></b> \n\n Health: 100/200/<b><font color='#eabe10'>300</font></b> \n\n Mana: 100/200/<b><font color='#eabe10'>300</font></b>",
       "modifier_bounty_hunter_5_0": "Track cannot be dispelled. \n\n Jinada creates an immortal Gold Pouch that increases the hero's damage and grants vision around itself. \n\n Bonus Damage per Pouch: 100 \n Vision Radius: 1000 \n Duration: 12 sec.",
       "modifier_bounty_hunter_5_1": "Track <b><font color='#eabe10'>cannot be dispelled</font></b>. \n\n Jinada creates an immortal Gold Pouch that increases the hero's damage and grants vision around itself. \n\n Bonus Damage per Pouch: <b><font color='#eabe10'>100</font></b> \n Vision Radius: 1000 \n Duration: 12 sec.",
-      "modifier_bounty_hunter_6_0": "Track reduces enemy Health Regeneration: 20%/40% \n\n Track increases hero's Health Regeneration: 0.4%/0.8%",
-      "modifier_bounty_hunter_6_1": "Track reduces enemy Health Regeneration: <b><font color='#eabe10'>20%</font></b>/40% \n\n Track increases hero's Health Regeneration: <b><font color='#eabe10'>0.4%</font></b>/0.8%",
-      "modifier_bounty_hunter_6_2": "Track reduces enemy Health Regeneration: 20%/<b><font color='#eabe10'>40%</font></b> \n\n Track increases hero's Health Regeneration: 0.4%/<b><font color='#eabe10'>0.8%</font></b>",
-      "modifier_bounty_hunter_7_0": "Jinada Extra Damage Increase: 150/300",
-      "modifier_bounty_hunter_7_1": "Jinada Extra Damage Increase: <b><font color='#eabe10'>150</font></b>/300",
-      "modifier_bounty_hunter_7_2": "Jinada Extra Damage Increase: 150/<b><font color='#eabe10'>300</font></b>",
+      "modifier_bounty_hunter_6_0": "Track reduces enemy Health Regeneration: 20%/40% \n\n Track increases hero's Health Regeneration: 0.4%/0.8% \n\n Health Regeneration: 0.2%/0.4%",
+      "modifier_bounty_hunter_6_1": "Track reduces enemy Health Regeneration: <b><font color='#eabe10'>20%</font></b>/40% \n\n Track increases hero's Health Regeneration: <b><font color='#eabe10'>0.4%</font></b>/0.8% \n\n Health Regeneration: <b><font color='#eabe10'>0.2%</font></b>/0.4%",
+      "modifier_bounty_hunter_6_2": "Track reduces enemy Health Regeneration: 20%/<b><font color='#eabe10'>40%</font></b> \n\n Track increases hero's Health Regeneration: 0.4%/<b><font color='#eabe10'>0.8%</font></b> \n\n Health Regeneration: 0.2%/<b><font color='#eabe10'>0.4%</font></b>",
+      "modifier_bounty_hunter_7_0": "Attacks Reduce Armor: 3/6 \n\n Duration: 4 sec.",
+      "modifier_bounty_hunter_7_1": "Attacks Reduce Armor: <b><font color='#eabe10'>3</font></b>/6 \n\n Duration: 4 sec.",
+      "modifier_bounty_hunter_7_2": "Attacks Reduce Armor: 3/<b><font color='#eabe10'>6</font></b> \n\n Duration: 4 sec.",
       "modifier_bounty_hunter_8_0": "Shadow Walk increases Movement Speed: 16%/32% \n\n Agility: 5/10",
       "modifier_bounty_hunter_8_1": "Shadow Walk increases Movement Speed: <b><font color='#eabe10'>16%</font></b>/32% \n\n Agility: <b><font color='#eabe10'>5</font></b>/10",
       "modifier_bounty_hunter_8_2": "Shadow Walk increases Movement Speed: 16%/<b><font color='#eabe10'>32%</font></b> \n\n Agility: 5/<b><font color='#eabe10'>10</font></b>",
@@ -12367,23 +12604,23 @@
       "modifier_bounty_hunter_14_1": "When the damage you take reaches the cap of <b><font color='#eabe10'>40%</font></b> of your Max Health, automatically cast <b><font color='#eabe10'>Shadow Walk</font></b>.",
       "modifier_bounty_hunter_15_0": "Shuriken Toss deals damage to all enemies it passes through in Radius: 250",
       "modifier_bounty_hunter_15_1": "Shuriken Toss deals damage to all enemies it passes through in Radius: <b><font color='#eabe10'>250</font></b>",
-      "modifier_bounty_hunter_16_0": "Increased Bonus Gold to Allies from Track: 60 \n\n Increased Damage from Track: 8%/16%",
-      "modifier_bounty_hunter_16_1": "Increased Bonus Gold to Allies from Track: <b><font color='#eabe10'>60</font></b> \n\n Increased Damage from Track: <b><font color='#eabe10'>8%</font></b>/16%",
-      "modifier_bounty_hunter_16_2": "Increased Bonus Gold to Allies from Track: <b><font color='#eabe10'>60</font></b> \n\n Increased Damage from Track: 8%/<b><font color='#eabe10'>16%</font></b>",
-      "modifier_bounty_hunter_17_0": "Jinada grants Gold for Creeps. \n\n Bonus Jinada Gold: 6/12 \n\n Movement Speed: 20/40",
-      "modifier_bounty_hunter_17_1": "Jinada grants Gold for <b><font color='#eabe10'>Creeps</font></b>. \n\n Bonus Jinada Gold: <b><font color='#eabe10'>6</font></b>/12 \n\n Movement Speed: <b><font color='#eabe10'>20</font></b>/40",
-      "modifier_bounty_hunter_17_2": "Jinada grants Gold for <b><font color='#eabe10'>Creeps</font></b>. \n\n Bonus Jinada Gold: 6/<b><font color='#eabe10'>12</font></b> \n\n Movement Speed: 20/<b><font color='#eabe10'>40</font></b>",
+      "modifier_bounty_hunter_16_0": "Increased Bonus Gold to Allies from Track: 60/120 \n\n Increased Damage from Track: 8%/16%",
+      "modifier_bounty_hunter_16_1": "Increased Bonus Gold to Allies from Track: <b><font color='#eabe10'>60</font></b>/120 \n\n Increased Damage from Track: <b><font color='#eabe10'>8%</font></b>/16%",
+      "modifier_bounty_hunter_16_2": "Increased Bonus Gold to Allies from Track: 60/<b><font color='#eabe10'>120</font></b> \n\n Increased Damage from Track: 8%/<b><font color='#eabe10'>16%</font></b>",
+      "modifier_bounty_hunter_17_0": "Jinada grants Gold for Creeps. \n\n Jinada Gold Bonus: 6/12 \n\n Jinada Bonus Damage Increase: 75/150",
+      "modifier_bounty_hunter_17_1": "Jinada grants Gold for <b><font color='#eabe10'>Creeps</font></b>. \n\n Jinada Gold Bonus: <b><font color='#eabe10'>6</font></b>/12 \n\n Jinada Bonus Damage Increase: <b><font color='#eabe10'>75</font></b>/150",
+      "modifier_bounty_hunter_17_2": "Jinada grants Gold for <b><font color='#eabe10'>Creeps</font></b>. \n\n Jinada Gold Bonus: 6/<b><font color='#eabe10'>12</font></b> \n\n Jinada Bonus Damage Increase: 75/<b><font color='#eabe10'>150</font></b>",
       "modifier_bounty_hunter_18_0": "Casting Track also launches Shuriken Toss at the Target.",
       "modifier_bounty_hunter_18_1": "Casting Track also launches <b><font color='#eabe10'>Shuriken Toss</font></b> at the Target.",
       "modifier_bounty_hunter_19_0": "<b><font color='#ff0000'> Shuriken Toss no longer slows. </font></b> \n\n Shuriken Toss stuns enemies: 0.4/0.8/1.2 sec. \n\n Intelligence: 7/14/21",
       "modifier_bounty_hunter_19_1": "<b><font color='#ff0000'> Shuriken Toss no longer slows. </font></b> \n\n Shuriken Toss stuns enemies: <b><font color='#eabe10'>0.4</font></b>/0.8/1.2 sec. \n\n Intelligence: <b><font color='#eabe10'>7</font></b>/14/21",
       "modifier_bounty_hunter_19_2": "<b><font color='#ff0000'> Shuriken Toss no longer slows. </font></b> \n\n Shuriken Toss stuns enemies: 0.4/<b><font color='#eabe10'>0.8</font></b>/1.2 sec. \n\n Intelligence: 7/<b><font color='#eabe10'>14</font></b>/21",
       "modifier_bounty_hunter_19_3": "<b><font color='#ff0000'> Shuriken Toss no longer slows. </font></b> \n\n Shuriken Toss stuns enemies: 0.4/0.8/<b><font color='#eabe10'>1.2</font></b> sec. \n\n Intelligence: 7/14/<b><font color='#eabe10'>21</font></b>",
-      "modifier_bounty_hunter_20_0": "Increased Shuriken Toss Damage: 1% of Total Cost \n\n <b><font color='#ff0000'> Max Damage Increase: 100/None </font></b>",
-      "modifier_bounty_hunter_20_1": "Increased Shuriken Toss Damage: <b><font color='#eabe10'>1%</font></b> of Total Cost \n\n <b><font color='#ff0000'> Max Damage Increase: <b><font color='#eabe10'>100</font></b>/None </font></b>",
-      "modifier_bounty_hunter_20_2": "Increased Shuriken Toss Damage: <b><font color='#eabe10'>1%</font></b> of Total Cost \n\n <b><font color='#ff0000'> Max Damage Increase: 100/<b><font color='#eabe10'>None</font></b> </font></b>",
-      "modifier_bounty_hunter_21_0": "Spells deal 120% Critical Damage to Track targets.",
-      "modifier_bounty_hunter_21_1": "Spells deal <b><font color='#eabe10'>120%</font></b> Critical Damage to Track targets."
+      "modifier_bounty_hunter_20_0": "Increased Shuriken Toss Damage: 1% of Net Worth \n\n <b><font color='#ff0000'> Max Damage Increase: 100/None </font></b> \n\n Spell Damage: 5%/10%",
+      "modifier_bounty_hunter_20_1": "Increased Shuriken Toss Damage: <b><font color='#eabe10'>1%</font></b> of Net Worth \n\n <b><font color='#ff0000'> Max Damage Increase: <b><font color='#eabe10'>100</font></b>/None </font></b> \n\n Spell Damage: <b><font color='#eabe10'>5%</font></b>/10%",
+      "modifier_bounty_hunter_20_2": "Increased Shuriken Toss Damage: <b><font color='#eabe10'>1%</font></b> of Net Worth \n\n <b><font color='#ff0000'> Max Damage Increase: 100/<b><font color='#eabe10'>None</font></b> </font></b> \n\n Spell Damage: 5%/<b><font color='#eabe10'>10%</font></b>",
+      "modifier_bounty_hunter_21_0": "Track can be used on Creeps, but without bonus gold. \n\n Spells deal 120% Critical Damage to Track targets.",
+      "modifier_bounty_hunter_21_1": "Track can be used on <b><font color='#eabe10'>Creeps</font></b>, but without bonus gold. \n\n Spells deal <b><font color='#eabe10'>120%</font></b> Critical Damage to Track targets."
     },
     "abilities": {
       "bounty_hunter_shuriken_toss": {
@@ -13276,7 +13513,145 @@
       "modifier_nature's_prophet_21_2": "Increase Spell Damage by 1%/<b><font color='#eabe10'>2%</font></b>/3% for each Tree around the Hero. \n\n Radius: 1200",
       "modifier_nature's_prophet_21_3": "Increase Spell Damage by 1%/2%/<b><font color='#eabe10'>3%</font></b> for each Tree around the Hero. \n\n Radius: 1200"
     },
-    "abilities": {},
+    "abilities": {
+      "nature's_prophet_sprout": {
+        "name": "Sprout",
+        "description": "Sprouts a ring of trees around a unit, trapping it in place, and providing vision in a %vision_range% radius.",
+        "lore": "Verdant overgrowth is a common ailment reported by Nature's Prophet's attackers.",
+        "note0": "Sprout can be cast on any unit, or the ground.",
+        "note1": "Trees created by Sprout have the same interactions with abilities as regular trees.",
+        "note2": "A Tango that consumes a tree created by Sprout provides double the heal duration.",
+        "duration": "DURATION:",
+        "abilitycastrange": "CAST RANGE:",
+        "sprout_damage": "SPROUT DAMAGE:",
+        "sprout_damage_inteval": "SPROUT DAMAGE INTERVAL:",
+        "charges": "Sprout",
+        "charges_description": "Sprouts a ring of trees around a unit, trapping it in place, and providing vision in a %vision_range% radius.",
+        "charges_lore": "Verdant overgrowth is a common ailment reported by Nature's Prophet's attackers.",
+        "charges_note0": "Sprout can be cast on any unit, or the ground.",
+        "charges_note1": "Trees created by Sprout have the same interactions with abilities as regular trees.",
+        "charges_note2": "A Tango that consumes a tree created by Sprout provides double the heal duration.",
+        "charges_duration": "DURATION:",
+        "charges_abilitycastrange": "CAST RANGE:",
+        "values": {
+          "abilitycharges": "1",
+          "vision_range": "250",
+          "duration": "2.5 3 3.5 4",
+          "radius": "150",
+          "sprout_damage": "70 135 200 265",
+          "sprout_damage_radius": "275",
+          "abilitycastrange": "625 700 775 850",
+          "abilitymanacost": "70 90 110 130"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "DURATION:",
+            "sprout_damage": "SPROUT DAMAGE:",
+            "abilitycastrange": "CAST RANGE:"
+          },
+          "values": {
+            "duration": "2.5 / 3 / 3.5 / 4",
+            "sprout_damage": "70 / 135 / 200 / 265",
+            "abilitycastrange": "625 / 700 / 775 / 850"
+          }
+        }
+      },
+      "nature's_prophet_teleportation": {
+        "name": "Teleportation",
+        "description": "Teleports to any point on the map. Gains a barrier after arriving to its destination.",
+        "lore": "The Prophet keeps his sentinel over the forest, protecting it when in need.",
+        "note0": "Mana and cooldown take effect when the cast is completed.  Nature's Prophet will not use any mana or waste the cooldown if the spell is interrupted while casting.",
+        "note1": "When the cast begins, an effect is created at the target location, which is visible to allies and enemies.",
+        "barrier": "BARRIER:",
+        "buff_duration": "DURATION:",
+        "values": {
+          "buff_duration": "15",
+          "barrier": "70 130 190 250",
+          "abilitycastrange": "0",
+          "abilitycooldown": "65 55 45 35",
+          "abilitymanacost": "50 60 70 80"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "buff_duration": "DURATION:",
+            "barrier": "BARRIER:"
+          },
+          "values": {
+            "buff_duration": "15",
+            "barrier": "70 / 130 / 190 / 250"
+          }
+        }
+      },
+      "nature's_prophet_force_of_nature": {
+        "name": "Nature's Call",
+        "description": "Converts an area of trees into Treants under the command of Nature's Prophet.",
+        "lore": "Verodicia bestowed the Prophet with the ability to summon the Treant Guard, a mythical sentient army of the wild.",
+        "note0": "Nature's Call can only create as many treants as there are trees in the target area.",
+        "duration": "TREANT DURATION:",
+        "max_treants": "TREANT COUNT:",
+        "treant_health_tooltip": "TREANT HEALTH:",
+        "treant_dmg_tooltip": "TREANT DAMAGE:",
+        "values": {
+          "area_of_effect": "150 225 300 375",
+          "max_treants": "1 2",
+          "duration": "35",
+          "treant_health_tooltip": "500 750 1000",
+          "treant_dmg_tooltip": "24 36 48",
+          "treant_hp_bonus": "825",
+          "treant_damage_bonus": "27 39 51 63",
+          "abilitycastrange": "750",
+          "abilitycooldown": "37",
+          "abilitymanacost": "150"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "max_treants": "TREANT COUNT:",
+            "duration": "TREANT DURATION:",
+            "treant_health_tooltip": "TREANT HEALTH:",
+            "treant_dmg_tooltip": "TREANT DAMAGE:"
+          },
+          "values": {
+            "max_treants": "1 / 2",
+            "duration": "35",
+            "treant_health_tooltip": "500 / 750 / 1000",
+            "treant_dmg_tooltip": "24 / 36 / 48"
+          }
+        }
+      },
+      "nature's_prophet_wrath_of_nature": {
+        "name": "Wrath of Nature",
+        "description": "Damaging energy bounces around the map, striking enemies close to the cast point that are in vision. Each enemy hit beyond the first adds damage.",
+        "lore": "Nature's Prophet calls Verodicia's fury to strike down those who might ravage the wilderness.",
+        "note0": "Wrath of Nature will not hit units out of vision.",
+        "note1": "Can be cast through the minimap; the nearest valid target will be selected.",
+        "max_targets": "MAX TARGETS:",
+        "damage": "DAMAGE:",
+        "damage_percent_add": "%ADDED DAMAGE PER BOUNCE:",
+        "values": {
+          "max_targets": "18",
+          "damage": "115 150 185",
+          "damage_percent_add": "10",
+          "jump_delay": "0.25",
+          "kill_damage": "6",
+          "kill_damage_duration": "50",
+          "abilitycastrange": "0",
+          "abilitycooldown": "85",
+          "abilitymanacost": "130 160 190"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "max_targets": "MAX TARGETS:",
+            "damage": "DAMAGE:",
+            "damage_percent_add": "ADDED DAMAGE PER BOUNCE:"
+          },
+          "values": {
+            "max_targets": "18",
+            "damage": "115 / 150 / 185",
+            "damage_percent_add": "10%"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "600",
       "attributeprimary": "DOTA_ATTRIBUTE_ALL",
@@ -19823,7 +20198,120 @@
       "modifier_vengeful_spirit_21_0": "New Active Ability: Magic Meteor \n\n After a short delay, strikes an area with a meteorite that deals Magic Damage to all enemies in the area and stuns. Ignores status resistance. \n\n Damage: 150% of Magic Missile \n Stun: 150% of Magic Missile \n Cooldown: 45 seconds",
       "modifier_vengeful_spirit_21_1": "New Active Ability: <b><font color='#eabe10'>Magic Meteor</font></b> \n\n After a short delay, strikes an area with a meteorite that deals Magic Damage to all enemies in the area and stuns. Ignores status resistance. \n\n Damage: <b><font color='#eabe10'>150%</font></b> of Magic Missile \n Stun: <b><font color='#eabe10'>150%</font></b> of Magic Missile \n Cooldown: 45 seconds"
     },
-    "abilities": {},
+    "abilities": {
+      "vengeful_spirit_magic_missile": {
+        "name": "Magic Missile",
+        "description": "Fires a magic missile at an enemy unit, stunning and dealing damage. \n In Arena mode, the hero gains Mana from Talent at the end of each round.",
+        "lore": "A simple Skywrath technique, the magic missile is Shendel's primary tool for vengeance.",
+        "magic_missile_stun": "STUN DURATION:",
+        "magic_missile_damage": "DAMAGE:",
+        "abilitycastrange": "CAST RANGE:",
+        "values": {
+          "magic_missile_stun": "1.1 1.2 1.3 1.4",
+          "magic_missile_damage": "90 180 270 360",
+          "abilitycooldown": "14 13 12 11",
+          "abilitymanacost": "100 110 120 130",
+          "abilitycastrange": "650"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "magic_missile_stun": "STUN DURATION:",
+            "magic_missile_damage": "DAMAGE:",
+            "abilitycastrange": "CAST RANGE:"
+          },
+          "values": {
+            "magic_missile_stun": "1.1 / 1.2 / 1.3 / 1.4",
+            "magic_missile_damage": "90 / 180 / 270 / 360",
+            "abilitycastrange": "650"
+          }
+        }
+      },
+      "vengeful_spirit_wave_of_terror": {
+        "name": "Wave of Terror",
+        "description": "Vengeful Spirit lets loose a wicked cry, weakening the total attack damage and armor of enemies, and giving vision of the path ahead.",
+        "lore": "Shendel's haunting voice hints at her approaching vindication.",
+        "armor_reduction": "ARMOR REDUCTION:",
+        "attack_reduction": "%ATTACK DAMAGE REDUCTION:",
+        "abilityduration": "DEBUFF DURATION:",
+        "vision_duration": "VISION DURATION:",
+        "values": {
+          "armor_reduction": "-2 -3 -4 -5",
+          "attack_reduction": "-10 -15 -20 -25",
+          "damage": "85 100 115 130",
+          "duration": "17",
+          "vision_aoe": "350",
+          "vision_duration": "4",
+          "abilitycastrange": "1400",
+          "abilitycooldown": "17",
+          "abilityduration": "8",
+          "abilitymanacost": "25 30 35 40"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "armor_reduction": "ARMOR REDUCTION:",
+            "attack_reduction": "ATTACK DAMAGE REDUCTION:",
+            "vision_duration": "VISION DURATION:",
+            "abilityduration": "DEBUFF DURATION:"
+          },
+          "values": {
+            "armor_reduction": "-2 / -3 / -4 / -5",
+            "attack_reduction": "-10% / -15% / -20% / -25%",
+            "vision_duration": "4",
+            "abilityduration": "8"
+          }
+        }
+      },
+      "vengeful_spirit_command_aura": {
+        "name": "Vengeance Aura",
+        "description": "Vengeful Spirit's presence increases the damage of nearby friendly heroes.",
+        "lore": "Although they may not share her undying passion for revenge, allies do draw on her fanaticism in combat.",
+        "bonus_base_damage": "%BASE DAMAGE BONUS:",
+        "aura_radius": "RADIUS:",
+        "values": {
+          "bonus_base_damage": "10 16 22 28",
+          "aura_radius": "1200",
+          "abilitycastrange": "1200"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "bonus_base_damage": "BASE DAMAGE BONUS:",
+            "aura_radius": "RADIUS:"
+          },
+          "values": {
+            "bonus_base_damage": "10% / 16% / 22% / 28%",
+            "aura_radius": "1200"
+          }
+        }
+      },
+      "vengeful_spirit_nether_swap": {
+        "name": "Nether Swap",
+        "description": "Instantaneously swaps positions with a target Hero, friend or enemy. Nether Swap interrupts channeling abilities on the target. Enemy Swapped units take damage. Vengeful Spirit and allied swapped units gain a barrier equal to the damage dealt.",
+        "lore": "Martyrdom is a small price to pay for vengeance.",
+        "note0": "Works on Spell Immune units.",
+        "note1": "Trees near Vengeful Spirit and the target will be destroyed when the spell is cast.",
+        "note2": "Channeling spells are interrupted by Nether Swap.",
+        "damage_reduction_duration": "SHIELD DURATION:",
+        "damage": "DAMAGE/SHIELD:",
+        "values": {
+          "damage_reduction": "0",
+          "damage_reduction_duration": "10",
+          "damage": "150 300 450",
+          "abilitycastrange": "800 950 1100",
+          "abilitycooldown": "50 40 30",
+          "abilitymanacost": "100 150 200"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage_reduction_duration": "SHIELD DURATION:",
+            "damage": "DAMAGE/SHIELD:"
+          },
+          "values": {
+            "damage_reduction_duration": "10",
+            "damage": "150 / 300 / 450"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "400",
       "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
@@ -26059,8 +26547,8 @@
       "modifier_slark_19_3": "New Active Ability: <b><font color='#eabe10'>Depth Shroud</font></b> \n\n Creates a cloud in the target area that hides allies and applies the effect of Shadow Dance on them. \n\n Duration: 1/2/<b><font color='#eabe10'>3</font></b> seconds \n Radius: 250 \n Cast Range: 800 \n Cooldown: 75 seconds",
       "modifier_slark_20_0": "Fish Bait cannot be dispelled. \n\n Increase Fish Bait Movement Slow: 10%",
       "modifier_slark_20_1": "Fish Bait <b><font color='#eabe10'>cannot be dispelled</font></b>. \n\n Increase Fish Bait Movement Slow: <b><font color='#eabe10'>10%</font></b>",
-      "modifier_slark_21_0": "Dark Pact becomes a Passive Ability and does not dispel effects. \n\n Dark Pact triggers on an target every time you hit them with a Directed Ability or Item.",
-      "modifier_slark_21_1": "Dark Pact becomes a <b><font color='#eabe10'>Passive Ability</font></b> and does not dispel effects. \n\n Dark Pact triggers on an target every time you hit them with a Directed Ability or Item."
+      "modifier_slark_21_0": "Dark Pact becomes a Passive Ability. \n\n Dark Pact triggers on a target each time you hit it with a Targeted Ability or Item.",
+      "modifier_slark_21_1": "Dark Pact becomes a <b><font color='#eabe10'>Passive Ability</font></b>. \n\n Dark Pact triggers on a target each time you hit it with a Targeted Ability or Item."
     },
     "abilities": {
       "slark_dark_pact": {
@@ -36042,7 +36530,146 @@
       "modifier_wraith_king_21_0": "Attack Accuracy of Controlled Creatures: 100% \n\n Mana: 750",
       "modifier_wraith_king_21_1": "Attack Accuracy of Controlled Creatures: <b><font color='#eabe10'>100%</font></b> \n\n Mana: <b><font color='#eabe10'>750</font></b>"
     },
-    "abilities": {},
+    "abilities": {
+      "wraith_king_hellfire_blast": {
+        "name": "Wraithfire Blast",
+        "description": "Wraith King sears an enemy unit with spectral fire, dealing damage and stunning, then dealing damage over time and slowing the target. Summoned skeletons around the target will receive bonus movement and attack speed for the duration of the debuff.",
+        "lore": "Ostarion calls on his damned lineage, laying waste to his opponents.",
+        "note0": "If Wraith King has summoned skeletons, casting Wraithfire Blast on a target will order all of the skeletons to attack that target.",
+        "blast_stun_duration": "STUN DURATION:",
+        "blast_dot_duration": "SLOW DURATION:",
+        "blast_slow": "%MOVEMENT SLOW:",
+        "blast_dot_damage": "DAMAGE PER SECOND:",
+        "bonus_move_speed": "SKELETON MOVEMENT SPEED BONUS:",
+        "bonus_attack_speed": "SKELETON ATTACK SPEED BONUS:",
+        "values": {
+          "blast_speed": "1200",
+          "blast_stun_duration": "1 1.2 1.4 1.6",
+          "blast_dot_duration": "2",
+          "blast_slow": "-20",
+          "blast_dot_damage": "20 40 60 80",
+          "bonus_move_speed": "25",
+          "bonus_attack_speed": "25",
+          "abilitycastrange": "525",
+          "abilitycooldown": "17 14 11 8",
+          "abilitymanacost": "95 110 125 140"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "blast_stun_duration": "STUN DURATION:",
+            "blast_dot_duration": "SLOW DURATION:",
+            "blast_slow": "MOVEMENT SLOW:",
+            "blast_dot_damage": "DAMAGE PER SECOND:",
+            "bonus_move_speed": "SKELETON MOVEMENT SPEED BONUS:",
+            "bonus_attack_speed": "SKELETON ATTACK SPEED BONUS:"
+          },
+          "values": {
+            "blast_stun_duration": "1 / 1.2 / 1.4 / 1.6",
+            "blast_dot_duration": "2",
+            "blast_slow": "-20%",
+            "blast_dot_damage": "20 / 40 / 60 / 80",
+            "bonus_move_speed": "25",
+            "bonus_attack_speed": "25"
+          }
+        }
+      },
+      "wraith_king_vampiric_aura": {
+        "name": "Vampiric Spirit",
+        "description": "Restore health based on the damage Wraith King deals when attacking enemy units. Can be cast to summon skeletons with Vampiric Spirit. Skeletons respawn once when killed.\n\nLifesteal from creeps is reduced by %creep_lifesteal_reduction_pct%%%. \n\n Skeletons can be controlled.",
+        "lore": "Wraith King's blade drains his enemy's essence to feed his aura.",
+        "note0": "Summoned skeletons will automatically attack any unit targeted by Wraithfire Blast.",
+        "note1": "Stacks additively with other sources of Lifesteal.",
+        "vampiric_aura": "%LIFESTEAL:",
+        "max_skeleton_charges": "MAX SKELETONS:",
+        "skeleton_duration": "SKELETON DURATION:",
+        "skeleton_damage_tooltip": "SKELETON DAMAGE:",
+        "skeleton_bonus_hero_damage": "%SKELETON HERO BONUS DAMAGE:",
+        "values": {
+          "vampiric_aura": "15 20 25 30",
+          "creep_lifesteal_reduction_pct": "40",
+          "skeleton_duration": "40",
+          "max_skeleton_charges": "1 2 3 4",
+          "spawn_interval": "0.25",
+          "reincarnate_time": "3",
+          "gold_bounty": "5",
+          "xp_bounty": "5",
+          "skeleton_damage_tooltip": "30",
+          "skeleton_building_damage_reduction": "35",
+          "skeleton_bonus_hero_damage": "25",
+          "abilitymanacost": "70 80 90 100",
+          "abilitycooldown": "40"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "vampiric_aura": "LIFESTEAL:",
+            "skeleton_duration": "SKELETON DURATION:",
+            "max_skeleton_charges": "MAX SKELETONS:",
+            "skeleton_damage_tooltip": "SKELETON DAMAGE:",
+            "skeleton_bonus_hero_damage": "SKELETON HERO BONUS DAMAGE:"
+          },
+          "values": {
+            "vampiric_aura": "15% / 20% / 25% / 30%",
+            "skeleton_duration": "40",
+            "max_skeleton_charges": "1 / 2 / 3 / 4",
+            "skeleton_damage_tooltip": "30",
+            "skeleton_bonus_hero_damage": "25%"
+          }
+        }
+      },
+      "wraith_king_mortal_strike": {
+        "name": "Mortal Strike",
+        "description": "Wraith King passively deals bonus damage on an attack with a cooldown.",
+        "lore": "One blow to crush a foe.",
+        "crit_mult": "%CRITICAL DAMAGE:",
+        "values": {
+          "crit_mult": "130 170 210 250",
+          "abilitycooldown": "5.5 5 4.5 4"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "crit_mult": "CRITICAL DAMAGE:"
+          },
+          "values": {
+            "crit_mult": "130% / 170% / 210% / 250%"
+          }
+        }
+      },
+      "wraith_king_reincarnation": {
+        "name": "Reincarnation",
+        "description": "Wraith King's form regroups after death, allowing him to resurrect when killed in battle.  Upon death, enemy units in a %slow_radius% radius will be slowed.",
+        "lore": "Conspirators against the Wraith King wonder why he never stays dead.",
+        "note0": "Wraith King won't revive if he doesn't have enough mana.",
+        "note1": "Revives with full HP and Mana.",
+        "reincarnate_time": "REINCARNATION TIME:",
+        "movespeed": "%MOVEMENT SLOW:",
+        "attackslow": "ATTACK SPEED SLOW:",
+        "slow_duration": "SLOW DURATION:",
+        "values": {
+          "reincarnate_time": "3",
+          "slow_radius": "900",
+          "movespeed": "-75",
+          "attackslow": "-75",
+          "slow_duration": "5",
+          "abilitymanacost": "180",
+          "abilitycastrange": "600",
+          "abilitycooldown": "180 150 120"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "reincarnate_time": "REINCARNATION TIME:",
+            "movespeed": "MOVEMENT SLOW:",
+            "attackslow": "ATTACK SPEED SLOW:",
+            "slow_duration": "SLOW DURATION:"
+          },
+          "values": {
+            "reincarnate_time": "3",
+            "movespeed": "-75%",
+            "attackslow": "-75",
+            "slow_duration": "5"
+          }
+        }
+      }
+    },
     "characteristics": {
       "attackrange": "150",
       "attributeprimary": "DOTA_ATTRIBUTE_STRENGTH",
@@ -43538,17 +44165,17 @@
         ],
         "3": [
           {
+            "id": "modifier_roshan_10",
+            "talentInfo": "#modifier_roshan_10",
+            "level": "1",
+            "imagePath": "roshan/10",
+            "relatedTalent": {}
+          },
+          {
             "id": "empty_6"
           },
           {
             "id": "empty_7"
-          },
-          {
-            "id": "modifier_roshan_12",
-            "talentInfo": "#modifier_roshan_12",
-            "level": "1",
-            "imagePath": "roshan/12",
-            "relatedTalent": {}
           },
           {
             "id": "modifier_woda_talent_mask1",
@@ -43570,7 +44197,14 @@
         ],
         "4": [
           {
-            "id": "empty_11"
+            "id": "modifier_roshan_11",
+            "talentInfo": "#modifier_roshan_11",
+            "level": "3",
+            "imagePath": "roshan/11",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_roshan_10",
+              "requiredTalentLevel": "1"
+            }
           },
           {
             "id": "modifier_woda_talent_speed2",
@@ -43590,11 +44224,7 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_roshan_10",
-            "talentInfo": "#modifier_roshan_10",
-            "level": "1",
-            "imagePath": "roshan/10",
-            "relatedTalent": {}
+            "id": "empty_11"
           },
           {
             "id": "modifier_woda_talent_agi4",
@@ -43619,10 +44249,10 @@
             "id": "empty_12"
           },
           {
-            "id": "modifier_roshan_13",
-            "talentInfo": "#modifier_roshan_13",
-            "level": "3",
-            "imagePath": "roshan/13",
+            "id": "modifier_roshan_12",
+            "talentInfo": "#modifier_roshan_12",
+            "level": "1",
+            "imagePath": "roshan/12",
             "relatedTalent": {}
           },
           {
@@ -43658,14 +44288,11 @@
             "relatedTalent": {}
           },
           {
-            "id": "modifier_roshan_11",
-            "talentInfo": "#modifier_roshan_11",
+            "id": "modifier_roshan_13",
+            "talentInfo": "#modifier_roshan_13",
             "level": "3",
-            "imagePath": "roshan/11",
-            "relatedTalent": {
-              "relatedTalentName": "modifier_roshan_10",
-              "requiredTalentLevel": "1"
-            }
+            "imagePath": "roshan/13",
+            "relatedTalent": {}
           },
           {
             "id": "empty_16"
@@ -43949,10 +44576,10 @@
       "modifier_roshan_9_2": "Increased Bash Chance: 3%/<b><font color='#eabe10'>6%</font></b>",
       "modifier_roshan_10_0": "New Active Ability: Roshpit \n\n After a short preparation, the hero summons a stone lair that blocks enemy movement and limits their vision. Increases the hero's movement speed inside the lair.\n\n Movement Speed: 30% \n Duration: 6 sec. \n Cast Range: 400 \n Radius: 550 \n Cooldown: 30 sec.",
       "modifier_roshan_10_1": "New Active Ability: <b><font color='#eabe10'>Roshpit</font></b> \n\n After a short preparation, the hero summons a stone lair that blocks enemy movement and limits their vision. Increases the hero's movement speed inside the lair.\n\n Movement Speed: <b><font color='#eabe10'>30%</font></b> \n Duration: <b><font color='#eabe10'>6</font></b> sec. \n Cast Range: 400 \n Radius: 550 \n Cooldown: 30 sec.",
-      "modifier_roshan_11_0": "Enemies near the walls inside the lair receive Stun: 1/2/3 sec.",
-      "modifier_roshan_11_1": "Enemies near the walls inside the lair receive Stun: <b><font color='#eabe10'>1</font></b>/2/3 sec.",
-      "modifier_roshan_11_2": "Enemies near the walls inside the lair receive Stun: 1/<b><font color='#eabe10'>2</font></b>/3 sec.",
-      "modifier_roshan_11_3": "Enemies near the walls inside the lair receive Stun: 1/2/<b><font color='#eabe10'>3</font></b> sec.",
+      "modifier_roshan_11_0": "Enemies near the walls inside the lair are Stunned: 1/2/3 sec. \n\n Spell Damage: 5%/10%/15%",
+      "modifier_roshan_11_1": "Enemies near the walls inside the lair are Stunned: <b><font color='#eabe10'>1</font></b>/2/3 sec. \n\n Spell Damage: <b><font color='#eabe10'>5%</font></b>/10%/15%",
+      "modifier_roshan_11_2": "Enemies near the walls inside the lair are Stunned: 1/<b><font color='#eabe10'>2</font></b>/3 sec. \n\n Spell Damage: 5%/<b><font color='#eabe10'>10%</font></b>/15%",
+      "modifier_roshan_11_3": "Enemies near the walls inside the lair are Stunned: 1/2/<b><font color='#eabe10'>3</font></b> sec. \n\n Spell Damage: 5%/10%/<b><font color='#eabe10'>15%</font></b>",
       "modifier_roshan_12_0": "Using Items applies Bash to a random enemy within Radius: 900 \n\n Proc Chance: 100% \n\n Prioritizes heroes.",
       "modifier_roshan_12_1": "Using Items applies Bash to a random enemy within Radius: <b><font color='#eabe10'>900</font></b> \n\n Proc Chance: <b><font color='#eabe10'>100%</font></b> \n\n Prioritizes heroes.",
       "modifier_roshan_13_0": "Reduced Item Cooldown: 10%/15%/20%",
@@ -47512,10 +48139,10 @@
       "modifier_rubick_5_1": "Arcane Supremacy becomes a toggle ability. \n\n When this ability is activated, Reduces Spell Damage of Enemies: <b><font color='#eabe10'>5%</font></b>/10%/15% \n\n When this ability is toggled, Increases Spell Damage of Allies: <b><font color='#eabe10'>5%</font></b>/10%/15% \n\n Radius: 1200",
       "modifier_rubick_5_2": "Arcane Supremacy becomes a toggle ability. \n\n When this ability is activated, Reduces Spell Damage of Enemies: 5%/<b><font color='#eabe10'>10%</font></b>/15% \n\n When this ability is toggled, Increases Spell Damage of Allies: 5%/<b><font color='#eabe10'>10%</font></b>/15% \n\n Radius: 1200",
       "modifier_rubick_5_3": "Arcane Supremacy becomes a toggle ability. \n\n When this ability is activated, Reduces Spell Damage of Enemies: 5%/10%/<b><font color='#eabe10'>15%</font></b> \n\n When this ability is toggled, Increases Spell Damage of Allies: 5%/10%/<b><font color='#eabe10'>15%</font></b> \n\n Radius: 1200",
-      "modifier_rubick_6_0": "Fade Lightning Cooldown Reduction: 1/2/3 sec.",
-      "modifier_rubick_6_1": "Fade Lightning Cooldown Reduction: <b><font color='#eabe10'>1</font></b>/2/3 sec.",
-      "modifier_rubick_6_2": "Fade Lightning Cooldown Reduction: 1/<b><font color='#eabe10'>2</font></b>/3 sec.",
-      "modifier_rubick_6_3": "Fade Lightning Cooldown Reduction: 1/2/<b><font color='#eabe10'>3</font></b> sec.",
+      "modifier_rubick_6_0": "Fade Lightning Strike Interval Reduction: 1/2/3 sec.",
+      "modifier_rubick_6_1": "Fade Lightning Strike Interval Reduction: <b><font color='#eabe10'>1</font></b>/2/3 sec.",
+      "modifier_rubick_6_2": "Fade Lightning Strike Interval Reduction: 1/<b><font color='#eabe10'>2</font></b>/3 sec.",
+      "modifier_rubick_6_3": "Fade Lightning Strike Interval Reduction: 1/2/<b><font color='#eabe10'>3</font></b> sec.",
       "modifier_rubick_7_0": "<b><font color='#ff0000'>Removes Spell Steal. </font></b> \n\n New Active Ability: Flash Bolt \n\n The hero dashes to the cast point, hitting all enemies around him within 700 radius with a weakened Fade Bolt ability, which does not apply a debuff and does not bounce. \n\n Damage: 120% of Fade Bolt Damage \n Cast Range: 400 \n Cooldown: 9 sec. \n Mana Cost: 50",
       "modifier_rubick_7_1": "<b><font color='#ff0000'>Removes Spell Steal. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Flash Bolt</font></b> \n\n The hero dashes to the cast point, hitting all enemies around him within 700 radius with a weakened Fade Bolt ability, which does not apply a debuff and does not bounce. \n\n Damage: <b><font color='#eabe10'>120%</font></b> of Fade Bolt Damage \n Cast Range: 400 \n Cooldown: 9 sec. \n Mana Cost: 50",
       "modifier_rubick_8_0": "Attack Speed: 10/20/30 \n\n Mana Cost and Loss Reduction: 5%/10%/15%",
@@ -56125,7 +56752,7 @@
           "duration": "2.4 4.2 6",
           "night_duration": "10",
           "abilitymanacost": "150 200 250",
-          "abilitycooldown": "110"
+          "abilitycooldown": "105"
         },
         "valuesInfo": {
           "descriptions": {
@@ -57759,8 +58386,8 @@
       }
     },
     "talents_description": {
-      "modifier_io_1_0": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. Drains enemy health per second: 30 + 2 per Hero Level \n\n Health Regeneration and all received Healing drain health from the tethered enemy: 40%",
-      "modifier_io_1_1": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. Drains enemy health per second: <b><font color='#eabe10'>30</font></b> + <b><font color='#eabe10'>2</font></b> per Hero Level \n\n Health Regeneration and all received Healing drain health from the tethered enemy: <b><font color='#eabe10'>40%</font></b>",
+      "modifier_io_1_0": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. The slow on the tethered enemy equals the hero's bonus speed. Drains enemy health per second: 30 + 2 per Hero Level \n\n Health Regeneration and all received Healing drain the tethered enemy's health: 40%",
+      "modifier_io_1_1": "<b><font color='#ff0000'> Removes Spirits. </font></b> \n\n <b><font color='#ff0000'> Tether cannot be used on allies. </font></b> \n\n Tether can be used on enemies. Does not increase or copy their movement speed. The slow on the tethered enemy equals the hero's bonus speed. Drains enemy health per second: <b><font color='#eabe10'>30</font></b> + <b><font color='#eabe10'>2</font></b> per Hero Level \n\n Health Regeneration and all received Healing drain the tethered enemy's health: <b><font color='#eabe10'>40%</font></b>",
       "modifier_io_2_0": "Tether connection works on all affected enemies. \n\n Health Regeneration: 8/16",
       "modifier_io_2_1": "Tether connection works <b><font color='#eabe10'>on all</font></b> affected enemies. \n\n Health Regeneration: <b><font color='#eabe10'>8</font></b>/16",
       "modifier_io_2_2": "Tether connection works <b><font color='#eabe10'>on all</font></b> affected enemies. \n\n Health Regeneration: 8/<b><font color='#eabe10'>16</font></b>",
@@ -61563,8 +62190,8 @@
       "modifier_sniper_16_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + <b><font color='#eabe10'>50%</font></b>/100%/150% of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
       "modifier_sniper_16_2": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + 50%/<b><font color='#eabe10'>100%</font></b>/150% of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
       "modifier_sniper_16_3": "<b><font color='#ff0000'> Grenade. \n\n Removes Take Aim. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Concussive Grenade</font></b> \n\n The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. \n\n Damage: <b><font color='#eabe10'>50</font></b> + 50%/100%/<b><font color='#eabe10'>150%</font></b> of Attack Damage \n Radius: 375 \n Movement Slow: <b><font color='#eabe10'>50%</font></b> \n Duration: 2 sec. \n Knockback Distance: 475 \n Mana Cost: 50 \n Cooldown: 20 sec.",
-      "modifier_sniper_17_0": "<b><font color='#ff0000'> Grenade. \n\n Removes Headshot. </font></b> \n\n New Active Ability: Flashbang Grenade \n\n The hero throws a grenade into the target area, reducing enemy vision and stunning them. \n\n Radius: 375 \n Vision Reduction: 75% \n Stun Duration: 1.5 sec. \n Mana Cost: 50 \n Cooldown: 20 sec. \n\n\n If you learn 4 grenades: \n\n Using a grenade reduces the cooldown of other grenades by 2 sec.",
-      "modifier_sniper_17_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Headshot. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Flashbang Grenade</font></b> \n\n The hero throws a grenade into the target area, reducing enemy vision and stunning them. \n\n Radius: 375 \n Vision Reduction: <b><font color='#eabe10'>75%</font></b> \n Stun Duration: <b><font color='#eabe10'>1.5</font></b> sec. \n Mana Cost: 50 \n Cooldown: 20 sec. \n\n\n If you learn 4 grenades: \n\n Using a grenade reduces the cooldown of other grenades by <b><font color='#eabe10'>2</font></b> sec.",
+      "modifier_sniper_17_0": "<b><font color='#ff0000'> Grenade. \n\n Removes Headshot. </font></b> \n\n New Active Ability: Flashbang Grenade \n\n The hero throws a grenade into the target area, reducing enemy vision and stunning them. \n\n Radius: 375 \n Vision Reduction: 75% \n Stun Duration: 1.5s \n Mana Cost: 50 \n Cooldown: 20s \n\n\n If you learn 4 grenades: \n\n Using Grenades reduces the Cooldown of other Grenades by 2s. \n\n Spell Damage: 30%",
+      "modifier_sniper_17_1": "<b><font color='#ff0000'> Grenade. \n\n Removes Headshot. </font></b> \n\n New Active Ability: <b><font color='#eabe10'>Flashbang Grenade</font></b> \n\n The hero throws a grenade into the target area, reducing enemy vision and stunning them. \n\n Radius: 375 \n Vision Reduction: <b><font color='#eabe10'>75%</font></b> \n Stun Duration: <b><font color='#eabe10'>1.5</font></b>s \n Mana Cost: 50 \n Cooldown: 20s \n\n\n If you learn 4 grenades: \n\n Using Grenades reduces the Cooldown of other Grenades by <b><font color='#eabe10'>2</font></b>s. \n\n Spell Damage: <b><font color='#eabe10'>30%</font></b>",
       "modifier_sniper_18_0": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 1/2/3 sec. </font></b> \n\n Shrapnel Damage Increase: 20/40/60 \n\n Shrapnel Activation Delay Reduction: 0.3/0.6/0.9 sec.",
       "modifier_sniper_18_1": "<b><font color='#ff0000'> Shrapnel Duration Reduction: <b><font color='#eabe10'>1</font></b>/2/3 sec. </font></b> \n\n Shrapnel Damage Increase: <b><font color='#eabe10'>20</font></b>/40/60 \n\n Shrapnel Activation Delay Reduction: <b><font color='#eabe10'>0.3</font></b>/0.6/0.9 sec.",
       "modifier_sniper_18_2": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 1/<b><font color='#eabe10'>2</font></b>/3 sec. </font></b> \n\n Shrapnel Damage Increase: 20/<b><font color='#eabe10'>40</font></b>/60 \n\n Shrapnel Activation Delay Reduction: 0.3/<b><font color='#eabe10'>0.6</font></b>/0.9 sec.",
@@ -61730,6 +62357,1900 @@
       "attackdamagemax": "44",
       "armorphysical": "4.2",
       "baseattackspeed": "125",
+      "attackrate": "1.7"
+    }
+  },
+  "monkey_king": {
+    "talents_information": {
+      "1": {
+        "1": [
+          {
+            "id": "modifier_woda_talent_hp1",
+            "talentInfo": "#woda_talent_hp1",
+            "level": "3",
+            "imagePath": "hp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenhp1",
+            "talentInfo": "#woda_talent_regenhp1",
+            "level": "2",
+            "imagePath": "regenhp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_attack1",
+            "talentInfo": "#woda_talent_attack1",
+            "level": "3",
+            "imagePath": "attack1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_monkey_king_1",
+            "talentInfo": "#modifier_monkey_king_1",
+            "level": "1",
+            "imagePath": "monkey_king/1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_str3",
+            "talentInfo": "#woda_talent_str3",
+            "level": "2",
+            "imagePath": "str3",
+            "relatedTalent": {}
+          }
+        ],
+        "2": [
+          {
+            "id": "empty_2"
+          },
+          {
+            "id": "empty_3"
+          },
+          {
+            "id": "modifier_monkey_king_2",
+            "talentInfo": "#modifier_monkey_king_2",
+            "level": "2",
+            "imagePath": "monkey_king/2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_cloak",
+            "talentInfo": "#woda_talent_cloak",
+            "level": "2",
+            "imagePath": "cloak",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_str6",
+            "talentInfo": "#woda_talent_str6",
+            "level": "1",
+            "imagePath": "str6",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_str3",
+              "requiredTalentLevel": "2"
+            }
+          }
+        ],
+        "3": [
+          {
+            "id": "empty_6"
+          },
+          {
+            "id": "modifier_woda_talent_quickhp",
+            "talentInfo": "#woda_talent_quickhp",
+            "level": "2",
+            "imagePath": "quickhp",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_monkey_king_3",
+            "talentInfo": "#modifier_monkey_king_3",
+            "level": "3",
+            "imagePath": "monkey_king/3",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_monkey_king_2",
+              "requiredTalentLevel": "2"
+            }
+          },
+          {
+            "id": "empty_7"
+          },
+          {
+            "id": "modifier_woda_talent_sasha",
+            "talentInfo": "#woda_talent_sasha",
+            "level": "1",
+            "imagePath": "sasha",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_str6",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "4": [
+          {
+            "id": "modifier_woda_talent_hp2",
+            "talentInfo": "#woda_talent_hp2",
+            "level": "3",
+            "imagePath": "hp2",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_hp1",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "modifier_monkey_king_4",
+            "talentInfo": "#modifier_monkey_king_4",
+            "level": "1",
+            "imagePath": "monkey_king/4",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_10"
+          },
+          {
+            "id": "modifier_woda_talent_octar",
+            "talentInfo": "#woda_talent_octar",
+            "level": "2",
+            "imagePath": "octar",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_str4",
+            "talentInfo": "#woda_talent_str4",
+            "level": "1",
+            "imagePath": "str4",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_sasha",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "5": [
+          {
+            "id": "modifier_woda_talent_armor2",
+            "talentInfo": "#woda_talent_armor2",
+            "level": "3",
+            "imagePath": "armor2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_10"
+          },
+          {
+            "id": "modifier_monkey_king_5",
+            "talentInfo": "#modifier_monkey_king_5",
+            "level": "3",
+            "imagePath": "monkey_king/5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_monkey_king_3",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "empty_12"
+          },
+          {
+            "id": "modifier_woda_talent_str5",
+            "talentInfo": "#woda_talent_str5",
+            "level": "3",
+            "imagePath": "str5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_str4",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "6": [
+          {
+            "id": "modifier_woda_talent_sliver",
+            "talentInfo": "#woda_talent_sliver",
+            "level": "2",
+            "imagePath": "sliver",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenhp2",
+            "talentInfo": "#woda_talent_regenhp2",
+            "level": "3",
+            "imagePath": "regenhp2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_15"
+          },
+          {
+            "id": "modifier_monkey_king_6",
+            "talentInfo": "#modifier_monkey_king_6",
+            "level": "3",
+            "imagePath": "monkey_king/6",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_16"
+          }
+        ],
+        "7": [
+          {
+            "id": "empty_17"
+          },
+          {
+            "id": "empty_18"
+          },
+          {
+            "id": "modifier_monkey_king_7",
+            "talentInfo": "#modifier_monkey_king_7",
+            "level": "1",
+            "imagePath": "monkey_king/7",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_20"
+          },
+          {
+            "id": "empty_21"
+          }
+        ]
+      },
+      "2": {
+        "1": [
+          {
+            "id": "modifier_woda_talent_armor1",
+            "talentInfo": "#woda_talent_armor1",
+            "level": "3",
+            "imagePath": "armor1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_speed1",
+            "talentInfo": "#woda_talent_speed1",
+            "level": "2",
+            "imagePath": "speed1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_attackspeed1",
+            "talentInfo": "#woda_talent_attackspeed1",
+            "level": "3",
+            "imagePath": "attackspeed1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_monkey_king_8",
+            "talentInfo": "#modifier_monkey_king_8",
+            "level": "2",
+            "imagePath": "monkey_king/8",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_agi3",
+            "talentInfo": "#woda_talent_agi3",
+            "level": "2",
+            "imagePath": "agi3",
+            "relatedTalent": {}
+          }
+        ],
+        "2": [
+          {
+            "id": "empty_2"
+          },
+          {
+            "id": "empty_3"
+          },
+          {
+            "id": "modifier_monkey_king_9",
+            "talentInfo": "#modifier_monkey_king_9",
+            "level": "2",
+            "imagePath": "monkey_king/9",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_miss1",
+            "talentInfo": "#woda_talent_miss1",
+            "level": "2",
+            "imagePath": "miss1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_agi6",
+            "talentInfo": "#woda_talent_agi6",
+            "level": "1",
+            "imagePath": "agi6",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_agi3",
+              "requiredTalentLevel": "2"
+            }
+          }
+        ],
+        "3": [
+          {
+            "id": "empty_6"
+          },
+          {
+            "id": "empty_7"
+          },
+          {
+            "id": "modifier_monkey_king_10",
+            "talentInfo": "#modifier_monkey_king_10",
+            "level": "3",
+            "imagePath": "monkey_king/10",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_mask1",
+            "talentInfo": "#woda_talent_mask1",
+            "level": "2",
+            "imagePath": "mask1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_yasha",
+            "talentInfo": "#woda_talent_yasha",
+            "level": "1",
+            "imagePath": "yasha",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_agi6",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "4": [
+          {
+            "id": "modifier_monkey_king_11",
+            "talentInfo": "#modifier_monkey_king_11",
+            "level": "1",
+            "imagePath": "monkey_king/11",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_speed2",
+            "talentInfo": "#woda_talent_speed2",
+            "level": "3",
+            "imagePath": "speed2",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_speed1",
+              "requiredTalentLevel": "2"
+            }
+          },
+          {
+            "id": "modifier_woda_talent_grovebow",
+            "talentInfo": "#woda_talent_grovebow",
+            "level": "2",
+            "imagePath": "grovebow",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_8"
+          },
+          {
+            "id": "modifier_woda_talent_agi4",
+            "talentInfo": "#woda_talent_agi4",
+            "level": "1",
+            "imagePath": "agi4",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_yasha",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "5": [
+          {
+            "id": "modifier_woda_talent_attack2",
+            "talentInfo": "#woda_talent_attack2",
+            "level": "3",
+            "imagePath": "attack2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_11"
+          },
+          {
+            "id": "modifier_monkey_king_12",
+            "talentInfo": "#modifier_monkey_king_12",
+            "level": "2",
+            "imagePath": "monkey_king/12",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_12"
+          },
+          {
+            "id": "modifier_woda_talent_agi5",
+            "talentInfo": "#woda_talent_agi5",
+            "level": "3",
+            "imagePath": "agi5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_agi4",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "6": [
+          {
+            "id": "modifier_woda_talent_miss2",
+            "talentInfo": "#woda_talent_miss2",
+            "level": "2",
+            "imagePath": "miss2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_monkey_king_13",
+            "talentInfo": "#modifier_monkey_king_13",
+            "level": "3",
+            "imagePath": "monkey_king/13",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_attackspeed2",
+            "talentInfo": "#woda_talent_attackspeed2",
+            "level": "3",
+            "imagePath": "attackspeed2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_13"
+          },
+          {
+            "id": "empty_16"
+          }
+        ],
+        "7": [
+          {
+            "id": "empty_17"
+          },
+          {
+            "id": "empty_18"
+          },
+          {
+            "id": "modifier_monkey_king_14",
+            "talentInfo": "#modifier_monkey_king_14",
+            "level": "1",
+            "imagePath": "monkey_king/14",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_20"
+          },
+          {
+            "id": "empty_21"
+          }
+        ]
+      },
+      "3": {
+        "1": [
+          {
+            "id": "modifier_woda_talent_mp1",
+            "talentInfo": "#woda_talent_mp1",
+            "level": "3",
+            "imagePath": "mp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenmp1",
+            "talentInfo": "#woda_talent_regenmp1",
+            "level": "2",
+            "imagePath": "regenmp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_spell",
+            "talentInfo": "#woda_talent_spell",
+            "level": "3",
+            "imagePath": "spell",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_monkey_king_15",
+            "talentInfo": "#modifier_monkey_king_15",
+            "level": "3",
+            "imagePath": "monkey_king/15",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_int3",
+            "talentInfo": "#woda_talent_int3",
+            "level": "2",
+            "imagePath": "int3",
+            "relatedTalent": {}
+          }
+        ],
+        "2": [
+          {
+            "id": "empty_2"
+          },
+          {
+            "id": "modifier_woda_talent_fairy",
+            "talentInfo": "#woda_talent_fairy",
+            "level": "2",
+            "imagePath": "fairy",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_4"
+          },
+          {
+            "id": "modifier_monkey_king_16",
+            "talentInfo": "#modifier_monkey_king_16",
+            "level": "2",
+            "imagePath": "monkey_king/16",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_int6",
+            "talentInfo": "#woda_talent_int6",
+            "level": "1",
+            "imagePath": "int6",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_int3",
+              "requiredTalentLevel": "2"
+            }
+          }
+        ],
+        "3": [
+          {
+            "id": "empty_6"
+          },
+          {
+            "id": "modifier_monkey_king_19",
+            "talentInfo": "#modifier_monkey_king_19",
+            "level": "2",
+            "imagePath": "monkey_king/19",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_7"
+          },
+          {
+            "id": "modifier_woda_talent_mask2",
+            "talentInfo": "#woda_talent_mask2",
+            "level": "2",
+            "imagePath": "mask2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_kaya",
+            "talentInfo": "#woda_talent_kaya",
+            "level": "1",
+            "imagePath": "kaya",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_int6",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "4": [
+          {
+            "id": "modifier_woda_talent_mp2",
+            "talentInfo": "#woda_talent_mp2",
+            "level": "3",
+            "imagePath": "mp2",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_mp1",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "modifier_monkey_king_17",
+            "talentInfo": "#modifier_monkey_king_17",
+            "level": "2",
+            "imagePath": "monkey_king/17",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_8"
+          },
+          {
+            "id": "modifier_woda_talent_blood",
+            "talentInfo": "#woda_talent_blood",
+            "level": "2",
+            "imagePath": "blood",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_int4",
+            "talentInfo": "#woda_talent_int4",
+            "level": "1",
+            "imagePath": "int4",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_kaya",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "5": [
+          {
+            "id": "modifier_woda_talent_spellprism",
+            "talentInfo": "#woda_talent_spellprism",
+            "level": "3",
+            "imagePath": "spellprism",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_9"
+          },
+          {
+            "id": "empty_10"
+          },
+          {
+            "id": "modifier_monkey_king_18",
+            "talentInfo": "#modifier_monkey_king_18",
+            "level": "3",
+            "imagePath": "monkey_king/18",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_int5",
+            "talentInfo": "#woda_talent_int5",
+            "level": "3",
+            "imagePath": "int5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_int4",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "6": [
+          {
+            "id": "modifier_woda_talent_timeless",
+            "talentInfo": "#woda_talent_timeless",
+            "level": "2",
+            "imagePath": "timeless",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenmp2",
+            "talentInfo": "#woda_talent_regenmp2",
+            "level": "3",
+            "imagePath": "regenmp2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_monkey_king_20",
+            "talentInfo": "#modifier_monkey_king_20",
+            "level": "1",
+            "imagePath": "monkey_king/20",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_15"
+          },
+          {
+            "id": "empty_16"
+          }
+        ],
+        "7": [
+          {
+            "id": "empty_17"
+          },
+          {
+            "id": "empty_18"
+          },
+          {
+            "id": "modifier_monkey_king_21",
+            "talentInfo": "#modifier_monkey_king_21",
+            "level": "1",
+            "imagePath": "monkey_king/21",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_20"
+          },
+          {
+            "id": "empty_21"
+          }
+        ]
+      }
+    },
+    "talents_description": {
+      "modifier_monkey_king_1_0": "Every 4th attack on an enemy creep grants 1 empowered Jingu Mastery attack. \n\n Strength: 5",
+      "modifier_monkey_king_1_1": "Every <b><font color='#eabe10'>4</font></b>th attack on an enemy creep grants <b><font color='#eabe10'>1</font></b> empowered Jingu Mastery attack. \n\n Strength: <b><font color='#eabe10'>5</font></b>",
+      "modifier_monkey_king_2_0": "<b><font color='#ff0000'> Removes Tree Dance, Primal Spring. </font></b> \n\n Increased Lifesteal from Jingu Mastery: 5%/10% \n\n Increased Damage from Jingu Mastery: 20/40 \n\n Increased Spell Lifesteal from Jingu Magic: 5%/10% \n\n Increased Spell Damage from Jingu Magic: 5%/10%",
+      "modifier_monkey_king_2_1": "<b><font color='#ff0000'> Removes Tree Dance, Primal Spring. </font></b> \n\n Increased Lifesteal from Jingu Mastery: <b><font color='#eabe10'>5%</font></b>/10% \n\n Increased Damage from Jingu Mastery: <b><font color='#eabe10'>20</font></b>/40 \n\n Increased Spell Lifesteal from Jingu Magic: <b><font color='#eabe10'>5%</font></b>/10% \n\n Increased Spell Damage from Jingu Magic: <b><font color='#eabe10'>5%</font></b>/10%",
+      "modifier_monkey_king_2_2": "<b><font color='#ff0000'> Removes Tree Dance, Primal Spring. </font></b> \n\n Increased Lifesteal from Jingu Mastery: 5%/<b><font color='#eabe10'>10%</font></b> \n\n Increased Damage from Jingu Mastery: 20/<b><font color='#eabe10'>40</font></b> \n\n Increased Spell Lifesteal from Jingu Magic: 5%/<b><font color='#eabe10'>10%</font></b> \n\n Increased Spell Damage from Jingu Magic: 5%/<b><font color='#eabe10'>10%</font></b>",
+      "modifier_monkey_king_3_0": "Creates a Wukong's Command soldier nearby every few seconds. Each soldier has its own Jingu Mastery charge counter. \n\n Soldier Interval: 6 sec. \n Soldier Duration: 1/2/3 + 2 sec. for every 50 Strength",
+      "modifier_monkey_king_3_1": "Creates a Wukong's Command soldier nearby every few seconds. Each soldier has its own Jingu Mastery charge counter. \n\n Soldier Interval: <b><font color='#eabe10'>6</font></b> sec. \n Soldier Duration: <b><font color='#eabe10'>1</font></b>/2/3 + <b><font color='#eabe10'>2</font></b> sec. for every <b><font color='#eabe10'>50 Strength</font></b>",
+      "modifier_monkey_king_3_2": "Creates a Wukong's Command soldier nearby every few seconds. Each soldier has its own Jingu Mastery charge counter. \n\n Soldier Interval: <b><font color='#eabe10'>6</font></b> sec. \n Soldier Duration: 1/<b><font color='#eabe10'>2</font></b>/3 + <b><font color='#eabe10'>2</font></b> sec. for every <b><font color='#eabe10'>50 Strength</font></b>",
+      "modifier_monkey_king_3_3": "Creates a Wukong's Command soldier nearby every few seconds. Each soldier has its own Jingu Mastery charge counter. \n\n Soldier Interval: <b><font color='#eabe10'>6</font></b> sec. \n Soldier Duration: 1/2/<b><font color='#eabe10'>3</font></b> + <b><font color='#eabe10'>2</font></b> sec. for every <b><font color='#eabe10'>50 Strength</font></b>",
+      "modifier_monkey_king_4_0": "Bonus Attack Range: 75",
+      "modifier_monkey_king_4_1": "Bonus Attack Range: <b><font color='#eabe10'>75</font></b>",
+      "modifier_monkey_king_5_0": "Reduces Wukong's Command soldiers' attack interval: 0.1/0.2/0.3 sec.",
+      "modifier_monkey_king_5_1": "Reduces Wukong's Command soldiers' attack interval: <b><font color='#eabe10'>0.1</font></b>/0.2/0.3 sec.",
+      "modifier_monkey_king_5_2": "Reduces Wukong's Command soldiers' attack interval: 0.1/<b><font color='#eabe10'>0.2</font></b>/0.3 sec.",
+      "modifier_monkey_king_5_3": "Reduces Wukong's Command soldiers' attack interval: 0.1/0.2/<b><font color='#eabe10'>0.3</font></b> sec.",
+      "modifier_monkey_king_6_0": "Reduces Wukong's Command cooldown: 13/26/39 sec.",
+      "modifier_monkey_king_6_1": "Reduces Wukong's Command cooldown: <b><font color='#eabe10'>13</font></b>/26/39 sec.",
+      "modifier_monkey_king_6_2": "Reduces Wukong's Command cooldown: 13/<b><font color='#eabe10'>26</font></b>/39 sec.",
+      "modifier_monkey_king_6_3": "Reduces Wukong's Command cooldown: 13/26/<b><font color='#eabe10'>39</font></b> sec.",
+      "modifier_monkey_king_7_0": "New Active Ability: Changing of the Guard \n\n The hero can swap places with one of the soldiers from Wukong's Command and turn into an indistinguishable copy of it for 1.8 sec. In the soldier form, the hero is invulnerable but cannot attack or cast spells. \n\n Cast Range: 1200 \n Cooldown: 18 sec.",
+      "modifier_monkey_king_7_1": "New Active Ability: <b><font color='#eabe10'>Changing of the Guard</font></b> \n\n The hero can swap places with one of the soldiers from Wukong's Command and turn into an indistinguishable copy of it for <b><font color='#eabe10'>1.8</font></b> sec. In the soldier form, the hero is invulnerable but cannot attack or cast spells. \n\n Cast Range: 1200 \n Cooldown: 18 sec.",
+      "modifier_monkey_king_8_0": "Health Regeneration: 3/6 \n\n Mana Regeneration: 3/6",
+      "modifier_monkey_king_8_1": "Health Regeneration: <b><font color='#eabe10'>3</font></b>/6 \n\n Mana Regeneration: <b><font color='#eabe10'>3</font></b>/6",
+      "modifier_monkey_king_8_2": "Health Regeneration: 3/<b><font color='#eabe10'>6</font></b> \n\n Mana Regeneration: 3/<b><font color='#eabe10'>6</font></b>",
+      "modifier_monkey_king_9_0": "Increases Boundless Strike Critical Damage: 15%/30%",
+      "modifier_monkey_king_9_1": "Increases Boundless Strike Critical Damage: <b><font color='#eabe10'>15%</font></b>/30%",
+      "modifier_monkey_king_9_2": "Increases Boundless Strike Critical Damage: 15%/<b><font color='#eabe10'>30%</font></b>",
+      "modifier_monkey_king_10_0": "Each attack reduces Boundless Strike cooldown: 0.1/0.2/0.3 sec.",
+      "modifier_monkey_king_10_1": "Each attack reduces Boundless Strike cooldown: <b><font color='#eabe10'>0.1</font></b>/0.2/0.3 sec.",
+      "modifier_monkey_king_10_2": "Each attack reduces Boundless Strike cooldown: 0.1/<b><font color='#eabe10'>0.2</font></b>/0.3 sec.",
+      "modifier_monkey_king_10_3": "Each attack reduces Boundless Strike cooldown: 0.1/0.2/<b><font color='#eabe10'>0.3</font></b> sec.",
+      "modifier_monkey_king_11_0": "Boundless Strike becomes a toggleable ability. \n\n When this ability is active, the hero jumps to the end of his staff as soon as it hits the ground.",
+      "modifier_monkey_king_11_1": "Boundless Strike becomes a toggleable ability. \n\n When this ability is active, the hero <b><font color='#eabe10'>jumps</font></b> to the end of his staff as soon as it hits the ground.",
+      "modifier_monkey_king_12_0": "Reduces Boundless Strike Cast Point: 25%/50% \n\n Reduced Mana Cost for Boundless Strike: 25%/50%",
+      "modifier_monkey_king_12_1": "Reduces Boundless Strike Cast Point: <b><font color='#eabe10'>25%</font></b>/50% \n\n Reduced Mana Cost for Boundless Strike: <b><font color='#eabe10'>25%</font></b>/50%",
+      "modifier_monkey_king_12_2": "Reduces Boundless Strike Cast Point: 25%/<b><font color='#eabe10'>50%</font></b> \n\n Reduced Mana Cost for Boundless Strike: 25%/<b><font color='#eabe10'>50%</font></b>",
+      "modifier_monkey_king_13_0": "<b><font color='#ff0000'> Increased Mischief Cooldown: 8 sec. </font></b> \n\n Mischief always turns into a Rune. When the disguise ends, the hero gains a short-term bonus of the corresponding Rune: Amplify Damage, Arcane, Haste, Illusions, Regeneration, Shield. \n\n Rune Effect Duration: 1/1.5/2 sec.",
+      "modifier_monkey_king_13_1": "<b><font color='#ff0000'> Increased Mischief Cooldown: <b><font color='#eabe10'>8</font></b> sec. </font></b> \n\n Mischief always turns into a <b><font color='#eabe10'>Rune</font></b>. When the disguise ends, the hero gains a short-term bonus of the corresponding Rune: Amplify Damage, Arcane, Haste, Illusions, Regeneration, Shield. \n\n Rune Effect Duration: <b><font color='#eabe10'>1</font></b>/1.5/2 sec.",
+      "modifier_monkey_king_13_2": "<b><font color='#ff0000'> Increased Mischief Cooldown: <b><font color='#eabe10'>8</font></b> sec. </font></b> \n\n Mischief always turns into a <b><font color='#eabe10'>Rune</font></b>. When the disguise ends, the hero gains a short-term bonus of the corresponding Rune: Amplify Damage, Arcane, Haste, Illusions, Regeneration, Shield. \n\n Rune Effect Duration: 1/<b><font color='#eabe10'>1.5</font></b>/2 sec.",
+      "modifier_monkey_king_13_3": "<b><font color='#ff0000'> Increased Mischief Cooldown: <b><font color='#eabe10'>8</font></b> sec. </font></b> \n\n Mischief always turns into a <b><font color='#eabe10'>Rune</font></b>. When the disguise ends, the hero gains a short-term bonus of the corresponding Rune: Amplify Damage, Arcane, Haste, Illusions, Regeneration, Shield. \n\n Rune Effect Duration: 1/1.5/<b><font color='#eabe10'>2</font></b> sec.",
+      "modifier_monkey_king_14_0": "Each attack has an 80% chance to pierce evasion and deal 70 bonus magic damage.",
+      "modifier_monkey_king_14_1": "Each attack has a <b><font color='#eabe10'>80%</font></b> chance to pierce evasion and deal <b><font color='#eabe10'>70</font></b> bonus magic damage.",
+      "modifier_monkey_king_15_0": "Increases Primal Spring Damage: 80%/120%/160% of Intellect",
+      "modifier_monkey_king_15_1": "Increases Primal Spring Damage: <b><font color='#eabe10'>80%</font></b>/120%/160% of Intellect",
+      "modifier_monkey_king_15_2": "Increases Primal Spring Damage: 80%/<b><font color='#eabe10'>120%</font></b>/160% of Intellect",
+      "modifier_monkey_king_15_3": "Increases Primal Spring Damage: 80%/120%/<b><font color='#eabe10'>160%</font></b> of Intellect",
+      "modifier_monkey_king_16_0": "Primal Spring Cooldown Reduction: 1/2 sec. \n\n Intellect: 5/10",
+      "modifier_monkey_king_16_1": "Primal Spring Cooldown Reduction: 1/2 sec. \n\n Intellect: <b><font color='#eabe10'>5</font></b>/10",
+      "modifier_monkey_king_16_2": "Primal Spring Cooldown Reduction: 1/2 sec. \n\n Intellect: 5/<b><font color='#eabe10'>10</font></b>",
+      "modifier_monkey_king_17_0": "Primal Spring can be used from Mischief. \n\n Using Mischief grants a Barrier that absorbs Any Damage: 200/400 \n\n Effect Duration: 24 sec.",
+      "modifier_monkey_king_17_1": "Primal Spring can be used from <b><font color='#eabe10'>Mischief</font></b>. \n\n Using Mischief grants a Barrier that absorbs Any Damage: <b><font color='#eabe10'>200</font></b>/400 \n\n Effect Duration: 24 sec.",
+      "modifier_monkey_king_17_2": "Primal Spring can be used from <b><font color='#eabe10'>Mischief</font></b>. \n\n Using Mischief grants a Barrier that absorbs Any Damage: 200/<b><font color='#eabe10'>400</font></b> \n\n Effect Duration: 24 sec.",
+      "modifier_monkey_king_18_0": "<b><font color='#ff0000'> Removes Jingu Mastery. </font></b> \n\n New Passive Ability: Jingu Magic \n\n Using items or abilities awakens the power of the Jingu Bang. Every 4th item or ability activation grants bonus spell damage and spell lifesteal. \n\n Buff Duration: 4 sec. \n Spell Damage: 5%/10%/15% \n Spell Lifesteal: 10%/15%/20%",
+      "modifier_monkey_king_18_1": "<b><font color='#ff0000'> Removes Jingu Mastery. </font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Jingu Magic</font></b> \n\n Using items or abilities awakens the power of the Jingu Bang. Every 4th item or ability activation grants bonus spell damage and spell lifesteal. \n\n Buff Duration: <b><font color='#eabe10'>4</font></b> sec. \n Spell Damage: <b><font color='#eabe10'>5%</font></b>/10%/15% \n Spell Lifesteal: <b><font color='#eabe10'>10%</font></b>/15%/20%",
+      "modifier_monkey_king_18_2": "<b><font color='#ff0000'> Removes Jingu Mastery. </font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Jingu Magic</font></b> \n\n Using items or abilities awakens the power of the Jingu Bang. Every 4th item or ability activation grants bonus spell damage and spell lifesteal. \n\n Buff Duration: <b><font color='#eabe10'>4</font></b> sec. \n Spell Damage: 5%/<b><font color='#eabe10'>10%</font></b>/15% \n Spell Lifesteal: 10%/<b><font color='#eabe10'>15%</font></b>/20%",
+      "modifier_monkey_king_18_3": "<b><font color='#ff0000'> Removes Jingu Mastery. </font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Jingu Magic</font></b> \n\n Using items or abilities awakens the power of the Jingu Bang. Every 4th item or ability activation grants bonus spell damage and spell lifesteal. \n\n Buff Duration: <b><font color='#eabe10'>4</font></b> sec. \n Spell Damage: 5%/10%/<b><font color='#eabe10'>15%</font></b> \n Spell Lifesteal: 10%/15%/<b><font color='#eabe10'>20%</font></b>",
+      "modifier_monkey_king_19_0": "Primal Spring immediately works at full strength. \n\n Stun Duration Reduction from Tree Dance when falling from a Tree: 1.5/3 sec. \n\n Tree Dance Cooldown Reduction: 0.2/0.4 sec.",
+      "modifier_monkey_king_19_1": "Primal Spring immediately works at <b><font color='#eabe10'>full</font></b> strength. \n\n Stun Duration Reduction from Tree Dance when falling from a Tree: <b><font color='#eabe10'>1.5</font></b>/3 sec. \n\n Tree Dance Cooldown Reduction: <b><font color='#eabe10'>0.2</font></b>/0.4 sec.",
+      "modifier_monkey_king_19_2": "Primal Spring immediately works at <b><font color='#eabe10'>full</font></b> strength. \n\n Stun Duration Reduction from Tree Dance when falling from a Tree: 1.5/<b><font color='#eabe10'>3</font></b> sec. \n\n Tree Dance Cooldown Reduction: 0.2/<b><font color='#eabe10'>0.4</font></b> sec.",
+      "modifier_monkey_king_20_0": "Applies the effect of Primal Spring, charged at 100%, to enemies hit by Boundless Strike or near its endpoint.",
+      "modifier_monkey_king_20_1": "Applies the effect of <b><font color='#eabe10'>Primal Spring</font></b>, charged at <b><font color='#eabe10'>100%</font></b>, to enemies hit by Boundless Strike or near its endpoint.",
+      "modifier_monkey_king_21_0": "Mischief always transforms into a Courier. \n\n Using items or abilities does not end Mischief. \n\n Mischief applies a Normal Dispel. \n\n Increased Mischief Damage Protection Duration: 0.4 sec.",
+      "modifier_monkey_king_21_1": "Mischief always transforms into a <b><font color='#eabe10'>Courier</font></b>. \n\n Using items or abilities <b><font color='#eabe10'>does not end</font></b> Mischief. \n\n Mischief applies a <b><font color='#eabe10'>Normal Dispel</font></b>. \n\n Increased Mischief Damage Protection Duration: <b><font color='#eabe10'>0.4</font></b> sec."
+    },
+    "abilities": {
+      "monkey_king_boundless_strike": {
+        "name": "Boundless Strike",
+        "description": "The hero extends his staff and smashes the ground, stunning all enemies hit. This strike cannot miss, and it deals both base damage and critical attack damage.",
+        "lore": "The legendary staff Jingu Bang grows at its master’s will, ensuring enemies cannot escape its grasp.",
+        "strike_cast_range": "CAST RANGE:",
+        "stun_duration": "STUN DURATION:",
+        "strike_flat_damage": "BASE DAMAGE:",
+        "strike_crit_mult": "%CRITICAL DAMAGE:",
+        "note0": "Does not pierce spell immunity.",
+        "values": {
+          "stun_duration": "0.7 0.9 1.1 1.3",
+          "strike_crit_mult": "120 140 160 180",
+          "strike_flat_damage": "20 40 60 80",
+          "abilitycooldown": "24 21 18 15",
+          "strike_radius": "150",
+          "strike_cast_range": "1100",
+          "soldier_spawn_duration": "0",
+          "acceleration_z": "5000",
+          "min_height_above_lowest": "100",
+          "min_height_above_highest": "150",
+          "max_horizontal_acceleration": "30000",
+          "duration": "0.2",
+          "spring_channel_pct": "40",
+          "abilitycastrange": "1100",
+          "abilitymanacost": "85 90 95 100"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "stun_duration": "STUN DURATION:",
+            "strike_crit_mult": "CRITICAL DAMAGE:",
+            "strike_flat_damage": "BASE DAMAGE:",
+            "strike_cast_range": "CAST RANGE:"
+          },
+          "values": {
+            "stun_duration": "0.7 / 0.9 / 1.1 / 1.3",
+            "strike_crit_mult": "120% / 140% / 160% / 180%",
+            "strike_flat_damage": "20 / 40 / 60 / 80",
+            "strike_cast_range": "1100"
+          }
+        }
+      },
+      "monkey_king_tree_dance": {
+        "name": "Tree Dance",
+        "description": "The hero leaps onto the top of a chosen tree. There he gains the interruptible ability Primal Spring — a directed leaping attack. If the tree is destroyed, the hero will fall and be stunned for 4 sec. If he takes damage on the ground, the ability goes on cooldown.",
+        "lore": "Sun Wukong nimbly leaps through the forest canopy, staying out of reach no matter what.",
+        "note0": "The cooldown of this ability begins upon landing.",
+        "note1": "You can dismount from the tree by issuing a move command.",
+        "perched_jump_distance": "DISTANCE:",
+        "jump_damage_cooldown": "COOLDOWN ON TAKING DAMAGE:",
+        "values": {
+          "leap_speed": "700",
+          "spring_leap_speed": "1300",
+          "give_up_distance": "1850",
+          "ground_jump_distance": "800",
+          "perched_jump_distance": "800",
+          "jump_damage_cooldown": "3",
+          "perched_day_vision": "700",
+          "perched_night_vision": "500",
+          "perched_spot_height": "192",
+          "unperched_stunned_duration": "4",
+          "top_level_height": "500",
+          "impact_damage_tooltip": "140 210 280 350",
+          "impact_movement_slow_tooltip": "20 40 60 80",
+          "range": "800",
+          "abilitycastrange": "800",
+          "abilitycooldown": "2 1.8 1.6 1.4",
+          "abilitymanacost": "0"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "perched_jump_distance": "DISTANCE:",
+            "jump_damage_cooldown": "COOLDOWN ON TAKING DAMAGE:"
+          },
+          "values": {
+            "perched_jump_distance": "800",
+            "jump_damage_cooldown": "3"
+          }
+        }
+      },
+      "monkey_king_primal_spring": {
+        "name": "Primal Spring",
+        "description": "CHANNELING — the hero leaps from the tree, dealing damage to enemies in the targeted area and slowing them. Damage and slow increase with channeling time.",
+        "lore": "Leaping from concealment into the midst of his enemies, Sun Wukong strikes without mercy.",
+        "impact_damage": "DAMAGE:",
+        "impact_movement_slow": "%MOVEMENT SLOW:",
+        "impact_slow_duration": "MAX SLOW DURATION:",
+        "max_distance": "MAX DISTANCE:",
+        "values": {
+          "abilitycooldown": "18 16 14 12",
+          "impact_damage": "110 200 290 380",
+          "impact_movement_slow": "35 50 65 80",
+          "impact_slow_duration": "4",
+          "impact_radius": "375",
+          "abilitycastrange": "800",
+          "abilitychanneltime": "1.75",
+          "abilitymanacost": "100"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "impact_damage": "DAMAGE:",
+            "impact_movement_slow": "MOVEMENT SLOW:",
+            "impact_slow_duration": "MAX SLOW DURATION:"
+          },
+          "values": {
+            "impact_damage": "110 / 200 / 290 / 380",
+            "impact_movement_slow": "35% / 50% / 65% / 80%",
+            "impact_slow_duration": "4"
+          }
+        }
+      },
+      "monkey_king_jingu_mastery": {
+        "name": "Jingu Mastery",
+        "description": "The hero’s strikes awaken the power of Jingu Bang. Every fourth attack on an enemy hero grants %charges% empowered attacks with bonus damage and lifesteal.",
+        "lore": "Sensitive to its master’s spirit, Jingu Bang shines with power when Sun Wukong shows his battle fervor.",
+        "note0": "A hit with Boundless Strike also increments the attack counter.",
+        "note1": "The effect on an enemy is refreshed with each attack.",
+        "note2": "The attack counter on an enemy cannot be dispelled.",
+        "note3": "The effect that grants the owner empowered attacks can be dispelled.",
+        "note4": "Gaining new effects is disabled by Break.",
+        "note5": "Existing effects are not removed by Break.",
+        "required_hits": "HITS TO ACTIVATE:",
+        "counter_duration": "EFFECT DURATION ON ENEMIES:",
+        "bonus_damage": "BONUS DAMAGE:",
+        "lifesteal": "%BONUS LIFESTEAL:",
+        "max_duration": "BUFF DURATION:",
+        "values": {
+          "required_hits": "4",
+          "counter_duration": "5.5 7 8.5 10",
+          "charges": "4",
+          "bonus_damage": "30 50 70 90",
+          "lifesteal": "20 25 30 35",
+          "max_duration": "20",
+          "abilitycooldown": "0"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "required_hits": "HITS TO ACTIVATE:",
+            "counter_duration": "EFFECT DURATION ON ENEMIES:",
+            "bonus_damage": "BONUS DAMAGE:",
+            "lifesteal": "BONUS LIFESTEAL:",
+            "max_duration": "BUFF DURATION:"
+          },
+          "values": {
+            "required_hits": "4",
+            "counter_duration": "5.5 / 7 / 8.5 / 10",
+            "bonus_damage": "30 / 50 / 70 / 90",
+            "lifesteal": "20% / 25% / 30% / 35%",
+            "max_duration": "20"
+          }
+        }
+      },
+      "monkey_king_mischief": {
+        "name": "Mischief",
+        "description": "Changes the hero's appearance to deceive enemies. The disguise depends on the environment and breaks when taking damage, attempting to attack, or using items or abilities. Grants damage immunity for %invul_duration% sec.",
+        "lore": "When you never know where danger will come from.",
+        "movespeed": "%BONUS MOVE SPEED:",
+        "values": {
+          "movespeed": "8",
+          "reveal_radius": "200",
+          "invul_duration": "0.1",
+          "abilitycooldown": "24 20 16 12",
+          "abilitymanacost": "0"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "movespeed": "BONUS MOVE SPEED:"
+          },
+          "values": {
+            "movespeed": "8%"
+          }
+        }
+      },
+      "monkey_king_wukongs_command": {
+        "name": "Wukong's Command",
+        "description": "The hero summons a circular formation of soldiers spreading out from his position. If the hero leaves the ability's area, the soldiers vanish. Their attacks mimic the hero's attack and target only enemy heroes. During the ability, the hero gains bonus armor.",
+        "lore": "Sun Wukong plucks a tuft of fur and blows it at his enemies, turning each hair into a copy of himself.",
+        "note0": "Soldiers do not benefit from Jingu Mastery.",
+        "note1": "Soldier attacks do not trigger Skull Basher or Abyssal Blade effects.",
+        "attack_speed": "SOLDIER ATTACK INTERVAL:",
+        "duration": "DURATION:",
+        "bonus_armor": "BONUS ARMOR:",
+        "values": {
+          "first_radius": "300",
+          "second_radius": "750",
+          "third_radius": {
+            "special_bonus_unique_monkey_king_6": "=1100",
+            "affected_by_aoe_increase": "1"
+          },
+          "num_first_soldiers": "5",
+          "num_second_soldiers": "5",
+          "num_third_soldiers": "7",
+          "move_speed": "700",
+          "bonus_armor": "15 20 25",
+          "attack_speed": "1.1",
+          "duration": "13",
+          "cast_range": "625",
+          "abilitycastrange": "0",
+          "abilitycooldown": "100 90 80",
+          "abilitymanacost": "100"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "bonus_armor": "BONUS ARMOR:",
+            "attack_speed": "SOLDIER ATTACK INTERVAL:",
+            "duration": "DURATION:"
+          },
+          "values": {
+            "bonus_armor": "15 / 20 / 25",
+            "attack_speed": "1.1",
+            "duration": "13"
+          }
+        }
+      }
+    },
+    "characteristics": {
+      "attackrange": "300",
+      "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
+      "attributebasestrength": "20",
+      "attributestrengthgain": "2.0",
+      "attributebaseagility": "25",
+      "attributeagilitygain": "2.5",
+      "attributebaseintelligence": "20",
+      "attributeintelligencegain": "2.0",
+      "movementspeed": "300",
+      "health": "560",
+      "mana": "315",
+      "manaregen": "1.0",
+      "healthregen": "3.0",
+      "attackdamagemin": "54",
+      "attackdamagemax": "58",
+      "armorphysical": "6.2",
+      "baseattackspeed": "125",
+      "attackrate": "1.7"
+    }
+  },
+  "riki": {
+    "talents_information": {
+      "1": {
+        "1": [
+          {
+            "id": "modifier_woda_talent_hp1",
+            "talentInfo": "#woda_talent_hp1",
+            "level": "3",
+            "imagePath": "hp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenhp1",
+            "talentInfo": "#woda_talent_regenhp1",
+            "level": "2",
+            "imagePath": "regenhp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_attack1",
+            "talentInfo": "#woda_talent_attack1",
+            "level": "3",
+            "imagePath": "attack1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_riki_1",
+            "talentInfo": "#modifier_riki_1",
+            "level": "1",
+            "imagePath": "riki/1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_str3",
+            "talentInfo": "#woda_talent_str3",
+            "level": "2",
+            "imagePath": "str3",
+            "relatedTalent": {}
+          }
+        ],
+        "2": [
+          {
+            "id": "empty_2"
+          },
+          {
+            "id": "empty_3"
+          },
+          {
+            "id": "modifier_riki_2",
+            "talentInfo": "#modifier_riki_2",
+            "level": "3",
+            "imagePath": "riki/2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_cloak",
+            "talentInfo": "#woda_talent_cloak",
+            "level": "2",
+            "imagePath": "cloak",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_str6",
+            "talentInfo": "#woda_talent_str6",
+            "level": "1",
+            "imagePath": "str6",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_str3",
+              "requiredTalentLevel": "2"
+            }
+          }
+        ],
+        "3": [
+          {
+            "id": "empty_6"
+          },
+          {
+            "id": "modifier_woda_talent_quickhp",
+            "talentInfo": "#woda_talent_quickhp",
+            "level": "2",
+            "imagePath": "quickhp",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_7"
+          },
+          {
+            "id": "modifier_riki_3",
+            "talentInfo": "#modifier_riki_3",
+            "level": "2",
+            "imagePath": "riki/3",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_sasha",
+            "talentInfo": "#woda_talent_sasha",
+            "level": "1",
+            "imagePath": "sasha",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_str6",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "4": [
+          {
+            "id": "modifier_woda_talent_hp2",
+            "talentInfo": "#woda_talent_hp2",
+            "level": "3",
+            "imagePath": "hp2",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_hp1",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "empty_9"
+          },
+          {
+            "id": "modifier_riki_4",
+            "talentInfo": "#modifier_riki_4",
+            "level": "3",
+            "imagePath": "riki/4",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_octar",
+            "talentInfo": "#woda_talent_octar",
+            "level": "2",
+            "imagePath": "octar",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_str4",
+            "talentInfo": "#woda_talent_str4",
+            "level": "1",
+            "imagePath": "str4",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_sasha",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "5": [
+          {
+            "id": "modifier_woda_talent_armor2",
+            "talentInfo": "#woda_talent_armor2",
+            "level": "3",
+            "imagePath": "armor2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_10"
+          },
+          {
+            "id": "modifier_riki_5",
+            "talentInfo": "#modifier_riki_5",
+            "level": "3",
+            "imagePath": "riki/5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_riki_4",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "empty_12"
+          },
+          {
+            "id": "modifier_woda_talent_str5",
+            "talentInfo": "#woda_talent_str5",
+            "level": "3",
+            "imagePath": "str5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_str4",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "6": [
+          {
+            "id": "modifier_woda_talent_sliver",
+            "talentInfo": "#woda_talent_sliver",
+            "level": "2",
+            "imagePath": "sliver",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenhp2",
+            "talentInfo": "#woda_talent_regenhp2",
+            "level": "3",
+            "imagePath": "regenhp2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_riki_6",
+            "talentInfo": "#modifier_riki_6",
+            "level": "1",
+            "imagePath": "riki/6",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_riki_5",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "empty_15"
+          },
+          {
+            "id": "empty_16"
+          }
+        ],
+        "7": [
+          {
+            "id": "empty_17"
+          },
+          {
+            "id": "empty_18"
+          },
+          {
+            "id": "modifier_riki_7",
+            "talentInfo": "#modifier_riki_7",
+            "level": "1",
+            "imagePath": "riki/7",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_20"
+          },
+          {
+            "id": "empty_21"
+          }
+        ]
+      },
+      "2": {
+        "1": [
+          {
+            "id": "modifier_woda_talent_armor1",
+            "talentInfo": "#woda_talent_armor1",
+            "level": "3",
+            "imagePath": "armor1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_speed1",
+            "talentInfo": "#woda_talent_speed1",
+            "level": "2",
+            "imagePath": "speed1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_attackspeed1",
+            "talentInfo": "#woda_talent_attackspeed1",
+            "level": "3",
+            "imagePath": "attackspeed1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_riki_8",
+            "talentInfo": "#modifier_riki_8",
+            "level": "3",
+            "imagePath": "riki/8",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_agi3",
+            "talentInfo": "#woda_talent_agi3",
+            "level": "2",
+            "imagePath": "agi3",
+            "relatedTalent": {}
+          }
+        ],
+        "2": [
+          {
+            "id": "modifier_riki_10",
+            "talentInfo": "#modifier_riki_10",
+            "level": "2",
+            "imagePath": "riki/10",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_3"
+          },
+          {
+            "id": "empty_4"
+          },
+          {
+            "id": "modifier_woda_talent_miss1",
+            "talentInfo": "#woda_talent_miss1",
+            "level": "2",
+            "imagePath": "miss1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_agi6",
+            "talentInfo": "#woda_talent_agi6",
+            "level": "1",
+            "imagePath": "agi6",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_agi3",
+              "requiredTalentLevel": "2"
+            }
+          }
+        ],
+        "3": [
+          {
+            "id": "empty_6"
+          },
+          {
+            "id": "empty_7"
+          },
+          {
+            "id": "modifier_riki_9",
+            "talentInfo": "#modifier_riki_9",
+            "level": "1",
+            "imagePath": "riki/9",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_mask1",
+            "talentInfo": "#woda_talent_mask1",
+            "level": "2",
+            "imagePath": "mask1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_yasha",
+            "talentInfo": "#woda_talent_yasha",
+            "level": "1",
+            "imagePath": "yasha",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_agi6",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "4": [
+          {
+            "id": "modifier_riki_11",
+            "talentInfo": "#modifier_riki_11",
+            "level": "2",
+            "imagePath": "riki/11",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_speed2",
+            "talentInfo": "#woda_talent_speed2",
+            "level": "3",
+            "imagePath": "speed2",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_speed1",
+              "requiredTalentLevel": "2"
+            }
+          },
+          {
+            "id": "modifier_woda_talent_grovebow",
+            "talentInfo": "#woda_talent_grovebow",
+            "level": "2",
+            "imagePath": "grovebow",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_9"
+          },
+          {
+            "id": "modifier_woda_talent_agi4",
+            "talentInfo": "#woda_talent_agi4",
+            "level": "1",
+            "imagePath": "agi4",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_yasha",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "5": [
+          {
+            "id": "modifier_woda_talent_attack2",
+            "talentInfo": "#woda_talent_attack2",
+            "level": "3",
+            "imagePath": "attack2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_11"
+          },
+          {
+            "id": "modifier_riki_12",
+            "talentInfo": "#modifier_riki_12",
+            "level": "2",
+            "imagePath": "riki/12",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_12"
+          },
+          {
+            "id": "modifier_woda_talent_agi5",
+            "talentInfo": "#woda_talent_agi5",
+            "level": "3",
+            "imagePath": "agi5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_agi4",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "6": [
+          {
+            "id": "modifier_woda_talent_miss2",
+            "talentInfo": "#woda_talent_miss2",
+            "level": "2",
+            "imagePath": "miss2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_13"
+          },
+          {
+            "id": "modifier_woda_talent_attackspeed2",
+            "talentInfo": "#woda_talent_attackspeed2",
+            "level": "3",
+            "imagePath": "attackspeed2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_14"
+          },
+          {
+            "id": "modifier_riki_13",
+            "talentInfo": "#modifier_riki_13",
+            "level": "3",
+            "imagePath": "riki/13",
+            "relatedTalent": {}
+          }
+        ],
+        "7": [
+          {
+            "id": "empty_17"
+          },
+          {
+            "id": "empty_18"
+          },
+          {
+            "id": "modifier_riki_14",
+            "talentInfo": "#modifier_riki_14",
+            "level": "1",
+            "imagePath": "riki/14",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_20"
+          },
+          {
+            "id": "empty_21"
+          }
+        ]
+      },
+      "3": {
+        "1": [
+          {
+            "id": "modifier_woda_talent_mp1",
+            "talentInfo": "#woda_talent_mp1",
+            "level": "3",
+            "imagePath": "mp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenmp1",
+            "talentInfo": "#woda_talent_regenmp1",
+            "level": "2",
+            "imagePath": "regenmp1",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_riki_15",
+            "talentInfo": "#modifier_riki_15",
+            "level": "1",
+            "imagePath": "riki/15",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_spell",
+            "talentInfo": "#woda_talent_spell",
+            "level": "3",
+            "imagePath": "spell",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_int3",
+            "talentInfo": "#woda_talent_int3",
+            "level": "2",
+            "imagePath": "int3",
+            "relatedTalent": {}
+          }
+        ],
+        "2": [
+          {
+            "id": "empty_2"
+          },
+          {
+            "id": "modifier_woda_talent_fairy",
+            "talentInfo": "#woda_talent_fairy",
+            "level": "2",
+            "imagePath": "fairy",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_4"
+          },
+          {
+            "id": "modifier_riki_16",
+            "talentInfo": "#modifier_riki_16",
+            "level": "2",
+            "imagePath": "riki/16",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_int6",
+            "talentInfo": "#woda_talent_int6",
+            "level": "1",
+            "imagePath": "int6",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_int3",
+              "requiredTalentLevel": "2"
+            }
+          }
+        ],
+        "3": [
+          {
+            "id": "empty_6"
+          },
+          {
+            "id": "empty_7"
+          },
+          {
+            "id": "modifier_riki_17",
+            "talentInfo": "#modifier_riki_17",
+            "level": "3",
+            "imagePath": "riki/17",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_riki_15",
+              "requiredTalentLevel": "1"
+            }
+          },
+          {
+            "id": "modifier_woda_talent_mask2",
+            "talentInfo": "#woda_talent_mask2",
+            "level": "2",
+            "imagePath": "mask2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_kaya",
+            "talentInfo": "#woda_talent_kaya",
+            "level": "1",
+            "imagePath": "kaya",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_int6",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "4": [
+          {
+            "id": "modifier_woda_talent_mp2",
+            "talentInfo": "#woda_talent_mp2",
+            "level": "3",
+            "imagePath": "mp2",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_mp1",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "modifier_riki_18",
+            "talentInfo": "#modifier_riki_18",
+            "level": "2",
+            "imagePath": "riki/18",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_8"
+          },
+          {
+            "id": "modifier_woda_talent_blood",
+            "talentInfo": "#woda_talent_blood",
+            "level": "2",
+            "imagePath": "blood",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_int4",
+            "talentInfo": "#woda_talent_int4",
+            "level": "1",
+            "imagePath": "int4",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_kaya",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "5": [
+          {
+            "id": "modifier_woda_talent_spellprism",
+            "talentInfo": "#woda_talent_spellprism",
+            "level": "3",
+            "imagePath": "spellprism",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_9"
+          },
+          {
+            "id": "modifier_riki_19",
+            "talentInfo": "#modifier_riki_19",
+            "level": "3",
+            "imagePath": "riki/19",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_riki_17",
+              "requiredTalentLevel": "3"
+            }
+          },
+          {
+            "id": "empty_11"
+          },
+          {
+            "id": "modifier_woda_talent_int5",
+            "talentInfo": "#woda_talent_int5",
+            "level": "3",
+            "imagePath": "int5",
+            "relatedTalent": {
+              "relatedTalentName": "modifier_woda_talent_int4",
+              "requiredTalentLevel": "1"
+            }
+          }
+        ],
+        "6": [
+          {
+            "id": "modifier_woda_talent_timeless",
+            "talentInfo": "#woda_talent_timeless",
+            "level": "2",
+            "imagePath": "timeless",
+            "relatedTalent": {}
+          },
+          {
+            "id": "modifier_woda_talent_regenmp2",
+            "talentInfo": "#woda_talent_regenmp2",
+            "level": "3",
+            "imagePath": "regenmp2",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_14"
+          },
+          {
+            "id": "empty_15"
+          },
+          {
+            "id": "modifier_riki_20",
+            "talentInfo": "#modifier_riki_20",
+            "level": "2",
+            "imagePath": "riki/20",
+            "relatedTalent": {}
+          }
+        ],
+        "7": [
+          {
+            "id": "empty_17"
+          },
+          {
+            "id": "empty_18"
+          },
+          {
+            "id": "modifier_riki_21",
+            "talentInfo": "#modifier_riki_21",
+            "level": "1",
+            "imagePath": "riki/21",
+            "relatedTalent": {}
+          },
+          {
+            "id": "empty_20"
+          },
+          {
+            "id": "empty_21"
+          }
+        ]
+      }
+    },
+    "talents_description": {
+      "modifier_riki_1_0": "Blink Strike deals damage to all enemies within a 300 radius around the target.",
+      "modifier_riki_1_1": "Blink Strike deals damage to all enemies within a <b><font color='#eabe10'>300</font></b> radius around the target.",
+      "modifier_riki_2_0": "Increased Blink Strike Damage: 100% of Strength \n\n Increased Blink Strike Damage: 50% of Agility \n\n Increased Blink Strike Damage: 50% of Intelligence",
+      "modifier_riki_2_1": "Increased Blink Strike Damage: <b><font color='#eabe10'>100%</font></b> of Strength \n\n Increased Blink Strike Damage: 50% of Agility \n\n Increased Blink Strike Damage: 50% of Intelligence",
+      "modifier_riki_2_2": "Increased Blink Strike Damage: <b><font color='#eabe10'>100%</font></b> of Strength \n\n Increased Blink Strike Damage: <b><font color='#eabe10'>50%</font></b> of Agility \n\n Increased Blink Strike Damage: 50% of Intelligence",
+      "modifier_riki_2_3": "Increased Blink Strike Damage: <b><font color='#eabe10'>100%</font></b> of Strength \n\n Increased Blink Strike Damage: <b><font color='#eabe10'>50%</font></b> of Agility \n\n Increased Blink Strike Damage: <b><font color='#eabe10'>50%</font></b> of Intelligence",
+      "modifier_riki_3_0": "<b><font color='#ff0000'> Removes Tricks of the Trade. </font></b> \n\n New Passive Ability: Frontstab \n\n Attacking from the front deals bonus physical damage based on Strength. \n\n Damage per Strength: 0.6/0.9",
+      "modifier_riki_3_1": "<b><font color='#ff0000'> Removes Tricks of the Trade. </font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Frontstab</font></b> \n\n Attacking from the front deals bonus physical damage based on Strength. \n\n Damage per Strength: <b><font color='#eabe10'>0.6</font></b>/0.9",
+      "modifier_riki_3_2": "<b><font color='#ff0000'> Removes Tricks of the Trade. </font></b> \n\n New Passive Ability: <b><font color='#eabe10'>Frontstab</font></b> \n\n Attacking from the front deals bonus physical damage based on Strength. \n\n Damage per Strength: 0.6/<b><font color='#eabe10'>0.9</font></b>",
+      "modifier_riki_4_0": "<b><font color='#ff0000'> Removes Backstab. </font></b> \n\n Blink Strike teleports to the front of the enemy. \n\n Blink Strike Cooldown Reduction: 2/4/6 sec.",
+      "modifier_riki_4_1": "<b><font color='#ff0000'> Removes Backstab. </font></b> \n\n Blink Strike teleports to the <b><font color='#eabe10'>front</font></b> of the enemy. \n\n Blink Strike Cooldown Reduction: <b><font color='#eabe10'>2</font></b>/4/6 sec.",
+      "modifier_riki_4_2": "<b><font color='#ff0000'> Removes Backstab. </font></b> \n\n Blink Strike teleports to the <b><font color='#eabe10'>front</font></b> of the enemy. \n\n Blink Strike Cooldown Reduction: 2/<b><font color='#eabe10'>4</font></b>/6 sec.",
+      "modifier_riki_4_3": "<b><font color='#ff0000'> Removes Backstab. </font></b> \n\n Blink Strike teleports to the <b><font color='#eabe10'>front</font></b> of the enemy. \n\n Blink Strike Cooldown Reduction: 2/4/<b><font color='#eabe10'>6</font></b> sec.",
+      "modifier_riki_5_0": "Ability Cast Point Reduction: 20%/40%/60% \n\n Blink Strike Mana Cost Reduction: 20%/40%/60%",
+      "modifier_riki_5_1": "Ability Cast Point Reduction: <b><font color='#eabe10'>20%</font></b>/40%/60% \n\n Blink Strike Mana Cost Reduction: <b><font color='#eabe10'>20%</font></b>/40%/60%",
+      "modifier_riki_5_2": "Ability Cast Point Reduction: 20%/<b><font color='#eabe10'>40%</font></b>/60% \n\n Blink Strike Mana Cost Reduction: 20%/<b><font color='#eabe10'>40%</font></b>/60%",
+      "modifier_riki_5_3": "Ability Cast Point Reduction: 20%/40%/<b><font color='#eabe10'>60%</font></b> \n\n Blink Strike Mana Cost Reduction: 20%/40%/<b><font color='#eabe10'>60%</font></b>",
+      "modifier_riki_6_0": "<b><font color='#ff0000'> Reduction of Blink Strike Cast Range: 250 </font></b> \n\n Blink Strike can be cast on an area. \n\n Increase of Blink Strike Charges: 1",
+      "modifier_riki_6_1": "<b><font color='#ff0000'> Reduction of Blink Strike Cast Range: <b><font color='#eabe10'>250</font></b> </font></b> \n\n Blink Strike can be cast <b><font color='#eabe10'>on an area</font></b>. \n\n Increase of Blink Strike Charges: <b><font color='#eabe10'>1</font></b>",
+      "modifier_riki_7_0": "Revealing Cloak and Dagger temporarily grants unobstructed vision and Strength. \n\n Radius: 1200 \n Bonus Strength: 50 \n Duration: 5 sec. \n Cooldown: 5 sec.",
+      "modifier_riki_7_1": "Revealing Cloak and Dagger temporarily grants unobstructed vision and Strength. \n\n Radius: <b><font color='#eabe10'>1200</font></b> \n Bonus Strength: <b><font color='#eabe10'>50</font></b> \n Duration: 5 sec. \n Cooldown: 5 sec.",
+      "modifier_riki_8_0": "Increased Bonus Agility from Tricks of the Trade: 10/20/30 \n\n Increased Cast Range of Tricks of the Trade: 50/100/150",
+      "modifier_riki_8_1": "Increased Bonus Agility from Tricks of the Trade: <b><font color='#eabe10'>10</font></b>/20/30 \n\n Increased Cast Range of Tricks of the Trade: <b><font color='#eabe10'>50</font></b>/100/150",
+      "modifier_riki_8_2": "Increased Bonus Agility from Tricks of the Trade: 10/<b><font color='#eabe10'>20</font></b>/30 \n\n Increased Cast Range of Tricks of the Trade: 50/<b><font color='#eabe10'>100</font></b>/150",
+      "modifier_riki_8_3": "Increased Bonus Agility from Tricks of the Trade: 10/20/<b><font color='#eabe10'>30</font></b> \n\n Increased Cast Range of Tricks of the Trade: 50/100/<b><font color='#eabe10'>150</font></b>",
+      "modifier_riki_9_0": "Tricks of the Trade allows hiding inside an allied hero for its duration and adds 1 victim per attack.",
+      "modifier_riki_9_1": "Tricks of the Trade allows hiding inside an <b><font color='#eabe10'>allied</font></b> hero for its duration and adds <b><font color='#eabe10'>1</font></b> victim per attack.",
+      "modifier_riki_10_0": "Smoke Screen reduces enemy Armor: 3/6",
+      "modifier_riki_10_1": "Smoke Screen reduces enemy Armor: <b><font color='#eabe10'>3</font></b>/6",
+      "modifier_riki_10_2": "Smoke Screen reduces enemy Armor: 3/<b><font color='#eabe10'>6</font></b>",
+      "modifier_riki_11_0": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 6%/12%",
+      "modifier_riki_11_1": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: <b><font color='#eabe10'>6%</font></b>/12%",
+      "modifier_riki_11_2": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 6%/<b><font color='#eabe10'>12%</font></b>",
+      "modifier_riki_12_0": "Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility",
+      "modifier_riki_12_1": "Increased Number of Attacks from Tricks of the Trade: <b><font color='#eabe10'>1</font></b> + <b><font color='#eabe10'>1</font></b> per <b><font color='#eabe10'>300</font></b>/200 <b><font color='#eabe10'>Agility</font></b>",
+      "modifier_riki_12_2": "Increased Number of Attacks from Tricks of the Trade: <b><font color='#eabe10'>1</font></b> + <b><font color='#eabe10'>1</font></b> per 300/<b><font color='#eabe10'>200 Agility</font></b>",
+      "modifier_riki_13_0": "Increase Backstab Damage per Agility: 0.1/0.2/0.3",
+      "modifier_riki_13_1": "Increase Backstab Damage per Agility: <b><font color='#eabe10'>0.1</font></b>/0.2/0.3",
+      "modifier_riki_13_2": "Increase Backstab Damage per Agility: 0.1/<b><font color='#eabe10'>0.2</font></b>/0.3",
+      "modifier_riki_13_3": "Increase Backstab Damage per Agility: 0.1/0.2/<b><font color='#eabe10'>0.3</font></b>",
+      "modifier_riki_14_0": "Cloak and Dagger becomes an active ability. \n\n Creates an Illusion near the Hero. As long as this Illusion is alive, Cloak and Dagger does not end. The Illusion will disappear if it moves more than 666 units away from the hero. \n\n Illusion Health: 666 \n Illusion Damage: 100% \n Illusion Incoming Damage: 100% \n Duration: 25s \n Cooldown: 25s",
+      "modifier_riki_14_1": "Cloak and Dagger becomes an active ability. \n\n Creates an Illusion near the Hero. As long as this Illusion is alive, Cloak and Dagger does not end. The Illusion will disappear if it moves more than 666 units away from the hero. \n\n Illusion Health: <b><font color='#eabe10'>666</font></b> \n Illusion Damage: <b><font color='#eabe10'>100%</font></b> \n Illusion Incoming Damage: <b><font color='#eabe10'>100%</font></b> \n Duration: 25s \n Cooldown: 25s",
+      "modifier_riki_15_0": "Smoke Screen deals Magic Damage per Second: 40 \n\n Smoke Screen Mana Cost Reduction: 20%",
+      "modifier_riki_15_1": "Smoke Screen deals Magic Damage per Second: <b><font color='#eabe10'>40</font></b> \n\n Smoke Screen Mana Cost Reduction: <b><font color='#eabe10'>20%</font></b>",
+      "modifier_riki_16_0": "New Active Ability: Sleeping Dart \n\n The hero shoots a dart at a chosen enemy. The enemy will wake up after 4 seconds or after taking 200 damage. Upon waking, the target takes magic damage and is slowed. \n\n Damage: 150/300 \n Movement Slow: 30% \n Slow Duration: 3s \n Cast Range: 600 \n Mana Cost: 75 \n Cooldown: 24s",
+      "modifier_riki_16_1": "New Active Ability: <b><font color='#eabe10'>Sleeping Dart</font></b> \n\n The hero shoots a dart at a chosen enemy. The enemy will wake up after 4 seconds or after taking 200 damage. Upon waking, the target takes magic damage and is slowed. \n\n Damage: <b><font color='#eabe10'>150</font></b>/300 \n Movement Slow: <b><font color='#eabe10'>30%</font></b> \n Slow Duration: 3s \n Cast Range: 600 \n Mana Cost: 75 \n Cooldown: 24s",
+      "modifier_riki_16_2": "New Active Ability: <b><font color='#eabe10'>Sleeping Dart</font></b> \n\n The hero shoots a dart at a chosen enemy. The enemy will wake up after 4 seconds or after taking 200 damage. Upon waking, the target takes magic damage and is slowed. \n\n Damage: 150/<b><font color='#eabe10'>300</font></b> \n Movement Slow: <b><font color='#eabe10'>30%</font></b> \n Slow Duration: 3s \n Cast Range: 600 \n Mana Cost: 75 \n Cooldown: 24s",
+      "modifier_riki_17_0": "Increase Smoke Screen Damage: 30%/50%/70% of Intelligence \n\n Increase Smoke Screen Radius: 20/40/60",
+      "modifier_riki_17_1": "Increase Smoke Screen Damage: <b><font color='#eabe10'>30%</font></b>/50%/70% of Intelligence \n\n Increase Smoke Screen Radius: <b><font color='#eabe10'>20</font></b>/40/60",
+      "modifier_riki_17_2": "Increase Smoke Screen Damage: 30%/<b><font color='#eabe10'>50%</font></b>/70% of Intelligence \n\n Increase Smoke Screen Radius: 20/<b><font color='#eabe10'>40</font></b>/60",
+      "modifier_riki_17_3": "Increase Smoke Screen Damage: 30%/50%/<b><font color='#eabe10'>70%</font></b> of Intelligence \n\n Increase Smoke Screen Radius: 20/40/<b><font color='#eabe10'>60</font></b>",
+      "modifier_riki_18_0": "Cloak and Dagger Invisibility increases Movement Speed: 10%/20%",
+      "modifier_riki_18_1": "Cloak and Dagger Invisibility increases Movement Speed: <b><font color='#eabe10'>10%</font></b>/20%",
+      "modifier_riki_18_2": "Cloak and Dagger Invisibility increases Movement Speed: 10%/<b><font color='#eabe10'>20%</font></b>",
+      "modifier_riki_19_0": "Smoke Screen reduces Enemy Magic Resistance: 5%/10%/15% \n\n Smoke Screen debuff lingers after leaving the cloud: 0.5/1/1.5 s",
+      "modifier_riki_19_1": "Smoke Screen reduces Enemy Magic Resistance: <b><font color='#eabe10'>5%</font></b>/10%/15% \n\n Smoke Screen debuff lingers after leaving the cloud: <b><font color='#eabe10'>0.5</font></b>/1/1.5 s",
+      "modifier_riki_19_2": "Smoke Screen reduces Enemy Magic Resistance: 5%/<b><font color='#eabe10'>10%</font></b>/15% \n\n Smoke Screen debuff lingers after leaving the cloud: 0.5/<b><font color='#eabe10'>1</font></b>/1.5 s",
+      "modifier_riki_19_3": "Smoke Screen reduces Enemy Magic Resistance: 5%/10%/<b><font color='#eabe10'>15%</font></b> \n\n Smoke Screen debuff lingers after leaving the cloud: 0.5/1/<b><font color='#eabe10'>1.5</font></b> s",
+      "modifier_riki_20_0": "Upon taking Fatal Damage, Cloak and Dagger grants full Invisibility and Invulnerability for 1/2 seconds. After the effect ends, restores 10%/20% of Maximum Health. \n\n Cooldown: 120s",
+      "modifier_riki_20_1": "Upon taking Fatal Damage, Cloak and Dagger grants full Invisibility and Invulnerability for <b><font color='#eabe10'>1</font></b>/2 seconds. After the effect ends, restores <b><font color='#eabe10'>10%</font></b>/20% of Maximum Health. \n\n Cooldown: 120s",
+      "modifier_riki_20_2": "Upon taking Fatal Damage, Cloak and Dagger grants full Invisibility and Invulnerability for 1/<b><font color='#eabe10'>2</font></b> seconds. After the effect ends, restores 10%/<b><font color='#eabe10'>20%</font></b> of Maximum Health. \n\n Cooldown: 120s",
+      "modifier_riki_21_0": "Reduce Cloak and Dagger Detection Radius: 100 \n\n Reduce Cloak and Dagger Fade Delay: 1s",
+      "modifier_riki_21_1": "Reduce Cloak and Dagger Detection Radius: <b><font color='#eabe10'>100</font></b> \n\n Reduce Cloak and Dagger Fade Delay: <b><font color='#eabe10'>1</font></b>s"
+    },
+    "abilities": {
+      "riki_smoke_screen": {
+        "name": "Smoke Screen",
+        "description": "Throws down a smoke bomb, silencing enemies and causing them to miss attacks.",
+        "lore": "The Silent Assassin highly values a simple smoke screen that confuses his enemies, for on a fateful night it saved him from traitors.",
+        "note0": "Can be used while under Tricks of the Trade.",
+        "note1": "Does not prevent using items.",
+        "radius": "RADIUS:",
+        "miss_rate": "%MISS CHANCE:",
+        "duration": "DURATION:",
+        "values": {
+          "duration": "6",
+          "radius": "425",
+          "miss_rate": "30 45 60 75",
+          "abilitycooldown": "17 16 15 14",
+          "abilitycastrange": "550",
+          "abilitymanacost": "65 70 75 80"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "duration": "DURATION:",
+            "radius": "RADIUS:",
+            "miss_rate": "MISS CHANCE:"
+          },
+          "values": {
+            "duration": "6",
+            "radius": "425",
+            "miss_rate": "30% / 45% / 60% / 75%"
+          }
+        }
+      },
+      "riki_blink_strike": {
+        "name": "Blink Strike",
+        "description": "Teleports behind the target unit, momentarily slowing them and striking for bonus damage if it is an enemy.",
+        "lore": "No one escapes the nimble assassin.",
+        "note0": "The first attack after using this ability will be made from behind.",
+        "note1": "The ability’s damage is applied before the next attack.",
+        "note2": "This ability can be used on allies, and they will not take damage.",
+        "bonus_damage": "BONUS DAMAGE:",
+        "slow": "SLOW DURATION:",
+        "values": {
+          "bonus_damage": "40 55 70 85",
+          "abilitycharges": "2",
+          "abilitychargerestoretime": "25 22 19 16",
+          "slow": "0.4",
+          "abilitycastrange": "600 700 800 900",
+          "abilitycooldown": "0.1",
+          "abilitymanacost": "50 55 60 65"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "bonus_damage": "BONUS DAMAGE:",
+            "slow": "SLOW DURATION:"
+          },
+          "values": {
+            "bonus_damage": "40 / 55 / 70 / 85",
+            "slow": "0.4"
+          }
+        }
+      },
+      "riki_tricks_of_the_trade": {
+        "name": "Tricks of the Trade",
+        "description": "CHANNELED - Riki phases out of the world while striking random enemy units from behind in an area around him. While phased out his attack damage is reduced, but his Agility greatly increases.",
+        "lore": "The stealthy assassin believes that in battle, all means are fair, and does not hesitate to strike from behind.",
+        "radius": "RADIUS:",
+        "attack_count": "NUMBER OF ATTACKS:",
+        "damage_pct": "%ATTACK DAMAGE:",
+        "agility_pct": "BONUS AGILITY:",
+        "abilitychanneltime": "DURATION:",
+        "values": {
+          "abilitycooldown": "20 18 16 14",
+          "radius": "450",
+          "attack_count": "4",
+          "damage_pct": "40",
+          "agility_pct": "55 70 85 100",
+          "creep_agility_multiplier": "1",
+          "abilitycastrange": "400",
+          "abilitychanneltime": "2",
+          "abilitymanacost": "45 55 65 75"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "radius": "RADIUS:",
+            "attack_count": "NUMBER OF ATTACKS:",
+            "damage_pct": "ATTACK DAMAGE:",
+            "agility_pct": "BONUS AGILITY:",
+            "abilitychanneltime": "DURATION:"
+          },
+          "values": {
+            "radius": "450",
+            "attack_count": "4",
+            "damage_pct": "40%",
+            "agility_pct": "55 / 70 / 85 / 100",
+            "abilitychanneltime": "2"
+          }
+        }
+      },
+      "riki_permanent_invisibility": {
+        "name": "Cloak and Dagger",
+        "description": "The hero blurs his outline, becoming barely visible. Invisibility breaks if he approaches an enemy hero or attacks.",
+        "lore": "Riki is following you.",
+        "fade_delay": "FADE DELAY:",
+        "radius": "RADIUS:",
+        "values": {
+          "fade_delay": "4 3 2",
+          "radius": "1000"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "fade_delay": "FADE DELAY:",
+            "radius": "RADIUS:"
+          },
+          "values": {
+            "fade_delay": "4 / 3 / 2",
+            "radius": "1000"
+          }
+        }
+      },
+      "riki_backstab": {
+        "name": "Backstab",
+        "description": "Every time Riki strikes his enemy from behind, he deals bonus damage based on his Agility.",
+        "note0": "Does not increase damage against allied units.",
+        "note1": "Illusions also have back attack animations, but they do not deal bonus damage.",
+        "damage_multiplier": "DAMAGE PER AGILITY:",
+        "values": {
+          "damage_multiplier": "0.3 0.4 0.5 0.6",
+          "backstab_angle": "105",
+          "abilitycooldown": "0.001"
+        },
+        "valuesInfo": {
+          "descriptions": {
+            "damage_multiplier": "DAMAGE PER AGILITY:"
+          },
+          "values": {
+            "damage_multiplier": "0.3 / 0.4 / 0.5 / 0.6"
+          }
+        }
+      }
+    },
+    "characteristics": {
+      "attackrange": "150",
+      "attributeprimary": "DOTA_ATTRIBUTE_AGILITY",
+      "attributebasestrength": "20",
+      "attributestrengthgain": "2.0",
+      "attributebaseagility": "25",
+      "attributeagilitygain": "2.5",
+      "attributebaseintelligence": "20",
+      "attributeintelligencegain": "2.0",
+      "movementspeed": "315",
+      "health": "560",
+      "mana": "315",
+      "manaregen": "1.0",
+      "healthregen": "4.5",
+      "attackdamagemin": "47",
+      "attackdamagemax": "51",
+      "armorphysical": "4.2",
+      "baseattackspeed": "115",
       "attackrate": "1.7"
     }
   }

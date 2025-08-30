@@ -59,13 +59,25 @@ const updateArenaData = async (app, steam_data) => {
                 playersByKey[key] = [];
 
                 playersArray.forEach(entry => {
-                    const friendCodes = [entry.p1, entry.p2, entry.p3, entry.p4].filter(id => id !== "0");
+                    let friendCodes = [];
+                    let heroes = [];
+                    let wave_count = entry.wave_count;
+
+                    if (key === "hero") {
+                        // отдельная обработка для hero
+                        friendCodes = entry.player_id ? [entry.player_id] : [];
+                        heroes = [entry.hero];
+                    } else {
+                        friendCodes = [entry.p1, entry.p2, entry.p3, entry.p4].filter(id => id && id !== "0");
+                        heroes = [entry.hero_1, entry.hero_2, entry.hero_3];
+                    }
+
                     friendCodes.forEach(code => allFriendCodes.add(code));
 
                     playersByKey[key].push({
                         steamids: friendCodes,
-                        wave_count: entry.wave_count,
-                        heroes: [entry.hero_1, entry.hero_2, entry.hero_3],
+                        wave_count,
+                        heroes,
                         avatars: [],
                         profileUrls: [],
                         personaNames: [],

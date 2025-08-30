@@ -155,20 +155,19 @@ function getHeroData(heroName, abilityNames = [], lang) {
         }
 
         const updatedAbilityNames = abilityNames.map(abilityName => {
-            const prefix = abilityName.split('_')[0];
-
             for (const [key, value] of Object.entries(replacements_heroes)) {
                 if (value === 'aghanim' || value === 'roshan') {
                     continue;
                 }
-
-                if (prefix === value) {
+                
+                if (abilityName.startsWith(value + '_')) {
                     return abilityName.replace(value, key);
                 }
             }
 
             return abilityName;
         });
+
         ({ heroTalentsData, abilitiesData } = parseAddonFileForHero(filePath, heroName, updatedAbilityNames));
     } catch (error) {
         console.error('Error:', error.message);

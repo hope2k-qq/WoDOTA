@@ -588,22 +588,28 @@ export const LeaderboardPage = () => {
                         {selectedRating === "arena" && (
                             <div className={styles.arenaGroup}>
                                 <button
+                                    className={`${styles.button} ${arenaGroup === "hero" ? styles.active : ""}`}
+                                    onClick={() => handleArenaGroupChange("hero")}
+                                >
+                                    {t('hero')}
+                                </button>
+                                <button
                                     className={`${styles.button} ${arenaGroup === "1" ? styles.active : ""}`}
                                     onClick={() => handleArenaGroupChange("1")}
                                 >
-                                    1
+                                    {t('solo')}
                                 </button>
                                 <button
                                     className={`${styles.button} ${arenaGroup === "2" ? styles.active : ""}`}
                                     onClick={() => handleArenaGroupChange("2")}
                                 >
-                                    2
+                                    {t('duo')}
                                 </button>
                                 <button
                                     className={`${styles.button} ${arenaGroup === "3" ? styles.active : ""}`}
                                     onClick={() => handleArenaGroupChange("3")}
                                 >
-                                    3
+                                    {t('trio')}
                                 </button>
                             </div>
                         )}

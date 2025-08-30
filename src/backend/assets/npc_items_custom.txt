@@ -6757,9 +6757,27 @@
         }
     }
 
-
-
-
+    "item_gungir"
+	{
+		"AbilityValues"
+		{
+			"bonus_aoe"					"0"			// If changing this, change radius_tooltip
+			"bonus_hp"					"450"
+			"bonus_intellect"			"12"
+			"bonus_mana"				"200"
+			"radius"
+			{
+				"value"						"275"		// NOTE: effective radius is 400 because the bonus_aoe applies to itself. If changing this, change radius_tooltip
+				"affected_by_aoe_increase"	"1"
+			}
+			"radius_tooltip"
+			{
+				"value"						"275"		// NOTE: radius_tooltip = ( radius + bonus_aoe )
+				"affected_by_aoe_increase"	"1"
+			}
+			"duration"				"2.0"
+		}
+	}
 
     "item_recipe_boots_of_bearing_custom"
     {

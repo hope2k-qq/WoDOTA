@@ -32,6 +32,13 @@ const fetchArenaData = async () => {
                 }));
             }
         }
+
+        if (rawData.hero) {
+            cleanedData.hero = rawData.hero.map(entry => ({
+                ...entry,
+                hero: entry.hero ? cleanHeroName(entry.hero) : entry.hero
+            }));
+        }
         return cleanedData;
     } catch (error) {
         console.error('Error fetching arena data:', error.message);

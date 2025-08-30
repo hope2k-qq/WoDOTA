@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { getImageUrl } from '../../utils/r2Storage';
 import styles from './shop.module.scss';
-import { ReactComponent as BonusIcon } from "../../assets/icons/BonusIcon.svg";
+import { ReactComponent as DonateIcon } from "../../assets/icons/DonateIcon.svg";
+import { ReactComponent as SwapIcon } from "../../assets/icons/SwapIcon.svg";
 import { ReactComponent as StatsIcon } from "../../assets/icons/StatsIcon.svg";
+import { ReactComponent as CoinsIcon } from "../../assets/icons/CoinsIcon.svg";
 
 interface Item {
     id: string;
@@ -114,130 +116,148 @@ export const ShopPage: React.FC = () => {
             <h1 className={styles.title}>МАГАЗИН</h1>
             <div className={styles.section}>
                 <div className={styles.block}>
-                    <div className={styles.blockContent}>
-                        <h2 className={styles.blockHeading}>Поддержка сайта</h2>
-                        {/*<p>*/}
-                        {/*    Вы можете пожертвовать любую сумму — она автоматически преобразуется в бонусы, которые можно*/}
-                        {/*    использовать внутри сайта.*/}
-                        {/*</p>*/}
-                        {/*<p className={styles.stepNoteRed}>*/}
-                        {/*    Пожертвование направляется исключительно <strong>на финансирование разработки и поддержки*/}
-                        {/*    сайта</strong>, <u>не передаётся разработчику кастомной игры</u> и <strong>не является*/}
-                        {/*    приобретением игровых монет либо иной внутриигровой валюты</strong>.*/}
-                        {/*</p>*/}
-
-
-                        <div className={styles.steps}>
-                            <div className={styles.step}>
-                                <div>
-                                    <h4 className={styles.stepTitle}>1. Поддержка сайта</h4>
-                                    <p className={styles.stepDescription}>Ваше пожертвование помогает оплачивать серверы, развивать новые функции и
-                                        улучшать работу сайта для всех пользователей.</p>
-                                </div>
+                    <h2 className={styles.blockHeading}>Поддержка сайта</h2>
+                    <p className={styles.blockHeadingDescription}>
+                        Пожертвования превращаются в бонусы для использования на сайте
+                    </p>
+                    <div className={styles.steps}>
+                        <div className={styles.step}>
+                            <div className={styles.iconContainer}>
+                                <DonateIcon/>
                             </div>
-
-                            <div className={styles.step}>
-                                <div>
-                                    <h4 className={styles.stepTitle}>2. Начисление бонусов</h4>
-                                    <p className={styles.stepDescription}>За каждый 1 RUB (или эквивалент в другой валюте) вы получаете 1 бонус. Начисление
-                                        происходит автоматически. Бонусы не являются платёжным средством и не подлежат
-                                        обмену на реальные деньги.</p>
-                                </div>
-                            </div>
-
-                            <div className={styles.step}>
-                                <div>
-                                    <h4 className={styles.stepTitle}>3. Использование бонусов</h4>
-                                    <p className={styles.stepDescription}>Вы можете использовать бонусы для получения дополнительной информации — например,
-                                        статистики, собранной вручную на основе открытых данных. Мы стараемся обеспечить
-                                        актуальность, однако статистика может содержать неточности и не гарантирует 100%
-                                        точности.</p>
-                                </div>
+                            <div className={styles.textContainer}>
+                                <h4 className={styles.stepTitle}>Поддержка сайта</h4>
+                                <p className={styles.stepDescription}>Ваше пожертвование помогает оплачивать
+                                    серверы, развивать новые функции и
+                                    улучшать работу сайта для всех пользователей.</p>
                             </div>
                         </div>
 
-
-                        <button className={styles.supportButton} onClick={() => setModalOpen(true)}>
-                            Поддержать
-                        </button>
-
-                        {modalOpen && (
-                            <div className={styles.modalOverlay} onClick={() => setModalOpen(false)}>
-                                <div className={styles.modalContent2} onClick={(e) => e.stopPropagation()}>
-                                    <h2>Поддержать проект</h2>
-
-                                    {/* Верхняя часть: валюты */}
-                                    <div className={styles.currencyCards}>
-                                        {currencies.map((cur) => (
-                                            <div
-                                                key={cur.code}
-                                                className={`${styles.currencyCard} ${selectedCurrency === cur.code ? styles.active : ""}`}
-                                                onClick={() => setSelectedCurrency(cur.code)}
-                                            >
-                                                <span className={styles.icon}>{cur.label}</span>
-                                                <span className={styles.name}>{cur.name}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    {/* Нижняя часть: поле + бонусы */}
-                                    <div className={styles.bottomRow}>
-                                        <div className={styles.inputSection}>
-                                            <label htmlFor="supportAmount">Сумма:</label>
-                                            <input
-                                                id="supportAmount"
-                                                type="number"
-                                                min={1}
-                                                value={supportAmount}
-                                                onChange={(e) => setSupportAmount(Number(e.target.value))}
-                                                placeholder="Введите сумму"
-                                            />
-                                        </div>
-                                        <div className={styles.bonusDisplay}>
-                                            Вы получите <strong>{convertedBonuses}</strong> бонусов
-                                        </div>
-                                    </div>
-
-                                    <button className={styles.closeBtn} onClick={() => setModalOpen(false)}>
-                                        Закрыть
-                                    </button>
-                                </div>
+                        <div className={styles.step}>
+                            <div className={styles.iconContainer}>
+                                <SwapIcon style={{width: '9.3rem', height: '9.3rem'}}/>
                             </div>
-                        )}
+                            <div className={styles.textContainer}>
+                                <h4 className={styles.stepTitle}>Начисление бонусов</h4>
+                                <p className={styles.stepDescription}>За каждый 1 RUB (или эквивалент в другой
+                                    валюте) вы получаете 1 бонус. Начисление
+                                    происходит автоматически. Бонусы не являются платёжным средством и не подлежат
+                                    обмену на реальные деньги.</p>
+                            </div>
+                        </div>
+
+                        <div className={styles.step}>
+                            <div className={styles.iconContainer}>
+                                <StatsIcon style={{width: '10rem', height: '10rem'}}/>
+                            </div>
+                            <div className={styles.textContainer}>
+                                <h4 className={styles.stepTitle}>Использование бонусов</h4>
+                                <p className={styles.stepDescription}>Вы можете использовать бонусы для получения
+                                    дополнительной информации — например,
+                                    статистики, собранной вручную на основе открытых данных. Мы стараемся обеспечить
+                                    актуальность, однако статистика может содержать неточности и не гарантирует 100%
+                                    точности.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.donationStep}>
-                    <div className={styles.stepContent}>
-                        <h3>Поддержка разработчика кастомной игры</h3>
-                        <p>
-                            Вы можете <strong>приобрести игровые монеты</strong>, которые используются для покупки
-                            визуальных эффектов и других внутриигровых предметов.
-                        </p>
-                        <p className={styles.stepNoteRed}>
-                            Оплата монет и любых других товаров или услуг осуществляется через сторонний ресурс и
-                            направляется в пользу <strong>разработчика кастомной игры</strong>. <u>Сайт не участвует в
-                            приёме платежей, не контролирует процесс оплаты и не несёт ответственности за любые
-                            транзакции, совершаемые на сторонней платформе</u>.
-                        </p>
-                        <button className={styles.buyCoinsButton}>
-                            Купить монеты
+                    {/*<p className={styles.stepNoteRed}>*/}
+                    {/*    Пожертвование идёт только на разработку и поддержку сайта, <u>не передаётся разработчику*/}
+                    {/*    игры</u> и <strong>не является покупкой внутриигровой валюты</strong>.*/}
+                    {/*</p>*/}
+                    <div className={styles.supportContainer}>
+                        <h5 className={styles.supportTitle}>Развиваем сайт вместе</h5>
+                        <p className={styles.supportDescription}>Ваш вклад помогает развитию проекта, а в ответ вы
+                            получаете бонусы, которые можно использовать на сайте</p>
+                        <button className={styles.supportButton} onClick={() => setModalOpen(true)}>
+                            Поддержать сайт
                         </button>
+                    </div>
+
+
+                    {modalOpen && (
+                        <div className={styles.modalOverlay} onClick={() => setModalOpen(false)}>
+                            <div className={styles.modalContent2} onClick={(e) => e.stopPropagation()}>
+                                <h2>Выберите способ оплаты</h2>
+
+                                <div className={styles.currencyCards}>
+                                    {currencies.map((cur) => (
+                                        <div
+                                            key={cur.code}
+                                            className={`${styles.currencyCard} ${selectedCurrency === cur.code ? styles.active : ""}`}
+                                            onClick={() => setSelectedCurrency(cur.code)}
+                                        >
+                                            <span className={styles.icon}>{cur.label}</span>
+                                            <span className={styles.name}>{cur.name}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className={styles.bottomRow}>
+                                    <div className={styles.inputSection}>
+                                        <label htmlFor="supportAmount">Сумма:</label>
+                                        <input
+                                            id="supportAmount"
+                                            type="number"
+                                            min={1}
+                                            value={supportAmount}
+                                            onChange={(e) => setSupportAmount(Number(e.target.value))}
+                                            placeholder="Введите сумму"
+                                        />
+                                    </div>
+                                    <div className={styles.bonusDisplay}>
+                                        Вы получите <strong>{convertedBonuses}</strong> бонусов
+                                    </div>
+                                </div>
+
+                                <button className={styles.closeBtn} onClick={() => setModalOpen(false)}>
+                                    Закрыть
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+                <div className={styles.line}></div>
+                <div className={styles.block}>
+                    <div className={styles.buyCoinsContent}>
+                        <div className={styles.buyCoinsText}>
+                            <h2 className={styles.blockHeading}>Поддержка разработчика кастомки</h2>
+                            <p className={styles.blockHeadingDescription}>
+                                Приобретайте игровые монеты — внутриигровую валюту, которую можно использовать для
+                                покупки уникальных визуальных эффектов, кастомных предметов и других эксклюзивных
+                                возможностей внутри игры. Каждая покупка помогает поддерживать разработчика кастомной
+                                игры и способствует её дальнейшему развитию
+                            </p>
+                            <button className={styles.supportButton} onClick={() => setModalOpen(true)}>
+                                Купить монеты
+                            </button>
+                        </div>
+                        <div className={styles.buyCoinsContainer}>
+                            <CoinsIcon className={styles.buyCoinsIcon}/>
+                        </div>
                     </div>
                 </div>
             </div>
 
-
+            <h2 className={styles.shopTitle}>Ассортимент</h2>
             <div className={styles.typeSelector}>
-                {itemTypes.map((type) => (
+                {itemTypes.map((type, index) => (
                     <button
                         key={type}
                         className={`${styles.typeButton} ${selectedType === type ? styles.active : ''}`}
                         onClick={() => setSelectedType(type)}
+                        style={{gridColumnStart: index + 1}}
                     >
                         {type}
                     </button>
                 ))}
+
+                <div
+                    className={styles.indicator}
+                    style={{['--col' as any]: itemTypes.indexOf(selectedType) + 1}}
+                />
+
             </div>
+
 
             {loading ? (
                 <p>Loading...</p>
@@ -245,7 +265,6 @@ export const ShopPage: React.FC = () => {
                 <p className={styles.error}>Error: {error}</p>
             ) : (
                 <div>
-                    <h2>{selectedType} Items</h2>
                     <ul className={styles.itemList}>
                         {items.map((item) => (
                             <li key={item.id} className={styles.item}>
