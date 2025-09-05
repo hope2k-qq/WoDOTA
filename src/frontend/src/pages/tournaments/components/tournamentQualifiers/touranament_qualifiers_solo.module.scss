@@ -1,0 +1,583 @@
+.div{
+  background-color: #181920;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: "Inter", serif;
+}
+
+.table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-family: "Inter", serif;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  table-layout: fixed;
+}
+
+.table th:first-child,
+.table td:first-child{
+  width:110px;
+  white-space: nowrap;
+  text-align: center;
+}
+.table th:first-child{
+  padding: 16px;
+}
+.table td:first-child{
+  padding: 5px 0 5px 5px;
+}
+
+.table th:last-child,
+.table td:last-child{
+  width:95px;
+  padding: 13px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2),
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: calc((100% - 205px) / 2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.table th:nth-child(3),
+.table td:nth-child(3){
+  padding: 12px 0 12px 12px;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2){
+  padding: 12px 12px 12px 5px;
+}
+
+.points {
+  position: relative;
+  color: #ffa071 !important;
+  overflow: hidden;
+  font-size: 1.05rem !important;
+  > div {
+    background: rgba(255, 160, 113, .29);
+    border-radius: 10px;
+    padding: 0.2rem 0;
+  }
+}
+
+.points_group {
+  position: relative;
+  color: #ffa071 !important;
+  overflow: hidden;
+  font-size: 0.8rem !important;
+  > div {
+    background: rgba(255, 160, 113, .29);
+    border-radius: 10px;
+    padding: 0.1rem 0;
+    margin: 0 0.4rem;
+  }
+}
+
+.table th{
+  color: #f4bf58;
+  font-size: 1.5rem;
+  background-color: #16171d;
+}
+
+.table th:first-child, .table_group th:first-child{
+  border-top-left-radius: 5px;
+}
+.table th:last-child, .table_group th:last-child{
+  border-top-right-radius: 5px;
+}
+
+.table td:first-child, .table_group td:first-child{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.table td:last-child, .table_group td:last-child{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.table td{
+  color: #9b9db1;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #1c1d24;
+}
+
+.container_table_data{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  gap: 0.6rem;
+}
+
+.container_table_data_group{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  gap: 0.3rem;
+}
+
+.playoff_team {
+  box-shadow: 0px 0px 3px rgba(0, 255, 127, 0.7);
+  border-radius: 5px;
+}
+
+.no_playoff_team {
+  box-shadow: 0px 0px 3px rgba(255, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+.wreathContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wreathIcon {
+  width: 65px;
+  height: auto;
+  margin-top: 3px;
+  opacity: 0.4;
+}
+
+.wreathIconGroup{
+  width: 36px;
+  height: auto;
+  margin-top: 3px;
+  opacity: 0.4;
+}
+
+.rankNumber {
+  position: absolute;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.rankNumberGroup {
+  position: absolute;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.table_info{
+  box-shadow: 0px 0px 3px rgba(244, 191, 88, 0.7);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.id{
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-left: 0.5rem;
+
+  &:hover{
+    color: #f4bf58;
+    transform: scale(1.1);
+  }
+}
+.active {
+  color: #f4bf58;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatarGroup {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover, .avatarGroup:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+
+.player_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+}
+
+.table_group{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-family: "Inter", serif;
+  padding: 0.5rem 1rem 1rem 1rem;
+  table-layout: fixed;
+  max-width: 700px;
+}
+
+.table_group th:first-child,
+.table_group td:first-child {
+  width: 50px;
+  white-space: nowrap;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+}
+.table_group th:last-child,
+.table_group td:last-child {
+  width: 60px;
+  white-space: nowrap;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+}
+
+.table_group th:nth-child(2),
+.table_group td:nth-child(2),
+.table_group th:nth-child(3),
+.table_group td:nth-child(3) {
+  width: calc((100% - 145px) / 2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table_group th:nth-child(2),
+.table_group td:nth-child(2){
+  padding: 6px 6px 6px 4px;
+}
+
+.table_group th:nth-child(3),
+.table_group td:nth-child(3){
+  padding: 6px 4px 6px 6px;
+}
+
+.table_group td{
+  color: #9b9db1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #1c1d24;
+}
+
+.table_group th{
+  color: #f4bf58;
+  font-size: 1rem;
+  background-color: #16171d;
+}
+
+.groups_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.group_container{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn_container{
+  margin: 0 auto;
+}
+
+.container_buttons_map{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 0;
+  border-radius: 10px 10px 0 0;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 0 1rem;
+}
+
+.button {
+  padding: 0.6rem 0;
+  min-width: 200px;
+  border-radius: 10px;
+  font-family: "Inter", serif;
+  font-size: 1.2rem;
+  background-color: #f3ca80;
+  color: #1a2330;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  line-height: 24px;
+
+  &:hover{
+    background-color: #f2d18f;
+  }
+
+  &.active {
+    cursor: default;
+    background-color: #ab8948;
+  }
+}
+.group_name{
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.maps_name{
+  color: #f4bf58;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.noGroupsMessage{
+  color: white;
+  font-weight: bold;
+  font-size: 2.2rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.th_lattice{
+  display: none;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1400px) {
+  .groups_grid {
+    gap: 20px 0;
+    padding: 0;
+  }
+  .table_group{
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+    max-width: 100%;
+  }
+  .button{
+    font-size: 1.1rem;
+    min-width: 180px;
+  }
+  .container_buttons_map{
+    padding: 35px 0;
+    gap: 10px;
+  }
+  .maps_name{
+    font-size: 1.9rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .table{
+    padding: 0 1rem 1rem 1rem;
+  }
+  .table th{
+    font-size: 1.3rem;
+  }
+  .table td{
+    font-size: 1.2rem;
+  }
+  .avatar{
+    width: 44px;
+    height: 44px;
+  }
+  .wreathIcon{
+    width: 60px;
+  }
+  .table th:first-child,
+  .table td:first-child{
+    width:95px;
+  }
+  .table th:last-child,
+  .table td:last-child{
+    width:85px;
+    padding: 9px;
+  }
+  .table th:nth-child(3),
+  .table td:nth-child(3){
+    padding: 9px 0 9px 9px;
+  }
+
+  .table th:nth-child(2),
+  .table td:nth-child(2){
+    padding: 9px 9px 9px 0;
+  }
+  .rankNumber{
+    font-size: 15px;
+  }
+  .groups_grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .maps_name{
+    font-size: 1.7rem;
+    margin-bottom: 2.5rem;
+  }
+  .group_name{
+    font-size: 1.15rem;
+  }
+  .table th{
+    font-size: 1.1rem;
+  }
+  .table td{
+    font-size: 1rem;
+  }
+  .avatar{
+    width: 40px;
+    height: 40px;
+  }
+  .wreathIcon{
+    width: 55px;
+  }
+  .rankNumber{
+    font-size: 14px;
+  }
+  .table th:first-child,
+  .table td:first-child{
+    width:85px;
+  }
+  .table th:last-child,
+  .table td:last-child{
+    width:75px;
+    padding: 7px;
+  }
+  .table th:nth-child(3),
+  .table td:nth-child(3){
+    padding: 7px 0 7px 7px;
+  }
+
+  .table th:nth-child(2),
+  .table td:nth-child(2){
+    padding: 7px 7px 7px 5px;
+  }
+
+  .points{
+    font-size: 0.9rem !important;
+  }
+  > div {
+    border-radius: 7px;
+  }
+}
+@media (max-width: 750px) {
+  .table{
+    padding: 0 0.3rem 0.3rem 0.3rem;
+  }
+  .table th{
+    font-size: 1rem;
+  }
+  .table td{
+    font-size: 0.9rem;
+  }
+  .wreathIcon{
+    display: none;
+  }
+  .rankNumber{
+    font-size: 13px;
+  }
+  .table th:first-child,
+  .table td:first-child{
+    width:25px;
+  }
+  .table th:first-child{
+    padding: 5px;
+  }
+  .table th:last-child,
+  .table td:last-child{
+    width:55px;
+    padding: 5px;
+  }
+  .table th:nth-child(3),
+  .table td:nth-child(3){
+    padding: 5px 0 5px 5px;
+  }
+
+  .table th:nth-child(2),
+  .table td:nth-child(2){
+    padding: 5px 5px 5px 5px;
+  }
+  .th_lattice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .th_place{
+    display: none;
+  }
+  .avatar{
+    width: 30px;
+    height: 30px;
+  }
+  .player_container{
+    gap: 0.3rem;
+  }
+  .table_group{
+    padding: 0.25rem 0.2rem 0.2rem 0.2rem;
+  }
+  .table_group td{
+    font-size: 0.8rem;
+  }
+
+  .table_group th{
+    font-size: 0.9rem;
+  }
+  .table_group th:first-child,
+  .table_group td:first-child {
+    width: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  .table_group th:last-child,
+  .table_group td:last-child {
+    width: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  .avatarGroup{
+    width: 30px;
+    height: 30px;
+  }
+  .wreathIconGroup{
+   display: none;
+  }
+  .table_group th:nth-child(2),
+  .table_group td:nth-child(2){
+    padding: 3px 3px 3px 2px;
+  }
+
+  .table_group th:nth-child(3),
+  .table_group td:nth-child(3){
+    padding: 3px 2px 3px 3px;
+  }
+  .points {
+    font-size: 0.85rem !important;
+    > div {
+      padding:  0;
+      margin: 0 0.2rem;
+    }
+  }
+}
+
+

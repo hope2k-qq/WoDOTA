@@ -22,8 +22,6 @@ const App = () => {
         setThemeVariables(theme);
     }, [theme]);
 
-
-
     if (isMaintenance) {
         return <MaintenancePage />;
     }

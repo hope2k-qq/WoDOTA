@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cookieParser());
 const { updateVotesData } = require('./controllers/votesController');
 const { updateDataSequentially } = require('./controllers/leaderboardController');
-const { updateDataSequentiallyTournament } = require('./controllers/tournamentsController');
+const { updateDataSequentiallyTournament } = require('./controllers/tournamentsSoloController');
 const { updateCreatorsVideosData } = require('./controllers/youtubeController');
 const passport = require('./middleware/passport');
 

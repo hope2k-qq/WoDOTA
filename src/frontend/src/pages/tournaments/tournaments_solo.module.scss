@@ -1,0 +1,133 @@
+.div{
+  margin: 0 2rem;
+}
+
+.container{
+  max-width: 1600px;
+  background-color: #181920;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.tournament_name{
+  padding-top: 2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 3.2rem;
+  text-align: center;
+}
+.tournament_data_container{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-left: 24px;
+  margin-right: 24px;
+  gap: 0.1rem;
+}
+
+.tournament_data{
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.container_buttons_navigations{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 0;
+  border-radius: 10px 10px 0 0;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 0 2rem;
+}
+
+.button {
+  padding: 0.6rem 0;
+  min-width: 200px;
+  border-radius: 10px;
+  font-family: "Inter", serif;
+  font-size: 1.2rem;
+  background-color: #f3ca80;
+  color: #1a2330;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  line-height: 24px;
+
+  &:hover{
+    background-color: #f2d18f;
+  }
+
+  &.active {
+    cursor: default;
+    background-color: #ab8948;
+  }
+
+  &:disabled {
+    background-color: #e0c27a;
+    color: #3e2e1c;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 1400px) {
+  .tournament_name{
+    font-size: 2.8rem;
+  }
+  .tournament_data{
+    font-size: 0.95rem;
+  }
+  .button{
+    font-size: 1.1rem;
+    min-width: 180px;
+  }
+  .container_buttons_navigations{
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .div{
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tournament_name{
+    font-size: 2.3rem;
+  }
+  .tournament_data{
+    font-size: 0.85rem;
+  }
+  .tournament_data_container{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .div{
+    margin: 0;
+  }
+  .container_buttons_navigations {
+    padding: 35px 0;
+  }
+  .tournament_name{
+    font-size: 1.9rem;
+  }
+  .tournament_data{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .tournament_data_container{
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+}
