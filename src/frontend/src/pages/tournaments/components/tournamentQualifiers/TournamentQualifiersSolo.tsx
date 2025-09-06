@@ -4,8 +4,8 @@ import {useTranslation} from "react-i18next";
 // import {getImageUrl} from "../../../../utils/r2Storage";
 
 
-interface Team {
-    team_id: number;
+interface Player {
+    player_id: number;
     player_info: {
         player: string;
         dota_id: string;
@@ -18,9 +18,9 @@ interface Team {
 
 interface Group {
     group_name: string;
-    teams: {
-        team_id: number;
-        team_info: Team;
+    players: {
+        player_id: number;
+        player_info: Player;
         points: number;
         place: number;
     }[];
@@ -28,9 +28,9 @@ interface Group {
 
 interface ReplayGroup {
     group_name: string;
-    teams: {
-        team_id: number;
-        team_info: Team;
+    players: {
+        player_id: number;
+        player_info: Player;
         points: number;
         place: number;
     }[];
@@ -46,20 +46,20 @@ interface MapData {
 }
 
 interface TournamentData {
-    teams: Team[];
+    players: Player[];
     maps: MapData[];
     replays: Replay[];
 }
 
 interface TournamentQualifiersProps {
     data: TournamentData;
+    count: number;
 }
 
 
-export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ data }) => {
+export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ data, count }) => {
     const { t } = useTranslation();
     const [showReplays, setShowReplays] = useState(false);
-    const [updatedGroupPlayers, setUpdatedGroupPlayers] = useState<{ [key: string]: string }>({});
 
     // const handleGetScreenshot = async (mapName: string, groupName: string): Promise<void> => {
     //     try {
@@ -77,13 +77,6 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
     //     }
     // };
 
-
-    const handleGroupIdClick = (groupKey: string, originalName: string, dotaId: string) => {
-        setUpdatedGroupPlayers((prev) => ({
-            ...prev,
-            [groupKey]: prev[groupKey] === dotaId ? originalName : dotaId,
-        }));
-    };
     const [selectedMap, setSelectedMap] = useState<MapData | null>(data.maps.length > 0 ? data.maps[0] : null);
 
     const handleMapClick = (map: MapData) => {
@@ -106,15 +99,15 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
                 </tr>
                 </thead>
                 <tbody>
-                {data.teams
+                {data.players
                     .sort((a, b) => {
                         if (b.total_points === a.total_points) {
                             return b.replays_points - a.replays_points;
                         }
                         return b.total_points - a.total_points;
                     })
-                    .map((team, index) => (
-                        <tr key={team.team_id} className={index < 49 ? styles.playoff_team : styles.no_playoff_team}>
+                    .map((player, index) => (
+                        <tr key={player.player_id} className={index < count ? styles.playoff_team : styles.no_playoff_team}>
                             <td>
                                 <div className={styles.wreathContainer}>
                                     <img src={"/wreath.png"} alt={"wreath"} className={styles.wreathIcon}/>
@@ -125,18 +118,18 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
                             <td>
                                 <div className={styles.container_table_data}>
                                     <img
-                                        src={team.player_info.avatar}
+                                        src={player.player_info.avatar}
                                         alt="avatar"
                                         className={styles.avatar}
                                         onClick={() => {
-                                            if (team.player_info.profileUrl) {
-                                                window.open(team.player_info.profileUrl, '_blank');
+                                            if (player.player_info.profileUrl) {
+                                                window.open(player.player_info.profileUrl, '_blank');
                                             }
                                         }}
                                     />
                                     <div className={styles.player_container}>
                                         <div
-                                            className={styles.ellipsis}>{team.player_info.player}</div>
+                                            className={styles.ellipsis}>{player.player_info.player}</div>
                                     </div>
                                 </div>
                             </td>
@@ -144,12 +137,12 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
                                 <div className={styles.container_table_data}>
                                     <div className={styles.player_container} style={{justifyContent: 'center'}}>
                                         <div
-                                            className={styles.ellipsis}>{team.player_info.dota_id}</div>
+                                            className={styles.ellipsis}>{player.player_info.dota_id}</div>
                                     </div>
                                 </div>
                             </td>
                             <td className={styles.points}>
-                                <div>{team.total_points}</div>
+                                <div>{player.total_points}</div>
                             </td>
                         </tr>
                     ))}
@@ -194,100 +187,54 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>{t('nickname')} #1</th>
-                                                <th>{t('nickname')} #2</th>
+                                                <th>{t('nickname')}</th>
+                                                <th>DOTA ID</th>
                                                 <th>{t('points')}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                        {group.teams
+                                        {group.players
                                             .slice()
                                             .sort((a, b) => a.place - b.place)
-                                            .map((teamData) => (
-                                                <tr key={teamData.team_id}>
+                                            .map((playerData) => (
+                                                <tr key={playerData.player_id}>
                                                     <td>
                                                         <div className={styles.wreathContainer}>
                                                             <img src={"/wreath.png"} alt={"wreath"}
                                                                  className={styles.wreathIconGroup}/>
-                                                            <div className={styles.rankNumberGroup}>{teamData.place}</div>
+                                                            <div className={styles.rankNumberGroup}>{playerData.place}</div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div className={styles.container_table_data_group}>
                                                             <img
-                                                                src={teamData.team_info.player_info.avatar}
+                                                                src={playerData.player_info.player_info.avatar}
                                                                 alt="avatar"
                                                                 className={styles.avatarGroup}
                                                                 onClick={() => {
-                                                                    if (teamData.team_info.player_info.profileUrl) {
-                                                                        window.open(teamData.team_info.player_info.profileUrl, '_blank');
+                                                                    if (playerData.player_info.player_info.profileUrl) {
+                                                                        window.open(playerData.player_info.player_info.profileUrl, '_blank');
                                                                     }
                                                                 }}
                                                             />
                                                             <div className={styles.player_container}>
                                                                 <div className={styles.ellipsis}>
-                                                                    {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player1`] ||
-                                                                        teamData.team_info.player_info.player}
-                                                                </div>
-                                                                <div
-                                                                    className={`${styles.id} ${
-                                                                        updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player`] ===
-                                                                        teamData.team_info.player_info.dota_id
-                                                                            ? styles.active
-                                                                            : ""
-                                                                    }`}
-                                                                    onClick={() =>
-                                                                        handleGroupIdClick(
-                                                                            `group-${group.group_name}-team-${teamData.team_id}-player`,
-                                                                            teamData.team_info.player_info.player,
-                                                                            teamData.team_info.player_info.dota_id
-                                                                        )
-                                                                    }
-                                                                >
-                                                                    ID
+                                                                    {playerData.player_info.player_info.player}
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div className={styles.container_table_data_group}>
-                                                            <img
-                                                                src={teamData.team_info.player_info.avatar}
-                                                                alt="avatar"
-                                                                className={styles.avatarGroup}
-                                                                onClick={() => {
-                                                                    if (teamData.team_info.player_info.profileUrl) {
-                                                                        window.open(teamData.team_info.player_info.profileUrl, '_blank');
-                                                                    }
-                                                                }}
-                                                            />
-                                                            <div className={styles.player_container}>
+                                                            <div className={styles.player_container} style={{justifyContent: 'center'}}>
                                                                 <div className={styles.ellipsis}>
-                                                                    {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player`] ||
-                                                                        teamData.team_info.player_info.player}
-                                                                </div>
-                                                                <div
-                                                                    className={`${styles.id} ${
-                                                                        updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player`] ===
-                                                                        teamData.team_info.player_info.dota_id
-                                                                            ? styles.active
-                                                                            : ""
-                                                                    }`}
-                                                                    onClick={() =>
-                                                                        handleGroupIdClick(
-                                                                            `group-${group.group_name}-team-${teamData.team_id}-player`,
-                                                                            teamData.team_info.player_info.player,
-                                                                            teamData.team_info.player_info.dota_id
-                                                                        )
-                                                                    }
-                                                                >
-                                                                    ID
+                                                                    {playerData.player_info.player_info.dota_id}
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td className={styles.points_group}>
-                                                        <div>{teamData.points}</div>
+                                                        <div>{playerData.points}</div>
                                                     </td>
                                                 </tr>
                                             ))}
@@ -313,58 +260,40 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
                                                 <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>{t('nickname')} #1</th>
-                                                    <th>{t('nickname')} #2</th>
+                                                    <th>{t('nickname')}</th>
+                                                    <th>DOTA ID</th>
                                                     <th>{t('points')}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                {group.teams
+                                                {group.players
                                                     .slice()
                                                     .sort((a, b) => a.place - b.place)
-                                                    .map((teamData) => (
-                                                        <tr key={teamData.team_id}>
+                                                    .map((playerData) => (
+                                                        <tr key={playerData.player_id}>
                                                             <td>
                                                                 <div className={styles.wreathContainer}>
                                                                     <img src={"/wreath.png"} alt={"wreath"}
                                                                          className={styles.wreathIconGroup}/>
                                                                     <div
-                                                                        className={styles.rankNumberGroup}>{teamData.place}</div>
+                                                                        className={styles.rankNumberGroup}>{playerData.place}</div>
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div className={styles.container_table_data_group}>
                                                                     <img
-                                                                        src={teamData.team_info.player_info.avatar}
+                                                                        src={playerData.player_info.player_info.avatar}
                                                                         alt="avatar"
                                                                         className={styles.avatarGroup}
                                                                         onClick={() => {
-                                                                            if (teamData.team_info.player_info.profileUrl) {
-                                                                                window.open(teamData.team_info.player_info.profileUrl, '_blank');
+                                                                            if (playerData.player_info.player_info.profileUrl) {
+                                                                                window.open(playerData.player_info.player_info.profileUrl, '_blank');
                                                                             }
                                                                         }}
                                                                     />
                                                                     <div className={styles.player_container}>
                                                                         <div className={styles.ellipsis}>
-                                                                            {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player`] ||
-                                                                                teamData.team_info.player_info.player}
-                                                                        </div>
-                                                                        <div
-                                                                            className={`${styles.id} ${
-                                                                                updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player`] ===
-                                                                                teamData.team_info.player_info.dota_id
-                                                                                    ? styles.active
-                                                                                    : ""
-                                                                            }`}
-                                                                            onClick={() =>
-                                                                                handleGroupIdClick(
-                                                                                    `group-${group.group_name}-team-${teamData.team_id}-player1`,
-                                                                                    teamData.team_info.player_info.player,
-                                                                                    teamData.team_info.player_info.dota_id
-                                                                                )
-                                                                            }
-                                                                        >
-                                                                            ID
+                                                                            {playerData.player_info.player_info.player}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -372,44 +301,16 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
                                                             </td>
                                                             <td>
                                                                 <div className={styles.container_table_data_group}>
-                                                                    <img
-                                                                        src={teamData.team_info.player_info.avatar}
-                                                                        alt="avatar"
-                                                                        className={styles.avatarGroup}
-                                                                        onClick={() => {
-                                                                            if (teamData.team_info.player_info.profileUrl) {
-                                                                                window.open(teamData.team_info.player_info.profileUrl, '_blank');
-                                                                            }
-                                                                        }}
-                                                                    />
-                                                                    <div className={styles.player_container}>
+                                                                    <div className={styles.player_container} style={{justifyContent: 'center'}}>
                                                                         <div className={styles.ellipsis}>
-                                                                        {updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player`] ||
-                                                                                teamData.team_info.player_info.player}
-                                                                        </div>
-                                                                        <div
-                                                                            className={`${styles.id} ${
-                                                                                updatedGroupPlayers[`group-${group.group_name}-team-${teamData.team_id}-player`] ===
-                                                                                teamData.team_info.player_info.dota_id
-                                                                                    ? styles.active
-                                                                                    : ""
-                                                                            }`}
-                                                                            onClick={() =>
-                                                                                handleGroupIdClick(
-                                                                                    `group-${group.group_name}-team-${teamData.team_id}-player2`,
-                                                                                    teamData.team_info.player_info.player,
-                                                                                    teamData.team_info.player_info.dota_id
-                                                                                )
-                                                                            }
-                                                                        >
-                                                                            ID
+                                                                        {playerData.player_info.player_info.dota_id}
                                                                         </div>
                                                                     </div>
                                                                 </div>
 
                                                             </td>
                                                             <td className={styles.points_group}>
-                                                                <div>{teamData.points}</div>
+                                                                <div>{playerData.points}</div>
                                                             </td>
                                                         </tr>
                                                     ))}

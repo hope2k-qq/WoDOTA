@@ -82,20 +82,20 @@ const updateTournamentQualifiersSoloData = async (app, steam_data) => {
                     map_name: map.map_name,
                     groups: map.groups.map(group => ({
                         group_name: group.group_name,
-                        teams: group.teams.map(teamData => {
-                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                        players: group.players.map(teamData => {
+                            const teamIndex = updatedTeams.findIndex(t => t.player_id === teamData.player_id);
                             if (teamIndex !== -1) {
                                 updatedTeams[teamIndex].total_points += teamData.points;
 
                                 return {
-                                    team_id: teamData.team_id,
-                                    team_info: updatedTeams[teamIndex],
+                                    player_id: teamData.player_id,
+                                    player_info: updatedTeams[teamIndex],
                                     points: teamData.points,
                                     place: teamData.place
                                 };
                             }
                             return null;
-                        }).filter(team => team !== null)
+                        }).filter(player => player !== null)
                     }))
                 }));
 
@@ -103,24 +103,24 @@ const updateTournamentQualifiersSoloData = async (app, steam_data) => {
                     ? tournamentData.replays.map(replay => ({
                         groups: replay.groups.map(group => ({
                             group_name: group.group_name,
-                            teams: group.teams.map(teamData => {
-                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                            players: group.players.map(teamData => {
+                                const teamIndex = updatedTeams.findIndex(t => t.player_id === teamData.player_id);
                                 if (teamIndex !== -1) {
                                     updatedTeams[teamIndex].replays_points += teamData.points;
 
                                     return {
-                                        team_id: teamData.team_id,
+                                        player_id: teamData.player_id,
                                         points: teamData.points,
-                                        team_info: updatedTeams[teamIndex],
+                                        player_info: updatedTeams[teamIndex],
                                         place: teamData.place
                                     };
                                 }
                                 return null;
-                            }).filter(team => team !== null)
+                            }).filter(player => player !== null)
                         }))
                     }))
                     : [];
-                cachedTournamentQualifiersSoloData = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
+                cachedTournamentQualifiersSoloData = ({ players: updatedTeams, maps: mapsWithGroups, replays });
                 console.log('Tournament qualifiers data updated');
                 const collection = app;
                 const currentDate = new Date().toISOString();
@@ -146,7 +146,7 @@ const updateTournamentQualifiersSoloData = async (app, steam_data) => {
 
 const updateTournamentPlayoffsSoloData = async (app, steam_data) => {
     try {
-        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoPlayoffs.json");
+        const filePath = path.join(__dirname, "../data/tournamentPlayersSoloPlayoffs.json");
 
         fs.readFile(filePath, "utf8", async (err, data) => {
             if (err) {
@@ -157,30 +157,22 @@ const updateTournamentPlayoffsSoloData = async (app, steam_data) => {
             try {
                 let tournamentData = JSON.parse(data);
                 let steamIds = [];
-
-                // Собираем ID игроков
-                tournamentData.teams.forEach(team => {
-                    steamIds.push(team.dota_id1.toString());
-                    steamIds.push(team.dota_id2.toString());
+                
+                tournamentData.players.forEach(player => {
+                    steamIds.push(player.dota_id.toString());
                 });
 
                 // Получаем информацию о игроках
                 const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
 
                 // Преобразуем команды, добавляя информацию об игроках
-                let updatedTeams = tournamentData.teams.map(team => ({
-                    team_id: team.team_id,
-                    player1_info: {
-                        player1: team.player1,
-                        dota_id1: team.dota_id1,
-                        avatar: playersInfo[team.dota_id1]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                    },
-                    player2_info: {
-                        player2: team.player2,
-                        dota_id2: team.dota_id2,
-                        avatar: playersInfo[team.dota_id2]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
+                let updatedTeams = tournamentData.players.map(player => ({
+                    player_id: player.player_id,
+                    player_info: {
+                        player: player.player,
+                        dota_id: player.dota_id,
+                        avatar: playersInfo[player.dota_id]?.avatar || null,
+                        profileUrl: playersInfo[player.dota_id]?.profileUrl || null
                     },
                     total_points: 0,
                     replays_points: 0,
@@ -191,20 +183,20 @@ const updateTournamentPlayoffsSoloData = async (app, steam_data) => {
                     map_name: map.map_name,
                     groups: map.groups.map(group => ({
                         group_name: group.group_name,
-                        teams: group.teams.map(teamData => {
-                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                        players: group.players.map(teamData => {
+                            const teamIndex = updatedTeams.findIndex(t => t.player_id === teamData.player_id);
                             if (teamIndex !== -1) {
                                 updatedTeams[teamIndex].total_points += teamData.points;
 
                                 return {
-                                    team_id: teamData.team_id,
-                                    team_info: updatedTeams[teamIndex],
+                                    player_id: teamData.player_id,
+                                    player_info: updatedTeams[teamIndex],
                                     points: teamData.points,
                                     place: teamData.place
                                 };
                             }
                             return null;
-                        }).filter(team => team !== null)
+                        }).filter(player => player !== null)
                     }))
                 }));
 
@@ -212,26 +204,26 @@ const updateTournamentPlayoffsSoloData = async (app, steam_data) => {
                     ? tournamentData.replays.map(replay => ({
                         groups: replay.groups.map(group => ({
                             group_name: group.group_name,
-                            teams: group.teams.map(teamData => {
-                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                            players: group.players.map(teamData => {
+                                const teamIndex = updatedTeams.findIndex(t => t.player_id === teamData.player_id);
                                 if (teamIndex !== -1) {
                                     // Добавляем очки из переигровок
                                     updatedTeams[teamIndex].replays_points += teamData.points;
 
                                     return {
-                                        team_id: teamData.team_id,
+                                        player_id: teamData.player_id,
                                         points: teamData.points,
-                                        team_info: updatedTeams[teamIndex],
+                                        player_info: updatedTeams[teamIndex],
                                         place: teamData.place
                                     };
                                 }
                                 return null;
-                            }).filter(team => team !== null)
+                            }).filter(player => player !== null)
                         }))
                     }))
                     : [];
 
-                cachedTournamentPlayoffsData = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
+                cachedTournamentPlayoffsSoloData = ({ players: updatedTeams, maps: mapsWithGroups, replays });
                 console.log('Tournament playoffs data updated');
                 const collection = app;
                 const currentDate = new Date().toISOString();

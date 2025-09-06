@@ -3,7 +3,7 @@ import { TournamentListSolo } from "./components/tournamentList/TournamentListSo
 import styles from './tournaments_solo.module.scss';
 import {TournamentQualifiersSolo} from "./components/tournamentQualifiers/TournamentQualifiersSolo";
 import {useTranslation} from "react-i18next";
-import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers";
+//import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers";
 
 export const TournamentsPageSolo: React.FC = () => {
     const { t } = useTranslation();
@@ -77,7 +77,6 @@ export const TournamentsPageSolo: React.FC = () => {
                     <button
                         className={`${styles.button} ${activeSection === 'playoffs' ? styles.active : ''}`}
                         onClick={() => handleSectionChange('playoffs')}
-                        disabled
                     >
                         {t('playoff')}
                     </button>
@@ -97,10 +96,10 @@ export const TournamentsPageSolo: React.FC = () => {
                     {activeSection === 'players' && data['players'] &&
                         <TournamentListSolo data={data['players'].players || []}/>}
                     {activeSection === 'qualifiers' && data['qualifiers'] &&
-                        <TournamentQualifiersSolo data={data['qualifiers'] || []}/>}
+                        <TournamentQualifiersSolo count={49} data={data['qualifiers'] || []}/>}
                     {activeSection === 'playoffs' && data['playoffs'] &&
-                        <TournamentQualifiers data={data['playoffs'] || []}/>}
-                    {activeSection === 'final' && data['final'] && <TournamentQualifiers data={data['final'] || []}/>}
+                        <TournamentQualifiersSolo count={7} data={data['playoffs'] || []}/>}
+                    {activeSection === 'final' && data['final'] && <TournamentQualifiersSolo count={1} data={data['final'] || []}/>}
                 </div>
             </div>
         </div>
