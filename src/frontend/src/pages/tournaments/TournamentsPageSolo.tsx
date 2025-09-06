@@ -7,7 +7,7 @@ import {useTranslation} from "react-i18next";
 
 export const TournamentsPageSolo: React.FC = () => {
     const { t } = useTranslation();
-    const [activeSection, setActiveSection] = useState<string>('players');
+    const [activeSection, setActiveSection] = useState<string>('playoffs');
     const [data, setData] = useState<{ [key: string]: any }>({});
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
