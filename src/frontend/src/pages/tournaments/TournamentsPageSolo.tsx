@@ -7,7 +7,7 @@ import {useTranslation} from "react-i18next";
 
 export const TournamentsPageSolo: React.FC = () => {
     const { t } = useTranslation();
-    const [activeSection, setActiveSection] = useState<string>('playoffs');
+    const [activeSection, setActiveSection] = useState<string>('final');
     const [data, setData] = useState<{ [key: string]: any }>({});
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -83,7 +83,6 @@ export const TournamentsPageSolo: React.FC = () => {
                     <button
                         className={`${styles.button} ${activeSection === 'final' ? styles.active : ''}`}
                         onClick={() => handleSectionChange('final')}
-                        disabled
                     >
                         {t('final')}
                     </button>

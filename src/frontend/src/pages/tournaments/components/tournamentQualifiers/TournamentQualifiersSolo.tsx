@@ -14,6 +14,7 @@ interface Player {
     };
     total_points: number;
     replays_points: number;
+    winner: boolean;
 }
 
 interface Group {
@@ -101,6 +102,9 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
                 <tbody>
                 {data.players
                     .sort((a, b) => {
+                        if (a.winner && !b.winner) return -1;
+                        if (!a.winner && b.winner) return 1;
+
                         if (b.total_points === a.total_points) {
                             return b.replays_points - a.replays_points;
                         }

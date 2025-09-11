@@ -207,7 +207,6 @@ const updateTournamentPlayoffsSoloData = async (app, steam_data) => {
                             players: group.players.map(teamData => {
                                 const teamIndex = updatedTeams.findIndex(t => t.player_id === teamData.player_id);
                                 if (teamIndex !== -1) {
-                                    // Добавляем очки из переигровок
                                     updatedTeams[teamIndex].replays_points += teamData.points;
 
                                     return {
@@ -222,6 +221,56 @@ const updateTournamentPlayoffsSoloData = async (app, steam_data) => {
                         }))
                     }))
                     : [];
+
+                let groupTotals = {};
+
+                tournamentData.maps.forEach(map => {
+                    map.groups.forEach(group => {
+                        group.players.forEach(teamData => {
+                            if (!groupTotals[group.group_name]) {
+                                groupTotals[group.group_name] = {};
+                            }
+                            if (!groupTotals[group.group_name][teamData.player_id]) {
+                                groupTotals[group.group_name][teamData.player_id] = 0;
+                            }
+                            groupTotals[group.group_name][teamData.player_id] += teamData.points;
+                        });
+                    });
+                });
+
+                Object.entries(groupTotals).forEach(([groupName, players]) => {
+                    let maxPoints = Math.max(...Object.values(players));
+                    
+                    let potentialWinners = Object.entries(players)
+                        .filter(([_, points]) => points === maxPoints)
+                        .map(([playerId]) => parseInt(playerId));
+                    
+                    if (potentialWinners.length > 1) {
+                        let winnerId = potentialWinners[0];
+                        let maxReplayPoints = updatedTeams.find(t => t.player_id === winnerId).replays_points;
+
+                        potentialWinners.forEach(playerId => {
+                            const replayPoints = updatedTeams.find(t => t.player_id === playerId).replays_points;
+                            if (replayPoints > maxReplayPoints) {
+                                winnerId = playerId;
+                                maxReplayPoints = replayPoints;
+                            }
+                        });
+
+                        const idx = updatedTeams.findIndex(t => t.player_id === winnerId);
+                        if (idx !== -1) {
+                            updatedTeams[idx].winner = true;
+                            updatedTeams[idx].winner_group = groupName;
+                        }
+                    } else {
+                        const idx = updatedTeams.findIndex(t => t.player_id === potentialWinners[0]);
+                        if (idx !== -1) {
+                            updatedTeams[idx].winner = true;
+                            updatedTeams[idx].winner_group = groupName;
+                        }
+                    }
+                });
+
 
                 cachedTournamentPlayoffsSoloData = ({ players: updatedTeams, maps: mapsWithGroups, replays });
                 console.log('Tournament playoffs data updated');
@@ -249,7 +298,7 @@ const updateTournamentPlayoffsSoloData = async (app, steam_data) => {
 
 const updateTournamentFinalSoloData = async (app, steam_data) => {
     try {
-        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoFinal.json");
+        const filePath = path.join(__dirname, "../data/tournamentPlayersSoloFinal.json");
 
         fs.readFile(filePath, "utf8", async (err, data) => {
             if (err) {
@@ -260,30 +309,22 @@ const updateTournamentFinalSoloData = async (app, steam_data) => {
             try {
                 let tournamentData = JSON.parse(data);
                 let steamIds = [];
-
-                // Собираем ID игроков
-                tournamentData.teams.forEach(team => {
-                    steamIds.push(team.dota_id1.toString());
-                    steamIds.push(team.dota_id2.toString());
+                
+                tournamentData.players.forEach(player => {
+                    steamIds.push(player.dota_id.toString());
                 });
 
                 // Получаем информацию о игроках
                 const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
 
                 // Преобразуем команды, добавляя информацию об игроках
-                let updatedTeams = tournamentData.teams.map(team => ({
-                    team_id: team.team_id,
-                    player1_info: {
-                        player1: team.player1,
-                        dota_id1: team.dota_id1,
-                        avatar: playersInfo[team.dota_id1]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                    },
-                    player2_info: {
-                        player2: team.player2,
-                        dota_id2: team.dota_id2,
-                        avatar: playersInfo[team.dota_id2]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
+                let updatedTeams = tournamentData.players.map(player => ({
+                    player_id: player.player_id,
+                    player_info: {
+                        player: player.player,
+                        dota_id: player.dota_id,
+                        avatar: playersInfo[player.dota_id]?.avatar || null,
+                        profileUrl: playersInfo[player.dota_id]?.profileUrl || null
                     },
                     total_points: 0,
                     replays_points: 0,
@@ -294,20 +335,20 @@ const updateTournamentFinalSoloData = async (app, steam_data) => {
                     map_name: map.map_name,
                     groups: map.groups.map(group => ({
                         group_name: group.group_name,
-                        teams: group.teams.map(teamData => {
-                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                        players: group.players.map(teamData => {
+                            const teamIndex = updatedTeams.findIndex(t => t.player_id === teamData.player_id);
                             if (teamIndex !== -1) {
                                 updatedTeams[teamIndex].total_points += teamData.points;
 
                                 return {
-                                    team_id: teamData.team_id,
-                                    team_info: updatedTeams[teamIndex],
+                                    player_id: teamData.player_id,
+                                    player_info: updatedTeams[teamIndex],
                                     points: teamData.points,
                                     place: teamData.place
                                 };
                             }
                             return null;
-                        }).filter(team => team !== null)
+                        }).filter(player => player !== null)
                     }))
                 }));
 
@@ -315,26 +356,26 @@ const updateTournamentFinalSoloData = async (app, steam_data) => {
                     ? tournamentData.replays.map(replay => ({
                         groups: replay.groups.map(group => ({
                             group_name: group.group_name,
-                            teams: group.teams.map(teamData => {
-                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
+                            players: group.players.map(teamData => {
+                                const teamIndex = updatedTeams.findIndex(t => t.player_id === teamData.player_id);
                                 if (teamIndex !== -1) {
                                     // Добавляем очки из переигровок
                                     updatedTeams[teamIndex].replays_points += teamData.points;
 
                                     return {
-                                        team_id: teamData.team_id,
+                                        player_id: teamData.player_id,
                                         points: teamData.points,
-                                        team_info: updatedTeams[teamIndex],
+                                        player_info: updatedTeams[teamIndex],
                                         place: teamData.place
                                     };
                                 }
                                 return null;
-                            }).filter(team => team !== null)
+                            }).filter(player => player !== null)
                         }))
                     }))
                     : [];
 
-                cachedTournamentFinal = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
+                cachedTournamentFinalSolo = ({ players: updatedTeams, maps: mapsWithGroups, replays });
                 console.log('Tournament final data updated');
                 const collection = app;
                 const currentDate = new Date().toISOString();
