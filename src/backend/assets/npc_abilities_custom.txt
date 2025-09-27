@@ -513,17 +513,19 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"0"
-		"AbilityCooldown"				"17 15 13 11"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"22 19 16 13"
+		"AbilityManaCost"				"90 100 110 120"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		"AbilityValues"
 		{
-			"movement_speed"		"325 350 375 400"
+			"movement_speed"		"275 325 375 425"
 			"stun_duration"			"1.2 1.4 1.6 1.8"
 			"bash_radius"			"300 300 300 300"
 			"vision_radius"			"400 400 400 400"
 			"vision_duration"		"0.94 0.94 0.94 0.94"
+            "windup_time"            "1.5"
+            "min_movespeed_bonus_pct"  "25"
 		}
 	}
 
@@ -538,8 +540,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"0"
-		"AbilityCooldown"				"24 18"
-        "MaxLevel"                      "2"
+		"AbilityCooldown"				"20"
+        "MaxLevel"                      "1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		"AbilityValues"
@@ -565,8 +567,8 @@
 
 		"AbilityValues"
 		{
-			"movement_speed"				"10 15 20 25"
-			"status_resistance"				"10 15 20 25"
+			"movement_speed"				"8 12 16 20"
+			"status_resistance"				"20 25 30 35"
 			"duration"						"8"
 		}
 	}
@@ -581,12 +583,12 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilityCooldown"				"1.2"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_3"
 
 		"AbilityValues"
 		{
 			"chance_pct"			"17 17 17 17"
-			"damage"				"20 22 24 26"
+			"damage"				"20 25 30 35"
 			"duration"				"0.7 0.8 0.9 1"
 			"knockback_duration"	"0.5"
 			"knockback_distance"	"143 152 158 162"
@@ -612,14 +614,14 @@
 		"AbilityCastRange"				"700"
 		"AbilityCastRangeBuffer"		"500"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"70 50 30"
+		"AbilityCooldown"				"75 55 35"
 		"AbilityManaCost"				"125 150 175"
 
 		"AbilityValues"
 		{
 			"damage"				
 			{
-				"value"					"150 225 300"
+				"value"					"150 250 350"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"fade_time"				"1.0 1.0 1.0"
@@ -794,7 +796,7 @@
 			"damage"				"70 120 170 220"
 			"bonus_movespeed"		"10 12 14 16"
 			"dagger_path_duration"	"12.0 12.0 12.0 12.0"
-			"hero_path_duration"	"6 6 6 6"
+			"hero_path_duration"	"7 7 7 7"
 			"buff_persistence"		"4.0 4.0 4.0 4.0"
 			"dagger_radius"			"125 125 125 125"
 			"path_radius"			"175 175 175 175"
@@ -958,8 +960,8 @@
 
 		"AbilityValues"
 		{
-			"blade_dance_crit_chance"	"20 25 30 35"
-			"blade_dance_crit_mult"		"180"
+			"blade_dance_crit_chance"	"35"
+			"blade_dance_crit_mult"		"130 140 150 160"
 		}
 	}
 
@@ -979,14 +981,14 @@
 		"HasScepterUpgrade"					"1"
 		"AbilityCastPoint"					"0.3 0.3 0.3"
 		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"					"80"
+		"AbilityCooldown"					"100"
 		"AbilityManaCost"					"200 275 350"
 		"AbilityCastRange"					"350"
 
 		"AbilityValues"
 		{
 			"attack_rate_multiplier"		"1.2"
-			"bonus_damage"					"20 25 30"
+			"bonus_damage"					"25 30 35"
 			"bonus_attack_speed"			"40"
 			"duration"						"2.5 2.75 3"
 			"omni_slash_radius"				"425"
@@ -1067,8 +1069,8 @@
 		"AbilityValues"
 		{
 			"death_effect_duration"							"2"
-			"bonus_attack_speed"							"30 60"
-			"bonus_attack_speed_death"						"120 240"
+			"bonus_attack_speed"							"40 80"
+			"bonus_attack_speed_death"						"160 320"
 
 			"healing_ward_aura_radius"						"400"
 			
@@ -3672,8 +3674,8 @@
 
 		"AbilityValues"
 		{
-			"duration"								"10"		
-			"damage"								"30 60 90"				
+			"duration"								"5"		
+			"damage"								"60 105 150"				
 		}
 	}
 
@@ -4972,7 +4974,7 @@
 		{
 			"damage_radius"						"125"
 			"speed"                             "1000"
-			"damage"                            "25"
+			"damage"                            "50"
 			"radius"                            "300"
 			"delay"                             "1"
 			"stun_duration"                     "1"
@@ -5001,8 +5003,8 @@
 			"storm_speed"           	"325"
 			"storm_speed_step"          "40"
 			"spiral_storm_count"        "12"
-			"damage"					"2"
-			"damagu"					"4"
+			"damage"					"2.5"
+			"damagu"					"5"
 		}
 	}
 
@@ -5150,17 +5152,17 @@
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCooldown"				"11 10 9 8"
-		"AbilityManaCost"				"90 100 110 120"
+		"AbilityManaCost"				"115 135 155 175"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityTextureName"			"crystal_maiden_crystal_nova"
 		"AbilityValues"
 		{
 			"radius"						"425"
-			"movespeed_slow"				"-20 -27 -34 -41"
+			"movespeed_slow"				"-20 -30 -40 -50"
 			"attackspeed_slow"				"-30 -45 -60 -75"
-			"duration"						"4.5"
+			"duration"						"4"
 			"vision_duration"				"6.0"
-			"nova_damage"					"130 170 210 260"
+			"nova_damage"					"110 160 210 260"
 		}
 		
 	}	
@@ -5254,7 +5256,7 @@
             "slow_duration"                    "1.0"
             "explosion_min_dist"            "195"
             "explosion_max_dist"            "785"
-            "damage"                        "105 170 250"
+            "damage"                        "110 180 250"
         }
     }
 
@@ -6710,7 +6712,11 @@
 		"AbilityValues"
 		{
 			"shadowraze_damage"				"90 140 190 240"	
-			"shadowraze_radius"				"250"		
+			"shadowraze_radius"	
+            {
+                "value"		"250"		
+                "affected_by_aoe_increase"	"1"
+            }
 			"shadowraze_range"				"250"
 			"shadowraze_cooldown"			"3"
 			"stack_bonus_damage" 			"50 60 70 80"
@@ -6740,7 +6746,11 @@
 		"AbilityValues"
 		{
 			"shadowraze_damage"				"90 140 190 240"	
-			"shadowraze_radius"				"250"		
+			"shadowraze_radius"	
+            {
+                "value"		"250"		
+                "affected_by_aoe_increase"	"1"
+            }	
 			"shadowraze_range"				"450"
 			"shadowraze_cooldown"			"3"
 			"stack_bonus_damage" 			"50 60 70 80"
@@ -6771,7 +6781,11 @@
 		"AbilityValues"
 		{
 			"shadowraze_damage"				"90 140 190 240"	
-			"shadowraze_radius"				"250"		
+			"shadowraze_radius"	
+            {
+                "value"		"250"		
+                "affected_by_aoe_increase"	"1"
+            }	
 			"shadowraze_range"				"700"
 			"shadowraze_cooldown"			"3"
 			"stack_bonus_damage" 			"50 60 70 80"
@@ -6844,7 +6858,11 @@
 		"AbilityValues"
 		{
 			"presence_armor_reduction"		"-2 -3 -4 -5"
-			"presence_radius"				"1200"
+			"presence_radius"				
+			{
+				"value"			"1200"
+				"affected_by_aoe_increase"	"1"
+			}
 			"bonus_armor_per_stack"				"2"
 			"kill_buff_duration"				"20"
 		}
@@ -6869,7 +6887,11 @@
             "damage_self"                    "3"
             "damage_enemy_health"            "3"
             "spell_amplify"                    "20"
-            "radius"                        "300"
+            "radius"
+            {
+                "value"                     "300"
+                "affected_by_aoe_increase"	"1"
+            }
             "interval"                        "0.25"
         }
     }
@@ -6893,15 +6915,27 @@
 		"AbilityValues"
 		{
 			"damage"							"80 120 160"
-			"requiem_radius"					"1000"		
+			"requiem_radius"	
+            {
+                "value"		"1000"		
+                "affected_by_aoe_increase"	"1"
+            }	
 			"requiem_reduction_ms"				"-20 -25 -30"
 			"requiem_reduction_mres"			"-5 -10 -15"
 			"requiem_slow_duration"				"0.7"
 			"requiem_slow_duration_max"			"2.15"
 			"requiem_reduction_radius"			"700 700 700"
 			"requiem_soul_conversion"			"1"
-			"requiem_line_width_start"			"125"
-			"requiem_line_width_end"			"350"
+			"requiem_line_width_start"	
+            {
+                "value"		"125"
+                "affected_by_aoe_increase"	"1"
+            }
+			"requiem_line_width_end"	
+            {
+                "value"			"300"
+                "affected_by_aoe_increase"	"1"
+            }
 			"requiem_line_speed"				"700 700 700"
 			"soul_death_release"				"0.5"
 		}
@@ -8020,6 +8054,18 @@
 			"aura_gold"						"15"
 		}
 	}
+    "dota_ability_xp_granter_arena6"
+	{
+		"BaseClass"           				"ability_lua"
+		"ScriptFile"						"overthrow.lua"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+			"aura_radius"					"600"
+			"aura_xp"						"150"
+		}
+	}
 	"dota_ability_xp_global"
 	{
 		"BaseClass"           				"ability_lua"
@@ -8812,7 +8858,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"100 90 80"
+		"AbilityCooldown"				"115 110 105"
 		"AbilityManaCost"				"125 175 225"
 		"AbilityValues"
 		{
@@ -8885,7 +8931,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
         "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
         "MaxLevel"                      "1"
-        "AbilityCooldown"               "65"
+        "AbilityCooldown"               "95"
         "AbilityManaCost"               "50"
         "AbilityValues"
         {
@@ -12686,7 +12732,7 @@
 		"AbilityValues"
 		{
 			"duration"				"7 8 9 10"
-			"attack_range_bonus"	"275 300 325 350"
+			"attack_range_bonus"	"175 200 225 250"
 			"percent_damage"		"2 3 4 5"
 			"tick_rate"				"0.5"
 			"damage_duration"		
@@ -14847,7 +14893,7 @@
 		{
 			"damage_multiplier"				
 			{
-				"value"		                    "0.6 0.9"
+				"value"		                    "0.7 1"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"			    "DAMAGE_TYPE_NONE"
 			}
@@ -14868,11 +14914,289 @@
 		{
 			"damage_multiplier"				
 			{
-				"value"		                    "0.3 0.4 0.5 0.6"
+				"value"		                    "0.4 0.5 0.6 0.7"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"			    "DAMAGE_TYPE_NONE"
 			}
 			"backstab_angle"				"105 105 105 105"
 		}			
+	}
+
+    "faceless_void_time_walk_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/npc_dota_hero_faceless_void_custom/faceless_void_time_walk_custom"
+        "AbilityTextureName"            "faceless_void_time_walk" 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
+		"HasScepterUpgrade"			    "1"
+		"HasShardUpgrade"			    "1"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"40"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
+		{
+			"speed"					"3000"
+			"range"					"650 700 750 800"
+			"AbilityCooldown"
+			{
+				"value"										"21 17 13 9"
+			}
+			"backtrack_duration"
+			{
+				"value"										"2.0"
+			}
+			"dodge_chance_pct"			"100"			
+		}
+	}
+    "faceless_void_time_walk_reverse_custom"
+	{
+		"BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/npc_dota_hero_faceless_void_custom/faceless_void_time_walk_custom"
+        "AbilityTextureName"            "faceless_void_time_walk_reverse" 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0.5"
+		"AbilityManaCost"				"0"
+		"AbilityModifierSupportValue"	"0.25"
+		"AbilityValues"
+		{
+			"buff_duration"			"3000"
+			"speed"					"3000"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+    "faceless_void_time_lock_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/npc_dota_hero_faceless_void_custom/faceless_void_time_lock_custom"
+        "AbilityTextureName"            "faceless_void_time_lock" 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilitySound"					"Hero_FacelessVoid.TimeLockImpact"
+		"IsBreakable"					"1"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+            "duration"				"0.5"	
+            "duration_creep"		"0.5"
+            "chance_pct"			"10 12 14 16"
+            "bonus_damage"			
+            {
+                "value"				"18 22 26 30"
+                "special_bonus_unique_faceless_void_3" "+35"
+            }
+            "delay"			"0.4"
+		}
+	}
+    "faceless_void_time_dilation_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/npc_dota_hero_faceless_void_custom/faceless_void_time_dilation_custom"  
+        "AbilityTextureName"            "faceless_void_time_dilation" 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_FacelessVoid.TimeDilation.Cast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"28 24 20 16"
+		"AbilityManaCost"				"90"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_2"
+		"AbilityValues"
+		{
+			"radius"				
+			{
+				"value"		"775"
+				"affected_by_aoe_increase"	"1"
+			}
+			"duration"				"7 8 9 10"
+			"slow"					"-7 -8 -9 -10"		
+			"cooldown_percentage"	"30 40 50 60"
+			"base_damage"			"0"
+			"damage_per_stack"		
+			{
+				"value"				"7 9 11 13"
+				"special_bonus_unique_faceless_void_6" "+9"
+			}
+		}
+	}
+    "faceless_void_chronosphere_custom"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/npc_dota_hero_faceless_void_custom/faceless_void_chronosphere_custom"  
+        "AbilityTextureName"            "faceless_void_chronosphere" 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastAnimation"		      "ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"140 130 120"
+		"AbilityManaCost"				"125 125 125"
+		"AbilityValues"
+		{
+            "radius"				
+            {
+                "value"		"500"
+                "affected_by_aoe_increase"	"1"
+                "special_bonus_unique_faceless_void_2" "+140"
+            }
+            "duration"				
+            {
+                "value"			"2.5 2.5 2.5"
+            }
+            "vision_radius"			
+            {
+                "value"	"475"
+                "affected_by_aoe_increase"	"1"
+            }
+            "bonus_attack_speed"
+            {					
+                "value" "0"
+                "special_bonus_unique_faceless_void" "+100"
+            }
+		}
+	}
+    "faceless_void_time_zone"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"0"
+        "MaxLevel"                      "1"
+		"AbilityValues"
+		{
+			"radius"				
+			{
+				"value"		"700"
+				"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_faceless_void_2" "+200"
+			}
+			"duration"				
+			{
+				"value"			"3"
+			}
+			"vision_radius"			
+			{
+				"value"	"675"				
+				"affected_by_aoe_increase"	"1"
+			}
+			"bonus_attack_speed"
+			{					
+				"value"									"0"				
+				"special_bonus_unique_faceless_void"	"+100"
+			}
+			"bonus_move_speed"
+			{					
+				"value" "50"				
+			}
+			"bonus_cast_speed"
+			{					
+				"value" "50"
+			}
+			"bonus_turn_speed"
+			{					
+				"value" "50"
+			}
+			"bonus_projectile_speed"
+			{					
+				"value" "40"
+			}
+			"yaw"				"45"
+			"cooldown_acceleration"
+			{
+				"value"				"400"
+			}
+		}
+	}
+    "faceless_void_distortion_field"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"Innate"						"0"
+		"DependentOnAbility"			"faceless_void_chronosphere"
+		"IsBreakable"					"1"
+        "MaxLevel"                      "1"
+		"AbilityValues"
+		{
+			"attack_projectile_slow"		"35"
+			"slow_distance_max"				
+			{
+				"value"			            "600"
+				"affected_by_aoe_increase"	"1"
+			}
+		}
+	}
+    "faceless_void_bash_wave"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/npc_dota_hero_faceless_void_custom/faceless_void_bash_wave"  
+        "AbilityTextureName"            "faceless_void_bash_wave"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"17"
+		"AbilityManaCost"				"100"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_2"
+        "MaxLevel"                      "3"
+		"AbilityValues"
+		{
+			"shock_speed"				
+			{
+				"value"					"1200"
+			}
+			"shock_width"				
+			{
+				"value"	"200"
+				"affected_by_aoe_increase"	"1"
+			}
+			"shock_damage"				
+			{
+				"value"			"100 150 200"				
+			}
+			"range"                 "1000"
+            "target_counter"        "1 2 3"
+		}
+	}
+    "faceless_void_face_ward"
+	{
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/npc_dota_hero_faceless_void_custom/faceless_void_face_ward"  
+        "AbilityTextureName"            "faceless_void_face_ward"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"240 160"
+		"AbilityManaCost"				"0"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_2"
+        "AbilityCastRange"              "500"
+        "MaxLevel"                      "2"
+		"AbilityValues"
+		{
+			"duration"                  "120"
+            "attack_destroy"            "2"
+            "radius"                    "1400"
+		}
 	}
 }

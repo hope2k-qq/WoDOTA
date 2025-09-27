@@ -3,37 +3,29 @@ import { TournamentListSolo } from "./components/tournamentList/TournamentListSo
 import styles from './tournaments_solo.module.scss';
 import {TournamentQualifiersSolo} from "./components/tournamentQualifiers/TournamentQualifiersSolo";
 import {useTranslation} from "react-i18next";
-//import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers";
+import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers";
+import {TournamentList} from "./components/tournamentList/TournamentList";
 
 export const TournamentsPageSolo: React.FC = () => {
     const { t } = useTranslation();
     const [activeSection, setActiveSection] = useState<string>('final');
-    const [data, setData] = useState<{ [key: string]: any }>({});
+    const [tournament, setTournament] = useState<any | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
-        const loadData = async (section: string) => {
-            if (data[section]) {
-                return;
-            }
-
+        const loadLatestTournament = async () => {
             setLoading(true);
             setError(null);
 
             try {
-                const response = await fetch(`${API_URL}/tournament_solo/${section}`);
-                console.log(response)
+                const response = await fetch(`${API_URL}/tournament/latest`);
                 if (!response.ok) {
-                    throw new Error('Ошибка при загрузке данных');
+                    throw new Error('Ошибка при загрузке турнира');
                 }
                 const result = await response.json();
-                console.log(result)
-                setData(prevData => ({
-                    ...prevData,
-                    [section]: result
-                }));
+                setTournament(result);
             } catch (err) {
                 if (err instanceof Error) {
                     setError(err.message);
@@ -45,21 +37,25 @@ export const TournamentsPageSolo: React.FC = () => {
             }
         };
 
-        loadData(activeSection);
-    }, [API_URL, activeSection, data]);
+        loadLatestTournament();
+    }, [API_URL]);
 
     const handleSectionChange = (section: string) => {
         setActiveSection(section);
     };
 
+    if (loading) return <p>Загрузка...</p>;
+    if (error) return <p>Ошибка: {error}</p>;
+    if (!tournament) return null;
+
     return (
         <div className={styles.div}>
             <div className={styles.container}>
-                <div className={styles.tournament_name}>RANDOM HERO CUP</div>
+                <div className={styles.tournament_name}>{t(`${tournament.key}_name`) || "Tournament"}</div>
                 <div className={styles.tournament_data_container}>
-                    <div className={styles.tournament_data}>{t('event_dates_solo')}</div>
-                    <div className={styles.tournament_data}>{t('registration_solo')}</div>
-                    <div className={styles.tournament_data}>{t('prize_pool_solo')}</div>
+                    <div className={styles.tournament_data}>{t(`${tournament.key}_event_dates`)}</div>
+                    <div className={styles.tournament_data}>{t(`${tournament.key}_registration`)}</div>
+                    <div className={styles.tournament_data}>{t(`${tournament.key}_prize_pool`)}</div>
                 </div>
                 <div className={styles.container_buttons_navigations}>
                     <button
@@ -88,17 +84,46 @@ export const TournamentsPageSolo: React.FC = () => {
                     </button>
                 </div>
 
-                {loading && <p></p>}
-                {error && <p>Ошибка: {error}</p>}
-
                 <div className={styles.sectionContent}>
-                    {activeSection === 'players' && data['players'] &&
-                        <TournamentListSolo data={data['players'].players || []}/>}
-                    {activeSection === 'qualifiers' && data['qualifiers'] &&
-                        <TournamentQualifiersSolo count={49} data={data['qualifiers'] || []}/>}
-                    {activeSection === 'playoffs' && data['playoffs'] &&
-                        <TournamentQualifiersSolo count={7} data={data['playoffs'] || []}/>}
-                    {activeSection === 'final' && data['final'] && <TournamentQualifiersSolo count={1} data={data['final'] || []}/>}
+                    {tournament && tournament.type === 'solo' && (
+                        <>
+                            {activeSection === 'players' && tournament.data?.list && (
+                                <TournamentListSolo data={tournament.data.list.players || []}/>
+                            )}
+                            {activeSection === 'qualifiers' && tournament.data?.qualifiers && (
+                                <TournamentQualifiersSolo count={49} type={tournament.type}
+                                                          data={tournament.data.qualifiers || []} />
+                            )}
+                            {activeSection === 'playoffs' && tournament.data?.playoffs && (
+                                <TournamentQualifiersSolo count={7} type={tournament.type}
+                                                          data={tournament.data.playoffs || []} />
+                            )}
+                            {activeSection === 'final' && tournament.data?.final && (
+                                <TournamentQualifiersSolo count={1} type={tournament.type}
+                                                          data={tournament.data.final || []} />
+                            )}
+                        </>
+                    )}
+
+                    {tournament && tournament.type === 'team' && (
+                        <>
+                            {activeSection === 'players' && tournament.data?.list && (
+                                <TournamentList data={tournament.data.list.teams || []} />
+                            )}
+                            {activeSection === 'qualifiers' && tournament.data?.qualifiers && (
+                                <TournamentQualifiersSolo count={49} type={tournament.type}
+                                                          data={tournament.data.qualifiers || []} />
+                            )}
+                            {activeSection === 'playoffs' && tournament.data?.playoffs && (
+                                <TournamentQualifiersSolo count={7} type={tournament.type}
+                                                          data={tournament.data.playoffs || []} />
+                            )}
+                            {activeSection === 'final' && tournament.data?.final && (
+                                <TournamentQualifiersSolo count={1} type={tournament.type}
+                                                          data={tournament.data.final || []} />
+                            )}
+                        </>
+                    )}
                 </div>
             </div>
         </div>

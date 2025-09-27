@@ -1,458 +1,82 @@
-﻿const path = require("path");
-const fs = require("fs");
-const { getPlayersInfoBySteamIds } = require("../services/playerService");
+﻿const path = require('path');
+const fs = require('fs').promises;
+const { readJsonFile } = require('../utils/fileUtils');
+const { processTournamentData } = require('../services/tournamentService');
+const tournamentsPath = path.join(__dirname, '../data/tournaments.json');
 
-let cachedTournamentListData  = null;
-let cachedTournamentQualifiersData  = null;
-let cachedTournamentPlayoffsData  = null;
-let cachedTournamentFinal  = null;
-let updating = false;
-
-const updateTournamentListData = async (app, steam_data) => {
+exports.getTournamentListAll = async (req, res) => {
     try {
-        const filePath = path.join(__dirname, "../data/tournamentPlayersDuo.json");
+        const tournaments = await readJsonFile(tournamentsPath);
+        res.json(tournaments);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Не удалось прочитать список турниров' });
+    }
+};
 
-        fs.readFile(filePath, "utf8", async (err, data) => {
-            if (err) {
-                console.error("Ошибка при загрузке игроков:", err);
-                return;
-            }
+exports.getTournamentGenerate = async (req, res) => {
+    try {
+        const { key } = req.params;
+        const tournaments = await readJsonFile(tournamentsPath);
+        const tournament = tournaments.find(t => t.key === key);
+        if (!tournament) return res.status(404).json({ error: "Tournament not found" });
 
+        const stages = ["", "Qualifiers", "Playoffs", "Final"];
+        const fullTournamentData = {};
+
+        for (const stage of stages) {
             try {
-                let tournamentData = JSON.parse(data);
-                let steamIds = [];
-
-                tournamentData.teams.forEach(team => {
-                    steamIds.push(team.dota_id1.toString());
-                    steamIds.push(team.dota_id2.toString());
-                });
-
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
-
-                tournamentData.teams = tournamentData.teams.map(team => ({
-                    player1_info: {
-                        player1: team.player1,
-                        dota_id1: team.dota_id1,
-                        avatar: playersInfo[team.dota_id1]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                    },
-                    player2_info: {
-                        player2: team.player2,
-                        dota_id2: team.dota_id2,
-                        avatar: playersInfo[team.dota_id2]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                    }
-                }));
-
-                cachedTournamentListData = tournamentData;
-                console.log('Tournament list data updated');
-                const collection = app;
-                const currentDate = new Date().toISOString();
-
-                await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
-                    {
-                        $set: {
-                            lastmod: currentDate,
-                        }
-                    }
-                );
-            } catch (error) {
-                console.error("Error processing tournament data:", error);
+                fullTournamentData[stage === "" ? "list" : stage.toLowerCase()] = 
+                    await processTournamentData(tournament.dataFile, req.app.locals.steam_data_players, stage);
+            } catch (err) {
+                console.error(`Error processing stage ${stage}:`, err);
             }
-        });
-    } catch (error) {
-        console.error("Error in updateTournamentListData:", error);
-    } finally {
-        updating = false;
+        }
+
+        const tournamentResponse = { ...tournament, data: fullTournamentData };
+        
+        const outputPath = path.join(__dirname, '../data/tournaments', `${tournament.key}.json`);
+        await fs.mkdir(path.dirname(outputPath), { recursive: true });
+        await fs.writeFile(outputPath, JSON.stringify(tournamentResponse, null, 2), 'utf-8');
+        
+        res.json(tournamentResponse);
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Internal server error" });
     }
 };
 
-const updateTournamentQualifiersData = async (app, steam_data) => {
+exports.getTournament = async (req, res) => {
     try {
-        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoQualifiers.json");
-
-        fs.readFile(filePath, "utf8", async (err, data) => {
-            if (err) {
-                console.error("Ошибка при загрузке игроков:", err);
-                return;
-            }
-
-            try {
-                let tournamentData = JSON.parse(data);
-                let steamIds = [];
-                
-                tournamentData.teams.forEach(team => {
-                    steamIds.push(team.dota_id1.toString());
-                    steamIds.push(team.dota_id2.toString());
-                });
-                
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
-                
-                let updatedTeams = tournamentData.teams.map(team => ({
-                    team_id: team.team_id,
-                    player1_info: {
-                        player1: team.player1,
-                        dota_id1: team.dota_id1,
-                        avatar: playersInfo[team.dota_id1]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                    },
-                    player2_info: {
-                        player2: team.player2,
-                        dota_id2: team.dota_id2,
-                        avatar: playersInfo[team.dota_id2]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                    },
-                    total_points: 0,
-                    replays_points: 0
-                }));
-                
-                let mapsWithGroups = tournamentData.maps.map(map => ({
-                    map_name: map.map_name,
-                    groups: map.groups.map(group => ({
-                        group_name: group.group_name,
-                        teams: group.teams.map(teamData => {
-                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                            if (teamIndex !== -1) {
-                                updatedTeams[teamIndex].total_points += teamData.points;
-
-                                return {
-                                    team_id: teamData.team_id,
-                                    team_info: updatedTeams[teamIndex],
-                                    points: teamData.points,
-                                    place: teamData.place
-                                };
-                            }
-                            return null;
-                        }).filter(team => team !== null)
-                    }))
-                }));
-
-                let replays = tournamentData.replays
-                    ? tournamentData.replays.map(replay => ({
-                        groups: replay.groups.map(group => ({
-                            group_name: group.group_name,
-                            teams: group.teams.map(teamData => {
-                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                                if (teamIndex !== -1) {
-                                    updatedTeams[teamIndex].replays_points += teamData.points;
-
-                                    return {
-                                        team_id: teamData.team_id,
-                                        points: teamData.points,
-                                        team_info: updatedTeams[teamIndex],
-                                        place: teamData.place
-                                    };
-                                }
-                                return null;
-                            }).filter(team => team !== null)
-                        }))
-                    }))
-                    : [];
-                cachedTournamentQualifiersData = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
-                console.log('Tournament qualifiers data updated');
-                const collection = app;
-                const currentDate = new Date().toISOString();
-
-                await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
-                    {
-                        $set: {
-                            lastmod: currentDate,
-                        }
-                    }
-                );
-            } catch (error) {
-                console.error("Error processing tournament data:", error);
-            }
-        });
-    } catch (error) {
-        console.error("Error in updateTournamentListData:", error);
-    } finally {
-        updating = false;
+        const { key } = req.params;
+        
+        const filePath = path.join(__dirname, '../data/tournaments', `${key}.json`);
+        
+        const jsonData = await readJsonFile(filePath);
+        
+        res.json(jsonData);
+    } catch (err) {
+        console.error(err);
+        res.status(404).json({ error: "Tournament not found" });
     }
 };
 
-const updateTournamentPlayoffsData = async (app, steam_data) => {
+exports.getLatestTournament = async (req, res) => {
     try {
-        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoPlayoffs.json");
+        const tournaments = await readJsonFile(tournamentsPath);
+        if (!tournaments.length) {
+            return res.status(404).json({ error: "No tournaments found" });
+        }
+        
+        const latest = tournaments.reduce((max, t) => (t.id > max.id ? t : max), tournaments[0]);
+        
+        const filePath = path.join(__dirname, '../data/tournaments', `${latest.key}.json`);
+        const data = await readJsonFile(filePath);
 
-        fs.readFile(filePath, "utf8", async (err, data) => {
-            if (err) {
-                console.error("Ошибка при загрузке игроков:", err);
-                return;
-            }
-
-            try {
-                let tournamentData = JSON.parse(data);
-                let steamIds = [];
-
-                // Собираем ID игроков
-                tournamentData.teams.forEach(team => {
-                    steamIds.push(team.dota_id1.toString());
-                    steamIds.push(team.dota_id2.toString());
-                });
-
-                // Получаем информацию о игроках
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
-
-                // Преобразуем команды, добавляя информацию об игроках
-                let updatedTeams = tournamentData.teams.map(team => ({
-                    team_id: team.team_id,
-                    player1_info: {
-                        player1: team.player1,
-                        dota_id1: team.dota_id1,
-                        avatar: playersInfo[team.dota_id1]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                    },
-                    player2_info: {
-                        player2: team.player2,
-                        dota_id2: team.dota_id2,
-                        avatar: playersInfo[team.dota_id2]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                    },
-                    total_points: 0,
-                    replays_points: 0,
-                }));
-
-                // Создаём массив карт с группами внутри
-                let mapsWithGroups = tournamentData.maps.map(map => ({
-                    map_name: map.map_name,
-                    groups: map.groups.map(group => ({
-                        group_name: group.group_name,
-                        teams: group.teams.map(teamData => {
-                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                            if (teamIndex !== -1) {
-                                updatedTeams[teamIndex].total_points += teamData.points;
-
-                                return {
-                                    team_id: teamData.team_id,
-                                    team_info: updatedTeams[teamIndex],
-                                    points: teamData.points,
-                                    place: teamData.place
-                                };
-                            }
-                            return null;
-                        }).filter(team => team !== null)
-                    }))
-                }));
-
-                let replays = tournamentData.replays
-                    ? tournamentData.replays.map(replay => ({
-                        groups: replay.groups.map(group => ({
-                            group_name: group.group_name,
-                            teams: group.teams.map(teamData => {
-                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                                if (teamIndex !== -1) {
-                                    // Добавляем очки из переигровок
-                                    updatedTeams[teamIndex].replays_points += teamData.points;
-
-                                    return {
-                                        team_id: teamData.team_id,
-                                        points: teamData.points,
-                                        team_info: updatedTeams[teamIndex],
-                                        place: teamData.place
-                                    };
-                                }
-                                return null;
-                            }).filter(team => team !== null)
-                        }))
-                    }))
-                    : [];
-                
-                cachedTournamentPlayoffsData = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
-                console.log('Tournament playoffs data updated');
-                const collection = app;
-                const currentDate = new Date().toISOString();
-
-                await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
-                    {
-                        $set: {
-                            lastmod: currentDate,
-                        }
-                    }
-                );
-            } catch (error) {
-                console.error("Error processing tournament data:", error);
-            }
-        });
-    } catch (error) {
-        console.error("Error in updateTournamentListData:", error);
-    } finally {
-        updating = false;
+        res.json(data);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Internal server error" });
     }
 };
-
-const updateTournamentFinalData = async (app, steam_data) => {
-    try {
-        const filePath = path.join(__dirname, "../data/tournamentPlayersDuoFinal.json");
-
-        fs.readFile(filePath, "utf8", async (err, data) => {
-            if (err) {
-                console.error("Ошибка при загрузке игроков:", err);
-                return;
-            }
-
-            try {
-                let tournamentData = JSON.parse(data);
-                let steamIds = [];
-
-                // Собираем ID игроков
-                tournamentData.teams.forEach(team => {
-                    steamIds.push(team.dota_id1.toString());
-                    steamIds.push(team.dota_id2.toString());
-                });
-
-                // Получаем информацию о игроках
-                const playersInfo = await getPlayersInfoBySteamIds(steamIds, steam_data);
-
-                // Преобразуем команды, добавляя информацию об игроках
-                let updatedTeams = tournamentData.teams.map(team => ({
-                    team_id: team.team_id,
-                    player1_info: {
-                        player1: team.player1,
-                        dota_id1: team.dota_id1,
-                        avatar: playersInfo[team.dota_id1]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id1]?.profileUrl || null
-                    },
-                    player2_info: {
-                        player2: team.player2,
-                        dota_id2: team.dota_id2,
-                        avatar: playersInfo[team.dota_id2]?.avatar || null,
-                        profileUrl: playersInfo[team.dota_id2]?.profileUrl || null
-                    },
-                    total_points: 0,
-                    replays_points: 0,
-                }));
-
-                // Создаём массив карт с группами внутри
-                let mapsWithGroups = tournamentData.maps.map(map => ({
-                    map_name: map.map_name,
-                    groups: map.groups.map(group => ({
-                        group_name: group.group_name,
-                        teams: group.teams.map(teamData => {
-                            const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                            if (teamIndex !== -1) {
-                                updatedTeams[teamIndex].total_points += teamData.points;
-
-                                return {
-                                    team_id: teamData.team_id,
-                                    team_info: updatedTeams[teamIndex],
-                                    points: teamData.points,
-                                    place: teamData.place
-                                };
-                            }
-                            return null;
-                        }).filter(team => team !== null)
-                    }))
-                }));
-
-                let replays = tournamentData.replays
-                    ? tournamentData.replays.map(replay => ({
-                        groups: replay.groups.map(group => ({
-                            group_name: group.group_name,
-                            teams: group.teams.map(teamData => {
-                                const teamIndex = updatedTeams.findIndex(t => t.team_id === teamData.team_id);
-                                if (teamIndex !== -1) {
-                                    // Добавляем очки из переигровок
-                                    updatedTeams[teamIndex].replays_points += teamData.points;
-
-                                    return {
-                                        team_id: teamData.team_id,
-                                        points: teamData.points,
-                                        team_info: updatedTeams[teamIndex],
-                                        place: teamData.place
-                                    };
-                                }
-                                return null;
-                            }).filter(team => team !== null)
-                        }))
-                    }))
-                    : [];
-
-                cachedTournamentFinal = ({ teams: updatedTeams, maps: mapsWithGroups, replays });
-                console.log('Tournament final data updated');
-                const collection = app;
-                const currentDate = new Date().toISOString();
-
-                await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
-                    {
-                        $set: {
-                            lastmod: currentDate,
-                        }
-                    }
-                );
-            } catch (error) {
-                console.error("Error processing tournament data:", error);
-            }
-        });
-    } catch (error) {
-        console.error("Error in updateTournamentListData:", error);
-    } finally {
-        updating = false;
-    }
-};
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const updateDataSequentiallyTournament = async (app, steam_data) => {
-    if (updating) return;
-
-    updating = true;
-
-    try {
-        await updateTournamentListData(app, steam_data);
-        await delay(3000);
-        await updateTournamentQualifiersData(app, steam_data);
-        await delay(3000);
-        await updateTournamentPlayoffsData(app, steam_data);
-        await delay(3000);
-        await updateTournamentFinalData(app, steam_data);
-        await delay(3000);
-    } catch (error) {
-        console.error('Error updating data sequentially:', error.message);
-    } finally {
-        updating = false;
-    }
-}
-
-const getTournamentList = (req, res) => {
-    if (cachedTournamentListData) {
-        res.json(cachedTournamentListData);
-    } else {
-        res.json([]);
-    }
-};
-
-const getTournamentQualifiers = (req, res) => {
-    if (cachedTournamentQualifiersData) {
-        res.json(cachedTournamentQualifiersData);
-    } else {
-        res.json([]);
-    }
-};
-
-const getTournamentPlayoffs = (req, res) => {
-    if (cachedTournamentPlayoffsData) {
-        res.json(cachedTournamentPlayoffsData);
-    } else {
-        res.json([]);
-    }
-};
-const getTournamentFinal = (req, res) => {
-    if (cachedTournamentFinal) {
-        res.json(cachedTournamentFinal);
-    } else {
-        res.json([]);
-    }
-};
-
-module.exports = {
-    updateDataSequentiallyTournament,
-    getTournamentList,
-    getTournamentQualifiers,
-    getTournamentPlayoffs,
-    getTournamentFinal,
-};
-
-

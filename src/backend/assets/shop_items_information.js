@@ -51,15 +51,16 @@ var Items_plus =
     // ID ПРЕДМЕТА для проверки или для добавления в базу,ВАЛЮТА,СТОИМОСТЬ,ИКОНКА(именно название png файла),переменная названия в локализации, можно покупать много раз или один раз(проверка на покупку в базе)
     ["subscribe_plus_1", "", "", "dp1", "subscribe_plus_1"],
     ["99991", "coin", "1", "new", "subscribe_plus_new"],
+    ["battle_pass_1", "", "", "nydp8", "battle_pass_1"],
     //["1051", "coin", "100", "nydp2", "nydp2"],
     //["1052", "coin", "500", "nydp3", "nydp3"],
     //["1053", "coin", "500", "nydp4", "nydp4"],
     //["1054", "coin", "500", "nydp5", "nydp5"],
     //["1055", "coin", "500", "nydp6", "nydp6"],
-    //["1056", "coin", "500", "nydp7", "nydp7"],
+    ["1057", "coin", "3250", "nydp7", "nydp7"],
 ] 
 
-// Последний юзабельный айди 926
+// Последний юзабельный айди 959
 
 var Items_Backround =
 [
@@ -80,7 +81,18 @@ var Items_Backround =
     ["907", "coin", "99999", "background_54", "background_54", true], // BP ONLY
     ["908", "coin", "99999", "background_55", "background_55", true], // BP ONLY
     ["917", "coin", "99999", "background_65", "background_65", true], // PROMO ONLY
-    
+
+
+    ["946", "coin", "9999", "background_66", "background_66", true], // BP ONLY
+    ["947", "coin", "9999", "background_67", "background_67", true], // BP ONLY
+    ["949", "coin", "9999", "background_69", "background_69", true], // BP ONLY
+    ["951", "coin", "9999", "background_71", "background_71", true], // BP ONLY
+    ["952", "coin", "9999", "background_72", "background_72", true], // BP ONLY
+    ["953", "coin", "9999", "background_73", "background_73", true], // BP ONLY
+    ["954", "coin", "9999", "background_74", "background_74", true], // BP ONLY
+    ["955", "coin", "9999", "background_75", "background_75", true], // BP ONLY
+    ["958", "coin", "9999", "background_78", "background_78", true], // BP ONLY
+    ["959", "coin", "9999", "background_79", "background_79", true], // BP ONLY
     
     ["897", "coin", "1000", "background_44", "background_44"],
     ["898", "coin", "1000", "background_45", "background_45"],
@@ -126,6 +138,10 @@ var Items_Backround =
     ["910", "coin", "1000", "background_58", "background_58"],
     ["911", "coin", "1000", "background_59", "background_59"],
     ["912", "coin", "1000", "background_60", "background_60"],
+    ["956", "coin", "2500", "background_76", "background_76"],
+    ["957", "coin", "2500", "background_77", "background_77"],
+    ["948", "coin", "5000", "background_68", "background_68"],
+    ["950", "coin", "5000", "background_70", "background_70"],
     ["913", "coin", "5000", "background_61", "background_61"],
     ["914", "coin", "5000", "background_62", "background_62"],
     ["915", "coin", "5000", "background_63", "background_63"],
@@ -200,6 +216,21 @@ var Background_Images =
     915 : "file://{images}/custom_game/profile_bg/background_63.png",
     916 : "file://{images}/custom_game/profile_bg/background_64.png",
     917 : "file://{images}/custom_game/profile_bg/background_65.png",
+
+    946 : "file://{images}/events/international_2025/backgrounds/galaxy_background_home.png",
+    947 : "file://{images}/teamfancontent/season_12/9247354/wallpaper0.png",
+    948 : "file://{images}/teamfancontent/season_12/9467224/wallpaper0.png",
+    949 : "file://{images}/teamfancontent/season_12/8255888/wallpaper0.png",
+    950 : "file://{images}/teamfancontent/season_12/9303484/wallpaper0.png",
+    951 : "file://{images}/teamfancontent/season_12/7554697/wallpaper1.png",
+    952 : "file://{images}/teamfancontent/season_12/9351740/wallpaper1.png",
+    953 : "file://{images}/teamfancontent/season_12/2163/wallpaper1.png",
+    954 : "file://{images}/teamfancontent/season_12/9691969/wallpaper1.png",
+    955 : "file://{images}/teamfancontent/season_12/9691969/wallpaper0.png",
+    956 : "s2r://panorama/images/loadingscreens/international_2025_ls_5/loadingscreen.vtex",
+    957 : "s2r://panorama/images/loadingscreens/international_2025_ls_4/loadingscreen.vtex",
+    958 : "s2r://panorama/images/loadingscreens/international_2025_team_ls_team_falcons/loadingscreen.vtex",
+    959 : "s2r://panorama/images/loadingscreens/international_2025_team_ls_pvision/loadingscreen.vtex",
 }
 
 var Items_Five =
@@ -247,6 +278,10 @@ var Items_pets =
     ["829", "coin", "99999", "0", "pet_154", true], // BP ONLY
     ["830", "coin", "99999", "0", "pet_155", true], // BP ONLY
     ["831", "coin", "99999", "0", "pet_156", true], // BP ONLY
+
+    ["938", "coin", "99999", "0", "pet_158", true], // BP ONLY
+    ["939", "coin", "99999", "0", "pet_159", true], // BP ONLY
+    ["940", "coin", "99999", "0", "pet_160", true], // BP ONLY
 
 
     // 150
@@ -400,7 +435,19 @@ var Items_emblems =
     ["918", "coin", "99999", "emblem_92", "emblem_92", true], // SEASON REWARD
     ["924", "coin", "99999", "emblem_98", "emblem_98", true], // SEASON REWARD
     ["925", "coin", "99999", "emblem_99", "emblem_99", true], // SEASON REWARD
-   
+    
+    ["927", "coin", "9999", "emblem_111", "emblem_111", true], // BATTLE PASS REWARD
+    ["928", "coin", "9999", "emblem_101", "emblem_101", true], // BATTLE PASS REWARD
+    ["929", "coin", "9999", "emblem_102", "emblem_102", true], // BATTLE PASS REWARD
+    ["930", "coin", "9999", "emblem_103", "emblem_103", true], // BATTLE PASS REWARD
+    ["931", "coin", "9999", "emblem_104", "emblem_104", true], // BATTLE PASS REWARD
+    ["932", "coin", "9999", "emblem_105", "emblem_105", true], // BATTLE PASS REWARD
+    ["933", "coin", "9999", "emblem_106", "emblem_106", true], // BATTLE PASS REWARD
+    ["934", "coin", "9999", "emblem_107", "emblem_107", true], // BATTLE PASS REWARD
+    ["935", "coin", "9999", "emblem_108", "emblem_108", true], // BATTLE PASS REWARD
+    ["936", "coin", "9999", "emblem_109", "emblem_109", true], // BATTLE PASS REWARD
+    ["937", "coin", "9999", "emblem_110", "emblem_110", true], // BATTLE PASS REWARD
+
     ["926", "coin", "500", "emblem_100", "emblem_100"],
     ["205", "coin", "500", "emblem_41", "emblem_41"],
     ["200", "coin", "500", "emblem_37", "emblem_37"],
@@ -490,6 +537,11 @@ var Items_tips =
     ["881", "coin", "99999", "tip", "tipped_881", true], // BP ONLY
     ["882", "coin", "99999", "tip", "tipped_882", true], // BP ONLY
     ["883", "coin", "99999", "tip", "tipped_883", true], // BP ONLY
+    ["941", "coin", "99999", "tip", "tipped_941", true], // BP ONLY
+    ["942", "coin", "99999", "tip", "tipped_942", true], // BP ONLY
+    ["943", "coin", "99999", "tip", "tipped_943", true], // BP ONLY
+    ["944", "coin", "99999", "tip", "tipped_944", true], // BP ONLY
+    ["945", "coin", "99999", "tip", "tipped_945", true], // BP ONLY
     
 
     // ID ПРЕДМЕТА для проверки или для добавления в базу,ВАЛЮТА,СТОИМОСТЬ,ИКОНКА(именно название png файла),переменная названия в локализации, можно покупать много раз или один раз(проверка на покупку в базе)
@@ -622,7 +674,6 @@ var HERO_VOTES_TABLE =
     "npc_dota_hero_ember_spirit",
     "npc_dota_hero_enchantress",
     "npc_dota_hero_enigma",
-    "npc_dota_hero_faceless_void",
     "npc_dota_hero_grimstroke",
     "npc_dota_hero_gyrocopter",
     "npc_dota_hero_hoodwink",

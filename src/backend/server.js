@@ -70,9 +70,9 @@ const startServer = async () => {
             setInterval(async () => {
                 await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
             }, 5 * 60 * 1000);
-            setInterval(async () => {
-                await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
-            }, 999 * 60 * 1000);
+            // setInterval(async () => {
+            //     await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
+            // }, 999 * 60 * 1000);
             setInterval(async () => {
                 await updateCreatorsVideosData(app.locals.sitemap);
             }, 60 * 60 * 1000);
@@ -80,7 +80,7 @@ const startServer = async () => {
                 try {
                     await updateVotesData(app.locals.sitemap);
                     await updateDataSequentially(app.locals.sitemap, app.locals.steam_data_players );
-                    await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
+                    // await updateDataSequentiallyTournament(app.locals.sitemap, app.locals.steam_data_players);
                     await updateCreatorsVideosData(app.locals.sitemap);
                 } catch (err) {
                     console.error("Ошибка при выполнении операций:", err);

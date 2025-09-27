@@ -20,6 +20,7 @@ interface Team {
     };
     total_points: number;
     replays_points: number;
+    winner: boolean;
 }
 
 interface Group {
@@ -60,6 +61,8 @@ interface TournamentData {
 interface TournamentQualifiersProps {
     data: TournamentData;
 }
+
+
 
 
 export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data }) => {
@@ -103,6 +106,7 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
         setSelectedMap(map);
         setShowReplays(false);
     };
+
     return (
         <div className={styles.div}>
             <table className={styles.table}>
@@ -121,6 +125,9 @@ export const TournamentQualifiers: React.FC<TournamentQualifiersProps> = ({ data
                 <tbody>
                 {data.teams
                     .sort((a, b) => {
+                        if (a.winner && !b.winner) return -1;
+                        if (!a.winner && b.winner) return 1;
+
                         if (b.total_points === a.total_points) {
                             return b.replays_points - a.replays_points;
                         }

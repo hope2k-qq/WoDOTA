@@ -19,6 +19,7 @@ const updateVotesData = async (app) => {
             'npc_dota_hero_sniper',
             'npc_dota_hero_riki',
             'npc_dota_hero_monkey_king',
+            'npc_dota_hero_faceless_void',
         ];
         cachedVotesData = response.data
             .filter(hero => {
