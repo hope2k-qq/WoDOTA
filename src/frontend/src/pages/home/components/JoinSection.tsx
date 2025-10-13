@@ -26,7 +26,7 @@ export const JoinSection: React.FC = () => {
 
     return (
         <div className={styles.join_section}>
-            <img src={"https://cdn.wodota.pro/home/join.webp"} alt={"join"} className={styles.image}/>
+            <img src={"https://cdn.wodota.net/home/join.webp"} alt={"join"} className={styles.image}/>
             <div className={styles.overlay}></div>
             <div className={styles.shadow_top}></div>
             <div className={styles.shadow_bottom}></div>
