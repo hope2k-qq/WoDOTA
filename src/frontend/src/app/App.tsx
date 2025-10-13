@@ -12,6 +12,7 @@ import {UnreadNewsProvider} from "../context/UnreadNewsContext";
 import {HelmetProvider} from "react-helmet-async";
 import {MyDataProvider, useMyData} from "../context/HeroesDataContext";
 import {UserProvider} from "../context/UserContext";
+//import RelocationNotice from "../widgets/relocationNotice/RelocationNotice";
 
 const App = () => {
     const { getCurrentTheme } = useThemeStore();
@@ -35,6 +36,7 @@ const App = () => {
                         <UserProvider>
                             <UnreadNewsProvider>
                                 <Grid item md={12} className={styles.app}>
+                                    {/*<RelocationNotice />*/}
                                     <InnerApp />
                                 </Grid>
                             </UnreadNewsProvider>

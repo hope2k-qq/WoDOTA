@@ -1,0 +1,72 @@
+.relocation-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.relocation-modal {
+  background: #1a1a1a;
+  border: 2px solid #f5b041;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  color: #e2e2e2;
+  box-shadow: 0 0 25px rgba(245, 176, 65, 0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.3s ease-out;
+
+  h2 {
+    color: #f5b041;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #f39c12;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  button {
+    margin-top: 1.5rem;
+    background: #f39c12;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #ffb84d;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -18,7 +18,7 @@
 export const getImageUrl = async (objectKey: string): Promise<string | null> => {
     try {
 
-        const response = await fetch(`https://cdn.wodota.pro/${objectKey}`);
+        const response = await fetch(`https://cdn.wodota.net/${objectKey}`);
 
         if (!response.ok) {
             console.error('Failed to fetch image:', response.statusText);
