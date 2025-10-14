@@ -70,7 +70,7 @@ exports.getSitemapIndex = async (req, res) => {
                 ...languages.map(lang => {
                     return {
                         sitemap: [
-                            { loc: `https://wodota.pro/sitemap_${lang}.xml` },
+                            { loc: `https://wodota.net/sitemap_${lang}.xml` },
                         ]
                     };
                 })

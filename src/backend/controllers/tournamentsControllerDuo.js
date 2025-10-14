@@ -50,7 +50,7 @@ const updateTournamentListData = async (app, steam_data) => {
                 const currentDate = new Date().toISOString();
 
                 await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
+                    { loc: 'https://wodota.net/tournament' },
                     {
                         $set: {
                             lastmod: currentDate,
@@ -155,7 +155,7 @@ const updateTournamentQualifiersData = async (app, steam_data) => {
                 const currentDate = new Date().toISOString();
 
                 await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
+                    { loc: 'https://wodota.net/tournament' },
                     {
                         $set: {
                             lastmod: currentDate,
@@ -266,7 +266,7 @@ const updateTournamentPlayoffsData = async (app, steam_data) => {
                 const currentDate = new Date().toISOString();
 
                 await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
+                    { loc: 'https://wodota.net/tournament' },
                     {
                         $set: {
                             lastmod: currentDate,
@@ -376,7 +376,7 @@ const updateTournamentFinalData = async (app, steam_data) => {
                 const currentDate = new Date().toISOString();
 
                 await collection.updateOne(
-                    { loc: 'https://wodota.pro/tournament' },
+                    { loc: 'https://wodota.net/tournament' },
                     {
                         $set: {
                             lastmod: currentDate,

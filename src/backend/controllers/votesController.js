@@ -38,7 +38,7 @@ const updateVotesData = async (app) => {
         const currentDate = new Date().toISOString(); 
 
         await collection.updateOne(
-            { loc: 'https://wodota.pro/votes' },
+            { loc: 'https://wodota.net/votes' },
             {
                 $set: {
                     lastmod: currentDate,

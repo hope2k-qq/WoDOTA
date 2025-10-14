@@ -289,6 +289,8 @@ const LanguageRedirect = () => {
 
         const validLanguages = ['en', 'ru', 'uk', 'cs'];
 
+        if (window.location.hostname === 'wodota.pro') return;
+
         if (!validLanguages.includes(langPrefix)) {
             const defaultLang = i18n.language || 'ru';
             const newPath = `/${defaultLang}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
