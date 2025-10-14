@@ -284,18 +284,17 @@ const LanguageRedirect = () => {
     useEffect(() => {
         if (!i18n.isInitialized) return;
 
-        const segments = pathname.split('/');
-        const langPrefix = segments[1];
+        // const segments = pathname.split('/');
+        // const langPrefix = segments[1];
 
-        const validLanguages = ['en', 'ru', 'uk', 'cs'];
+        // const validLanguages = ['en', 'ru', 'uk', 'cs'];
 
-        if (window.location.hostname === 'wodota.pro') return;
-
-        if (!validLanguages.includes(langPrefix)) {
-            const defaultLang = i18n.language || 'ru';
-            const newPath = `/${defaultLang}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
-            navigate(newPath, { replace: true });
-        }
+        return;
+        // if (!validLanguages.includes(langPrefix)) {
+        //     const defaultLang = i18n.language || 'ru';
+        //     const newPath = `/${defaultLang}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
+        //     navigate(newPath, { replace: true });
+        // }
     }, [pathname, navigate]);
 
     return null;
