@@ -8,7 +8,7 @@ const cleanHeroName = (hero) => {
 
 const fetchRatingData = async () => {
     try {
-        const response = await axios.get('https://data.worldofdota.net/data/get_top_rating_150.php');
+        const response = await axios.get('https://data.world-of-dota.com/data/get_top_rating_150.php');
         return response.data;
     } catch (error) {
         console.error('Error fetching rating data:', error.message);
@@ -18,7 +18,7 @@ const fetchRatingData = async () => {
 
 const fetchArenaData = async () => {
     try {
-        const response = await axios.get('https://data.worldofdota.net/data/get_top_rating_pve_arena.php');
+        const response = await axios.get('https://data.world-of-dota.com/data/get_top_rating_pve_arena.php');
         const rawData = response.data;
         const cleanedData = {};
 

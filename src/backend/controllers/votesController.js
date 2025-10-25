@@ -10,7 +10,7 @@ const updateVotesData = async (app) => {
 
     try {
         console.log('Fetching fresh vote data');
-        const response = await axios.get('https://data.worldofdota.net/data/get_heroes_votes.php');
+        const response = await axios.get('https://data.world-of-dota.com/data/get_heroes_votes.php');
         const mustIncludeHeroes = [
             'npc_dota_hero_void_spirit',
             'npc_dota_hero_wisp',

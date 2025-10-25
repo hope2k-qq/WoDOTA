@@ -11,7 +11,7 @@ import {Footer} from "../widgets/footer/Footer";
 import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
-//import {TournamentsPageSolo} from "../pages/tournaments/TournamentsPageSolo";
+//import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
 import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
 import { PageWrapper } from "./components/PageWrapper";
@@ -22,8 +22,6 @@ import {Helmet} from "react-helmet-async";
 import {useMyData} from "../context/HeroesDataContext";
 import {useTranslation} from "react-i18next";
 import {CreatorsVideosPage} from "../pages/creators/videos/CreatorsVideosPage";
-// import {ShopPage} from "../pages/shop/ShopPage";
-// import {HeroesMetaPage} from "../pages/heroes/components/heroesMeta/HeroesMetaPage";
 //import {HeroBuildCreatePage} from "../pages/heroes/components/heroCreateBuildPage/HeroCreateBuildPage";
 //import {ArenaPage} from "../pages/games/arena/ArenaPage";
 
@@ -149,7 +147,7 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
     },
     // {
     //     path: "/tournament",
-    //     element: <TournamentsPageSolo />,
+    //     element: <TournamentsPage />,
     //     title: {
     //         en: "World of Dota (WoDOTA) — Tournaments",
     //         ru: "World of Dota (WoDOTA) — Турниры",
@@ -179,38 +177,6 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "Nejlepší obsah a videa o World of Dota"
         }
     },
-    // {
-    //     path: "/shop",
-    //     element: <ShopPage />,
-    //     title: {
-    //         en: "World of Dota (WoDOTA) — WoDOTA CONTENT",
-    //         ru: "World of Dota (WoDOTA) — WoDOTA КОНТЕНТ",
-    //         uk: "World of Dota (WoDOTA) — WoDOTA КОНТЕНТ",
-    //         cs: "World of Dota (WoDOTA) — WoDOTA OBSAH"
-    //     },
-    //     description: {
-    //         en: "The best content and videos about World of Dota",
-    //         ru: "Лучший контент и видео по World of Dota",
-    //         uk: "Найкращий контент і відео по World of Dota",
-    //         cs: "Nejlepší obsah a videa o World of Dota"
-    //     }
-    // },
-    // {
-    //     path: "/heroes/meta",
-    //     element: <HeroesMetaPage />,
-    //     title: {
-    //         en: "World of Dota (WoDOTA) — WoDOTA CONTENT",
-    //         ru: "World of Dota (WoDOTA) — WoDOTA КОНТЕНТ",
-    //         uk: "World of Dota (WoDOTA) — WoDOTA КОНТЕНТ",
-    //         cs: "World of Dota (WoDOTA) — WoDOTA OBSAH"
-    //     },
-    //     description: {
-    //         en: "The best content and videos about World of Dota",
-    //         ru: "Лучший контент и видео по World of Dota",
-    //         uk: "Найкращий контент і відео по World of Dota",
-    //         cs: "Nejlepší obsah a videa o World of Dota"
-    //     }
-    // },
     // {
     //     path: "/games",
     //     element: <ArenaPage />,
@@ -284,17 +250,16 @@ const LanguageRedirect = () => {
     useEffect(() => {
         if (!i18n.isInitialized) return;
 
-        // const segments = pathname.split('/');
-        // const langPrefix = segments[1];
+        const segments = pathname.split('/');
+        const langPrefix = segments[1];
 
-        // const validLanguages = ['en', 'ru', 'uk', 'cs'];
+        const validLanguages = ['en', 'ru', 'uk', 'cs'];
 
-        return;
-        // if (!validLanguages.includes(langPrefix)) {
-        //     const defaultLang = i18n.language || 'ru';
-        //     const newPath = `/${defaultLang}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
-        //     navigate(newPath, { replace: true });
-        // }
+        if (!validLanguages.includes(langPrefix)) {
+            const defaultLang = i18n.language || 'ru';
+            const newPath = `/${defaultLang}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
+            navigate(newPath, { replace: true });
+        }
     }, [pathname, navigate]);
 
     return null;

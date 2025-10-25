@@ -147,9 +147,9 @@ export const TopBar = () => {
                                                 onNavigate={() => handleNavigate('/creators/videos')} menuOpen={menuOpen}/>
                                 <MoreIcon/>
                             </div>
-                            <div className={styles.topbar_menu_item_open} onClick={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}>
+                            <div className={styles.topbar_menu_item_open} onClick={() => window.open('https://shop.world-of-dota.com', '_blank')}>
                                 <TopBarMenuItem title={t('donate')}
-                                                onNavigate={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')} menuOpen={menuOpen}/>
+                                                onNavigate={() => window.open('https://shop.world-of-dota.com', '_blank')} menuOpen={menuOpen}/>
                                 <MoreIcon/>
                             </div>
                             <div className={styles.topbar_menu_item_open} onClick={() => handleNavigate('/news')}>
@@ -213,7 +213,7 @@ export const TopBar = () => {
                                         isActive={activeIcon("/creators/videos")} menuOpen={menuOpen}
                                         icon={<YouTubeIcon/>}/>
                         <TopBarMenuItem title={t('donate')}
-                                        onNavigate={() => window.open('https://store.worldofdota.net/ru-RU', '_blank')}
+                                        onNavigate={() => window.open('https://shop.world-of-dota.com', '_blank')}
                                         menuOpen={menuOpen} icon={<WalletIcon/>}/>
                     </div>
                     <div className={styles.hamburger} onClick={toggleMenu}>
