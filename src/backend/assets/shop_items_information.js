@@ -57,13 +57,19 @@ var Items_plus =
     //["1053", "coin", "500", "nydp4", "nydp4"],
     //["1054", "coin", "500", "nydp5", "nydp5"],
     //["1055", "coin", "500", "nydp6", "nydp6"],
-    ["1057", "coin", "3250", "nydp7", "nydp7"],
+    ["1058", "coin", "3250", "nydp7", "nydp7"],
 ] 
 
-// Последний юзабельный айди 959
+// Последний юзабельный айди 991
 
 var Items_Backround =
 [
+
+
+
+    
+
+
     ["889", "coin", "99999", "background_56", "background_56", true], // BP ONLY
     ["890", "coin", "99999", "background_37", "background_37", true], // BP ONLY
     ["891", "coin", "99999", "background_38", "background_38", true], // BP ONLY
@@ -94,6 +100,43 @@ var Items_Backround =
     ["958", "coin", "9999", "background_78", "background_78", true], // BP ONLY
     ["959", "coin", "9999", "background_79", "background_79", true], // BP ONLY
     
+    ["980", "coin", "500", "background_101", "background_101"],
+    ["981", "coin", "500", "background_102", "background_102"],
+    ["982", "coin", "500", "background_103", "background_103"],
+    ["983", "coin", "500", "background_104", "background_104"],
+    ["984", "coin", "500", "background_105", "background_105"],
+    ["985", "coin", "500", "background_106", "background_106"],
+    ["986", "coin", "500", "background_107", "background_107"],
+    ["987", "coin", "500", "background_108", "background_108"],
+    ["988", "coin", "500", "background_109", "background_109"],
+    ["989", "coin", "500", "background_110", "background_110"],
+
+    ["960", "coin", "1000", "background_80", "background_80"],
+    ["963", "coin", "1000", "background_83", "background_83"],
+    ["967", "coin", "1000", "background_87", "background_87"],
+    ["969", "coin", "1000", "background_89", "background_89"],
+    ["974", "coin", "1000", "background_94", "background_94"],
+    ["979", "coin", "1000", "background_99", "background_99"],
+    ["962", "coin", "1000", "background_82", "background_82"],
+    ["964", "coin", "1000", "background_84", "background_84"],
+    ["961", "coin", "1000", "background_81", "background_81"],
+    ["965", "coin", "1000", "background_85", "background_85"],
+    ["970", "coin", "1000", "background_90", "background_90"],
+    ["966", "coin", "1000", "background_86", "background_86"],
+    ["968", "coin", "1000", "background_88", "background_88"],
+    ["971", "coin", "1000", "background_91", "background_91"],
+    ["972", "coin", "1000", "background_92", "background_92"],
+    ["973", "coin", "1000", "background_93", "background_93"],
+    ["975", "coin", "1000", "background_95", "background_95"],
+    ["976", "coin", "1000", "background_96", "background_96"],
+    ["977", "coin", "1000", "background_97", "background_97"],
+    ["978", "coin", "1000", "background_98", "background_98"],
+    
+    ["956", "coin", "1000", "background_76", "background_76"],
+    ["957", "coin", "1000", "background_77", "background_77"],
+    ["948", "coin", "1000", "background_68", "background_68"],
+    ["950", "coin", "1000", "background_70", "background_70"],
+
     ["897", "coin", "1000", "background_44", "background_44"],
     ["898", "coin", "1000", "background_45", "background_45"],
     ["899", "coin", "1000", "background_46", "background_46"],
@@ -138,10 +181,7 @@ var Items_Backround =
     ["910", "coin", "1000", "background_58", "background_58"],
     ["911", "coin", "1000", "background_59", "background_59"],
     ["912", "coin", "1000", "background_60", "background_60"],
-    ["956", "coin", "2500", "background_76", "background_76"],
-    ["957", "coin", "2500", "background_77", "background_77"],
-    ["948", "coin", "5000", "background_68", "background_68"],
-    ["950", "coin", "5000", "background_70", "background_70"],
+    
     ["913", "coin", "5000", "background_61", "background_61"],
     ["914", "coin", "5000", "background_62", "background_62"],
     ["915", "coin", "5000", "background_63", "background_63"],
@@ -231,6 +271,37 @@ var Background_Images =
     957 : "s2r://panorama/images/loadingscreens/international_2025_ls_4/loadingscreen.vtex",
     958 : "s2r://panorama/images/loadingscreens/international_2025_team_ls_team_falcons/loadingscreen.vtex",
     959 : "s2r://panorama/images/loadingscreens/international_2025_team_ls_pvision/loadingscreen.vtex",
+
+    960 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act3_10.tga",
+    961 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act2_9.tga",
+    962 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act2_3.tga",
+    963 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act1_2.tga",
+    964 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act1_3.tga",
+    965 : "file://{images}/loadingscreens/frostivus_2023/loading_screen_frostivus_2023_001.vtex",
+    966 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act3_8.tga",
+    967 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act3_4.tga",
+    968 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act3_3.tga",
+    969 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act3_2.tga",
+    970 : "file://{images}/loadingscreens/diretide_2022_candy_loading_screen/loadingscreen.vtex",
+    971 : "file://{images}/loadingscreens/newbloom_2019_loadingscreen/loadingscreen.vtex",
+    972 : "file://{images}/loadingscreens/ancient_rhythm_loading_screen/loadingscreen.tga",
+    973 : "file://{images}/loadingscreens/circus_ursa_ls/loadingscreen.vtex",
+    974 : "file://{images}/loadingscreens/international_2023_ls_3/loadingscreen.vtex",
+    975 : "file://{images}/loadingscreens/aghs_2021_goat_loadingscreen/loadingscreen.vtex",
+    976 : "file://{images}/loadingscreens/shibe_dog_cat_loadingscreen/loadingscreen.vtex",
+    977 : "file://{images}/loadingscreens/lets_race_loading_screen/loadingscreen.tga",
+    978 : "file://{images}/loadingscreens/3_heroes_loadingscreen/loadingscreen.tga",
+    979 : "file://{images}/loadingscreens/esl_one_2014_loadingscreen/loadingscreen.tga",
+    980 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_9.vtex",
+    981 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_2.vtex",
+    982 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_5.vtex",
+    983 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_1.vtex",
+    984 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_10.vtex",
+    985 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_3.vtex",
+    986 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_8.vtex",
+    987 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_7.vtex",
+    988 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_6.vtex",
+    989 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_4.vtex",
 }
 
 var Items_Five =
@@ -403,6 +474,9 @@ var Items_pets =
 var Items_emblems = 
 [
     // ID ПРЕДМЕТА для проверки или для добавления в базу,ВАЛЮТА,СТОИМОСТЬ,ИКОНКА(именно название png файла),переменная названия в локализации, можно покупать много раз или один раз(проверка на покупку в базе)
+    
+    
+
     ["832", "coin", "99999", "emblem_56", "emblem_56", true], // BP ONLY
     ["833", "coin", "99999", "emblem_57", "emblem_57", true], // BP ONLY
     ["834", "coin", "99999", "emblem_58", "emblem_58", true], // BP ONLY
@@ -502,6 +576,8 @@ var Items_emblems =
     ["705", "coin", "1500", "emblem_49", "emblem_49"],
     ["724", "coin", "1500", "emblem_53", "emblem_53"],
     ["725", "coin", "1500", "emblem_54", "emblem_54"],
+    ["991", "coin", "1500", "emblem_113", "emblem_113"], // BP ONLY
+    ["990", "coin", "5000", "emblem_112", "emblem_112"], // BP ONLY
     ["193", "coin", "5000", "emblem_30", "emblem_30"],
     ["204", "coin", "5000", "emblem_40", "emblem_40"],
     ["194", "coin", "5000", "emblem_31", "emblem_31"],
@@ -680,7 +756,6 @@ var HERO_VOTES_TABLE =
     "npc_dota_hero_keeper_of_the_light",
     "npc_dota_hero_leshrac",
     "npc_dota_hero_life_stealer",
-    "npc_dota_hero_lina",
     "npc_dota_hero_lycan",
     "npc_dota_hero_magnataur",
     "npc_dota_hero_mars",
