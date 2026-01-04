@@ -167,7 +167,7 @@ function getHeroData(heroName, abilityNames = [], lang) {
 
             return abilityName;
         });
-
+        
         ({ heroTalentsData, abilitiesData } = parseAddonFileForHero(filePath, heroName, updatedAbilityNames));
     } catch (error) {
         console.error('Error:', error.message);

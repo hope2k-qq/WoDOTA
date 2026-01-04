@@ -83,7 +83,7 @@ const extractExtraFields = (fileContent, abilityName) => {
         "abilitychanneltime",
         "abilityduration",
     ];
-
+    
     // Регулярка для поиска блока способности
     const abilityBlockRegex = new RegExp(`"${abilityName}(_custom)?"\\s*{([^}]*)}`, 'gs');
     const abilityBlockMatch = abilityBlockRegex.exec(fileContent);

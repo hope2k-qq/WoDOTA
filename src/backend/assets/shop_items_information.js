@@ -60,16 +60,10 @@ var Items_plus =
     ["1058", "coin", "3250", "nydp7", "nydp7"],
 ] 
 
-// Последний юзабельный айди 991
+// Последний юзабельный айди 1004
 
 var Items_Backround =
 [
-
-
-
-    
-
-
     ["889", "coin", "99999", "background_56", "background_56", true], // BP ONLY
     ["890", "coin", "99999", "background_37", "background_37", true], // BP ONLY
     ["891", "coin", "99999", "background_38", "background_38", true], // BP ONLY
@@ -99,6 +93,10 @@ var Items_Backround =
     ["955", "coin", "9999", "background_75", "background_75", true], // BP ONLY
     ["958", "coin", "9999", "background_78", "background_78", true], // BP ONLY
     ["959", "coin", "9999", "background_79", "background_79", true], // BP ONLY
+
+    ["992", "coin", "500", "background_111", "background_111"],
+    ["993", "coin", "500", "background_112", "background_112"],
+    ["994", "coin", "500", "background_113", "background_113"],
     
     ["980", "coin", "500", "background_101", "background_101"],
     ["981", "coin", "500", "background_102", "background_102"],
@@ -302,6 +300,9 @@ var Background_Images =
     987 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_7.vtex",
     988 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_6.vtex",
     989 : "s2r://panorama/images/loadingscreens/frostivus2024/frostivus2024_ls_4.vtex",
+    992 : "file://{images}/custom_game/profile_bg/largo_wallpaper_1.jpg",
+    993 : "file://{images}/custom_game/profile_bg/largo_wallpaper_2.jpg",
+    994 : "file://{images}/custom_game/profile_bg/largo_wallpaper_3.jpg",
 }
 
 var Items_Five =
@@ -469,7 +470,22 @@ var Items_pets =
     ["121", "coin", "5000", "19328", "pet_121"],
     ["122", "coin", "5000", "13775", "pet_122"],
     ["123", "coin", "5000", "10096", "pet_123"],
-] 
+]
+
+var Items_tpscroll = 
+[
+    ["995", "coin", "5000", "tp_effect_1", "tp_effect_1"],
+    ["996", "coin", "5000", "tp_effect_2", "tp_effect_2"],
+    ["997", "coin", "5000", "tp_effect_3", "tp_effect_3"],
+    ["998", "coin", "5000", "tp_effect_4", "tp_effect_4"],
+    ["999", "coin", "99999", "tp_effect_5", "tp_effect_5", true],
+    ["1000", "coin", "99999", "tp_effect_6", "tp_effect_6", true],
+
+    ["1001", "coin", "5000", "tp_effect_7", "tp_effect_7"],
+    ["1002", "coin", "5000", "tp_effect_8", "tp_effect_8"],
+    ["1003", "coin", "5000", "tp_effect_9", "tp_effect_9"],
+    ["1004", "coin", "5000", "tp_effect_10", "tp_effect_10"],
+]
 
 var Items_emblems = 
 [
@@ -727,10 +743,12 @@ var SHOP_BUTTONS_CATEGORY =
     ["ShopMenuButtonTips", "shop_button_tips", null],
     ["ShopMenuButtonFive", "shop_button_five", null],
     ["ShopMenuButtonBG", "shop_button_bg", null],
+    ["ShopMenuButtonTeleport", "shop_button_teleports", null],
 ]
 
 var HERO_VOTES_TABLE = 
 [
+    "npc_dota_hero_largo",
     "npc_dota_hero_alchemist",
     "npc_dota_hero_bane",
     "npc_dota_hero_batrider",
@@ -753,7 +771,7 @@ var HERO_VOTES_TABLE =
     "npc_dota_hero_grimstroke",
     "npc_dota_hero_gyrocopter",
     "npc_dota_hero_hoodwink",
-    "npc_dota_hero_keeper_of_the_light",
+    //"npc_dota_hero_keeper_of_the_light",
     "npc_dota_hero_leshrac",
     "npc_dota_hero_life_stealer",
     "npc_dota_hero_lycan",
@@ -779,7 +797,7 @@ var HERO_VOTES_TABLE =
     "npc_dota_hero_sven",
     "npc_dota_hero_templar_assassin",
     "npc_dota_hero_shredder",
-    "npc_dota_hero_tinker",
+    //"npc_dota_hero_tinker",
     "npc_dota_hero_treant",
     "npc_dota_hero_troll_warlord",
     "npc_dota_hero_tusk",

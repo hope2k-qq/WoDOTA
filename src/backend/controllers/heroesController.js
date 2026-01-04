@@ -77,7 +77,7 @@ exports.getHeroData = (req, res) => {
         }
         
         const heroData = textService.getHeroData(heroName, abilityNames);
-
+        
         const heroTalentsDescription = heroData.heroTalentsData;
         const heroAbilitiesData = heroData.abilitiesData; 
         const abilitiesWithDetails = {};
@@ -365,7 +365,7 @@ exports.getAllHeroesData = (req, res, lang) => {
                     abilitiesWithDetails[ability].valuesInfo = mergeValues(abilitiesWithDetails[ability], formattedAbilityDetails);
                 }
             });
-
+            
             if (!heroTalentsInformation && Object.keys(abilitiesWithDetails).length === 0) {
                 return;
             }

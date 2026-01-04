@@ -3,7 +3,7 @@ import i18n from "../locales/i18n";
 import axios from "axios";
 
 const API_IP = process.env.REACT_APP_API_IP;
-const CACHE_VERSION = '59.0';
+const CACHE_VERSION = '62.0';
 
 type MyDataContextType = {
     language: string | null;
