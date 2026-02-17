@@ -3,6 +3,7 @@ import styles from "./touranament_qualifiers_solo.module.scss";
 import {useTranslation} from "react-i18next";
 import TournamentTableHead from "./TournamentTableHead";
 import {ParticipantRow} from "./ParticipantRow";
+import { TournamentMapsSection } from "./TournamentMapsSection";
 // import {getImageUrl} from "../../../../utils/r2Storage";
 
 
@@ -86,24 +87,14 @@ type TournamentData = TournamentDataSolo | TournamentDataDuo;
 interface TournamentQualifiersProps {
     data: TournamentData;
     count: number;
-    type: string;
+    type: "solo" | "duo";
 }
-// type Participant = {
-//     total_points: number;
-//     replays_points: number;
-//     winner?: boolean;
-//     player_id?: number;
-//     team_id?: number;
-// };
-
 type Participant = Player | Team;
 
-// Type guard для Solo
 const isSolo = (data: TournamentData): data is TournamentDataSolo => {
     return (data as TournamentDataSolo).players !== undefined;
 };
 
-// Type guard для Duo
 const isDuo = (data: TournamentData): data is TournamentDataDuo => {
     return (data as TournamentDataDuo).teams !== undefined;
 };
@@ -112,6 +103,14 @@ const isDuo = (data: TournamentData): data is TournamentDataDuo => {
 export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ data, count, type }) => {
     const { t } = useTranslation();
     const [showReplays, setShowReplays] = useState(false);
+    const [updatedPlayers, setUpdatedPlayers] = React.useState<{ [key: string]: string }>({});
+
+    const handleIdClick = (key: string, originalName: string, dotaId: string) => {
+        setUpdatedPlayers(prev => ({
+            ...prev,
+            [key]: prev[key] === dotaId ? originalName : dotaId
+        }));
+    };
 
     // const handleGetScreenshot = async (mapName: string, groupName: string): Promise<void> => {
     //     try {
@@ -151,61 +150,6 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
             <table className={styles.table}>
                 <TournamentTableHead type={type} t={t} />
                 <tbody>
-                {/*{sortedParticipants.map((p, index) => (*/}
-                {/*        <tr key={type === "solo" ? p.player_id : p.team_id} className={index < count ? styles.playoff_team : styles.no_playoff_team}>*/}
-                {/*            <td>*/}
-                {/*                <div className={styles.wreathContainer}>*/}
-                {/*                    <img src={"/wreath.png"} alt={"wreath"} className={styles.wreathIcon}/>*/}
-                {/*                    <div className={styles.rankNumber}>{index + 1}</div>*/}
-                {/*                </div>*/}
-
-                {/*            </td>*/}
-                {/*            <td>*/}
-                {/*                <div className={styles.container_table_data}>*/}
-                {/*                    <img*/}
-                {/*                        src={player.player_info.avatar}*/}
-                {/*                        alt="avatar"*/}
-                {/*                        className={styles.avatar}*/}
-                {/*                        onClick={() => {*/}
-                {/*                            if (player.player_info.profileUrl) {*/}
-                {/*                                window.open(player.player_info.profileUrl, '_blank');*/}
-                {/*                            }*/}
-                {/*                        }}*/}
-                {/*                    />*/}
-                {/*                    <div className={styles.player_container}>*/}
-                {/*                        <div*/}
-                {/*                            className={styles.ellipsis}>{player.player_info.player}</div>*/}
-                {/*                    </div>*/}
-                {/*                </div>*/}
-                {/*            </td>*/}
-                {/*            <td>*/}
-                {/*                <div className={styles.container_table_data}>*/}
-                {/*                    <div className={styles.player_container} style={{justifyContent: 'center'}}>*/}
-                {/*                        <div*/}
-                {/*                            className={styles.ellipsis}>{player.player_info.dota_id}</div>*/}
-                {/*                    </div>*/}
-                {/*                </div>*/}
-                {/*            </td>*/}
-                {/*            <td className={styles.points}>*/}
-                {/*                <div>{player.total_points}</div>*/}
-                {/*            </td>*/}
-                {/*        </tr>*/}
-                {/*    ))}*/}
-                {/*{type === "solo"*/}
-                {/*    ? data.players.sort(sortParticipants).map((p, i) => (*/}
-                {/*        <ParticipantRow key={p.player_id} participant={p} index={i} type="solo" count={count} />*/}
-                {/*    ))*/}
-                {/*    : data.teams.sort(sortParticipants).map((t, i) => (*/}
-                {/*        <ParticipantRow*/}
-                {/*            key={t.team_id}*/}
-                {/*            participant={t}*/}
-                {/*            index={i}*/}
-                {/*            type="duo"*/}
-                {/*            count={count}*/}
-                {/*            updatedPlayers={updatedPlayers}*/}
-                {/*            handleIdClick={handleIdClick}*/}
-                {/*        />*/}
-                {/*    ))}*/}
                 {isSolo(data) &&
                     [...data.players].sort(sortParticipants).map((p, i) => (
                         <ParticipantRow key={p.player_id} participant={p} index={i} type="solo" count={count} />
@@ -214,190 +158,24 @@ export const TournamentQualifiersSolo: React.FC<TournamentQualifiersProps> = ({ 
 
                 {isDuo(data) &&
                     [...data.teams].sort(sortParticipants).map((t, i) => (
-                        <ParticipantRow key={t.team_id} participant={t} index={i} type="duo" count={count} />
+                        <ParticipantRow key={t.team_id} participant={t} index={i} type="duo" count={count} updatedPlayers={updatedPlayers} handleIdClick={handleIdClick} />
                     ))
                 }
 
 
                 </tbody>
             </table>
-            <div>
-                <div className={styles.btn_container}>
-                    <div className={styles.container_buttons_map}>
-                    {data.maps.map((map, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handleMapClick(map)}
-                                className={`${styles.button}  ${!showReplays && selectedMap?.map_name === map.map_name ? styles.active : ''}`}
-                            >
-                                {t('map')} {map.map_name}
-                            </button>
-                        ))}
-                        {data.replays?.length > 0 && (
-                            <button
-                                onClick={() => {
-                                    setShowReplays(true);
-                                    if (showReplays) {
-                                        setSelectedMap(null);
-                                    }
-                                }}
-                                className={`${styles.button} ${showReplays ? styles.active : ''}`}
-                            >
-                                {t('replays')}
-                            </button>
-                        )}
-                    </div>
-                </div>
-                {showReplays ? (
-                    <div>
-                        <div className={styles.maps_name}>Переигровки</div>
-                        {data.replays.map((replay, replayIndex) => (
-                            <div className={styles.groups_grid}>
-                                {replay.groups.map((group, index) => (
-                                    <div key={index} className={styles.group_container}>
-                                        <div className={styles.group_name}>Группа: {group.group_name}</div>
-                                        <table className={styles.table_group}>
-                                            <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>{t('nickname')}</th>
-                                                <th>DOTA ID</th>
-                                                <th>{t('points')}</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                        {group.players
-                                            .slice()
-                                            .sort((a, b) => a.place - b.place)
-                                            .map((playerData) => (
-                                                <tr key={playerData.player_id}>
-                                                    <td>
-                                                        <div className={styles.wreathContainer}>
-                                                            <img src={"/wreath.png"} alt={"wreath"}
-                                                                 className={styles.wreathIconGroup}/>
-                                                            <div className={styles.rankNumberGroup}>{playerData.place}</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div className={styles.container_table_data_group}>
-                                                            <img
-                                                                src={playerData.player_info.avatar}
-                                                                alt="avatar"
-                                                                className={styles.avatarGroup}
-                                                                onClick={() => {
-                                                                    if (playerData.player_info.profileUrl) {
-                                                                        window.open(playerData.player_info.profileUrl, '_blank');
-                                                                    }
-                                                                }}
-                                                            />
-                                                            <div className={styles.player_container}>
-                                                                <div className={styles.ellipsis}>
-                                                                    {playerData.player_info.player}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div className={styles.container_table_data_group}>
-                                                            <div className={styles.player_container} style={{justifyContent: 'center'}}>
-                                                                <div className={styles.ellipsis}>
-                                                                    {playerData.player_info.dota_id}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td className={styles.points_group}>
-                                                        <div>{playerData.points}</div>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    selectedMap && (
-                        <div>
-                            <div className={styles.maps_name}>{t('groups_for_map')} {selectedMap.map_name}</div>
-                            {selectedMap.groups.length === 0 ? (
-                                <div className={styles.noGroupsMessage}>{t('groups_missing')}</div>
-                            ) : (
-                                <div className={styles.groups_grid}>
-                                    {selectedMap.groups.map((group, index) => (
-                                        <div key={index} className={styles.group_container}>
-                                        <div className={styles.group_name}>Группа: {group.group_name}</div>
-                                            <table className={styles.table_group}>
-                                                <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>{t('nickname')}</th>
-                                                    <th>DOTA ID</th>
-                                                    <th>{t('points')}</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                {group.players
-                                                    .slice()
-                                                    .sort((a, b) => a.place - b.place)
-                                                    .map((playerData) => (
-                                                        <tr key={playerData.player_id}>
-                                                            <td>
-                                                                <div className={styles.wreathContainer}>
-                                                                    <img src={"/wreath.png"} alt={"wreath"}
-                                                                         className={styles.wreathIconGroup}/>
-                                                                    <div
-                                                                        className={styles.rankNumberGroup}>{playerData.place}</div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div className={styles.container_table_data_group}>
-                                                                    <img
-                                                                        src={playerData.player_info.avatar}
-                                                                        alt="avatar"
-                                                                        className={styles.avatarGroup}
-                                                                        onClick={() => {
-                                                                            if (playerData.player_info.profileUrl) {
-                                                                                window.open(playerData.player_info.profileUrl, '_blank');
-                                                                            }
-                                                                        }}
-                                                                    />
-                                                                    <div className={styles.player_container}>
-                                                                        <div className={styles.ellipsis}>
-                                                                            {playerData.player_info.player}
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+            <TournamentMapsSection
+                data={data}
+                type={type}
+                t={t}
+                showReplays={showReplays}
+                setShowReplays={setShowReplays}
+                selectedMap={selectedMap}
+                setSelectedMap={setSelectedMap}
+                handleMapClick={handleMapClick}
+            />
 
-                                                            </td>
-                                                            <td>
-                                                                <div className={styles.container_table_data_group}>
-                                                                    <div className={styles.player_container} style={{justifyContent: 'center'}}>
-                                                                        <div className={styles.ellipsis}>
-                                                                        {playerData.player_info.dota_id}
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            </td>
-                                                            <td className={styles.points_group}>
-                                                                <div>{playerData.points}</div>
-                                                            </td>
-                                                        </tr>
-                                                    ))}
-                                                </tbody>
-                                            </table>
-                                            {/*<button onClick={() => handleGetScreenshot(selectedMap.map_name, group.group_name)}></button>*/}
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    )
-                )}
-            </div>
         </div>
     );
 };

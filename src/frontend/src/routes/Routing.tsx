@@ -11,7 +11,7 @@ import {Footer} from "../widgets/footer/Footer";
 import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
-//import {TournamentsPage} from "../pages/tournaments/TournamentsPage";
+//import {TournamentsPageSolo} from "../pages/tournaments/TournamentsPageSolo";
 import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
 import { PageWrapper } from "./components/PageWrapper";
@@ -147,7 +147,7 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
     },
     // {
     //     path: "/tournament",
-    //     element: <TournamentsPage />,
+    //     element: <TournamentsPageSolo />,
     //     title: {
     //         en: "World of Dota (WoDOTA) — Tournaments",
     //         ru: "World of Dota (WoDOTA) — Турниры",

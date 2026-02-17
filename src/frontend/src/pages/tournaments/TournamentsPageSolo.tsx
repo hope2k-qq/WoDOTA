@@ -1,47 +1,124 @@
-import React, { useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { TournamentListSolo } from "./components/tournamentList/TournamentListSolo";
 import styles from './tournaments_solo.module.scss';
 import {TournamentQualifiersSolo} from "./components/tournamentQualifiers/TournamentQualifiersSolo";
 import {useTranslation} from "react-i18next";
-import {TournamentQualifiers} from "./components/tournamentQualifiers/TournamentQualifiers";
 import {TournamentList} from "./components/tournamentList/TournamentList";
 
 export const TournamentsPageSolo: React.FC = () => {
     const { t } = useTranslation();
     const [activeSection, setActiveSection] = useState<string>('final');
     const [tournament, setTournament] = useState<any | null>(null);
+    const [tournamentsList, setTournamentsList] = useState<any[]>([]);
+    const [selectedTournamentId, setSelectedTournamentId] = useState<number | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const API_URL = process.env.REACT_APP_API_URL;
 
-    useEffect(() => {
-        const loadLatestTournament = async () => {
+    const fetchTournamentData = useCallback(
+        async (tournamentId?: number, apiPath?: string) => {
+            if (!API_URL) return;
             setLoading(true);
             setError(null);
 
             try {
-                const response = await fetch(`${API_URL}/tournament/latest`);
-                if (!response.ok) {
-                    throw new Error('Ошибка при загрузке турнира');
-                }
+                const url =
+                    tournamentId && apiPath
+                        ? `${API_URL}/tournament${apiPath}`
+                        : `${API_URL}/tournament/latest`;
+
+                const response = await fetch(url);
+                if (!response.ok)
+                    throw new Error("Ошибка при загрузке турнира");
+
                 const result = await response.json();
                 setTournament(result);
+                setActiveSection("final");
             } catch (err) {
-                if (err instanceof Error) {
-                    setError(err.message);
-                } else {
-                    setError("Произошла неизвестная ошибка");
-                }
+                setError(
+                    err instanceof Error
+                        ? err.message
+                        : "Произошла неизвестная ошибка"
+                );
             } finally {
                 setLoading(false);
             }
+        },
+        [API_URL]
+    );
+
+
+    useEffect(() => {
+        const loadData = async () => {
+            if (!API_URL) return;
+            try {
+                const res = await fetch(`${API_URL}/tournaments`);
+                if (!res.ok) throw new Error("Ошибка загрузки списка турниров");
+                const list = await res.json();
+                setTournamentsList(list);
+
+                if (list.length > 0) {
+                    const initialTournament = list[0];
+                    setSelectedTournamentId(initialTournament.id);
+                    await fetchTournamentData(initialTournament.id, initialTournament.apiPath);
+                }
+            } catch (err) {
+                console.error(err);
+            }
         };
 
-        loadLatestTournament();
+        loadData();
     }, [API_URL]);
 
-    const handleSectionChange = (section: string) => {
-        setActiveSection(section);
+    useEffect(() => {
+        if (!selectedTournamentId) return;
+
+        const selected = tournamentsList.find(
+            (t) => t.id === selectedTournamentId
+        );
+
+        if (!selected) return;
+
+        fetchTournamentData(selected.id, selected.apiPath);
+    }, [selectedTournamentId, tournamentsList, fetchTournamentData]);
+
+
+    const handleSectionChange = (section: string) => setActiveSection(section);
+
+    const renderSectionContent = () => {
+        if (!tournament) return null;
+        const { type, data } = tournament;
+
+        if (!data) return null;
+
+        const sectionDataMap: Record<string, any> = {
+            players: type === 'solo' ? data.list?.players : data.list?.teams,
+            qualifiers: data.qualifiers,
+            playoffs: data.playoffs,
+            final: data.final,
+        };
+
+        const countsMap: Record<string, number> = {
+            qualifiers: 49,
+            playoffs: 7,
+            final: 1,
+        };
+
+        if (activeSection === 'players' && sectionDataMap.players) {
+            return type === 'solo'
+                ? <TournamentListSolo data={sectionDataMap.players} />
+                : <TournamentList data={sectionDataMap.players} />;
+        }
+
+        if (['qualifiers', 'playoffs', 'final'].includes(activeSection) && sectionDataMap[activeSection]) {
+            return <TournamentQualifiersSolo
+                type={type}
+                count={countsMap[activeSection]}
+                data={sectionDataMap[activeSection]}
+            />;
+        }
+
+        return null;
     };
 
     if (loading) return <p>Загрузка...</p>;
@@ -51,6 +128,21 @@ export const TournamentsPageSolo: React.FC = () => {
     return (
         <div className={styles.div}>
             <div className={styles.container}>
+                <div>
+                    <select
+                        value={selectedTournamentId ?? ""}
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            setSelectedTournamentId(value ? Number(value) : null);
+                        }}
+                    >
+                        {tournamentsList.map((tournamentItem, index) => (
+                            <option key={tournamentItem.id} value={tournamentItem.id}>
+                                {t(`${tournamentItem.key}_name`) || tournamentItem.key}
+                            </option>
+                        ))}
+                    </select>
+                </div>
                 <div className={styles.tournament_name}>{t(`${tournament.key}_name`) || "Tournament"}</div>
                 <div className={styles.tournament_data_container}>
                     <div className={styles.tournament_data}>{t(`${tournament.key}_event_dates`)}</div>
@@ -58,72 +150,19 @@ export const TournamentsPageSolo: React.FC = () => {
                     <div className={styles.tournament_data}>{t(`${tournament.key}_prize_pool`)}</div>
                 </div>
                 <div className={styles.container_buttons_navigations}>
-                    <button
-                        className={`${styles.button} ${activeSection === 'players' ? styles.active : ''}`}
-                        onClick={() => handleSectionChange('players')}
-                    >
-                        {t('all_players')}
-                    </button>
-                    <button
-                        className={`${styles.button} ${activeSection === 'qualifiers' ? styles.active : ''}`}
-                        onClick={() => handleSectionChange('qualifiers')}
-                    >
-                        {t('qualifying_stage')}
-                    </button>
-                    <button
-                        className={`${styles.button} ${activeSection === 'playoffs' ? styles.active : ''}`}
-                        onClick={() => handleSectionChange('playoffs')}
-                    >
-                        {t('playoff')}
-                    </button>
-                    <button
-                        className={`${styles.button} ${activeSection === 'final' ? styles.active : ''}`}
-                        onClick={() => handleSectionChange('final')}
-                    >
-                        {t('final')}
-                    </button>
+                    {['players', 'qualifiers', 'playoffs', 'final'].map(section => (
+                        <button
+                            key={section}
+                            className={`${styles.button} ${activeSection === section ? styles.active : ''}`}
+                            onClick={() => handleSectionChange(section)}
+                        >
+                            {t(section === 'players' ? 'all_players' : section)}
+                        </button>
+                    ))}
                 </div>
 
                 <div className={styles.sectionContent}>
-                    {tournament && tournament.type === 'solo' && (
-                        <>
-                            {activeSection === 'players' && tournament.data?.list && (
-                                <TournamentListSolo data={tournament.data.list.players || []}/>
-                            )}
-                            {activeSection === 'qualifiers' && tournament.data?.qualifiers && (
-                                <TournamentQualifiersSolo count={49} type={tournament.type}
-                                                          data={tournament.data.qualifiers || []} />
-                            )}
-                            {activeSection === 'playoffs' && tournament.data?.playoffs && (
-                                <TournamentQualifiersSolo count={7} type={tournament.type}
-                                                          data={tournament.data.playoffs || []} />
-                            )}
-                            {activeSection === 'final' && tournament.data?.final && (
-                                <TournamentQualifiersSolo count={1} type={tournament.type}
-                                                          data={tournament.data.final || []} />
-                            )}
-                        </>
-                    )}
-
-                    {tournament && tournament.type === 'team' && (
-                        <>
-                            {activeSection === 'players' && tournament.data?.list && (
-                                <TournamentList data={tournament.data.list.teams || []} />
-                            )}
-                            {activeSection === 'qualifiers' && tournament.data?.qualifiers && (
-                                <TournamentQualifiersSolo count={49} type={tournament.type}
-                                                          data={tournament.data.qualifiers || []} />
-                            )}
-                            {activeSection === 'playoffs' && tournament.data?.playoffs && (
-                                <TournamentQualifiersSolo count={7} type={tournament.type}
-                                                          data={tournament.data.playoffs || []} />
-                            )}
-                            {activeSection === 'final' && tournament.data?.final && (
-                                <TournamentQualifiersSolo count={1} type={tournament.type}
-                                                          data={tournament.data.final || []} />
-                            )}
-                        </>
-                    )}
+                    {renderSectionContent()}
                 </div>
             </div>
         </div>

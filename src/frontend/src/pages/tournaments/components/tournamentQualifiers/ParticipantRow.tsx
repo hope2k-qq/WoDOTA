@@ -44,7 +44,6 @@ interface ParticipantRowProps {
     handleIdClick?: (key: string, originalName: string, dotaId: string) => void;
 }
 
-// Type Guards
 function isPlayer(p: Player | Team): p is Player {
     return (p as Player).player_info !== undefined;
 }
