@@ -59,7 +59,7 @@ const startServer = async () => {
         app.locals.steam_data_players = db.collection('steam_data_players');
         app.locals.steam_users = db.collection('steam_users');
         const routes = require('./routes');
-        app.use('/api', routes);
+        app.use('/', routes);
         
         app.listen(port, () => {
             console.log(`Server is running on port ${port}`);
