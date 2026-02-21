@@ -242,7 +242,7 @@ exports.getAllHeroesData = (req, res, lang) => {
             const abilitiesWithDetails = {};
 
             abilityNames.forEach(ability => {
-                const abilityPrefix = `DOTA_Tooltip_ability_${ability}`;
+                const abilityPrefix = `dota_tooltip_ability_${ability}`;
                 const abilityKeys = Object.keys(heroAbilitiesData).filter(key => key.startsWith(abilityPrefix));
 
                 if (abilityKeys.length > 0) {

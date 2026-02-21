@@ -51,16 +51,16 @@ var Items_plus =
     // ID ПРЕДМЕТА для проверки или для добавления в базу,ВАЛЮТА,СТОИМОСТЬ,ИКОНКА(именно название png файла),переменная названия в локализации, можно покупать много раз или один раз(проверка на покупку в базе)
     ["subscribe_plus_1", "", "", "dp1", "subscribe_plus_1"],
     ["99991", "coin", "1", "new", "subscribe_plus_new"],
-    ["battle_pass_1", "", "", "nydp8", "battle_pass_1"],
+    ["battle_pass_1", "", "", "nydp8", "battle_pass_2"],
     //["1051", "coin", "100", "nydp2", "nydp2"],
     //["1052", "coin", "500", "nydp3", "nydp3"],
     //["1053", "coin", "500", "nydp4", "nydp4"],
     //["1054", "coin", "500", "nydp5", "nydp5"],
     //["1055", "coin", "500", "nydp6", "nydp6"],
-    ["1058", "coin", "3250", "nydp7", "nydp7"],
+    //["1058", "coin", "3250", "nydp7", "nydp7"],
 ] 
 
-// Последний юзабельный айди 1004
+// Последний юзабельный айди 1073
 
 var Items_Backround =
 [
@@ -80,35 +80,39 @@ var Items_Backround =
     ["906", "coin", "99999", "background_53", "background_53", true], // BP ONLY
     ["907", "coin", "99999", "background_54", "background_54", true], // BP ONLY
     ["908", "coin", "99999", "background_55", "background_55", true], // BP ONLY
-    ["917", "coin", "99999", "background_65", "background_65", true], // PROMO ONLY
 
+    ["1029", "coin", "99999", "background_114", "background_114", true], // BP ONLY 2026
+    ["1030", "coin", "99999", "background_115", "background_115", true], // BP ONLY 2026
+    ["1031", "coin", "99999", "background_116", "background_116", true], // BP ONLY 2026
+    ["1032", "coin", "99999", "background_117", "background_117", true], // BP ONLY 2026
+    ["1033", "coin", "99999", "background_118", "background_118", true], // BP ONLY 2026
+    ["1034", "coin", "99999", "background_119", "background_119", true], // BP ONLY 2026
+    ["1035", "coin", "99999", "background_120", "background_120", true], // BP ONLY 2026
+    ["1036", "coin", "99999", "background_121", "background_121", true], // BP ONLY 2026
+    ["1037", "coin", "99999", "background_122", "background_122", true], // BP ONLY 2026
+    ["1038", "coin", "99999", "background_123", "background_123", true], // BP ONLY 2026
+    ["1039", "coin", "99999", "background_124", "background_124", true], // BP ONLY 2026
+    ["1040", "coin", "99999", "background_125", "background_125", true], // BP ONLY 2026
+    ["1041", "coin", "99999", "background_126", "background_126", true], // BP ONLY 2026
+    ["1042", "coin", "99999", "background_127", "background_127", true], // BP ONLY 2026
+    ["1043", "coin", "99999", "background_128", "background_128", true], // BP ONLY 2026
+    ["1044", "coin", "99999", "background_129", "background_129", true], // BP ONLY 2026
+    ["1073", "coin", "99999", "background_130", "background_130", true], // BP ONLY 2026
 
-    ["946", "coin", "9999", "background_66", "background_66", true], // BP ONLY
-    ["947", "coin", "9999", "background_67", "background_67", true], // BP ONLY
-    ["949", "coin", "9999", "background_69", "background_69", true], // BP ONLY
-    ["951", "coin", "9999", "background_71", "background_71", true], // BP ONLY
-    ["952", "coin", "9999", "background_72", "background_72", true], // BP ONLY
-    ["953", "coin", "9999", "background_73", "background_73", true], // BP ONLY
-    ["954", "coin", "9999", "background_74", "background_74", true], // BP ONLY
-    ["955", "coin", "9999", "background_75", "background_75", true], // BP ONLY
-    ["958", "coin", "9999", "background_78", "background_78", true], // BP ONLY
-    ["959", "coin", "9999", "background_79", "background_79", true], // BP ONLY
-
-    ["992", "coin", "500", "background_111", "background_111"],
-    ["993", "coin", "500", "background_112", "background_112"],
-    ["994", "coin", "500", "background_113", "background_113"],
-    
-    ["980", "coin", "500", "background_101", "background_101"],
-    ["981", "coin", "500", "background_102", "background_102"],
-    ["982", "coin", "500", "background_103", "background_103"],
-    ["983", "coin", "500", "background_104", "background_104"],
-    ["984", "coin", "500", "background_105", "background_105"],
-    ["985", "coin", "500", "background_106", "background_106"],
-    ["986", "coin", "500", "background_107", "background_107"],
-    ["987", "coin", "500", "background_108", "background_108"],
-    ["988", "coin", "500", "background_109", "background_109"],
-    ["989", "coin", "500", "background_110", "background_110"],
-
+    ["992", "coin", "1000", "background_111", "background_111"],
+    ["993", "coin", "1000", "background_112", "background_112"],
+    ["994", "coin", "1000", "background_113", "background_113"],
+    ["917", "coin", "1000", "background_65", "background_65"],
+    ["946", "coin", "1000", "background_66", "background_66"],
+    ["947", "coin", "1000", "background_67", "background_67"],
+    ["949", "coin", "1000", "background_69", "background_69"],
+    ["951", "coin", "1000", "background_71", "background_71"],
+    ["952", "coin", "1000", "background_72", "background_72"],
+    ["953", "coin", "1000", "background_73", "background_73"],
+    ["954", "coin", "1000", "background_74", "background_74"],
+    ["955", "coin", "1000", "background_75", "background_75"],
+    ["958", "coin", "1000", "background_78", "background_78"],
+    ["959", "coin", "1000", "background_79", "background_79"],
     ["960", "coin", "1000", "background_80", "background_80"],
     ["963", "coin", "1000", "background_83", "background_83"],
     ["967", "coin", "1000", "background_87", "background_87"],
@@ -129,12 +133,10 @@ var Items_Backround =
     ["976", "coin", "1000", "background_96", "background_96"],
     ["977", "coin", "1000", "background_97", "background_97"],
     ["978", "coin", "1000", "background_98", "background_98"],
-    
     ["956", "coin", "1000", "background_76", "background_76"],
     ["957", "coin", "1000", "background_77", "background_77"],
     ["948", "coin", "1000", "background_68", "background_68"],
     ["950", "coin", "1000", "background_70", "background_70"],
-
     ["897", "coin", "1000", "background_44", "background_44"],
     ["898", "coin", "1000", "background_45", "background_45"],
     ["899", "coin", "1000", "background_46", "background_46"],
@@ -157,8 +159,8 @@ var Items_Backround =
     ["743", "coin", "1000", "background_16", "background_16"],
     ["744", "coin", "1000", "background_17", "background_17"],
     ["745", "coin", "1000", "background_18", "background_18"],
-    ["763", "coin", "1000", "background_36", "background_36"],
     ["746", "coin", "1000", "background_19", "background_19"],
+    ["763", "coin", "1000", "background_36", "background_36"],
     ["747", "coin", "1000", "background_20", "background_20"],
     ["748", "coin", "1000", "background_21", "background_21"],
     ["749", "coin", "1000", "background_22", "background_22"],
@@ -179,6 +181,16 @@ var Items_Backround =
     ["910", "coin", "1000", "background_58", "background_58"],
     ["911", "coin", "1000", "background_59", "background_59"],
     ["912", "coin", "1000", "background_60", "background_60"],
+    ["980", "coin", "1000", "background_101", "background_101"],
+    ["981", "coin", "1000", "background_102", "background_102"],
+    ["982", "coin", "1000", "background_103", "background_103"],
+    ["983", "coin", "1000", "background_104", "background_104"],
+    ["984", "coin", "1000", "background_105", "background_105"],
+    ["985", "coin", "1000", "background_106", "background_106"],
+    ["986", "coin", "1000", "background_107", "background_107"],
+    ["987", "coin", "1000", "background_108", "background_108"],
+    ["988", "coin", "1000", "background_109", "background_109"],
+    ["989", "coin", "1000", "background_110", "background_110"],
     
     ["913", "coin", "5000", "background_61", "background_61"],
     ["914", "coin", "5000", "background_62", "background_62"],
@@ -303,20 +315,45 @@ var Background_Images =
     992 : "file://{images}/custom_game/profile_bg/largo_wallpaper_1.jpg",
     993 : "file://{images}/custom_game/profile_bg/largo_wallpaper_2.jpg",
     994 : "file://{images}/custom_game/profile_bg/largo_wallpaper_3.jpg",
+
+    1029 : "file://{images}/loadingscreens/radiantancient_loadingscreen/loadingscreen.tga",
+    1030 : "file://{images}/loadingscreens/direancient_loadingscreen/loadingscreen.tga",
+    1031 : "s2r://panorama/images/loadingscreens/nemestice_2021_ls_5/loadingscreen.vtex",
+    1032 : "s2r://panorama/images/loadingscreens/strangling_gloom_ls/loadingscreen.vtex",
+    1033 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act1_1.tga",
+    1034 : "s2r://panorama/images/loadingscreens/nemestice_2021_ls_3/loadingscreen.vtex",
+    1035 : "s2r://panorama/images/loadingscreens/blazing_wing_loading_screen/loadingscreen.vtex",
+    1036 : "s2r://panorama/images/loadingscreens/international_2024_ls_1/loadingscreen.vtex",
+    1037 : "s2r://panorama/images/loadingscreens/manta_rayder_ti7_manta_rayder_loading_screen_v1/loadingscreen.vtex",
+    1038 : "s2r://panorama/images/loadingscreens/compass_of_the_rising_gale_loading_screen/loadingscreen.vtex",
+    1039 : "file://{images}/loadingscreens/immortal_warlord_loading_screen/loadingscreen.tga",
+    1040 : "file://{images}/loadingscreens/crownfall_loadingscreen/crownfall_loadingscreen_act2_7.tga",
+    1041 : "file://{images}/loadingscreens/esl_blossoming_harmony_loading_screen/loadingscreen.tga",
+    1042 : "s2r://panorama/images/loadingscreens/ti11_magma/loadingscreen.vtex",
+    1043 : "file://{images}/loadingscreens/mei_nei_rabbit_loading_screen/loadingscreen.tga",
+    1044 : "s2r://panorama/images/loadingscreens/diabolical_fiend_loading_screen/loadingscreen.vtex",
+    1073 : "s2r://panorama/images/loadingscreens/compendium2021_3_ls/loadingscreen.vtex",
 }
 
 var Items_Five =
 [
-    ["707", "coin", "500", "five_1", "five_1"],
-    ["708", "coin", "500", "five_2", "five_2"],
-    ["709", "coin", "500", "five_3", "five_3"],
-    ["710", "coin", "500", "five_4", "five_4"],
-    ["711", "coin", "500", "five_5", "five_5"],
-    ["712", "coin", "500", "five_6", "five_6"],
-    ["713", "coin", "500", "five_7", "five_7"],
-    ["714", "coin", "500", "five_8", "five_8"],
-    ["715", "coin", "500", "five_9", "five_9"],
-    ["716", "coin", "500", "five_10", "five_10"],
+    ["707", "coin", "1500", "five_1", "five_1"],
+    ["708", "coin", "1500", "five_2", "five_2"],
+    ["709", "coin", "1500", "five_3", "five_3"],
+    ["710", "coin", "1500", "five_4", "five_4"],
+    ["711", "coin", "1500", "five_5", "five_5"],
+    ["712", "coin", "1500", "five_6", "five_6"],
+    ["713", "coin", "1500", "five_7", "five_7"],
+    ["714", "coin", "1500", "five_8", "five_8"],
+    ["715", "coin", "1500", "five_9", "five_9"],
+    ["716", "coin", "1500", "five_10", "five_10"],
+    
+    
+
+    ["1013", "coin", "99999", "five_11", "five_11", true], // BP ONLY 2026
+    ["1014", "coin", "99999", "five_12", "five_12", true], // BP ONLY 2026
+    ["1015", "coin", "99999", "five_13", "five_13", true], // BP ONLY 2026
+    ["1016", "coin", "99999", "five_14", "five_14", true], // BP ONLY 2026
 ]
 
 var Items_pets = 
@@ -351,14 +388,22 @@ var Items_pets =
     ["830", "coin", "99999", "0", "pet_155", true], // BP ONLY
     ["831", "coin", "99999", "0", "pet_156", true], // BP ONLY
 
-    ["938", "coin", "99999", "0", "pet_158", true], // BP ONLY
-    ["939", "coin", "99999", "0", "pet_159", true], // BP ONLY
-    ["940", "coin", "99999", "0", "pet_160", true], // BP ONLY
+    
+    ["1005", "coin", "99999", "0", "pet_180", true], // BP ONLY 2026
+    ["1006", "coin", "99999", "0", "pet_181", true], // BP ONLY 2026
+    ["1007", "coin", "99999", "0", "pet_182", true], // BP ONLY 2026
+    ["1008", "coin", "99999", "0", "pet_183", true], // BP ONLY 2026
+    ["1009", "coin", "99999", "0", "pet_184", true], // BP ONLY 2026
+    ["1010", "coin", "99999", "0", "pet_185", true], // BP ONLY 2026
+    
 
 
     // 150
     ["701", "coin", "150", "0", "pet_124"],
     ["702", "coin", "150", "0", "pet_125"],
+    ["940", "coin", "150", "0", "pet_160"],
+    ["939", "coin", "150", "0", "pet_159"],
+    ["938", "coin", "150", "0", "pet_158"],
     ["1", "coin", "150", "10012", "pet_1"],
     ["2", "coin", "150", "10026", "pet_2"],
     ["3", "coin", "150", "10028", "pet_3"],
@@ -480,6 +525,8 @@ var Items_tpscroll =
     ["998", "coin", "5000", "tp_effect_4", "tp_effect_4"],
     ["999", "coin", "99999", "tp_effect_5", "tp_effect_5", true],
     ["1000", "coin", "99999", "tp_effect_6", "tp_effect_6", true],
+    ["1011", "coin", "99999", "tp_effect_11", "tp_effect_11", true], // BP ONLY 2026
+    ["1012", "coin", "99999", "tp_effect_12", "tp_effect_12", true], // BP ONLY 2026
 
     ["1001", "coin", "5000", "tp_effect_7", "tp_effect_7"],
     ["1002", "coin", "5000", "tp_effect_8", "tp_effect_8"],
@@ -525,18 +572,19 @@ var Items_emblems =
     ["918", "coin", "99999", "emblem_92", "emblem_92", true], // SEASON REWARD
     ["924", "coin", "99999", "emblem_98", "emblem_98", true], // SEASON REWARD
     ["925", "coin", "99999", "emblem_99", "emblem_99", true], // SEASON REWARD
+    ["927", "coin", "9999", "emblem_111", "emblem_111", true], // WODA TOURNAMENT
+    ["935", "coin", "9999", "emblem_108", "emblem_108", true], // WODA TOURNAMENT
+
+
+    ["1045", "coin", "99999", "emblem_114", "emblem_114", true], // BP ONLY 2026
+    ["1046", "coin", "99999", "emblem_115", "emblem_115", true], // BP ONLY 2026
+    ["1047", "coin", "99999", "emblem_116", "emblem_116", true], // BP ONLY 2026
+    ["1048", "coin", "99999", "emblem_117", "emblem_117", true], // BP ONLY 2026
+    ["1049", "coin", "99999", "emblem_118", "emblem_118", true], // BP ONLY 2026
+    ["1050", "coin", "99999", "emblem_119", "emblem_119", true], // BP ONLY 2026
+    ["1071", "coin", "99999", "emblem_120", "emblem_120", true], // BP ONLY 2026
+    ["1072", "coin", "99999", "emblem_121", "emblem_121", true], // BP ONLY 2026
     
-    ["927", "coin", "9999", "emblem_111", "emblem_111", true], // BATTLE PASS REWARD
-    ["928", "coin", "9999", "emblem_101", "emblem_101", true], // BATTLE PASS REWARD
-    ["929", "coin", "9999", "emblem_102", "emblem_102", true], // BATTLE PASS REWARD
-    ["930", "coin", "9999", "emblem_103", "emblem_103", true], // BATTLE PASS REWARD
-    ["931", "coin", "9999", "emblem_104", "emblem_104", true], // BATTLE PASS REWARD
-    ["932", "coin", "9999", "emblem_105", "emblem_105", true], // BATTLE PASS REWARD
-    ["933", "coin", "9999", "emblem_106", "emblem_106", true], // BATTLE PASS REWARD
-    ["934", "coin", "9999", "emblem_107", "emblem_107", true], // BATTLE PASS REWARD
-    ["935", "coin", "9999", "emblem_108", "emblem_108", true], // BATTLE PASS REWARD
-    ["936", "coin", "9999", "emblem_109", "emblem_109", true], // BATTLE PASS REWARD
-    ["937", "coin", "9999", "emblem_110", "emblem_110", true], // BATTLE PASS REWARD
 
     ["926", "coin", "500", "emblem_100", "emblem_100"],
     ["205", "coin", "500", "emblem_41", "emblem_41"],
@@ -556,9 +604,14 @@ var Items_emblems =
     ["921", "coin", "500", "emblem_95", "emblem_95"],
     ["176", "coin", "500", "emblem_13", "emblem_13"],
     ["841", "coin", "500", "emblem_65", "emblem_65"],
+    ["930", "coin", "500", "emblem_103", "emblem_103"],
+    ["934", "coin", "500", "emblem_107", "emblem_107"],
+    ["931", "coin", "500", "emblem_104", "emblem_104"],
+    ["933", "coin", "500", "emblem_106", "emblem_106"],
     ["860", "coin", "1500", "emblem_84", "emblem_84"],
     ["195", "coin", "1500", "emblem_32", "emblem_32"],
     ["201", "coin", "1500", "emblem_38", "emblem_38"],
+    ["932", "coin", "1500", "emblem_105", "emblem_105"],
     ["126", "coin", "1500", "emblem_3", "emblem_3"],
     ["125", "coin", "1500", "emblem_2", "emblem_2"],
     ["127", "coin", "1500", "emblem_4", "emblem_4"],
@@ -577,7 +630,9 @@ var Items_emblems =
     ["184", "coin", "1500", "emblem_21", "emblem_21"],
     ["185", "coin", "1500", "emblem_22", "emblem_22"],
     ["186", "coin", "1500", "emblem_23", "emblem_23"],
-    ["187", "coin", "1500", "emblem_24", "emblem_24"],  
+    ["187", "coin", "1500", "emblem_24", "emblem_24"],
+    ["928", "coin", "1500", "emblem_101", "emblem_101"],
+    ["929", "coin", "1500", "emblem_102", "emblem_102"],
     ["189", "coin", "1500", "emblem_26", "emblem_26"],
     ["190", "coin", "1500", "emblem_27", "emblem_27"],
     ["191", "coin", "1500", "emblem_28", "emblem_28"],
@@ -608,6 +663,8 @@ var Items_emblems =
 
     ["858", "coin", "5000", "emblem_82", "emblem_82"],
     ["867", "coin", "5000", "emblem_91", "emblem_91"],
+    ["936", "coin", "5000", "emblem_109", "emblem_109"],
+    ["937", "coin", "10000", "emblem_110", "emblem_110"],
     ["866", "coin", "10000", "emblem_90", "emblem_90"],
 ] 
 
@@ -629,21 +686,34 @@ var Items_tips =
     ["881", "coin", "99999", "tip", "tipped_881", true], // BP ONLY
     ["882", "coin", "99999", "tip", "tipped_882", true], // BP ONLY
     ["883", "coin", "99999", "tip", "tipped_883", true], // BP ONLY
-    ["941", "coin", "99999", "tip", "tipped_941", true], // BP ONLY
-    ["942", "coin", "99999", "tip", "tipped_942", true], // BP ONLY
-    ["943", "coin", "99999", "tip", "tipped_943", true], // BP ONLY
-    ["944", "coin", "99999", "tip", "tipped_944", true], // BP ONLY
-    ["945", "coin", "99999", "tip", "tipped_945", true], // BP ONLY
+
+    ["1017", "coin", "99999", "tip", "tipped_1017", true], // BP ONLY 2026
+    ["1018", "coin", "99999", "tip", "tipped_1018", true], // BP ONLY 2026
+    ["1019", "coin", "99999", "tip", "tipped_1019", true], // BP ONLY 2026
+    ["1021", "coin", "99999", "tip", "tipped_1021", true], // BP ONLY 2026
+    ["1022", "coin", "99999", "tip", "tipped_1022", true], // BP ONLY 2026
+    ["1023", "coin", "99999", "tip", "tipped_1023", true], // BP ONLY 2026
+    ["1024", "coin", "99999", "tip", "tipped_1024", true], // BP ONLY 2026
+    ["1025", "coin", "99999", "tip", "tipped_1025", true], // BP ONLY 2026
+    ["1026", "coin", "99999", "tip", "tipped_1026", true], // BP ONLY 2026
+    ["1027", "coin", "99999", "tip", "tipped_1027", true], // BP ONLY 2026
+    ["1028", "coin", "99999", "tip", "tipped_1028", true], // BP ONLY 2026
     
 
     // ID ПРЕДМЕТА для проверки или для добавления в базу,ВАЛЮТА,СТОИМОСТЬ,ИКОНКА(именно название png файла),переменная названия в локализации, можно покупать много раз или один раз(проверка на покупку в базе)
-    ["435", "coin", "0", "tip", "tipped_435"],
-    ["436", "coin", "0", "tip", "tipped_436"],
-    ["437", "coin", "0", "tip", "tipped_437"],
-    ["438", "coin", "0", "tip", "tipped_438"],
-    ["439", "coin", "0", "tip", "tipped_439"],
-    ["440", "coin", "0", "tip", "tipped_440"],
+    ["435", "coin", "150", "tip", "tipped_435"],
+    ["436", "coin", "150", "tip", "tipped_436"],
+    ["437", "coin", "150", "tip", "tipped_437"],
+    ["438", "coin", "150", "tip", "tipped_438"],
+    ["439", "coin", "150", "tip", "tipped_439"],
+    ["440", "coin", "150", "tip", "tipped_440"],
 
+
+    ["941", "coin", "150", "tip", "tipped_941"],
+    ["942", "coin", "150", "tip", "tipped_942"],
+    ["943", "coin", "150", "tip", "tipped_943"],
+    ["944", "coin", "150", "tip", "tipped_944"],
+    ["945", "coin", "150", "tip", "tipped_945"],
     ["441", "coin", "150", "tip", "tipped_441"],
     ["442", "coin", "150", "tip", "tipped_442"],
     ["443", "coin", "150", "tip", "tipped_443"],
@@ -757,12 +827,12 @@ var HERO_VOTES_TABLE =
     "npc_dota_hero_brewmaster",
     "npc_dota_hero_broodmother",
     "npc_dota_hero_centaur",
-    "npc_dota_hero_chaos_knight",
+    //"npc_dota_hero_chaos_knight",
     "npc_dota_hero_clinkz",
     "npc_dota_hero_rattletrap",
     "npc_dota_hero_dark_seer",
     "npc_dota_hero_dark_willow",
-    "npc_dota_hero_dawnbreaker",
+    //"npc_dota_hero_dawnbreaker",
     "npc_dota_hero_earth_spirit",
     "npc_dota_hero_elder_titan",
     "npc_dota_hero_ember_spirit",

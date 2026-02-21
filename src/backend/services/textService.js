@@ -28,11 +28,10 @@ function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
         lines.forEach(line => {
             const parts = line.split('"').filter(str => str.trim() !== '');
             if (parts.length >= 2) {
-                let key = parts[0].trim();
+                let key = parts[0].trim().toLowerCase();
                 let value = parts.slice(1).join('"').trim();
                 
                 value = value.replace(/<br><br>/g, '\n\n').replace(/<br>/g, '\n');
-                
 
                 let heroNameReplacement = heroName;
 
@@ -52,17 +51,13 @@ function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
                     }
                     heroTalentsData[key] = value;
                 }
-                
-                
-                
                 if (
-                    key.startsWith('DOTA_Tooltip_ability_') &&
-                    !key.startsWith('DOTA_Tooltip_ability_item') &&
+                    key.startsWith('dota_tooltip_ability_') &&
+                    !key.startsWith('dota_tooltip_ability_item') &&
                     key.includes(heroName) &&
                     !key.includes('boss_')
                 ) {
-                    
-                    const abilityKey = key.replace('DOTA_Tooltip_ability_', '');
+                    const abilityKey = key.replace('dota_tooltip_ability_', '');
                     if (abilityNames.length === 0 || abilityNames.some(ability => abilityKey.startsWith(ability))) {
                         for (const [original, replacement] of Object.entries(replacements_heroes)) {
                             if (key.includes(original)) {
@@ -75,7 +70,6 @@ function parseAddonFileForHero(filePath, heroName, abilityNames = []) {
                 }
             }
         });
-
         return { heroTalentsData, abilitiesData };
     } catch (error) {
         console.error('Error reading or parsing file:', error.message);
@@ -115,7 +109,7 @@ function parseAddonFile(filePath) {
         lines.forEach(line => {
             const parts = line.split('"').filter(str => str.trim() !== '');
             if (parts.length >= 2) {
-                let key = parts[0].trim();
+                let key = parts[0].trim().toLowerCase();
                 let value = parts.slice(1).join('"').trim();
                 
                 value = value.replace(/<br><br>/g, '\n\n').replace(/<br>/g, '\n');
@@ -176,7 +170,7 @@ function getHeroData(heroName, abilityNames = [], lang) {
 
     const additionalAbilities = loadAdditionalAbilities(lang);
     for (const [key, value] of Object.entries(additionalAbilities)) {
-        const abilityKey = key.replace('DOTA_Tooltip_ability_', '');
+        const abilityKey = key.replace('dota_tooltip_ability_', '');
         if (
             key.includes(heroName) &&
             !key.includes('boss_') &&

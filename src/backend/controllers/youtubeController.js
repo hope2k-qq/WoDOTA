@@ -185,7 +185,7 @@ const updateCreatorsVideosData = async (app) => {
         const currentDate = new Date().toISOString();
 
         await collection.updateOne(
-            { loc: 'https://wodota.pro/creators/videos' },
+            { loc: 'https://wodota.net/creators/videos' },
             {
                 $set: {
                     lastmod: currentDate,

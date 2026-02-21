@@ -438,9 +438,9 @@
         "ItemShopTags"                  ""
         "ItemQuality"                   "consumable"
         "ItemPurchasable"               "1"
-        "ItemSellable"                  "1"
-        "ItemInitialCharges"            "1"
-        "ItemStackable"                 "1"
+        "ItemSellable"                  "0"
+        "ItemInitialCharges"            "0"
+        "ItemStackable"                 "0"
         "ItemShareability"              "ITEM_NOT_SHAREABLE"
         "ItemPermanent"                 "0"
 
@@ -465,9 +465,9 @@
         "ItemStackable"                 "0"
         "ItemShareability"              "ITEM_FULLY_SHAREABLE"
         "AbilitySharedCooldown"         "tome"
-        "ItemPermanent"                 "0"
-        "ItemInitialCharges"            "1"
-        "ItemDisplayCharges"            "1" 
+        "ItemPermanent"                 "1"
+        "ItemInitialCharges"            "0"
+        "ItemDisplayCharges"            "0" 
         "BonusDelayedStockCount"        "0"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
         "ItemSupport"                   "1" 
@@ -494,9 +494,9 @@
         "ItemStackable"                 "0"
         "ItemShareability"              "ITEM_FULLY_SHAREABLE"
         "AbilitySharedCooldown"         "tome"
-        "ItemPermanent"                 "0"
-        "ItemInitialCharges"            "1"
-        "ItemDisplayCharges"            "1"  
+        "ItemPermanent"                 "1"
+        "ItemInitialCharges"            "0"
+        "ItemDisplayCharges"            "0"  
         "BonusDelayedStockCount"        "0"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
         "ItemSupport"                   "1" 
@@ -523,9 +523,9 @@
         "ItemStackable"                 "0"
         "ItemShareability"              "ITEM_FULLY_SHAREABLE"
         "AbilitySharedCooldown"         "tome"
-        "ItemPermanent"                 "0"
-        "ItemInitialCharges"            "1"
-        "ItemDisplayCharges"            "1"
+        "ItemPermanent"                 "1"
+        "ItemInitialCharges"            "0"
+        "ItemDisplayCharges"            "0"
         "BonusDelayedStockCount"        "0"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
         "ItemSupport"                   "1" 
@@ -1299,7 +1299,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-                "bonus_cooldown"            "8"
+                "bonus_cooldown"            "7"
                 "bonus_all_stats"           ""
                 "mana_regen"                ""
         }
@@ -4649,7 +4649,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
         "FightRecapLevel"               "1"
         
         "AbilityCooldown"               "15"
@@ -4673,9 +4673,9 @@
             "bonus_damage"          "80"
             "bonus_armor"           "10"
             "bonus_regen"           "6"
-            "mute_duration"         "3"
+            "mute_duration"         "4"
             "projectile_speed"      "1100"
-            "slow_pct"              "80"
+            "slow_pct"              "10"
             "slow_interval_duration"    "0.5"
         }
     }
@@ -8092,6 +8092,7 @@
 		"ItemQuality"					"common"
 		"ItemAliases"					"angel;demise"
 		"SuggestLategame"				"1"
+        "ShouldBeSuggested"             "1"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"AbilityValues"
@@ -8738,7 +8739,7 @@
     "item_spell_prism"                  
     {
         "ItemSellable"                  "1"
-        "ItemCost"                      "2100"
+        "ItemCost"                      "700"
     }
     "item_spider_legs"           
     {

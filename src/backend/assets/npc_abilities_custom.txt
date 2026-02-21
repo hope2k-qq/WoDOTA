@@ -3423,10 +3423,22 @@
 				"value"	"6 12 18 24 30 36 42"
 				"levelkey"	"exortlevel"
 			}
-			"wall_place_distance"	"200"
 			"num_wall_elements"	"15"
-			"wall_element_spacing"	"80"
-			"wall_element_radius"	"105"
+            "wall_element_spacing"
+			{
+				"value"	"80"
+				"affected_by_aoe_increase"	"1"
+			}
+            "wall_element_radius"
+			{
+				"value"	"105"
+				"affected_by_aoe_increase"	"1"
+			}
+            "wall_place_distance"
+			{
+				"value"	"15"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
 	"invoker_deafening_blast_custom"
@@ -3763,7 +3775,11 @@
 		"MaxLevel"	"1"
 		"AbilityValues"
 		{
-			"radius"	"1600"
+			"radius"	
+            {
+                "value" "1600"
+                "affected_by_aoe_increase"  "1"
+            }
 		}
 	}
 	"terrorblade_demon_zeal_custom"
@@ -3816,7 +3832,11 @@
 			"illusion_outgoing_damage"	"55 70 85 100"
 			"move_slow"	"-15 -20 -25 -30"
 			"attack_slow"	"-15 -20 -25 -30"
-			"radius"	"500"
+			"radius"
+			{
+				"value"	"500"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
 	"terrorblade_conjure_image_custom"
@@ -4019,7 +4039,11 @@
 		"AbilityManaCost"	"200"
 		"AbilityValues"
 		{
-			"radius"	"400"
+			"radius"
+			{
+				"value"	"400"
+				"affected_by_aoe_increase"	"1"
+			}
 			"land_time"	"0.5"
 			"stun_missile"	"150"
 			"damage_missile"	"150"
@@ -4680,7 +4704,11 @@
 		"MaxLevel"	"1"
 		"AbilityValues"
 		{
-			"radius"	"300"
+            "radius"
+			{
+				"value"	"300"
+				"affected_by_aoe_increase"	"1"
+			}
 			"duration"	"10"
 		}
 	}
@@ -5590,14 +5618,14 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"1"
-		"AbilityCooldown"	"50"
-		"AbilityManaCost"	"450"
+		"AbilityCooldown"	"45"
+		"AbilityManaCost"	"400"
 		"AbilityValues"
 		{
 			"damage_reduce"	"50"
 			"delay_spawn"	"0.25"
 			"duration"	"5"
-			"radius"	"1100"
+			"radius"	"900"
 		}
 	}
 	"windrunner_shackleshot_custom"
@@ -6122,7 +6150,7 @@
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"	"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"	"30"
-		"AbilityManaCost"	"150"
+		"AbilityManaCost"	"50"
 		"AbilityCastRange"	"650"
 		"MaxLevel"	"3"
 		"AbilityValues"
@@ -6780,11 +6808,7 @@
 			"damage_self"	"3"
 			"damage_enemy_health"	"3"
 			"spell_amplify"	"20"
-			"radius"
-			{
-				"value"	"300"
-				"affected_by_aoe_increase"	"1"
-			}
+			"radius"        "300"
 			"interval"	"0.25"
 		}
 	}
@@ -8523,7 +8547,11 @@
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityValues"
 		{
-			"radius"	"675"
+            "radius"
+			{
+				"value"	"675"
+				"affected_by_aoe_increase"	"1"
+			}
 			"count"	"6"
 			"interval"	"0.5"
 		}
@@ -8695,7 +8723,11 @@
 		{
 			"duration_day"	"4"
 			"duration_night"	"2"
-			"radius"	"375"
+            "radius"
+			{
+				"value"	"375"
+				"affected_by_aoe_increase"	"1"
+			}
 			"damage_per_second"	"60"
 			"tick_rate"	"0.4"
 		}
@@ -8873,7 +8905,7 @@
 				"affected_by_aoe_increase"	"1"
 			}
 			"tick_interval"	"0.3"
-			"total_duration"	"1.4"
+			"total_duration"	"1.5"
 			"tick_count"	"5"
 			"stun_duration"	"0.3"
 			"projectile_speed"	"1200"
@@ -9019,7 +9051,11 @@
 		{
 			"damage_agility"	"110"
 			"model_scale"	"-10"
-			"radius"	"100"
+			"radius"	
+            {
+                "value" "100"
+                "affected_by_aoe_increase"  "1"
+            }
 		}
 	}
 	"tiny_tree_channel_custom"
@@ -9504,7 +9540,11 @@
 			"mana_regen"	"0.5"
 			"cooldown_reduction"	"10"
 			"bonus_cast_range"	"100"
-			"carrapase_radius"	"400"
+            "carrapase_radius"
+			{
+				"value"	"400"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
 	"nyx_assassin_revenge_custom"
@@ -10068,7 +10108,11 @@
 			"duration"	"8"
 			"bonus_ms"	"30"
 			"damage"	"3"
-			"width"	"100"
+            "width"
+			{
+				"value"	"150"
+				"affected_by_aoe_increase"	"1"
+			}
 			"health_cost"
 			{
 				"value"	"20"
@@ -10664,7 +10708,11 @@
 		"AbilityCastRange"	"700"
 		"AbilityValues"
 		{
-			"radius"	"700"
+            "radius"
+			{
+				"value"	"700"
+				"affected_by_aoe_increase"	"1"
+			}
 			"max_atacks"	"1 2"
 			"damage_percent"	"50"
 			"interval"	"9"
@@ -11116,7 +11164,11 @@
 		"AbilityValues"
 		{
 			"damage"	"30 50 70"
-			"radius"	"300"
+            "radius"
+			{
+				"value"	"300"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
 	"warlock_flaming_fists_custom"
@@ -11130,7 +11182,11 @@
 		"AbilityValues"
 		{
 			"damage"	"10 20 30"
-			"radius"	"300"
+            "radius"
+			{
+				"value"	"300"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
 	"warlock_golem_permanent_immolation_custom"
@@ -11144,7 +11200,11 @@
 		"AbilityValues"
 		{
 			"damage"	"30 50 70"
-			"radius"	"300"
+            "radius"
+			{
+				"value"	"300"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
 	"warlock_golem_flaming_fists_custom"
@@ -11309,7 +11369,11 @@
 		"AbilityManaCost"	"50"
 		"AbilityValues"
 		{
-			"radius"	"260"
+            "radius"
+			{
+				"value"	"260"
+				"affected_by_aoe_increase"	"1"
+			}
 			"speed"	"1500"
 			"damage_base"	"100"
 			"damage_strength"	"100 200"
@@ -11873,7 +11937,7 @@
 		"BaseClass"	"ability_lua"
 		"ScriptFile"	"heroes/npc_dota_hero_kez_custom/kez_switch_weapons_custom"
 		"AbilityTextureName"	"kez_switch_weapons_sai"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
 		"Innate"	"1"
 		"MaxLevel"	"1"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_5"
@@ -12613,7 +12677,11 @@
 		{
 			"low_ms"	"100"
 			"damage_percent"	"600"
-			"radius"	"575"
+            "radius"
+			{
+				"value"	"575"
+				"affected_by_aoe_increase"	"1"
+			}
 			"duration"	"10"
 		}
 	}
@@ -12650,7 +12718,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"	"SPELL_DISPELLABLE_YES"
 		"AbilityCastAnimation"	"ACT_DOTA_OVERRIDE_ABILITY_2"
@@ -12668,7 +12736,7 @@
 				"value"	"12 18 24 30"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"armor_multiplier"	"1"
+			"armor_multiplier"	"0"
 		}
 	}
 	"axe_counter_helix_custom"
@@ -13423,7 +13491,11 @@
 		"AbilityCooldown"	"14"
 		"AbilityValues"
 		{
-			"radius"	"150"
+			"radius"
+			{
+				"value"	"150"
+				"affected_by_aoe_increase"	"1"
+			}
 			"duration"	"7"
 			"damage"	"40 80 120"
 			"slow"	"-20 -30 -40"
@@ -14934,16 +15006,8 @@
 				"value"		        "900"
 				"affected_by_aoe_increase"	"1"
 			}
-			"collision_radius"		
-            {
-                "value"             "50"
-                "affected_by_aoe_increase"  "1"
-            }
-			"splash_radius"			
-            {
-                "value"             "150"
-                "affected_by_aoe_increase"  "1"
-            }
+			"collision_radius"		"50"
+			"splash_radius"			"150"
 			"duration"              "6.0"
 			"speed"					"400"
 			"machines_per_sec"		"24"
@@ -15398,7 +15462,7 @@
         "AbilityManaCost"               "50"
         "AbilityValues"
 		{
-            "duration"                  "15"
+            "duration"                  "10"
         }
 	}
 
@@ -15417,5 +15481,617 @@
             "damage"                    "150 250 350"
             "radius"                    "300"
         }
+	}
+
+    "chaos_knight_chaos_bolt_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_chaos_knight_custom/chaos_knight_chaos_bolt_custom"
+		"AbilityTextureName"	        "chaos_knight_chaos_bolt"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ChaosKnight.ChaosBolt.Cast"
+        "HasShardUpgrade"               "1"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityManaCost"				"110"
+
+		"AbilityValues"
+		{
+			"chaos_bolt_speed"		"700"
+			"stun_min"
+			{
+				"value"					"1.25 1.5 1.75 2"
+				"special_bonus_unique_chaos_knight_3"	"+0.6"
+			}
+			"stun_max"
+			{
+				"value"					"1.75 2.25 2.75 3.25"
+				"special_bonus_unique_chaos_knight_3"	"+0.6"
+			}
+			"damage_min"				
+			{
+				"value"					"90 120 150 180"
+			}
+			"damage_max"				
+			{
+				"value"					"155 240 325 410"		
+			}
+			"fake_bolt_distance"		"675"
+			"AbilityCastRange"				
+			{
+				"value"							"600"
+				"special_bonus_shard"			"+0"
+			}
+			"AbilityCooldown"				
+			{
+				"value"				"13 12 11 10"
+				"special_bonus_unique_chaos_knight_8"			"-3"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+    "chaos_knight_reality_rift_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_chaos_knight_custom/chaos_knight_reality_rift_custom"
+		"AbilityTextureName"	        "chaos_knight_reality_rift"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ChaosKnight.RealityRift"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.25"
+		"AbilityCooldown"				"18 15 12 9"
+		"AbilityManaCost"				"50"
+
+		"AbilityValues"
+		{
+			"AbilityCastRange"				"600 650 700 750"
+			"pull_distance"
+			{
+				"value"										"300 350 400 450"
+				"special_bonus_unique_chaos_knight_2"		"+225"
+			}
+			"armor_reduction"			"-4 -5 -6 -7"
+			"duration"			"6"
+		}
+	}
+
+    "chaos_knight_chaos_strike_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_chaos_knight_custom/chaos_knight_chaos_strike_custom"
+		"AbilityTextureName"	        "chaos_knight_chaos_strike"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySound"					"Hero_ChaosKnight.ChaosStrike"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"chance"				
+			{
+				"value"				"33.33"
+				"special_bonus_unique_chaos_knight_5"		"+10"
+			}
+			"crit_min"				"120"
+			"crit_max"				"140 180 220 260"
+			"lifesteal"					
+			{
+				"value"					"24 36 48 60"
+				"special_bonus_unique_chaos_knight_6"		"+30"
+			}
+			"creep_multiplier"					"1.0"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+    "chaos_knight_phantasm_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_chaos_knight_custom/chaos_knight_phantasm_custom"
+		"AbilityTextureName"	        "chaos_knight_phantasm"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+        "HasScepterUpgrade"			    "1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilitySound"					"Hero_ChaosKnight.Phantasm"
+		"AbilityCastPoint"				"0.4 0.4 0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"75"
+		"AbilityManaCost"				"100 200 300"
+		"AbilityValues"
+		{
+			"images_count"				"1 2 3"
+			"illusion_duration"
+			{
+				"value"						"30.0"
+			}	
+			"outgoing_damage"				"0"
+			"outgoing_damage_tooltip"
+			{
+				"value"						"100"
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+			}
+			"incoming_damage"
+			{
+				"value"						"250"
+				"special_bonus_unique_chaos_knight_7"		"-125"
+			}
+			"incoming_damage_tooltip"
+			{
+				"value"						"350"
+				"special_bonus_unique_chaos_knight_7"		"-125"
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+			}		
+			"invuln_duration"				"0.5"
+			"vision_radius"					
+			{
+				"value"			"400"	
+				"affected_by_aoe_increase"	"1"
+			}
+		}
+	}
+    
+    "chaos_knight_reins_of_chaos"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"3"
+		"Innate"						"0"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"bonus_illusion_chance"		"20 40 60"
+			"bonus_illusion_count"		"1"
+		}
+	}
+
+    "chaos_knight_chaos_walk"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_chaos_knight_custom/chaos_knight_chaos_walk"
+		"AbilityTextureName"	        "chaos_knight_chaos_walk"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                      "1"
+        "SpellImmunityType"	            "SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+        "AbilityValues"
+		{
+            "model_scale"               "40"
+            "damage_percent"            "100"
+            "radius"
+			{
+				"value"	"200"
+				"affected_by_aoe_increase"	"1"
+			}
+            "path_duration"             "3"
+            "buff_duration"             "3"
+		}
+    }
+
+    "chaos_knight_chaos_king_bar"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_chaos_knight_custom/chaos_knight_chaos_king_bar"
+		"AbilityTextureName"	        "chaos_knight_chaos_king_bar"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                      "2"
+        "SpellImmunityType"	            "SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"90"
+        "AbilityValues"
+		{
+            "health_regen"              "150"
+			"duration"                  "2 3"
+            "magical_resistance"        "50"
+		}
+    }
+
+    "chaos_knight_berserk_eclipse"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_chaos_knight_custom/chaos_knight_berserk_eclipse"
+		"AbilityTextureName"	        "chaos_knight_berserk_eclipse"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                      "1"
+        "SpellImmunityType"	            "SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"30"
+        "AbilityValues"
+		{
+            "duration"                  "6"
+            "radius"
+			{
+				"value"	"666"
+				"affected_by_aoe_increase"	"1"
+			}
+            "magical_resistance"        "-66"
+		}
+    }
+
+    "dawnbreaker_fire_wreath_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_dawnbreaker_custom/dawnbreaker_fire_wreath_custom"
+		"AbilityTextureName"	        "dawnbreaker_fire_wreath"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"HasShardUpgrade"               "1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityManaCost"				"100"
+
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"					"17 15 13 11"
+				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-4"
+			}
+			"duration"					"1.1"
+			"swipe_radius"				
+			{
+				"value"		"300"					
+				"affected_by_aoe_increase"	"1"	
+			}
+			"swipe_damage"
+			{
+				"value"											"25 40 55 70"
+
+			}
+			"smash_radius"				
+			{
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"smash_damage"
+			{
+				"value"											"25 40 55 70"
+			}
+			"movement_speed"				"215"
+			"total_attacks"				    "3"
+			"smash_stun_duration"			"0.6 0.8 1.0 1.2"
+			"sweep_stun_duration"			"0.12"
+			"self_stun_duration"			"0.2"
+			"swipe_slow"			        "-100"
+			"smash_distance_from_hero"		"120"
+			"animation_rate"				"0"
+			"turn_rate"					    "90"
+		}	
+	}
+
+    "dawnbreaker_celestial_hammer_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_dawnbreaker_custom/dawnbreaker_celestial_hammer_custom"
+		"AbilityTextureName"	        "dawnbreaker_celestial_hammer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"18 16 14 12"
+		"AbilityManaCost"				"100 110 120 130"
+        "LinkedAbility"                 "dawnbreaker_converge_custom"
+
+		"AbilityValues"
+		{
+			"hammer_damage"			"50 80 110 140"
+			"projectile_radius"			
+			{
+				"value"	"200"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"projectile_speed"				
+			{
+				"value"					"1600"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
+			}
+			"flare_debuff_duration"
+			{
+				"value" "2.5 3 3.5 4"
+			}
+			"flare_radius"					
+			{
+				"value"	"200"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"move_slow"
+			{
+				"value"							"24 28 32 36"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_slow"		"+15"
+			}	
+			"burn_damage"						"20 30 40 50"
+			"burn_interval"						"0.5"
+			"pause_duration"						
+			{
+				"value"						"2"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"+2"
+			}
+			"hammer_aoe_radius"						"200"
+			"travel_speed_pct"						"100"
+			"return_anim_distance_threshold"						"300"
+			"range"	
+			{
+				"value"								"700 900 1100 1300"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
+			}
+			"hammer_solar_guardian_radius"			
+			{
+				"value"											"0"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"+200"
+				"affected_by_aoe_increase"	"1"
+
+			}
+			"hammer_solar_guardian_effectiveness_pct"
+			{
+				"value"											"0"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"=40"
+			}
+			"fire_trail_health_regen"
+			{
+				"value"			"0"
+				"special_bonus_facet_dawnbreaker_hearthfire" "=10 =15 =20 =25"			
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+    "dawnbreaker_celestial_hammer_custom_immune"
+	{
+		"BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_dawnbreaker_custom/dawnbreaker_celestial_hammer_custom"
+		"AbilityTextureName"	        "dawnbreaker_celestial_hammer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"	            "SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"18 16 14 12"
+		"AbilityManaCost"				"100 110 120 130"
+        "LinkedAbility"                 "dawnbreaker_converge_custom"
+
+        "AbilityValues"
+		{
+			"hammer_damage"			"50 80 110 140"
+			"projectile_radius"			
+			{
+				"value"	"200"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"projectile_speed"				
+			{
+				"value"					"1600"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
+			}
+			"flare_debuff_duration"
+			{
+				"value" "2.5 3 3.5 4"
+			}
+			"flare_radius"					
+			{
+				"value"	"200"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"move_slow"
+			{
+				"value"							"24 28 32 36"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_slow"		"+15"
+			}	
+			"burn_damage"						"20 30 40 50"
+			"burn_interval"						"0.5"
+			"pause_duration"						
+			{
+				"value"						"2"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"+2"
+			}
+			"hammer_aoe_radius"						"200"
+			"travel_speed_pct"						"100"
+			"return_anim_distance_threshold"						"300"
+			"range"	
+			{
+				"value"								"700 900 1100 1300"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
+			}
+			"hammer_solar_guardian_radius"			
+			{
+				"value"											"0"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"+200"
+				"affected_by_aoe_increase"	"1"
+
+			}
+			"hammer_solar_guardian_effectiveness_pct"
+			{
+				"value"											"0"
+				"special_bonus_unique_dawnbreaker_gleaming_hammer"			"=40"
+			}
+			"fire_trail_health_regen"
+			{
+				"value"			"0"
+				"special_bonus_facet_dawnbreaker_hearthfire" "=10 =15 =20 =25"			
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+    "dawnbreaker_converge_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_dawnbreaker_custom/dawnbreaker_celestial_hammer_custom"
+		"AbilityTextureName"	        "dawnbreaker_converge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"375"
+		"AbilityCooldown"				"0.25"
+		"AbilityManaCost"				"0"
+	}	
+
+    "dawnbreaker_luminosity_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_dawnbreaker_custom/dawnbreaker_luminosity_custom"
+		"AbilityTextureName"	        "dawnbreaker_luminosity"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+            "attack_count"				
+            {
+                "value"		"3"
+                "special_bonus_unique_dawnbreaker_luminosity_attack_count"		"-1"
+            }
+            "heal_radius"				
+            {
+                "value"		"650"
+                "affected_by_aoe_increase"	"1"	
+            }
+            "heal_pct"					"35 40 45 50"
+            "heal_from_creeps"			"40"
+            "bonus_damage"				
+            {
+                "value"		"125 150 175 200"
+                "special_bonus_unique_dawnbreaker_luminosity_crit"		"+40"
+                "CalculateSpellDamageTooltip"	"0"
+                "DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+            }	
+            "proc_cooldown"				"0.00"
+            "allied_healing_pct"		"50"
+            "cooldown_reduction"		
+            {
+                "value"									"0"
+                "special_bonus_facet_dawnbreaker_solar_charged"		"0.8"				
+            }
+            "triggered_by_celestial_hammer"
+            {
+                "value"			"0"
+                "special_bonus_facet_dawnbreaker_brightmaul_wake" "1"
+            }	
+		}
+	}
+
+    "dawnbreaker_solar_guardian_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_dawnbreaker_custom/dawnbreaker_solar_guardian_custom"
+		"AbilityTextureName"	        "dawnbreaker_solar_guardian"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"LinkedAbility"					"dawnbreaker_land_custom"
+		"HasScepterUpgrade"				"1"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityChannelTime"			"1.7"
+		"AbilityManaCost"				"150 200 250"
+		"AbilityModifierSupportValue"	"0.25"
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"				"120 105 90"
+				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"			"-15"
+			}
+
+			"scepter_aura_duration"
+			{
+				"special_bonus_scepter"		"2"
+			}
+			"miss_rate"				
+			{
+				"special_bonus_scepter"		"0"
+			}
+			"base_heal"				
+			{
+				"value"				"45 70 95"
+				"special_bonus_scepter"	"+15 20 25"
+			}
+			"radius"				
+			{
+				"value"															"500"
+				"special_bonus_unique_dawnbreaker_solar_guardian_radius"		"+150"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"base_damage"
+			{
+				"value"			"30 50 70"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"pulse_interval"				"0.5"
+			"land_damage"
+			{
+				"value"			"130 160 190"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"land_stun_duration"			"1.4 1.6 1.8"
+			"max_offset_distance"			"350"
+			"scepter_channel_time"				
+			{
+				"special_bonus_scepter"		"1.7"
+			}
+			"airtime_scepter_bonus"	
+			{
+				"special_bonus_scepter"		"3.5"
+			}
+			"airtime_scepter_movement_speed"				"200"
+			"airtime_duration"
+			{
+				"value"						"0.8"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	}
+
+    "dawnbreaker_land_custom"
+	{
+        "BaseClass"	                    "ability_lua"
+		"ScriptFile"	                "heroes/npc_dota_hero_dawnbreaker_custom/dawnbreaker_solar_guardian_custom"
+		"AbilityTextureName"	        "dawnbreaker_land"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"		
+		"LinkedAbility"					"dawnbreaker_solar_guardian"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"2"
 	}
 }
