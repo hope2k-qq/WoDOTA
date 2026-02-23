@@ -22,6 +22,9 @@ const updateVotesData = async (app) => {
             'npc_dota_hero_faceless_void',
             'npc_dota_hero_tinker',
             'npc_dota_hero_keeper_of_the_light',
+            'npc_dota_hero_lina',
+            'npc_dota_hero_dawnbreaker',
+            'npc_dota_hero_chaos_knight',
         ];
         cachedVotesData = response.data
             .filter(hero => {
