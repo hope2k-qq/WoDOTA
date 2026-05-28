@@ -66,40 +66,6 @@ _G.LockedTalents =
             "modifier_chen_8",
         },
     },
-    ["npc_dota_hero_dragon_knight"] =
-    {
-        ["modifier_dragon_knight_1"] =
-        {
-            "modifier_dragon_knight_8",
-            "modifier_dragon_knight_15",
-        },
-        ["modifier_dragon_knight_8"] =
-        {
-            "modifier_dragon_knight_1",
-            "modifier_dragon_knight_15",
-        },
-        ["modifier_dragon_knight_15"] =
-        {
-            "modifier_dragon_knight_1",
-            "modifier_dragon_knight_8",
-        },
-    },
-    ["npc_dota_hero_lone_druid"] =
-    {
-        ["modifier_lone_druid_7"] =
-        {
-            "modifier_lone_druid_9",
-            "modifier_lone_druid_17",
-        },
-        ["modifier_lone_druid_9"] =
-        {
-            "modifier_lone_druid_7",
-        },
-        ["modifier_lone_druid_17"] =
-        {
-            "modifier_lone_druid_7",
-        },
-    },
     ["npc_dota_hero_windrunner"] =
     {
         ["modifier_windrunner_7"] =
@@ -146,10 +112,6 @@ _G.LockedTalents =
     },
     ["npc_dota_hero_phoenix"] =
     {
-        ["modifier_phoenix_1"] =
-        {
-            "modifier_phoenix_15",
-        },
         ["modifier_phoenix_14"] =
         {
             "modifier_phoenix_15",
@@ -160,7 +122,6 @@ _G.LockedTalents =
         },
         ["modifier_phoenix_15"] =
         {
-            "modifier_phoenix_1",
             "modifier_phoenix_14",
             "modifier_phoenix_12",
         },
@@ -182,7 +143,26 @@ _G.LockedTalents =
         {
             "modifier_keeper_of_the_light_8",
         },
-    }
+    },
+    ["npc_dota_hero_phantom_assassin"] =
+    {
+        ["modifier_phantom_assassin_21"] =
+        {
+            "modifier_phantom_assassin_2",
+        },
+        ["modifier_phantom_assassin_2"] =
+        {
+            "modifier_phantom_assassin_21",
+        },
+        ["modifier_phantom_assassin_15"] =
+        {
+            "modifier_phantom_assassin_2",
+        },
+        ["modifier_phantom_assassin_9"] =
+        {
+            "modifier_phantom_assassin_2",
+        },
+    },
 }
 
 local herotalents = {
@@ -293,15 +273,15 @@ local herotalents = {
 			[1] = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
-				{"modifier_crystal_maiden_16","#modifier_crystal_maiden_16", 2, "crystal_maiden/16", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
+				{"modifier_crystal_maiden_16","#modifier_crystal_maiden_16", 2, "crystal_maiden/16", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_crystal_maiden_17","#modifier_crystal_maiden_17", 2, "crystal_maiden/17", {"modifier_crystal_maiden_16",2}},
+				{"modifier_crystal_maiden_17","#modifier_crystal_maiden_17", 2, "crystal_maiden/17", {}},
 				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -313,9 +293,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_crystal_maiden_18","#modifier_crystal_maiden_18", 1, "crystal_maiden/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -346,28 +326,28 @@ local herotalents = {
 			[1] = {
 				{"modifier_woda_talent_hp1", "#woda_talent_hp1", 3, "hp1", {}},
 				{"modifier_woda_talent_regenhp1", "#woda_talent_regenhp1", 2, "regenhp1", {}},
+				{"modifier_dragon_knight_2","#modifier_dragon_knight_2", 3, "dragon_knight/2", {}},
 				{"modifier_woda_talent_attack1", "#woda_talent_attack1", 3, "attack1", {}},
-				{"modifier_dragon_knight_1","#modifier_dragon_knight_1", 2, "dragon_knight/1", {}},
 				{"modifier_woda_talent_str3", "#woda_talent_str3", 2, "str3", {}}
 			},
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_dragon_knight_2","#modifier_dragon_knight_2", 3, "dragon_knight/2", {}},
+				{"modifier_dragon_knight_3","#modifier_dragon_knight_3", 1, "dragon_knight/3", {"modifier_dragon_knight_2",3}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
-				{"modifier_dragon_knight_3","#modifier_dragon_knight_3", 1, "dragon_knight/3", {"modifier_dragon_knight_2",3}},
+				{"modifier_dragon_knight_1","#modifier_dragon_knight_1", 2, "dragon_knight/1", {}},
 				{"empty_8"},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
-				{"empty_9"},
 				{"modifier_dragon_knight_4","#modifier_dragon_knight_4", 3, "dragon_knight/4", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
@@ -395,23 +375,23 @@ local herotalents = {
 		},
 		[2] = {
 			[1] = {
-				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
+				{"modifier_dragon_knight_9","#modifier_dragon_knight_9", 2, "dragon_knight/9", {}},
 				{"modifier_woda_talent_speed1", "#woda_talent_speed1", 2, "speed1", {}},
 				{"modifier_woda_talent_attackspeed1", "#woda_talent_attackspeed1", 3, "attackspeed1", {}},
-				{"modifier_dragon_knight_8","#modifier_dragon_knight_8", 3, "dragon_knight/8", {}},
+				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
-				{"modifier_dragon_knight_9","#modifier_dragon_knight_9", 2, "dragon_knight/9", {}},
+				{"modifier_dragon_knight_10","#modifier_dragon_knight_10", 1, "dragon_knight/10", {"modifier_dragon_knight_9",2}},
 				{"empty_3"},
 				{"empty_4"},
 				{"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_dragon_knight_10","#modifier_dragon_knight_10", 1, "dragon_knight/10", {"modifier_dragon_knight_9",2}},
-				{"empty_7"},
 				{"empty_8"},
+				{"empty_7"},
+				{"modifier_dragon_knight_8","#modifier_dragon_knight_8", 3, "dragon_knight/8", {}},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
@@ -449,34 +429,34 @@ local herotalents = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
-				{"modifier_dragon_knight_15","#modifier_dragon_knight_15", 3, "dragon_knight/15", {}},
+				{"modifier_dragon_knight_20","#modifier_dragon_knight_20", 3, "dragon_knight/20", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_dragon_knight_19","#modifier_dragon_knight_19", 2, "dragon_knight/19", {}},
 				{"empty_3"},
+				{"modifier_dragon_knight_16","#modifier_dragon_knight_16", 2, "dragon_knight/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"empty_7"},
-				{"modifier_dragon_knight_17","#modifier_dragon_knight_17", 1, "dragon_knight/17", {}},
+				{"modifier_dragon_knight_15","#modifier_dragon_knight_15", 3, "dragon_knight/15", {}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_dragon_knight_20","#modifier_dragon_knight_20", 3, "dragon_knight/20", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_dragon_knight_17","#modifier_dragon_knight_17", 1, "dragon_knight/17", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
+				{"modifier_dragon_knight_19","#modifier_dragon_knight_19", 2, "dragon_knight/19", {}},
 				{"empty_10"},
-				{"modifier_dragon_knight_16","#modifier_dragon_knight_16", 2, "dragon_knight/16", {}},
 				{"empty_11"},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
@@ -502,7 +482,7 @@ local herotalents = {
 				{"modifier_woda_talent_hp1", "#woda_talent_hp1", 3, "hp1", {}},
 				{"modifier_woda_talent_regenhp1", "#woda_talent_regenhp1", 2, "regenhp1", {}},
 				{"modifier_woda_talent_attack1", "#woda_talent_attack1", 3, "attack1", {}},
-				{"modifier_omniknight_1","#modifier_omniknight_1", 2, "omniknight/1", {}},
+				{"modifier_omniknight_3","#modifier_omniknight_3", 2, "omniknight/3", {}},
 				{"modifier_woda_talent_str3", "#woda_talent_str3", 2, "str3", {}}
 			},
 			[2] = {
@@ -516,7 +496,7 @@ local herotalents = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
 				{"empty_7"},
-				{"modifier_omniknight_3","#modifier_omniknight_3", 2, "omniknight/3", {}},
+				{"modifier_omniknight_1","#modifier_omniknight_1", 2, "omniknight/1", {}},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
@@ -609,29 +589,29 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_omniknight_16","#modifier_omniknight_16", 1, "omniknight/16", {}},
 				{"empty_3"},
+				{"modifier_omniknight_17","#modifier_omniknight_17", 3, "omniknight/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"empty_7"},
-				{"modifier_omniknight_17","#modifier_omniknight_17", 3, "omniknight/17", {"modifier_omniknight_16",1}},
+				{"modifier_omniknight_19","#modifier_omniknight_19", 1, "omniknight/19", {"modifier_omniknight_17",3}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_omniknight_18","#modifier_omniknight_18", 3, "omniknight/18", {"modifier_omniknight_17",3}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_omniknight_16","#modifier_omniknight_16", 1, "omniknight/16", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_11"},
-				{"modifier_omniknight_19","#modifier_omniknight_19", 1, "omniknight/19", {"modifier_omniknight_18",3}},
+				{"modifier_omniknight_18","#modifier_omniknight_18", 3, "omniknight/18", {}},
 				{"empty_12"},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
@@ -707,29 +687,29 @@ local herotalents = {
 			[1] = {
 				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
 				{"modifier_woda_talent_speed1", "#woda_talent_speed1", 2, "speed1", {}},
+				{"modifier_lone_druid_9","#modifier_lone_druid_9", 1, "lone_druid/9", {}},
 				{"modifier_woda_talent_attackspeed1", "#woda_talent_attackspeed1", 3, "attackspeed1", {}},
-				{"modifier_lone_druid_9","#modifier_lone_druid_9", 2, "lone_druid/9", {}},
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
-				{"modifier_lone_druid_10","#modifier_lone_druid_10", 3, "lone_druid/10", {}},
-				{"empty_3"},
 				{"empty_4"},
+				{"empty_3"},
+				{"modifier_lone_druid_10","#modifier_lone_druid_10", 3, "lone_druid/10", {"modifier_lone_druid_9",1}},
 				{"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_lone_druid_11","#modifier_lone_druid_11", 1, "lone_druid/11", {"modifier_lone_druid_10",3}},
-				{"empty_7"},
 				{"empty_8"},
+				{"empty_7"},
+				{"modifier_lone_druid_8","#modifier_lone_druid_8", 3, "lone_druid/8", {"modifier_lone_druid_10",3}},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
 				{"empty_10"},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
-				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-				{"modifier_lone_druid_8","#modifier_lone_druid_8", 3, "lone_druid/8", {}},			
+				{"modifier_lone_druid_11","#modifier_lone_druid_11", 1, "lone_druid/11", {"modifier_lone_druid_8",3}},
+				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},			
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
@@ -743,7 +723,7 @@ local herotalents = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
 				{"empty_13"},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
-				{"modifier_lone_druid_14","#modifier_lone_druid_14", 2, "lone_druid/14", {}},
+				{"modifier_lone_druid_14","#modifier_lone_druid_14", 3, "lone_druid/14", {}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -764,9 +744,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_lone_druid_19","#modifier_lone_druid_19", 1, "lone_druid/19", {"modifier_lone_druid_17",1}},
 				{"empty_3"},
+				{"modifier_lone_druid_19","#modifier_lone_druid_19", 1, "lone_druid/19", {"modifier_lone_druid_17",1}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -778,9 +758,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_lone_druid_20","#modifier_lone_druid_20", 3, "lone_druid/20", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_lone_druid_20","#modifier_lone_druid_20", 3, "lone_druid/20", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -817,37 +797,37 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
+				{"modifier_windrunner_2","#modifier_windrunner_2", 2, "windrunner/2", {}},
 				{"empty_3"},
-				{"modifier_windrunner_2","#modifier_windrunner_2", 1, "windrunner/2", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
+				{"modifier_windrunner_3","#modifier_windrunner_3", 1, "windrunner/3", {}},
 				{"empty_7"},
-				{"modifier_windrunner_8","#modifier_windrunner_8", 3, "windrunner/8", {}},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
 				{"empty_9"},
-				{"modifier_windrunner_3","#modifier_windrunner_3", 1, "windrunner/3", {}},
+				{"modifier_windrunner_4","#modifier_windrunner_4", 2, "windrunner/4", {"modifier_windrunner_3",1}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
 				{"empty_10"},
-				{"modifier_windrunner_4","#modifier_windrunner_4", 2, "windrunner/4", {"modifier_windrunner_3",1}},
+				{"modifier_windrunner_6","#modifier_windrunner_6", 3, "windrunner/6", {"modifier_windrunner_4",2}},
 				{"empty_12"},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-				{"modifier_windrunner_6","#modifier_windrunner_6", 3, "windrunner/6", {"modifier_windrunner_4",2}},
 				{"empty_14"},
+				{"modifier_windrunner_8","#modifier_windrunner_8", 2, "windrunner/8", {}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -919,9 +899,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_3"},
 				{"modifier_windrunner_22","#modifier_windrunner_22", 3, "windrunner/22", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -933,9 +913,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_windrunner_17","#modifier_windrunner_17", 3, "windrunner/17", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_windrunner_17","#modifier_windrunner_17", 3, "windrunner/17", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -1074,23 +1054,23 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_drow_ranger_18","#modifier_drow_ranger_18", 2, "drow_ranger/18", {}},
 				{"empty_3"},
+				{"modifier_drow_ranger_18","#modifier_drow_ranger_18", 2, "drow_ranger/18", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
+				{"modifier_drow_ranger_19","#modifier_drow_ranger_19", 1, "drow_ranger/19", {}},
 				{"empty_7"},
-				{"modifier_drow_ranger_19","#modifier_drow_ranger_19", 1, "drow_ranger/19", {"modifier_drow_ranger_18",2}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
+				{"modifier_drow_ranger_15","#modifier_drow_ranger_15", 3, "drow_ranger/15", {}},
 				{"empty_9"},
-				{"modifier_drow_ranger_15","#modifier_drow_ranger_15", 3, "drow_ranger/15", {"modifier_drow_ranger_19",1}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -1177,9 +1157,9 @@ local herotalents = {
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
-				{"modifier_witch_doctor_9","#modifier_witch_doctor_9", 3, "witch_doctor/9", {}},
 				{"empty_3"},
 				{"empty_4"},
+				{"modifier_witch_doctor_9","#modifier_witch_doctor_9", 3, "witch_doctor/9", {}},
 				{"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
@@ -1224,42 +1204,42 @@ local herotalents = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
-				{"modifier_witch_doctor_16","#modifier_witch_doctor_16", 1, "witch_doctor/16", {}},
+				{"modifier_witch_doctor_15","#modifier_witch_doctor_15", 3, "witch_doctor/15", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_witch_doctor_15","#modifier_witch_doctor_15", 2, "witch_doctor/15", {}},
 				{"empty_3"},
+				{"modifier_witch_doctor_16","#modifier_witch_doctor_16", 1, "witch_doctor/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
+				{"modifier_witch_doctor_18","#modifier_witch_doctor_18", 2, "witch_doctor/18", {}},
 				{"empty_7"},
-				{"modifier_witch_doctor_19","#modifier_witch_doctor_19", 3, "witch_doctor/19", {}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
+				{"modifier_witch_doctor_19","#modifier_witch_doctor_19", 3, "witch_doctor/19", {}},
 				{"empty_9"},
-				{"modifier_witch_doctor_20","#modifier_witch_doctor_20", 2, "witch_doctor/20", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
+				{"modifier_witch_doctor_20","#modifier_witch_doctor_20", 2, "witch_doctor/20", {}},
 				{"empty_11"},
-				{"modifier_witch_doctor_18","#modifier_witch_doctor_18", 2, "witch_doctor/18", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
+				{"modifier_witch_doctor_17","#modifier_witch_doctor_17", 2, "witch_doctor/17", {}},
 				{"empty_14"},
-				{"modifier_witch_doctor_17","#modifier_witch_doctor_17", 3, "witch_doctor/17", {"modifier_witch_doctor_18",2}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -1384,9 +1364,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_nevermore_16","#modifier_nevermore_16", 2, "nevermore/16", {}},
 				{"empty_3"},
+				{"modifier_nevermore_16","#modifier_nevermore_16", 2, "nevermore/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -1398,9 +1378,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_nevermore_18","#modifier_nevermore_18", 1, "nevermore/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -1438,7 +1418,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_earthshaker_2","#modifier_earthshaker_2", 2, "earthshaker/2", {}},
+				{"modifier_earthshaker_4","#modifier_earthshaker_4", 2, "earthshaker/4", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -1458,15 +1438,15 @@ local herotalents = {
 			},
 			[5] = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
-				{"empty_10"},
+				{"modifier_earthshaker_2","#modifier_earthshaker_2", 2, "earthshaker/2", {}},
 				{"empty_11"},
-				{"modifier_earthshaker_5","#modifier_earthshaker_5", 2, "earthshaker/5", {}},
+				{"empty_10"},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-				{"modifier_earthshaker_4","#modifier_earthshaker_4", 2, "earthshaker/4", {}},
+				{"modifier_earthshaker_5","#modifier_earthshaker_5", 2, "earthshaker/5", {}},
 				{"empty_15"},
 				{"empty_16"}
 			},
@@ -1539,9 +1519,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_earthshaker_18","#modifier_earthshaker_18", 1, "earthshaker/18", {}},
 				{"empty_3"},
+				{"modifier_earthshaker_18","#modifier_earthshaker_18", 1, "earthshaker/18", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -1553,9 +1533,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_earthshaker_20","#modifier_earthshaker_20", 2, "earthshaker/20", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -1587,27 +1567,27 @@ local herotalents = {
 				{"modifier_woda_talent_hp1", "#woda_talent_hp1", 3, "hp1", {}},
 				{"modifier_woda_talent_regenhp1", "#woda_talent_regenhp1", 2, "regenhp1", {}},
 				{"modifier_woda_talent_attack1", "#woda_talent_attack1", 3, "attack1", {}},
-				{"modifier_antimage_1","#modifier_antimage_1", 3, "antimage/1", {}},
+				{"modifier_antimage_4","#modifier_antimage_4", 3, "antimage/4", {}},
 				{"modifier_woda_talent_str3", "#woda_talent_str3", 2, "str3", {}}
 			},
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_antimage_5","#modifier_antimage_5", 2, "antimage/5", {}},
+				{"modifier_antimage_1","#modifier_antimage_1", 3, "antimage/1", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
-				{"modifier_antimage_2","#modifier_antimage_2", 2, "antimage/2", {}},
+				{"modifier_antimage_5","#modifier_antimage_5", 2, "antimage/5", {}},
 				{"empty_8"},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
 				{"empty_9"},
-				{"modifier_antimage_3","#modifier_antimage_3", 2, "antimage/3", {"modifier_antimage_2",2}},
+				{"modifier_antimage_2","#modifier_antimage_2", 2, "antimage/2", {}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
@@ -1615,7 +1595,7 @@ local herotalents = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_antimage_4","#modifier_antimage_4", 3, "antimage/4", {}},
+				{"modifier_antimage_3","#modifier_antimage_3", 2, "antimage/3", {}},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
 			},
 			[6] = {
@@ -1694,9 +1674,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_antimage_16","#modifier_antimage_16", 3, "antimage/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -1708,9 +1688,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_antimage_17","#modifier_antimage_17", 2, "antimage/17", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_antimage_17","#modifier_antimage_17", 2, "antimage/17", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -1748,7 +1728,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_tidehunter_2","#modifier_tidehunter_2", 3, "tidehunter/2", {}},
+				{"modifier_tidehunter_16","#modifier_tidehunter_16", 3, "tidehunter/16", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -1761,8 +1741,8 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
-				{"modifier_tidehunter_4","#modifier_tidehunter_4", 2, "tidehunter/4", {}},
 				{"empty_9"},
+				{"modifier_tidehunter_6","#modifier_tidehunter_6", 2, "tidehunter/6", {}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
@@ -1778,7 +1758,7 @@ local herotalents = {
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
 				{"empty_14"},
 				{"empty_15"},
-				{"modifier_tidehunter_6","#modifier_tidehunter_6", 2, "tidehunter/6", {}}
+				{"modifier_tidehunter_4","#modifier_tidehunter_4", 2, "tidehunter/4", {}}
 			},
 			[7] = {
 				{"empty_17"},
@@ -1804,7 +1784,7 @@ local herotalents = {
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_tidehunter_11","#modifier_tidehunter_11", 3, "tidehunter/11", {}},
+				{"modifier_tidehunter_12","#modifier_tidehunter_12", 3, "tidehunter/12", {}},
 				{"empty_7"},
 				{"empty_8"},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
@@ -1820,7 +1800,7 @@ local herotalents = {
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
 				{"empty_11"},
-				{"modifier_tidehunter_12","#modifier_tidehunter_12", 3, "tidehunter/12", {}},
+				{"modifier_tidehunter_11","#modifier_tidehunter_11", 3, "tidehunter/11", {}},
 				{"empty_12"},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
@@ -1849,30 +1829,30 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_tidehunter_17","#modifier_tidehunter_17", 1, "tidehunter/17", {}},
 				{"empty_3"},
+				{"modifier_tidehunter_17","#modifier_tidehunter_17", 1, "tidehunter/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
-				{"modifier_tidehunter_18","#modifier_tidehunter_18", 1, "tidehunter/18", {}},
+				{"modifier_tidehunter_18","#modifier_tidehunter_18", 3, "tidehunter/18", {}},
 				{"empty_7"},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_tidehunter_19","#modifier_tidehunter_19", 1, "tidehunter/19", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
 				{"modifier_tidehunter_21","#modifier_tidehunter_21", 3, "tidehunter/21", {}},
-				{"modifier_tidehunter_16","#modifier_tidehunter_16", 2, "tidehunter/16", {}},
+				{"empty_11"},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
@@ -2004,9 +1984,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_skywrath_mage_17","#modifier_skywrath_mage_17", 2, "skywrath_mage/17", {}},
 				{"empty_3"},
+				{"modifier_skywrath_mage_17","#modifier_skywrath_mage_17", 2, "skywrath_mage/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -2018,9 +1998,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_skywrath_mage_19","#modifier_skywrath_mage_19", 3, "skywrath_mage/19", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -2033,14 +2013,14 @@ local herotalents = {
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
-				{"modifier_skywrath_mage_21","#modifier_skywrath_mage_21", 1, "skywrath_mage/21", {}},
+				{"modifier_skywrath_mage_22","#modifier_skywrath_mage_22", 1, "skywrath_mage/22", {}},
 				{"empty_15"},
 				{"empty_16"}
 			},
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_skywrath_mage_22","#modifier_skywrath_mage_22", 1, "skywrath_mage/22", {}},
+				{"modifier_skywrath_mage_21","#modifier_skywrath_mage_21", 1, "skywrath_mage/21", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -2159,9 +2139,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_pudge_19","#modifier_pudge_19", 2, "pudge/19", {}},
 				{"empty_3"},
+				{"modifier_pudge_19","#modifier_pudge_19", 2, "pudge/19", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -2173,9 +2153,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_pudge_16","#modifier_pudge_16", 2, "pudge/16", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -2258,7 +2238,7 @@ local herotalents = {
 				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
 				{"modifier_woda_talent_speed1", "#woda_talent_speed1", 2, "speed1", {}},
 				{"modifier_woda_talent_attackspeed1", "#woda_talent_attackspeed1", 3, "attackspeed1", {}},
-				{"modifier_bounty_hunter_9","#modifier_bounty_hunter_9", 2, "bounty_hunter/9", {}},
+				{"modifier_bounty_hunter_8","#modifier_bounty_hunter_8", 2, "bounty_hunter/8", {}},
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
@@ -2269,14 +2249,14 @@ local herotalents = {
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_bounty_hunter_8","#modifier_bounty_hunter_8", 2, "bounty_hunter/8", {}},
+				{"modifier_bounty_hunter_10","#modifier_bounty_hunter_10", 2, "bounty_hunter/10", {}},
 				{"empty_7"},
 				{"empty_8"},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
-				{"modifier_bounty_hunter_10","#modifier_bounty_hunter_10", 2, "bounty_hunter/10", {}},
+				{"modifier_bounty_hunter_13","#modifier_bounty_hunter_13", 1, "bounty_hunter/13", {}},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
 				{"empty_10"},			
@@ -2284,16 +2264,16 @@ local herotalents = {
 			},
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
+				{"modifier_bounty_hunter_12","#modifier_bounty_hunter_12", 3, "bounty_hunter/12", {}},
 				{"empty_11"},
 				{"empty_12"},
-				{"modifier_bounty_hunter_13","#modifier_bounty_hunter_13", 1, "bounty_hunter/13", {}},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
-				{"modifier_bounty_hunter_12","#modifier_bounty_hunter_12", 3, "bounty_hunter/12", {}},
-				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
 				{"empty_15"},
+				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
+				{"modifier_bounty_hunter_9","#modifier_bounty_hunter_9", 2, "bounty_hunter/9", {}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -2314,9 +2294,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_bounty_hunter_4","#modifier_bounty_hunter_4", 3, "bounty_hunter/4", {}},
 				{"empty_3"},
+				{"modifier_bounty_hunter_4","#modifier_bounty_hunter_4", 3, "bounty_hunter/4", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -2328,9 +2308,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_bounty_hunter_3","#modifier_bounty_hunter_3", 3, "bounty_hunter/3", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_bounty_hunter_3","#modifier_bounty_hunter_3", 3, "bounty_hunter/3", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -2464,43 +2444,43 @@ local herotalents = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
-				{"modifier_furion_15","#modifier_furion_15", 1, "furion/15", {}},
+				{"modifier_furion_17","#modifier_furion_17", 1, "furion/17", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_furion_19","#modifier_furion_19", 2, "furion/19", {}},
 				{"empty_3"},
+				{"modifier_furion_15","#modifier_furion_15", 1, "furion/15", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
-				{"modifier_furion_17","#modifier_furion_17", 1, "furion/17", {}},
+				{"modifier_furion_16","#modifier_furion_16", 3, "furion/16", {}},
 				{"empty_7"},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_furion_16","#modifier_furion_16", 3, "furion/16", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_furion_19","#modifier_furion_19", 2, "furion/19", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_furion_21","#modifier_furion_21", 3, "furion/21", {}},
+				{"modifier_furion_18","#modifier_furion_18", 3, "furion/18", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
+				{"modifier_furion_21","#modifier_furion_21", 3, "furion/21", {}},
 				{"empty_14"},
-				{"modifier_furion_18","#modifier_furion_18", 3, "furion/18", {}},
-				{"empty_16"}
+				{"empty_15"}
 			},
 			[7] = {
 				{"empty_17"},
@@ -2624,9 +2604,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_phantom_assassin_16","#modifier_phantom_assassin_16", 3, "phantom_assassin/16", {}},
 				{"empty_3"},
+				{"modifier_phantom_assassin_16","#modifier_phantom_assassin_16", 3, "phantom_assassin/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -2638,9 +2618,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_phantom_assassin_9","#modifier_phantom_assassin_9", 2, "phantom_assassin/9", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -2779,9 +2759,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_death_prophet_16","#modifier_death_prophet_16", 2, "death_prophet/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -2793,9 +2773,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_death_prophet_20","#modifier_death_prophet_20", 2, "death_prophet/20", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -2934,9 +2914,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_doom_bringer_20","#modifier_doom_bringer_20", 3, "doom_bringer/20", {}},
 				{"empty_3"},
+				{"modifier_doom_bringer_20","#modifier_doom_bringer_20", 3, "doom_bringer/20", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -2948,9 +2928,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_doom_bringer_17","#modifier_doom_bringer_17", 1, "doom_bringer/17", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -3089,9 +3069,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_invoker_16","#modifier_invoker_16", 3, "invoker/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -3103,9 +3083,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_invoker_19","#modifier_invoker_19", 2, "invoker/19", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -3244,9 +3224,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_terrorblade_21","#modifier_terrorblade_21", 1, "terrorblade/21", {}},
 				{"empty_3"},
+				{"modifier_terrorblade_21","#modifier_terrorblade_21", 1, "terrorblade/21", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -3258,9 +3238,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_terrorblade_17","#modifier_terrorblade_17", 3, "terrorblade/17", {"modifier_terrorblade_16",1}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -3354,14 +3334,14 @@ local herotalents = {
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_undying_11","#modifier_undying_11", 3, "undying/11", {"modifier_undying_10",3}},
+				{"modifier_undying_14","#modifier_undying_14", 2, "undying/14", {"modifier_undying_10",3}},
 				{"empty_7"},
 				{"empty_8"},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
-				{"modifier_undying_14","#modifier_undying_14", 2, "undying/14", {}},
+				{"modifier_undying_11","#modifier_undying_11", 3, "undying/11", {"modifier_undying_14",2}},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
 				{"empty_10"},			
@@ -3399,9 +3379,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_undying_18","#modifier_undying_18", 1, "undying/18", {}},
 				{"empty_3"},
+				{"modifier_undying_18","#modifier_undying_18", 1, "undying/18", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -3413,9 +3393,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_undying_20","#modifier_undying_20", 3, "undying/20", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_undying_20","#modifier_undying_20", 3, "undying/20", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -3453,7 +3433,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_vengefulspirit_1","#modifier_vengefulspirit_1", 2, "vengefulspirit/1", {}},
+				{"modifier_vengefulspirit_12","#modifier_vengefulspirit_12", 3, "vengefulspirit/12", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -3467,7 +3447,7 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
 				{"empty_9"},
-				{"modifier_vengefulspirit_12","#modifier_vengefulspirit_12", 3, "vengefulspirit/12", {}},
+				{"modifier_vengefulspirit_5","#modifier_vengefulspirit_5", 2, "vengefulspirit/5", {}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
@@ -3498,7 +3478,7 @@ local herotalents = {
 				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
 				{"modifier_woda_talent_speed1", "#woda_talent_speed1", 2, "speed1", {}},
 				{"modifier_woda_talent_attackspeed1", "#woda_talent_attackspeed1", 3, "attackspeed1", {}},
-				{"modifier_vengefulspirit_8","#modifier_vengefulspirit_8", 2, "vengefulspirit/8", {}},
+				{"modifier_vengefulspirit_8","#modifier_vengefulspirit_8", 3, "vengefulspirit/8", {}},
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
@@ -3516,7 +3496,7 @@ local herotalents = {
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
-				{"modifier_vengefulspirit_11","#modifier_vengefulspirit_11", 3, "vengefulspirit/11", {}},
+				{"modifier_vengefulspirit_20","#modifier_vengefulspirit_20", 3, "vengefulspirit/20", {}},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
 				{"empty_10"},			
@@ -3524,8 +3504,8 @@ local herotalents = {
 			},
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
+				{"modifier_vengefulspirit_1","#modifier_vengefulspirit_1", 2, "vengefulspirit/1", {}},
 				{"empty_11"},
-				{"modifier_vengefulspirit_5","#modifier_vengefulspirit_5", 3, "vengefulspirit/5", {}},
 				{"empty_12"},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
@@ -3554,9 +3534,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_vengefulspirit_18","#modifier_vengefulspirit_18", 2, "vengefulspirit/18", {}},
 				{"empty_3"},
+				{"modifier_vengefulspirit_18","#modifier_vengefulspirit_18", 2, "vengefulspirit/18", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -3568,9 +3548,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_vengefulspirit_16","#modifier_vengefulspirit_16", 3, "vengefulspirit/16", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -3585,7 +3565,7 @@ local herotalents = {
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
 				{"empty_14"},
 				{"empty_15"},
-				{"modifier_vengefulspirit_20","#modifier_vengefulspirit_20", 2, "vengefulspirit/20", {}}
+				{"modifier_vengefulspirit_11","#modifier_vengefulspirit_11", 2, "vengefulspirit/11", {}}
 			},
 			[7] = {
 				{"empty_17"},
@@ -3680,7 +3660,7 @@ local herotalents = {
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
 				{"empty_11"},
-				{"modifier_muerta_12","#modifier_muerta_12", 1, "muerta/12", {}},
+				{"modifier_muerta_12","#modifier_muerta_12", 2, "muerta/12", {}},
 				{"empty_12"},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
@@ -3688,7 +3668,7 @@ local herotalents = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
 				{"empty_13"},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
-				{"modifier_muerta_8","#modifier_muerta_8", 3, "muerta/8", {}},
+				{"modifier_muerta_8","#modifier_muerta_8", 2, "muerta/8", {}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -3709,9 +3689,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_muerta_16","#modifier_muerta_16", 1, "muerta/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -3723,29 +3703,29 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_muerta_20","#modifier_muerta_20", 2, "muerta/20", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
+				{"modifier_muerta_19","#modifier_muerta_19", 3, "muerta/19", {}},
 				{"empty_11"},
-				{"modifier_muerta_18","#modifier_muerta_18", 1, "muerta/18", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
-				{"modifier_muerta_19","#modifier_muerta_19", 3, "muerta/19", {}},
 				{"empty_15"},
+				{"modifier_muerta_21","#modifier_muerta_21", 1, "muerta/21", {}},
 				{"empty_16"}
 			},
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_muerta_21","#modifier_muerta_21", 1, "muerta/21", {}},
+				{"modifier_muerta_18","#modifier_muerta_18", 1, "muerta/18", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -3785,7 +3765,7 @@ local herotalents = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_legion_commander_5","#modifier_legion_commander_5", 1, "legion_commander/5", {}},
+				{"modifier_legion_commander_7","#modifier_legion_commander_7", 1, "legion_commander/7", {}},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
 			},
 			[6] = {
@@ -3798,7 +3778,7 @@ local herotalents = {
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_legion_commander_7","#modifier_legion_commander_7", 1, "legion_commander/7", {}},
+				{"modifier_legion_commander_5","#modifier_legion_commander_5", 1, "legion_commander/5", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -3843,7 +3823,7 @@ local herotalents = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
 				{"empty_13"},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
-				{"modifier_legion_commander_13","#modifier_legion_commander_13", 3, "legion_commander/13", {}},
+				{"modifier_legion_commander_18","#modifier_legion_commander_18", 3, "legion_commander/18", {}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -3864,9 +3844,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_legion_commander_16","#modifier_legion_commander_16", 1, "legion_commander/16", {}},
 				{"empty_3"},
+				{"modifier_legion_commander_16","#modifier_legion_commander_16", 1, "legion_commander/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -3878,9 +3858,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
+				{"modifier_legion_commander_13","#modifier_legion_commander_13", 3, "legion_commander/13", {}},
 				{"empty_9"},
-				{"modifier_legion_commander_18","#modifier_legion_commander_18", 3, "legion_commander/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -4019,9 +3999,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_lion_15","#modifier_lion_15", 1, "lion/15", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -4033,9 +4013,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_lion_16","#modifier_lion_16", 3, "lion/16", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_lion_16","#modifier_lion_16", 3, "lion/16", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -4169,14 +4149,14 @@ local herotalents = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
-				{"modifier_slardar_15","#modifier_slardar_15", 3, "slardar/15", {}},
+				{"modifier_slardar_12","#modifier_slardar_12", 3, "slardar/12", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_3"},
-				{"modifier_slardar_16","#modifier_slardar_16", 2, "slardar/16", {}},
+				{"modifier_slardar_20","#modifier_slardar_20", 3, "slardar/20", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -4188,16 +4168,16 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
+				{"modifier_slardar_19","#modifier_slardar_19", 1, "slardar/19", {}},
 				{"empty_9"},
-				{"modifier_slardar_20","#modifier_slardar_20", 3, "slardar/20", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_slardar_19","#modifier_slardar_19", 1, "slardar/19", {}},
+				{"modifier_slardar_16","#modifier_slardar_16", 2, "slardar/16", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
@@ -4205,7 +4185,7 @@ local herotalents = {
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
 				{"empty_14"},
 				{"empty_15"},
-				{"modifier_slardar_12","#modifier_slardar_12", 3, "slardar/12", {}}
+				{"modifier_slardar_15","#modifier_slardar_15", 3, "slardar/15", {}}
 			},
 			[7] = {
 				{"empty_17"},
@@ -4323,15 +4303,15 @@ local herotalents = {
 			[1] = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
+				{"modifier_kunkka_16","#modifier_kunkka_16", 1, "kunkka/16", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
-				{"modifier_kunkka_16","#modifier_kunkka_16", 3, "kunkka/16", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_kunkka_19","#modifier_kunkka_19", 2, "kunkka/19", {}},
 				{"empty_3"},
+				{"modifier_kunkka_19","#modifier_kunkka_19", 3, "kunkka/19", {"modifier_kunkka_16",1}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -4343,14 +4323,14 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
+				{"modifier_kunkka_18","#modifier_kunkka_18", 3, "kunkka/18", {}},
 				{"empty_9"},
-				{"modifier_kunkka_18","#modifier_kunkka_18", 2, "kunkka/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
-				{"modifier_kunkka_20","#modifier_kunkka_20", 2, "kunkka/20", {}},
+				{"modifier_kunkka_20","#modifier_kunkka_20", 1, "kunkka/20", {}},
 				{"empty_10"},
 				{"empty_11"},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
@@ -4360,7 +4340,7 @@ local herotalents = {
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
 				{"empty_14"},
 				{"empty_15"},
-				{"modifier_kunkka_17","#modifier_kunkka_17", 1, "kunkka/17", {}}
+				{"modifier_kunkka_17","#modifier_kunkka_17", 2, "kunkka/17", {}}
 			},
 			[7] = {
 				{"empty_17"},
@@ -4484,9 +4464,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_slark_16","#modifier_slark_16", 2, "slark/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -4498,9 +4478,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_slark_18","#modifier_slark_18", 3, "slark/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -4601,16 +4581,16 @@ local herotalents = {
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
-				{"modifier_morphling_11","#modifier_morphling_11", 1, "morphling/11", {}},
+				{"empty_10"},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-				{"empty_10"},			
+				{"modifier_morphling_12","#modifier_morphling_12", 3, "morphling/12", {}},			
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
-				{"modifier_morphling_12","#modifier_morphling_12", 3, "morphling/12", {}},
 				{"empty_11"},
+				{"modifier_morphling_11","#modifier_morphling_11", 1, "morphling/11", {}},
 				{"empty_12"},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
@@ -4639,9 +4619,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_morphling_21","#modifier_morphling_21", 1, "morphling/21", {"modifier_morphling_15",3}},
 				{"empty_3"},
+				{"modifier_morphling_21","#modifier_morphling_21", 1, "morphling/21", {"modifier_morphling_15",3}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -4653,9 +4633,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_morphling_18","#modifier_morphling_18", 1, "morphling/18", {"modifier_morphling_17",3}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -4779,7 +4759,7 @@ local herotalents = {
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_oracle_14","#modifier_oracle_14", 1, "oracle/14", {}},
+				{"modifier_oracle_21","#modifier_oracle_21", 1, "oracle/21", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -4794,9 +4774,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_oracle_17","#modifier_oracle_17", 1, "oracle/17", {}},
 				{"empty_3"},
+				{"modifier_oracle_17","#modifier_oracle_17", 1, "oracle/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -4808,9 +4788,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_oracle_18","#modifier_oracle_18", 3, "oracle/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -4830,7 +4810,7 @@ local herotalents = {
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_oracle_21","#modifier_oracle_21", 1, "oracle/21", {}},
+				{"modifier_oracle_14","#modifier_oracle_14", 1, "oracle/14", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -4949,9 +4929,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_disruptor_16","#modifier_disruptor_16", 1, "disruptor/16", {}},
 				{"empty_3"},
+				{"modifier_disruptor_16","#modifier_disruptor_16", 1, "disruptor/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -4963,9 +4943,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_disruptor_19","#modifier_disruptor_19", 2, "disruptor/19", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -5104,38 +5084,38 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_3"},
-				{"modifier_juggernaut_21","#modifier_juggernaut_21", 1, "juggernaut/21", {}},
+				{"modifier_juggernaut_18","#modifier_juggernaut_18", 3, "juggernaut/18", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"empty_7"},
-				{"modifier_juggernaut_17","#modifier_juggernaut_17", 1, "juggernaut/17", {}},
+				{"modifier_juggernaut_19","#modifier_juggernaut_19", 2, "juggernaut/19", {}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_juggernaut_18","#modifier_juggernaut_18", 3, "juggernaut/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_juggernaut_21","#modifier_juggernaut_21", 1, "juggernaut/21", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_11"},
-				{"modifier_juggernaut_19","#modifier_juggernaut_19", 2, "juggernaut/19", {}},
 				{"empty_12"},
+				{"modifier_juggernaut_17","#modifier_juggernaut_17", 1, "juggernaut/17", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
 				{"empty_15"},
-				{"modifier_juggernaut_16","#modifier_juggernaut_16", 3, "juggernaut/16", {}},
-				{"empty_16"}
+				{"empty_16"},
+				{"modifier_juggernaut_16","#modifier_juggernaut_16", 3, "juggernaut/16", {}}
 			},
 			[7] = {
 				{"empty_17"},
@@ -5157,8 +5137,8 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"empty_3"},
 				{"modifier_spectre_1","#modifier_spectre_1", 3, "spectre/1", {}},
+				{"empty_3"},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -5230,8 +5210,8 @@ local herotalents = {
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
 				{"empty_11"},
-				{"empty_12"},
 				{"modifier_spectre_12","#modifier_spectre_12", 3, "spectre/12", {}},
+				{"empty_12"},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
 			[6] = {
@@ -5259,23 +5239,23 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_spectre_15","#modifier_spectre_15", 2, "spectre/15", {}},
 				{"empty_3"},
+				{"modifier_spectre_17","#modifier_spectre_17", 3, "spectre/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"empty_7"},
-				{"modifier_spectre_17","#modifier_spectre_17", 3, "spectre/17", {}},
+				{"modifier_spectre_15","#modifier_spectre_15", 2, "spectre/15", {}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_spectre_18","#modifier_spectre_18", 1, "spectre/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -5307,12 +5287,12 @@ local herotalents = {
 				{"modifier_woda_talent_hp1", "#woda_talent_hp1", 3, "hp1", {}},
 				{"modifier_woda_talent_regenhp1", "#woda_talent_regenhp1", 2, "regenhp1", {}},
 				{"modifier_woda_talent_attack1", "#woda_talent_attack1", 3, "attack1", {}},
-				{"modifier_bristleback_1","#modifier_bristleback_1", 1, "bristleback/1", {}},
+				{"modifier_bristleback_3","#modifier_bristleback_3", 2, "bristleback/3", {}},
 				{"modifier_woda_talent_str3", "#woda_talent_str3", 2, "str3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_bristleback_3","#modifier_bristleback_3", 2, "bristleback/3", {}},
+				{"modifier_bristleback_4","#modifier_bristleback_4", 2, "bristleback/4", {}},
 				{"empty_3"},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
@@ -5333,8 +5313,8 @@ local herotalents = {
 			},
 			[5] = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
-				{"modifier_bristleback_4","#modifier_bristleback_4", 2, "bristleback/4", {}},
 				{"empty_10"},
+				{"modifier_bristleback_1","#modifier_bristleback_1", 1, "bristleback/1", {}},
 				{"empty_11"},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
 			},
@@ -5414,9 +5394,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
+				{"modifier_bristleback_15","#modifier_bristleback_15", 2, "bristleback/15", {}},
 				{"empty_3"},
-				{"modifier_bristleback_17","#modifier_bristleback_17", 2, "bristleback/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -5428,9 +5408,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_bristleback_15","#modifier_bristleback_15", 2, "bristleback/15", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_bristleback_17","#modifier_bristleback_17", 2, "bristleback/17", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -5475,7 +5455,7 @@ local herotalents = {
 			[3] = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
-				{"modifier_spirit_breaker_3","#modifier_spirit_breaker_3", 3, "spirit_breaker/3", {}},
+				{"modifier_spirit_breaker_4","#modifier_spirit_breaker_4", 3, "spirit_breaker/4", {}},
 				{"empty_9"},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
@@ -5488,7 +5468,7 @@ local herotalents = {
 			},
 			[5] = {
 				{"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
-				{"modifier_spirit_breaker_4","#modifier_spirit_breaker_4", 3, "spirit_breaker/4", {}},
+				{"modifier_spirit_breaker_3","#modifier_spirit_breaker_3", 3, "spirit_breaker/3", {}},
 				{"empty_10"},
 				{"empty_11"},
 				{"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
@@ -5519,7 +5499,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_spirit_breaker_14","#modifier_spirit_breaker_14", 3, "spirit_breaker/14", {}},
+				{"modifier_spirit_breaker_9","#modifier_spirit_breaker_9", 3, "spirit_breaker/9", {}},
 				{"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
@@ -5534,7 +5514,7 @@ local herotalents = {
 				{"empty_10"},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-				{"modifier_spirit_breaker_9","#modifier_spirit_breaker_9", 3, "spirit_breaker/9", {}},			
+				{"modifier_spirit_breaker_14","#modifier_spirit_breaker_14", 3, "spirit_breaker/14", {}},			
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
@@ -5569,9 +5549,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_spirit_breaker_16","#modifier_spirit_breaker_16", 2, "spirit_breaker/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -5583,9 +5563,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_spirit_breaker_19","#modifier_spirit_breaker_19", 3, "spirit_breaker/19", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_spirit_breaker_19","#modifier_spirit_breaker_19", 3, "spirit_breaker/19", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -5724,9 +5704,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_ancient_apparition_16","#modifier_ancient_apparition_16", 3, "ancient_apparition/16", {}},
 				{"empty_3"},
+				{"modifier_ancient_apparition_16","#modifier_ancient_apparition_16", 3, "ancient_apparition/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -5738,9 +5718,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_ancient_apparition_19","#modifier_ancient_apparition_19", 3, "ancient_apparition/19", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_ancient_apparition_19","#modifier_ancient_apparition_19", 3, "ancient_apparition/19", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -5879,9 +5859,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_lich_18","#modifier_lich_18", 1, "lich/18", {}},
 				{"empty_3"},
+				{"modifier_lich_18","#modifier_lich_18", 1, "lich/18", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -5893,9 +5873,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_lich_16","#modifier_lich_16", 1, "lich/16", {"modifier_lich_20",3}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -6034,9 +6014,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_3"},
 				{"modifier_meepo_21","#modifier_meepo_21", 2, "meepo/21", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -6048,9 +6028,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_meepo_19","#modifier_meepo_19", 2, "meepo/19", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_meepo_19","#modifier_meepo_19", 2, "meepo/19", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -6189,9 +6169,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_dazzle_16","#modifier_dazzle_16", 1, "dazzle/16", {}},
 				{"empty_3"},
+				{"modifier_dazzle_16","#modifier_dazzle_16", 1, "dazzle/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -6203,9 +6183,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_dazzle_18","#modifier_dazzle_18", 1, "dazzle/18", {"modifier_dazzle_17",3}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -6344,9 +6324,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_skeleton_king_16","#modifier_skeleton_king_16", 2, "skeleton_king/16", {}},
 				{"empty_3"},
+				{"modifier_skeleton_king_16","#modifier_skeleton_king_16", 2, "skeleton_king/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -6358,9 +6338,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_skeleton_king_18","#modifier_skeleton_king_18", 3, "skeleton_king/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -6499,9 +6479,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_weaver_16","#modifier_weaver_16", 3, "weaver/16", {}},
 				{"empty_3"},
+				{"modifier_weaver_16","#modifier_weaver_16", 3, "weaver/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -6513,9 +6493,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_weaver_18","#modifier_weaver_18", 2, "weaver/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -6654,9 +6634,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_abaddon_15","#modifier_abaddon_15", 1, "abaddon/15", {}},
 				{"empty_3"},
+				{"modifier_abaddon_15","#modifier_abaddon_15", 1, "abaddon/15", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -6668,23 +6648,23 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_abaddon_17","#modifier_abaddon_17", 2, "abaddon/17", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_abaddon_20","#modifier_abaddon_20", 3, "abaddon/20", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
+				{"modifier_abaddon_17","#modifier_abaddon_17", 2, "abaddon/17", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_abaddon_19","#modifier_abaddon_19", 2, "abaddon/19", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
+				{"modifier_abaddon_19","#modifier_abaddon_19", 2, "abaddon/19", {}},
 				{"empty_14"},
-				{"modifier_abaddon_20","#modifier_abaddon_20", 3, "abaddon/20", {"modifier_abaddon_19",2}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -6809,9 +6789,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_tiny_16","#modifier_tiny_16", 1, "tiny/16", {"modifier_tiny_15",2}},
 				{"empty_3"},
+				{"modifier_tiny_16","#modifier_tiny_16", 1, "tiny/16", {"modifier_tiny_15",2}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -6823,9 +6803,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_tiny_18","#modifier_tiny_18", 3, "tiny/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -6964,9 +6944,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_medusa_16","#modifier_medusa_16", 1, "medusa/16", {}},
 				{"empty_3"},
+				{"modifier_medusa_16","#modifier_medusa_16", 1, "medusa/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -6978,9 +6958,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_medusa_18","#modifier_medusa_18", 3, "medusa/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -7119,9 +7099,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_naga_siren_16","#modifier_naga_siren_16", 1, "naga_siren/16", {}},
 				{"empty_3"},
+				{"modifier_naga_siren_16","#modifier_naga_siren_16", 1, "naga_siren/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -7133,9 +7113,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_naga_siren_18","#modifier_naga_siren_18", 3, "naga_siren/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -7274,9 +7254,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_night_stalker_16","#modifier_night_stalker_16", 2, "night_stalker/16", {}},
 				{"empty_3"},
+				{"modifier_night_stalker_16","#modifier_night_stalker_16", 2, "night_stalker/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -7288,9 +7268,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_night_stalker_18","#modifier_night_stalker_18", 2, "night_stalker/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -7429,9 +7409,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_chen_16","#modifier_chen_16", 2, "chen/16", {"modifier_chen_15",2}},
 				{"empty_3"},
+				{"modifier_chen_16","#modifier_chen_16", 2, "chen/16", {"modifier_chen_15",2}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -7443,9 +7423,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_chen_17","#modifier_chen_17", 3, "chen/17", {"modifier_chen_18",1}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -7584,9 +7564,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_3"},
 				{"modifier_arc_warden_17","#modifier_arc_warden_17", 2, "arc_warden/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -7598,9 +7578,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_arc_warden_19","#modifier_arc_warden_19", 3, "arc_warden/19", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_arc_warden_19","#modifier_arc_warden_19", 3, "arc_warden/19", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -7739,9 +7719,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_necrolyte_20","#modifier_necrolyte_20", 1, "necrolyte/20", {}},
 				{"empty_3"},
+				{"modifier_necrolyte_20","#modifier_necrolyte_20", 1, "necrolyte/20", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -7755,7 +7735,7 @@ local herotalents = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
 				{"modifier_necrolyte_17","#modifier_necrolyte_17", 1, "necrolyte/17", {"modifier_necrolyte_16",3}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -7894,9 +7874,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_nyx_assassin_16","#modifier_nyx_assassin_16", 3, "nyx_assassin/16", {}},
 				{"empty_3"},
+				{"modifier_nyx_assassin_16","#modifier_nyx_assassin_16", 3, "nyx_assassin/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -7908,9 +7888,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_nyx_assassin_18","#modifier_nyx_assassin_18", 1, "nyx_assassin/18", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_nyx_assassin_18","#modifier_nyx_assassin_18", 1, "nyx_assassin/18", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -8049,9 +8029,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_rubick_16","#modifier_rubick_16", 2, "rubick/16", {}},
 				{"empty_3"},
+				{"modifier_rubick_16","#modifier_rubick_16", 2, "rubick/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -8063,9 +8043,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_rubick_18","#modifier_rubick_18", 2, "rubick/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -8145,51 +8125,51 @@ local herotalents = {
 		},
 		[2] = {
 			[1] = {
-				{"modifier_techies_9","#modifier_techies_9", 1, "techies/9", {}},
+				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
 				{"modifier_woda_talent_speed1", "#woda_talent_speed1", 2, "speed1", {}},
 				{"modifier_woda_talent_attackspeed1", "#woda_talent_attackspeed1", 3, "attackspeed1", {}},
-				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
+				{"modifier_techies_15","#modifier_techies_15", 1, "techies/15", {}},
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
-				{"modifier_techies_10","#modifier_techies_10", 2, "techies/10", {"modifier_techies_9",1}},
-				{"empty_3"},
 				{"empty_4"},
+				{"empty_3"},
+				{"modifier_techies_16","#modifier_techies_16", 3, "techies/16", {}},
 				{"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_techies_11","#modifier_techies_11", 3, "techies/11", {"modifier_techies_10",2}},
-				{"empty_7"},
 				{"empty_8"},
+				{"empty_7"},
+				{"modifier_techies_18","#modifier_techies_18", 1, "techies/18", {}},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
-				{"empty_10"},
+				{"modifier_techies_20","#modifier_techies_20", 3, "techies/20", {}},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-				{"modifier_techies_8","#modifier_techies_8", 3, "techies/8", {}},			
+				{"empty_10"},			
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
 				{"empty_11"},
+				{"modifier_techies_19","#modifier_techies_19", 2, "techies/19", {}},
 				{"empty_12"},
-				{"modifier_techies_12","#modifier_techies_12", 3, "techies/12", {}},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
 				{"empty_14"},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
-				{"modifier_techies_13","#modifier_techies_13", 1, "techies/13", {}},
-				{"empty_16"}
+				{"empty_16"},
+				{"modifier_techies_17","#modifier_techies_17", 3, "techies/17", {}}
 			},
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_techies_14","#modifier_techies_14", 1, "techies/14", {}},
+				{"modifier_techies_21","#modifier_techies_21", 1, "techies/21", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -8199,48 +8179,48 @@ local herotalents = {
 				{"modifier_woda_talent_mp1", "#woda_talent_mp1", 3, "mp1", {}},
 				{"modifier_woda_talent_regenmp1", "#woda_talent_regenmp1", 2, "regenmp1", {}},
 				{"modifier_woda_talent_spell", "#woda_talent_spell", 3, "spell", {}},
-				{"modifier_techies_15","#modifier_techies_15", 1, "techies/15", {}},
+				{"modifier_techies_9","#modifier_techies_9", 1, "techies/9", {}},
 				{"modifier_woda_talent_int3", "#woda_talent_int3", 2, "int3", {}}
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_techies_16","#modifier_techies_16", 3, "techies/16", {}},
+				{"modifier_techies_10","#modifier_techies_10", 2, "techies/10", {}},
 				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
+				{"modifier_techies_11","#modifier_techies_11", 3, "techies/11", {}},
 				{"empty_7"},
-				{"modifier_techies_17","#modifier_techies_17", 3, "techies/17", {}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_techies_18","#modifier_techies_18", 1, "techies/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_techies_8","#modifier_techies_8", 3, "techies/8", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
 				{"empty_10"},
 				{"empty_11"},
-				{"modifier_techies_19","#modifier_techies_19", 2, "techies/19", {}},
+				{"modifier_techies_12","#modifier_techies_12", 3, "techies/12", {}},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
 				{"empty_14"},
-				{"empty_15"},
-				{"modifier_techies_20","#modifier_techies_20", 3, "techies/20", {}}
+				{"modifier_techies_13","#modifier_techies_13", 1, "techies/13", {}},
+				{"empty_15"}
 			},
 			[7] = {
 				{"empty_17"},
 				{"empty_18"},
-				{"modifier_techies_21","#modifier_techies_21", 1, "techies/21", {}},
+				{"modifier_techies_14","#modifier_techies_14", 1, "techies/14", {}},
 				{"empty_20"},
 				{"empty_21"}
 			}
@@ -8359,9 +8339,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_huskar_17","#modifier_huskar_17", 3, "huskar/17", {}},
 				{"empty_3"},
+				{"modifier_huskar_17","#modifier_huskar_17", 3, "huskar/17", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -8373,9 +8353,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_huskar_18","#modifier_huskar_18", 1, "huskar/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -8458,7 +8438,7 @@ local herotalents = {
 				{"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
 				{"modifier_woda_talent_speed1", "#woda_talent_speed1", 2, "speed1", {}},
 				{"modifier_woda_talent_attackspeed1", "#woda_talent_attackspeed1", 3, "attackspeed1", {}},
-				{"modifier_marci_8","#modifier_marci_8", 2, "marci/8", {}},
+				{"modifier_marci_10","#modifier_marci_10", 1, "marci/10", {}},
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
@@ -8469,9 +8449,9 @@ local herotalents = {
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_marci_10","#modifier_marci_10", 1, "marci/10", {}},
 				{"empty_7"},
 				{"empty_8"},
+				{"modifier_marci_8","#modifier_marci_8", 2, "marci/8", {}},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
@@ -8514,9 +8494,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_marci_16","#modifier_marci_16", 1, "marci/16", {"modifier_marci_15",3}},
 				{"empty_3"},
+				{"modifier_marci_16","#modifier_marci_16", 1, "marci/16", {"modifier_marci_15",3}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -8528,9 +8508,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_marci_18","#modifier_marci_18", 2, "marci/18", {"modifier_marci_17",3}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -8582,7 +8562,7 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
 				{"empty_9"},
-				{"modifier_ursa_4","#modifier_ursa_4", 1, "ursa/4", {}},
+				{"modifier_ursa_4","#modifier_ursa_4", 3, "ursa/4", {}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
@@ -8596,7 +8576,7 @@ local herotalents = {
 			[6] = {
 				{"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-				{"modifier_ursa_6","#modifier_ursa_6", 3, "ursa/6", {}},
+				{"modifier_ursa_6","#modifier_ursa_6", 1, "ursa/6", {}},
 				{"empty_15"},
 				{"empty_16"}
 			},
@@ -8634,7 +8614,7 @@ local herotalents = {
 				{"empty_10"},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-				{"modifier_ursa_11","#modifier_ursa_11", 2, "ursa/11", {}},			
+				{"modifier_ursa_13","#modifier_ursa_13", 2, "ursa/13", {}},			
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
@@ -8648,7 +8628,7 @@ local herotalents = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
 				{"empty_13"},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
-				{"modifier_ursa_13","#modifier_ursa_13", 2, "ursa/13", {}},
+				{"modifier_ursa_11","#modifier_ursa_11", 2, "ursa/11", {}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -8669,9 +8649,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_ursa_19","#modifier_ursa_19", 2, "ursa/19", {}},
 				{"empty_3"},
+				{"modifier_ursa_19","#modifier_ursa_19", 2, "ursa/19", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -8683,9 +8663,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_ursa_17","#modifier_ursa_17", 2, "ursa/17", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_ursa_17","#modifier_ursa_17", 2, "ursa/17", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -8786,10 +8766,10 @@ local herotalents = {
 				{"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
 			},
 			[4] = {
-				{"modifier_warlock_11","#modifier_warlock_11", 1, "warlock/11", {"modifier_warlock_10",3}},
+				{"empty_10"},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-				{"empty_10"},			
+				{"modifier_warlock_19","#modifier_warlock_19", 1, "warlock/19", {}},			
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
@@ -8824,9 +8804,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_warlock_20","#modifier_warlock_20", 3, "warlock/20", {}},
 				{"empty_3"},
+				{"modifier_warlock_20","#modifier_warlock_20", 3, "warlock/20", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -8838,9 +8818,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_warlock_17","#modifier_warlock_17", 2, "warlock/17", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_warlock_17","#modifier_warlock_17", 2, "warlock/17", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -8853,7 +8833,7 @@ local herotalents = {
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
-				{"modifier_warlock_19","#modifier_warlock_19", 2, "warlock/19", {}},
+				{"modifier_warlock_11","#modifier_warlock_11", 2, "warlock/11", {}},
 				{"empty_15"},
 				{"empty_16"}
 			},
@@ -8979,9 +8959,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_kez_16","#modifier_kez_16", 3, "kez/16", {}},
 				{"empty_3"},
+				{"modifier_kez_16","#modifier_kez_16", 3, "kez/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -8993,9 +8973,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_kez_18","#modifier_kez_18", 2, "kez/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -9134,9 +9114,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_zuus_16","#modifier_zuus_16", 2, "zuus/16", {}},
 				{"empty_3"},
+				{"modifier_zuus_16","#modifier_zuus_16", 2, "zuus/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -9148,9 +9128,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_zuus_17","#modifier_zuus_17", 1, "zuus/17", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -9289,23 +9269,23 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_pangolier_19","#modifier_pangolier_19", 3, "pangolier/19", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
 				{"empty_6"},
 				{"empty_7"},
-				{"modifier_pangolier_18","#modifier_pangolier_18", 3, "pangolier/18", {}},
+				{"modifier_pangolier_20","#modifier_pangolier_20", 2, "pangolier/20", {}},
 				{"modifier_woda_talent_mask2", "#woda_talent_mask2", 2, "mask2", {}},
 				{"modifier_woda_talent_kaya", "#woda_talent_kaya", 1, "kaya", {"modifier_woda_talent_int6",1}}
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
+				{"modifier_pangolier_17","#modifier_pangolier_17", 1, "pangolier/17", {}},
 				{"empty_9"},
-				{"modifier_pangolier_20","#modifier_pangolier_20", 2, "pangolier/20", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -9320,7 +9300,7 @@ local herotalents = {
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
 				{"empty_14"},
 				{"empty_15"},
-				{"modifier_pangolier_17","#modifier_pangolier_17", 1, "pangolier/17", {}}
+				{"modifier_pangolier_18","#modifier_pangolier_18", 3, "pangolier/18", {}}
 			},
 			[7] = {
 				{"empty_17"},
@@ -9392,14 +9372,14 @@ local herotalents = {
 				{"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
 			},
 			[2] = {
-				{"modifier_jakiro_9","#modifier_jakiro_9", 2, "jakiro/9", {"modifier_jakiro_8",2}},
-				{"empty_3"},
 				{"empty_4"},
+				{"empty_3"},
+				{"modifier_jakiro_9","#modifier_jakiro_9", 2, "jakiro/9", {}},
 				{"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
 				{"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
 			},
 			[3] = {
-				{"modifier_jakiro_10","#modifier_jakiro_10", 3, "jakiro/10", {"modifier_jakiro_9",2}},
+				{"modifier_jakiro_10","#modifier_jakiro_10", 2, "jakiro/10", {"modifier_jakiro_8",2}},
 				{"empty_7"},
 				{"empty_8"},
 				{"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
@@ -9409,21 +9389,21 @@ local herotalents = {
 				{"empty_9"},
 				{"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
 				{"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-				{"modifier_jakiro_11","#modifier_jakiro_11", 2, "jakiro/11", {}},
+				{"modifier_jakiro_11","#modifier_jakiro_11", 3, "jakiro/11", {}},
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
 				{"empty_11"},
+				{"modifier_jakiro_12","#modifier_jakiro_12", 2, "jakiro/12", {}},
 				{"empty_12"},
-				{"modifier_jakiro_12","#modifier_jakiro_12", 2, "jakiro/12", {"modifier_jakiro_11",2}},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
 				{"empty_13"},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
-				{"modifier_jakiro_13","#modifier_jakiro_13", 2, "jakiro/13", {"modifier_jakiro_12",2}},
+				{"modifier_jakiro_13","#modifier_jakiro_13", 2, "jakiro/13", {"modifier_jakiro_11",3}},
 				{"empty_16"}
 			},
 			[7] = {
@@ -9444,9 +9424,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_jakiro_16","#modifier_jakiro_16", 2, "jakiro/16", {}},
 				{"empty_3"},
+				{"modifier_jakiro_16","#modifier_jakiro_16", 2, "jakiro/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -9458,9 +9438,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_jakiro_18","#modifier_jakiro_18", 2, "jakiro/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -9498,7 +9478,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_luna_9","#modifier_luna_9", 1, "luna/9", {}},
+				{"modifier_luna_11","#modifier_luna_11", 3, "luna/11", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -9512,7 +9492,7 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
 				{"empty_9"},
-				{"modifier_luna_11","#modifier_luna_11", 3, "luna/11", {}},
+				{"modifier_luna_9","#modifier_luna_9", 1, "luna/9", {}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
@@ -9599,9 +9579,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_luna_16","#modifier_luna_16", 2, "luna/16", {}},
 				{"empty_3"},
+				{"modifier_luna_16","#modifier_luna_16", 2, "luna/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -9613,9 +9593,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_luna_17","#modifier_luna_17", 2, "luna/17", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -9754,9 +9734,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_winter_wyvern_16","#modifier_winter_wyvern_16", 3, "winter_wyvern/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -9768,9 +9748,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_winter_wyvern_18","#modifier_winter_wyvern_18", 3, "winter_wyvern/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -9878,18 +9858,18 @@ local herotalents = {
 				{"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
 			},
 			[5] = {
-				{"modifier_axe_12","#modifier_axe_12", 3, "axe/12", {"modifier_axe_11",1}},
 				{"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
+				{"empty_13"},
 				{"empty_11"},
-				{"empty_12"},
+				{"modifier_axe_13","#modifier_axe_13", 3, "axe/13", {}},
 				{"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
-				{"empty_13"},
+				{"modifier_axe_12","#modifier_axe_12", 3, "axe/12", {}},
 				{"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
 				{"empty_15"},
-				{"modifier_axe_13","#modifier_axe_13", 3, "axe/13", {}}
+				{"empty_12"}
 			},
 			[7] = {
 				{"empty_17"},
@@ -9909,9 +9889,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_axe_16","#modifier_axe_16", 3, "axe/16", {}},
 				{"empty_3"},
+				{"modifier_axe_16","#modifier_axe_16", 3, "axe/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -9923,9 +9903,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_axe_17","#modifier_axe_17", 2, "axe/17", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -10064,9 +10044,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_lina_16","#modifier_lina_16", 2, "lina/16", {}},
 				{"empty_3"},
+				{"modifier_lina_16","#modifier_lina_16", 2, "lina/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -10078,9 +10058,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_lina_19","#modifier_lina_19", 2, "lina/19", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -10219,9 +10199,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_void_spirit_16","#modifier_void_spirit_16", 2, "void_spirit/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -10233,9 +10213,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_void_spirit_18","#modifier_void_spirit_18", 3, "void_spirit/18", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_void_spirit_18","#modifier_void_spirit_18", 3, "void_spirit/18", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -10273,7 +10253,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_phoenix_2","#modifier_phoenix_2", 2, "phoenix/2", {"modifier_phoenix_1",2}},
+				{"modifier_phoenix_2","#modifier_phoenix_2", 2, "phoenix/2", {}},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
 			},
@@ -10301,7 +10281,7 @@ local herotalents = {
 			[6] = {
 				{"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-				{"modifier_phoenix_6","#modifier_phoenix_6", 1, "phoenix/6", {"modifier_phoenix_2",2}},
+				{"modifier_phoenix_6","#modifier_phoenix_6", 1, "phoenix/6", {}},
 				{"empty_15"},
 				{"empty_16"}
 			},
@@ -10374,9 +10354,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_phoenix_16","#modifier_phoenix_16", 2, "phoenix/16", {"modifier_phoenix_15",3}},
 				{"empty_3"},
+				{"modifier_phoenix_16","#modifier_phoenix_16", 2, "phoenix/16", {"modifier_phoenix_15",3}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -10388,9 +10368,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_phoenix_18","#modifier_phoenix_18", 1, "phoenix/18", {"modifier_phoenix_17",2}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -10435,8 +10415,8 @@ local herotalents = {
 			[3] = {
 				{"empty_6"},
 				{"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
+				{"modifier_wisp_3","#modifier_wisp_3", 2, "wisp/3", {"modifier_wisp_2",2}},
 				{"empty_7"},
-				{"modifier_wisp_3","#modifier_wisp_3", 2, "wisp/3", {}},
 				{"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
 			},
 			[4] = {
@@ -10456,7 +10436,7 @@ local herotalents = {
 			[6] = {
 				{"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
 				{"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-				{"modifier_wisp_6","#modifier_wisp_6", 2, "wisp/6", {"modifier_wisp_2",2}},
+				{"modifier_wisp_6","#modifier_wisp_6", 2, "wisp/6", {"modifier_wisp_3",2}},
 				{"empty_15"},
 				{"empty_16"}
 			},
@@ -10529,9 +10509,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_wisp_16","#modifier_wisp_16", 2, "wisp/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -10543,9 +10523,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_9"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_wisp_18","#modifier_wisp_18", 1, "wisp/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -10684,9 +10664,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_razor_17","#modifier_razor_17", 2, "razor/17", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -10698,9 +10678,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_razor_18","#modifier_razor_18", 3, "razor/18", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_razor_18","#modifier_razor_18", 3, "razor/18", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -10839,9 +10819,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_sniper_16","#modifier_sniper_16", 3, "sniper/16", {}},
 				{"empty_4"},
+				{"modifier_sniper_16","#modifier_sniper_16", 3, "sniper/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -10853,9 +10833,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"empty_8"},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"modifier_sniper_18","#modifier_sniper_18", 3, "sniper/18", {}},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"empty_8"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -10994,9 +10974,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_4"},
 				{"modifier_monkey_king_16","#modifier_monkey_king_16", 2, "monkey_king/16", {}},
+				{"empty_4"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -11008,9 +10988,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_monkey_king_17","#modifier_monkey_king_17", 2, "monkey_king/17", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_8"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_monkey_king_17","#modifier_monkey_king_17", 2, "monkey_king/17", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -11069,14 +11049,14 @@ local herotalents = {
             [5] = {
                 {"modifier_woda_talent_armor2", "#woda_talent_armor2", 3, "armor2", {}},
                 {"empty_10"},
-                {"modifier_riki_5","#modifier_riki_5", 3, "riki/5", {"modifier_riki_4",3}},
+                {"modifier_riki_5","#modifier_riki_5", 2, "riki/5", {"modifier_riki_4",3}},
                 {"empty_12"},
                 {"modifier_woda_talent_str5", "#woda_talent_str5", 3, "str5", {"modifier_woda_talent_str4",1}}
             },
             [6] = {
                 {"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
                 {"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-                {"modifier_riki_6","#modifier_riki_6", 1, "riki/6", {"modifier_riki_5",3}},
+                {"modifier_riki_6","#modifier_riki_6", 2, "riki/6", {"modifier_riki_5",2}},
                 {"empty_15"},
                 {"empty_16"}
             },
@@ -11099,7 +11079,7 @@ local herotalents = {
             [2] = {
                 {"empty_2"},
                 {"empty_3"},
-                {"modifier_riki_9","#modifier_riki_9", 1, "riki/9", {}},
+                {"modifier_riki_13","#modifier_riki_13", 3, "riki/13", {}},
                 {"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
                 {"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
             },
@@ -11128,8 +11108,8 @@ local herotalents = {
                 {"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
                 {"empty_13"},
                 {"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
-                {"empty_14"},
-                {"modifier_riki_13","#modifier_riki_13", 3, "riki/13", {}}
+                {"modifier_riki_9","#modifier_riki_9", 1, "riki/9", {}},
+                {"empty_14"}
             },
             [7] = {
                 {"empty_17"},
@@ -11149,9 +11129,9 @@ local herotalents = {
             },
             [2] = {
                 {"empty_2"},
-                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-                {"empty_4"},
                 {"modifier_riki_16","#modifier_riki_16", 2, "riki/16", {}},
+                {"empty_4"},
+                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
                 {"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
             },
             [3] = {
@@ -11163,9 +11143,9 @@ local herotalents = {
             },
             [4] = {
                 {"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-                {"modifier_riki_18","#modifier_riki_18", 2, "riki/18", {}},
+                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
                 {"empty_8"},
-                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+                {"modifier_riki_18","#modifier_riki_18", 2, "riki/18", {}},
                 {"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
             },
             [5] = {
@@ -11197,21 +11177,21 @@ local herotalents = {
                 {"modifier_woda_talent_hp1", "#woda_talent_hp1", 3, "hp1", {}},
                 {"modifier_woda_talent_regenhp1", "#woda_talent_regenhp1", 2, "regenhp1", {}},
                 {"modifier_woda_talent_attack1", "#woda_talent_attack1", 3, "attack1", {}},
-                {"modifier_faceless_void_1","#modifier_faceless_void_1", 1, "faceless_void/1", {}},
+                {"modifier_faceless_void_3","#modifier_faceless_void_3", 2, "faceless_void/3", {}},
                 {"modifier_woda_talent_str3", "#woda_talent_str3", 2, "str3", {}}
             },
             [2] = {
                 {"empty_2"},
                 {"empty_3"},
-                {"modifier_faceless_void_2","#modifier_faceless_void_2", 3, "faceless_void/2", {}},
+                {"modifier_faceless_void_1","#modifier_faceless_void_1", 1, "faceless_void/1", {}},
                 {"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
                 {"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
             },
             [3] = {
                 {"empty_6"},
                 {"modifier_woda_talent_quickhp", "#woda_talent_quickhp", 2, "quickhp", {}},
+                {"modifier_faceless_void_2","#modifier_faceless_void_2", 3, "faceless_void/2", {}},
                 {"empty_7"},
-                {"modifier_faceless_void_3","#modifier_faceless_void_3", 2, "faceless_void/3", {}},
                 {"modifier_woda_talent_sasha", "#woda_talent_sasha", 1, "sasha", {"modifier_woda_talent_str6",1}}
             },
             [4] = {
@@ -11304,9 +11284,9 @@ local herotalents = {
             },
             [2] = {
                 {"empty_2"},
-                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-                {"empty_4"},
                 {"modifier_faceless_void_16","#modifier_faceless_void_16", 3, "faceless_void/16", {}},
+                {"empty_4"},
+                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
                 {"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
             },
             [3] = {
@@ -11320,7 +11300,7 @@ local herotalents = {
                 {"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
                 {"empty_8"},
                 {"modifier_faceless_void_18","#modifier_faceless_void_18", 3, "faceless_void/18", {}},
-                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
                 {"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
             },
             [5] = {
@@ -11386,14 +11366,14 @@ local herotalents = {
             [6] = {
                 {"modifier_woda_talent_sliver", "#woda_talent_sliver", 2, "sliver", {}},
                 {"modifier_woda_talent_regenhp2", "#woda_talent_regenhp2", 3, "regenhp2", {}},
-                {"modifier_tinker_6","#modifier_tinker_6", 2, "tinker/6", {"modifier_tinker_4",1}},
+                {"modifier_tinker_7","#modifier_tinker_7", 2, "tinker/7", {"modifier_tinker_4",1}},
                 {"empty_15"},
                 {"empty_16"}
             },
             [7] = {
                 {"empty_17"},
                 {"empty_18"},
-                {"modifier_tinker_7","#modifier_tinker_7", 1, "tinker/7", {}},
+                {"modifier_tinker_6","#modifier_tinker_6", 1, "tinker/6", {}},
                 {"empty_20"},
                 {"empty_21"}
             }
@@ -11403,20 +11383,20 @@ local herotalents = {
                 {"modifier_woda_talent_armor1", "#woda_talent_armor1", 3, "armor1", {}},
                 {"modifier_woda_talent_speed1", "#woda_talent_speed1", 2, "speed1", {}},
                 {"modifier_woda_talent_attackspeed1", "#woda_talent_attackspeed1", 3, "attackspeed1", {}},
-                {"modifier_tinker_8","#modifier_tinker_8", 3, "tinker/8", {}},
+                {"modifier_tinker_11","#modifier_tinker_11", 1, "tinker/11", {}},
                 {"modifier_woda_talent_agi3", "#woda_talent_agi3", 2, "agi3", {}}
             },
             [2] = {
                 {"empty_2"},
                 {"empty_3"},
-                {"modifier_tinker_11","#modifier_tinker_11", 1, "tinker/11", {}},
+                {"modifier_tinker_8","#modifier_tinker_8", 3, "tinker/8", {}},
                 {"modifier_woda_talent_miss1", "#woda_talent_miss1", 2, "miss1", {}},
                 {"modifier_woda_talent_agi6", "#woda_talent_agi6", 1, "agi6", {"modifier_woda_talent_agi3",2}}
             },
             [3] = {
-                {"modifier_tinker_10","#modifier_tinker_10", 3, "tinker/10", {}},
-                {"empty_7"},
                 {"empty_8"},
+                {"empty_7"},
+                {"modifier_tinker_12","#modifier_tinker_12", 1, "tinker/12", {}},
                 {"modifier_woda_talent_mask1", "#woda_talent_mask1", 2, "mask1", {}},
                 {"modifier_woda_talent_yasha", "#woda_talent_yasha", 1, "yasha", {"modifier_woda_talent_agi6",1}}
             },
@@ -11424,21 +11404,21 @@ local herotalents = {
                 {"empty_10"},
                 {"modifier_woda_talent_speed2", "#woda_talent_speed2", 3, "speed2", {"modifier_woda_talent_speed1",2}},
                 {"modifier_woda_talent_grovebow", "#woda_talent_grovebow", 2, "grovebow", {}},
-                {"modifier_tinker_9","#modifier_tinker_9", 3, "tinker/9", {}},            
+                {"modifier_tinker_13","#modifier_tinker_13", 2, "tinker/13", {}},            
                 {"modifier_woda_talent_agi4", "#woda_talent_agi4", 1, "agi4", {"modifier_woda_talent_yasha",1}}
             },
             [5] = {
                 {"modifier_woda_talent_attack2", "#woda_talent_attack2", 3, "attack2", {}},
-                {"modifier_tinker_12","#modifier_tinker_12", 1, "tinker/12", {}},
                 {"empty_11"},
+                {"modifier_tinker_10","#modifier_tinker_10", 3, "tinker/10", {}},
                 {"empty_12"},
                 {"modifier_woda_talent_agi5", "#woda_talent_agi5", 3, "agi5", {"modifier_woda_talent_agi4",1}}
             },
             [6] = {
                 {"modifier_woda_talent_miss2", "#woda_talent_miss2", 2, "miss2", {}},
-                {"modifier_tinker_13","#modifier_tinker_13", 2, "tinker/13", {}},
-                {"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
                 {"empty_14"},
+                {"modifier_woda_talent_attackspeed2", "#woda_talent_attackspeed2", 3, "attackspeed2", {}},
+                {"modifier_tinker_9","#modifier_tinker_9", 3, "tinker/9", {}},
                 {"empty_15"}
             },
             [7] = {
@@ -11459,9 +11439,9 @@ local herotalents = {
             },
             [2] = {
                 {"empty_2"},
-                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-                {"modifier_tinker_16","#modifier_tinker_16", 1, "tinker/16", {"modifier_tinker_15",3}},
                 {"empty_4"},
+                {"modifier_tinker_16","#modifier_tinker_16", 1, "tinker/16", {"modifier_tinker_15",3}},
+                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
                 {"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
             },
             [3] = {
@@ -11473,23 +11453,23 @@ local herotalents = {
             },
             [4] = {
                 {"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
+                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
                 {"empty_8"},
-                {"modifier_tinker_18","#modifier_tinker_18", 3, "tinker/18", {"modifier_tinker_16",1}},
-                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+                {"modifier_tinker_18","#modifier_tinker_18", 3, "tinker/18", {}},
                 {"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
             },
             [5] = {
                 {"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
-                {"modifier_tinker_20","#modifier_tinker_20", 3, "tinker/20", {"modifier_tinker_19",1}},
+                {"modifier_tinker_20","#modifier_tinker_20", 3, "tinker/20", {}},
                 {"empty_10"},
                 {"empty_11"},
                 {"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
             },
             [6] = {
                 {"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
-                {"modifier_tinker_17","#modifier_tinker_17", 2, "tinker/17", {"modifier_tinker_20",3}},
-                {"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
                 {"empty_15"},
+                {"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
+                {"modifier_tinker_17","#modifier_tinker_17", 2, "tinker/17", {"modifier_tinker_18",3}},
                 {"empty_16"}
             },
             [7] = {
@@ -11614,9 +11594,9 @@ local herotalents = {
             },
             [2] = {
                 {"empty_2"},
-                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-                {"modifier_keeper_of_the_light_16","#modifier_keeper_of_the_light_16", 3, "keeper_of_the_light/16", {}},
                 {"empty_4"},
+                {"modifier_keeper_of_the_light_16","#modifier_keeper_of_the_light_16", 3, "keeper_of_the_light/16", {}},
+                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
                 {"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
             },
             [3] = {
@@ -11628,9 +11608,9 @@ local herotalents = {
             },
             [4] = {
                 {"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-                {"empty_8"},
+                {"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
                 {"modifier_keeper_of_the_light_18","#modifier_keeper_of_the_light_18", 2, "keeper_of_the_light/18", {}},
-                {"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+                {"empty_8"},
                 {"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
             },
             [5] = {
@@ -11769,9 +11749,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_3"},
 				{"modifier_dawnbreaker_16","#modifier_dawnbreaker_16", 3, "dawnbreaker/16", {}},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -11783,9 +11763,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_dawnbreaker_18","#modifier_dawnbreaker_18", 3, "dawnbreaker/18", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_dawnbreaker_18","#modifier_dawnbreaker_18", 3, "dawnbreaker/18", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -11924,9 +11904,9 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"empty_3"},
 				{"modifier_chaos_knight_16","#modifier_chaos_knight_16", 3, "chaos_knight/16", {}},
+				{"empty_3"},
+				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
 			[3] = {
@@ -11938,9 +11918,9 @@ local herotalents = {
 			},
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
-				{"modifier_chaos_knight_18","#modifier_chaos_knight_18", 2, "chaos_knight/18", {}},
+				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
 				{"empty_9"},
-				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
+				{"modifier_chaos_knight_18","#modifier_chaos_knight_18", 2, "chaos_knight/18", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {

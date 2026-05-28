@@ -1,8 +1,10 @@
 export const formatAbilityDescription = (
-    description: string,
+    description: string | undefined,
     abilityValues: Record<string, string>
 ): string => {
-    let formattedDescription = description.replace(/%%/g, '%');
+    const safeDescription = description ?? "";
+
+    let formattedDescription = safeDescription.replace(/%%/g, '%');
 
     formattedDescription = formattedDescription.replace(/\n\n/g, '<br /><br />');
     formattedDescription = formattedDescription.replace(/\n/g, '<br />');

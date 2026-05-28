@@ -48,16 +48,33 @@
 
 
 
+//.grid {
+//  display: grid;
+//  grid-template-columns: repeat(5, 1fr);
+//  grid-template-rows: repeat(7, 14.2%);
+//  width: 100%;
+//  max-width: 470.4px;
+//  max-height: 708px;
+//  background-size: cover;
+//  margin: 0.6rem auto;
+//  border-radius: 7px;
+//}
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(7, 14.2%);
+  grid-template-rows: repeat(7, 1fr);
+
   width: 100%;
   max-width: 470.4px;
-  max-height: 708px;
-  background-size: cover;
+
+  aspect-ratio: 5 / 7.1;
+
   margin: 0.6rem auto;
   border-radius: 7px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 

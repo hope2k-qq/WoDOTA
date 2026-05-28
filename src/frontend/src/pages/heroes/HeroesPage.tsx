@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {useLocation, useNavigate} from 'react-router-dom';
-import { getImageUrl } from '../../utils/r2Storage';
 import styles from './heroes_page.module.scss';
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
-import {openDB} from "idb";
 import {useTranslation} from "react-i18next";
 
 interface Hero {
     name: string;
     primary_attr: string;
     custom_hero: boolean;
+    image?: string | null;
 }
 
 export const HeroesPage: React.FC = () => {
@@ -20,97 +19,18 @@ export const HeroesPage: React.FC = () => {
     const [heroes, setHeroes] = useState<Hero[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const [imageUrl, setImageUrl] = useState<{ [key: string]: string | null }>({});
     const [selectedAttribute, setSelectedAttribute] = useState<string | null>(null);
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [isSearching, setIsSearching] = useState<boolean>(false);
     const [showCustomOnly, setShowCustomOnly] = useState<boolean>(false);
     const API_URL = process.env.REACT_APP_API_URL;
-    const CACHE_VERSION = 4;
     const currentLang = location.pathname.split('/')[1];
 
     useEffect(() => {
-        const cachedVersion = localStorage.getItem('cache-version');
-
-        if (cachedVersion !== CACHE_VERSION.toString()) {
-            localStorage.clear();
-
-            openDB('heroes-db', CACHE_VERSION, {
-                upgrade(db, oldVersion, newVersion) {
-                    if (newVersion !== null && newVersion > oldVersion) {
-                        if (!db.objectStoreNames.contains('heroes')) {
-                            db.createObjectStore('heroes');
-                        }
-                    }
-                }
-            }).then(() => {
-                localStorage.setItem('cache-version', CACHE_VERSION.toString());
-            }).catch(err => {
-                console.error('Error during DB upgrade:', err);
-            });
-        }
-
-        const dbPromise = openDB('heroes-db', CACHE_VERSION, {
-            upgrade(db, oldVersion, newVersion) {
-                if (newVersion !== null && newVersion > oldVersion) {
-                    if (!db.objectStoreNames.contains('heroes')) {
-                        db.createObjectStore('heroes');
-                    }
-                }
-            }
-        });
-
         const fetchHeroesData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/heroes`);
-                const data = response.data;
-                setHeroes(data);
-
-                const db = await dbPromise;
-                const updatedUrls: { [key: string]: string | null } = {};
-                const imagePromises: Promise<void>[] = [];
-
-                const imagesStore = db.transaction('heroes', 'readonly').objectStore('heroes');
-                for (const hero of data) {
-                    const cachedImage = await imagesStore.get(hero.name);
-                    if (cachedImage) {
-                        updatedUrls[hero.name] = URL.createObjectURL(cachedImage);
-                    } else {
-                        updatedUrls[hero.name] = null;
-                    }
-                }
-
-                setLoading(false);
-                setImageUrl(updatedUrls);
-
-                for (const hero of data) {
-                    if (!updatedUrls[hero.name]) {
-                        imagePromises.push(
-                            (async () => {
-                                const url = await getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`);
-                                if (url) {
-                                    const response = await fetch(url);
-                                    const imageBlob = await response.blob();
-
-                                    const imagesStore = db.transaction('heroes', 'readwrite').objectStore('heroes');
-                                    await imagesStore.put(imageBlob, hero.name);
-
-                                    updatedUrls[hero.name] = URL.createObjectURL(imageBlob);
-
-                                    setImageUrl(prevState => ({
-                                        ...prevState,
-                                        [hero.name]: updatedUrls[hero.name],
-                                    }));
-                                } else {
-                                    console.error(`Image URL for hero ${hero.name} not found.`);
-                                }
-                            })()
-                        );
-                    }
-                }
-
-                await Promise.all(imagePromises);
-
+                setHeroes(response.data);
             } catch (error) {
                 console.error('Error fetching hero data:', error);
                 setError('Failed to fetch hero data.');
@@ -123,9 +43,6 @@ export const HeroesPage: React.FC = () => {
             console.error('Error in fetchHeroesData:', err);
         });
     }, [API_URL]);
-
-
-
 
 
     if (loading) {
@@ -265,9 +182,10 @@ export const HeroesPage: React.FC = () => {
                                     className={styles['hero-card']}
                                 >
                                     <img
-                                        src={imageUrl[hero.name] || ''}
+                                        src={`https://cdn.wodota.net/images/heroes/heroesPreview/${hero.name}.webp`}
                                         alt={hero.name}
                                         className={styles['hero-image']}
+                                        loading="lazy"
                                     />
                                     <div className={styles['hero-info']}>
                                         <img
@@ -309,9 +227,10 @@ export const HeroesPage: React.FC = () => {
                                         className={styles['hero-card']}
                                     >
                                         <img
-                                            src={imageUrl[hero.name] || ''}
+                                            src={`https://cdn.wodota.net/images/heroes/heroesPreview/${hero.name}.webp`}
                                             alt={hero.name}
                                             className={styles['hero-image']}
+                                            loading="lazy"
                                         />
                                         <div className={styles['hero-info']}>
                                             <img

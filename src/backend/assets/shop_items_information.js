@@ -52,6 +52,9 @@ var Items_plus =
     ["subscribe_plus_1", "", "", "dp1", "subscribe_plus_1"],
     ["99991", "coin", "1", "new", "subscribe_plus_new"],
     ["battle_pass_1", "", "", "nydp8", "battle_pass_2"],
+    ["double_rating_pack", "coin", "500", "double_token", "double_rating_pack"],
+    ["rune_chest_item", "", "", "rune_chest", "rune_chest_item"],
+
     //["1051", "coin", "100", "nydp2", "nydp2"],
     //["1052", "coin", "500", "nydp3", "nydp3"],
     //["1053", "coin", "500", "nydp4", "nydp4"],
@@ -60,7 +63,7 @@ var Items_plus =
     //["1058", "coin", "3250", "nydp7", "nydp7"],
 ] 
 
-// Последний юзабельный айди 1073
+// Последний юзабельный айди 1084
 
 var Items_Backround =
 [
@@ -608,6 +611,14 @@ var Items_emblems =
     ["934", "coin", "500", "emblem_107", "emblem_107"],
     ["931", "coin", "500", "emblem_104", "emblem_104"],
     ["933", "coin", "500", "emblem_106", "emblem_106"],
+    ["1076", "coin", "1000", "emblem_132", "emblem_132"],
+    ["1077", "coin", "1000", "emblem_133", "emblem_133"],
+    ["1078", "coin", "1000", "emblem_134", "emblem_134"],
+    ["1079", "coin", "1000", "emblem_135", "emblem_135"],
+    ["1080", "coin", "1000", "emblem_136", "emblem_136"],
+    ["1081", "coin", "1000", "emblem_137", "emblem_137"],
+    ["1082", "coin", "1000", "emblem_138", "emblem_138"],
+    ["1083", "coin", "1000", "emblem_139", "emblem_139"],
     ["860", "coin", "1500", "emblem_84", "emblem_84"],
     ["195", "coin", "1500", "emblem_32", "emblem_32"],
     ["201", "coin", "1500", "emblem_38", "emblem_38"],
@@ -661,11 +672,17 @@ var Items_emblems =
     ["722", "coin", "5000", "emblem_51", "emblem_51"],
     ["923", "coin", "5000", "emblem_97", "emblem_97"],
 
-    ["858", "coin", "5000", "emblem_82", "emblem_82"],
+    
     ["867", "coin", "5000", "emblem_91", "emblem_91"],
     ["936", "coin", "5000", "emblem_109", "emblem_109"],
+    ["858", "coin", "10000", "emblem_82", "emblem_82"],
     ["937", "coin", "10000", "emblem_110", "emblem_110"],
     ["866", "coin", "10000", "emblem_90", "emblem_90"],
+
+
+    ["1074", "coin", "99999", "emblem_130", "emblem_130", true], // SEASON REWARD
+    ["1075", "coin", "99999", "emblem_131", "emblem_131", true], // SEASON REWARD
+    ["1084", "coin", "99999", "emblem_140", "emblem_140", true], // SEASON REWARD
 ] 
 
 var Items_tips = 
@@ -803,6 +820,46 @@ var Items_tips =
     ["886", "coin", "150", "tip", "tipped_886"],
     ["887", "coin", "150", "tip", "tipped_887"],
 ] 
+
+var Items_Runes =
+[
+    {id: "rune_health", color: "#c84f4f"},
+    {id: "rune_strength", color: "#b94738"},
+    {id: "rune_regeneration", color: "#d46a4f"},
+    {id: "rune_giant", color: "#a94d42"},
+    {id: "rune_titan", color: "#9d6750"},
+    {id: "rune_warrior", color: "#cb5d32"},
+    {id: "rune_cast_range", color: "#d18a42"},
+    {id: "rune_sentinel", color: "#8d7052"},
+    {id: "rune_antimagic", color: "#7f6fc2"},
+    {id: "rune_rebirth", color: "#d6b85a"},
+
+    {id: "rune_knight", color: "#648f5a"},
+    {id: "rune_agility", color: "#4f9e64"},
+    {id: "rune_evasion", color: "#48a47d"},
+    {id: "rune_rage", color: "#7aa646"},
+    {id: "rune_monk", color: "#5ba986"},
+    {id: "rune_berserker", color: "#8bb34f"},
+    {id: "rune_hunter", color: "#52a0a0"},
+    {id: "rune_vampire", color: "#7f4c67"},
+    {id: "rune_speed", color: "#4c97c2"},
+    {id: "rune_gold", color: "#d0a43f"},
+
+    {id: "rune_sage", color: "#5688d0"},
+    {id: "rune_intellect", color: "#5f73d9"},
+    {id: "rune_restoration", color: "#4fa4ce"},
+    {id: "rune_thought", color: "#6a83d8"},
+    {id: "rune_curse", color: "#8c63be"},
+    {id: "rune_spell", color: "#765bd6"},
+    {id: "rune_cleansing", color: "#4eb7c4"},
+    {id: "rune_sorcerer", color: "#9b63ca"},
+    {id: "rune_barrier", color: "#5db4d2"},
+    {id: "rune_creator", color: "#b68bd6"},
+
+    {id: "rune_replenishment", color: "#d87f59"},
+    {id: "rune_time", color: "#b8a060"},
+    {id: "rune_radius", color: "#62b0bd"},
+]
 
 var SHOP_BUTTONS_CATEGORY =
 [

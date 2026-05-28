@@ -228,151 +228,391 @@ exports.getAllHeroesData = (req, res, lang) => {
         const allHeroesData = {};
 
         allHeroNames.forEach(heroName => {
-            const abilityNames = abilitiesService.getHeroAbilities()[heroName];
-            const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
-            const heroAttributes = getHeroAttributes(heroName);
-            
+            const heroAbilities = abilitiesService.getHeroAbilities()[heroName];
+
+            const innateAbility = heroAbilities.innate ? [heroAbilities.innate] : [];
+            const abilityNames = heroAbilities.abilities || [];
             if (!abilityNames) {
                 return;
             }
+            const heroTalentsInformation = talentsService.loadHeroTalentByName(heroName);
+            const heroAttributes = getHeroAttributes(heroName);
 
-            const heroData = textService.getHeroData(heroName, abilityNames, lang);
-            const heroTalentsDescription = heroData.heroTalentsData;
-            const heroAbilitiesData = heroData.abilitiesData;
-            const abilitiesWithDetails = {};
-
-            abilityNames.forEach(ability => {
-                const abilityPrefix = `dota_tooltip_ability_${ability}`;
-                const abilityKeys = Object.keys(heroAbilitiesData).filter(key => key.startsWith(abilityPrefix));
-
-                if (abilityKeys.length > 0) {
-                    abilitiesWithDetails[ability] = {};
-
-                    abilityKeys.forEach(key => {
-                        let fieldName = key.replace(`${abilityPrefix}`, '').toLowerCase();
-                        if (fieldName === '_custom' || fieldName === '') {
-                            abilitiesWithDetails[ability]['name'] = heroAbilitiesData[key];
-                        } else if (fieldName.startsWith('_custom_')) {
-                            const cleanedFieldName = fieldName.replace('_custom_', '');
-                            abilitiesWithDetails[ability][cleanedFieldName] = heroAbilitiesData[key];
-                        } else if (fieldName.startsWith('_')) {
-                            const cleanedFieldName = fieldName.replace('_', '');
-                            abilitiesWithDetails[ability][cleanedFieldName] = heroAbilitiesData[key];
-                        } else {
-                            abilitiesWithDetails[ability][fieldName] = heroAbilitiesData[key];
-                        }
-                    });
-
-                    const abilityDetails = abilitiesDataService.getAbilityDetails(ability);
-
-                    function formatValues(obj) {
-                        const formattedObj = {};
-                        for (const key in obj) {
-                            if (Object.hasOwnProperty.call(obj, key)) {
-                                let value = obj[key];
-
-                                if (typeof value === "object" && value !== null && "value" in value) {
-                                    value = value.value;
-                                }
-
-                                if (typeof value === "string") {
-                                    let formattedValue = value
-                                        .split(" ")
-                                        .map(part => {
-                                            let num = parseFloat(part);
-                                            if (!isNaN(num)) {
-                                                return Number.isInteger(num) ? num.toFixed(0) : num.toString();
-                                            }
-                                            return part;
-                                        });
-
-                                    formattedValue = [...new Set(formattedValue)].join(" ");
-                                    formattedObj[key] = formattedValue;
-                                } else {
-                                    formattedObj[key] = value;
-                                }
-                            }
-                        }
-                        return formattedObj;
-                    }
-
-                    function formatNumbersInObject(obj) {
-                        const formattedObj = {};
-                        for (const key in obj) {
-                            if (Object.hasOwnProperty.call(obj, key)) {
-                                let value = obj[key];
-
-                                if (typeof value === "object" && value !== null && "value" in value) {
-                                    value = value.value;
-                                }
-
-                                if (typeof value === "string") {
-                                    let formattedValue = value
-                                        .split(" ")
-                                        .map(part => {
-                                            const num = parseFloat(part);
-                                            return !isNaN(num) && Number.isInteger(num) ? num.toFixed(0) : part;
-                                        })
-                                        .join(" ");
-                                    formattedObj[key] = formattedValue;
-                                } else {
-                                    formattedObj[key] = value;
-                                }
-                            }
-                        }
-                        return formattedObj;
-                    }
-
-                    const formattedAbilityDetails = formatNumbersInObject(abilityDetails);
-
-                    function mergeValues(abilityData, formattedDetails) {
-                        const result = { descriptions: {}, values: {} };
-
-                        Object.entries(formattedDetails).forEach(([key, value]) => {
-                            let normalValue = abilityData[key];
-                            if (!normalValue && key.endsWith("width")) {
-                                const lengthKey = key.replace("width", "length");
-                                normalValue = abilityData[lengthKey];
-                            }
-
-                            if (typeof normalValue !== "string") {
-                                normalValue = "";
-                            }
-
-                            if (!normalValue || normalValue === "0" || normalValue === "0%") {
-                                return;
-                            }
-
-                            let prefix = "";
-                            if (normalValue.startsWith("%")) {
-                                prefix = "%";
-                                normalValue = normalValue.slice(1).trim();
-                            }
-
-                            const valueArray = value.toString().split(" ").map(num => `${num.trim()}${prefix}`);
-                            const uniqueValues = Array.from(new Set(valueArray)).filter(val => val !== "0" && val !== "0%" && val);
-
-                            if (uniqueValues.length > 0) {
-                                result.descriptions[key] = normalValue;
-                                result.values[key] = uniqueValues.join(" / ");
-                            }
-                        });
-
-                        return result;
-                    }
-
-                    abilitiesWithDetails[ability].values = formatValues(abilityDetails) || {};
-                    abilitiesWithDetails[ability].valuesInfo = mergeValues(abilitiesWithDetails[ability], formattedAbilityDetails);
-                }
-            });
+            const heroData = textService.getHeroData(
+                heroName,
+                {
+                    abilities: abilityNames,
+                    innate: innateAbility
+                },
+                lang
+            );
             
-            if (!heroTalentsInformation && Object.keys(abilitiesWithDetails).length === 0) {
-                return;
+            const heroTalentsDescription = heroData.heroTalentsData;
+            const heroAbilitiesData = heroData.abilities;
+            const heroInnateAbilityData = heroData.innate;
+            const innateWithDetails = buildAbilitiesWithDetails(
+                innateAbility,
+                heroInnateAbilityData,
+                abilitiesDataService
+            );
+
+            const abilitiesWithDetails = buildAbilitiesWithDetails(
+                abilityNames,
+                heroAbilitiesData,
+                abilitiesDataService
+            );
+            
+            function cleanPlus(value) {
+                if (typeof value === "string") {
+                    return value.replace(/^\+/, "");
+                }
+
+                if (typeof value === "object" && value !== null) {
+                    const result = {};
+                    for (const k in value) {
+                        result[k] = cleanPlus(value[k]);
+                    }
+                    return result;
+                }
+
+                return value;
+            }
+            
+            // function formatValues(obj) {
+            //     const formattedObj = {};
+            //      if(heroName === "kunkka"){
+            //          console.log(obj)
+            //      }
+            //
+            //     for (const key in obj) {
+            //         if (Object.hasOwnProperty.call(obj, key)) {
+            //             let value = obj[key];
+            //
+            //             if (typeof value === "object" && value !== null) {
+            //                 if ("value" in value) {
+            //                     value = value.value;
+            //                 }
+            //             }
+            //
+            //             if (typeof value === "string") {
+            //                 let formattedValue = value
+            //                     .split(" ")
+            //                     .map(part => {
+            //                         let num = parseFloat(part);
+            //
+            //                         if (!isNaN(num)) {
+            //                             return Number.isInteger(num)
+            //                                 ? num.toFixed(0)
+            //                                 : num.toString();
+            //                         }
+            //
+            //                         return part;
+            //                     });
+            //
+            //                 formattedValue = [...new Set(formattedValue)].join(" ");
+            //                 formattedObj[key] = cleanPlus(formattedValue);
+            //
+            //             } else {
+            //                 formattedObj[key] = cleanPlus(value);
+            //             }
+            //         }
+            //     }
+            //
+            //     return formattedObj;
+            // }
+            function formatValues(obj) {
+                const formattedObj = {};
+                for (const key in obj) {
+                    if (Object.hasOwnProperty.call(obj, key)) {
+
+                        let value = obj[key];
+
+                        // обработка объектов
+                        if (typeof value === "object" && value !== null) {
+
+                            // value
+                            let baseValue = value.value;
+                            
+                            if ("hero_levelup" in value) {
+                                formattedObj[`${key}_hero_levelup`] = cleanPlus(
+                                    value.hero_levelup
+                                );
+                            }
+
+                            if ("levelup_interval" in value) {
+                                formattedObj[`${key}_levelup_interval`] = cleanPlus(
+                                    value.levelup_interval
+                                );
+                            }
+
+                            value = baseValue;
+                        }
+
+                        // массив
+                        if (Array.isArray(value)) {
+                            formattedObj[key] = cleanPlus(
+                                [...new Set(
+                                    value.map(v => {
+                                        const num = parseFloat(v);
+
+                                        if (!isNaN(num)) {
+                                            return Number.isInteger(num)
+                                                ? num.toFixed(0)
+                                                : num.toString();
+                                        }
+
+                                        return v;
+                                    })
+                                )].join(" ")
+                            );
+
+                            continue;
+                        }
+
+                        // строка
+                        if (typeof value === "string") {
+
+                            let formattedValue = value
+                                .split(" ")
+                                .map(part => {
+
+                                    let num = parseFloat(part);
+
+                                    if (!isNaN(num)) {
+                                        return Number.isInteger(num)
+                                            ? num.toFixed(0)
+                                            : num.toString();
+                                    }
+
+                                    return part;
+                                });
+
+                            formattedValue = [...new Set(formattedValue)].join(" ");
+
+                            formattedObj[key] = cleanPlus(formattedValue);
+
+                        } else {
+
+                            formattedObj[key] = cleanPlus(value);
+                        }
+                    }
+                }
+
+                return formattedObj;
             }
 
+            function formatNumbersInObject(obj) {
+                const formattedObj = {};
+
+                for (const key in obj) {
+                    if (Object.hasOwnProperty.call(obj, key)) {
+                        let value = obj[key];
+
+                        if (typeof value === "object" && value !== null) {
+                            if ("hero_levelup" in value) {
+                                formattedObj[`${key}_hero_levelup`] =
+                                    String(value.hero_levelup);
+                            }
+
+                            if ("levelup_interval" in value) {
+                                formattedObj[`${key}_levelup_interval`] = cleanPlus(
+                                    value.levelup_interval
+                                );
+                            }
+                            
+                            if ("value" in value) {
+                                value = value.value;
+                            }
+                        }
+
+                        if (typeof value === "string") {
+                            let formattedValue = value
+                                .split(" ")
+                                .map(part => {
+                                    const num = parseFloat(part);
+
+                                    return !isNaN(num) && Number.isInteger(num)
+                                        ? num.toFixed(0)
+                                        : part;
+                                })
+                                .join(" ");
+
+                            formattedObj[key] = cleanPlus(formattedValue);
+
+                        } else {
+                            formattedObj[key] = cleanPlus(value);
+                        }
+                    }
+                }
+                return formattedObj;
+            }
+
+            function mergeValues(abilityData, formattedDetails) {
+                const result = {
+                    descriptions: {},
+                    values: {}
+                };
+                Object.entries(formattedDetails).forEach(([key, value]) => {
+                    if (key.endsWith("_hero_levelup")) {
+                        return;
+                    }
+                    if (key.endsWith("_levelup_interval")) {
+                        return;
+                    }
+
+                    let normalValue = abilityData[key];
+
+                    if (!normalValue && key.endsWith("width")) {
+                        const lengthKey = key.replace("width", "length");
+                        normalValue = abilityData[lengthKey];
+                    }
+
+                    if (typeof normalValue !== "string") {
+                        normalValue = "";
+                    }
+
+                    if (!normalValue || normalValue === "0" || normalValue === "0%") {
+                        return;
+                    }
+                    
+                    let rawValue = value;
+                    
+                    let extracted = [];
+
+                    if (typeof rawValue === "object" && rawValue !== null) {
+                        if (Array.isArray(rawValue)) {
+                            extracted = rawValue.map(item => item?.value ?? "0");
+                            rawValue.forEach(item => {
+                                if (item?.hero_levelup !== undefined) {
+                                    result.values[key + "_hero_levelup"] = item.hero_levelup;
+                                }
+
+                                if (item?.levelup_interval !== undefined) {
+                                    result.values[`${key}_levelup_interval`] = item.levelup_interval;
+                                }
+                            });
+
+                        } else {
+                            extracted = [rawValue?.value ?? "0"];
+                            if (rawValue?.hero_levelup !== undefined) {
+                                result.values[key + "_hero_levelup"] = rawValue.hero_levelup;
+                            }
+
+                            if (rawValue?.levelup_interval !== undefined) {
+                                result.values[`${key}_levelup_interval`] = rawValue.levelup_interval;
+                            }
+                        }
+                    } else {
+                        extracted = [rawValue ?? "0"];
+                    }
+                    
+                    
+                    const uniqueValues = Array.from(new Set(extracted))
+                        .filter(val =>  val !== "0%" && val);
+                    
+                    if (uniqueValues.length > 0) {
+                        result.descriptions[key] = normalValue;
+
+                        result.values[key] = uniqueValues[0]
+                            .split(" ")
+                            .join(" / ");
+                    }
+
+                    const heroLevelupKey = `${key}_hero_levelup`;
+                    const intervalKey = `${key}_levelup_interval`;
+
+                    if (
+                        formattedDetails[heroLevelupKey] &&
+                        !result.values.hasOwnProperty(heroLevelupKey)
+                    ) {
+                        result.values[heroLevelupKey] =
+                            String(formattedDetails[heroLevelupKey]).replace(/^\+/, "");
+                    }
+
+                    if (
+                        formattedDetails[intervalKey] &&
+                        !result.values.hasOwnProperty(intervalKey)
+                    ) {
+                        result.values[intervalKey] =
+                            String(formattedDetails[intervalKey]).replace(/^\+/, "");
+                    }
+                });
+                return result;
+            }
+
+            function buildAbilitiesWithDetails(
+                abilitiesList = [],
+                heroAbilitiesData,
+                abilitiesDataService
+            ) {
+                const result = {};
+
+                abilitiesList.forEach(ability => {
+
+                    const abilityPrefix = `dota_tooltip_ability_${ability}`;
+
+                    const abilityKeys = Object.keys(heroAbilitiesData)
+                        .filter(key => key.startsWith(abilityPrefix));
+
+                    if (abilityKeys.length === 0) {
+                        return;
+                    }
+
+                    result[ability] = {};
+                    abilityKeys.forEach(key => {
+
+                        let fieldName = key
+                            .replace(abilityPrefix, "")
+                            .toLowerCase();
+
+                        if (fieldName === "_custom" || fieldName === "") {
+
+                            result[ability]["name"] = heroAbilitiesData[key];
+
+                        } else if (fieldName.startsWith("_custom_")) {
+
+                            const cleanedFieldName = fieldName.replace("_custom_", "");
+
+                            result[ability][cleanedFieldName] = heroAbilitiesData[key];
+
+                        } else if (fieldName.startsWith("_")) {
+
+                            const cleanedFieldName = fieldName.replace("_", "");
+
+                            result[ability][cleanedFieldName] = heroAbilitiesData[key];
+
+                        } else {
+
+                            result[ability][fieldName] = heroAbilitiesData[key];
+                        }
+                    });
+                    
+                    const abilityDetails =
+                        abilitiesDataService.getAbilityDetails(ability, heroName);
+                    
+                    const formattedAbilityDetails =
+                        formatNumbersInObject(abilityDetails);
+
+                    result[ability].values =
+                        formatValues(abilityDetails) || {};
+
+                    result[ability].valuesInfo =
+                        mergeValues(
+                            result[ability],
+                            formattedAbilityDetails
+                        );
+                });
+                
+                return result;
+            }
+            if (!heroTalentsInformation && Object.keys(abilitiesWithDetails).length === 0 && Object.keys(innateWithDetails).length === 0) {
+                return;
+            }
+            
             allHeroesData[heroName] = {
                 talents_information: heroTalentsInformation || null,
                 talents_description: heroTalentsDescription || null,
+                innate: innateWithDetails,
                 abilities: abilitiesWithDetails,
                 characteristics: heroAttributes || null
             };

@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import styles from './hero_scene_page.module.scss';
-import {fetchAndCacheVideo, getImageUrl2, getVideoFromIndexedDB} from '../../../../../../utils/videoUtils';
+import {getImageUrl2, fetchVideoUrl} from '../../../../../../utils/videoUtils';
 
 interface HeroScenePageProps {
     heroName: string;
@@ -9,93 +9,71 @@ interface HeroScenePageProps {
 export const HeroScenePage: React.FC<HeroScenePageProps> = ({ heroName }) => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const [currentHero, setCurrentHero] = useState(heroName);
-    const [videoBlob, setVideoBlob] = useState<Blob | null>(null);
-    const [videoLoaded, setVideoLoaded] = useState(false);
-    const [imageLoaded, setImageLoaded] = useState(false);
-    const [cache, setCache] = useState(true);
-    const [imageUrl, setImageUrl] = useState<string | null>(null);
+    const [videoUrl, setVideoUrl] = useState<string | null>(null);
+    const [posterUrl, setPosterUrl] = useState<string | null>(null);
 
-    useEffect(() => {
-        const fetchImage = async () => {
-            const url = await getImageUrl2(currentHero);
-            setImageUrl(url);
-        };
-
-        fetchImage();
-    }, [currentHero]);
     useEffect(() => {
         setCurrentHero(heroName);
     }, [heroName]);
 
-    const handleImageLoad = () => {
-        setImageLoaded(true);
-    };
+    useEffect(() => {
+        if (!posterUrl) return;
+        const img = new Image();
+        img.src = posterUrl;
+    }, [posterUrl]);
 
     useEffect(() => {
-        const loadVideoFromCache = async () => {
-            const cachedVideoBlob = await getVideoFromIndexedDB(currentHero);
-
-            if (cachedVideoBlob) {
-                setVideoBlob(cachedVideoBlob);
-                setVideoLoaded(true);
-                setCache(true);
-                setImageLoaded(true);
-            } else {
-                setCache(false);
-            }
+        const loadPoster = async () => {
+            const url = await getImageUrl2(currentHero);
+            setPosterUrl(url);
         };
 
-        loadVideoFromCache();
+        loadPoster();
     }, [currentHero]);
 
     useEffect(() => {
-        const loadVideoFromNetwork = async () => {
-            if ((imageLoaded || currentHero === 'jakiro') && !cache) {
-                await fetchAndCacheVideo(currentHero, setVideoBlob);
-                setVideoLoaded(true);
+        const loadVideo = async () => {
+            try {
+                const url = await fetchVideoUrl(currentHero);
+                setVideoUrl(url);
+            } catch (e) {
+                console.error(e);
             }
         };
 
-        loadVideoFromNetwork();
-    }, [imageLoaded, cache, currentHero]);
+        loadVideo();
+    }, [currentHero]);
 
+    useEffect(() => {
+        if (!videoUrl) return;
 
+        const video = videoRef.current;
+        if (!video) return;
 
-    const handleLoadedData = () => {
-        if (videoRef.current) {
-            videoRef.current.play();
-        }
-    };
+        video.play().catch(() => {});
+    }, [videoUrl]);
+
+    // if (!posterUrl) return null;
 
     return (
+
         <div className={styles.canvasContainer}>
             <div className={styles.diagonalOverlay}></div>
-            {!(imageLoaded && videoLoaded) && !cache && currentHero !== 'jakiro' && (
-                <img
-                    src={imageUrl || ""}
-                    alt={`${currentHero}`}
-                    className={`${styles.heroVideo} ${styles[currentHero] || ''}`}
-                    onLoad={handleImageLoad}
-                />
-            )}
-            {(imageLoaded || currentHero === 'jakiro') && videoLoaded && (
-                <video
-                    ref={videoRef}
-                    className={`${styles.heroVideo} ${styles[currentHero.replace(/'/g, '')] || ''}`}
-                    onCanPlayThrough={handleLoadedData}
-                    autoPlay
-                    preload="auto"
-                    loop
-                    playsInline
-                    muted
-                >
-                    <source
-                        key={videoBlob ? URL.createObjectURL(videoBlob) : ''}
-                        src={videoBlob ? URL.createObjectURL(videoBlob) : ''}
-                        type="video/webm"
-                    />
-                </video>
-            )}
+
+            <video
+                ref={videoRef}
+                className={`${styles.heroVideo} ${styles[currentHero.replace(/'/g, '')] || ''}`}
+                poster={posterUrl || undefined}
+                preload="metadata"
+                loop
+                muted
+                playsInline
+                controls={false}
+            >
+                {videoUrl && (
+                    <source src={videoUrl} type="video/webm" />
+                )}
+            </video>
         </div>
     );
 };

@@ -56,6 +56,13 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     const [buildName, setBuildName] = useState('');
     const [buildDescription, setBuildDescription] = useState('');
     const { generalTalents, languageReady } = useMyData();
+    const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
+
+    const [hydrated, setHydrated] = useState(false);
+
+    useEffect(() => {
+        setHydrated(true);
+    }, []);
     useEffect(() => {
         if (user) {
             setShowNumbers(ctxShowNumbers);
@@ -417,8 +424,158 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
     }, [generalTalents, languageReady]);
 
 
-    const getBackgroundForHero = useCallback(async (part: string, hero_name: string): Promise<string | null> => {
+    // const getBackgroundForHero = useCallback(async (part: string, hero_name: string): Promise<string | null> => {
+    //     let backgroundFileName;
+    //     switch (part) {
+    //         case '1':
+    //             backgroundFileName = 'background_str';
+    //             break;
+    //         case '2':
+    //             backgroundFileName = 'background_agi';
+    //             break;
+    //         case '3':
+    //             backgroundFileName = 'background_int';
+    //             break;
+    //         default:
+    //             backgroundFileName = 'background_str';
+    //     }
+    //
+    //     const objectKey = `images/heroes/talents/talents_backgrounds/${hero_name}_${backgroundFileName}.webp`;
+    //
+    //     const cachedBackground = await getCachedImage(objectKey);
+    //     if (cachedBackground) {
+    //         //console.log("Loaded background from cache:", objectKey);
+    //         return cachedBackground;
+    //     }
+    //
+    //     const imageUrl = await getImageUrl(objectKey);
+    //     if (imageUrl) {
+    //         try {
+    //             const response = await fetch(imageUrl);
+    //             const imageBlob = await response.blob();
+    //
+    //             await cacheImage(objectKey, imageBlob);
+    //
+    //             return URL.createObjectURL(imageBlob);
+    //         } catch (error) {
+    //             //console.error(`Error fetching background for ${objectKey}`, error);
+    //             return null;
+    //         }
+    //     } else {
+    //         return null;
+    //     }
+    // }, []);
+    //
+    // useEffect(() => {
+    //     const fetchBackgroundImages = async () => {
+    //         if (!talents_information || !hero_name) return;
+    //
+    //         const imageFetchPromises = Object.keys(talents_information).map(async (part) => {
+    //             const imageSrc = await getBackgroundForHero(part, hero_name);
+    //             setBackgroundImages((prev) => ({
+    //                 ...prev,
+    //                 [part]: imageSrc || null,
+    //             }));
+    //         });
+    //
+    //         await Promise.all(imageFetchPromises);
+    //     };
+    //
+    //     fetchBackgroundImages();
+    // }, [talents_information, hero_name, getBackgroundForHero]);
+    //
+    // const getImageForHero = useCallback(async (talent: Talent): Promise<string | null> => {
+    //     if (!talent || talent.id.includes("empty")) return null;
+    //
+    //     const imagePath = talent.imagePath;
+    //     const objectKey = imagePath.includes("/")
+    //         ? `images/heroes/talents/${imagePath.replace("/", "/")}.webp`
+    //         : `images/heroes/talents/other/${imagePath}.webp`;
+    //
+    //     const cachedVersion = await getCacheVersion();
+    //     if (cachedVersion !== CACHE_VERSION) {
+    //         await clearCache();
+    //         await setCacheVersion();
+    //     }
+    //
+    //     const cachedImage = await getCachedImage(objectKey);
+    //     if (cachedImage) {
+    //         //console.log("Loaded from cache:", objectKey);
+    //         return cachedImage;
+    //     }
+    //
+    //     const loadingImage = "path/to/loading-placeholder.jpg";
+    //     setImageSrcs(prev => ({ ...prev, [objectKey]: loadingImage }));
+    //
+    //     try {
+    //         const imageUrl = await getImageUrl(objectKey);
+    //         if (!imageUrl) throw new Error(`Image not found for ${imagePath}`);
+    //
+    //         const response = await fetch(imageUrl);
+    //         const blob = await response.blob();
+    //
+    //         // Сохраняем изображение в кеш
+    //         await cacheImage(objectKey, blob);
+    //         const imageUrlObject = URL.createObjectURL(blob);
+    //
+    //         // Обновляем картинку в состоянии
+    //         setImageSrcs(prev => ({ ...prev, [objectKey]: imageUrlObject }));
+    //
+    //         return imageUrlObject;
+    //     } catch (error) {
+    //         //console.error(error);
+    //         return null;
+    //     }
+    // }, []);
+    //
+    // useEffect(() => {
+    //     if (!talents_information) return;
+    //
+    //     const fetchImages = async () => {
+    //         const imagePromises: Promise<{ key: string; src: string | null }>[] = [];
+    //         const chunkSize = 7;
+    //
+    //         Object.entries(talents_information).forEach(([part, talentsByLevel]) => {
+    //             let levelIndex = 0;
+    //             Object.keys(talentsByLevel).forEach((level) => {
+    //                 const talents = talentsByLevel[level];
+    //                 talents.forEach((talent, i) => {
+    //                     const key = `${part}-${levelIndex}-${i}`;
+    //                     imagePromises.push(
+    //                         getImageForHero(talent).then((src) => ({ key, src }))
+    //                     );
+    //                 });
+    //                 levelIndex++;
+    //             });
+    //         });
+    //
+    //         const processChunks = async (chunks: Promise<{ key: string; src: string | null }>[][]) => {
+    //             for (const chunk of chunks) {
+    //                 const results = await Promise.all(chunk);
+    //                 const newImageSrcs: Record<string, string | null> = {};
+    //                 results.forEach(({ key, src }) => {
+    //                     newImageSrcs[key] = src;
+    //                 });
+    //                 setImageSrcs((prev) => ({ ...prev, ...newImageSrcs }));
+    //             }
+    //         };
+    //
+    //         // Создаем массив чанкованных обещаний
+    //         const chunks: Promise<{ key: string; src: string | null }>[][] = [];
+    //         for (let i = 0; i < imagePromises.length; i += chunkSize) {
+    //             chunks.push(imagePromises.slice(i, i + chunkSize));
+    //         }
+    //
+    //         // Обрабатываем каждый чанк обещаний
+    //         await processChunks(chunks);
+    //     };
+    //     fetchImages();
+    // }, [talents_information, getImageForHero]);
+
+
+    const getBackgroundForHero = (part: string, hero_name: string): string | null => {
         let backgroundFileName;
+
         switch (part) {
             case '1':
                 backgroundFileName = 'background_str';
@@ -433,141 +590,20 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                 backgroundFileName = 'background_str';
         }
 
-        const objectKey = `images/heroes/talents/talents_backgrounds/${hero_name}_${backgroundFileName}.webp`;
+        return `https://cdn.wodota.net/images/heroes/talents/talents_backgrounds/${hero_name}_${backgroundFileName}.webp`;
+    };
 
-        const cachedBackground = await getCachedImage(objectKey);
-        if (cachedBackground) {
-            //console.log("Loaded background from cache:", objectKey);
-            return cachedBackground;
-        }
-
-        const imageUrl = await getImageUrl(objectKey);
-        if (imageUrl) {
-            try {
-                const response = await fetch(imageUrl);
-                const imageBlob = await response.blob();
-
-                await cacheImage(objectKey, imageBlob);
-
-                return URL.createObjectURL(imageBlob);
-            } catch (error) {
-                //console.error(`Error fetching background for ${objectKey}`, error);
-                return null;
-            }
-        } else {
-            return null;
-        }
-    }, []);
-
-    useEffect(() => {
-        const fetchBackgroundImages = async () => {
-            if (!talents_information || !hero_name) return;
-
-            const imageFetchPromises = Object.keys(talents_information).map(async (part) => {
-                const imageSrc = await getBackgroundForHero(part, hero_name);
-                setBackgroundImages((prev) => ({
-                    ...prev,
-                    [part]: imageSrc || null,
-                }));
-            });
-
-            await Promise.all(imageFetchPromises);
-        };
-
-        fetchBackgroundImages();
-    }, [talents_information, hero_name, getBackgroundForHero]);
-
-    const getImageForHero = useCallback(async (talent: Talent): Promise<string | null> => {
-        if (!talent || talent.id.includes("empty")) return null;
+    const getImageForHero = (talent?: Talent | null): string => {
+        if (!talent?.imagePath) return "";
 
         const imagePath = talent.imagePath;
+
         const objectKey = imagePath.includes("/")
-            ? `images/heroes/talents/${imagePath.replace("/", "/")}.webp`
+            ? `images/heroes/talents/${imagePath}.webp`
             : `images/heroes/talents/other/${imagePath}.webp`;
 
-        const cachedVersion = await getCacheVersion();
-        if (cachedVersion !== CACHE_VERSION) {
-            await clearCache();
-            await setCacheVersion();
-        }
-
-        const cachedImage = await getCachedImage(objectKey);
-        if (cachedImage) {
-            //console.log("Loaded from cache:", objectKey);
-            return cachedImage;
-        }
-
-        const loadingImage = "path/to/loading-placeholder.jpg";
-        setImageSrcs(prev => ({ ...prev, [objectKey]: loadingImage }));
-
-        try {
-            const imageUrl = await getImageUrl(objectKey);
-            if (!imageUrl) throw new Error(`Image not found for ${imagePath}`);
-
-            const response = await fetch(imageUrl);
-            const blob = await response.blob();
-
-            // Сохраняем изображение в кеш
-            await cacheImage(objectKey, blob);
-            const imageUrlObject = URL.createObjectURL(blob);
-
-            // Обновляем картинку в состоянии
-            setImageSrcs(prev => ({ ...prev, [objectKey]: imageUrlObject }));
-
-            return imageUrlObject;
-        } catch (error) {
-            //console.error(error);
-            return null;
-        }
-    }, []);
-
-    useEffect(() => {
-        if (!talents_information) return;
-
-        const fetchImages = async () => {
-            const imagePromises: Promise<{ key: string; src: string | null }>[] = [];
-            const chunkSize = 7;
-
-            Object.entries(talents_information).forEach(([part, talentsByLevel]) => {
-                let levelIndex = 0;
-                Object.keys(talentsByLevel).forEach((level) => {
-                    const talents = talentsByLevel[level];
-                    talents.forEach((talent, i) => {
-                        const key = `${part}-${levelIndex}-${i}`;
-                        imagePromises.push(
-                            getImageForHero(talent).then((src) => ({ key, src }))
-                        );
-                    });
-                    levelIndex++;
-                });
-            });
-
-            const processChunks = async (chunks: Promise<{ key: string; src: string | null }>[][]) => {
-                for (const chunk of chunks) {
-                    const results = await Promise.all(chunk);
-                    const newImageSrcs: Record<string, string | null> = {};
-                    results.forEach(({ key, src }) => {
-                        newImageSrcs[key] = src;
-                    });
-                    setImageSrcs((prev) => ({ ...prev, ...newImageSrcs }));
-                }
-            };
-
-            // Создаем массив чанкованных обещаний
-            const chunks: Promise<{ key: string; src: string | null }>[][] = [];
-            for (let i = 0; i < imagePromises.length; i += chunkSize) {
-                chunks.push(imagePromises.slice(i, i + chunkSize));
-            }
-
-            // Обрабатываем каждый чанк обещаний
-            await processChunks(chunks);
-        };
-        fetchImages();
-    }, [talents_information, getImageForHero]);
-
-
-
-
+        return `https://cdn.wodota.net/${objectKey}`;
+    };
 
 
 
@@ -916,11 +952,16 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                             )}
                             <div
                                 className={styles.grid}
-                                style={{backgroundImage: `url(${backgroundImages[part] || ''})`}}
+                                style={{
+                                    backgroundImage: `url(${getBackgroundForHero(part, hero_name)})`
+                                }}
                             >
                                 {gridData.map((row, rowIndex) => (
                                     row.map((item, colIndex) => {
-                                        const imageSrc = imageSrcs[`${part}-${rowIndex}-${colIndex}`] || null;
+                                        // const imageSrc = imageSrcs[`${part}-${rowIndex}-${colIndex}`] || null;
+                                        const src = getImageForHero(item);
+                                        const key = `${part}-${rowIndex}-${colIndex}`;
+                                        const isLoaded = loadedImages[key];
                                         let text = item ? getTalentText(item.talentInfo, part) : null;
                                         const isUpgradeAllowed = item ?
                                             isTalentUpgradeable(item, rowIndex, part) : false;
@@ -965,27 +1006,40 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                         }
                                         return (
                                             <div key={`${rowIndex}-${colIndex}`}
-                                                 className={`${styles.square} ${menuClassArrow}`}
+                                                 className={`${styles.square} ${isLoaded ? menuClassArrow : ''}`}
                                                  onClick={() => item && isUpgradeMode && !isBuild && isUpgradeAllowed && upgradeTalent(item.talentInfo, rowIndex, part)}>
-                                                {(!isUpgradeMode || (isUpgradeMode && showText)) && text ? (
+                                                {isLoaded  && (!isUpgradeMode || (isUpgradeMode && showText)) && text ? (
                                                     <div
                                                         className={`${styles.menu} ${menuClass} ${menuClass2} ${menuClass3}`}>
                                                         <div dangerouslySetInnerHTML={{__html:  formatText(text)}}/>
                                                     </div>
                                                 ) : null}
-                                                {imageSrc ? (
+
+
+                                                {src ? (
                                                         <div
                                                             className={`${styles.imageContainer} ${showText ? '' : styles.noPseudo}`}>
                                                             <div style={{display: "flex"}}
                                                                  className={`${isUpgradeMode && !isBuild && borderClass && isUpgradeAllowed ? styles.withBorder : ''}`}>
+                                                                {hydrated && !isLoaded && (
+                                                                    <div className={styles.loaderContainer}>
+                                                                        <div className={styles.loader}></div>
+                                                                    </div>
+                                                                )}
                                                                 <img
                                                                     className={`${styles.square_img} ${(!isBuild ? isUpgradeMode : true) && item
                                                                         ? (currentTalentLevels?.[part]?.[item.talentInfo.substring(1)] ?? -1) === -1
                                                                             ? `${styles.grayscale} grayscale`
                                                                             : `${styles.noFilter}`
                                                                         : `${styles.noFilter}`}`}
-                                                                    src={imageSrc}
+                                                                    src={src}
                                                                     alt="item"
+                                                                    onLoad={() =>
+                                                                        setLoadedImages(prev => ({
+                                                                            ...prev,
+                                                                            [key]: true
+                                                                        }))
+                                                                    }
                                                                 />
                                                             </div>
 
@@ -993,7 +1047,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                                 <>
                                                                     <div className={styles.progressBar}
                                                                          style={{width: calculateProgressBarWidth(item.talentInfo, part)}}/>
-                                                                    {showNumbers && isUpgradeMode && (
+                                                                    {(isBuild || (showNumbers && isUpgradeMode)) && (
                                                                         <div className={styles.upgradeNumber}>
                                                                             {getTalentUpgradeNumbers(part, item.talentInfo.substring(1))}
                                                                         </div>
@@ -1001,13 +1055,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                                 </>
                                                             )}
 
-
-                                                        </div>
-                                                    ) :
-                                                    text ? (
-                                                        <div className={`${styles.loaderContainer}`}>
-                                                            <img className={`${styles.square_img}`} src={"/load_img.png"} alt="loader" />
-                                                            <div className={styles.loader}></div>
                                                         </div>
                                                     ) : ''}
                                             </div>
@@ -1016,7 +1063,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                 ))}
                             </div>
                             {part === partInfo && (!isBuild ? isUpgradeMode : true) && (
-                                <div className={styles.talentSection_info}>
+                                <div className={styles.talentSection_info} >
                                     <div>{t('available_distribution')} {40 - getTotalUpgradedTalentCount()}</div>
                                     <div>{t('total_talents')} {getTotalUpgradedTalentCount()}</div>
                                 </div>

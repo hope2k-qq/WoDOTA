@@ -147,3 +147,17 @@ export const fetchAndCacheVideo = async (
 
 };
 
+export const fetchVideoUrl = async (name: string): Promise<string> => {
+    const videoUrl = getVideoUrl(name);
+
+    const response = await fetch(videoUrl);
+
+    if (!response.ok) {
+        throw new Error('Video not found');
+    }
+
+    const blob = await response.blob();
+
+    return URL.createObjectURL(blob);
+};
+

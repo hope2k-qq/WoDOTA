@@ -15,18 +15,22 @@
 // });
 //
 
-export const getImageUrl = async (objectKey: string): Promise<string | null> => {
-    try {
+// export const getImageUrl = async (objectKey: string): Promise<string | null> => {
+//     try {
+//
+//         const response = await fetch(`https://cdn.wodota.net/${objectKey}`);
+//
+//         if (!response.ok) {
+//             console.error('Failed to fetch image:', response.statusText);
+//             return null;
+//         }
+//         return response.url;
+//     } catch (error) {
+//         console.error('Error fetching image:', error);
+//         return null;
+//     }
+// };
 
-        const response = await fetch(`https://cdn.wodota.net/${objectKey}`);
-
-        if (!response.ok) {
-            console.error('Failed to fetch image:', response.statusText);
-            return null;
-        }
-        return response.url;
-    } catch (error) {
-        console.error('Error fetching image:', error);
-        return null;
-    }
+export const getImageUrl = (objectKey: string): string => {
+    return `https://cdn.wodota.net/${objectKey}`;
 };

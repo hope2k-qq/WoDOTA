@@ -11,11 +11,8 @@ export interface AbilityData {
 
 export interface AbilitiesProps {
     heroName: string;
-    abilities: { [key: string]: { [key: string]: string } };
-    abilitiesSrcs: { [key: string]: string | null };
-    videoSrc: { [key: string]: string };
-    imageSrc: { [key: string]: string };
     heroAbilities: { [key: string]: AbilityData } | null;
+    heroInnate: { [key: string]: AbilityData } | null;
 }
 
 export interface AbilitiesPropsCharacteristics {
@@ -48,6 +45,7 @@ export interface talentsDescription {
 }
 
 export interface HeroInformation {
+    innate: { [key: string]: { [key: string]: string } };
     abilities: { [key: string]: { [key: string]: string } };
     characteristics: { [key: string]: string };
     talents_description: talentsDescription;
@@ -65,11 +63,8 @@ export interface RenderTalentsProps {
 
 export interface AbilitiesSectionProps {
     heroName: string;
-    abilities: { [key: string]: { [key: string]: string } };
-    abilitiesSrcs: { [key: string]: string | null };
-    videoSrc: { [key: string]: string };
-    imageSrc: { [key: string]: string };
     heroAbilities: { [key: string]: AbilityData } | null;
+    heroInnate: { [key: string]: AbilityData } | null;
 }
 
 

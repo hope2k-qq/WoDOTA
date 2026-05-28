@@ -18,4 +18,6 @@ const reversedHeroes = Object.fromEntries(
     Object.entries(replacements_heroes).map(([k, v]) => [v, k])
 );
 
-module.exports = replacements_heroes;
+module.exports = {
+    reversedHeroes
+};

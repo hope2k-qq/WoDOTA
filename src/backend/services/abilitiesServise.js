@@ -2,11 +2,18 @@
 
 const abilitiesService = {
     getHeroAbilities: () => {
-        const abilities = {};
+        const heroes = {};
+
         for (const hero in abilitiesData.heroes) {
-            abilities[hero] = Object.values(abilitiesData.heroes[hero].abilities);
+            const heroData = abilitiesData.heroes[hero];
+
+            heroes[hero] = {
+                innate: heroData.innate,
+                abilities: Object.values(heroData.abilities)
+            };
         }
-        return abilities;
+
+        return heroes;
     }
 };
 

@@ -26,6 +26,7 @@ function WodaTalents:InitTalents()
             {
                 ["maxpoints"] = 0,
                 ["points"] = 0,
+                ["points_level_saved"] = 1,
             }
 		end
 		self:AddPointTalent(i, 1)
@@ -40,6 +41,28 @@ end
 
 function WodaTalents:OnHeroLevelUp(keys)
     WodaTalents:AddPointTalent(keys.PlayerID, 1)
+    if WodaTalents.playerstalents[keys.PlayerID] then
+        WodaTalents.playerstalents[keys.PlayerID]["points_level_saved"] = WodaTalents.playerstalents[keys.PlayerID]["points_level_saved"] + 1
+    end
+end
+
+function WodaTalents:UpdateReconnectPoints(player_id)
+    local player_hero = PlayerResource:GetSelectedHeroEntity(player_id)
+    if player_hero then
+        local hero_level = player_hero:GetLevel()
+        local current_points = nil
+        if WodaTalents.playerstalents[player_id] then
+            current_points = WodaTalents.playerstalents[player_id]["points_level_saved"]
+        end
+        if current_points ~= nil then
+            if current_points > hero_level then
+                local new_points = current_points - hero_level
+                if new_points > 0 then
+                    WodaTalents:AddPointTalent(player_id, new_points)
+                end
+            end
+        end
+    end
 end
 
 function WodaTalents:AddPoint(id, count, no_effect)

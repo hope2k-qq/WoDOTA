@@ -1,27 +1,23 @@
 ﻿const fs = require('fs');
 const path = require('path');
 
-const replacements_heroes = require('../config/replacements_heroes');
+const { reversedHeroes } = require('../config/replacements_heroes2');
 
 const abilitiesDataService = {
-    getAbilityDetails: (abilityName) => {
-        let originalHeroName = abilityName.split('_')[0];
-        let updatedAbilityName = abilityName;
+    getAbilityDetails: (abilityName, heroName) => {
+        const heroKey = reversedHeroes[heroName] ?? heroName;
+        let updatedAbilityName = abilityName.replace(
+            new RegExp("^" + heroName),
+            heroKey
+        );
+        let originalHeroName = reversedHeroes[heroName] ?? heroName;
         
-        for (const [oldName, newName] of Object.entries(replacements_heroes)) {
-            if (updatedAbilityName.startsWith(newName)) {
-                updatedAbilityName = updatedAbilityName.replace(newName, oldName);
-                originalHeroName = oldName;
-                break;
-            }
-        }
-
         const primaryFilePath = path.resolve(__dirname, '../assets/npc_abilities_custom.txt');
-        const secondaryFilePath = path.resolve(__dirname, '../assets/npc_dota_hero_medusa.txt');
+        const secondaryFilePath = path.resolve(__dirname, `../assets/npc_dota_hero_${originalHeroName}.txt`);
 
-        let abilityDetails = findAbilityDetails(primaryFilePath, updatedAbilityName);
+        let abilityDetails = findAbilityDetails(primaryFilePath, abilityName);
         if (!abilityDetails) {
-            abilityDetails = findAbilityDetails(primaryFilePath, abilityName);
+            abilityDetails = findAbilityDetails(primaryFilePath, updatedAbilityName);
         }
 
         if (!abilityDetails) {
@@ -43,9 +39,28 @@ const abilitiesDataService = {
 const findAbilityDetails = (filePath, abilityName) => {
     try {
         const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const abilityRegex = new RegExp(`"${abilityName}(_custom)?"\\s*{[^}]*?"AbilityValues"\\s*{`, 'gs');
-        let match = fileContent.match(abilityRegex);
+        // const abilityRegex = new RegExp(`"${abilityName}(_custom)?"\\s*{[^}]*?"AbilityValues"\\s*{`, 'gs');
+        
+        // let match = fileContent.match(abilityRegex);
         let abilityValuesBlock = null;
+
+        const baseRegex = new RegExp(
+            `"${abilityName}"\\s*{[^}]*?"AbilityValues"\\s*{`,
+            's'
+        );
+
+        const customRegex = new RegExp(
+            `"${abilityName}_custom"\\s*{[^}]*?"AbilityValues"\\s*{`,
+            's'
+        );
+
+        let match = fileContent.match(baseRegex);
+        let isCustom = false;
+
+        if (!match) {
+            match = fileContent.match(customRegex);
+            isCustom = true;
+        }
 
         if (match) {
             const startIndex = fileContent.indexOf(match[0]) + match[0].length - 1;

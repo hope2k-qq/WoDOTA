@@ -65,6 +65,30 @@
   font-family: "Inter", serif;
 }
 
+.ability_innate{
+  font-size: 0.65rem;
+  color: #e5d4af;
+  font-family: "Inter", serif;
+  line-height: 1;
+  font-weight: 400;
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 7px;
+  background: linear-gradient(
+                  180deg,
+                  rgba(78, 76, 66, 0.95) 0%,
+                  rgba(58, 56, 48, 0.95) 100%
+  );
+  border: 0.5px solid rgba(210, 190, 140, 0.35);
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.05),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 2px;
+}
+
 
 
 .ability_description{
@@ -97,6 +121,11 @@
 
   .ability_title {
     font-size: 1.275rem; /* 1.7rem - 25% */
+  }
+
+  .ability_innate{
+    font-size: 0.55rem;
+    padding: 3px 6px;
   }
 
   .ability_description {
