@@ -3,7 +3,6 @@ import axios from "axios";
 import React, {useEffect, useState, useCallback} from "react";
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
 import {useTranslation} from "react-i18next";
-import {openDB} from "idb";
 import {getImageUrl} from "../../utils/r2Storage";
 
 interface Player {
@@ -37,95 +36,23 @@ export const LeaderboardPage = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const API_URL = process.env.REACT_APP_API_URL;
     const [imageUrl, setImageUrl] = useState<{ [key: string]: string | null }>({});
-    const CACHE_VERSION = 4;
 
     useEffect(() => {
-        const cachedVersion = localStorage.getItem('cache-version');
-
-        if (cachedVersion !== CACHE_VERSION.toString()) {
-            localStorage.clear();
-
-            openDB('heroes-db', CACHE_VERSION, {
-                upgrade(db, oldVersion, newVersion) {
-                    if (newVersion !== null && newVersion > oldVersion) {
-                        if (!db.objectStoreNames.contains('heroes')) {
-                            db.createObjectStore('heroes');
-                        }
-                    }
-                }
-            }).then(() => {
-                localStorage.setItem('cache-version', CACHE_VERSION.toString());
-            }).catch(err => {
-                console.error('Error during DB upgrade:', err);
-            });
-        }
-
-        const dbPromise = openDB('heroes-db', CACHE_VERSION, {
-            upgrade(db, oldVersion, newVersion) {
-                if (newVersion !== null && newVersion > oldVersion) {
-                    if (!db.objectStoreNames.contains('heroes')) {
-                        db.createObjectStore('heroes');
-                    }
-                }
-            }
-        });
-
         const fetchHeroesData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/heroes`);
                 const data = response.data;
-                // setHeroes(data);
 
-                const db = await dbPromise;
-                const updatedUrls: { [key: string]: string | null } = {};
-                const imagePromises: Promise<void>[] = [];
+                const updatedUrls: { [key: string]: string } = {};
 
-                const imagesStore = db.transaction('heroes', 'readonly').objectStore('heroes');
                 for (const hero of data) {
-                    const cachedImage = await imagesStore.get(hero.name);
-                    if (cachedImage) {
-                        updatedUrls[hero.name] = URL.createObjectURL(cachedImage);
-                    } else {
-                        updatedUrls[hero.name] = null;
-                    }
+                    updatedUrls[hero.name] = getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`);
                 }
 
-                // setLoading(false);
                 setImageUrl(updatedUrls);
-
-                for (const hero of data) {
-                    if (!updatedUrls[hero.name]) {
-                        imagePromises.push(
-                            (async () => {
-                                const url = await getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`);
-                                if (url) {
-                                    const response = await fetch(url);
-                                    const imageBlob = await response.blob();
-
-                                    const imagesStore = db.transaction('heroes', 'readwrite').objectStore('heroes');
-                                    await imagesStore.put(imageBlob, hero.name);
-
-                                    updatedUrls[hero.name] = URL.createObjectURL(imageBlob);
-
-                                    setImageUrl(prevState => ({
-                                        ...prevState,
-                                        [hero.name]: updatedUrls[hero.name],
-                                    }));
-                                } else {
-                                    console.error(`Image URL for hero ${hero.name} not found.`);
-                                }
-                            })()
-                        );
-                    }
-                }
-
-                await Promise.all(imagePromises);
 
             } catch (error) {
                 console.error('Error fetching hero data:', error);
-                // setError('Failed to fetch hero data.');
-            } finally {
-                // setLoading(false);
             }
         };
 
@@ -133,6 +60,7 @@ export const LeaderboardPage = () => {
             console.error('Error in fetchHeroesData:', err);
         });
     }, [API_URL]);
+
 
     const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
 

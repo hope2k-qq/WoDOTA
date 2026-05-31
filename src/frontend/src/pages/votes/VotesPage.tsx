@@ -3,6 +3,7 @@ import axios from 'axios';
 import styles from "./votes.module.scss";
 import {useTranslation} from "react-i18next";
 import heroReplacements from '../../data/replacements_heroes.json';
+import {getImageUrl} from "../../utils/r2Storage";
 
 interface HeroVote {
     hero_name: string;
@@ -64,7 +65,7 @@ export const VotesPage = () => {
                         return (
                             <div key={index} className={styles.card}>
                                 <img
-                                    src={`https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/heroes/${heroName}.png`}
+                                    src={getImageUrl(`images/heroes/heroesPreview/${heroName}.webp`)}
                                     alt={heroName}
                                     className={styles.image}
                                 />

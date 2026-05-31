@@ -156,8 +156,9 @@ export const fetchVideoUrl = async (name: string): Promise<string> => {
         throw new Error('Video not found');
     }
 
-    const blob = await response.blob();
-
-    return URL.createObjectURL(blob);
+    // const blob = await response.blob();
+    //
+    // return URL.createObjectURL(blob);
+    return response.url;
 };
 

@@ -3,6 +3,7 @@ import styles from "./abilities.module.scss";
 import { formatAbilityDescription } from '../../../../utils/formatAbilityDescription';
 import { AbilitiesProps } from '../../../../types/heroes';
 import {useTranslation} from "react-i18next";
+import {getImageUrl} from "../../../../utils/r2Storage";
 
 
 const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInnate  }) => {
@@ -14,7 +15,7 @@ const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInna
 
         Object.keys(heroAbilities).forEach((key) => {
             const img = new Image();
-            img.src = `https://cdn.wodota.net/abilities_preview/images/${heroName}/${key}.webp`;
+            img.src = getImageUrl(`abilities_preview/images/${heroName}/${key}.webp`);
         });
     }, [heroAbilities, heroName]);
 
@@ -36,8 +37,8 @@ const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInna
                 <img
                     src={
                         (isInnate
-                            ? "https://cdn.wodota.net/abilities/innate_icon.png"
-                            : `https://cdn.wodota.net/abilities/${key}.webp`)
+                            ? getImageUrl("abilities/innate_icon.png")
+                            : getImageUrl(`abilities/${key}.webp`))
                     }
                     alt={ability.name}
                     className={styles.abilityImage}
@@ -47,10 +48,11 @@ const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInna
                     <div className={styles.mediaContainer}>
                         <video
                             className={styles.abilityVideo}
-                            src={`https://cdn.wodota.net/abilities_preview/video/${heroName}/${key}.webm`}
+                            src={getImageUrl(`abilities_preview/video/${heroName}/${key}.webm`)}
                             autoPlay
                             loop
                             muted
+                            playsInline
                             onLoadedData={() =>
                                 setVideoLoaded(prev => ({
                                     ...prev,
@@ -71,7 +73,7 @@ const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInna
                         {!videoLoaded[key] && (
                             <img
                                 className={styles.abilityImage}
-                                src={`https://cdn.wodota.net/abilities_preview/images/${heroName}/${key}.webp`}
+                                src={getImageUrl(`abilities_preview/images/${heroName}/${key}.webp`)}
                                 alt={key}
                                 onError={(e) => {
                                     e.currentTarget.src = "/noFound.png";

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { getImageUrl } from '../../../../utils/r2Storage';
 import { Talent, AddonData, RenderTalentsProps } from '../../../../types/heroes';
 import { useUser  } from '../../../../context/UserContext';
@@ -11,14 +11,7 @@ import { ReactComponent as ShareIcon } from "../../../../assets/icons/ShareIcon.
 import { ReactComponent as BackIcon } from "../../../../assets/icons/BackIcon.svg";
 import { ReactComponent as ErrorIcon } from "../../../../assets/icons/ErrorIcon.svg";
 import { ReactComponent as SuccessIcon } from "../../../../assets/icons/SuccessIcon.svg";
-import {
-    CACHE_VERSION,
-    cacheImage,
-    clearCache,
-    getCachedImage,
-    getCacheVersion,
-    setCacheVersion
-} from "../../../../utils/dbUtils";
+
 import {useTranslation} from "react-i18next";
 import {useMyData} from "../../../../context/HeroesDataContext";
 
@@ -34,8 +27,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                          isBuild}) => {
     const { t } = useTranslation();
     const [localGeneralTalents, setLocalGeneralTalents] = useState<AddonData | null>(null);
-    const [imageSrcs, setImageSrcs] = useState<{ [key: string]: string | null }>({});
-    const [backgroundImages, setBackgroundImages] = useState<{ [key: string]: string | null }>({});
     const [isLoading, setIsLoading] = useState(false);
     const [isUpgradeMode, setIsUpgradeMode] = useState(false);
     const [currentTalentLevels, setCurrentTalentLevels] = useState<{ [key: string]: { [key: string]: number } }>({});
@@ -280,7 +271,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                     ctx.filter = "grayscale(98%)";
                     ctx.drawImage(img, 0, 0);
 
-                    // Creating a temporary URL directly from the canvas as base64 encoded string
                     const tempUrl = canvas.toDataURL("image/png");
                     resolve(tempUrl);
                 }
@@ -590,7 +580,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                 backgroundFileName = 'background_str';
         }
 
-        return `https://cdn.wodota.net/images/heroes/talents/talents_backgrounds/${hero_name}_${backgroundFileName}.webp`;
+        return getImageUrl(`images/heroes/talents/talents_backgrounds/${hero_name}_${backgroundFileName}.webp`);
     };
 
     const getImageForHero = (talent?: Talent | null): string => {
@@ -602,7 +592,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             ? `images/heroes/talents/${imagePath}.webp`
             : `images/heroes/talents/other/${imagePath}.webp`;
 
-        return `https://cdn.wodota.net/${objectKey}`;
+        return getImageUrl(objectKey);
     };
 
 

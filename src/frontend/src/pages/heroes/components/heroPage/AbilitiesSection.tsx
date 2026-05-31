@@ -4,6 +4,7 @@ import {formatAbilityDescription} from '../../../../utils/formatAbilityDescripti
 import {AbilitiesSectionProps} from '../../../../types/heroes';
 import {useTranslation} from "react-i18next";
 import {useAltKey} from "../../../../hooks/useAltKey";
+import {getImageUrl} from "../../../../utils/r2Storage";
 
 
 const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({
@@ -110,10 +111,10 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({
 
     const getAbilityIcon = (key: string, ability: any) => {
         if (ability?.isInnate) {
-            return "https://cdn.wodota.net/abilities/innate_icon.png";
+            return getImageUrl("abilities/innate_icon.png");
         }
 
-        return `https://cdn.wodota.net/abilities/${key}.webp`;
+        return getImageUrl(`abilities/${key}.webp`);
     };
 
     const selected = useMemo(() => {
@@ -123,10 +124,9 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({
     useEffect(() => {
         if (!selected?.originalKey) return;
 
-        const primarySrc = `https://cdn.wodota.net/abilities/${selected.originalKey}.webp`;
+        const primarySrc = getImageUrl(`abilities/${selected.originalKey}.webp`);
 
-        const fallbackSrc =
-            "https://cdn.wodota.net/abilities/innate_icon.png";
+        const fallbackSrc = getImageUrl("abilities/innate_icon.png");
 
         const img = new Image();
 
@@ -173,11 +173,12 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({
                                     {!videoError ? (
                                         <video
                                             className={styles.render2videoElement}
-                                            src={`https://cdn.wodota.net/abilities_preview/video/${heroName}/${selected?.originalKey}.webm`}
+                                            src={getImageUrl(`abilities_preview/video/${heroName}/${selected?.originalKey}.webm`)}
                                             autoPlay
                                             loop
                                             muted
-                                            poster={`https://cdn.wodota.net/abilities_preview/images/${heroName}/${selected.originalKey}.webp`}
+                                            playsInline
+                                            poster={getImageUrl(`abilities_preview/images/${heroName}/${selected.originalKey}.webp`)}
                                             onError={(e) => {
                                                 e.currentTarget.poster = "/noFound.png";
                                             }}
@@ -371,7 +372,7 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({
                         </span>
                     ) : (
                         <img
-                            src="https://cdn.wodota.net/abilities/innate_icon_small.png"
+                            src={getImageUrl("abilities/innate_icon_small.png")}
                             alt="level up"
                             className={styles.levelupIcon}
                         />

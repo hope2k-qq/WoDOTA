@@ -10,6 +10,7 @@ export const TournamentsPageSolo: React.FC = () => {
     const [activeSection, setActiveSection] = useState<string>('final');
     const [tournament, setTournament] = useState<any | null>(null);
     const [tournamentsList, setTournamentsList] = useState<any[]>([]);
+    const [isOpenTournament, setIsOpenTournament] = useState(false);
     const [selectedTournamentId, setSelectedTournamentId] = useState<number | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -68,7 +69,7 @@ export const TournamentsPageSolo: React.FC = () => {
         };
 
         loadData();
-    }, [API_URL]);
+    }, [API_URL, fetchTournamentData]);
 
     useEffect(() => {
         if (!selectedTournamentId) return;
@@ -125,24 +126,43 @@ export const TournamentsPageSolo: React.FC = () => {
     if (error) return <p>Ошибка: {error}</p>;
     if (!tournament) return null;
 
+    // const selectedTournament = tournamentsList.find(
+    //     (tournament) => tournament.id === selectedTournamentId
+    // );
+
+    const toggleTournamentList = () => setIsOpenTournament((prev) => !prev);
+    const selectTournament = (id: number) => {
+        setSelectedTournamentId(id);
+        setIsOpenTournament(false);
+    };
+
     return (
         <div className={styles.div}>
             <div className={styles.container}>
-                <div>
-                    <select
-                        value={selectedTournamentId ?? ""}
-                        onChange={(e) => {
-                            const value = e.target.value;
-                            setSelectedTournamentId(value ? Number(value) : null);
-                        }}
-                    >
-                        {tournamentsList.map((tournamentItem, index) => (
-                            <option key={tournamentItem.id} value={tournamentItem.id}>
-                                {t(`${tournamentItem.key}_name`) || tournamentItem.key}
-                            </option>
-                        ))}
-                    </select>
+                <div className={styles.container_select}>
+                    <div className={styles.custom_select + (isOpenTournament ? ` ${styles.open}` : '')}>
+                        <div className={styles.selectedTournament} onClick={toggleTournamentList}>
+                            {t("choose_tournament")}
+                        </div>
+
+                        {isOpenTournament && (
+                            <div className={styles.tournamentList}>
+                                {tournamentsList.map((tournament) => (
+                                    <div
+                                        key={tournament.id}
+                                        className={styles.tournamentItemContainer}
+                                        onClick={() => selectTournament(tournament.id)}
+                                    >
+                                        <div className={styles.tournamentItem}>
+                                            {t(`${tournament.key}_name`) || tournament.key}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
+
                 <div className={styles.tournament_name}>{t(`${tournament.key}_name`) || "Tournament"}</div>
                 <div className={styles.tournament_data_container}>
                     <div className={styles.tournament_data}>{t(`${tournament.key}_event_dates`)}</div>

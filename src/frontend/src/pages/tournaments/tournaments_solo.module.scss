@@ -75,6 +75,91 @@
   }
 }
 
+.container_select{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 10px;
+  padding: 16px;
+}
+
+//.title {
+//  color: #9b9db1;
+//  font-size: 18px;
+//  font-weight: bold;
+//}
+
+
+.custom_select {
+  position: relative;
+  width: 250px;
+  display: flex;
+  align-items: center;
+
+  .selectedTournament {
+    width: 100%;
+    padding: 12px;
+    line-height: 1;
+    background: linear-gradient(
+                    104.52deg,
+                    hsla(0, 0%, 85%, .235) -158%,
+                    hsla(0, 0%, 85%, .04) -55.77%
+    );
+    font-size: 16px;
+    color: #f4bf58;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative; // нужно для ::after
+    user-select: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #f4bf58; // цвет стрелки
+      transform: translateY(-50%) rotate(0deg);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  // при открытом списке поворачиваем стрелку
+  &.open .selectedTournament::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+
+  .tournamentList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #1f2027;
+    border-radius: 6px;
+    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+
+  .tournamentItemContainer {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.6;
+    }
+    .tournamentItem {
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+}
+
 @media (max-width: 1400px) {
   .tournament_name{
     font-size: 2.8rem;
@@ -88,6 +173,24 @@
   }
   .container_buttons_navigations{
     gap: 10px;
+  }
+  .container_select{
+    padding: 14px;
+  }
+  .custom_select {
+    width: 220px;
+    .selectedTournament {
+      font-size: 15px;
+      padding: 10px;
+    }
+    .tournamentItemContainer {
+      padding: 8px;
+      &:hover {
+      }
+      .tournamentItem {
+        font-size: 15px;
+      }
+    }
   }
 }
 
@@ -123,11 +226,53 @@
   .tournament_data{
     font-size: 0.8rem;
   }
+  .container_select{
+    padding: 12px;
+  }
+  .custom_select {
+    width: 200px;
+    .selectedTournament {
+      font-size: 14px;
+      padding: 8px;
+
+      &::after {
+
+        right: 12px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #f4bf58;
+      }
+    }
+    .tournamentItemContainer {
+      padding: 7px;
+      &:hover {
+      }
+      .tournamentItem {
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 @media (max-width: 750px) {
   .tournament_data_container{
     margin-left: 0.3rem;
     margin-right: 0.3rem;
+  }
+  .container_select{
+    padding: 12px;
+  }
+  .custom_select {
+    width: 170px;
+    .selectedTournament {
+      font-size: 12px;
+    }
+    .tournamentItemContainer {
+      &:hover {
+      }
+      .tournamentItem {
+        font-size: 12px;
+      }
+    }
   }
 }

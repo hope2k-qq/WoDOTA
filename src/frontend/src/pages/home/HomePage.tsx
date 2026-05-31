@@ -4,6 +4,7 @@ import {FeaturesSection} from "./components/FeaturesSection";
 import HeroesSection from "./components/HeroesSection";
 import {JoinSection} from "./components/JoinSection";
 import styles from "./home.module.scss";
+import React from "react";
 
 export const HomePage = () => {
     return (

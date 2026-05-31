@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { openDB } from 'idb';
 import styles from "./heroes_section.module.scss";
 import {useLocation, useNavigate} from "react-router-dom";
 import {getImageUrl} from "../../../utils/r2Storage";
@@ -56,117 +55,46 @@ const HeroesSection: React.FC = () => {
     const location = useLocation();
     const lang = location.pathname.split('/')[1];
     const [imageUrl, setImageUrl] = useState<{ [key: string]: string | null }>({});
-    // const [heroes, setHeroes] = useState<any[]>([]); // Store all heroes
-    const [groupedHeroes, setGroupedHeroes] = useState<any[][]>([]); // Store groups of heroes
-    // const [loading, setLoading] = useState(true);
-    // const [error, setError] = useState<string | null>(null);
+    const [groupedHeroes, setGroupedHeroes] = useState<any[][]>([]);
 
     const API_URL = process.env.REACT_APP_API_URL;
-    const CACHE_VERSION = 4;
 
     useEffect(() => {
-        const cachedVersion = localStorage.getItem('cache-version');
-
-        if (cachedVersion !== CACHE_VERSION.toString()) {
-            localStorage.clear();
-
-            openDB('heroes-db', CACHE_VERSION, {
-                upgrade(db, oldVersion, newVersion) {
-                    if (newVersion !== null && newVersion > oldVersion) {
-                        if (!db.objectStoreNames.contains('heroes')) {
-                            db.createObjectStore('heroes');
-                        }
-                    }
-                }
-            }).then(() => {
-                localStorage.setItem('cache-version', CACHE_VERSION.toString());
-            }).catch(err => {
-                console.error('Error during DB upgrade:', err);
-            });
-        }
-
-        const dbPromise = openDB('heroes-db', CACHE_VERSION, {
-            upgrade(db, oldVersion, newVersion) {
-                if (newVersion !== null && newVersion > oldVersion) {
-                    if (!db.objectStoreNames.contains('heroes')) {
-                        db.createObjectStore('heroes');
-                    }
-                }
-            }
-        });
-
         const fetchHeroesData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/heroes`);
                 const data = response.data;
-                // setHeroes(data);
 
-                const db = await dbPromise;
-                const updatedUrls: { [key: string]: string | null } = {};
-                const imagePromises: Promise<void>[] = [];
-
-                const imagesStore = db.transaction('heroes', 'readonly').objectStore('heroes');
-                for (const hero of data) {
-                    const cachedImage = await imagesStore.get(hero.name);
-                    if (cachedImage) {
-                        updatedUrls[hero.name] = URL.createObjectURL(cachedImage);
-                    } else {
-                        updatedUrls[hero.name] = null;
-                    }
-                }
-
-                // setLoading(false);
-                setImageUrl(updatedUrls);
+                // сразу сетим картинки без кеша
+                const urls: { [key: string]: string | null } = {};
 
                 for (const hero of data) {
-                    if (!updatedUrls[hero.name]) {
-                        imagePromises.push(
-                            (async () => {
-                                const url = await getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`);
-                                if (url) {
-                                    const response = await fetch(url);
-                                    const imageBlob = await response.blob();
+                    const url = await getImageUrl(
+                        `images/heroes/heroesPreview/${hero.name}.webp`
+                    );
 
-                                    const imagesStore = db.transaction('heroes', 'readwrite').objectStore('heroes');
-                                    await imagesStore.put(imageBlob, hero.name);
-
-                                    updatedUrls[hero.name] = URL.createObjectURL(imageBlob);
-
-                                    setImageUrl(prevState => ({
-                                        ...prevState,
-                                        [hero.name]: updatedUrls[hero.name],
-                                    }));
-                                } else {
-                                    console.error(`Image URL for hero ${hero.name} not found.`);
-                                }
-                            })()
-                        );
-                    }
+                    urls[hero.name] = url || null;
                 }
 
-                await Promise.all(imagePromises);
+                setImageUrl(urls);
 
-                const shuffledHeroes = data.sort(() => Math.random() - 0.5);
-                const groups: any[][] = [];
+                // группировка
+                const shuffledHeroes = [...data].sort(() => Math.random() - 0.5);
+
                 const groupSize = Math.ceil(shuffledHeroes.length / 5);
+                const groups: any[][] = [];
 
                 for (let i = 0; i < 5; i++) {
                     groups.push(shuffledHeroes.splice(0, groupSize));
                 }
 
                 setGroupedHeroes(groups);
-
             } catch (error) {
                 console.error('Error fetching hero data:', error);
-                // setError('Failed to fetch hero data.');
-            } finally {
-                // setLoading(false);
             }
         };
 
-        fetchHeroesData().catch(err => {
-            console.error('Error in fetchHeroesData:', err);
-        });
+        fetchHeroesData();
     }, [API_URL]);
 
 
@@ -174,7 +102,7 @@ const HeroesSection: React.FC = () => {
         <section className={styles.heroes_section}>
             <div className={styles.container_video}>
                 <video autoPlay loop muted playsInline preload={"auto"} poster={"/wodota_heroes_poster.webp"} className={styles.background_video}>
-                    <source src="https://cdn.wodota.net/home/wodota_heroes.webm" type="video/webm"/>
+                    <source src={getImageUrl("home/wodota_heroes.webm")} type="video/webm"/>
                     Ваш браузер не поддерживает видео.
                 </video>
                 <div className={styles.shadow_top}></div>

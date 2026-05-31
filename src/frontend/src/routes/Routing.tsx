@@ -11,7 +11,7 @@ import {Footer} from "../widgets/footer/Footer";
 import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
-//import {TournamentsPageSolo} from "../pages/tournaments/TournamentsPageSolo";
+import {TournamentsPageSolo} from "../pages/tournaments/TournamentsPageSolo";
 import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
 import { PageWrapper } from "./components/PageWrapper";
@@ -145,22 +145,22 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "Sledujte nejnovější zprávy a aktualizace na webu WoDOTA!"
         }
     },
-    // {
-    //     path: "/tournament",
-    //     element: <TournamentsPageSolo />,
-    //     title: {
-    //         en: "World of Dota (WoDOTA) — Tournaments",
-    //         ru: "World of Dota (WoDOTA) — Турниры",
-    //         uk: "World of Dota (WoDOTA) — Турніри",
-    //         cs: "World of Dota (WoDOTA) — Turnaje"
-    //     },
-    //     description: {
-    //         en: "Tournaments in World of Dota (WoDOTA) — compete, win, and make history!",
-    //         ru: "Турниры в World of Dota (WoDOTA) — соревнуйтесь, побеждайте и становитесь легендой!",
-    //         uk: "Турніри у World of Dota (WoDOTA) — змагайтеся, перемагайте та ставайте легендою!",
-    //         cs: "Turnaje ve World of Dota (WoDOTA) — soutěžte, vítězte a pište historii!."
-    //     }
-    // },
+    {
+        path: "/tournament",
+        element: <TournamentsPageSolo />,
+        title: {
+            en: "World of Dota (WoDOTA) — Tournaments",
+            ru: "World of Dota (WoDOTA) — Турниры",
+            uk: "World of Dota (WoDOTA) — Турніри",
+            cs: "World of Dota (WoDOTA) — Turnaje"
+        },
+        description: {
+            en: "Tournaments in World of Dota (WoDOTA) — compete, win, and make history!",
+            ru: "Турниры в World of Dota (WoDOTA) — соревнуйтесь, побеждайте и становитесь легендой!",
+            uk: "Турніри у World of Dota (WoDOTA) — змагайтеся, перемагайте та ставайте легендою!",
+            cs: "Turnaje ve World of Dota (WoDOTA) — soutěžte, vítězte a pište historii!."
+        }
+    },
     {
         path: "/creators/videos",
         element: <CreatorsVideosPage />,

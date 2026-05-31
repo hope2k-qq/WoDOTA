@@ -4,6 +4,7 @@ import "swiper/css/pagination";
 import styles from "./features_section.module.scss";
 import {useLocation, useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {getImageUrl} from "../../../utils/r2Storage";
 
 export const FeaturesSection: React.FC = () => {
     const { t } = useTranslation();
@@ -19,7 +20,7 @@ export const FeaturesSection: React.FC = () => {
                     <div className={styles.featureContainer}>
                         <div className={styles.featureItem}>
                             <div className={styles.container_image}>
-                                <img src="https://cdn.wodota.net/home/rating.webp" alt="rating" className={styles.featureImage}/>
+                                <img src={getImageUrl("home/rating.webp")} alt="rating" className={styles.featureImage}/>
                                 <div className={styles.overlay}></div>
                                 <div className={styles.shadow_bottom}></div>
                             </div>
@@ -30,7 +31,7 @@ export const FeaturesSection: React.FC = () => {
                         </div>
                         <div className={styles.featureItem}>
                             <div className={styles.container_image}>
-                                <img src="https://cdn.wodota.net/home/arena.webp" alt="arena" className={styles.featureImage}/>
+                                <img src={getImageUrl("home/arena.webp")} alt="arena" className={styles.featureImage}/>
                                 <div className={styles.overlay}></div>
                                 <div className={styles.shadow_bottom}></div>
                             </div>
@@ -46,7 +47,7 @@ export const FeaturesSection: React.FC = () => {
                     <h2 className={styles.title}>{t('deep_heroes')}</h2>
                     <div className={`${styles.featureContainer} ${styles.featureContainerSolo}`}>
                         <div className={styles.container_image}>
-                            <img src="https://cdn.wodota.net/home/talents.webp" alt="talents" className={styles.featureImage}/>
+                            <img src={getImageUrl("home/talents.webp")} alt="talents" className={styles.featureImage}/>
                             <div className={styles.overlay}></div>
                             <div className={styles.shadow_bottom}></div>
                         </div>
@@ -74,7 +75,7 @@ export const FeaturesSection: React.FC = () => {
                         <div className={styles.container_image}>
                             <video autoPlay loop muted playsInline preload={"auto"} poster={"/tournament_poster.jpg"}
                                    className={styles.featureImage}>
-                                <source src="https://cdn.wodota.net/home/tournament.mp4" type="video/mp4"/>
+                                <source src={getImageUrl("home/tournament.mp4")} type="video/mp4"/>
                                 Ваш браузер не поддерживает видео.
                             </video>
                             <div className={styles.overlay}></div>

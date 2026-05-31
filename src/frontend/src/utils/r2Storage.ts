@@ -31,6 +31,8 @@
 //     }
 // };
 
+const CDN_VERSION = "2";
+
 export const getImageUrl = (objectKey: string): string => {
-    return `https://cdn.wodota.net/${objectKey}`;
+    return `https://cdn.wodota.net/${objectKey}?v=${CDN_VERSION}`;
 };

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import styles from "./join.module.scss";
 import { ReactComponent as SteamIcon } from "../../../assets/icons/steam_icon.svg";
 import {useTranslation} from "react-i18next";
+import {getImageUrl} from "../../../utils/r2Storage";
 
 export const JoinSection: React.FC = () => {
     const { t } = useTranslation();
@@ -26,7 +27,7 @@ export const JoinSection: React.FC = () => {
 
     return (
         <div className={styles.join_section}>
-            <img src={"https://cdn.wodota.net/home/join.webp"} alt={"join"} className={styles.image}/>
+            <img src={getImageUrl("home/join.webp")} alt={"join"} className={styles.image}/>
             <div className={styles.overlay}></div>
             <div className={styles.shadow_top}></div>
             <div className={styles.shadow_bottom}></div>

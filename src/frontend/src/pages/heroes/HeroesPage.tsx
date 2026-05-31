@@ -4,6 +4,7 @@ import {useLocation, useNavigate} from 'react-router-dom';
 import styles from './heroes_page.module.scss';
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
 import {useTranslation} from "react-i18next";
+import {getImageUrl} from "../../utils/r2Storage";
 
 interface Hero {
     name: string;
@@ -182,7 +183,7 @@ export const HeroesPage: React.FC = () => {
                                     className={styles['hero-card']}
                                 >
                                     <img
-                                        src={`https://cdn.wodota.net/images/heroes/heroesPreview/${hero.name}.webp`}
+                                        src={getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`)}
                                         alt={hero.name}
                                         className={styles['hero-image']}
                                         loading="lazy"
@@ -227,7 +228,7 @@ export const HeroesPage: React.FC = () => {
                                         className={styles['hero-card']}
                                     >
                                         <img
-                                            src={`https://cdn.wodota.net/images/heroes/heroesPreview/${hero.name}.webp`}
+                                            src={getImageUrl(`images/heroes/heroesPreview/${hero.name}.webp`)}
                                             alt={hero.name}
                                             className={styles['hero-image']}
                                             loading="lazy"
