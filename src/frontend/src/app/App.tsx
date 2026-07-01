@@ -35,7 +35,7 @@ const App = () => {
                     <MyDataProvider>
                         <UserProvider>
                             <UnreadNewsProvider>
-                                <Grid item md={12} className={styles.app}>
+                                <Grid item md={12} id="app-scroll-container" className={styles.app}>
                                     {/*<RelocationNotice />*/}
                                     <InnerApp />
                                 </Grid>

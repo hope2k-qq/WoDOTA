@@ -9,10 +9,11 @@ import {TopBar} from "../widgets/topBar/TopBar";
 import {NotFoundPage} from "../pages/notFound/NotFoundPage";
 import {Footer} from "../widgets/footer/Footer";
 import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
+import {TelegramNotice} from "../widgets/telegramNotice/TelegramNotice";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
 import {TournamentsPageSolo} from "../pages/tournaments/TournamentsPageSolo";
-import {PrivacyPolicyPage} from "../pages/privacyPolicy/PrivacyPolicyPage";
+import {PrivacyPolicyPage} from "../pages/footerPages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
 import { PageWrapper } from "./components/PageWrapper";
 import i18n from "../locales/i18n";
@@ -22,6 +23,11 @@ import {Helmet} from "react-helmet-async";
 import {useMyData} from "../context/HeroesDataContext";
 import {useTranslation} from "react-i18next";
 import {CreatorsVideosPage} from "../pages/creators/videos/CreatorsVideosPage";
+import {CookiePage} from "../pages/footerPages/cookie/CookiePage";
+import {TermsOfService} from "../pages/footerPages/termsOfService/TermsOfService";
+import {ContactsPage} from "../pages/footerPages/contacts/ContactsPage";
+import {FaqPage} from "../pages/footerPages/faq/FaqPage";
+import {AboutPage} from "../pages/footerPages/about/AboutPage";
 //import {HeroBuildCreatePage} from "../pages/heroes/components/heroCreateBuildPage/HeroCreateBuildPage";
 //import {ArenaPage} from "../pages/games/arena/ArenaPage";
 
@@ -194,7 +200,7 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
     //     }
     // },
     {
-        path: "/privacy-policy",
+        path: "/privacy",
         element: <PrivacyPolicyPage />,
         title: {
             en: "World of Dota (WoDOTA) — Privacy Policy",
@@ -203,10 +209,90 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "World of Dota (WoDOTA) — Zásady ochrany osobních údajů"
         },
         description: {
-            en: "Learn how WoDOTA collects, uses, and protects your personal data.",
-            ru: "Узнайте, как WoDOTA собирает, использует и защищает ваши персональные данные.",
-            uk: "Дізнайтеся, як WoDOTA збирає, використовує та захищає ваші персональні дані.",
-            cs: "Zjistěte, jak WoDOTA shromažďuje, používá a chrání vaše osobní údaje."
+            en: "Learn how WoDOTA collects, processes, stores, and protects your personal data",
+            ru: "Узнайте, как WoDOTA собирает, обрабатывает, хранит и защищает ваши персональные данные",
+            uk: "Дізнайтеся, як WoDOTA збирає, обробляє, зберігає та захищає ваші персональні дані",
+            cs: "Zjistěte, jak WoDOTA shromažďuje, zpracovává, ukládá a chrání vaše osobní údaje"
+        }
+    },
+    {
+        path: "/terms",
+        element: <TermsOfService />,
+        title: {
+            en: "World of Dota (WoDOTA) — Terms of Service",
+            ru: "World of Dota (WoDOTA) — Пользовательское соглашение",
+            uk: "World of Dota (WoDOTA) — Угода користувача",
+            cs: "World of Dota (WoDOTA) — Podmínky použití"
+        },
+        description: {
+            en: "Read the terms and conditions for using the WoDOTA website",
+            ru: "Ознакомьтесь с условиями использования сайта WoDOTA",
+            uk: "Ознайомтеся з умовами використання сайту WoDOTA",
+            cs: "Přečtěte si podmínky používání webu WoDOTA"
+        }
+    },
+    {
+        path: "/cookies",
+        element: <CookiePage />,
+        title: {
+            en: "World of Dota (WoDOTA) — Cookies",
+            ru: "World of Dota (WoDOTA) — Cookies",
+            uk: "World of Dota (WoDOTA) — Cookies",
+            cs: "World of Dota (WoDOTA) — Cookies"
+        },
+        description: {
+            en: "Learn how WoDOTA uses cookies, what data they collect, and how you can manage them",
+            ru: "Узнайте, как WoDOTA использует cookies, какие данные они собирают и как ими можно управлять",
+            uk: "Дізнайтеся, як WoDOTA використовує cookies, які дані вони збирають і як ними можна керувати",
+            cs: "Zjistěte, jak WoDOTA používá cookies, jaké údaje shromažďují a jak je můžete spravovat"
+        }
+    },
+    {
+        path: "/contacts",
+        element: <ContactsPage />,
+        title: {
+            en: "World of Dota (WoDOTA) — Contacts",
+            ru: "World of Dota (WoDOTA) — Контакты",
+            uk: "World of Dota (WoDOTA) — Контакти",
+            cs: "World of Dota (WoDOTA) — Kontakty"
+        },
+        description: {
+            en: "Contact the WoDOTA administration using any convenient communication method",
+            ru: "Свяжитесь с администрацией WoDOTA любым удобным способом",
+            uk: "Зв'яжіться з адміністрацією WoDOTA будь-яким зручним способом",
+            cs: "Kontaktujte administraci WoDOTA jakýmkoli způsobem, který vám vyhovuje"
+        }
+    },
+    {
+        path: "/faq",
+        element: <FaqPage />,
+        title: {
+            en: "World of Dota (WoDOTA) — FAQ",
+            ru: "World of Dota (WoDOTA) — FAQ",
+            uk: "World of Dota (WoDOTA) — FAQ",
+            cs: "World of Dota (WoDOTA) — FAQ"
+        },
+        description: {
+            en: "Find answers to frequently asked questions about WoDOTA",
+            ru: "Найдите ответы на часто задаваемые вопросы о WoDOTA",
+            uk: "Знайдіть відповіді на часті запитання про WoDOTA",
+            cs: "Najděte odpovědi na často kladené otázky o WoDOTA"
+        }
+    },
+    {
+        path: "/about",
+        element: <AboutPage />,
+        title: {
+            en: "World of Dota (WoDOTA) — About Us",
+            ru: "World of Dota (WoDOTA) — О нас",
+            uk: "World of Dota (WoDOTA) — Про нас",
+            cs: "World of Dota (WoDOTA) — O nás"
+        },
+        description: {
+            en: "Learn about the history of WoDOTA, how the project was created, who develops it, and how it continues to evolve",
+            ru: "Узнайте историю создания WoDOTA, кто разрабатывает проект и как он продолжает развиваться",
+            uk: "Дізнайтеся історію створення WoDOTA, хто розробляє проєкт і як він продовжує розвиватися",
+            cs: "Zjistěte, jak vznikl WoDOTA, kdo projekt vyvíjí a jak se neustále rozvíjí"
         }
     },
     {
@@ -343,6 +429,7 @@ export const Routing = () => {
                         <Footer />
                     </Grid>
                 </Grid>
+                <TelegramNotice />
             </div>
         </BrowserRouter>
     );

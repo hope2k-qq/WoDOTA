@@ -99,14 +99,21 @@ export const HeroSection: React.FC = () => {
                                 <div className={styles.info}>
                                     <div className={styles.info_container}>
                                         <div className={styles.authorInfo}>
-                                            <a href={video.authorUrl} target="_blank" rel="noopener noreferrer"
-                                               className={styles.imageWrapper}>
+                                            <span
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    window.open(video.authorUrl, "_blank", "noopener,noreferrer");
+                                                }}
+                                                className={styles.imageWrapper}
+                                                style={{cursor: "pointer"}}
+                                            >
                                                 <img
                                                     src={`${API_URL}/youtube/image-proxy?url=${encodeURIComponent(video.authorAvatar)}`}
                                                     alt={video.authorName}
                                                     className={styles.avatar}
                                                 />
-                                            </a>
+                                            </span>
                                             <div className={styles.authorDetails}>
                                                 <p className={styles.authorName}>{video.authorName}</p>
                                                 <p className={styles.authorName}>{video.subscriberCount} {t('subscribers')}</p>

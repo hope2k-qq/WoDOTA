@@ -1210,7 +1210,7 @@ local herotalents = {
 			[2] = {
 				{"empty_2"},
 				{"empty_3"},
-				{"modifier_witch_doctor_16","#modifier_witch_doctor_16", 1, "witch_doctor/16", {}},
+				{"modifier_witch_doctor_19","#modifier_witch_doctor_19", 3, "witch_doctor/19", {}},
 				{"modifier_woda_talent_blood", "#woda_talent_blood", 2, "blood", {}},
 				{"modifier_woda_talent_int6", "#woda_talent_int6", 1, "int6", {"modifier_woda_talent_int3",2}}
 			},
@@ -1224,21 +1224,21 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
 				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_witch_doctor_19","#modifier_witch_doctor_19", 3, "witch_doctor/19", {}},
+				{"modifier_witch_doctor_16","#modifier_witch_doctor_16", 1, "witch_doctor/16", {}},
 				{"empty_9"},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
 				{"modifier_woda_talent_spellprism", "#woda_talent_spellprism", 3, "spellprism", {}},
+				{"modifier_witch_doctor_17","#modifier_witch_doctor_17", 2, "witch_doctor/17", {}},
 				{"empty_10"},
-				{"modifier_witch_doctor_20","#modifier_witch_doctor_20", 2, "witch_doctor/20", {}},
 				{"empty_11"},
 				{"modifier_woda_talent_int5", "#woda_talent_int5", 3, "int5", {"modifier_woda_talent_int4",1}}
 			},
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
-				{"modifier_witch_doctor_17","#modifier_witch_doctor_17", 2, "witch_doctor/17", {}},
+				{"modifier_witch_doctor_20","#modifier_witch_doctor_20", 2, "witch_doctor/20", {}},
 				{"empty_14"},
 				{"empty_16"}
 			},
@@ -8392,7 +8392,7 @@ local herotalents = {
 			},
 			[2] = {
 				{"empty_2"},
-				{"modifier_marci_2","#modifier_marci_2", 2, "marci/2", {}},
+				{"modifier_marci_4","#modifier_marci_4", 2, "marci/4", {}},
 				{"empty_3"},
 				{"modifier_woda_talent_cloak", "#woda_talent_cloak", 2, "cloak", {}},
 				{"modifier_woda_talent_str6", "#woda_talent_str6", 1, "str6", {"modifier_woda_talent_str3",2}}
@@ -8407,7 +8407,7 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_hp2", "#woda_talent_hp2", 3, "hp2", {"modifier_woda_talent_hp1",3}},
 				{"empty_9"},
-				{"modifier_marci_4","#modifier_marci_4", 2, "marci/4", {}},
+				{"modifier_marci_2","#modifier_marci_2", 2, "marci/2", {}},
 				{"modifier_woda_talent_octar", "#woda_talent_octar", 2, "octar", {}},
 				{"modifier_woda_talent_str4", "#woda_talent_str4", 1, "str4", {"modifier_woda_talent_sasha",1}}
 			},
@@ -8509,8 +8509,8 @@ local herotalents = {
 			[4] = {
 				{"modifier_woda_talent_mp2", "#woda_talent_mp2", 3, "mp2", {"modifier_woda_talent_mp1",3}},
 				{"modifier_woda_talent_fairy", "#woda_talent_fairy", 2, "fairy", {}},
-				{"modifier_marci_18","#modifier_marci_18", 2, "marci/18", {"modifier_marci_17",3}},
 				{"empty_9"},
+				{"modifier_marci_20","#modifier_marci_20", 3, "marci/20", {}},
 				{"modifier_woda_talent_int4", "#woda_talent_int4", 1, "int4", {"modifier_woda_talent_kaya",1}}
 			},
 			[5] = {
@@ -8523,7 +8523,7 @@ local herotalents = {
 			[6] = {
 				{"modifier_woda_talent_timeless", "#woda_talent_timeless", 2, "timeless", {}},
 				{"modifier_woda_talent_regenmp2", "#woda_talent_regenmp2", 3, "regenmp2", {}},
-				{"modifier_marci_20","#modifier_marci_20", 3, "marci/20", {}},
+				{"modifier_marci_18","#modifier_marci_18", 2, "marci/18", {"modifier_marci_17",3}},
 				{"empty_15"},
 				{"empty_16"}
 			},

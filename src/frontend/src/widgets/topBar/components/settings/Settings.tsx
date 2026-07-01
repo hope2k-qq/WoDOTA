@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom';
 import {useUser} from "../../../../context/UserContext";
 import { ReactComponent as QuitIcon } from "../../../../assets/icons/QuitIcon.svg";
+import { ReactComponent as HitIcon } from "../../../../assets/icons/HitIcon.svg";
 
 export const Settings = ({ isOpen, closeMenu }: { isOpen: boolean, closeMenu: () => void }) => {
     const { i18n, t } = useTranslation();
@@ -82,7 +83,18 @@ export const Settings = ({ isOpen, closeMenu }: { isOpen: boolean, closeMenu: ()
             <h3 className={styles.title}>{t('settings').toUpperCase()} WoDOTA</h3>
             <div className={styles.menuContent}>
                 <div className={styles.off_container}>
-                    <div className={styles.languageTitle}>{t('language').toUpperCase()}</div>
+                    <div className={styles.languageTitle}>
+                        {t('language').toUpperCase()}
+                        <div className={styles.translationNotice}>
+                            <HitIcon className={styles.translationNoticeIcon}/>
+                            <div className={styles.translationTooltip}>
+                                <span className={styles.translationTooltipTitle}>{t('translation_notice_title')}</span>
+                                <span className={styles.translationTooltipText}>
+                                    {t('translation_notice_text')}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div className={styles.languageSelector} onClick={toggleLanguageList}>
                         <div className={styles.selectedLanguage}>
                             <div className={styles.languageItemContainer}>

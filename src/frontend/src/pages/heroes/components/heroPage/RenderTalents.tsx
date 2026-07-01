@@ -87,12 +87,13 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             const imagePromises: Promise<void>[] = [];
 
             validSections.forEach((section) => {
-                const images = Array.from(section!.querySelectorAll("img.grayscale")) as HTMLImageElement[];
+                const images = Array.from(section!.querySelectorAll("img")) as HTMLImageElement[];
                 images.forEach((img) => {
                     const originalSrc = img.src;
-                    const promise = applyGrayscaleFilter(img).then((grayscaleSrc) => {
-                        img.src = grayscaleSrc;
-                        tempUrls.push(grayscaleSrc);
+                    const isGrayscale = img.classList.contains("grayscale");
+                    const promise = imageToDataUrl(img, isGrayscale).then((dataSrc) => {
+                        img.src = dataSrc;
+                        tempUrls.push(dataSrc);
                         imagesToRestore.push({ img, originalSrc });
                     });
                     imagePromises.push(promise);
@@ -191,6 +192,44 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         }
     };
 
+    const imageToDataUrl = async (imgElement: HTMLImageElement, grayscale: boolean): Promise<string> => {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            const separator = imgElement.src.includes("?") ? "&" : "?";
+            img.src = `${imgElement.src}${separator}cors=1`;
+
+            img.onload = () => {
+                try {
+                    const canvas = document.createElement("canvas");
+                    const ctx = canvas.getContext("2d");
+
+                    if (!ctx) {
+                        resolve(imgElement.src);
+                        return;
+                    }
+
+                    canvas.width = img.naturalWidth || img.width;
+                    canvas.height = img.naturalHeight || img.height;
+                    if (grayscale) {
+                        ctx.filter = "grayscale(98%)";
+                    }
+                    ctx.drawImage(img, 0, 0);
+
+                    resolve(canvas.toDataURL("image/png"));
+                } catch (e) {
+                    //console.error("Error converting image:", img.src, e);
+                    resolve(imgElement.src); // If conversion fails, keep the original src
+                }
+            };
+
+            img.onerror = () => {
+                //console.error("Error loading image:", img.src);
+                resolve(imgElement.src); // If an error occurs, return the original src
+            };
+        });
+    };
+
     const toggleFormShare = () => {
         setIsOpenShare(prevState => !prevState);
     };
@@ -248,39 +287,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
         }, 2500);
 
         setTimerId(newTimerId);
-    };
-
-
-
-
-
-
-    const applyGrayscaleFilter = async (imgElement: HTMLImageElement): Promise<string> => {
-        return new Promise((resolve) => {
-            const img = new Image();
-            img.crossOrigin = "anonymous";
-            img.src = imgElement.src;
-
-            img.onload = () => {
-                const canvas = document.createElement("canvas");
-                const ctx = canvas.getContext("2d");
-
-                if (ctx) {
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.filter = "grayscale(98%)";
-                    ctx.drawImage(img, 0, 0);
-
-                    const tempUrl = canvas.toDataURL("image/png");
-                    resolve(tempUrl);
-                }
-            };
-
-            img.onerror = () => {
-                //console.error("Error loading image:", img.src);
-                resolve(imgElement.src); // If an error occurs, return the original src
-            };
-        });
     };
 
     const createHeroBuild = async () => {

@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {HeroInformation} from "../../../../types/heroes";
 import RenderTalents from "../heroPage/RenderTalents";
+import {useMyData} from "../../../../context/HeroesDataContext";
 
 export const HeroBuildCreatePage: React.FC = () => {
+    const { heroesData } = useMyData();
     const [heroInformation, setHeroInformation] = useState<HeroInformation | null>(null);
     const [heroName, setHeroName] = useState<string | null>(null);
 
-    const fetchHeroDataFromCache = (heroName: string) => {
-        const cachedData = localStorage.getItem('heroesData');
-
-        if (cachedData) {
-            const heroesData = JSON.parse(cachedData);
-
+    const fetchHeroDataFromCache = useCallback((heroName: string) => {
+        if (heroesData) {
             const heroData = heroesData[heroName];
 
             if (heroData) {
@@ -22,7 +20,7 @@ export const HeroBuildCreatePage: React.FC = () => {
         }
 
         return null;
-    };
+    }, [heroesData]);
 
 
     useEffect(() => {
@@ -37,7 +35,7 @@ export const HeroBuildCreatePage: React.FC = () => {
             setHeroInformation(data);
         } else {
         }
-    }, [heroName]);
+    }, [heroName, heroesData, fetchHeroDataFromCache]);
 
 
 

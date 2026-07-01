@@ -18,7 +18,7 @@ end
 function WodaTalents:InitTalents()
     CustomGameEventManager:RegisterListener("talent_learn", Dynamic_Wrap(self, "talent_learn"))
 	for heroname, talents in pairs(_G.herotalents) do
-		CustomNetTables:SetTableValue("herotalents", heroname, talents)
+		CustomTables:SetTableValue("herotalents", heroname, talents)
 	end
 	for i = 0, 10 do 
 		if WodaTalents.playerstalents[i] == nil then 
@@ -36,7 +36,7 @@ end
 function WodaTalents:AddPointTalent(id,count)
     if not WodaTalents.playerstalents[id] then return end
     WodaTalents.playerstalents[id]["talantpoints"] = (WodaTalents.playerstalents[id]["talantpoints"] or 0) + count
-	CustomNetTables:SetTableValue("playerstalents", tostring(id), WodaTalents.playerstalents[id])
+	CustomTables:SetTableValue("playerstalents", tostring(id), WodaTalents.playerstalents[id])
 end
 
 function WodaTalents:OnHeroLevelUp(keys)
@@ -72,7 +72,7 @@ function WodaTalents:AddPoint(id, count, no_effect)
     if WodaTalents.playerstalents[id]["maxpoints"] >= 10 then 
         WodaTalents.playerstalents[id]["points"] = 0
         WodaTalents.playerstalents[id]["hasmax"] = true
-        CustomNetTables:SetTableValue("playerstalents", tostring(id), WodaTalents.playerstalents[id])
+        CustomTables:SetTableValue("playerstalents", tostring(id), WodaTalents.playerstalents[id])
         return
     end
     WodaTalents.playerstalents[id]["points"] = (WodaTalents.playerstalents[id]["points"] or 0) + count
@@ -92,7 +92,7 @@ function WodaTalents:AddPoint(id, count, no_effect)
             CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), "woda_client_sound", {sound="ui.treasure_02", })
         end
     end
-	CustomNetTables:SetTableValue("playerstalents", tostring(id), WodaTalents.playerstalents[id])
+	CustomTables:SetTableValue("playerstalents", tostring(id), WodaTalents.playerstalents[id])
 end
 
 function WodaTalents:talent_learn(params)
@@ -151,7 +151,7 @@ function WodaTalents:talent_learn(params)
     WodaTalents.playerstalents[player_id][params.attribute] = (WodaTalents.playerstalents[player_id][params.attribute] or 0) + 1
     WodaTalents.playerstalents[player_id]["talantpoints"] = (WodaTalents.playerstalents[player_id]["talantpoints"] or 0) - 1
     -- Сохранение визуала
-    CustomNetTables:SetTableValue("playerstalents", tostring(player_id), WodaTalents.playerstalents[player_id])
+    CustomTables:SetTableValue("playerstalents", tostring(player_id), WodaTalents.playerstalents[player_id])
     -- Добавление модификатора
 
     if not hero.talents_timers_list then

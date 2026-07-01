@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./email_link.module.scss"
+import { SUPPORT_EMAIL } from "../../../../constants/contacts";
 
 export const EmailLink: React.FC = () => {
-    const [email, setEmail] = useState<string | null>(null);
-
-    useEffect(() => {
-        const part1 = "support";
-        const part2 = "@";
-        const part3 = "wodota.pro";
-        setEmail(part1 + part2 + part3);
-    }, []);
-
-    return email ? <div className={styles.text}>{email}</div> : null;
+    return <div className={styles.text}>{SUPPORT_EMAIL}</div>;
 };

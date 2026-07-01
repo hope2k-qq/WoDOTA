@@ -5,7 +5,7 @@ import axios from "axios";
 const API_IP = process.env.REACT_APP_API_IP;
 const API_URL = process.env.REACT_APP_API_URL;
 
-const CACHE_VERSION = "103.0";
+const CACHE_VERSION = "104.0";
 
 type MyDataContextType = {
     language: string | null;

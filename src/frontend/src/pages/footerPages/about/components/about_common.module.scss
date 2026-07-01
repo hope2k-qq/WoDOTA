@@ -1,0 +1,97 @@
+.section {
+  max-width: 1600px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 2rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ffb35a;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.header {
+  margin-bottom: 2rem;
+
+  h2 {
+    margin: 0.45rem 0 0.85rem;
+    font-size: 3rem;
+    line-height: 1;
+    color: #f7f7f8;
+  }
+
+  p:not(.eyebrow) {
+    margin: 0;
+    color: #c9c9d0;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 1400px) {
+  .header h2 {
+    font-size: 2.6rem;
+    margin: 0.4rem 0 0.8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 0 1rem;
+  }
+
+  .header h2 {
+    font-size: 2.3rem;
+    margin: 0.35rem 0 0.75rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .header h2 {
+    font-size: 1.9rem;
+    margin: 0.3rem 0 0.7rem;
+  }
+
+  .header p:not(.eyebrow) {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header h2 {
+    font-size: 1.65rem;
+    margin: 0.27rem 0 0.67rem;
+  }
+
+  .header p:not(.eyebrow) {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .section {
+    padding: 0 0.5rem;
+  }
+
+  .header {
+    margin-bottom: 0.7rem;
+  }
+
+  .header p:not(.eyebrow) {
+    font-size: 0.9rem;
+  }
+}

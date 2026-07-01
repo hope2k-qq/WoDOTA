@@ -1,0 +1,239 @@
+.viewport {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.frame {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  pointer-events: auto;
+  width: 380px;
+  border: 1px solid #252331;
+  border-radius: 5px;
+  background: rgba(25, 26, 33, 0.95);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+
+  transform: translateX(calc(100% + 48px));
+  opacity: 0;
+  transition:
+    transform 0.34s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.34s ease;
+}
+
+.frame.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.panel {
+  position: relative;
+  padding: 16px 18px 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.95rem;
+  border-bottom: 1px solid #23242e;
+}
+
+.close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 2;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 7px;
+  border-radius: 8px;
+  background: transparent;
+  opacity: 0.55;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background 0.2s ease;
+
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  &:hover > img {
+    transition: transform 0.3s ease;
+    transform: rotate(180deg);
+  }
+
+  &:not(:hover) > img {
+    transition: transform 0s ease;
+  }
+}
+
+.badge {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(244, 191, 88, 0.12);
+  border: 1px solid rgba(244, 191, 88, 0.3);
+}
+
+.badge_icon {
+  width: 24px;
+  height: 24px;
+  color: #f4bf58;
+}
+
+.heading {
+  min-width: 0;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+}
+
+.handle {
+  color: #f4bf58;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.text {
+  margin: 0;
+  color: #9b9db1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 1.3rem;
+}
+
+.subscribe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  flex: 1 1 0;
+
+  border: 1px solid #f4bf58;
+  border-radius: 5px;
+  background: #f4bf58;
+  color: #191a21;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+}
+
+.decline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  flex: 1 1 0;
+
+  border: 1px solid #3a3b49;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #c7c9d6;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    border-color: #4a4b5c;
+    background: rgba(255, 255, 255, 0.09);
+  }
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.progress_fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  background: linear-gradient(90deg, rgba(244, 191, 88, 0.35), rgba(244, 191, 88, 0.75));
+  animation-name: tg-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tg-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 550px) {
+  .frame {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    width: auto;
+  }
+
+  .panel {
+    padding: 14px 16px 18px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .text {
+    font-size: 0.86rem;
+  }
+}

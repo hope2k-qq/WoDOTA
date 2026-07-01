@@ -1,102 +1,102 @@
 .footer {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   padding: 46px 26px 26px 26px;
-  text-align: center;
   background-color: #15161d;
   color: white;
   margin-top: 5rem;
+  gap: 15rem;
 }
+
+.container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 300px;
+  height: 100%;
+}
+
+.email_container{
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.8rem;
+}
+
 .footer_logo{
   display: flex;
+  margin-bottom: 0.3rem;
   > img{
-    width: 20rem;
+    width: 17rem;
     height: auto;
   }
 }
 
-.email_container {
-  display: flex;
+.email_text_container {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #f4bf58;
+  padding: 0.7rem 1.3rem;
+  gap: 0.5rem;
+  background-color: #abadff0d;
   border-radius: 10px;
-  width: 100%;
-  padding: 0 4px;
-  height: 60px;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    cursor: pointer;
-    background-color: #f4bf58;
-  }
-
-  &:hover > div:last-child {
-    color: black;
-    transition: color 0.3s ease;
-  }
-
-  > svg {
-    width: 3rem;
-    height: auto;
-    fill: #f4bf58;
-    margin-right: 0.5rem;
-    transition: fill 0.3s ease;
-  }
-
-  &:hover svg {
-    fill: black;
-  }
-
-  &:hover .icon1 {
-    display: none;
-  }
-
-  &:hover .icon2 {
-    display: flex;
-  }
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.icon2{
-  display: none;
+.email_text_container:hover {
+  background-color: #8688e90d;
 }
 
-.discord_container{
+.icons_main_container{
   display: flex;
-  width: auto;
-  height: 60px;
-  padding: 13px;
-  background: none;
-  border-radius: 10px;
-  border: 3px solid #f4bf58;
-  transition: background-color 0.3s ease;
-
-  &:hover{
-    cursor: pointer;
-    background-color: #f4bf58;
-
-    >svg{
-      fill: black;
-    }
-  }
+  align-items: end;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  gap: 0.8rem;
 }
 
-.discord{
+.icons_container{
+  display: flex;
+  align-items: center;
+  justify-content: end;
   width: 100%;
+  gap: 0.4rem;
+}
+
+.icon_container{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+  gap: 0.7rem;
+  background-color: #abadff0d;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon_container:hover {
+  background-color: #8688e90d;
+}
+
+.telegram {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.icon1{
+  width: 24px;
   height: auto;
   fill: #f4bf58;
-  transition: fill 0.3s ease;
-}
-
-.container_icons{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1.5rem 0;
 }
 
 .text{
@@ -104,6 +104,74 @@
   font-family: "Inter", serif;
   color: #9b9db1;
   font-weight: 600;
-
+  line-height: 1.1;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
 }
 
+.text_hover:hover{
+  color: white;
+  border-bottom: 1px solid #5b5c87;
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  .footer {
+    gap: 7rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer {
+    gap: 4rem;
+  }
+
+  .footer_logo > img {
+    width: 14rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 40px 24px 28px;
+    margin-top: 3rem;
+  }
+
+  .container {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .email_container,
+  .icons_main_container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icons_container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 32px 16px 24px;
+    gap: 2rem;
+  }
+
+  .footer_logo > img {
+    width: 12rem;
+  }
+
+  .text {
+    font-size: 0.95rem;
+  }
+}
