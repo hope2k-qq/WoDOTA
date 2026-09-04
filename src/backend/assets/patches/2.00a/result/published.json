@@ -1,0 +1,1266 @@
+{
+  "patch_number": "2,00a",
+  "patch_name": "2,00a",
+  "patch_timestamp": 1788531488,
+  "general": {
+    "heroes": {
+      "added": [],
+      "removed": []
+    },
+    "global_changes": []
+  },
+  "neutral_creeps": [
+    {
+      "neutral_creep_id": "npc_woda_creep81",
+      "name": {
+        "ru": "Ядовитый Паук",
+        "en": "Poison Spider",
+        "uk": "Отрутий Павук"
+      },
+      "neutral_creep_notes": [
+        {
+          "parameter": "StatusHealth",
+          "note": {
+            "ru": "Status Health: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Health: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Health: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Status Health: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": []
+    }
+  ],
+  "items": [
+    {
+      "item_id": "item_blade_mail",
+      "is_new": false,
+      "item_notes": [
+        {
+          "parameter": "active_reflection_pct",
+          "note": {
+            "ru": "Active Reflection Pct: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Active Reflection Pct: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Active Reflection Pct: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Active Reflection Pct: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ]
+    },
+    {
+      "item_id": "item_madness_blade_mail",
+      "image": "item_madness_blade_mail",
+      "is_new": false,
+      "item_notes": [
+        {
+          "parameter": "damage_return_active",
+          "note": {
+            "ru": "Damage Return Active: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Damage Return Active: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Damage Return Active: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Damage Return Active: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ]
+    }
+  ],
+  "neutral_items": [
+    {
+      "neutral_item_id": "item_test_relic_custom",
+      "neutral_type": "artifact",
+      "is_new": false,
+      "tier": null,
+      "neutral_item_notes": [
+        {
+          "note": {
+            "ru": "Удалён предмет",
+            "en": "Item removed",
+            "uk": "Видалено предмет",
+            "cs": "Předmět odebrán"
+          }
+        }
+      ]
+    }
+  ],
+  "bosses": [
+    {
+      "boss_id": "tiny_boss",
+      "abilities": [
+        {
+          "ability_id": "tiny_boss_toss",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": {
+                "ru": "Ability Cooldown: {change_label}: {new_raw_value}",
+                "en": "Ability Cooldown: {change_label}: {new_raw_value}",
+                "uk": "Ability Cooldown: {change_label}: {new_raw_value}",
+                "cs": "Ability Cooldown: {change_label}: {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "first_use_hp",
+              "note": {
+                "ru": "First Use Hp: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "First Use Hp: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "First Use Hp: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "First Use Hp: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "second_use_hp",
+              "note": {
+                "ru": "Second Use Hp: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Second Use Hp: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Second Use Hp: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "Second Use Hp: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            }
+          ],
+          "image": "woda_tiny_boss_2"
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": {
+            "ru": "Base Attack Speed: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Base Attack Speed: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Base Attack Speed: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Base Attack Speed: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_aghanim_1",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_aghanim_3",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3",
+              "cs": "Talent 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_aghanim_5",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5",
+              "cs": "Talent 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": {
+            "ru": "Status Health Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Health Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Health Regen: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Status Health Regen: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_2",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2",
+              "cs": "Talent 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_4",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4",
+              "cs": "Talent 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "disruptor",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": {
+            "ru": "Movement Speed: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Movement Speed: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Movement Speed: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Movement Speed: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "drow_ranger",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_drow_ranger_13",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": {
+            "ru": "Status Mana Regen: {change_label}: {new_raw_value}",
+            "en": "Status Mana Regen: {change_label}: {new_raw_value}",
+            "uk": "Status Mana Regen: {change_label}: {new_raw_value}",
+            "cs": "Status Mana Regen: {change_label}: {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lion",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_lion_13",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_luna_8",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_luna_12",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5",
+              "cs": "Talent 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "marci",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "marci_special_delivery_custom",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastPoint",
+              "note": {
+                "ru": "Ability Cast Point: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cast Point: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cast Point: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "Ability Cast Point: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            }
+          ],
+          "image": "marci_special_delivery",
+          "innate": true
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_marci_1",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_marci_4",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2",
+              "cs": "Talent 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Скорость Передвижения: 15/30 Сопротивление Эффектам: 5%/10%» заменено на «Bodyguard работает только на героя. Увеличение Восстановления Здоровья Барьера: 10%/20% Увеличение Здоровья Общего Барьера: 100/200»",
+                  "en": "«Movement Speed: 15/30 Status Resistance: 5%/10%» replaced with «Bodyguard works only on heroes. Barrier Health Regeneration Increase: 10%/20% Total Barrier Health Increase: 100/200»",
+                  "uk": "«Швидкість Пересування: 15/30 Опір Ефектам: 5%/10%» замінено на «Bodyguard працює лише на героїв. Збільшення відновлення здоров’я бар’єра: 10%/20% Збільшення загального здоров’я бар’єра: 100/200»",
+                  "cs": "«Movement Speed: 15/30 Status Resistance: 5%/10%» nahrazeno za «Bodyguard works only on heroes. Barrier Health Regeneration Increase: 10%/20% Total Barrier Health Increase: 100/200»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_marci_3",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3",
+              "cs": "Talent 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_marci_2",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4",
+              "cs": "Talent 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Bodyguard работает только на героя. Увеличение Восстановления Здоровья Барьера: 10%/20% Увеличение Здоровья Общего Барьера: 100/200» заменено на «Скорость Передвижения: 15/30 Сопротивление Эффектам: 5%/10%»",
+                  "en": "«Bodyguard works only on heroes. Barrier Health Regeneration Increase: 10%/20% Total Barrier Health Increase: 100/200» replaced with «Movement Speed: 15/30 Status Resistance: 5%/10%»",
+                  "uk": "«Bodyguard працює лише на героїв. Збільшення відновлення здоров’я бар’єра: 10%/20% Збільшення загального здоров’я бар’єра: 100/200» замінено на «Швидкість Пересування: 15/30 Опір Ефектам: 5%/10%»",
+                  "cs": "«Bodyguard works only on heroes. Barrier Health Regeneration Increase: 10%/20% Total Barrier Health Increase: 100/200» nahrazeno za «Movement Speed: 15/30 Status Resistance: 5%/10%»"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_marci_15",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_marci_20",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4",
+              "cs": "Talent 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Уменьшение Урона по Иллюзии Beautiful Illusion: 35%/70%» заменено на «Увеличение Урона Dispose: 10%/15%/20% от Максимальной Маны»",
+                  "en": "«Beautiful Illusion Damage Taken Reduction: 35%/70%» replaced with «Dispose Damage Increase: 10%/15%/20% of Max Mana»",
+                  "uk": "«Зменшення збитків з Ілюзії Beautiful Illusion: 35%/70%» замінено на «Збільшення збитків Dispose: 10%/15%/20% від Максимальної Мани»",
+                  "cs": "«Beautiful Illusion Damage Taken Reduction: 35%/70%» nahrazeno za «Dispose Damage Increase: 10%/15%/20% of Max Mana»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_marci_19",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5",
+              "cs": "Talent 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_marci_18",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Урона Dispose: 10%/15%/20% от Максимальной Маны» заменено на «Уменьшение Урона по Иллюзии Beautiful Illusion: 35%/70%»",
+                  "en": "«Dispose Damage Increase: 10%/15%/20% of Max Mana» replaced with «Beautiful Illusion Damage Taken Reduction: 35%/70%»",
+                  "uk": "«Збільшення збитків Dispose: 10%/15%/20% від Максимальної Мани» замінено на «Зменшення збитків з Ілюзії Beautiful Illusion: 35%/70%»",
+                  "cs": "«Dispose Damage Increase: 10%/15%/20% of Max Mana» nahrazeno za «Beautiful Illusion Damage Taken Reduction: 35%/70%»"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "medusa_mana_shield",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_mana",
+              "note": {
+                "ru": "Damage Per Mana: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Damage Per Mana: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Damage Per Mana: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "Damage Per Mana: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "damage_per_mana_hero_levelup",
+              "note": {
+                "ru": "увеличение за уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "increase per level: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "збільшення за рівень: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "nárůst za úroveň: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            }
+          ],
+          "innate": true
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_medusa_16",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2",
+              "cs": "Talent 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "muerta",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "muerta_supernatural",
+          "ability_notes": [
+            {
+              "parameter": "max_stacks",
+              "note": {
+                "ru": "Max Stacks: {change_label}: {new_raw_value}",
+                "en": "Max Stacks: {change_label}: {new_raw_value}",
+                "uk": "Max Stacks: {change_label}: {new_raw_value}",
+                "cs": "Max Stacks: {change_label}: {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "max_stacks_tooltip",
+              "note": {
+                "ru": "Max Stacks Tooltip: {change_label}: {old_raw_value}",
+                "en": "Max Stacks Tooltip: {change_label}: {old_raw_value}",
+                "uk": "Max Stacks Tooltip: {change_label}: {old_raw_value}",
+                "cs": "Max Stacks Tooltip: {change_label}: {old_raw_value}"
+              }
+            }
+          ],
+          "innate": true
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "nyx_assassin_mana_burn_custom",
+          "ability_notes": [
+            {
+              "parameter": "mana_burn_pct",
+              "note": {
+                "ru": "Mana Burn Pct: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Mana Burn Pct: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Mana Burn Pct: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "Mana Burn Pct: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            }
+          ],
+          "image": "nyx_assassin_neuro_sting",
+          "innate": true
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_nyx_assassin_19",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5",
+              "cs": "Talent 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_martyr_custom",
+          "ability_notes": [
+            {
+              "parameter": "SpellDispellableType",
+              "note": {
+                "ru": "Больше нельзя развеять",
+                "en": "Can no longer be dispelled",
+                "uk": "Більше не можна розвіяти",
+                "cs": "Již nelze rozptýlit"
+              }
+            }
+          ],
+          "image": "omniknight_martyr"
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": {
+            "ru": "Armor Physical: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Armor Physical: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Armor Physical: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Armor Physical: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "pangolier_lucky_shot_custom",
+          "ability_notes": [
+            {
+              "parameter": "attack_slow",
+              "note": {
+                "ru": "Attack Slow: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Attack Slow: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Attack Slow: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "Attack Slow: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            }
+          ],
+          "image": "pangolier_lucky_shot"
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_pangolier_18",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "razor",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": {
+            "ru": "Base Attack Speed: {change_label}: {new_raw_value}",
+            "en": "Base Attack Speed: {change_label}: {new_raw_value}",
+            "uk": "Base Attack Speed: {change_label}: {new_raw_value}",
+            "cs": "Base Attack Speed: {change_label}: {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_spectre_11",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4",
+              "cs": "Talent 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spectre_19",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5",
+              "cs": "Talent 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tinker",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tinker_9",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_tinker_21",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7",
+              "cs": "Talent 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tinker_19",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3",
+              "cs": "Talent 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_tinker_18",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4",
+              "cs": "Talent 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_tinker_17",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": {
+            "ru": "Status Mana Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Mana Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Mana Regen: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Status Mana Regen: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": {
+            "ru": "Status Health Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Health Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Health Regen: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Status Health Regen: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_winter_wyvern_6",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_witch_doctor_15",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_19",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2",
+              "cs": "Talent 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Уменьшение Времени Перезарядки Paralyzing Cask: 3 сек» заменено на «Если Paralyzing Cask перестал отскакивать раньше времени, то последняя цель получит 10%/15%/20% остаточного Урона и будет оглушена 1 дополнительный раз»",
+                  "en": "«Paralyzing Cask Cooldown Reduction: 3 sec» replaced with «If Paralyzing Cask stops bouncing prematurely, the last target will take 10%/15%/20% of the remaining damage and be stunned 1 additional time»",
+                  "uk": "«Зменшення часу перезарядки Paralyzing Cask: 3 сек» замінено на «Якщо Paralyzing Cask припинив відскакувати раніше часу, остання ціль отримає 10%/15%/20% залишкової шкоди та буде оглушена 1 додатковий раз»",
+                  "cs": "«Paralyzing Cask Cooldown Reduction: 3 sec» nahrazeno za «If Paralyzing Cask stops bouncing prematurely, the last target will take 10%/15%/20% of the remaining damage and be stunned 1 additional time»"
+                }
+              },
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_16",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4",
+              "cs": "Talent 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Если Paralyzing Cask перестал отскакивать раньше времени, то последняя цель получит 8%/12%/16% остаточного Урона и будет оглушена 1 дополнительный раз» заменено на «Уменьшение Времени Перезарядки Paralyzing Cask: 3 сек»",
+                  "en": "«If Paralyzing Cask stops bouncing early, the last target will take 8%/12%/16% residual Damage and be stunned 1 additional time» replaced with «Paralyzing Cask Cooldown Reduction: 3 sec»",
+                  "uk": "«Якщо Paralyzing Cask перестав відскакувати раніше часу, то остання мета отримає 8%/12%/16% залишкової шкоди і оглушиться 1 додатковий раз» замінено на «Зменшення часу перезарядки Paralyzing Cask: 3 сек»",
+                  "cs": "«If Paralyzing Cask stops bouncing early, the last target will take 8%/12%/16% residual Damage and be stunned 1 additional time» nahrazeno za «Paralyzing Cask Cooldown Reduction: 3 sec»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_17",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5",
+              "cs": "Talent 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Если Paralyzing Cask перестал отскакивать раньше времени, то Уменьшает Время Перезарядки Paralyzing Cask: 2/4 сек» заменено на «Увеличение Постепенного Урона Maledict: 30/60»",
+                  "en": "«If Paralyzing Cask stops bouncing early, Decreases Paralyzing Cask Cooldown: 2/4 seconds» replaced with «Maledict Damage over Time Increase: 30/60»",
+                  "uk": "«Якщо Paralyzing Cask перестав відскакувати раніше часу, то зменшує час перезарядки Paralyzing Cask: 2/4 сек» замінено на «Збільшення періодичної шкоди Maledict: 30/60»",
+                  "cs": "«If Paralyzing Cask stops bouncing early, Decreases Paralyzing Cask Cooldown: 2/4 seconds» nahrazeno za «Maledict Damage over Time Increase: 30/60»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_20",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6",
+              "cs": "Talent 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Постепенного Урона Maledict: 30/60» заменено на «Если Paralyzing Cask перестал отскакивать раньше времени, то Уменьшает Время Перезарядки Paralyzing Cask: 2/4 сек»",
+                  "en": "«Maledict Damage over Time Increase: 30/60» replaced with «If Paralyzing Cask stops bouncing early, Decreases Paralyzing Cask Cooldown: 2/4 seconds»",
+                  "uk": "«Збільшення періодичної шкоди Maledict: 30/60» замінено на «Якщо Paralyzing Cask перестав відскакувати раніше часу, то зменшує час перезарядки Paralyzing Cask: 2/4 сек»",
+                  "cs": "«Maledict Damage over Time Increase: 30/60» nahrazeno za «If Paralyzing Cask stops bouncing early, Decreases Paralyzing Cask Cooldown: 2/4 seconds»"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": {
+            "ru": "Attack Damage Min: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Damage Min: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Damage Min: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Attack Damage Min: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        },
+        {
+          "parameter": "AttackDamageMax",
+          "note": {
+            "ru": "Attack Damage Max: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Damage Max: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Damage Max: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Attack Damage Max: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_wraith_king_21",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7",
+              "cs": "Talent 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

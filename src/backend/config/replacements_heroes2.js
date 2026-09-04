@@ -19,5 +19,6 @@ const reversedHeroes = Object.fromEntries(
 );
 
 module.exports = {
+    replacementsHeroes: replacements_heroes,
     reversedHeroes
 };

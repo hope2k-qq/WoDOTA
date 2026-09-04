@@ -51,13 +51,14 @@ const getImageFromDB = async (abilityKey: string): Promise<Blob | null> => {
 
 export const getAbilityImageUrl = async (abilityKey: string): Promise<string | null> => {
     try {
+        const normalizedAbilityKey = abilityKey.replace(/_custom$/, '');
         // Сначала пробуем получить изображение из IndexedDB
-        const cachedImage = await getImageFromDB(abilityKey);
+        const cachedImage = await getImageFromDB(normalizedAbilityKey);
         if (cachedImage) {
             return URL.createObjectURL(cachedImage);
         }
 
-        const objectKey = `abilities/${abilityKey}.webp`;
+        const objectKey = `abilities/${normalizedAbilityKey}.webp`;
         const imageUrl = await getImageUrl(objectKey);
 
         if (!imageUrl) {
@@ -67,7 +68,7 @@ export const getAbilityImageUrl = async (abilityKey: string): Promise<string | n
         const response = await fetch(imageUrl);
         const blob = await response.blob();
 
-        await cacheImageInDB(abilityKey, blob);
+        await cacheImageInDB(normalizedAbilityKey, blob);
 
         return URL.createObjectURL(blob);
     } catch (error) {

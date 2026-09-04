@@ -43,7 +43,7 @@ export const SideBar = () => {
                 <SideBarMenuItem title={t('heroes_guides')} icon={<DotaIcon />}
                                  onNavigate={() => navigate('/heroes')} isActive={activeIcon("/heroes")}/>
                 <SideBarMenuItem title={t('updates')} icon={<UpdatesIcon />}
-                                 onNavigate={() => navigate('/updates')} isActive={activeIcon("/updates")}/>
+                                 onNavigate={() => navigate('/patches')} isActive={activeIcon("/patches")}/>
                 <SideBarMenuItem title={t('shop')} icon={<ShopIcon />}
                                  onNavigate={() => navigate('/shop')} isActive={activeIcon("/shop")}/>
                 <SideBarMenuItem title={t('shop')} icon={<ShopIcon />}

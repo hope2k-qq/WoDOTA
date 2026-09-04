@@ -199,7 +199,7 @@
 }
 
 .ratingCellData {
-  position: relative; /* Для позиционирования псевдоэлемента относительно этого блока */
+  position: relative;
   color: #ffa071;
   overflow: hidden;
   /* Псевдоэлемент для сияния */
@@ -425,11 +425,11 @@
   font-size: 140px;
   font-weight: bold;
   line-height: normal;
-  color: transparent; /* Сам текст прозрачный */
-  -webkit-text-stroke: 2px #9b9db1; /* Обводка золотым цветом */
+  color: transparent;
+  -webkit-text-stroke: 2px #9b9db1;
   //padding: 5px 10px;
-  text-shadow: none; /* Убираем тень */
-  white-space: nowrap; /* Не переносить текст на новую строку */
+  text-shadow: none;
+  white-space: nowrap;
 }
 
 .topPlayersContainer {
@@ -740,13 +740,11 @@
   margin-bottom: 4rem;
 }
 
-/* Для топ-2 слева */
 .topPlayerCard2 {
   order: -1;
   margin-top: 12rem;
 }
 
-/* Для топ-3 справа */
 .topPlayerCard3 {
   order: 1;
   margin-top: 12rem;

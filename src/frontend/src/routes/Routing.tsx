@@ -12,6 +12,7 @@ import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 import {TelegramNotice} from "../widgets/telegramNotice/TelegramNotice";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
+import {UpdatesPage} from "../pages/updates/UpdatesPage";
 import {TournamentsPageSolo} from "../pages/tournaments/TournamentsPageSolo";
 import {PrivacyPolicyPage} from "../pages/footerPages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
@@ -149,6 +150,22 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             ru: "Следите за последними новостями и обновлениями на сайте WoDOTA!",
             uk: "Слідкуйте за останніми новинами та оновленнями на сайті WoDOTA!",
             cs: "Sledujte nejnovější zprávy a aktualizace na webu WoDOTA!"
+        }
+    },
+    {
+        path: "/patches/:version?",
+        element: <UpdatesPage />,
+        title: {
+            en: "World of Dota (WoDOTA) — Patch notes",
+            ru: "World of Dota (WoDOTA) — Патчлог",
+            uk: "World of Dota (WoDOTA) — Патчлог",
+            cs: "World of Dota (WoDOTA) — Patch notes"
+        },
+        description: {
+            en: "Changes between WoDOTA patches: abilities, items, talents and texts.",
+            ru: "Изменения между патчами WoDOTA: способности, предметы, таланты и тексты.",
+            uk: "Зміни між патчами WoDOTA: здібності, предмети, таланти та тексти.",
+            cs: "Změny mezi patchi WoDOTA: schopnosti, předměty, talenty a texty."
         }
     },
     {
@@ -376,6 +393,7 @@ const LanguageSwitchingRoutes = () => {
                         ? `/${lang}/*`
                         : `/${lang}${path === "/" ? "" : path}`;
 
+                const seoPath = path.replace(/\/:[^/]+\??/g, '').replace(/\/$/, '');
 
                 return (
                     <Route
@@ -390,17 +408,17 @@ const LanguageSwitchingRoutes = () => {
                                     <meta property="og:description" content={t('og_description')}/>
                                     <meta property="og:locale" content={lang}/>
                                     <meta property="og:url"
-                                          content={`https://wodota.pro/${lang}${path.replace(/\/$/, '')}`}/>
+                                          content={`https://wodota.pro/${lang}${seoPath}`}/>
                                     <link rel="alternate" hrefLang="en"
-                                          href={`https://wodota.pro/en${path.replace(/\/$/, '')}`}/>
+                                          href={`https://wodota.pro/en${seoPath}`}/>
                                     <link rel="alternate" hrefLang="ru"
-                                          href={`https://wodota.pro/ru${path.replace(/\/$/, '')}`}/>
+                                          href={`https://wodota.pro/ru${seoPath}`}/>
                                     <link rel="alternate" hrefLang="uk"
-                                          href={`https://wodota.pro/uk${path.replace(/\/$/, '')}`}/>
+                                          href={`https://wodota.pro/uk${seoPath}`}/>
                                     <link rel="alternate" hrefLang="cs"
-                                          href={`https://wodota.pro/cs${path.replace(/\/$/, '')}`}/>
+                                          href={`https://wodota.pro/cs${seoPath}`}/>
                                     <link rel="alternate" hrefLang="x-default"
-                                          href={`https://wodota.pro${path.replace(/\/$/, '')}`}/>
+                                          href={`https://wodota.pro${seoPath}`}/>
                                 </Helmet>
                                 {path === "/" ? element : <PageWrapper>{element}</PageWrapper>}
                             </>

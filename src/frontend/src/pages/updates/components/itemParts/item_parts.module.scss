@@ -1,0 +1,73 @@
+.item_description {
+    color: #c9d1d9;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 60ch;
+}
+
+.itemDescriptionSections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.itemDescriptionSection {
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(232, 161, 58, 0.28);
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(232, 161, 58, 0.09), rgba(12, 22, 32, 0.35));
+}
+
+.itemDescriptionTitle {
+    margin-bottom: 0.35rem;
+    color: #e8a13a;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.itemDescriptionText {
+    color: #c9d1d9;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.itemValues {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.35rem 1rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: rgba(8, 15, 23, 0.45);
+}
+
+.itemValue {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.itemValue strong {
+    color: #c9d1d9;
+    font-weight: 600;
+    text-align: left;
+}
+
+.itemRecipe {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-left: 3px solid #e8a13a;
+    border-radius: 4px;
+    background: rgba(232, 161, 58, 0.08);
+    color: #c9d1d9;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
