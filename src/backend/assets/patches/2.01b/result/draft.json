@@ -1,0 +1,1142 @@
+{
+  "patch_number": "2,01b",
+  "patch_name": "2,01b",
+  "patch_timestamp": 1788741545,
+  "general": {
+    "heroes": {
+      "added": [],
+      "removed": []
+    },
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_chasm_stone",
+        "name": "chasm stone",
+        "image": "images/items/chasm_stone.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "old_raw_value": "800",
+            "new_raw_value": "900",
+            "note": {
+              "ru": "Item Cost: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Item Cost: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Item Cost: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Item Cost: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_frost",
+        "name": "orb of frost",
+        "image": "images/items/orb_of_frost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "heal_reduction",
+            "old_raw_value": "13",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Heal Reduction: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Heal Reduction: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Heal Reduction: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Heal Reduction: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_venom",
+        "name": "orb of venom",
+        "image": "images/items/orb_of_venom.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "damage",
+            "old_raw_value": "10",
+            "new_raw_value": "12",
+            "note": {
+              "ru": "Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Damage: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Damage: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_abyssal_blade",
+        "name": "abyssal blade",
+        "image": "images/items/abyssal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_strength",
+            "old_raw_value": "26",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Bonus Strength: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Bonus Strength: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Bonus Strength: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Bonus Strength: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_butterfly",
+        "name": "butterfly",
+        "image": "images/items/butterfly.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_agility",
+            "old_raw_value": "35",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Bonus Agility: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Bonus Agility: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Bonus Agility: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Bonus Agility: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "bonus_damage",
+            "old_raw_value": "25",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Bonus Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Bonus Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Bonus Damage: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Bonus Damage: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_crellas_crozier",
+        "name": "crellas crozier",
+        "image": "images/items/crellas_crozier.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "stack_duration",
+            "old_raw_value": "1.5",
+            "new_raw_value": "2.0",
+            "note": {
+              "ru": "Stack Duration: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Stack Duration: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Stack Duration: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Stack Duration: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_gungir",
+        "name": "gungir",
+        "image": "images/items/gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_gungir",
+              "result_id": "item_gungir",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_rod_of_atos*",
+                      "name": "Rod of Atos",
+                      "cost": 2250
+                    },
+                    {
+                      "id": "item_point_booster",
+                      "name": "Point Booster",
+                      "cost": 1200
+                    },
+                    {
+                      "id": "item_chasm_stone",
+                      "name": "Chasm Stone",
+                      "cost": 800
+                    }
+                  ],
+                  "total_cost": 4650
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_rod_of_atos*",
+                  "name": "Rod of Atos",
+                  "cost": 2250
+                },
+                {
+                  "id": "item_point_booster",
+                  "name": "Point Booster",
+                  "cost": 1200
+                },
+                {
+                  "id": "item_chasm_stone",
+                  "name": "Chasm Stone",
+                  "cost": 800
+                }
+              ],
+              "recipe_cost": 400,
+              "total_cost": 4650
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_gungir",
+              "result_id": "item_gungir",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_rod_of_atos*",
+                      "name": "Rod of Atos",
+                      "cost": 2250
+                    },
+                    {
+                      "id": "item_point_booster",
+                      "name": "Point Booster",
+                      "cost": 1200
+                    },
+                    {
+                      "id": "item_chasm_stone",
+                      "name": "Chasm Stone",
+                      "cost": 900
+                    }
+                  ],
+                  "total_cost": 4650
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_rod_of_atos*",
+                  "name": "Rod of Atos",
+                  "cost": 2250
+                },
+                {
+                  "id": "item_point_booster",
+                  "name": "Point Booster",
+                  "cost": 1200
+                },
+                {
+                  "id": "item_chasm_stone",
+                  "name": "Chasm Stone",
+                  "cost": 900
+                }
+              ],
+              "recipe_cost": 300,
+              "total_cost": 4650
+            },
+            "note": {
+              "ru": "Рецепт изменён",
+              "en": "Recipe changed",
+              "uk": "Рецепт змінено",
+              "cs": "Recept změněn"
+            }
+          },
+          {
+            "parameter": "recipe",
+            "old_raw_value": null,
+            "new_raw_value": null,
+            "note": {
+              "ru": "Теперь собирается из Rod of Atos (2250 золота), Point Booster (1200 золота), Chasm Stone (900 золота) и рецепта (300 золота). Общая стоимость: 4650 золота.",
+              "en": "Now built from Rod of Atos (2250 gold), Point Booster (1200 gold), Chasm Stone (900 gold) and a recipe (300 gold). Total cost: 4650 gold.",
+              "uk": "Тепер збирається з Rod of Atos (2250 золота), Point Booster (1200 золота), Chasm Stone (900 золота) і рецепта (300 золота). Загальна вартість: 4650 золота.",
+              "cs": "Nyní se skládá z Rod of Atos (2250 zlata), Point Booster (1200 zlata), Chasm Stone (900 zlata) a receptu (300 zlata). Celková cena: 4650 zlata."
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "heavens halberd",
+        "image": "images/items/heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "old_raw_value": "16",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Ability Cooldown: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_hurricane_pike",
+        "name": "hurricane pike",
+        "image": "images/items/hurricane_pike.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "range_duration",
+            "old_raw_value": "6",
+            "new_raw_value": "5",
+            "note": {
+              "ru": "Range Duration: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Range Duration: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Range Duration: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Range Duration: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya",
+        "name": "kaya",
+        "image": "images/items/kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "old_raw_value": "30",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Mana Regen Multiplier: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Mana Regen Multiplier: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Mana Regen Multiplier: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Mana Regen Multiplier: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya_and_sange",
+        "name": "kaya and sange",
+        "image": "images/items/kaya_and_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "old_raw_value": "40",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Mana Regen Multiplier: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Mana Regen Multiplier: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Mana Regen Multiplier: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Mana Regen Multiplier: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_mask_of_madness",
+        "name": "mask of madness",
+        "image": "images/items/mask_of_madness.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "berserk_slow_resist_melee",
+            "old_raw_value": null,
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Berserk Slow Resist Melee: {change_label}: {new_raw_value}",
+              "en": "Berserk Slow Resist Melee: {change_label}: {new_raw_value}",
+              "uk": "Berserk Slow Resist Melee: {change_label}: {new_raw_value}",
+              "cs": "Berserk Slow Resist Melee: {change_label}: {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "berserk_bonus_movement_speed",
+            "old_raw_value": "8",
+            "new_raw_value": "6",
+            "note": {
+              "ru": "Berserk Bonus Movement Speed: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Berserk Bonus Movement Speed: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Berserk Bonus Movement Speed: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Berserk Bonus Movement Speed: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "berserk_slow_resist",
+            "old_raw_value": "30",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Berserk Slow Resist: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Berserk Slow Resist: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Berserk Slow Resist: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Berserk Slow Resist: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "meteor hammer",
+        "image": "images/items/meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "old_raw_value": "35",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Mana Regen Multiplier: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Mana Regen Multiplier: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Mana Regen Multiplier: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Mana Regen Multiplier: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_corrosion",
+        "name": "orb of corrosion",
+        "image": "images/items/orb_of_corrosion.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "heal_reduction",
+            "old_raw_value": "16",
+            "new_raw_value": "18",
+            "note": {
+              "ru": "Heal Reduction: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Heal Reduction: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Heal Reduction: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Heal Reduction: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_satanic",
+        "name": "satanic",
+        "image": "images/items/satanic.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "old_raw_value": "30.0",
+            "new_raw_value": "40.0",
+            "note": {
+              "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Ability Cooldown: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "shivas guard",
+        "image": "images/items/shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_shivas_guard",
+              "result_id": "item_shivas_guard",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_platemail",
+                      "name": "Platemail",
+                      "cost": 1400
+                    },
+                    {
+                      "id": "item_splintmail",
+                      "name": "Splintmail",
+                      "cost": 950
+                    },
+                    {
+                      "id": "item_chasm_stone",
+                      "name": "Chasm Stone",
+                      "cost": 800
+                    }
+                  ],
+                  "total_cost": 4500
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_platemail",
+                  "name": "Platemail",
+                  "cost": 1400
+                },
+                {
+                  "id": "item_splintmail",
+                  "name": "Splintmail",
+                  "cost": 950
+                },
+                {
+                  "id": "item_chasm_stone",
+                  "name": "Chasm Stone",
+                  "cost": 800
+                }
+              ],
+              "recipe_cost": 1350,
+              "total_cost": 4500
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_shivas_guard",
+              "result_id": "item_shivas_guard",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_platemail",
+                      "name": "Platemail",
+                      "cost": 1400
+                    },
+                    {
+                      "id": "item_splintmail",
+                      "name": "Splintmail",
+                      "cost": 950
+                    },
+                    {
+                      "id": "item_chasm_stone",
+                      "name": "Chasm Stone",
+                      "cost": 900
+                    }
+                  ],
+                  "total_cost": 4500
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_platemail",
+                  "name": "Platemail",
+                  "cost": 1400
+                },
+                {
+                  "id": "item_splintmail",
+                  "name": "Splintmail",
+                  "cost": 950
+                },
+                {
+                  "id": "item_chasm_stone",
+                  "name": "Chasm Stone",
+                  "cost": 900
+                }
+              ],
+              "recipe_cost": 1250,
+              "total_cost": 4500
+            },
+            "note": {
+              "ru": "Рецепт изменён",
+              "en": "Recipe changed",
+              "uk": "Рецепт змінено",
+              "cs": "Recept změněn"
+            }
+          },
+          {
+            "parameter": "recipe",
+            "old_raw_value": null,
+            "new_raw_value": null,
+            "note": {
+              "ru": "Теперь собирается из Platemail (1400 золота), Splintmail (950 золота), Chasm Stone (900 золота) и рецепта (1250 золота). Общая стоимость: 4500 золота.",
+              "en": "Now built from Platemail (1400 gold), Splintmail (950 gold), Chasm Stone (900 gold) and a recipe (1250 gold). Total cost: 4500 gold.",
+              "uk": "Тепер збирається з Platemail (1400 золота), Splintmail (950 золота), Chasm Stone (900 золота) і рецепта (1250 золота). Загальна вартість: 4500 золота.",
+              "cs": "Nyní se skládá z Platemail (1400 zlata), Splintmail (950 zlata), Chasm Stone (900 zlata) a receptu (1250 zlata). Celková cena: 4500 zlata."
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_skadi",
+        "name": "skadi",
+        "image": "images/items/skadi.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "cold_attack_slow_melee",
+            "old_raw_value": "-20",
+            "new_raw_value": "-25",
+            "note": {
+              "ru": "Cold Attack Slow Melee: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Cold Attack Slow Melee: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Cold Attack Slow Melee: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Cold Attack Slow Melee: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "cold_attack_slow_ranged",
+            "old_raw_value": "-20",
+            "new_raw_value": "-25",
+            "note": {
+              "ru": "Cold Attack Slow Ranged: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Cold Attack Slow Ranged: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Cold Attack Slow Ranged: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Cold Attack Slow Ranged: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_veil_of_discord",
+        "name": "veil of discord",
+        "image": "images/items/veil_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "old_raw_value": "50",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Ability Mana Cost: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Ability Mana Cost: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Ability Mana Cost: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Ability Mana Cost: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_yasha_and_kaya",
+        "name": "yasha and kaya",
+        "image": "images/items/yasha_and_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "old_raw_value": "40",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Mana Regen Multiplier: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Mana Regen Multiplier: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Mana Regen Multiplier: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Mana Regen Multiplier: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_enchanters_bauble",
+        "name": "enchanters bauble",
+        "image": "images/items/enchanters_bauble.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "enchantment_bonus_growth",
+            "old_raw_value": "40",
+            "new_raw_value": "35",
+            "note": {
+              "ru": "Enchantment Bonus Growth: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Enchantment Bonus Growth: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Enchantment Bonus Growth: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Enchantment Bonus Growth: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_heavy_blade",
+        "name": "heavy blade",
+        "image": "images/items/heavy_blade.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "old_raw_value": "40",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}",
+              "cs": "Ability Cooldown: {change_label} z {old_raw_value} na {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_feverish",
+        "name": "feverish",
+        "image": "images/items/enhancement_feverish.webp",
+        "neutral_type": "enhancement",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "max_mana",
+            "old_raw_value": null,
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Max Mana: {change_label}: {new_raw_value}",
+              "en": "Max Mana: {change_label}: {new_raw_value}",
+              "uk": "Max Mana: {change_label}: {new_raw_value}",
+              "cs": "Max Mana: {change_label}: {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "death_prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_witchcraft_custom",
+          "image": "abilities/death_prophet_witchcraft.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "movement_speed_pct_hero_levelup",
+              "old_raw_value": "+0.33",
+              "new_raw_value": "+0.25",
+              "note": {
+                "ru": "увеличение за уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "increase per level: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "збільшення за рівень: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "nárůst za úroveň: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "cooldown_reduction_pct_hero_levelup",
+              "old_raw_value": "+0.33",
+              "new_raw_value": "+0.25",
+              "note": {
+                "ru": "увеличение за уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "increase per level: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "збільшення за рівень: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "nárůst za úroveň: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "old_raw_value": "200",
+          "new_raw_value": "175",
+          "note": {
+            "ru": "Attack Range: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Range: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Range: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Attack Range: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "old_raw_value": null,
+          "new_raw_value": "105",
+          "note": {
+            "ru": "Base Attack Speed: {change_label}: {new_raw_value}",
+            "en": "Base Attack Speed: {change_label}: {new_raw_value}",
+            "uk": "Base Attack Speed: {change_label}: {new_raw_value}",
+            "cs": "Base Attack Speed: {change_label}: {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "necrophos_sadist",
+          "image": "abilities/necrophos_sadist.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "regen_hero_levelup",
+              "old_raw_value": "0.3",
+              "new_raw_value": "0.2",
+              "note": {
+                "ru": "увеличение за уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "increase per level: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "збільшення за рівень: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "nárůst za úroveň: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "regen",
+              "old_raw_value": "3.7",
+              "new_raw_value": "3.8",
+              "note": {
+                "ru": "Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Regen: {change_label} з {old_raw_value} до {new_raw_value}",
+                "cs": "Regen: {change_label} z {old_raw_value} na {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_phantom_assassin_9",
+            "image": "images/heroes/talents/phantom_assassin/9.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4",
+              "cs": "Talent 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона от Атаки Stifling Dagger: 25%/50%",
+                  "en": "Increase Stifling Dagger Attack Damage: 25%/50%",
+                  "uk": "Збільшення збитків від атаки Stifling Dagger: 25%/50%"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона от Атаки Stifling Dagger: 15%/30%",
+                  "en": "Increase Stifling Dagger Attack Damage: 15%/30%",
+                  "uk": "Збільшення збитків від атаки Stifling Dagger: 15%/30%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "old_raw_value": "2",
+          "new_raw_value": "1",
+          "note": {
+            "ru": "Status Health Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Health Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Health Regen: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Status Health Regen: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "old_raw_value": "300",
+          "new_raw_value": "295",
+          "note": {
+            "ru": "Movement Speed: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Movement Speed: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Movement Speed: {change_label} з {old_raw_value} до {new_raw_value}",
+            "cs": "Movement Speed: {change_label} z {old_raw_value} na {new_raw_value}"
+          }
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_14",
+            "image": "images/heroes/talents/void_spirit/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7",
+              "cs": "Talent 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Astral Step на 1 секунду за каждые 75 Ловкости Максимальный бонус достигается при 600 Ловкости",
+                  "en": "Reduces Astral Step cooldown by 1 second for every 75 Agility Maximum bonus at 600 Agility",
+                  "uk": "Зменшення часу перезарядки Astral Step на 1 секунду за кожні 75 Ловкості Максимальний бонус досягається при 600 Ловкості"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Astral Step на 1 секунду за каждые 75 Ловкости Максимальный бонус достигается при 300 Ловкости",
+                  "en": "Reduces Astral Step cooldown by 1 second for every 75 Agility Maximum bonus at 300 Agility",
+                  "uk": "Зменшення часу перезарядки Astral Step на 1 секунду за кожні 75 Ловкості Максимальний бонус досягається при 300 Ловкості"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_warlock_8",
+            "image": "images/heroes/talents/warlock/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Fatal Bonds, Shadow Word, Upheaval. Новая Пассивная Способность: Self Immolation Изменяет облик. Изменяет тип атаки героя на ближний, увеличивает характеристики. Здоровье: 15% Урон: 30 Базовая Скорость Атаки: 1.5 Сопротивление Замедлениям: 60% Восстановление Здоровья: 1%",
+                  "en": "Removes Fatal Bonds, Shadow Word, Upheaval. New Passive Ability: Self Immolation Changes appearance. Changes the hero's attack type to melee, increases stats. Health: 15% Damage: 30 Base Attack Speed: 1.5 Slow Resistance: 60% Health Regeneration: 1%",
+                  "uk": "Прибирає Fatal Bonds, Shadow Word, Upheaval. Нова Пасивна Здатність: Self Immolation Змінює вигляд. Змінює тип атаки героя на ближній, збільшує характеристики. Здоров'я: 15% Втрата: 30 Базова Швидкість Атаки: 1.5 Опір Уповільненням: 60% Відновлення Здоров'я: 1%"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Fatal Bonds, Shadow Word, Upheaval. Новая Пассивная Способность: Self Immolation Изменяет облик. Изменяет тип атаки героя на ближний, увеличивает характеристики. Здоровье: 15% Урон: 30 Базовая Скорость Атаки: 1.6 Сопротивление Замедлениям: 40% Восстановление Здоровья: 1%",
+                  "en": "Removes Fatal Bonds, Shadow Word, Upheaval. New Passive Ability: Self Immolation Changes appearance. Changes the hero's attack type to melee, increases stats. Health: 15% Damage: 30 Base Attack Speed: 1.6 Slow Resistance: 40% Health Regeneration: 1%",
+                  "uk": "Прибирає Fatal Bonds, Shadow Word, Upheaval. Нова Пасивна Здатність: Self Immolation Змінює вигляд. Змінює тип атаки героя на ближній, збільшує характеристики. Здоров'я: 15% Втрата: 30 Базова Швидкість Атаки: 1.6 Опір Уповільненням: 40% Відновлення Здоров'я: 1%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_windranger_9",
+            "image": "images/heroes/talents/windranger/9.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "В начале действия Windrun создаётся Tornado. Tornado наносит противникам физический урон каждую секунду. Урон: 100 Радиус: 400 Длительность: 4 сек",
+                  "en": "At the start of Windrun, a Tornado is created. Tornado deals physical damage to enemies every second. Damage: 100 Radius: 400 Duration: 4 sec",
+                  "uk": "На початку дії Windrun створюється Tornado. Tornado завдає противникам фізичну шкоду кожну секунду. Втрата: 100 Радіус: 400 Тривалість: 4 сек"
+                },
+                "new_raw_value": {
+                  "ru": "В начале действия Windrun создаётся Tornado. Tornado наносит противникам физический урон каждую секунду. Урон: 75 Радиус: 400 Длительность: 4 сек",
+                  "en": "At the start of Windrun, a Tornado is created. Tornado deals physical damage to enemies every second. Damage: 75 Radius: 400 Duration: 4 sec",
+                  "uk": "На початку дії Windrun створюється Tornado. Tornado завдає противникам фізичну шкоду кожну секунду. Втрата: 75 Радіус: 400 Тривалість: 4 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_8",
+            "image": "images/heroes/talents/winter_wyvern/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1",
+              "cs": "Talent 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Arctic Burn: 40/80",
+                  "en": "Arctic Burn Damage Increase: 40/80",
+                  "uk": "Збільшення збитків Arctic Burn: 40/80"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Arctic Burn: 25/50",
+                  "en": "Arctic Burn Damage Increase: 25/50",
+                  "uk": "Збільшення Шкоди Arctic Burn: 25/50"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_14",
+            "image": "images/heroes/talents/winter_wyvern/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7",
+              "cs": "Talent 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Arctic Burn становится переключаемой способностью и ежесекундно расходующей ману. Снимает ограничение на число атак по одной цели. Расход Маны в Секунду: 200",
+                  "en": "Arctic Burn becomes a toggled ability and costs mana every second. Removes the limit on the number of attacks on a single target. Mana Cost per Second: 200",
+                  "uk": "Arctic Burn стає здатністю, що перемикається, і щомиті витрачає ману. Знімає обмеження на кількість атак по одній меті. Витрата Мани в Секунду: 200"
+                },
+                "new_raw_value": {
+                  "ru": "Arctic Burn становится переключаемой способностью и ежесекундно расходует ману. Расход Маны в Секунду: 160",
+                  "en": "Arctic Burn becomes a toggle ability and consumes mana every second. Mana Cost per Second: 160",
+                  "uk": "Arctic Burn стає перемикальною здібністю та щосекунди витрачає ману. Витрата Мани за Секунду: 160"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}",
+                  "cs": "{change_label} z {old_raw_value} na {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

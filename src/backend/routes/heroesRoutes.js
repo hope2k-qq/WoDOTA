@@ -5,7 +5,7 @@ const checkPassword = require('../middleware/auth');
 
 router.get('/heroes', (req, res) => {
     res.set({
-        'Cache-Control': 'public, max-age=31536000, immutable'
+        'Cache-Control': 'no-cache'
     });
 
     heroesController.getHeroes(req, res);
@@ -21,7 +21,7 @@ router.get('/heroesAllData/:lang', checkPassword, (req, res) => {
 router.get('/heroesAllDataJson/:lang', (req, res) => {
     const lang = req.params.lang || 'en';
     res.set({
-        'Cache-Control': 'public, max-age=31536000, immutable'
+        'Cache-Control': 'no-cache'
     });
     heroesController.getAllHeroesDataJson(req, res, lang);
 });

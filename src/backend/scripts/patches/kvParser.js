@@ -27,7 +27,11 @@ function tokenize(text) {
             let s = '';
             while (i < n && text[i] !== '"') {
                 if (text[i] === '\\' && i + 1 < n) {
-                    s += text[i + 1];
+                    // escape-последовательности Valve KV: \n и \t -> пробел
+                    // (сплошной текст без переносов), для остальных (\", \\ и пр.)
+                    // оставляем сам символ
+                    const esc = text[i + 1];
+                    s += (esc === 'n' || esc === 't') ? ' ' : esc;
                     i += 2;
                     continue;
                 }

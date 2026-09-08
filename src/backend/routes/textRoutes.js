@@ -5,6 +5,9 @@ const textController = require('../controllers/textController');
 router.get('/text_data', textController.getAllData);
 router.get('/general_talents/:lang', (req, res) => {
     const lang = req.params.lang || 'en';
+    res.set({
+        'Cache-Control': 'no-cache'
+    });
     textController.getGeneralTalentsData(req, res, lang);
 });
 

@@ -1,0 +1,589 @@
+{
+  "patch_number": "2,01b",
+  "patch_name": "2,01b",
+  "patch_timestamp": 1788741500,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_chasm_stone",
+        "name": "chasm stone",
+        "image": "chasm_stone.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Стоимость увеличена с 800 до 900 золота"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_frost",
+        "name": "orb of frost",
+        "image": "orb_of_frost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "heal_reduction",
+            "note": "Frost: снижение пополнения здоровья усилено с 13% до 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_venom",
+        "name": "orb of venom",
+        "image": "orb_of_venom.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "damage",
+            "note": "Poison Attack: урон в секунду увеличен с 10 до 12"
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_abyssal_blade",
+        "name": "abyssal blade",
+        "image": "abyssal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_strength",
+            "note": "Бонус к силе увеличен с 26 до 30"
+          }
+        ]
+      },
+      {
+        "item_id": "item_butterfly",
+        "name": "butterfly",
+        "image": "butterfly.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_agility",
+            "note": "Бонус к ловкости уменьшен с 35 до 30"
+          },
+          {
+            "parameter": "bonus_damage",
+            "note": "Бонус к урону увеличен с 25 до 30"
+          }
+        ]
+      },
+      {
+        "item_id": "item_crellas_crozier",
+        "name": "crellas crozier",
+        "image": "crellas_crozier.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "stack_duration",
+            "note": "Rite of Rumusque: длительность кражи скорости передвижения увеличена с 1,5 до 2 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_gungir",
+        "name": "gungir",
+        "image": "gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Стоимость рецепта уменьшена с 400 до 300 золота (общая стоимость прежняя — 4650 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "heavens halberd",
+        "image": "heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Disarm: перезарядка уменьшена с 16 до 15 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_hurricane_pike",
+        "name": "hurricane pike",
+        "image": "hurricane_pike.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "range_duration",
+            "note": "Hurricane Thrust: длительность положительного эффекта после применения уменьшена с 6 до 5 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya",
+        "name": "kaya",
+        "image": "kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Бонус к усилению восстановления маны уменьшен с 30% до 20%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya_and_sange",
+        "name": "kaya and sange",
+        "image": "kaya_and_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Бонус к усилению восстановления маны уменьшен с 40% до 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mask_of_madness",
+        "name": "mask of madness",
+        "image": "mask_of_madness.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "berserk_bonus_movement_speed",
+            "note": "Berserk: бонус к скорости передвижения для героев дальнего боя уменьшен с 8% до 6%"
+          },
+          {
+            "parameter": "berserk_slow_resist",
+            "note": "Berserk: бонус к сопротивлению замедлениям для героев дальнего боя уменьшен с 30% до 15% (в ближнем бою бонус прежний — 30%)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "meteor hammer",
+        "image": "meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Бонус к усилению восстановления маны уменьшен с 35% до 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_corrosion",
+        "name": "orb of corrosion",
+        "image": "orb_of_corrosion.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "heal_reduction",
+            "note": "Corrosion: снижение пополнения здоровья усилено с 16% до 18%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_satanic",
+        "name": "satanic",
+        "image": "satanic.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Unholy Rage: перезарядка увеличена с 30 до 40 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "shivas guard",
+        "image": "shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Стоимость рецепта уменьшена с 1350 до 1250 золота (общая стоимость прежняя — 4500 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_skadi",
+        "name": "skadi",
+        "image": "skadi.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "cold_attack_slow_melee",
+            "note": "Cold Attack: замедление атаки увеличено с 20% до 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_veil_of_discord",
+        "name": "veil of discord",
+        "image": "veil_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Spell Weakness: расход маны уменьшен с 50 до 25"
+          }
+        ]
+      },
+      {
+        "item_id": "item_yasha_and_kaya",
+        "name": "yasha and kaya",
+        "image": "yasha_and_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Бонус к усилению восстановления маны уменьшен с 40% до 30%"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_enchanters_bauble",
+        "name": "enchanters bauble",
+        "image": "enchanters_bauble.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "enchantment_bonus_growth",
+            "note": "Enchant: увеличение бонусов чар при повторном создании артефакта ослаблено с 40% до 35%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_heavy_blade",
+        "name": "heavy blade",
+        "image": "heavy_blade.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Cleanse: перезарядка уменьшена с 40 до 30 секунд"
+          }
+        ]
+      }
+    ],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_feverish",
+        "name": "feverish",
+        "image": "enhancement_feverish.webp",
+        "neutral_type": "enhancement",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "max_mana",
+            "note": "Теперь уменьшает максимальную ману на 20%"
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_witchcraft_custom",
+          "name": "witchcraft",
+          "image": "death_prophet_witchcraft.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "movement_speed_pct_hero_levelup",
+              "note": "Дополнительная скорость передвижения за уровень уменьшена с 0,33% до 0,25%"
+            },
+            {
+              "parameter": "cooldown_reduction_pct_hero_levelup",
+              "note": "Уменьшение перезарядок за уровень ослаблено с 0,33% до 0,25%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "note": "Дальность атаки уменьшена с 200 до 175",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "name": "legion commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базовая скорость атаки увеличена со 100 до 105",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "necrophos_sadist",
+          "name": "sadist",
+          "image": "necrophos_sadist.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "regen",
+              "note": "Восстановление здоровья/маны за эффект уменьшено с 3,7 + 0,3 за уровень до 3,8 + 0,2 за уровень"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_phantom_assassin_9",
+            "image": "phantom_assassin_9.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона от атаки Stifling Dagger уменьшено с 25%/50% до 15%/30%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Базовое восстановление здоровья уменьшено на 1",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Базовая скорость передвижения уменьшена с 300 до 295",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_14",
+            "image": "void_spirit_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Максимальный бонус уменьшения перезарядки Astral Step теперь достигается при 300 ловкости вместо 600"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_warlock_8",
+            "image": "warlock_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Базовая скорость атаки увеличена с 1,5 до 1,6"
+              },
+              {
+                "note": "Сопротивление замедлениям уменьшено с 60% до 40%"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_windranger_9",
+            "image": "windranger_9.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Урон Tornado уменьшен с 100 до 75"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_8",
+            "image": "winter_wyvern_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Arctic Burn уменьшено с 40/80 до 25/50"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_14",
+            "image": "winter_wyvern_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Расход маны в секунду уменьшен с 200 до 160"
+              },
+              {
+                "note": "Больше не снимает ограничение на число атак по одной цели"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

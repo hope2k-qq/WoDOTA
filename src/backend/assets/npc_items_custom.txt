@@ -59,8 +59,7 @@
             "all_stats"                         "14"
             "bonus_armor"                       "2"
             "mana_regen"                        "2"
-            "swap_interval"                     "5"
-            "buff_duration"                     "5"
+            "swap_interval"                     "6"
             "bonus_health"                      "200"
             "bonus_damage"                      "14"
 
@@ -5036,7 +5035,7 @@
             "bonus_strength"         "25"
             "bonus_agi"              "2"
             "bonus_int"              "2"
-            "bonus_health"           "250"
+            "bonus_health"           "8"
             "bonus_armor"            "2"
             "damage_per_second"      "25"
             "mana_restore"           "8"
@@ -5093,7 +5092,7 @@
             "slow_resistance"               "30"
             "attack_speed_active"           "100"
             "movespeed_active"              "12"
-            "damage_return_active"          "75"
+            "damage_return_active"          "70"
             "minus_armor_active"            "-7"
             "duration"                      "5.5"
         }
@@ -5110,7 +5109,7 @@
             "duration"              "5.5"
             "passive_reflection_constant"       "10"
             "passive_reflection_pct"            "15"
-            "active_reflection_pct"             "55"
+            "active_reflection_pct"             "50"
         }
     }
 
@@ -5434,7 +5433,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "1050"  
+        "ItemCost"                      "900"  
         "ItemShopTags"                  ""
         "AbilityTextureName"            "recipe"
         
@@ -5848,7 +5847,7 @@
     
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "1050"   
+        "ItemCost"                      "1000"   
         "ItemShopTags"                  ""
         
         // Recipe
@@ -5857,7 +5856,7 @@
         "ItemResult"                    "item_evasion_cape"
         "ItemRequirements"
         {
-            "01"                        "item_glimmer_cape_custom;item_talisman_of_evasion;item_wind_lace"
+            "01"                        "item_consecrated_wraps;item_talisman_of_evasion"
         }
     }
 
@@ -5868,33 +5867,44 @@
         "AbilityTextureName"            "item_evasion_cape"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "FightRecapLevel"               "1"
-        "AbilityCooldown"               "0"
-        "AbilityManaCost"               "0"
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
         "ItemCost"                      "1950"
-        "ItemShopTags"                  ""
-        "ItemQuality"                   "rare"
         "ItemAliases"                   "evasion cape"
         "ShouldBeSuggested"             "1"
 
-        "AbilitySharedCooldown"         ""
+
+		"ItemShopTags"					"magic_resist;move_speed;health_pool"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"EnableChargeDisplayOverride"	"1"
+        "ItemInitialCharges"      "0"
+        "ItemRequiresCharges"      "1"
+        "ItemDisplayCharges"      "1"
+        "AbilityCharges"        "3"
+        "AbilityChargeRestoreTime"    "4"
+        "AbilityCooldown"        "0"
+        "ItemPermanent"          "1"
         
         // Special  
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {           
-            "bonus_magical_armor"           "30"
-            "bonus_evasion"                 "30"
-            "bonus_movespeed"               "60"
-
-            "magical_resist_active"         "20"
-            "evasion_active"                "20"
-            "movespeed_active"              "20"
-            "duration"                      "14"
+            "bonus_spell_resist"                "20"
+            "bonus_all_stats"                   "5"
+            "bonus_health"                      "250"
+            "bonus_evasion"                     "25"
+            "movement_speed_pct_on_stack_gain"  "15"
+            "stack_threshold_damage"            "0"
+            "duration"                          "5"
+            "barrier_per_stack"                 "120"
+            "max_barrier_tooltip"               "360"
         }
     }
+
 
     "item_recipe_spear_of_mordiggian"
     {
@@ -7103,7 +7113,7 @@
     
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "900"   
+        "ItemCost"                      "300"   
         "ItemShopTags"                  ""
         
         // Recipe
@@ -7112,7 +7122,7 @@
         "ItemResult"                    "item_aghanims_treads"
         "ItemRequirements"
         {
-            "01"                        "item_power_treads;item_blitz_knuckles;item_aghanims_shard_custom"
+            "01"                        "item_power_treads;item_aghanims_shard_custom;item_aghanims_shard_custom"
         }
     }
 
@@ -7121,8 +7131,7 @@
         "BaseClass"                     "item_lua"      
         "ScriptFile"                    "items/item_aghanims_treads"
         "AbilityTextureName"            "item_aghanims_treads"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-        "AbilityCooldown"               "0.2"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
         "ItemCost"                      "1400"
         
         // Special  
@@ -7130,8 +7139,8 @@
         "AbilityValues"
         {
             "bonus_movespeed"                   "60"
-            "bonus_choose_stat"                 "30"
-            "bonus_attackspeed"                 "60"
+            "bonus_choose_stat"                 "15"
+            "bonus_attackspeed"                 "30"
         }
     }
 

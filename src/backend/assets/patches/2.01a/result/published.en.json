@@ -1,0 +1,445 @@
+{
+  "patch_number": "2,01a",
+  "patch_name": "2,01a",
+  "patch_timestamp": 1788784572,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [
+    {
+      "neutral_creep_id": "npc_woda_creep66",
+      "name": "Necronomicon Warrior",
+      "image": "pages/patches/standard_creep.webp",
+      "neutral_creep_notes": [],
+      "abilities": [
+        {
+          "ability_id": "woda_neutral_last_will_custom",
+          "name": "Last Will",
+          "image": "necronomicon_warrior_last_will.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage",
+              "note": "Damage increased from 10 to 25"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_soul_reaver",
+        "name": "soul reaver",
+        "image": "soul_reaver.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health",
+            "note": "Health bonus changed from 250 to 8% of max health"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_earthshaker_16",
+            "image": "earthshaker_16.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Spell Damage decreased from 10%/20% to 6%/12%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_invoker_6",
+            "image": "invoker_6.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Forge Spirit invulnerability now only works within 600 radius around the hero"
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "name": "legion commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_legion_commander_5",
+            "image": "legion_commander_5.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Owner's attacks now also count toward Moment of Courage's proc"
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "ogre_magi",
+      "name": "ogre magi",
+      "image": "images/heroes/heroesPreview/ogre_magi.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "ogre_magi_bloodlust_custom",
+          "image": "ogre_magi_bloodlust.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_attack_speed",
+              "note": "Attack speed bonus decreased from 35/50/65/80 to 16/24/32/40"
+            },
+            {
+              "parameter": "self_bonus",
+              "note": "Self attack speed bonus decreased from 40/60/80/100 to 20/30/40/50"
+            },
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Can now be autocast"
+            }
+          ],
+          "name": "bloodlust"
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_ogre_magi_3",
+            "image": "ogre_magi_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Cooldown Reduction increased from 7% to 13%"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_ogre_magi_4",
+            "image": "ogre_magi_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Fire Shield's Ignite magic damage increased from 100% to 200% of Strength"
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_ogre_magi_14",
+            "image": "ogre_magi_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Chance to cast Fireblast on attack decreased from 14% to 10%"
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_ogre_magi_21",
+            "image": "ogre_magi_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Unrefined Fireblast damage increased from 200 to 250"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_17",
+            "image": "sniper_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Spell Damage increased from 30% to 50%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "visage",
+      "name": "visage",
+      "image": "images/heroes/heroesPreview/visage.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_visage_8",
+            "image": "visage_8.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants +5/10 Strength"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_10",
+            "image": "visage_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Strength, Agility, and Intelligence gained per hero kill increased from 1 to 2"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_12",
+            "image": "visage_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Grave Chill health restoration steal increased from 5%/15%/25% to 10%/20%/30%"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_13",
+            "image": "visage_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Familiars' armor reduction duration increased from 1.5/3 to 3/6 seconds"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_14",
+            "image": "visage_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Bonus to all damage dealt increased from 12% to 15%"
+              },
+              {
+                "note": "Familiars' attack range bonus increased from 150 to 200"
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_visage_20",
+            "image": "visage_20.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Now also increases Silent as the Grave bonus damage duration by 1/2 sec"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_19",
+            "image": "visage_19.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Silent as the Grave Bonus Damage Duration Increase: 1/2 sec. Silent as the Grave Bonus Damage Increase: 5%/10%» replaced with «Summon Familiars no longer summons Gargoyles and becomes a passive ability. Stone Form can be activated without Summon Familiars Gargoyles to instantly deal damage and stun enemies in the target area. When the effect ends, the Gargoyles disappear. Cast Radius: 900 Stone Form Damage Increase: 100%/200% of Summon Familiars Gargoyle Attack Damage»"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_21",
+            "image": "visage_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also grants +500 Health"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "void_spirit_resonant_pulse_custom",
+          "name": "resonant pulse",
+          "image": "void_spirit_resonant_pulse.webp",
+          "ability_notes": [
+            {
+              "parameter": "absorb_per_hero_hit",
+              "note": "Absorb per hero hit increased from 50/70/90/100 to 50/70/90/110"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_void_spirit_6",
+            "image": "void_spirit_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Aether Remnant copies duration from Dissimilate decreased from 6 to 4 seconds"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_7",
+            "image": "void_spirit_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Astral Step's Aether Remnant duration decreased from 6 to 4 seconds"
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_8",
+            "image": "void_spirit_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Resonant Pulse barrier increase decreased from 100%/200% to 75%/150% of Agility"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_13",
+            "image": "void_spirit_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Chance for Astral Step to not go on cooldown decreased from 10%/20%/30% to 8%/16%/24%"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_14",
+            "image": "void_spirit_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Astral Step cooldown reduction is now per 75 Agility instead of 50"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_warlock_10",
+            "image": "warlock_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Flaming Fists damage bonus from Agility decreased from 10% to 5%"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_warlock_19",
+            "image": "warlock_19.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Chaotic Offering stun duration bonus decreased from 1.2 to 1 second"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_warlock_13",
+            "image": "warlock_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Chaotic Offering cooldown reduction decreased from 115/135/155 to 100/125/150 seconds"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

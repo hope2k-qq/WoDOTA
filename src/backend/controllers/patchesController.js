@@ -2,7 +2,7 @@ const patchesService = require('../services/patchesService');
 
 exports.getAllPatches = async (req, res) => {
     try {
-        const patches = patchesService.createAllPatches();
+        const patches = await patchesService.createAllPatches();
         res.status(200).json({
             success: true,
             versions: patchesService.listPatchVersions(),
@@ -27,7 +27,7 @@ exports.createPatch = async (req, res) => {
             return res.status(404).json({ success: false, message: `Патч ${from} не найден` });
         }
 
-        const result = patchesService.createPatch(version, from);
+        const result = await patchesService.createPatch(version, from);
         if (!result) {
             return res.status(200).json({
                 success: true,
@@ -68,7 +68,7 @@ exports.publishPatch = async (req, res) => {
             return res.status(404).json({ success: false, message: `Патч ${version} не найден` });
         }
 
-        const result = patchesService.publishPatch(version, name);
+        const result = await patchesService.publishPatch(version, name);
         if (!result) {
             return res.status(404).json({
                 success: false,
@@ -90,12 +90,13 @@ exports.publishPatch = async (req, res) => {
 exports.getPatch = async (req, res) => {
     try {
         const { version } = req.params;
+        const { lang } = req.query;
 
         if (!patchesService.hasPatch(version)) {
             return res.status(404).json({ success: false, message: `Патч ${version} не найден` });
         }
 
-        const changelog = patchesService.readPublished(version);
+        const changelog = patchesService.readPublished(version, lang);
         if (!changelog) {
             return res.status(404).json({
                 success: false,

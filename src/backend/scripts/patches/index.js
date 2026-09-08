@@ -57,13 +57,13 @@ function compare(from, to) {
 
 // Делегируем сборку сервису (пишет result/draft.json, сеет changelog.json если
 // его нет, чистит кэш). Дополнительно рендерим draft.md рядом для чтения.
-function changelog(to, from) {
+async function changelog(to, from) {
     const base = from || previousVersion(to);
     if (!base) {
         console.log(`[changelog] ${to} — первый патч, сравнивать не с чем`);
         return null;
     }
-    const { data, seeded } = patchesService.createPatch(to, from);
+    const { data, seeded } = await patchesService.createPatch(to, from);
     fs.writeFileSync(path.join(resultDir(to), 'draft.md'), renderMarkdown(data), 'utf-8');
     const abilityCount = data.heroes.reduce((total, hero) => total + hero.abilities.length, 0);
     const talentCount = data.heroes.reduce(
@@ -102,7 +102,7 @@ function publishAll() {
     }
 }
 
-function main() {
+async function main() {
     const [cmd, a, b] = process.argv.slice(2);
 
     switch (cmd) {
@@ -123,10 +123,10 @@ function main() {
         case 'changelog':
             if (!a) throw new Error('Укажите версию: changelog <версия> [from]');
             if (!hasPatch(a)) throw new Error(`Патч ${a} не найден`);
-            changelog(a, b);
+            await changelog(a, b);
             break;
         case 'changelog-all':
-            for (const v of listPatchVersions()) changelog(v);
+            for (const v of listPatchVersions()) await changelog(v);
             break;
         case 'publish':
             if (!a) throw new Error('Укажите версию: publish <версия> [название]');
@@ -143,9 +143,7 @@ function main() {
     }
 }
 
-try {
-    main();
-} catch (err) {
+main().catch((err) => {
     console.error('Ошибка:', err.message);
     process.exit(1);
-}
+});

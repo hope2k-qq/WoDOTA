@@ -219,7 +219,12 @@ function buildSnapshot(patchDir, version) {
     for (const ids of Object.values(shops)) for (const id of ids) shopItemIds.add(id);
     const separateItemIds = new Set();
     for (const id of shopItemIds) {
-        if (id.endsWith('_custom') && shopItemIds.has(stripCustom(id))) separateItemIds.add(stripCustom(id));
+        if (id.endsWith('_custom') && shopItemIds.has(stripCustom(id))) {
+            const canon = stripCustom(id);
+            separateItemIds.add(canon);
+            // у base и custom версии — разные рецепты, их тоже нельзя склеивать
+            separateItemIds.add(canon.replace(/^item_/, 'item_recipe_'));
+        }
     }
     const items = buildItems(patchDir, separateItemIds);
     const heroes = buildHeroes(patchDir, activelist);

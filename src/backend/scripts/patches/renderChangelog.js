@@ -13,6 +13,13 @@ const HERO_LEVELUP_LABEL = {
     uk: 'збільшення за рівень',
     cs: 'nárůst za úroveň',
 };
+// краткий суффикс для инлайна «12% + 0.5% за уровень»
+const PER_LEVEL_SUFFIX = {
+    ru: 'за уровень',
+    en: 'per level',
+    uk: 'за рівень',
+    cs: 'za úroveň',
+};
 const ATTRIBUTE_CATEGORY_KEYS = { 1: 'strength', 2: 'agility', 3: 'intelligence' };
 const IGNORED_HERO_SECTIONS = new Set([
     'Bot', 'ItemSlots', 'Persona', 'IdleSoundLoop',
@@ -28,6 +35,41 @@ const isIgnoredHeroField = (field) =>
         field.startsWith('AbilityDraft') ||
         /^Ability\d+$/.test(field)
     );
+// Значения по умолчанию из шаблона DOTAHeroBase (npc_heroes.txt): если у героя
+// параметр раньше не был задан (diff = added, old отсутствует), он наследовал
+// этот дефолт. Тогда это не «добавлено», а переход с дефолта на новое значение.
+const HERO_BASE_DEFAULTS = {
+    BaseAttackSpeed: '100',
+};
+// Приводит added-параметр с известным дефолтом к changed (old = дефолт),
+// чтобы в патчлоге вышло «… с <дефолт> до <new>», а не «добавлено».
+function applyHeroBaseDefault(entry) {
+    if (entry.type !== 'added') return;
+    if (entry.old !== null && entry.old !== undefined) return;
+    const field = entry.path[1];
+    if (!Object.prototype.hasOwnProperty.call(HERO_BASE_DEFAULTS, field)) return;
+    entry.type = 'changed';
+    entry.old = HERO_BASE_DEFAULTS[field];
+}
+// Иконки статов героя (лежат в public фронта) — как на странице героя.
+// Путь кладётся в heroNote.icon (рядом с note), фронт рисует картинку вместо точки-маркера.
+const STAT_ICONS = {
+    BaseAttackSpeed: '/icon_base_attack_speed.png',
+    AttackRange: '/icon_attack_range.png',
+    AttackRate: '/icon_attack_time.png',
+    MovementSpeed: '/icon_movement_speed.png',
+    ArmorPhysical: '/icon_armor.png',
+    StatusHealthRegen: '/health_regen.png',
+    StatusManaRegen: '/mana_regen.png',
+    AttackDamageMin: '/icon_damage.png',
+    AttackDamageMax: '/icon_damage.png',
+    AttributeBaseStrength: '/str.png',
+    AttributeStrengthGain: '/str.png',
+    AttributeBaseAgility: '/agi.png',
+    AttributeAgilityGain: '/agi.png',
+    AttributeBaseIntelligence: '/int.png',
+    AttributeIntelligenceGain: '/int.png',
+};
 const IGNORED_ITEM_FIELDS = new Set([
     'SideShop', 'SecretShop',
     'IsObsolete', 'ItemPurchasable', 'AbilityTextureName',
@@ -274,17 +316,56 @@ const WHOLE_ENTITY_LABELS = {
     },
 };
 
+// Автоопределение процентных значений. Конвенция Valve: если ярлык тултипа значения
+// (DOTA_Tooltip_ability_<entity>_<param>) начинается с «%», значение отображается в процентах
+// (напр. soul_reaver bonus_health = "%+$health" → 8% от макс. здоровья, а soul_nullifier
+// bonus_health = "+$health" → плоское). Проверяем отдельно старое и новое значение, т.к. тип
+// параметра мог смениться между версиями (flat ↔ %). Работает для всех секций (предметы,
+// способности, нейтралки), а не только талантов.
+let PERCENT_CTX = null;
+function tooltipStartsPercent(loc, entity, param) {
+    if (!loc || !entity || !param) return false;
+    const key = `DOTA_Tooltip_ability_${entity}_${param}`;
+    for (const lng of ['en', 'ru', 'uk']) {
+        const v = loc[lng] && loc[lng][key];
+        if (typeof v === 'string') return v.replace(/^\s+/, '').startsWith('%');
+    }
+    return false;
+}
+function applyPercent(result, entry) {
+    if (!PERCENT_CTX || !result || !result.note || !result.parameter
+        || !entry || !Array.isArray(entry.path)) {
+        return result;
+    }
+    const entity = entry.path[0];
+    // имя параметра для ключа тултипа: плоское, без суффиксов роста за уровень
+    const param = String(result.parameter)
+        .replace(/ · /g, '_')
+        .replace(/_hero_levelup$/, '')
+        .replace(/_per_level$/, '');
+    const oldPct = tooltipStartsPercent(PERCENT_CTX.oldLoc, entity, param);
+    const newPct = tooltipStartsPercent(PERCENT_CTX.newLoc, entity, param);
+    if (!oldPct && !newPct) return result;
+    result.note = Object.fromEntries(Object.entries(result.note).map(([lang, text]) => {
+        let t = String(text);
+        if (oldPct) t = t.replace(/\{old_raw_value\}/g, '{old_raw_value}%');
+        if (newPct) t = t.replace(/\{new_raw_value\}/g, '{new_raw_value}%');
+        return [lang, t];
+    }));
+    return result;
+}
+
 function noteFromDiff(entry, includeParameter = false, entityKind = null, context = null) {
     const note = rawNote(entry.type, entry.old, entry.new);
     if (!includeParameter) return note;
 
     const label = cleanLabel(entry.path);
-    
+
     const wholeEntity = WHOLE_ENTITY_LABELS[entityKind];
     if (label === '' && wholeEntity && (entry.type === 'added' || entry.type === 'removed')) {
         return { ...note, note: wholeEntity[entry.type] };
     }
-    
+
     const levelupNote = (parameter) => ({
         parameter,
         ...note,
@@ -292,31 +373,31 @@ function noteFromDiff(entry, includeParameter = false, entityKind = null, contex
             Object.entries(note.note).map(([lang, text]) => [lang, `${HERO_LEVELUP_LABEL[lang]}: ${text}`])
         ),
     });
-    
+
     if (label.endsWith(HERO_LEVELUP_SUFFIX)) {
         const base = label.slice(0, -HERO_LEVELUP_SUFFIX.length);
-        return levelupNote(`${base.replace(/ · /g, '_')}_hero_levelup`);
+        return applyPercent(levelupNote(`${base.replace(/ · /g, '_')}_hero_levelup`), entry);
     }
-    
+
     const flatParameter = label.replace(/ · /g, '_');
     if (/_per_level$/.test(flatParameter)) {
-        return levelupNote(flatParameter);
+        return applyPercent(levelupNote(flatParameter), entry);
     }
 
     const parameter = label;
-    
+
     const custom = formatParameterNote(parameter, entry.old, entry.new, entry.type, context);
     if (custom === DROP_NOTE) return null;
     if (custom) return { parameter, ...note, note: custom };
 
     const title = parameterTitle(parameter);
-    return {
+    return applyPercent({
         parameter,
         ...note,
         note: Object.fromEntries(
             Object.entries(note.note).map(([lang, text]) => [lang, `${title}: ${text}`])
         ),
-    };
+    }, entry);
 }
 
 const isNeutralEnhancementItem = (itemId) => String(itemId || '').startsWith('item_enhancement_');
@@ -439,6 +520,7 @@ function levelingClause(kv, context) {
 
 const INNATE_HEAD = {
     became_innate: { ru: 'Теперь является врождённой способностью', en: 'Now an innate ability', uk: 'Тепер є вродженою здібністю', cs: 'Nyní je vrozená schopnost' },
+    became_innate_hidden: { ru: 'Скрытая способность теперь является врождённой', en: 'The hidden ability is now innate', uk: 'Прихована здібність тепер є вродженою', cs: 'Skrytá schopnost je nyní vrozená' },
     became_basic: { ru: 'Теперь является базовой способностью', en: 'Now a basic ability', uk: 'Тепер є базовою здібністю', cs: 'Nyní je základní schopnost' },
 };
 const NEW_HEAD = {
@@ -450,14 +532,32 @@ const NEW_HEAD = {
 function abilityNatureNote(kind, kv, innate, innateKnown, context) {
     if (kind === 'became_basic') return { ...INNATE_HEAD.became_basic };
     const kindLabel = abilityKindLabel(kv);
-    if (kind === 'became_innate') {
+    if (kind === 'became_innate' || kind === 'became_innate_hidden') {
+        const head = kind === 'became_innate_hidden' ? INNATE_HEAD.became_innate_hidden : INNATE_HEAD.became_innate;
         const lvl = levelingClause(kv, context);
         return Object.fromEntries(NATURE_LANGS.map((lang) =>
-            [lang, `${INNATE_HEAD.became_innate[lang]}. ${kindLabel[lang]}, ${lvl[lang]}`]));
+            [lang, `${head[lang]}. ${kindLabel[lang]}, ${lvl[lang]}`]));
     }
     const head = !innateKnown ? NEW_HEAD.unknown : (innate ? NEW_HEAD.innate : NEW_HEAD.basic);
     const sep = innateKnown ? '. ' : ', ';
     return Object.fromEntries(NATURE_LANGS.map((lang) => [lang, `${head[lang]}${sep}${kindLabel[lang]}.`]));
+}
+
+// «Природная» заметка способности: стала врождённой/базовой либо новая
+// врождённая/базовая/способность («Теперь является врождённой способностью…» и аналоги).
+const NATURE_HEAD_RU = [
+    INNATE_HEAD.became_innate.ru,
+    INNATE_HEAD.became_innate_hidden.ru,
+    INNATE_HEAD.became_basic.ru,
+    NEW_HEAD.innate.ru,
+    NEW_HEAD.basic.ru,
+    NEW_HEAD.unknown.ru,
+];
+function isAbilityNatureNote(note) {
+    if (!note) return false;
+    if (note.parameter === 'Innate') return true;
+    const ru = note.note?.ru || '';
+    return NATURE_HEAD_RU.some((head) => ru.startsWith(head));
 }
 
 function itemDisplayName(itemId) {
@@ -545,6 +645,105 @@ function recipeIndex(items, localizationSources = []) {
     return recipes;
 }
 
+// Стиль патчлога Valve для изменения рецепта: стоимость рецепта + общая стоимость
+// + добавленные/убранные/заменённые компоненты. Возвращает {ru,en,uk,cs} со строками
+// через \n (splitNoteLines разложит их в отдельные заметки) или null, если сравнить нечем.
+function recipeChangeLines(oldR, newR) {
+    if (!oldR || !newR) return null;
+    const comps = (r) => (r.components && r.components.length ? r.components : (r.variants?.[0]?.components || []));
+    const norm = (id) => stripCustom(String(id)).replace(/\*+$/, '');
+    const oldC = comps(oldR);
+    const newC = comps(newR);
+    const oldIds = new Set(oldC.map((c) => norm(c.id)));
+    const newIds = new Set(newC.map((c) => norm(c.id)));
+    const added = newC.filter((c) => !oldIds.has(norm(c.id)));
+    const removed = oldC.filter((c) => !newIds.has(norm(c.id)));
+    const lines = { ru: [], en: [], uk: [], cs: [] };
+
+    // --- состав ---
+    if (added.length === 1 && removed.length === 1) {
+        const a = added[0];
+        const r = removed[0];
+        lines.ru.push(`Теперь для сборки требуется не ${r.name} (${r.cost} золота), а ${a.name} (${a.cost} золота)`);
+        lines.en.push(`Now requires ${a.name} (${a.cost} gold) instead of ${r.name} (${r.cost} gold)`);
+        lines.uk.push(`Тепер для збирання потрібен ${a.name} (${a.cost} золота) замість ${r.name} (${r.cost} золота)`);
+        lines.cs.push(`Nyní vyžaduje ${a.name} (${a.cost} zlata) místo ${r.name} (${r.cost} zlata)`);
+    } else {
+        for (const a of added) {
+            lines.ru.push(`Теперь для сборки также требуется ${a.name} (${a.cost} золота)`);
+            lines.en.push(`Now also requires ${a.name} (${a.cost} gold)`);
+            lines.uk.push(`Тепер для збирання також потрібен ${a.name} (${a.cost} золота)`);
+            lines.cs.push(`Nyní také vyžaduje ${a.name} (${a.cost} zlata)`);
+        }
+        for (const r of removed) {
+            lines.ru.push(`Больше не требует ${r.name} для сборки`);
+            lines.en.push(`No longer requires ${r.name}`);
+            lines.uk.push(`Більше не потребує ${r.name} для збирання`);
+            lines.cs.push(`Již nevyžaduje ${r.name}`);
+        }
+    }
+
+    // --- стоимость рецепта / общая стоимость ---
+    const RC = {
+        inc: { ru: 'увеличена', en: 'increased', uk: 'збільшено', cs: 'zvýšena' },
+        dec: { ru: 'уменьшена', en: 'decreased', uk: 'зменшено', cs: 'snížena' },
+    };
+    const TC = {
+        inc: { ru: 'увеличилась', en: 'increased', uk: 'збільшено', cs: 'zvýšena' },
+        dec: { ru: 'уменьшилась', en: 'decreased', uk: 'зменшено', cs: 'snížena' },
+    };
+    const oc = oldR.recipe_cost;
+    const nc = newR.recipe_cost;
+    const ot = oldR.total_cost;
+    const nt = newR.total_cost;
+    const compChanged = added.length > 0 || removed.length > 0;
+    if (oc !== nc) {
+        // стоимость рецепта изменилась → строка с рецептом и общей стоимостью в скобках
+        const d = nc > oc ? 'inc' : 'dec';
+        let ruT;
+        let enT;
+        let ukT;
+        let csT;
+        if (ot === nt) {
+            ruT = ` (общая стоимость прежняя — ${nt} золота)`;
+            enT = `. Total cost unchanged at ${nt}g`;
+            ukT = ` (загальна вартість незмінна — ${nt} золота)`;
+            csT = ` (celková cena beze změny — ${nt} zlata)`;
+        } else {
+            const td = nt > ot ? 'inc' : 'dec';
+            ruT = ` (общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота)`;
+            enT = `. Total cost ${TC[td].en} from ${ot}g to ${nt}g`;
+            ukT = ` (загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота)`;
+            csT = ` (celková cena ${TC[td].cs} z ${ot} na ${nt} zlata)`;
+        }
+        lines.ru.push(`Стоимость рецепта ${RC[d].ru} с ${oc} до ${nc} золота${ruT}`);
+        lines.en.push(`Recipe cost ${RC[d].en} from ${oc} to ${nc}${enT}`);
+        lines.uk.push(`Вартість рецепта ${RC[d].uk} з ${oc} до ${nc} золота${ukT}`);
+        lines.cs.push(`Cena receptu ${RC[d].cs} z ${oc} na ${nc} zlata${csT}`);
+    } else if (ot !== nt && !compChanged) {
+        // стоимость рецепта та же, а общая изменилась (каскад цены компонента)
+        const td = nt > ot ? 'inc' : 'dec';
+        if (nc > 0) {
+            lines.ru.push(`Стоимость рецепта прежняя (${nc} золота). Общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота`);
+            lines.en.push(`Recipe cost unchanged at ${nc}. Total cost ${TC[td].en} from ${ot}g to ${nt}g`);
+            lines.uk.push(`Вартість рецепта незмінна (${nc} золота). Загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота`);
+            lines.cs.push(`Cena receptu beze změny (${nc} zlata). Celková cena ${TC[td].cs} z ${ot} na ${nt} zlata`);
+        } else {
+            lines.ru.push(`Общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота`);
+            lines.en.push(`Total cost ${TC[td].en} from ${ot}g to ${nt}g`);
+            lines.uk.push(`Загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота`);
+            lines.cs.push(`Celková cena ${TC[td].cs} z ${ot} na ${nt} zlata`);
+        }
+    }
+    // если менялся только состав (oc===nc, а общую объясняют компоненты) — строку про
+    // стоимость не добавляем, достаточно строк про компоненты
+
+    if (!lines.ru.length) return null;
+    return {
+        ru: lines.ru.join('\n'), en: lines.en.join('\n'), uk: lines.uk.join('\n'), cs: lines.cs.join('\n'),
+    };
+}
+
 function recipeText(recipe, changed = false, oldRecipe = null) {
     if (!recipe) {
         return {
@@ -586,6 +785,10 @@ function recipeText(recipe, changed = false, oldRecipe = null) {
         cs: `Skládá se z ${join(componentParts.cs, 'a')}. Celková cena: ${totalCost} zlata.`,
     };
     if (!changed) return body;
+    // Стиль Valve: стоимость рецепта + общая стоимость + изменения состава.
+    const diff = recipeChangeLines(oldRecipe, recipe);
+    if (diff) return diff;
+    // fallback (нет oldRecipe для сравнения) — описываем сборку целиком
     return {
         ru: `Рецепт изменён\nТеперь ${body.ru.charAt(0).toLowerCase()}${body.ru.slice(1)}`,
         en: `Recipe changed\nNow ${body.en.charAt(0).toLowerCase()}${body.en.slice(1)}`,
@@ -610,12 +813,28 @@ function splitNoteLines(note) {
     return notes;
 }
 
+// Порядок заметок предмета: рецепт наверх (подряд), стоимость вниз, остальное — как есть.
+function orderItemNotes(notes, costShownInIntro = false) {
+    const list = [...(notes || [])];
+    // если стоимость уже показана (заметка рецепта «Собирается…/Рецепт изменён» в
+    // списке ИЛИ вводная стоимость/сборка нового предмета), отдельная «Item Cost» не нужна —
+    // общая стоимость уже указана
+    const hasRecipe = costShownInIntro || list.some((note) => note.parameter === 'recipe');
+    const filtered = hasRecipe ? list.filter((note) => note.parameter !== 'ItemCost') : list;
+    // стоимость (Item Cost) — в самый верх, затем рецепт, затем остальное
+    const rank = (note) => (note.parameter === 'ItemCost' ? 0 : note.parameter === 'recipe' ? 1 : 2);
+    return filtered.sort((a, b) => rank(a) - rank(b));
+}
+
 function recipeSignature(recipe) {
     if (!recipe) return null;
     return JSON.stringify({
         variants: (recipe.variants || []).map((variant) => ({
             key: variant.key,
-            components: variant.components.map(({ id, cost }) => ({ id: stripCustom(id), cost })),
+            // порядок компонентов не важен — сортируем, чтобы перестановка не считалась изменением рецепта
+            components: variant.components
+                .map(({ id, cost }) => ({ id: stripCustom(id), cost }))
+                .sort((a, b) => a.id.localeCompare(b.id) || a.cost - b.cost),
             total_cost: variant.total_cost,
         })),
         recipe_cost: recipe.recipe_cost,
@@ -765,6 +984,12 @@ function itemValueMap(itemKV) {
     };
     flatten(itemKV);
     flatten(itemKV && itemKV.AbilityValues);
+    // Псевдонимы ванильных переменных тултипа на спец-поля предмета
+    // (напр. интервал получения заряда = AbilityChargeRestoreTime).
+    const TOOLTIP_VALUE_ALIASES = { stack_gain_time: 'abilitychargerestoretime' };
+    for (const [alias, source] of Object.entries(TOOLTIP_VALUE_ALIASES)) {
+        if (!(alias in values) && source in values) values[alias] = values[source];
+    }
     return values;
 }
 
@@ -802,8 +1027,17 @@ function buildItemDescription(itemId, itemKV, localizationSources) {
     const text = (lang) => {
         const template = templateFor(lang) || templateFor('en') || templateFor('ru');
         if (!template) return null;
-        const spaced = substituteItemVars(template, values).replace(/<[^>]+>|\\n|<br\s*\/?>/gi, ' ');
-        return normText(spaced);
+        const spaced = substituteItemVars(template, values)
+            // разделитель секций «nn» перед следующим заголовком -> «. »
+            .replace(/\s*n{2}\s*(?=<\s*h1\s*>)/gi, '. ')
+            // заголовок «<h1>Пассивное: Salvo</h1>» -> «Пассивное: Salvo. »
+            .replace(/<\s*h1\s*>(.*?)<\s*\/\s*h1\s*>/gi, (_, head) =>
+                `${normText(String(head).replace(/<[^>]+>/g, ' ')).replace(/[.\s]+$/, '')}. `)
+            .replace(/<[^>]+>|\\n|<br\s*\/?>/gi, ' ');
+        // убрать пробел перед пунктуацией и точку в конце
+        const cleaned = normText(spaced).replace(/\s+([.,;:!?])/g, '$1');
+        if (!cleaned) return null;
+        return /[.!?]$/.test(cleaned) ? cleaned : `${cleaned}.`;
     };
     return { ru: text('ru'), en: text('en'), uk: text('uk'), cs: text('en') || text('ru') };
 }
@@ -904,6 +1138,17 @@ function normalizedAbilityValue(raw, percent = false, options = {}) {
     return unique.length ? unique.join(' / ') : null;
 }
 
+// прирост значения за уровень героя (hero_levelup): знак выносим в коннектор,
+// чтобы отрицательный прирост давал «50 - 0.5 за уровень», а не «50 + -0.5»
+function perLevelIncrement(raw, percent) {
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw) || !('hero_levelup' in raw)) return null;
+    const num = Number(String(raw.hero_levelup).replace(/^\+/, ''));
+    if (!Number.isFinite(num) || num === 0) return null;
+    const magnitude = Math.abs(num);
+    const formatted = Number.isInteger(magnitude) ? String(magnitude) : String(Math.round(magnitude * 100) / 100);
+    return { sign: num < 0 ? '-' : '+', value: `${formatted}${percent ? '%' : ''}` };
+}
+
 function buildAbilityValues(abilityId, abilityKV, localizationSources, options = {}) {
     if (!abilityKV || typeof abilityKV !== 'object') return [];
     const canonicalId = String(abilityId).replace(/_custom$/, '');
@@ -936,6 +1181,7 @@ function buildAbilityValues(abilityId, abilityKV, localizationSources, options =
         const percent = Object.values(rawLabels).some((label) => label && label.startsWith('%'));
         const value = normalizedAbilityValue(raw, percent);
         if (!value) continue;
+        const perLevel = perLevelIncrement(raw, percent);
         const fallback = readableLabels.en || readableLabels.ru || parameterTitle(key);
         result.push({
             key,
@@ -946,6 +1192,7 @@ function buildAbilityValues(abilityId, abilityKV, localizationSources, options =
                 cs: cleanValueLabel(commonLabel?.cs || readableLabels.en || readableLabels.ru || fallback),
             },
             value,
+            ...(perLevel && { perLevel }),
         });
     }
 
@@ -954,6 +1201,123 @@ function buildAbilityValues(abilityId, abilityKV, localizationSources, options =
         if (value) result.push({ key, label, value });
     }
     return result;
+}
+
+// Склеивает описание способности и её параметры в одну локализованную строку:
+// «<описание>. Label: value. Label: value.»
+function mergeAbilityDescription(descNote, values) {
+    const result = {};
+    for (const lang of NATURE_LANGS) {
+        const segments = [];
+        const desc = descNote && (descNote[lang] || descNote.en || descNote.ru);
+        if (desc && String(desc).trim()) segments.push(String(desc).trim().replace(/[.\s]+$/, ''));
+        for (const entry of values || []) {
+            const label = entry.label && (entry.label[lang] || entry.label.en || entry.label.ru);
+            if (!label || entry.value == null || entry.value === '') continue;
+            // только первая буква заглавная, остальные строчные
+            const t = String(label).trim();
+            const nice = t ? t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() : t;
+            const valueText = entry.perLevel
+                ? `${entry.value} ${entry.perLevel.sign} ${entry.perLevel.value} ${PER_LEVEL_SUFFIX[lang] || PER_LEVEL_SUFFIX.en}`
+                : entry.value;
+            segments.push(`${nice}: ${valueText}`);
+        }
+        result[lang] = segments.length ? `${segments.join('. ')}.` : null;
+    }
+    return result;
+}
+
+// Note-строки предмета из локализации: DOTA_Tooltip_ability_item_<id>_Note0/Note1/...
+function itemSourceNotes(itemId, itemKV, localizationSources) {
+    const values = itemValueMap(itemKV);
+    const canonicalId = String(itemId).replace(/_custom$/, '');
+    const prefixes = [
+        `dota_tooltip_ability_${itemId}_note`,
+        `dota_tooltip_ability_${canonicalId}_note`,
+    ].map((p) => p.toLowerCase());
+    const indices = new Set();
+    for (const source of localizationSources || []) {
+        for (const lang of NATURE_LANGS) {
+            for (const key of Object.keys((source && source[lang]) || {})) {
+                const kl = key.toLowerCase();
+                for (const p of prefixes) {
+                    if (kl.startsWith(p) && /^\d+$/.test(kl.slice(p.length))) indices.add(Number(kl.slice(p.length)));
+                }
+            }
+        }
+    }
+    const clean = (raw) => normText(substituteItemVars(String(raw), values).replace(/<[^>]+>|\\n|<br\s*\/?>/gi, ' '));
+    const textFor = (idx, lang) => {
+        for (const source of localizationSources || []) {
+            const tokens = (source && source[lang]) || {};
+            for (const p of prefixes) {
+                const key = Object.keys(tokens).find((k) => k.toLowerCase() === `${p}${idx}`);
+                if (key && String(tokens[key]).trim()) return clean(tokens[key]);
+            }
+        }
+        return null;
+    };
+    const notes = [];
+    for (const idx of [...indices].sort((a, b) => a - b)) {
+        const en = textFor(idx, 'en');
+        const ru = textFor(idx, 'ru');
+        if (!en && !ru) continue;
+        notes.push({ ru: ru || en, en: en || ru, uk: textFor(idx, 'uk') || en || ru, cs: en || ru });
+    }
+    return notes;
+}
+
+// Ноты для новых предметов: цена и список бонусов одной строкой.
+const ITEM_GIVES_HEAD = { ru: 'Дает', en: 'Gives', uk: 'Дає', cs: 'Dává' };
+const ITEM_GIVES_JOIN = { ru: 'и', en: 'and', uk: 'і', cs: 'a' };
+const ITEM_COST_TEXT = {
+    ru: (c) => `Стоит ${c} золота`,
+    en: (c) => `Costs ${c} gold`,
+    uk: (c) => `Коштує ${c} золота`,
+    cs: (c) => `Stojí ${c} zlata`,
+};
+
+function itemCostNote(cost) {
+    return Object.fromEntries(NATURE_LANGS.map((lang) => [lang, ITEM_COST_TEXT[lang](cost)]));
+}
+
+// «Дает 250 к мане, 6 к броне и 100 к здоровью.» — лейблы уже в нужном падеже (из item_values)
+function itemGivesNote(values) {
+    if (!values || !values.length) return null;
+    const note = {};
+    let any = false;
+    for (const lang of NATURE_LANGS) {
+        const parts = (values || []).map((v) => {
+            const label = (v.label && (v.label[lang] || v.label.en || v.label.ru)) || '';
+            const val = String(v.value).replace(/^\+/, '').trim();
+            return label ? `${val} ${label}` : val;
+        }).filter((p) => p && p.trim());
+        if (!parts.length) { note[lang] = null; continue; }
+        any = true;
+        const joined = parts.length > 1
+            ? `${parts.slice(0, -1).join(', ')} ${ITEM_GIVES_JOIN[lang]} ${parts[parts.length - 1]}`
+            : parts[0];
+        note[lang] = `${ITEM_GIVES_HEAD[lang]} ${joined}`;
+    }
+    return any ? note : null;
+}
+
+// Убрать точку в конце строки (во всех языках).
+function stripTrailingDot(note) {
+    return Object.fromEntries(Object.entries(note || {}).map(([lang, text]) =>
+        [lang, text == null ? text : String(text).replace(/\s*\.\s*$/, '').trim() || null]));
+}
+
+// Секция описания предмета в ноту: «Активное: Name. текст» (точка в конце убирается).
+function itemSectionNote(section) {
+    const note = {};
+    for (const lang of NATURE_LANGS) {
+        const title = (section.title && (section.title[lang] || section.title.en || section.title.ru)) || '';
+        const text = (section.text && (section.text[lang] || section.text.en || section.text.ru)) || '';
+        const combined = [title, text].map((s) => String(s).trim()).filter(Boolean).join('. ');
+        note[lang] = combined || null;
+    }
+    return note;
 }
 
 const ITEM_STAT_VARIABLE_ALIASES = {
@@ -1007,11 +1371,19 @@ function buildItemCharacteristics(itemId, itemKV, localizationSources, options =
 
         const percent = prefix.includes('%');
         const positive = prefix.includes('+');
+        const reduce = prefix.includes('-');
         let value = normalizedAbilityValue(raw, percent, options);
         if (!value) continue;
         if (positive) {
             value = value.split(' / ').map((part) => part.startsWith('-') ? part : `+${part}`).join(' / ');
+        } else if (reduce) {
+            // reduce-статы: в токене префикс «-» → показываем как отрицательное значение
+            value = value.split(' / ').map((part) => /^[+-]/.test(part) ? part : `-${part}`).join(' / ');
         }
+        // красный маркер (дебафф) — по наличию <font color='#e03e2e'> в токене source
+        const highlighted = /color\s*=\s*['"]?#e03e2e/i.test(
+            [markerToken, labels.ru, labels.en, labels.uk].filter(Boolean).join(' ')
+        );
         const clean = (label) => normText(String(label).replace(/<[^>]+>/g, ' ').replace(/^[%+\-\s]+/, ''));
         const fallback = labels.en || labels.ru;
         result.push({
@@ -1023,18 +1395,233 @@ function buildItemCharacteristics(itemId, itemKV, localizationSources, options =
                 cs: clean(labels.en || labels.ru),
             },
             value,
+            ...(highlighted && { negative: true }),
         });
     }
     return result;
 }
 
+const SHOP_CATEGORY_NAMES = {
+    consumables: { ru: 'Расходники', en: 'Consumables', uk: 'Витратні', cs: 'Spotřební' },
+    attributes: { ru: 'Атрибуты', en: 'Attributes', uk: 'Атрибути', cs: 'Atributy' },
+    weapons_armor: { ru: 'Оружие и броня', en: 'Weapons and armor', uk: 'Зброя та броня', cs: 'Zbraně a brnění' },
+    misc: { ru: 'Разное', en: 'Miscellaneous', uk: 'Різне', cs: 'Ostatní' },
+    secretshop: { ru: 'Потайная лавка', en: 'Secret shop', uk: 'Таємна крамниця', cs: 'Tajný obchod' },
+    basics: { ru: 'Основные', en: 'Basics', uk: 'Основні', cs: 'Základní' },
+    support: { ru: 'Поддержка', en: 'Support', uk: 'Підтримка', cs: 'Podpora' },
+    magics: { ru: 'Магия', en: 'Magic', uk: 'Магія', cs: 'Magie' },
+    defense: { ru: 'Защита', en: 'Defense', uk: 'Захист', cs: 'Obrana' },
+    weapons: { ru: 'Оружие', en: 'Weapons', uk: 'Зброя', cs: 'Zbraně' },
+    artifacts: { ru: 'Артефакты', en: 'Artifacts', uk: 'Артефакти', cs: 'Artefakty' },
+};
+const NEW_ITEM_IN_CATEGORY = { ru: 'Новый предмет в категории', en: 'New item in category', uk: 'Новий предмет у категорії', cs: 'Nový předmět v kategorii' };
+const NEW_ITEM_HEAD = { ru: 'Новый предмет', en: 'New item', uk: 'Новий предмет', cs: 'Nový předmět' };
+
+// Стандартные (запасные) картинки по типам — ключи в бакете
+const STD_IMAGE = {
+    ability: 'pages/patches/standard_ability.webp',
+    hero: 'pages/patches/standard_hero.webp',
+    item: 'pages/patches/standard_item.webp',
+    creep: 'pages/patches/standard_creep.webp',
+};
+// у врождённых способностей запасная — иконка врождённости, а не стандартная
+const INNATE_ICON = 'abilities/innate_icon.png';
+
+// Кандидаты ключа картинки предмета: и по texture, и по id, у чар — без «enhancement_».
+function itemImageCandidates(id, texture) {
+    const clean = (s) => String(s).replace(/^item_/, '').replace(/_custom$/, '');
+    const names = [];
+    if (texture) names.push(clean(texture));
+    names.push(clean(id));
+    const cands = [];
+    for (const n of names) {
+        const noEnh = n.replace(/^enhancement_/, '');
+        cands.push(`images/items/${noEnh}.webp`);
+        if (noEnh !== n) cands.push(`images/items/${n}.webp`);
+    }
+    return cands;
+}
+// Кандидаты ключа способности: по texture, по id и по id с заменой имени героя
+// (antimage → anti-mage), т.к. в бакете файлы бывают с дефисом.
+function abilityImageCandidates(id, texture, altId) {
+    const clean = (s) => String(s).replace(/_custom$/, '');
+    const cands = [];
+    if (texture) cands.push(`abilities/${clean(texture)}.webp`);
+    cands.push(`abilities/${clean(id)}.webp`);
+    if (altId && altId !== id) cands.push(`abilities/${clean(altId)}.webp`);
+    return cands;
+}
+const heroImagePath = (heroId) => `images/heroes/heroesPreview/${heroId}.webp`;
+const talentImagePath = (heroId, num) => `images/heroes/talents/${heroId}/${num}.webp`;
+
+function talentNumberFromId(heroId, talentId) {
+    if (!talentId) return '';
+    const stripped = String(talentId).replace(new RegExp(`^modifier_${heroId}_`), '');
+    return stripped === talentId ? String(talentId).replace(/^modifier_/, '') : stripped;
+}
+
+// Убирает дубликаты способностей base+custom (напр. anti-mage_persectur и
+// anti-mage_persectur_custom) — оставляет более содержательную (обычно _custom),
+// чтобы одна и та же врождёнка не задваивалась.
+function dedupeAbilities(abilities) {
+    // предпочитаем реально используемую: врождённую (innate), затем _custom-версию
+    const score = (ab) => (ab.innate ? 2 : 0) + (/_custom$/.test(ab.ability_id) ? 1 : 0);
+    const byCanon = new Map();
+    for (const ab of abilities) {
+        const canon = ab.ability_id.replace(/_custom$/, '');
+        const existing = byCanon.get(canon);
+        if (!existing || score(ab) > score(existing)) byCanon.set(canon, ab);
+    }
+    return [...byCanon.values()];
+}
+
+// Порядок способностей в списке: врождённая → упразднённая → новая → обычные.
+function orderAbilities(list) {
+    const rank = (ab) => (ab.innate ? 0 : ab.is_removed ? 1 : ab.is_new ? 2 : 3);
+    return list
+        .map((ab, index) => ({ ab, index }))
+        .sort((a, b) => rank(a.ab) - rank(b.ab) || a.index - b.index)
+        .map(({ ab }) => ab);
+}
+
+// «Природная» заметка («Теперь является врождённой способностью…» и аналоги) — всегда первой.
+// Если их несколько (напр. «стала врождённой» из diff полей + синтетическая «новая …»
+// после переноса способности к герою) — оставляем одну: приоритет у более точной
+// «стала врождённой/базовой» (parameter: 'Innate'), иначе — первую по порядку.
+// плейсхолдеры вида {change_label}/{new_raw_value} есть только у сырых числовых
+// заметок; смысловые («Теперь наносит магический урон» и т.п.) — без них
+function abilityNoteHasPlaceholder(note) {
+    const text = (note && note.note && (note.note.ru || note.note.en || note.note.uk || note.note.cs)) || '';
+    return /\{[a-z_]+\}/i.test(text);
+}
+
+// заметка о приросте значения за уровень героя («увеличение за уровень: …»)
+const isLevelupNote = (note) =>
+    typeof note.parameter === 'string' && /(_hero_levelup|_per_level)$/.test(note.parameter);
+
+// Порядок заметок способности: врождёнка/природа (одна) → смысловые изменения
+// (тип урона, иммунитет к магии, «Больше не улучшается со способностью» и пр.) →
+// прирост за уровень → обычные числовые параметры.
+function orderAbilityNotes(notes) {
+    const list = [...(notes || [])];
+    const natureNotes = list.filter(isAbilityNatureNote);
+    const nonNature = list.filter((note) => !isAbilityNatureNote(note));
+    const levelup = nonNature.filter(isLevelupNote);
+    const semantic = nonNature.filter((note) => !isLevelupNote(note) && !abilityNoteHasPlaceholder(note));
+    const ordinary = nonNature.filter((note) => !isLevelupNote(note) && abilityNoteHasPlaceholder(note));
+    const head = natureNotes.length
+        ? [natureNotes.find((note) => note.parameter === 'Innate') || natureNotes[0]]
+        : [];
+    return [...head, ...semantic, ...levelup, ...ordinary];
+}
+
+// Порядок полей способности: image/innate/описание выше, ability_notes — последним.
+// Служебные флаги is_new/is_removed (нужны только для сортировки) в вывод не попадают.
+function stripOwnerPrefix(name, ownerName) {
+    if (!ownerName || typeof name !== 'string') return name;
+    const low = name.toLowerCase();
+    const pref = ownerName.toLowerCase() + ' ';
+    return low.startsWith(pref) ? name.slice(ownerName.length + 1) : name;
+}
+
+function orderAbilityFields(ab, ownerName) {
+    const { ability_id, name, image, innate, is_new, is_removed, description, ability_values, ability_notes, ...rest } = ab;
+    return {
+        ability_id,
+        // имя способности без имени героя в начале (ogre magi fireblast → fireblast)
+        name: stripOwnerPrefix(name ?? readableAbilityName(ability_id), ownerName),
+        ...(image !== undefined && { image }),
+        ...(innate !== undefined && { innate }),
+        ...(description !== undefined && { description }),
+        ...(ability_values !== undefined && { ability_values }),
+        ...rest,
+        ability_notes: orderAbilityNotes(ability_notes),
+    };
+}
+
+// Готовый путь картинки из списка кандидатов. Если есть индекс — берём первый
+// существующий (учитывая вариант с/без _custom); нет индекса — первый кандидат;
+// ничего не найдено -> стандартная.
+function resolveImage(assetKeys, candidates, fallbackKey) {
+    const list = (Array.isArray(candidates) ? candidates : [candidates]).filter(Boolean);
+    if (!list.length) return fallbackKey;
+    if (!assetKeys) return list[0];
+    for (const key of list) {
+        if (assetKeys.has(key)) return key;
+        const alt = /_custom\.webp$/.test(key)
+            ? key.replace(/_custom\.webp$/, '.webp')
+            : key.replace(/\.webp$/, '_custom.webp');
+        if (assetKeys.has(alt)) return alt;
+    }
+    return fallbackKey;
+}
+
+// item_blade_mail_custom -> «blade mail»; item_enhancement_hulking -> «hulking»
+function readableItemName(id) {
+    return String(id)
+        .replace(/^item_/, '')
+        .replace(/_custom$/, '')
+        .replace(/^enhancement_/, '')
+        .replace(/_/g, ' ');
+}
+
+// читаемое имя сущности из id: antimage -> «antimage», phantom_assassin -> «phantom assassin»
+function readableEntityName(id) {
+    return String(id).replace(/^boss_/, '').replace(/_/g, ' ');
+}
+
+// читаемое имя способности из id (фолбэк, когда нет локализации)
+function readableAbilityName(id) {
+    return String(id).replace(/_custom$/, '').replace(/_/g, ' ');
+}
+
+// Подпись под названием предмета: «Новый предмет в категории «Магия»»
+function itemCaption(categoryKey) {
+    const cat = SHOP_CATEGORY_NAMES[categoryKey];
+    if (!cat) return { ...NEW_ITEM_HEAD };
+    return Object.fromEntries(NATURE_LANGS.map((l) => [l, `${NEW_ITEM_IN_CATEGORY[l]} «${cat[l]}»`]));
+}
+
+// «+4% / +5%» -> «+4%/5%» (плюс только у первого тира)
+function joinTierValue(value) {
+    return String(value).split(' / ').map((p, i) => (i === 0 ? p : p.replace(/^\+/, ''))).join('/');
+}
+
+// Подпись новой нейтралки: «Новые чары N разряда» / «Новый артефакт N разряда»
+function neutralCaption(kind, value) {
+    if (value == null) return null;
+    const readable = Array.isArray(value) ? value.join('/') : String(value);
+    const ordinal = Array.isArray(value) ? value.join('/') : `${value}-го`;
+    return {
+        ru: kind === 'enhancement' ? `Новые чары ${ordinal} разряда` : `Новый артефакт ${ordinal} разряда`,
+        en: kind === 'enhancement' ? `New rank ${readable} enhancement` : `New tier ${readable} artifact`,
+        uk: kind === 'enhancement' ? `Нові чари ${readable}-го розряду` : `Новий артефакт ${readable}-го розряду`,
+        cs: kind === 'enhancement' ? `Nové vylepšení ranku ${readable}` : `Nový artefakt ranku ${readable}`,
+    };
+}
+
+// Параметры чар готовыми нотами: «+4%/5% к здоровью» (+ флаг красного из данных)
+function enhancementStatNotes(values) {
+    return (values || []).map((v) => {
+        const value = joinTierValue(v.value);
+        const label = (l) => (v.label && (v.label[l] || v.label.en || v.label.ru)) || '';
+        return {
+            note: Object.fromEntries(NATURE_LANGS.map((l) => [l, `${value} ${label(l)}`.trim()])),
+            ...(v.negative && { negative: true }),
+        };
+    });
+}
+
 function buildChangelogData(diff, options = {}) {
+    const assetKeys = options.assetKeys || null; // Set ключей бакета или null (тогда мягкий откат)
     const heroList = options.heroList || [];
     const matchHero = makeHeroMatcher(heroList);
     const oldAbilities = options.oldAbilities || {};
     const newAbilities = options.newAbilities || {};
     const oldLocalization = options.oldLocalization || {};
     const newLocalization = options.newLocalization || {};
+    // контекст для авто-определения процентных значений (см. applyPercent)
+    PERCENT_CTX = { oldLoc: oldLocalization, newLoc: newLocalization };
     const oldItems = options.oldItems || {};
     const newItems = options.newItems || {};
     const newBaseLocalization = options.newBaseLocalization || {};
@@ -1048,6 +1635,9 @@ function buildChangelogData(diff, options = {}) {
     const describeNew = (id, kv) => buildItemDescription(id, kv, localizationSources);
     const describeNewSections = (id, kv) => buildItemDescriptionSections(id, kv, localizationSources);
     const describeNewValues = (id, kv) => buildItemCharacteristics(id, kv, itemStatLocalizationSources);
+    // Новая способность: описание + параметры единой строкой (параметры больше не выносятся отдельно)
+    const describeNewAbility = (id, kv) =>
+        mergeAbilityDescription(describeNew(id, kv), buildAbilityValues(id, kv, localizationSources));
     const newShopCategory = shopCategoryMap(options.newShops);
     const oldShopCategory = shopCategoryMap(options.oldShops);
     const newNeutrals = options.newNeutrals || {};
@@ -1115,7 +1705,11 @@ function buildChangelogData(diff, options = {}) {
     const bosses = new Map();
     const bossBlock = (bossId) => {
         if (!bosses.has(bossId)) {
-            bosses.set(bossId, { boss_id: replaceHeroKey(bossId), abilities: new Map() });
+            // префикс boss_ в исходных ScriptFile проставлен непоследовательно
+            // (neutrals/boss_sand_king vs neutrals/shadow_fiend) — приводим имя
+            // босса к единому виду c приставкой boss_ (добавляем, если её нет)
+            const bossKey = replaceHeroKey(bossId);
+            bosses.set(bossId, { boss_id: bossKey.startsWith('boss_') ? bossKey : `boss_${bossKey}`, abilities: new Map() });
         }
         return bosses.get(bossId);
     };
@@ -1332,8 +1926,16 @@ function buildChangelogData(diff, options = {}) {
     for (const entry of flattenDiff(diff.sections.heroes || {})) {
         if (isDuplicateParserArtifact(entry)) continue;
         if (isIgnoredHeroField(entry.path[1])) continue;
+        applyHeroBaseDefault(entry);
         const heroId = stripHeroPrefix(entry.path[0]);
-        heroBlock(heroId).hero_notes.push(noteFromDiff(entry, true));
+        const heroNote = noteFromDiff(entry, true);
+        if (heroNote) {
+            const icon = STAT_ICONS[heroNote.parameter];
+            // иконку кладём рядом с note (на уровень заметки), а не внутрь note —
+            // иначе note перестаёт быть чистой лок-картой и ломается проекция на язык
+            if (icon) heroNote.icon = icon;
+            heroBlock(heroId).hero_notes.push(heroNote);
+        }
     }
 
     if (options.oldPresent?.units && options.newPresent?.units) {
@@ -1346,7 +1948,6 @@ function buildChangelogData(diff, options = {}) {
         }
     }
 
-    const generalHeroes = { added: [], removed: [] };
     const globalChanges = [];
 
     const addedHeroIds = new Set();
@@ -1371,13 +1972,8 @@ function buildChangelogData(diff, options = {}) {
     for (const key of new Set([...Object.keys(oldActivelist), ...Object.keys(newActivelist)])) {
         const oldValue = oldActivelist[key] === '1';
         const newValue = newActivelist[key] === '1';
-        if (oldValue === newValue) continue;
-        const heroId = replaceHeroKey(stripHeroPrefix(key));
-        if (newValue) {
-            addedHeroIds.add(heroId);
-        } else {
-            generalHeroes.removed.push(heroId);
-        }
+        if (oldValue === newValue || !newValue) continue;
+        addedHeroIds.add(replaceHeroKey(stripHeroPrefix(key)));
     }
 
     const abilityDiffEntries = flattenDiff(diff.sections.abilities || {});
@@ -1400,6 +1996,13 @@ function buildChangelogData(diff, options = {}) {
         abilityDiffEntries
             .filter((entry) => entry.path.length === 1 && (entry.type === 'added' || entry.type === 'removed'))
             .map((entry) => `${entry.type}:${abilityCanon(entry.path[0])}`)
+    );
+    // способности с изменениями полей (существовали и изменились) — их нельзя
+    // считать «новыми» при переносе в карту способностей героя
+    const changedAbilityCanons = new Set(
+        abilityDiffEntries
+            .filter((entry) => entry.path.length >= 2)
+            .map((entry) => abilityCanon(entry.path[0]))
     );
     const resolveAbility = (abilities, mappedId) => {
         if (mappedId in abilities) return { id: mappedId, value: abilities[mappedId] };
@@ -1431,7 +2034,8 @@ function buildChangelogData(diff, options = {}) {
                     mappedHero: oldHero,
                 });
             }
-            if (newHero && !structuralAbilityChanges.has(`added:${abilityCanon(mappedId)}`)) {
+            if (newHero && !structuralAbilityChanges.has(`added:${abilityCanon(mappedId)}`)
+                && !changedAbilityCanons.has(abilityCanon(mappedId))) {
                 const newAbility = resolveAbility(newAbilities, mappedId);
                 abilityDiffEntries.push({
                     type: 'added',
@@ -1444,6 +2048,44 @@ function buildChangelogData(diff, options = {}) {
         }
     }
     
+    // поле могло переехать между верхним уровнем и AbilityValues (напр. AbilityCooldown):
+    // это даёт пару removed(верхний)+added(в AbilityValues) с одним именем поля.
+    // Схлопываем: значение то же — убираем обе заметки, изменилось — оставляем одну «изменено».
+    {
+        const scalar = (v) => (v && typeof v === 'object' && !Array.isArray(v) && 'value' in v) ? v.value : v;
+        const sameNum = (a, b) => {
+            const na = Number(a), nb = Number(b);
+            return (Number.isFinite(na) && Number.isFinite(nb)) ? na === nb : sameRawValue(a, b);
+        };
+        const byKey = new Map();
+        for (const e of abilityDiffEntries) {
+            if (e.path.length < 2) continue;
+            const key = `${e.path[0]}::${e.path[e.path.length - 1]}`;
+            if (!byKey.has(key)) byKey.set(key, []);
+            byKey.get(key).push(e);
+        }
+        const dropMoved = new Set();
+        for (const group of byKey.values()) {
+            const removed = group.find((e) => e.type === 'removed');
+            const added = group.find((e) => e.type === 'added');
+            if (!removed || !added || removed === added) continue;
+            if (sameNum(scalar(removed.old), scalar(added.new))) {
+                dropMoved.add(removed);
+                dropMoved.add(added);
+            } else {
+                added.type = 'changed';
+                added.old = scalar(removed.old);
+                added.new = scalar(added.new);
+                dropMoved.add(removed);
+            }
+        }
+        if (dropMoved.size) {
+            const kept = abilityDiffEntries.filter((e) => !dropMoved.has(e));
+            abilityDiffEntries.length = 0;
+            abilityDiffEntries.push(...kept);
+        }
+    }
+
     {
         const normCharges = (v) => (v == null || v === '' ? '1' : v);
         const byAbility = new Map();
@@ -1513,19 +2155,15 @@ function buildChangelogData(diff, options = {}) {
         
         if (isNeutralCreepAbility(abilityKV)) {
             const creepIds = creepAbilityMap[abilityId] || [];
-            const desc = isWholeAdd ? describeNew(abilityId, newAbilities[abilityId]) : null;
-            const values = isWholeAdd
-                ? buildAbilityValues(abilityId, newAbilities[abilityId], localizationSources)
-                : null;
+            const desc = isWholeAdd ? describeNewAbility(abilityId, newAbilities[abilityId]) : null;
             for (const creepId of creepIds) {
                 const cblock = creepAbilityBlock(creepId, abilityId);
-                if (texture) cblock.image = texture;
+                cblock.image = resolveImage(assetKeys, abilityImageCandidates(abilityId, texture, replaceHeroKey(abilityId)), STD_IMAGE.ability);
                 cblock.ability_notes.push(isWholeAdd
                     ? { ...readyNote('added', entry.old, entry.new, abilityNatureNote('new', newAbilities[abilityId], false, false, abilityNoteContext)) }
                     : noteFromDiff(entry, true, 'ability', abilityNoteContext));
                 if (isWholeAdd) {
-                    cblock.description = desc;
-                    cblock.ability_values = values;
+                    cblock.description = desc ? [desc] : desc;
                 }
             }
             continue;
@@ -1534,13 +2172,12 @@ function buildChangelogData(diff, options = {}) {
         
         if (isBossAbility(abilityKV)) {
             const bblock = bossAbilityBlock(bossIdFromAbility(abilityId, abilityKV), abilityId);
-            if (texture) bblock.image = texture;
+            bblock.image = resolveImage(assetKeys, abilityImageCandidates(abilityId, texture, replaceHeroKey(abilityId)), STD_IMAGE.ability);
             bblock.ability_notes.push(isWholeAdd
                 ? { ...readyNote('added', entry.old, entry.new, abilityNatureNote('new', newAbilities[abilityId], false, false, abilityNoteContext)) }
                 : noteFromDiff(entry, true, 'ability', abilityNoteContext));
             if (isWholeAdd) {
-                bblock.description = describeNew(abilityId, newAbilities[abilityId]);
-                bblock.ability_values = buildAbilityValues(abilityId, newAbilities[abilityId], localizationSources);
+                bblock.description = [describeNewAbility(abilityId, newAbilities[abilityId])];
             }
             continue;
         }
@@ -1562,27 +2199,35 @@ function buildChangelogData(diff, options = {}) {
                 innateAbilities.has(replacedAbilityId);
 
             const block = abilityBlock(heroBlock(heroId), abilityId);
-            if (texture) block.image = texture;
+            block.image = resolveImage(assetKeys, abilityImageCandidates(abilityId, texture, replaceHeroKey(abilityId)), isInnate ? INNATE_ICON : STD_IMAGE.ability);
             if (isInnate) block.innate = true;
+            if (isWholeAdd) block.is_new = true;
+            if (isWholeRemoval) block.is_removed = true;
             if (isWholeAdd) {
-                block.description = describeNew(abilityId, newAbilities[abilityId]);
-                block.ability_values = buildAbilityValues(abilityId, newAbilities[abilityId], localizationSources);
+                block.description = [describeNewAbility(abilityId, newAbilities[abilityId])];
             }
             const heroKv = newAbilities[abilityId] || oldAbilities[abilityId];
             const innateParam = cleanLabel(entry.path) === 'Innate'
                 && String(entry.new ?? '') !== String(entry.old ?? '');
             if (isWholeAdd) {
-
-                block.ability_notes.push({
-                    ...readyNote('added', entry.old, entry.new,
-                        abilityNatureNote('new', newAbilities[abilityId], isInnate, true, abilityNoteContext)),
-                });
+                // Новую способность показываем только описанием (block.description),
+                // без пометки «Новая базовая/врождённая способность. Активная/Пассивная.»
             } else if (innateParam) {
                 const nowInnate = String(entry.new ?? '') === '1';
+                // была ли способность скрытой раньше и перестала быть скрытой сейчас
+                const behaviorText = (kv) => {
+                    const b = kv?.AbilityBehavior;
+                    return Array.isArray(b) ? b.join(' | ') : (typeof b === 'string' ? b : '');
+                };
+                const wasHidden = behaviorText(oldAbilities[abilityId]).includes('DOTA_ABILITY_BEHAVIOR_HIDDEN');
+                const isHidden = behaviorText(newAbilities[abilityId]).includes('DOTA_ABILITY_BEHAVIOR_HIDDEN');
+                const innateKind = nowInnate
+                    ? (wasHidden && !isHidden ? 'became_innate_hidden' : 'became_innate')
+                    : 'became_basic';
                 block.ability_notes.push({
                     parameter: 'Innate',
                     ...readyNote('changed', entry.old, entry.new,
-                        abilityNatureNote(nowInnate ? 'became_innate' : 'became_basic', heroKv, isInnate, true, abilityNoteContext)),
+                        abilityNatureNote(innateKind, heroKv, isInnate, true, abilityNoteContext)),
                 });
             } else {
                 block.ability_notes.push(noteFromDiff(entry, true, 'ability', abilityNoteContext));
@@ -1648,7 +2293,7 @@ function buildChangelogData(diff, options = {}) {
         }
     }
 
-    const groupTalents = (talents) => {
+    const groupTalents = (talents, heroId) => {
         const result = { strength: [], agility: [], intelligence: [] };
         const sorted = [...talents.values()].sort((a, b) => (a.talent_level || 0) - (b.talent_level || 0));
 
@@ -1659,8 +2304,11 @@ function buildChangelogData(diff, options = {}) {
             const title = talent.talent_level
                 ? Object.fromEntries(LANGS.map((lang) => [lang, `${levelPrefix[lang]} ${talent.talent_level}`]))
                 : null;
+            const talentId = replaceHeroKey(talent.talents_id);
+            const num = talentNumberFromId(heroId, talentId);
             result[categoryKey].push({
-                talent_id: replaceHeroKey(talent.talents_id),
+                talent_id: talentId,
+                image: resolveImage(assetKeys, num ? talentImagePath(heroId, num) : null, STD_IMAGE.ability),
                 title,
                 talent_notes: talent.talents_notes,
             });
@@ -1669,14 +2317,19 @@ function buildChangelogData(diff, options = {}) {
     };
 
     const heroResult = [...heroes.values()]
-        .map((hero) => ({
-            hero_id: replaceHeroKey(hero.hero_id),
-            ...(addedHeroIds.has(hero.hero_id) ? { is_new: true } : {}),
-            ...(primaryAttrById[hero.hero_id] ? { primary_attribute: primaryAttrById[hero.hero_id] } : {}),
-            hero_notes: hero.hero_notes,
-            abilities: [...hero.abilities.values()],
-            talents: groupTalents(hero.talents),
-        }))
+        .map((hero) => {
+            const heroName = readableEntityName(replaceHeroKey(hero.hero_id));
+            return {
+                hero_id: replaceHeroKey(hero.hero_id),
+                name: heroName,
+                image: resolveImage(assetKeys, heroImagePath(replaceHeroKey(hero.hero_id)), STD_IMAGE.hero),
+                ...(addedHeroIds.has(hero.hero_id) ? { is_new: true } : {}),
+                ...(primaryAttrById[hero.hero_id] ? { primary_attribute: primaryAttrById[hero.hero_id] } : {}),
+                hero_notes: hero.hero_notes,
+                abilities: orderAbilities(dedupeAbilities([...hero.abilities.values()])).map((ab) => orderAbilityFields(ab, heroName)),
+                talents: groupTalents(hero.talents, replaceHeroKey(hero.hero_id)),
+            };
+        })
         .filter((hero) =>
             hero.is_new ||
             hero.hero_notes.length ||
@@ -1684,10 +2337,15 @@ function buildChangelogData(diff, options = {}) {
             Object.values(hero.talents).some((category) => category.length)
         )
         .filter((hero) => activeHeroIds.size === 0 || activeHeroIds.has(hero.hero_id))
-        .sort((a, b) => a.hero_id.localeCompare(b.hero_id));
+        .sort((a, b) => Number(!!b.is_new) - Number(!!a.is_new) || a.hero_id.localeCompare(b.hero_id));
 
     const bossResult = [...bosses.values()]
-        .map((boss) => ({ boss_id: boss.boss_id, abilities: [...boss.abilities.values()] }))
+        .map((boss) => ({
+            boss_id: boss.boss_id,
+            name: readableEntityName(boss.boss_id),
+            image: resolveImage(assetKeys, heroImagePath(boss.boss_id.replace(/^boss_/, '').replace(/_boss.*$/, '')), STD_IMAGE.hero),
+            abilities: dedupeAbilities([...boss.abilities.values()]).map(orderAbilityFields),
+        }))
         .filter((boss) => boss.abilities.length)
         .sort((a, b) => a.boss_id.localeCompare(b.boss_id));
     
@@ -1697,12 +2355,13 @@ function buildChangelogData(diff, options = {}) {
         .map((creep) => ({
             neutral_creep_id: creep.creep_id,
             name: creep.name,
+            image: resolveImage(assetKeys, null, STD_IMAGE.creep),
             ...(newCreepAdded(creep.creep_id) && { is_new: true }),
             neutral_creep_notes: creep.base_notes,
-            abilities: [...creep.abilities.values()],
+            abilities: dedupeAbilities([...creep.abilities.values()]).map(orderAbilityFields),
         }))
         .filter((creep) => hasCreepName(creep.name) && (creep.neutral_creep_notes.length || creep.abilities.length))
-        .sort((a, b) => a.neutral_creep_id.localeCompare(b.neutral_creep_id));
+        .sort((a, b) => Number(!!b.is_new) - Number(!!a.is_new) || a.neutral_creep_id.localeCompare(b.neutral_creep_id));
     
     const isRecipe = (itemId) => /^item_recipe_/.test(itemId);
     const inShops = (itemId) => itemId in newShopCategory || itemId in oldShopCategory;
@@ -1758,60 +2417,125 @@ function buildChangelogData(diff, options = {}) {
                 item_notes: item.item_notes,
             });
         } else if (kind === 'regular') {
+            const isUpgrade = (item.item_id in newRecipes) || (item.item_id in oldRecipes);
+            const introNotes = [];
+            // показали ли стоимость во вводных заметках (сборка/цена) — тогда
+            // отдельная заметка «Item Cost» ниже не нужна
+            let costShownInIntro = false;
+            if (item.is_new) {
+                const kv = newItems[item.item_id];
+                // 1) собирается (улучшение) или цена (основной) — всегда первым
+                if (isUpgrade && item.recipe) {
+                    introNotes.push({ note: stripTrailingDot(item.recipe) });
+                    costShownInIntro = true;
+                } else if (!isUpgrade) {
+                    const cost = Number((kv || oldItems[item.item_id] || {}).ItemCost) || 0;
+                    if (cost > 0) {
+                        introNotes.push({ note: itemCostNote(cost) });
+                        costShownInIntro = true;
+                    }
+                }
+                // 2) даёт бонусы
+                const gives = itemGivesNote(describeNewValues(item.item_id, kv));
+                if (gives) introNotes.push({ note: gives });
+                // 3-4) активное/пассивное (и прочие секции описания)
+                const sections = describeNewSections(item.item_id, kv);
+                if (sections && sections.length) {
+                    for (const sec of sections) {
+                        const secNote = stripTrailingDot(itemSectionNote(sec));
+                        if (NATURE_LANGS.some((l) => secNote[l])) introNotes.push({ note: secNote });
+                    }
+                } else {
+                    const desc = stripTrailingDot(describeNew(item.item_id, kv) || {});
+                    if (NATURE_LANGS.some((l) => desc[l])) introNotes.push({ note: desc });
+                }
+                // 5) Note-строки предмета из source — последними, каждая отдельной нотой
+                for (const srcNote of itemSourceNotes(item.item_id, kv, localizationSources)) {
+                    introNotes.push({ note: srcNote });
+                }
+            }
             regularResult.push({
                 item_id: item.item_id,
-                ...(texture && { image: texture }),
+                name: readableItemName(item.item_id),
+                image: resolveImage(assetKeys, itemImageCandidates(item.item_id, texture), STD_IMAGE.item),
                 is_new: item.is_new,
-                ...(item.is_new && { category: newShopCategory[item.item_id] || null }),
-                ...(item.is_new && { description: describeNew(item.item_id, newItems[item.item_id]) }),
-                ...(item.is_new && { description_sections: describeNewSections(item.item_id, newItems[item.item_id]) }),
-                ...(item.is_new && { item_values: describeNewValues(item.item_id, newItems[item.item_id]) }),
-                ...(item.recipe && { recipe: item.recipe }),
-                item_notes: item.item_notes,
+                // улучшение = собирается из других предметов (есть свой рецепт), иначе основной
+                is_upgrade: isUpgrade,
+                // готовая подпись «Новый предмет в категории «…»»
+                ...(item.is_new && { caption: itemCaption(newShopCategory[item.item_id]) }),
+                // 5) остальные заметки предмета из source — последними.
+                // У нового предмета показываем только вводное описание (что даёт,
+                // пассивка, цена/сборка), а диффы полей относительно старого
+                // непокупаемого определения — не выводим (игрок их не видел).
+                item_notes: item.is_new
+                    ? introNotes
+                    : orderItemNotes(item.item_notes, costShownInIntro),
             });
         } else {
             const neutralMeta = newNeutrals[item.item_id] || oldNeutrals[item.item_id] || null;
             const kind = neutralKind(item.item_id, neutralMeta);
+            // если предмет уже существовал в прошлом патче как обычный (тот же id
+            // или базовый без _custom), не считаем нейтралку новой
+            const existedBefore = (item.item_id in oldItems) || (stripCustom(item.item_id) in oldItems);
+            const isNew = item.is_new && !existedBefore;
             const ranks = normalizeEnhancementRanks(newNeutrals[item.item_id]);
             const newRanks = addedNeutralRanks.get(item.item_id) || [];
-            const rankNumbers = (item.is_new ? ranks : newRanks).map((entry) => entry.tier);
+            const rankNumbers = (isNew ? ranks : newRanks).map((entry) => entry.tier);
             const rankValue = rankNumbers.length > 1 ? rankNumbers : rankNumbers[0] ?? null;
-            const enhancementLevels = (item.is_new ? ranks : newRanks).map((entry) => entry.level);
+            const enhancementLevels = (isNew ? ranks : newRanks).map((entry) => entry.level);
             const enhancementLevel = enhancementLevels.length > 1 ? enhancementLevels : enhancementLevels[0] ?? null;
             const currentTiers = normalizeTiers(newNeutrals[item.item_id]);
-            const tierValue = item.is_new
+            const tierValue = isNew
                 ? (currentTiers.length > 1 ? currentTiers : currentTiers[0] ?? null)
                 : null;
-            const selectedLevel = newRanks[0]?.level ?? (item.is_new ? ranks[0]?.level : null);
+            const selectedLevel = newRanks[0]?.level ?? (isNew ? ranks[0]?.level : null);
+            const newRankValue = kind === 'enhancement' && newRanks.length > 0
+                ? (newRanks.length > 1 ? newRanks.map((entry) => entry.tier) : newRanks[0].tier)
+                : null;
+            // предмет был обычным в прошлом патче и как нейтралку показать нечего
+            // (нет заметок и изменений разряда) — пропускаем, чтобы не выводить его
+            // как «Новый артефакт» и не плодить пустые карточки
+            if (existedBefore && !(item.item_notes || []).length && newRankValue == null && selectedLevel == null) {
+                continue;
+            }
             const neutral = {
                 neutral_item_id: item.item_id,
-                ...(texture && { image: texture }),
+                name: readableItemName(item.item_id),
+                image: resolveImage(assetKeys, itemImageCandidates(item.item_id, texture), STD_IMAGE.item),
                 neutral_type: kind,
-                is_new: item.is_new,
+                is_new: isNew,
                 tier: kind === 'artifact' ? tierValue : null,
                 ...(kind === 'enhancement' && rankValue != null && { rank: rankValue }),
                 ...(kind === 'enhancement' && enhancementLevel != null && { enhancement_level: enhancementLevel }),
-                ...(kind === 'enhancement' && newRanks.length > 0 && {
-                    new_rank: newRanks.length > 1 ? newRanks.map((entry) => entry.tier) : newRanks[0].tier,
-                }),
-                neutral_item_notes: item.item_notes,
+                ...(newRankValue != null && { new_rank: newRankValue }),
+                // у нейтралок нет покупной стоимости — заметку Item Cost не выводим
+                neutral_item_notes: orderItemNotes((item.item_notes || []).filter((note) => note.parameter !== 'ItemCost')),
             };
-            if (item.is_new || selectedLevel != null) {
+            // готовая подпись «Новые чары N разряда» / «Новый артефакт N разряда»
+            if (isNew) {
+                const captionValue = kind === 'enhancement' ? (newRankValue ?? rankValue) : tierValue;
+                const caption = neutralCaption(kind, captionValue);
+                if (caption) neutral.caption = caption;
+            }
+            if (isNew || selectedLevel != null) {
                 neutral.description = describeNew(item.item_id, newItems[item.item_id]);
                 neutral.description_sections = describeNewSections(item.item_id, newItems[item.item_id]);
-                neutral.item_values = kind === 'enhancement' && selectedLevel != null
-                    ? buildItemCharacteristics(item.item_id, newItems[item.item_id], itemStatLocalizationSources, {
-                        valueIndex: selectedLevel - 1,
+                if (kind === 'enhancement') {
+                    // чары: параметры готовыми нотами (+4%/5% к здоровью, красный флаг)
+                    const values = buildItemCharacteristics(item.item_id, newItems[item.item_id], itemStatLocalizationSources, {
                         includeReadableTokens: true,
-                    })
-                    : describeNewValues(item.item_id, newItems[item.item_id]);
+                    });
+                    neutral.stat_notes = enhancementStatNotes(values);
+                } else {
+                    neutral.item_values = describeNewValues(item.item_id, newItems[item.item_id]);
+                }
             }
             if (item.recipe) neutral.recipe = item.recipe;
             neutralResult.push(neutral);
         }
     }
-    neutralResult.sort((a, b) => a.neutral_item_id.localeCompare(b.neutral_item_id));
-    regularResult.sort((a, b) => a.item_id.localeCompare(b.item_id));
+    neutralResult.sort((a, b) => Number(!!b.is_new) - Number(!!a.is_new) || a.neutral_item_id.localeCompare(b.neutral_item_id));
+    regularResult.sort((a, b) => Number(!!b.is_new) - Number(!!a.is_new) || a.item_id.localeCompare(b.item_id));
 
     const timestamp = Date.parse(diff.generatedAt);
     const patchNumber = formatPatchNumber(diff.to);
@@ -1820,12 +2544,18 @@ function buildChangelogData(diff, options = {}) {
         patch_name: patchNumber,
         patch_timestamp: Number.isNaN(timestamp) ? Math.floor(Date.now() / 1000) : Math.floor(timestamp / 1000),
         general: {
-            heroes: generalHeroes,
             global_changes: globalChanges,
         },
         neutral_creeps: creepResult,
-        items: regularResult,
-        neutral_items: neutralResult,
+        // разбиение по категориям вложенно (без дублей плоского списка)
+        items: {
+            base: regularResult.filter((i) => !i.is_upgrade),
+            upgrade: regularResult.filter((i) => i.is_upgrade),
+        },
+        neutral_items: {
+            artifacts: neutralResult.filter((n) => n.neutral_type !== 'enhancement'),
+            enhancements: neutralResult.filter((n) => n.neutral_type === 'enhancement'),
+        },
         bosses: bossResult,
         heroes: heroResult,
         ...(Object.keys(skipped).length && { skipped }),
@@ -1835,11 +2565,11 @@ function buildChangelogData(diff, options = {}) {
 function renderMarkdown(data) {
     const lines = [`# Patch ${data.patch_number}`, ''];
     lines.push(`Timestamp: ${data.patch_timestamp}`, '');
-    lines.push(`- Added heroes: ${data.general.heroes.added.length}`);
-    lines.push(`- Removed heroes: ${data.general.heroes.removed.length}`);
     lines.push(`- Global changes: ${data.general.global_changes.length}`);
-    lines.push(`- Neutral items: ${(data.neutral_items || []).length}`);
-    lines.push(`- Items: ${data.items.length}`);
+    const neutralCount = (data.neutral_items?.artifacts?.length || 0) + (data.neutral_items?.enhancements?.length || 0);
+    const itemCount = (data.items?.base?.length || 0) + (data.items?.upgrade?.length || 0);
+    lines.push(`- Neutral items: ${neutralCount}`);
+    lines.push(`- Items: ${itemCount}`);
     lines.push(`- Heroes: ${data.heroes.length}`, '');
     lines.push('Labels are filled manually in draft.json where necessary.');
     return lines.join('\n');

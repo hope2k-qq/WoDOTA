@@ -1,44 +1,54 @@
-
 export type NoteLang = 'ru' | 'en' | 'uk' | 'cs';
 
-export type NoteText = Record<NoteLang, string | null>;
+export type Localized = string;
 
 export interface PatchNote {
     parameter?: string;
-    note: NoteText;
+    note: Localized;
+    icon?: string | null;
 }
 
 export interface PatchTalentEntry {
     talent_id?: string;
-    title?: NoteText | null;
+    image?: string;
+    title?: Localized | null;
     talent_notes: PatchNote[];
 }
 
 export interface PatchEntityValue {
     key: string;
-    label: NoteText;
+    label: Localized;
     value: string;
+    negative?: boolean;
 }
 
 export interface PatchDescriptionSection {
-    title: NoteText;
-    text: NoteText;
+    title: Localized;
+    text: Localized;
+}
+
+export interface StatNote {
+    note: Localized;
+    negative?: boolean;
 }
 
 export interface PatchItem {
     item_id: string;
+    name?: string;
     image?: string | null;
     is_new?: boolean;
-    category?: string | null;
-    description?: NoteText | null;
+    is_upgrade?: boolean;
+    caption?: Localized | null;
+    description?: Localized | null;
     description_sections?: PatchDescriptionSection[];
     item_values?: PatchEntityValue[];
-    recipe?: NoteText;
+    recipe?: Localized;
     item_notes: PatchNote[];
 }
 
 export interface PatchNeutralItem {
     neutral_item_id: string;
+    name?: string;
     image?: string | null;
     neutral_type?: 'artifact' | 'enhancement';
     is_new: boolean;
@@ -46,31 +56,36 @@ export interface PatchNeutralItem {
     rank?: number | number[] | null;
     new_rank?: number | number[] | null;
     enhancement_level?: number | number[] | null;
-    description?: NoteText | null;
+    caption?: Localized | null;
+    description?: Localized | null;
     description_sections?: PatchDescriptionSection[];
     item_values?: PatchEntityValue[];
-    recipe?: NoteText;
+    stat_notes?: StatNote[];
+    recipe?: Localized;
     neutral_item_notes: PatchNote[];
 }
 
 export interface PatchAbility {
     ability_id: string;
-    name?: NoteText | null;
+    name?: Localized | null;
     image?: string | null;
     innate?: boolean;
-    description?: NoteText | null;
+    description?: Localized | Localized[] | null;
     ability_values?: PatchEntityValue[];
     ability_notes: PatchNote[];
 }
 
 export interface PatchBoss {
     boss_id: string;
+    name?: string;
+    image?: string;
     abilities: PatchAbility[];
 }
 
 export interface PatchNeutralCreep {
     neutral_creep_id: string;
-    name?: NoteText | null;
+    name?: Localized | null;
+    image?: string;
     is_new?: boolean;
     neutral_creep_notes: PatchNote[];
     abilities: PatchAbility[];
@@ -84,6 +99,8 @@ export interface PatchTalents {
 
 export interface PatchHero {
     hero_id: string;
+    name?: string;
+    image?: string;
     is_new?: boolean;
     primary_attribute?: 'strength' | 'agility' | 'intelligence' | 'universal';
     hero_notes: PatchNote[];
@@ -92,8 +109,7 @@ export interface PatchHero {
 }
 
 export interface PatchGeneral {
-    heroes: { added: string[]; removed: string[] };
-    global_changes: NoteText[];
+    global_changes: Localized[];
 }
 
 export interface PatchLog {
@@ -101,8 +117,8 @@ export interface PatchLog {
     patch_name: string;
     patch_timestamp: number;
     general: PatchGeneral;
-    neutral_items?: PatchNeutralItem[];
-    items: PatchItem[];
+    items?: { base: PatchItem[]; upgrade: PatchItem[] };
+    neutral_items?: { artifacts: PatchNeutralItem[]; enhancements: PatchNeutralItem[] };
     heroes: PatchHero[];
     bosses?: PatchBoss[];
     neutral_creeps?: PatchNeutralCreep[];

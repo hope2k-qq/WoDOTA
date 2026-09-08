@@ -1,0 +1,589 @@
+{
+  "patch_number": "2,01b",
+  "patch_name": "2,01b",
+  "patch_timestamp": 1788741500,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_chasm_stone",
+        "name": "chasm stone",
+        "image": "chasm_stone.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost increased from 800 to 900"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_frost",
+        "name": "orb of frost",
+        "image": "orb_of_frost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "heal_reduction",
+            "note": "Frost health restoration reduction increased from 13% to 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_venom",
+        "name": "orb of venom",
+        "image": "orb_of_venom.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "damage",
+            "note": "Poison Attack damage per second increased from 10 to 12"
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_abyssal_blade",
+        "name": "abyssal blade",
+        "image": "abyssal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_strength",
+            "note": "Strength bonus increased from 26 to 30"
+          }
+        ]
+      },
+      {
+        "item_id": "item_butterfly",
+        "name": "butterfly",
+        "image": "butterfly.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_agility",
+            "note": "Agility bonus decreased from 35 to 30"
+          },
+          {
+            "parameter": "bonus_damage",
+            "note": "Damage bonus increased from 25 to 30"
+          }
+        ]
+      },
+      {
+        "item_id": "item_crellas_crozier",
+        "name": "crellas crozier",
+        "image": "crellas_crozier.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "stack_duration",
+            "note": "Rite of Rumusque movement speed steal duration increased from 1.5s to 2s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_gungir",
+        "name": "gungir",
+        "image": "gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 400 to 300. Total cost unchanged at 4650g"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "heavens halberd",
+        "image": "heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Disarm cooldown decreased from 16s to 15s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_hurricane_pike",
+        "name": "hurricane pike",
+        "image": "hurricane_pike.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "range_duration",
+            "note": "Hurricane Thrust buff duration decreased from 6s to 5s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya",
+        "name": "kaya",
+        "image": "kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Mana Regen Amplification decreased from 30% to 20%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya_and_sange",
+        "name": "kaya and sange",
+        "image": "kaya_and_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Mana Regen Amplification decreased from 40% to 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mask_of_madness",
+        "name": "mask of madness",
+        "image": "mask_of_madness.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "berserk_bonus_movement_speed",
+            "note": "Berserk movement speed bonus on ranged heroes decreased from 8% to 6%"
+          },
+          {
+            "parameter": "berserk_slow_resist",
+            "note": "Berserk now provides 15% slow resistance for ranged heroes and 30% for melee heroes, instead of 30% for any hero"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "meteor hammer",
+        "image": "meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Mana Regen Amplification decreased from 35% to 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_corrosion",
+        "name": "orb of corrosion",
+        "image": "orb_of_corrosion.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "heal_reduction",
+            "note": "Corrosion health restoration reduction increased from 16% to 18%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_satanic",
+        "name": "satanic",
+        "image": "satanic.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Unholy Rage cooldown increased from 30s to 40s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "shivas guard",
+        "image": "shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 1350 to 1250. Total cost unchanged at 4500g"
+          }
+        ]
+      },
+      {
+        "item_id": "item_skadi",
+        "name": "skadi",
+        "image": "skadi.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "cold_attack_slow_melee",
+            "note": "Cold Attack attack speed slow increased from 20% to 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_veil_of_discord",
+        "name": "veil of discord",
+        "image": "veil_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Spell Weakness mana cost decreased from 50 to 25"
+          }
+        ]
+      },
+      {
+        "item_id": "item_yasha_and_kaya",
+        "name": "yasha and kaya",
+        "image": "yasha_and_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Mana Regen Amplification decreased from 40% to 30%"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_enchanters_bauble",
+        "name": "enchanters bauble",
+        "image": "enchanters_bauble.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "enchantment_bonus_growth",
+            "note": "Enchant recraft bonus decreased from 40% to 35%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_heavy_blade",
+        "name": "heavy blade",
+        "image": "heavy_blade.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Cleanse cooldown decreased from 40s to 30s"
+          }
+        ]
+      }
+    ],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_feverish",
+        "name": "feverish",
+        "image": "enhancement_feverish.webp",
+        "neutral_type": "enhancement",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "max_mana",
+            "note": "Now decreases maximum mana by 20%"
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_witchcraft_custom",
+          "name": "witchcraft",
+          "image": "death_prophet_witchcraft.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "movement_speed_pct_hero_levelup",
+              "note": "Movement Speed per level decreased from 0.33% to 0.25%"
+            },
+            {
+              "parameter": "cooldown_reduction_pct_hero_levelup",
+              "note": "Spell Cooldown Reduction per level decreased from 0.33% to 0.25%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "note": "Attack Range decreased from 200 to 175",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "name": "legion commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base Attack Speed increased from 100 to 105",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "necrophos_sadist",
+          "name": "sadist",
+          "image": "necrophos_sadist.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "regen",
+              "note": "HP/Mana Regen decreased from 3.7 + 0.3 per level to 3.8 + 0.2 per level"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_phantom_assassin_9",
+            "image": "phantom_assassin_9.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Stifling Dagger attack damage increase decreased from 25%/50% to 15%/30%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Base Health Regen decreased by 1",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Base Movement Speed decreased from 300 to 295",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_14",
+            "image": "void_spirit_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Astral Step's maximum cooldown reduction is now reached at 300 Agility instead of 600"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_warlock_8",
+            "image": "warlock_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Base attack speed increased from 1.5 to 1.6"
+              },
+              {
+                "note": "Slow Resistance decreased from 60% to 40%"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_windranger_9",
+            "image": "windranger_9.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Tornado damage decreased from 100 to 75"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_8",
+            "image": "winter_wyvern_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Arctic Burn damage increase decreased from 40/80 to 25/50"
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_14",
+            "image": "winter_wyvern_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Mana cost per second decreased from 200 to 160"
+              },
+              {
+                "note": "No longer removes the limit on the number of attacks on a single target"
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

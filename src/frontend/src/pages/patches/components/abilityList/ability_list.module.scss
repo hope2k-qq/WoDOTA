@@ -1,0 +1,65 @@
+.ability_head {
+    display: flex;
+    align-items: start;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.ability_icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ability_icon_wrap {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    flex-shrink: 0;
+}
+
+.innate_badge {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+    pointer-events: none;
+}
+
+.innate_badge::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background-color: rgba(9, 11, 14, .97);
+    border-radius: 50%;
+}
+
+.innate_badge_img {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.ability_name {
+    color: #f0f6fc;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+
+.ability_desc {
+    margin-left: 28px;
+}
+

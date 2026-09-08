@@ -12,7 +12,7 @@ import { ReactComponent as SettingsIcon } from "../../assets/icons/settings_icon
 import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
 import { ReactComponent as TournamentIcon } from "../../assets/icons/TournamentIcon.svg";
 import { ReactComponent as YouTubeIcon } from "../../assets/icons/YouTubeIcon.svg";
-import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg";
+//import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg";
 import { ReactComponent as FireIcon } from "../../assets/icons/FireIcon.svg";
 import {useUnreadNews} from "../../context/UnreadNewsContext";
 import {Settings} from "./components/settings/Settings";
@@ -148,12 +148,6 @@ export const TopBar = () => {
                                 <TopBarMenuItem title={t('wodota_content')} menuOpen={menuOpen}/>
                                 <MoreIcon/>
                             </Link>
-                            <a className={styles.topbar_menu_item_open}
-                               href="https://shop.world-of-dota.com" target="_blank" rel="noopener noreferrer"
-                               onClick={() => setMenuOpen(false)}>
-                                <TopBarMenuItem title={t('donate')} menuOpen={menuOpen}/>
-                                <MoreIcon/>
-                            </a>
                             <Link className={styles.topbar_menu_item_open} to={buildPath('/news')}
                                   onClick={() => setMenuOpen(false)}>
                                 <TopBarMenuItem title={t('news')} menuOpen={menuOpen}/>
@@ -215,9 +209,6 @@ export const TopBar = () => {
                                         to={buildPath('/creators/videos')}
                                         isActive={activeIcon("/creators/videos")} menuOpen={menuOpen}
                                         icon={<YouTubeIcon/>}/>
-                        <TopBarMenuItem title={t('donate')}
-                                        onNavigate={() => window.open('https://shop.world-of-dota.com', '_blank')}
-                                        menuOpen={menuOpen} icon={<WalletIcon/>}/>
                     </div>
                     <div className={styles.hamburger} onClick={toggleMenu}>
                         <div className={styles.line}></div>

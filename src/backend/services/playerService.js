@@ -95,8 +95,12 @@ const getPlayersInfoBySteamIds = async (friendshipCodes, steamCollection) => {
                 }
             }));
 
-            await steamCollection.bulkWrite(bulkOps);
-            console.log(`[MongoDB] Updated ${playersToInsert.length} users in DB`);
+            if (bulkOps.length > 0) {
+                await steamCollection.bulkWrite(bulkOps);
+                console.log(`[MongoDB] Updated ${playersToInsert.length} users in DB`);
+            } else {
+                console.log('[MongoDB] No users to update in DB — skipping bulkWrite');
+            }
         }
         
         await delay(2000);

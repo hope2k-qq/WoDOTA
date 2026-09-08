@@ -1,0 +1,673 @@
+{
+  "patch_number": "2,01a",
+  "patch_name": "2,01a",
+  "patch_timestamp": 1788784572,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [
+    {
+      "neutral_creep_id": "npc_woda_creep66",
+      "name": {
+        "ru": "Воин Некрономикона",
+        "en": "Necronomicon Warrior",
+        "uk": "Воїн Некрономікону"
+      },
+      "image": "pages/patches/standard_creep.webp",
+      "neutral_creep_notes": [],
+      "abilities": [
+        {
+          "ability_id": "woda_neutral_last_will_custom",
+          "name": {
+            "ru": "Last Will",
+            "en": "Last Will",
+            "uk": "Остання Воля"
+          },
+          "image": "necronomicon_warrior_last_will.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage",
+              "note": {
+                "ru": "Урон увеличен с 10 до 25",
+                "en": "Damage increased from 10 to 25",
+                "uk": "Шкоду збільшено з 10 до 25"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_soul_reaver",
+        "name": "soul reaver",
+        "image": "soul_reaver.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health",
+            "note": {
+              "ru": "Бонус к здоровью изменён с 250 на 8% от максимального здоровья",
+              "en": "Health bonus changed from 250 to 8% of max health",
+              "uk": "Бонус до здоров'я змінено з 250 на 8% від максимального здоров'я"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_earthshaker_16",
+            "image": "earthshaker_16.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Урон от заклинаний уменьшен с 10%/20% до 6%/12%",
+                  "en": "Spell Damage decreased from 10%/20% to 6%/12%",
+                  "uk": "Шкоду від заклять зменшено з 10%/20% до 6%/12%"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_invoker_6",
+            "image": "invoker_6.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Неуязвимость Forge Spirit теперь действует только в радиусе 600 вокруг героя",
+                  "en": "Forge Spirit invulnerability now only works within 600 radius around the hero",
+                  "uk": "Невразливість Forge Spirit тепер діє лише в радіусі 600 навколо героя"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "name": "legion commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_legion_commander_5",
+            "image": "legion_commander_5.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь при подсчёте атак для срабатывания Moment of Courage учитываются и атаки владельца",
+                  "en": "Owner's attacks now also count toward Moment of Courage's proc",
+                  "uk": "Тепер при підрахунку атак для спрацювання Moment of Courage враховуються й атаки власника"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "ogre_magi",
+      "name": "ogre magi",
+      "image": "images/heroes/heroesPreview/ogre_magi.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "ogre_magi_bloodlust_custom",
+          "image": "ogre_magi_bloodlust.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_attack_speed",
+              "note": {
+                "ru": "Бонус к скорости атаки уменьшен с 35/50/65/80 до 16/24/32/40",
+                "en": "Attack speed bonus decreased from 35/50/65/80 to 16/24/32/40",
+                "uk": "Бонус до швидкості атаки зменшено з 35/50/65/80 до 16/24/32/40"
+              }
+            },
+            {
+              "parameter": "self_bonus",
+              "note": {
+                "ru": "Бонус к скорости атаки для владельца уменьшен с 40/60/80/100 до 20/30/40/50",
+                "en": "Self attack speed bonus decreased from 40/60/80/100 to 20/30/40/50",
+                "uk": "Бонус до швидкості атаки для власника зменшено з 40/60/80/100 до 20/30/40/50"
+              }
+            },
+            {
+              "parameter": "AbilityBehavior",
+              "note": {
+                "ru": "Теперь можно включить автоприменение",
+                "en": "Can now be autocast",
+                "uk": "Тепер можна ввімкнути автозастосування"
+              }
+            }
+          ],
+          "name": "bloodlust"
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_ogre_magi_3",
+            "image": "ogre_magi_3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение времени перезарядки усилено с 7% до 13%",
+                  "en": "Cooldown Reduction increased from 7% to 13%",
+                  "uk": "Зменшення часу перезарядки посилено з 7% до 13%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_ogre_magi_4",
+            "image": "ogre_magi_4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Магический урон Ignite от Fire Shield увеличен с 100% до 200% от силы",
+                  "en": "Fire Shield's Ignite magic damage increased from 100% to 200% of Strength",
+                  "uk": "Магічну шкоду Ignite від Fire Shield збільшено з 100% до 200% від сили"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_ogre_magi_14",
+            "image": "ogre_magi_14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Шанс применить Fireblast при атаке уменьшен с 14% до 10%",
+                  "en": "Chance to cast Fireblast on attack decreased from 14% to 10%",
+                  "uk": "Шанс застосувати Fireblast при атаці зменшено з 14% до 10%"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_ogre_magi_21",
+            "image": "ogre_magi_21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Урон Unrefined Fireblast увеличен с 200 до 250",
+                  "en": "Unrefined Fireblast damage increased from 200 to 250",
+                  "uk": "Шкоду Unrefined Fireblast збільшено з 200 до 250"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_17",
+            "image": "sniper_17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Урон от заклинаний увеличен с 30% до 50%",
+                  "en": "Spell Damage increased from 30% to 50%",
+                  "uk": "Шкоду від заклять збільшено з 30% до 50%"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "visage",
+      "name": "visage",
+      "image": "images/heroes/heroesPreview/visage.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_visage_8",
+            "image": "visage_8.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также даёт +5/10 к силе",
+                  "en": "Now also grants +5/10 Strength",
+                  "uk": "Тепер також дає +5/10 до сили"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_10",
+            "image": "visage_10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Прибавка к силе, ловкости и интеллекту за убийство героя увеличена с 1 до 2",
+                  "en": "Strength, Agility, and Intelligence gained per hero kill increased from 1 to 2",
+                  "uk": "Приріст сили, спритності та інтелекту за вбивство героя збільшено з 1 до 2"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_12",
+            "image": "visage_12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Кража пополнения здоровья Grave Chill увеличена с 5%/15%/25% до 10%/20%/30%",
+                  "en": "Grave Chill health restoration steal increased from 5%/15%/25% to 10%/20%/30%",
+                  "uk": "Крадіжку відновлення здоров'я Grave Chill збільшено з 5%/15%/25% до 10%/20%/30%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_13",
+            "image": "visage_13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Длительность уменьшения брони от атак Гаргулий увеличена с 1,5/3 до 3/6 секунд",
+                  "en": "Familiars' armor reduction duration increased from 1.5/3 to 3/6 seconds",
+                  "uk": "Тривалість зменшення броні від атак Гаргулій збільшено з 1,5/3 до 3/6 секунд"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_14",
+            "image": "visage_14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус ко всему наносимому урону увеличен с 12% до 15%",
+                  "en": "Bonus to all damage dealt increased from 12% to 15%",
+                  "uk": "Бонус до всієї завданої шкоди збільшено з 12% до 15%"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Бонус к дальности атаки Гаргулий увеличен с 150 до 200",
+                  "en": "Familiars' attack range bonus increased from 150 to 200",
+                  "uk": "Бонус до дальності атаки Гаргулій збільшено з 150 до 200"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_visage_20",
+            "image": "visage_20.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также увеличивает длительность дополнительного урона Silent as the Grave на 1/2 сек",
+                  "en": "Now also increases Silent as the Grave bonus damage duration by 1/2 sec",
+                  "uk": "Тепер також збільшує тривалість додаткової шкоди Silent as the Grave на 1/2 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_19",
+            "image": "visage_19.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Длительности Дополнительного Урона Silent as the Grave: 1/2 сек. Увеличение Дополнительного Урона Silent as the Grave: 5%/10%» заменено на «Summon Familiars не призывает Гаргулий и становится пассивной способностью. Stone Form можно активировать без Гаргулий Summon Familiars, чтобы моментально нанести урон и оглушить противников в указанной области. По окончании эффекта Гаргульи исчезают. Радиус применения: 900 Увеличение Урона Stone Form: 100%/200% от Урона Гаргулий Summon Familiars»",
+                  "en": "«Silent as the Grave Bonus Damage Duration Increase: 1/2 sec. Silent as the Grave Bonus Damage Increase: 5%/10%» replaced with «Summon Familiars no longer summons Gargoyles and becomes a passive ability. Stone Form can be activated without Summon Familiars Gargoyles to instantly deal damage and stun enemies in the target area. When the effect ends, the Gargoyles disappear. Cast Radius: 900 Stone Form Damage Increase: 100%/200% of Summon Familiars Gargoyle Attack Damage»",
+                  "uk": "«Збільшення тривалості додаткової шкоди Silent as the Grave: 1/2 с Збільшення додаткової шкоди Silent as the Grave: 5%/10%» замінено на «Summon Familiars більше не закликає Гаргулій і стає пасивною здібністю. Stone Form можна активувати без Гаргулій Summon Familiars, щоб миттєво завдати шкоди та оглушити ворогів у вибраній області. Після завершення ефекту Гаргулії зникають. Радіус застосування: 900 Збільшення шкоди Stone Form: 100%/200% від шкоди атаки Гаргулій Summon Familiars»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_visage_21",
+            "image": "visage_21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также даёт +500 к здоровью",
+                  "en": "Now also grants +500 Health",
+                  "uk": "Тепер також дає +500 до здоров'я"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "void_spirit_resonant_pulse_custom",
+          "name": "resonant pulse",
+          "image": "void_spirit_resonant_pulse.webp",
+          "ability_notes": [
+            {
+              "parameter": "absorb_per_hero_hit",
+              "note": {
+                "ru": "Поглощение за попадание по герою увеличено с 50/70/90/100 до 50/70/90/110",
+                "en": "Absorb per hero hit increased from 50/70/90/100 to 50/70/90/110",
+                "uk": "Поглинання за влучання по герою збільшено з 50/70/90/100 до 50/70/90/110"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_void_spirit_6",
+            "image": "void_spirit_6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Длительность копий Aether Remnant от Dissimilate уменьшена с 6 до 4 секунд",
+                  "en": "Aether Remnant copies duration from Dissimilate decreased from 6 to 4 seconds",
+                  "uk": "Тривалість копій Aether Remnant від Dissimilate зменшено з 6 до 4 секунд"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_7",
+            "image": "void_spirit_7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Длительность Aether Remnant от Astral Step уменьшена с 6 до 4 секунд",
+                  "en": "Astral Step's Aether Remnant duration decreased from 6 to 4 seconds",
+                  "uk": "Тривалість Aether Remnant від Astral Step зменшено з 6 до 4 секунд"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_8",
+            "image": "void_spirit_8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение барьера Resonant Pulse уменьшено с 100%/200% до 75%/150% от ловкости",
+                  "en": "Resonant Pulse barrier increase decreased from 100%/200% to 75%/150% of Agility",
+                  "uk": "Збільшення бар'єра Resonant Pulse зменшено з 100%/200% до 75%/150% від спритності"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_13",
+            "image": "void_spirit_13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Шанс, что Astral Step не уйдёт в перезарядку, уменьшен с 10%/20%/30% до 8%/16%/24%",
+                  "en": "Chance for Astral Step to not go on cooldown decreased from 10%/20%/30% to 8%/16%/24%",
+                  "uk": "Шанс, що Astral Step не піде в перезарядку, зменшено з 10%/20%/30% до 8%/16%/24%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_14",
+            "image": "void_spirit_14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение перезарядки Astral Step теперь за каждые 75 ловкости вместо 50",
+                  "en": "Astral Step cooldown reduction is now per 75 Agility instead of 50",
+                  "uk": "Зменшення перезарядки Astral Step тепер за кожні 75 спритності замість 50"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_warlock_10",
+            "image": "warlock_10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к урону Flaming Fists от ловкости уменьшен с 10% до 5%",
+                  "en": "Flaming Fists damage bonus from Agility decreased from 10% to 5%",
+                  "uk": "Бонус до шкоди Flaming Fists від спритності зменшено з 10% до 5%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_warlock_19",
+            "image": "warlock_19.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение длительности оглушения Chaotic Offering уменьшено с 1,2 до 1 секунды",
+                  "en": "Chaotic Offering stun duration bonus decreased from 1.2 to 1 second",
+                  "uk": "Збільшення тривалості оглушення Chaotic Offering зменшено з 1,2 до 1 секунди"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_warlock_13",
+            "image": "warlock_13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение времени перезарядки Chaotic Offering ослаблено с 115/135/155 до 100/125/150 секунд",
+                  "en": "Chaotic Offering cooldown reduction decreased from 115/135/155 to 100/125/150 seconds",
+                  "uk": "Зменшення часу перезарядки Chaotic Offering послаблено з 115/135/155 до 100/125/150 секунд"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

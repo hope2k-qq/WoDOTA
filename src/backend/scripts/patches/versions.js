@@ -12,6 +12,7 @@ const resultDir = (version) => path.join(PATCHES_DIR, version, RESULT_SUBDIR);
 const draftFile = (version) => path.join(resultDir(version), 'draft.json');
 const changelogFile = (version) => path.join(resultDir(version), 'changelog.json');
 const publishedFile = (version) => path.join(resultDir(version), 'published.json');
+const publishedLangFile = (version, lang) => path.join(resultDir(version), `published.${lang}.json`);
 const skippedFile = (version) => path.join(resultDir(version), 'skipped.json');
 
 function parseVersion(v) {
@@ -58,6 +59,7 @@ module.exports = {
     draftFile,
     changelogFile,
     publishedFile,
+    publishedLangFile,
     skippedFile,
     parseVersion,
     compareVersions,
