@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 import styles from './heroes_page.module.scss';
 import { ReactComponent as SearchIcon } from "../../assets/icons/SearchIcon.svg";
 import {useTranslation} from "react-i18next";
 import {getImageUrl} from "../../utils/r2Storage";
+import {useMyData} from "../../context/HeroesDataContext";
 
 interface Hero {
     name: string;
@@ -17,41 +17,20 @@ export const HeroesPage: React.FC = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const location = useLocation();
-    const [heroes, setHeroes] = useState<Hero[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const { heroesAttributes, languageReady } = useMyData();
+    const heroes: Hero[] = heroesAttributes || [];
     const [selectedAttribute, setSelectedAttribute] = useState<string | null>(null);
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [isSearching, setIsSearching] = useState<boolean>(false);
     const [showCustomOnly, setShowCustomOnly] = useState<boolean>(false);
-    const API_URL = process.env.REACT_APP_API_URL;
     const currentLang = location.pathname.split('/')[1];
 
-    useEffect(() => {
-        const fetchHeroesData = async () => {
-            try {
-                const response = await axios.get(`${API_URL}/heroes`);
-                setHeroes(response.data);
-            } catch (error) {
-                console.error('Error fetching hero data:', error);
-                setError('Failed to fetch hero data.');
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchHeroesData().catch(err => {
-            console.error('Error in fetchHeroesData:', err);
-        });
-    }, [API_URL]);
-
-
-    if (loading) {
+    if (!languageReady) {
         return <div></div>;
     }
 
-    if (error) {
-        return <div>{error}</div>;
+    if (!heroesAttributes) {
+        return <div>Failed to fetch hero data.</div>;
     }
 
     const attributeTranslations: { [key: string]: string } = {
