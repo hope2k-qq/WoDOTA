@@ -1,18 +1,14 @@
+import { useLocation } from 'react-router-dom';
 import type { PatchAbility, PatchBoss, PatchHero, PatchNeutralCreep, PatchNote } from '../../../../types/patchlog';
 import type { Copy } from '../../patches.constants';
 import { noteText, patchImageUrl } from '../../patches.utils';
 import { Notes } from '../notes/Notes';
 import { AbilityList } from '../abilityList/AbilityList';
 import { CategoryTitle } from '../categoryTitle/CategoryTitle';
+import { TalentPreview } from '../../../../widgets/talentPreview/TalentPreview';
 import styles from './entity_block.module.scss';
 
 type Branch = { key: 'strength' | 'agility' | 'intelligence'; label: string };
-
-const branchBackground: Record<Branch['key'], string> = {
-    strength: 'linear-gradient(to right, rgba(224, 82, 75, 0.35), rgba(224, 82, 75, 0) 60%)',
-    agility: 'linear-gradient(to right, rgba(111, 191, 74, 0.35), rgba(111, 191, 74, 0) 60%)',
-    intelligence: 'linear-gradient(to right, rgba(74, 168, 230, 0.35), rgba(74, 168, 230, 0) 60%)',
-};
 
 type EntityBlockProps =
     | { kind: 'hero'; hero: PatchHero; t: Copy; version?: string }
@@ -28,6 +24,8 @@ const ATTR_ICON: Record<NonNullable<PatchHero['primary_attribute']>, string> = {
 
 export const EntityBlock = (props: EntityBlockProps) => {
     const { t } = props;
+    const { pathname } = useLocation();
+    const heroHref = props.kind === 'hero' ? `/${pathname.split('/')[1]}/hero/${props.hero.hero_id}` : null;
 
     let portraitSrc = '';
     let name = '';
@@ -73,7 +71,23 @@ export const EntityBlock = (props: EntityBlockProps) => {
     return (
         <div className={styles.entity_block}>
             <div className={styles.entity_head}>
-                {portraitSrc && (
+                {portraitSrc && heroHref && (
+                    <a
+                        className={styles.portrait_link}
+                        href={heroHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={name}
+                    >
+                        <img
+                            className={styles.entity_portrait}
+                            src={portraitSrc}
+                            alt={name}
+                            loading="lazy"
+                        />
+                    </a>
+                )}
+                {portraitSrc && !heroHref && (
                     <img
                         className={styles.entity_portrait}
                         src={portraitSrc}
@@ -120,22 +134,31 @@ export const EntityBlock = (props: EntityBlockProps) => {
                         return (
                             <div className={styles.branch} key={b.key}>
                                 <div className={styles.branch_heading}>
-                                    <CategoryTitle text={b.label} icon={b.key} background={branchBackground[b.key]} />
+                                    <CategoryTitle text={b.label} icon={b.key} />
                                 </div>
                                 {entries.map((entry, j) => {
-                                    const notes = (entry.talent_notes || []).map((n) => n.note);
-                                    if (!notes.some((n) => noteText(n))) return null;
+                                    const notes = entry.talent_notes || [];
+                                    if (!notes.some((n) => noteText(n.note))) return null;
                                     const title = entry.title ? noteText(entry.title) : '';
                                     const firstRow = j === 0;
                                     return (
                                         <div className={firstRow ? `${styles.talent_row} ${styles.talent_row_first}` : styles.talent_row} key={entry.talent_id}>
                                             {entry.image && (
-                                                <img
-                                                    className={styles.talent_icon}
-                                                    src={patchImageUrl(entry.image, props.version)}
-                                                    alt={name}
-                                                    loading="lazy"
-                                                />
+                                                <TalentPreview
+                                                    className={entry.talent_text
+                                                        ? `${styles.talent_preview} ${styles.talent_preview_hint}`
+                                                        : styles.talent_preview}
+                                                    vertical="up"
+                                                    autoFlip
+                                                    text={entry.talent_text ? noteText(entry.talent_text) : ''}
+                                                >
+                                                    <img
+                                                        className={styles.talent_icon}
+                                                        src={patchImageUrl(entry.image, props.version)}
+                                                        alt={name}
+                                                        loading="lazy"
+                                                    />
+                                                </TalentPreview>
                                             )}
                                             <div className={styles.talent_body}>
                                                 {title && <div className={styles.talent_title}>{title}</div>}

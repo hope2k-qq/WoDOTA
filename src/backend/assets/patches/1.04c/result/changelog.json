@@ -1,0 +1,394 @@
+{
+  "patch_number": "1.04c",
+  "patch_name": "1.04c",
+  "patch_timestamp": 1788983474,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "images/items/elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "all_stats",
+            "old_raw_value": "10",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Бонус ко всем атрибутам увеличен с 10 до 15",
+              "en": "All Attributes bonus increased from 10 to 15",
+              "uk": "Бонус до всіх атрибутів збільшено з 10 до 15"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_vast",
+        "name": "Vast",
+        "image": "images/items/enhancement_vast.webp",
+        "neutral_type": "enhancement",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "attack_range",
+            "old_raw_value": "100 120",
+            "new_raw_value": "160 200",
+            "note": {
+              "ru": "Бонус к дальности атаки увеличен со 100/120 до 160/200",
+              "en": "Attack range bonus increased from 100/120 to 160/200",
+              "uk": "Бонус до дальності атаки збільшено зі 100/120 до 160/200"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "images/heroes/talents/io/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Отнимает у противника 30 здоровья в секунду. Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 45%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. Drains 30 health per second from the enemy. Health regeneration and all received healing drain the tethered enemy's health: 45%",
+                  "uk": "Видаляє Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Віднімає у ворога 30 здоров'я за секунду. Відновлення здоров'я та все отримане лікування віднімає здоров'я у зв'язаного ворога: 45%"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Отнимает у противника здоровья в секунду: 30 + 2 за Уровень Героя Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 40%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. Drains enemy health per second: 30 + 2 per Hero Level Health Regeneration and all received Healing drain health from the tethered enemy: 40%",
+                  "uk": "Прибирає Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує та не копіює їхню швидкість пересування. Віднімає у ворога здоров'я щосекунди: 30 + 2 за Рівень Героя Відновлення Здоров'я та все отримане Лікування забирають здоров'я у зв'язаного ворога: 40%"
+                },
+                "note": {
+                  "ru": "Отнимаемое у связанного противника здоровье в секунду увеличено с 30 до 30 + 2 за уровень героя",
+                  "en": "Health drained per second from the tethered enemy increased from 30 to 30 + 2 per hero level",
+                  "uk": "Здоров'я, що відбирається у пов'язаного ворога щосекунди, збільшено з 30 до 30 + 2 за рівень героя"
+                }
+              },
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Отнимает у противника 30 здоровья в секунду. Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 45%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. Drains 30 health per second from the enemy. Health regeneration and all received healing drain the tethered enemy's health: 45%",
+                  "uk": "Видаляє Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Віднімає у ворога 30 здоров'я за секунду. Відновлення здоров'я та все отримане лікування віднімає здоров'я у зв'язаного ворога: 45%"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Отнимает у противника здоровья в секунду: 30 + 2 за Уровень Героя Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 40%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. Drains enemy health per second: 30 + 2 per Hero Level Health Regeneration and all received Healing drain health from the tethered enemy: 40%",
+                  "uk": "Прибирає Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує та не копіює їхню швидкість пересування. Віднімає у ворога здоров'я щосекунди: 30 + 2 за Рівень Героя Відновлення Здоров'я та все отримане Лікування забирають здоров'я у зв'язаного ворога: 40%"
+                },
+                "note": {
+                  "ru": "Доля восстановления здоровья и получаемого лечения, отнимаемая у связанного противника, уменьшена с 45% до 40%",
+                  "en": "Share of health regeneration and received healing drained from the tethered enemy decreased from 45% to 40%",
+                  "uk": "Частку відновлення здоров'я та отриманого лікування, що відбирається у пов'язаного ворога, зменшено з 45% до 40%"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_io_12",
+            "image": "images/heroes/talents/io/12.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Всего Получаемого Урона всех Подконтрольных Существ: 20%/40%",
+                  "en": "Reduction of Total Damage Taken by all Controlled Units: 20%/40%",
+                  "uk": "Зменшення загальної отримуваної шкоди усіх підконтрольних істот: 20%/40%"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Всего Получаемого Урона всех Подконтрольных Существ: 20%/40% Сила: 7/14",
+                  "en": "Reduction of Total Damage Taken by All Controlled Units: 20%/40% Strength: 7/14",
+                  "uk": "Зменшення Загальної Отриманої Шкоди всіма Підконтрольними Істотами: 20%/40% Сила: 7/14"
+                },
+                "note": {
+                  "ru": "Теперь также даёт 7/14 к силе",
+                  "en": "Now also grants 7/14 Strength",
+                  "uk": "Тепер також дає 7/14 до сили"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_io_14",
+            "image": "images/heroes/talents/io/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Атаки вместе с союзной целью Tether: 30% от Урона Атаки",
+                  "en": "Attacks together with the allied Tether target: 30% of Attack Damage",
+                  "uk": "Атаки разом із союзною ціллю Tether: 30% від Шкоди Атаки"
+                },
+                "new_raw_value": {
+                  "ru": "Атаки вместе с союзной целью Tether: 20% от Урона Атаки",
+                  "en": "Attacks together with the allied Tether target: 20% of Attack Damage",
+                  "uk": "Атаки разом із союзною ціллю Tether: 20% від Шкоди Атаки"
+                },
+                "note": {
+                  "ru": "Урон совместных атак с союзной целью Tether уменьшен с 30% до 20% от урона атаки",
+                  "en": "Damage of attacks alongside the allied Tether target decreased from 30% to 20% of attack damage",
+                  "uk": "Шкоду спільних атак із союзною ціллю Tether зменшено з 30% до 20% від шкоди атаки"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "phoenix_icarus_dive_custom",
+          "name": "Icarus Dive",
+          "image": "abilities/phoenix_icarus_dive.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_second",
+              "old_raw_value": "20 40 60 80",
+              "new_raw_value": "15 30 45 60",
+              "note": {
+                "ru": "Урон в секунду уменьшен с 20/40/60/80 до 15/30/45/60",
+                "en": "Damage per second decreased from 20/40/60/80 to 15/30/45/60",
+                "uk": "Шкоду за секунду зменшено з 20/40/60/80 до 15/30/45/60"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "phoenix_fire_spirits_custom",
+          "name": "Fire Spirits",
+          "image": "abilities/phoenix_fire_spirits.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_second",
+              "old_raw_value": "20 40 60 80",
+              "new_raw_value": "15 30 45 60",
+              "note": {
+                "ru": "Урон в секунду уменьшен с 20/40/60/80 до 15/30/45/60",
+                "en": "Damage per second decreased from 20/40/60/80 to 15/30/45/60",
+                "uk": "Шкоду за секунду зменшено з 20/40/60/80 до 15/30/45/60"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_razor_5",
+            "image": "images/heroes/talents/razor/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Storm Surge: 30%/60%/90% от Урона Атаки",
+                  "en": "Increases Storm Surge Damage: 30%/60%/90% of Attack Damage",
+                  "uk": "Збільшення Шкоди Storm Surge: 30%/60%/90% від Шкоди Атаки"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Storm Surge: 30%/45%/60% от Урона Атаки",
+                  "en": "Increases Storm Surge Damage: 30%/45%/60% of Attack Damage",
+                  "uk": "Збільшення Шкоди Storm Surge: 30%/45%/60% від Шкоди Атаки"
+                },
+                "note": {
+                  "ru": "Увеличение урона Storm Surge ослаблено с 30%/60%/90% до 30%/45%/60% от урона атаки",
+                  "en": "Storm Surge damage bonus decreased from 30%/60%/90% to 30%/45%/60% of attack damage",
+                  "uk": "Збільшення шкоди Storm Surge ослаблено з 30%/60%/90% до 30%/45%/60% від шкоди атаки"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_void_spirit_5",
+            "image": "images/heroes/talents/void_spirit/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Aether Remnant создаёт дополнительную линию обзора, которая вращается вокруг копии. Сила: 0/8/16",
+                  "en": "Aether Remnant creates an additional line of vision that rotates around the illusion. Strength: 0/8/16",
+                  "uk": "Aether Remnant створює додаткову лінію огляду, яка обертається навколо копії. Сила: 0/8/16"
+                },
+                "new_raw_value": {
+                  "ru": "Aether Remnant создаёт дополнительную линию обзора, которая вращается вокруг копии. Сила: 0/10/20",
+                  "en": "Aether Remnant creates an additional line of vision that rotates around the illusion. Strength: 0/10/20",
+                  "uk": "Aether Remnant створює додаткову лінію огляду, яка обертається навколо копії. Сила: 0/10/20"
+                },
+                "note": {
+                  "ru": "Бонус к силе увеличен с 0/8/16 до 0/10/20",
+                  "en": "Strength bonus increased from 0/8/16 to 0/10/20",
+                  "uk": "Бонус до сили збільшено з 0/8/16 до 0/10/20"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_6",
+            "image": "images/heroes/talents/void_spirit/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Когда герой выходит из любого портала Dissimilate, кроме центрального, в 1/3 наиболее далёких от него порталах создаются его копии от Aether Remnant. Длительность: 4 сек",
+                  "en": "When the hero exits any Dissimilate portal except the central one, Aether Remnant illusions are created in 1/3 of the furthest portals. Duration: 4 sec",
+                  "uk": "Коли герой виходить з будь-якого порталу Dissimilate, крім центрального, у 1/3 найбільш далеких від нього порталах створюються його копії від Aether Remnant. Тривалість: 4 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Когда герой выходит из любого портала Dissimilate, кроме центрального, в 1/3 наиболее далёких от него порталах создаются его копии от Aether Remnant. Длительность: 6 сек",
+                  "en": "When the hero exits any Dissimilate portal except the central one, Aether Remnant illusions are created in 1/3 of the furthest portals. Duration: 6 sec",
+                  "uk": "Коли герой виходить з будь-якого порталу Dissimilate, крім центрального, у 1/3 найбільш далеких від нього порталах створюються його копії від Aether Remnant. Тривалість: 6 сек"
+                },
+                "note": {
+                  "ru": "Длительность копий от Aether Remnant увеличена с 4 до 6 секунд",
+                  "en": "Aether Remnant illusion duration increased from 4s to 6s",
+                  "uk": "Тривалість копій від Aether Remnant збільшено з 4 до 6 секунд"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_7",
+            "image": "images/heroes/talents/void_spirit/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Astral Step создаёт Aether Remnant по направлению применения. Длительность: 4 сек",
+                  "en": "Astral Step creates an Aether Remnant in the direction of cast. Duration: 4 sec",
+                  "uk": "Astral Step створює Aether Remnant у напрямку застосування. Тривалість: 4 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Astral Step создаёт Aether Remnant по направлению применения. Длительность: 6 сек",
+                  "en": "Astral Step creates an Aether Remnant in the direction of cast. Duration: 6 sec",
+                  "uk": "Astral Step створює Aether Remnant у напрямку застосування. Тривалість: 6 сек"
+                },
+                "note": {
+                  "ru": "Длительность Aether Remnant от Astral Step увеличена с 4 до 6 секунд",
+                  "en": "Aether Remnant duration from Astral Step increased from 4s to 6s",
+                  "uk": "Тривалість Aether Remnant від Astral Step збільшено з 4 до 6 секунд"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_void_spirit_21",
+            "image": "images/heroes/talents/void_spirit/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Dissimilate Burst После небольшой задержки совершает взрыв от способности Dissimilate в указанной точке. Урон: 150% от Урона Dissimilate Время Перезарядки: 26 сек. Дальность Применения: 700 Затраты Маны: 120",
+                  "en": "New Active Ability: Dissimilate Burst After a short delay, triggers a Dissimilate explosion at the target location. Damage: 150% of Dissimilate Damage Cooldown: 26 sec Cast Range: 700 Mana Cost: 120",
+                  "uk": "Нова Активна Здібність: Dissimilate Burst Після невеликої затримки завдає вибух від здібності Dissimilate у вказаній точці. Шкода: 150% від Шкоди Dissimilate Час Перезарядки: 26 сек. Дальність Використання: 700 Витрати Мани: 120"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Dissimilate Burst После небольшой задержки совершает взрыв от способности Dissimilate в указанной точке. Урон: 150% от Урона Dissimilate Время Перезарядки: 30 сек. Дальность Применения: 700 Затраты Маны: 120",
+                  "en": "New Active Ability: Dissimilate Burst After a short delay, triggers a Dissimilate explosion at the target location. Damage: 150% of Dissimilate Damage Cooldown: 30 sec Cast Range: 700 Mana Cost: 120",
+                  "uk": "Нова Активна Здібність: Dissimilate Burst Після невеликої затримки завдає вибух від здібності Dissimilate у вказаній точці. Шкода: 150% від Шкоди Dissimilate Час Перезарядки: 30 сек. Дальність Використання: 700 Витрати Мани: 120"
+                },
+                "note": {
+                  "ru": "Перезарядка Dissimilate Burst увеличена с 26 до 30 секунд",
+                  "en": "Dissimilate Burst cooldown increased from 26s to 30s",
+                  "uk": "Перезарядку Dissimilate Burst збільшено з 26 до 30 секунд"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

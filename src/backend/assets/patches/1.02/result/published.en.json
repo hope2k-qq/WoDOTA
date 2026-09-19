@@ -1,0 +1,859 @@
+{
+  "patch_number": "1.02",
+  "patch_name": "1.02",
+  "patch_timestamp": 1788941913,
+  "general": {
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "Hero ranks now grant bonuses"
+      },
+      {
+        "note": "Platinum: reduces all incoming damage in Arena mode by 10%",
+        "indent": 2
+      },
+      {
+        "note": "Master: increases all outgoing damage in Arena mode by 10%",
+        "indent": 2
+      },
+      {
+        "note": "Grandmaster: grants 1 extra coin per game played with this hero",
+        "indent": 2
+      },
+      {
+        "note": "Arenas 1, 2, 4 and 6 have been changed"
+      },
+      {
+        "note": "Added a new hero selection interface"
+      },
+      {
+        "note": "Hero rank bonuses are back in the game"
+      },
+      {
+        "note": "The cost of voting for a new hero decreased from 500,000 to 450,000 coins"
+      },
+      {
+        "title": "Talents"
+      },
+      {
+        "subtitle": "Strength"
+      },
+      {
+        "note": "Health Regeneration changed from 3/6/9 to 5/10"
+      },
+      {
+        "note": "Health Regeneration (0.25%/0.5%/0.75%) moved from «Talent 5» to «Talent 6» and no longer requires upgrading other talents"
+      },
+      {
+        "note": "«Health Regen Amplification: 7%/14%» replaced with «Damage Reduction from Attacks: 4%/8%/12%», and the talent no longer requires upgrading other talents"
+      },
+      {
+        "note": "«Status Resistance: 7%/14%/21%» replaced with «Additional Cast Range: 100/200»"
+      },
+      {
+        "note": "«Additional Cast Range: 150/300» replaced with «Status Resistance: 10%/20%»"
+      },
+      {
+        "subtitle": "Agility"
+      },
+      {
+        "note": "Attack Speed (5%/10%/15%) moved from «Talent 5» to «Talent 6» and no longer requires upgrading other talents"
+      },
+      {
+        "note": "Chance to avoid any damage changed from 4%/8%/12% to 4%/8%"
+      },
+      {
+        "subtitle": "Intelligence"
+      },
+      {
+        "note": "Mana Regeneration changed from 3/6/9 to 5/10"
+      },
+      {
+        "note": "Mana Regeneration (0.5%/1%/1.5%) moved from «Talent 5» to «Talent 6» and no longer requires upgrading other talents"
+      },
+      {
+        "note": "Spell Lifesteal increased from 7%/14% to 7%/14%/21%"
+      },
+      {
+        "note": "«Spell Lifesteal Amplification: 7%/14%/21%» replaced with «Permanently grants a barrier that absorbs any damage: 150/300. Cooldown: 15s», and the talent no longer requires upgrading other talents"
+      },
+      {
+        "title": "Cosmetic Items"
+      },
+      {
+        "note": "Added the Axe set"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_revenants_brooch_custom",
+        "name": "Revenant's Brooch 2",
+        "image": "revenants_brooch_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "Description",
+            "note": "Phantom Province: spell damage no longer amplifies attacks"
+          },
+          {
+            "parameter": "manacost_per_hit",
+            "note": "Phantom Province: mana cost per attack decreased from 150 to 120"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_tome_of_aghanim_custom",
+        "name": "Tome of Aghanim",
+        "image": "tome_of_aghanim.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityBehavior",
+            "note": "The active effect is now passive"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "is_new": true,
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "axe_berserkers_call_custom",
+          "name": "Berserker's Call",
+          "image": "axe_berserkers_call.webp",
+          "description": [
+            "Axe taunts nearby enemy units, forcing them to attack him while he gains bonus armor during the duration. Radius: 315. Bonus armor: 12 / 13 / 14 / 15. Duration: 1.8 / 2.1 / 2.4 / 2.7. Cooldown: 17 / 15 / 13 / 11. Mana cost: 80 / 90 / 100 / 110."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "axe_battle_hunger_custom",
+          "name": "Battle Hunger",
+          "image": "axe_battle_hunger.webp",
+          "description": [
+            "Enrages an enemy unit, causing it to take damage over time until it kills another unit or the duration ends. The damage is increased by a factor of Axe's armor. The enemy is also slowed as long as they are facing away from Axe. Duration: 12. Movement slow: -15% / -20% / -25% / -30%. Damage per second: 12 / 18 / 24 / 30. Armor multiplier: 1. Cooldown: 20 / 15 / 10 / 5. Cast range: 700 / 775 / 850 / 925. Mana cost: 50 / 60 / 70 / 80."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "axe_counter_helix_custom",
+          "name": "Counter Helix",
+          "image": "axe_counter_helix.webp",
+          "description": [
+            "After a set number of attacks, Axe will perform a helix counter attack, dealing pure damage to all nearby enemies. Damage: 100 / 120 / 140 / 160. Attacks to helix: 7 / 6 / 5 / 4. Radius: 275. Cooldown: 0.3."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "axe_culling_blade_custom",
+          "name": "Culling Blade",
+          "image": "axe_culling_blade.webp",
+          "description": [
+            "Axe spots a weakness and strikes, dealing pure damage. When an enemy hero is killed with Culling Blade, its cooldown is reset, and all nearby allied units gain bonus movement speed and armor. Damage: 275 / 375 / 475. Kill move speed bonus: 20% / 25% / 30%. Kill armor bonus: 20 / 25 / 30. Kill buff duration: 6. Kill buff radius: 900. Cooldown: 80 / 75 / 70. Cast range: 175. Mana cost: 100 / 125 / 150."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_1",
+            "image": "axe_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Berserker's Call increases Victims' Attack Speed: 25/50. Berserker's Call increases Attack Speed: 25/50"
+              }
+            ],
+            "talent_text": "Berserker's Call increases Victims' Attack Speed: 25/50\n\nBerserker's Call increases Attack Speed: 25/50"
+          },
+          {
+            "talent_id": "modifier_axe_2",
+            "image": "axe_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increase Armor by 0.2/0.3 for each enemy hero kill. A kill with Culling Blade grants 3 stacks at once. Kills before learning the talent also count. Armor: 2/4"
+              }
+            ],
+            "talent_text": "Increase Armor by 0.2/0.3 for each enemy hero kill.\n\nA kill with Culling Blade grants 3 stacks at once.\n\nKills before learning the talent also count.\n\nArmor: 2/4"
+          },
+          {
+            "talent_id": "modifier_axe_3",
+            "image": "axe_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Counter Helix can be activated. Performs 2/4 spins around himself with the axe. Interval: 0.3 sec. Cooldown: 15 sec"
+              }
+            ],
+            "talent_text": "Counter Helix can be activated.\n\nPerforms 2/4 spins around himself with the axe.\n\nInterval: 0.3 sec.\nCooldown: 15 sec."
+          },
+          {
+            "talent_id": "modifier_axe_4",
+            "image": "axe_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Culling Blade Cooldown Reduction: 15/30/45 sec. Killing a creep with Culling Blade resets its cooldown"
+              }
+            ],
+            "talent_text": "Culling Blade Cooldown Reduction: 15/30/45 sec.\n\nKilling a creep with Culling Blade resets its cooldown."
+          },
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "axe_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Culling Blade Damage Increase: 300%/450%/600% of Armor"
+              }
+            ],
+            "talent_text": "Culling Blade Damage Increase: 300%/450%/600% of Armor"
+          },
+          {
+            "talent_id": "modifier_axe_6",
+            "image": "axe_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Culling Blade can be cast on an area and also teleports you to the cast point. Radius: 300. Increased Cast Range: 225"
+              }
+            ],
+            "talent_text": "Culling Blade can be cast on an area and also teleports you to the cast point.\n\nRadius: 300\nIncreased Cast Range: 225"
+          },
+          {
+            "talent_id": "modifier_axe_7",
+            "image": "axe_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "When calculating attacks for Counter Helix to trigger, the owner's attacks are also taken into account. Increase Armor by 1 for every 14 Strength"
+              }
+            ],
+            "talent_text": "When calculating attacks for Counter Helix to trigger, the owner's attacks are also taken into account.\n\nIncrease Armor by 1 for every 14 Strength"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_axe_8",
+            "image": "axe_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Slow Resistance: 15%. Movement Speed: 15"
+              }
+            ],
+            "talent_text": "Slow Resistance: 15%\n\nMovement Speed: 15"
+          },
+          {
+            "talent_id": "modifier_axe_9",
+            "image": "axe_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>You cannot attack.</font> Removes the cooldown of Counter Helix. Creates Counter Helix every 650/600/550 units traveled. Adds 1 Level to Counter Helix"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Cannot be learned together with «Talent 2» from the Intelligence branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>You cannot attack.</font></b>\n\nRemoves the cooldown of Counter Helix.\n\nCreates Counter Helix every 650/600/550 units traveled.\n\nAdds 1 Level to Counter Helix."
+          },
+          {
+            "talent_id": "modifier_axe_10",
+            "image": "axe_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Every 5 Counter Helix activations apply the Tornado of Axe effect to you. Tornado of Axe deals Physical Damage per second to enemies: 100%/150% of Agility. Radius: 275. Duration: 3 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Every 5 Counter Helix activations apply the Tornado of Axe effect to you.\n\nTornado of Axe deals Physical Damage per second to enemies: 100%/150% of Agility\n\nRadius: 275\nDuration: 3 sec."
+          },
+          {
+            "talent_id": "modifier_axe_11",
+            "image": "axe_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Berserker's Call is cast instantly. Allows you to walk through creatures"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Berserker's Call is cast instantly.\n\nAllows you to walk through creatures."
+          },
+          {
+            "talent_id": "modifier_axe_12",
+            "image": "axe_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Reduce All Damage Taken while Moving: 6%/12%/18%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Reduce All Damage Taken while Moving: 6%/12%/18%"
+          },
+          {
+            "talent_id": "modifier_axe_13",
+            "image": "axe_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Counter Helix Damage Increase: 10%/20%/30% of Agility"
+              }
+            ],
+            "talent_text": "Counter Helix Damage Increase: 10%/20%/30% of Agility"
+          },
+          {
+            "talent_id": "modifier_axe_14",
+            "image": "axe_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Each Counter Helix cast applies a stacking effect to the victims, reducing all damage dealt by them. Damage Reduction: 5%. Maximum Effects: 6. Effect Duration: 5 sec. Agility: 20"
+              }
+            ],
+            "talent_text": "Each Counter Helix cast applies a stacking effect to the victims, reducing all damage dealt by them.\n\nDamage Reduction: 5%\nMaximum Effects: 6\nEffect Duration: 5 sec.\n\nAgility: 20"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_15",
+            "image": "axe_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Berserker's Call deals Physical Damage: 100 + 80%/120% of Intellect"
+              }
+            ],
+            "talent_text": "Berserker's Call deals Physical Damage: 100 + 80%/120% of Intellect"
+          },
+          {
+            "talent_id": "modifier_axe_16",
+            "image": "axe_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Counter Helix.</font> Kills do not dispel Battle Hunger. Spell Damage: 5%/10%/15%. Armor: 3/6/9"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Cannot be learned together with «Talent 2» from the Agility branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Counter Helix. </font></b>\n\nKills do not dispel Battle Hunger.\n\nSpell Damage: 5%/10%/15%\n\nArmor: 3/6/9"
+          },
+          {
+            "talent_id": "modifier_axe_18",
+            "image": "axe_18.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Berserker's Call applies effect of the Battle Hunger to the victims. Intellect: 10"
+              }
+            ],
+            "talent_text": "Berserker's Call applies effect of the Battle Hunger to the victims.\n\nIntellect: 10"
+          },
+          {
+            "talent_id": "modifier_axe_17",
+            "image": "axe_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Berserker's Call Radius Increase: 50/100. Berserker's Call Armor Increase: 10/20"
+              }
+            ],
+            "talent_text": "Berserker's Call Radius Increase: 50/100\n\nBerserker's Call Armor Increase: 10/20"
+          },
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "axe_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Battle Hunger Armor Multiplier Increase: 1/2/3"
+              }
+            ],
+            "talent_text": "Battle Hunger Armor Multiplier Increase: 1/2/3"
+          },
+          {
+            "talent_id": "modifier_axe_20",
+            "image": "axe_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Battle Hunger always slows enemy movement. Battle Hunger reduces enemy healing, health regeneration, lifesteal, and spell lfesteal: 15%/30%"
+              }
+            ],
+            "talent_text": "Battle Hunger always slows enemy movement.\n\nBattle Hunger reduces enemy healing, health regeneration, lifesteal, and spell lfesteal: 15%/30%"
+          },
+          {
+            "talent_id": "modifier_axe_21",
+            "image": "axe_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Berserker's Call does not Taunt enemies, but applies Fear"
+              }
+            ],
+            "talent_text": "Berserker's Call does not Taunt enemies, but applies Fear."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_earthshaker_10",
+            "image": "earthshaker_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Aftershock damage increase raised from 25%/50% to 50%/100% of Agility"
+              }
+            ],
+            "talent_text": "Aftershock Damage Increase: 50%/100% of Agility"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "jakiro_liquid_fire_custom",
+          "name": "Liquid Fire",
+          "image": "jakiro_liquid_fire.webp",
+          "description": [
+            "Jakiro burns his enemies in an area of effect with fire added to his attack, while slowing their attacks. Attack slow: -30 / -40 / -50 / -60. Radius: 300. Burn damage: 20 / 30 / 40 / 50. Building damage: 75%. Duration: 5. Cooldown: 13 / 12 / 11 / 10. Cast range: 600."
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "New basic ability. Active."
+            }
+          ]
+        },
+        {
+          "ability_id": "jakiro_liquid_ice_custom",
+          "name": "Liquid Frost",
+          "image": "jakiro_liquid_ice.webp",
+          "description": [
+            "Jakiro's attacks chill his enemies, slowing movement for 4 seconds and increasing damage taken from Jakiro's attacks and abilities. This effect does not apply to buildings. Movement slow: -15% / -20% / -25% / -30%. Bonus damage: 12 / 18 / 24 / 30. Duration: 4. Impact damage: 10 / 15 / 20 / 25. Cooldown: 13 / 12 / 11 / 10. Cast range: 600."
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "New basic ability. Active."
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_jakiro_8",
+            "image": "jakiro_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«New Active Ability: Liquid Fire. The hero fills his attack with liquid flame, setting the target and all enemies around it on fire. Victims take periodic damage and attack slower. Attack Slow: 25/50. Fire Damage: 25/50. Radius: 300. Duration: 4 sec. Cooldown: 12 sec» replaced with «Increased Fire Damage of Liquid Fire: 15/30»"
+              }
+            ],
+            "talent_text": "Increased Fire Damage of Liquid Fire: 15/30"
+          },
+          {
+            "talent_id": "modifier_jakiro_9",
+            "image": "jakiro_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Liquid Fire cooldown reduction decreased from 4/8s to 3/6s"
+              }
+            ],
+            "talent_text": "Liquid Fire Cooldown Reduction: 3/6 sec.\n\nDamage: 10/20"
+          },
+          {
+            "talent_id": "modifier_jakiro_11",
+            "image": "jakiro_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«New Active Ability: Liquid Frost. The hero fills his attack with liquid frost, which slows the victim's movement for 4 sec. and increases the damage they receive from attacks and other abilities of this hero. Movement Slow: 15%/30%. Damage Increase: 15/30. Duration: 4 sec. Cooldown: 12» replaced with «Increased Base Damage of Liquid Frost: 50/100»"
+              }
+            ],
+            "talent_text": "Increased Base Damage of Liquid Frost: 50/100"
+          },
+          {
+            "talent_id": "modifier_jakiro_12",
+            "image": "jakiro_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Liquid Frost cooldown reduction decreased from 4/8s to 3/6s"
+              }
+            ],
+            "talent_text": "Liquid Frost Cooldown Reduction: 3/6 sec.\n\nHealth: 250/500"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kunkka_torrent_custom",
+          "name": "Torrent",
+          "image": "kunkka_torrent.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost decreased from 100 to 90"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "name": "legion commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "legion_commander_duel_custom",
+          "name": "Duel",
+          "image": "legion_commander_duel.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Cast range decreased from 200/250/300 to 200"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "lone_druid_spirit_bear_custom",
+          "name": "Summon Spirit Bear",
+          "image": "lone_druid_spirit_bear.webp",
+          "description": [
+            "Summons a powerful Spirit Bear companion. If the bear moves 1100 distance away from the Lone Druid, it cannot attack. Spirit Bear has the Savage Roar and Entangling Claws abilities. Bear hp: 1100 / 1400 / 1700 / 2000. Bear hp regen: 5 / 6 / 7 / 8. Bear armor: 3 / 4 / 5 / 6. Bear base attack time: 1.75 / 1.65 / 1.55 / 1.45. Bear movespeed: 300 / 310 / 320 / 330. Cooldown: 50. Mana cost: 75."
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "New basic ability. Active."
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lone_druid_7",
+            "image": "lone_druid_7.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«This talent does not work if you have already learned Moonlight. New Active Ability: Summon Spirit Bear. Summons a powerful Spirit Bear companion. If the bear moves 1100 distance away from the Lone Druid, it cannot attack. Spirit Bear has the Savage Roar and Entangling Claws abilities. Cooldown: 50 seconds» replaced with «Spirit Bear Attack Speed: 0.5/1/1.5 per 1 Hero Strength»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Can no longer be learned together with «Talent 1» from the Agility and Intelligence branches"
+              }
+            ],
+            "talent_text": "Spirit Bear Attack Speed: 0.5/1/1.5 per 1 Hero Strength"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_lone_druid_9",
+            "image": "lone_druid_9.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Now removes Summon Spirit Bear"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Can no longer be learned together with «Talent 1» from the Strength branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Summon Spirit Bear.</font></b>\n\nHero's attacks have a 30% chance to place roots on the enemy.\n\nDamage per Second: 30/60\nDuration: 1.4/2.2 seconds\nCooldown: 5 seconds"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lone_druid_17",
+            "image": "lone_druid_17.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Now removes Summon Spirit Bear instead of not working if Summon Spirit Bear is learned"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Summon Spirit Bear.</font></b>\n\nNew Active Ability: Moonlight\n\nA ray of moonlight burns the enemy, causing magical damage. If there are creeps within a radius of 300 from the target, then Moonlight will work on them two more times. The ability has 4 upgrade levels.\n\nDamage: 150\nCast Range: 650\nCooldown: 8 seconds"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_medusa_17",
+            "image": "medusa_17.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«The hero receives an Aura that reduces the Health Regeneration and Mana Regeneration of surrounding enemies: 7%/14%/21%. Radius: 1200» replaced with «Mana Regeneration: 10/20/30»"
+              }
+            ],
+            "talent_text": "Mana Regeneration: 10/20/30"
+          },
+          {
+            "talent_id": "modifier_medusa_19",
+            "image": "medusa_19.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Mana Regeneration: 10/20/30» replaced with «The hero receives an Aura that reduces the Health Regeneration and Mana Regeneration of surrounding enemies: 7%/14%/21%. Radius: 1200»"
+              }
+            ],
+            "talent_text": "The hero receives an Aura that reduces the Health Regeneration and Mana Regeneration of surrounding enemies: 7%/14%/21%\n\nRadius: 1200"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_warlock_1",
+            "image": "warlock_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Fatal Bonds physical damage per second increased from 30% to 50% of attack damage"
+              }
+            ],
+            "talent_text": "Fatal Bonds deals Physical Damage to enemies every second: 50% of Attack Damage"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_warlock_17",
+            "image": "warlock_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Upheaval Damage Increase: 50%/75%/100% of Health and Mana Regeneration» replaced with «Increased Health and Mana Regeneration for allies inside Upheaval: 15/30»"
+              }
+            ],
+            "talent_text": "Increased Health and Mana Regeneration for allies inside Upheaval: 15/30"
+          },
+          {
+            "talent_id": "modifier_warlock_18",
+            "image": "warlock_18.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Increased Health and Mana Regeneration for allies inside Upheaval: 15/30» replaced with «Upheaval Damage Increase: 100%/150%/200% of Health and Mana Regeneration»"
+              }
+            ],
+            "talent_text": "Upheaval Damage Increase: 100%/150%/200% of Health and Mana Regeneration"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_windranger_2",
+            "image": "windranger_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Cooldown reduction now also applies to Whirlwind, not just Focus Fire"
+              }
+            ],
+            "talent_text": "Cooldown Reduction for Focus Fire and Whirlwind: 10 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_windranger_10",
+            "image": "windranger_10.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Tornado damage increase raised from 30%/45%/60% to 60%/90%/120% of Agility"
+              }
+            ],
+            "talent_text": "Tornado Damage Increase: 60%/90%/120% of Agility"
+          },
+          {
+            "talent_id": "modifier_windranger_7",
+            "image": "windranger_7.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Focus Fire. </font></b>\n\nNew Active Ability: Whirlwind\n\nEvery second the hero makes a fixed number of attacks against random enemies within the attack radius (primarily against heroes). The same enemy can only be targeted every 4 attacks.\n\nNumber of Attacks per Second: 11\nDuration: 8 sec."
+          },
+          {
+            "talent_id": "modifier_windranger_14",
+            "image": "windranger_14.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Increase Windrun Duration by 0.5 seconds for every 1500/1200 units moved» replaced with «Cooldown Reduction for Windrun: 2/4 sec»"
+              }
+            ],
+            "talent_text": "Cooldown Reduction for Windrun: 2/4 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "winter_wyvern_arctic_burn_custom",
+          "name": "Arctic Burn",
+          "image": "winter_wyvern_arctic_burn.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "note": "Periodic damage is now halved against creeps"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_8",
+            "image": "winter_wyvern_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Arctic Burn damage increase raised from 15/30 to 40/80"
+              }
+            ],
+            "talent_text": "Arctic Burn Damage Increase: 40/80"
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

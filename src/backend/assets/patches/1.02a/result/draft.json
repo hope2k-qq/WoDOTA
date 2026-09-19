@@ -1,0 +1,129 @@
+{
+  "patch_number": "1.02a",
+  "patch_name": "1.02a",
+  "patch_timestamp": 1789149436,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_abaddon_11",
+            "image": "images/heroes/talents/abaddon/11.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Вампиризм Заклинаниями: 3%/6%/9% Урон от Заклинаний: 3%/6%/9%",
+                  "en": "Spell Lifesteal: 3%/6%/9% Spell Damage: 3%/6%/9%",
+                  "uk": "Вампіризм Заклинаннями: 3%/6%/9% Втрата від Заклинань: 3%/6%/9%"
+                },
+                "new_raw_value": {
+                  "ru": "Вампиризм Заклинаниями: 3%/6%/9% Урон от Заклинаний: 3%/6%/9% Восстановление Здоровья: 5/10/15",
+                  "en": "Spell Lifesteal: 3%/6%/9% Spell Damage: 3%/6%/9% Health Regeneration: 5/10/15",
+                  "uk": "Вампіризм Заклинаннями: 3%/6%/9% Втрата від Заклинань: 3%/6%/9% Відновлення Здоров'я: 5/10/15"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "jakiro_liquid_fire_custom",
+          "name": "liquid fire",
+          "image": "abilities/jakiro_liquid_fire.webp",
+          "description": [
+            {
+              "ru": "Герой наполняет свою атаку жидким пламенем, поджигая цель и всех врагов вокруг неё. Жертвы получают периодический урон и медленнее атакуют. Замедление атаки: -30 / -40 / -50 / -60. Радиус: 300. Огненный урон: 20 / 30 / 40 / 50. Урон постройкам: 75%. Длительность: 5. Перезарядка: 13 / 12 / 11 / 10. Дальность применения: 600.",
+              "en": "Jakiro burns his enemies in an area of effect with fire added to his attack, while slowing their attacks. Attack slow: -30 / -40 / -50 / -60. Radius: 300. Burn damage: 20 / 30 / 40 / 50. Building damage: 75%. Duration: 5. Cooldown: 13 / 12 / 11 / 10. Cast range: 600.",
+              "uk": "Рідке полум'я Додавши до своєї атаки вогонь, Джакіро обпікає ворогів у області дії та сповільнює їхні атаки. Заувага атаки: -30 / -40 / -50 / -60. Радіус: 300. Вогнівий урон: 20 / 30 / 40 / 50. Шкода спорудам: 75%. Тривальність: 5. Перезарядка: 13 / 12 / 11 / 10. Дальність застосування: 600."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "jakiro_liquid_ice_custom",
+          "name": "liquid ice",
+          "image": "abilities/jakiro_liquid_ice.webp",
+          "description": [
+            {
+              "ru": "Герой наполняет свою атаку жидким морозом, который замедляет передвижение жертвы на 4 сек. и увеличивает урон, получаемый ей от атак и других способностей этого героя. Замедление передвижения: -15% / -20% / -25% / -30%. Увеличение урона: 12 / 18 / 24 / 30. Длительность: 4. Первичный урон: 10 / 15 / 20 / 25. Перезарядка: 13 / 12 / 11 / 10. Дальность применения: 600.",
+              "en": "Jakiro's attacks chill his enemies, slowing movement for 4 seconds and increasing damage taken from Jakiro's attacks and abilities. This effect does not apply to buildings. Movement slow: -15% / -20% / -25% / -30%. Bonus damage: 12 / 18 / 24 / 30. Duration: 4. Impact damage: 10 / 15 / 20 / 25. Cooldown: 13 / 12 / 11 / 10. Cast range: 600.",
+              "uk": "Криготеча Атаки Джакіро морозять ворогів, сповільнюючи їхній рух на 4 с та збільшуючи шкоду, яку вони зазнають від атак і здібностей Джакіро. Ефект не діє на споруди. Заувага передвиження: -15% / -20% / -25% / -30%. Збільшення урону: 12 / 18 / 24 / 30. Тривальність: 4. Шкода від удару: 10 / 15 / 20 / 25. Перезарядка: 13 / 12 / 11 / 10. Дальність застосування: 600."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "lone_druid_spirit_bear_custom",
+          "name": "spirit bear",
+          "image": "abilities/lone_druid_spirit_bear.webp",
+          "description": [
+            {
+              "ru": "Призывает могучего духа-медведя. Он не может атаковать, если расстояние до владельца больше 1100. У медведя есть способности Savage Roar и Entangling Claws. Здоровье медведя: 1100 / 1400 / 1700 / 2000. Восстановление здоровья медведя: 5 / 6 / 7 / 8. Броня медведя: 3 / 4 / 5 / 6. Базовый интервал атак: 1,75 / 1,65 / 1,55 / 1,45. Скорость передвижения медведя: 300 / 310 / 320 / 330. Перезарядка: 50. Расход маны: 75.",
+              "en": "Summons a powerful Spirit Bear companion. If the bear moves 1100 distance away from the Lone Druid, it cannot attack. Spirit Bear has the Savage Roar and Entangling Claws abilities. Bear hp: 1100 / 1400 / 1700 / 2000. Bear hp regen: 5 / 6 / 7 / 8. Bear armor: 3 / 4 / 5 / 6. Bear base attack time: 1.75 / 1.65 / 1.55 / 1.45. Bear movespeed: 300 / 310 / 320 / 330. Cooldown: 50. Mana cost: 75.",
+              "uk": "Закликає могутнього духа-ведмедя. Він не може атакувати, якщо відстань до власника більше1100. У ведмедя є здібності Savage Roar і Entangling Claws. Здоров'я ведмедя: 1100 / 1400 / 1700 / 2000. Відновлення здоров'я ведмедя: 5 / 6 / 7 / 8. Броня ведмедя: 3 / 4 / 5 / 6. Базовий інтервал атак: 1,75 / 1,65 / 1,55 / 1,45. Швидкість передвиження ведмедя: 300 / 310 / 320 / 330. Перезарядка: 50. Витрати мани: 75."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

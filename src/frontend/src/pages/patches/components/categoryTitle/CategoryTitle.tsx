@@ -10,12 +10,11 @@ const attrIcon: Record<CategoryAttr, string> = {
 
 type CategoryTitleProps = {
     text: string;
-    background?: string;
     icon?: CategoryAttr;
 };
 
-export const CategoryTitle = ({ text, background, icon }: CategoryTitleProps) => (
-    <div className={styles.title} style={background ? { background } : undefined}>
+export const CategoryTitle = ({ text, icon }: CategoryTitleProps) => (
+    <div className={`${styles.title}${icon ? ` ${styles[icon]}` : ''}`}>
         {icon && <img className={styles.icon} src={attrIcon[icon]} alt={icon} />}
         {text}
     </div>

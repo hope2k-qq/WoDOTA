@@ -1,0 +1,255 @@
+{
+  "patch_number": "1.03a",
+  "patch_name": "1.03a",
+  "patch_timestamp": 1788965218,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_dezun_bloodrite",
+        "name": "Dezun Bloodrite",
+        "image": "dezun_bloodrite.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "aoe_pct",
+            "note": "Blood Invocation: area of effect bonus decreased from 15% to 12%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "debuff_duration",
+            "note": "Debuff duration decreased from 4s to 3s"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "health_regen_loss",
+            "note": "Health Restoration loss increased from 20% to 30%"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_talon_toss_custom",
+          "name": "Talon Toss",
+          "image": "kez_talon_toss.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitDamageType",
+              "note": "Damage type changed from Magical to Physical"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_nyx_assassin_7",
+            "image": "nyx_assassin_7.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Spiked Carapace does not Stun enemies. Spiked Carapace returns damage an unlimited number of times» replaced with «New Active Ability: Burrow. The hero hastily burrows into the ground. While burrowed, he takes reduced damage and empowers his abilities: Spiked Carapace affects all enemies within a 400 radius, Mind Flare and Impale gain increased cast range and reduced cooldown. Movement Speed reduction in Burrow: 300. Total damage reduction in Burrow: 3%. Health and Mana regeneration in Burrow: 0.5%. Cooldown reduction in Burrow: 10%. Bonus Spell Range: 100»"
+              }
+            ],
+            "talent_text": "New Active Ability: Burrow\n\nThe hero quickly burrows into the ground. There, he receives reduced damage and increases his abilities: Spiked Carapace affects all surrounding enemies in a 400 radius, Mind Flare and Impale receive increased cast range, and their cooldown is also reduced.\n\nReduce Movement Speed ​​in Burrow: 300\nReduce Total Damage Received in Burrow: 3%\nRestore Health and Mana in Burrow: 0.5%\nCooldown Reduction in Burrow: 10%\nAdditional Spell Range: 100"
+          },
+          {
+            "talent_id": "modifier_nyx_assassin_6",
+            "image": "nyx_assassin_6.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«New Active Ability: Burrow. The hero hastily burrows into the ground. While burrowed, he takes reduced damage and empowers his abilities: Spiked Carapace affects all enemies within a 400 radius, Mind Flare and Impale gain increased cast range and reduced cooldown. Movement Speed reduction in Burrow: 300. Total damage reduction in Burrow: 3%. Health and Mana regeneration in Burrow: 0.5%. Cooldown reduction in Burrow: 10%. Bonus Spell Range: 100» replaced with «Spiked Carapace does not Stun enemies. Spiked Carapace returns damage an unlimited number of times»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Spiked Carapace does not Stun Enemies.</font></b>\n\nSpiked Carapace returns damage an unlimited number of times."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_nyx_assassin_13",
+            "image": "nyx_assassin_13.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Spiked Carapace cooldown reduction decreased from 3/6s to 1.5/3s"
+              }
+            ],
+            "talent_text": "Spiked Carapace Cooldown Reduction: 1.5/3 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_omniknight_12",
+            "image": "omniknight_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Hammer of Purity base damage bonus decreased from 70% to 30%"
+              }
+            ],
+            "talent_text": "Hammer of Purity Base Damage Increase: 30%"
+          },
+          {
+            "talent_id": "modifier_omniknight_9",
+            "image": "omniknight_9.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100% accuracy to Hammer of Purity attacks"
+              }
+            ],
+            "talent_text": "Hammer of Purity Attack Range Increase: 200\n\nHammer of Purity Attack Accuracy: 100%"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_6",
+            "image": "phantom_assassin_6.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Strength bonus decreased from 12/24 to 10/20"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Immaterial.</font></b>\n\nStrength: 10/20"
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_2",
+            "image": "phantom_assassin_2.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Strength bonus decreased from 12/24 to 10/20"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Stifling Dagger.</font></b>\n\nStrength: 10/20"
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_4",
+            "image": "phantom_assassin_4.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Strength bonus decreased from 12/24 to 10/20"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Blur.</font></b>\n\nStrength: 10/20"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_witch_doctor_15",
+            "image": "witch_doctor_15.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Paralyzing Cask bonus bounces increased from 1/2 to 2/3"
+              }
+            ],
+            "talent_text": "Paralyzing Cask Bounce Increase: 2/3"
+          },
+          {
+            "talent_id": "modifier_witch_doctor_19",
+            "image": "witch_doctor_19.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Residual damage to the last target increased from 6%/9%/12% to 8%/12%/16%"
+              }
+            ],
+            "talent_text": "If Paralyzing Cask stops bouncing early, the last target will take 8%/12%/16% residual Damage and be stunned 1 additional time."
+          }
+        ]
+      }
+    }
+  ]
+}

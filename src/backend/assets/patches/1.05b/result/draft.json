@@ -1,0 +1,605 @@
+{
+  "patch_number": "1.05b",
+  "patch_name": "1.05b",
+  "patch_timestamp": 1789149635,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_magic_stick",
+        "name": "magic stick",
+        "image": "images/items/magic_stick.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "AbilityCastRange",
+            "old_raw_value": "1200",
+            "new_raw_value": null,
+            "note": {
+              "ru": "Ability Cast Range: {change_label}: {old_raw_value}",
+              "en": "Ability Cast Range: {change_label}: {old_raw_value}",
+              "uk": "Ability Cast Range: {change_label}: {old_raw_value}"
+            }
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_khanda_custom",
+        "name": "khanda",
+        "image": "images/items/angels_demise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "old_raw_value": "12.0",
+            "new_raw_value": "9",
+            "note": {
+              "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_magic_wand",
+        "name": "magic wand",
+        "image": "images/items/magic_wand.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCastRange",
+            "old_raw_value": "1200",
+            "new_raw_value": null,
+            "note": {
+              "ru": "Ability Cast Range: {change_label}: {old_raw_value}",
+              "en": "Ability Cast Range: {change_label}: {old_raw_value}",
+              "uk": "Ability Cast Range: {change_label}: {old_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_phylactery_custom",
+        "name": "phylactery",
+        "image": "images/items/phylactery.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "old_raw_value": "12",
+            "new_raw_value": "9",
+            "note": {
+              "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "images/heroes/talents/bounty_hunter/17.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Shuriken Toss не замедляет, а оглушает: 0.4/0.8/1.2 сек. Базовый Урон: 8/16/24» заменено на «Jinada даёт Золото за Крипов. Увеличение Золота Jinada: 6/12. Скорость Передвижения: 20/40»",
+                  "en": "«Shuriken Toss does not slow down, but stuns: 0.4/0.8/1.2 seconds. Base Damage: 8/16/24» replaced with «Jinada grants Gold for Creeps. Bonus Jinada Gold: 6/12. Movement Speed: 20/40»",
+                  "uk": "«Shuriken Toss не уповільнює, а оглушує: 0.4/0.8/1.2 сек. Базова Шкода: 8/16/24» замінено на «Jinada дає Золото за Крипів. Додаткове Золото від Jinada: 6/12. Швидкість Руху: 20/40»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "images/heroes/talents/bounty_hunter/16.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Shuriken Toss применяет эффект способности Jinada. Сила: 7/14/21» заменено на «Увеличение Доп. Золота Союзникам Track: 60. Увеличение Урона Track: 8%/16%»",
+                  "en": "«Shuriken Toss applies the effect of Jinada. Strength: 7/14/21» replaced with «Increased Bonus Gold to Allies from Track: 60. Increased Damage from Track: 8%/16%»",
+                  "uk": "«Shuriken Toss застосовує ефект здібності Jinada. Сила: 7/14/21» замінено на «Збільшення Додаткового Золота для Союзників від Track: 60. Збільшення Урону від Track: 8%/16%»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "images/heroes/talents/bounty_hunter/6.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Track уменьшает Пополнение Здоровья Противников: 25%/50%",
+                  "en": "Track reduces Enemy Health Restoration: 25%/50%",
+                  "uk": "Track зменшує поповнення здоров'я ворогів: 25%/50%"
+                },
+                "new_raw_value": {
+                  "ru": "Track уменьшает Восстановление Здоровья противников: 20%/40% Track увеличивает Восстановление Здоровья героя: 0.4%/0.8%",
+                  "en": "Track reduces enemy Health Regeneration: 20%/40% Track increases hero's Health Regeneration: 0.4%/0.8%",
+                  "uk": "Track зменшує Відновлення Здоров'я ворогів: 20%/40% Track збільшує Відновлення Здоров'я героя: 0.4%/0.8%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "images/heroes/talents/bounty_hunter/2.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Track даёт беспрепятственный Обзор: 1400. Track нельзя развеять» заменено на «Shuriken Toss совершает Атаку по основной цели. Увеличение Длительности Замедления Shuriken Toss: 0/1/2 сек. Сила: 7/14/21»",
+                  "en": "«Track gives Unobstructed View: 1400. Track cannot be dispelled» replaced with «Shuriken Toss performs an Attack on the primary target. Increased Slow Duration of Shuriken Toss: 0/1/2 sec. Power: 7/14/21»",
+                  "uk": "«Track дає безперешкодний Огляд: 1400. Track не можна розвіяти» замінено на «Shuriken Toss завдає Атаку основній цілі. Збільшення Тривалості Сповільнення від Shuriken Toss: 0/1/2 сек. Сила: 7/14/21»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_5",
+            "image": "images/heroes/talents/bounty_hunter/5.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Shuriken Toss можно применить на область. Shuriken Toss создаёт бессмертный Мешочек Золота со способностью Track, который можно атаковать и на который можно применять способности. Увеличивает урон героя за каждый живой мешок. Урон: 100 Длительность: 20 сек",
+                  "en": "Shuriken Toss can be cast on an area. Shuriken Toss creates an immortal Gold Pouch with the Track ability, which can be attacked and targeted by abilities. Increases the hero's damage for each living pouch. Damage: 100 Duration: 20 sec",
+                  "uk": "Shuriken Toss можна застосувати по області. Shuriken Toss створює безсмертний Мішечок Золота зі здібністю Track, який можна атакувати й на який можна застосовувати здібності. Збільшує шкоду героя за кожен живий мішечок. Шкода: 100 Тривалість: 20 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Track нельзя развеять. Jinada создаёт бессмертный Мешочек Золота, который увеличивает урон героя и дарует обзор вокруг себя. Доп. Урон за Мешок: 100 Радиус Обзора: 1000 Длительность: 12 сек",
+                  "en": "Track cannot be dispelled. Jinada creates an immortal Gold Pouch that increases the hero's damage and grants vision around itself. Bonus Damage per Pouch: 100 Vision Radius: 1000 Duration: 12 sec",
+                  "uk": "Track не можна розвіяти. Jinada створює безсмертний Мішечок Золота, який збільшує шкоду героя та надає огляд навколо себе. Додаткова Шкода за Мішечок: 100 Радіус Огляду: 1000 Тривалість: 12 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_4",
+            "image": "images/heroes/talents/bounty_hunter/4.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Золота за убийство Крипов: 2/4/6 Здоровье: 100/200/300",
+                  "en": "Increase Gold for killing Creeps: 2/4/6 Health: 100/200/300",
+                  "uk": "Збільшення Золота за вбивство Крипів: 2/4/6 Здоров'я: 100/200/300"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Золота за убийство Крипов: 2/4/6 Здоровье: 100/200/300 Мана: 100/200/300",
+                  "en": "Bonus Gold from Creep kills: 2/4/6 Health: 100/200/300 Mana: 100/200/300",
+                  "uk": "Додаткове Золото за вбивство Крипів: 2/4/6 Здоров'я: 100/200/300 Мана: 100/200/300"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_20",
+            "image": "images/heroes/talents/bounty_hunter/20.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Shuriken Toss: 1% от Общей Стоимости Максимальное Увеличение Урона: 100/200/Отсутствует",
+                  "en": "Shuriken Toss Damage Increase: 1% of Total Cost Max Damage Increase: 100/200/None",
+                  "uk": "Збільшення Втрат Shuriken Toss: 1% від Загальної Вартості Максимальне Збільшення Втрат: 100/200/Відсутнє"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Shuriken Toss: 1% от Общей Стоимости Максимальное Увеличение Урона: 100/Отсутствует",
+                  "en": "Increased Shuriken Toss Damage: 1% of Total Cost Max Damage Increase: 100/None",
+                  "uk": "Збільшення Шкоди від Shuriken Toss: 1% від Загальної Вартості Максимальне Збільшення Шкоди: 100/Відсутнє"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_3",
+            "image": "images/heroes/talents/bounty_hunter/3.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Jinada даёт Золото за Крипов. Увеличение Золота Jinada: 6/12. Скорость Передвижения: 20/40. Урон от Заклинаний: 4%/8%» заменено на «Track даёт беспрепятственный Обзор: 500/1000/1500. Дополнительная Дальность Заклинаний: 50/100/150. Уменьшение задержки перед применением способностей: 10%/20%/30%»",
+                  "en": "«Jinada grants Gold for Creeps. Jinada Bonus Gold: 6/12. Movement Speed: 20/40. Spell Damage: 4%/8%» replaced with «Track grants unobstructed Vision: 500/1000/1500. Bonus Cast Range: 50/100/150. Ability Cast Delay Reduction: 10%/20%/30%»",
+                  "uk": "«Jinada надає Золото за крипів. Додаткове Золото від Jinada: 6/12. Швидкість Руху: 20/40. Магічна Шкода: 4%/8%» замінено на «Track надає безперешкодний Огляд: 500/1000/1500. Додаткова Дальність Заклинань: 50/100/150. Зменшення Затримки перед Застосуванням Здібностей: 10%/20%/30%»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_21",
+            "image": "images/heroes/talents/bounty_hunter/21.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Применение Track также запускает Shuriken Toss по Цели. Увеличение Длительности Замедления Shuriken Toss: 0/1/2 сек» заменено на «Заклинания наносят 120% Критического Урона по целям Track»",
+                  "en": "«Casting Track also triggers Shuriken Toss on the Target. Increase Shuriken Toss Slow Duration: 0/1/2 seconds» replaced with «Spells deal 120% Critical Damage to Track targets»",
+                  "uk": "«Застосування Track також запускає Shuriken Toss за метою. Збільшення Тривалості Уповільнення Shuriken Toss: 0/1/2 сек» замінено на «Заклинання завдають 120% Критичної Шкоди по цілях з Track»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_19",
+            "image": "images/heroes/talents/bounty_hunter/19.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Доп. Золота Союзникам Track: 60. Увеличение Урона Track: 8%» заменено на «Shuriken Toss не замедляет. Shuriken Toss оглушает противников: 0.4/0.8/1.2 сек. Интеллект: 7/14/21»",
+                  "en": "«Increase Extra Gold to Allies Track: 60. Increase Damage Track: 8%» replaced with «Shuriken Toss no longer slows. Shuriken Toss stuns enemies: 0.4/0.8/1.2 sec. Intelligence: 7/14/21»",
+                  "uk": "«Збільшення Доп. Золота Союзникам Track: 60. Збільшення Втрати Track: 8%» замінено на «Shuriken Toss більше не сповільнює. Shuriken Toss оглушує ворогів: 0.4/0.8/1.2 сек. Інтелект: 7/14/21»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_18",
+            "image": "images/heroes/talents/bounty_hunter/18.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Способности наносят 150% Критического Урона по целям Track» заменено на «Применение Track также запускает Shuriken Toss по Цели»",
+                  "en": "«Abilities deal 150% Critical Damage to Track targets» replaced with «Casting Track also launches Shuriken Toss at the Target»",
+                  "uk": "«Здібності завдають 150% Критичної шкоди за цілями Track» замінено на «Застосування Track також запускає Shuriken Toss по Цілі»"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_juggernaut_2",
+            "image": "images/heroes/talents/juggernaut/2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Blade Fury. Новая Активная Способность: Fire Ward Призывает тотем, наносящий магический урон противникам неподалёку и передвигающийся со скоростью 325. При уничтожении взрывается. Действует 25 сек. Урон в Секунду: 50 + 15%/30% от Силы Урон при Уничтожении: 150 + 150%/300% от Силы Радиус: 400 Атак для Уничтожения: 1",
+                  "en": "Removes Blade Fury. New Active Ability: Fire Ward Summons a Fire Ward that deals magic damage to nearby enemies and moving at a speed of 325. Explodes when destroyed. Duration 25 seconds. Damage per Second: 50 + 15%/30% of Strength Damage on Destroy: 150 + 150%/300% of Strength Radius: 400 Hit to Destroy: 1",
+                  "uk": "Прибирає Blade Fury. Нова Активна Здатність: Fire Ward Закликає тотем, що завдає магічної шкоди противникам неподалік і пересувається зі швидкістю 325. При знищенні вибухає. Діє 25 сек. Втрата в Секунду: 50 + 15%/30% від Сили Втрата при Знищенні: 150 + 150%/300% від Сили Радіус: 400 Знищення: 1"
+                },
+                "new_raw_value": {
+                  "ru": "Тотем. Убирает Blade Fury. Новая Активная Способность: Fire Ward Призывает тотем, наносящий магический урон противникам неподалёку и передвигающийся со скоростью 325. При уничтожении взрывается. Действует 25 сек. Урон в Секунду: 80 + 40%/60%/80% от Силы Урон при Уничтожении: 160 + 160%/240%/320% от Силы Радиус: 400 Атак для Уничтожения: 1",
+                  "en": "Totem. Removes Blade Fury. New Active Ability: Fire Ward Summons a totem that deals magical damage to nearby enemies and moves at a speed of 325. Explodes upon destruction. Lasts 25 sec. Damage per Second: 80 + 40%/60%/80% of Strength Explosion Damage: 160 + 160%/240%/320% of Strength Radius: 400 Hits to Destroy: 1",
+                  "uk": "Тотем. Видаляє Blade Fury. Нова Активна Здібність: Fire Ward Викликає тотем, що завдає магічної шкоди ворогам поблизу та рухається зі швидкістю 325. Вибухає при знищенні. Діє 25 сек. Шкода за секунду: 80 + 40%/60%/80% від Сили Шкода при знищенні: 160 + 160%/240%/320% від Сили Радіус: 400 Ударів для знищення: 1"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_juggernaut_3",
+            "image": "images/heroes/talents/juggernaut/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": null,
+                  "en": "All Ward Mana Cost Reduction: 100% Ward Movement Speed is equal to Hero's Movement Speed",
+                  "uk": "Зменшення Витрати Мани на створення Тотемів: 100% Швидкість Пересування Тотемів дорівнює Швидкості Пересування Героя"
+                },
+                "new_raw_value": {
+                  "ru": null,
+                  "en": "Mana Cost Reduction for Totem Creation: 100% Totem Movement Speed equals Hero's Movement Speed",
+                  "uk": "Зменшення Витрати Мани на створення Тотемів: 100% Швидкість Руху Тотемів дорівнює Швидкості Руху Героя"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_juggernaut_4",
+            "image": "images/heroes/talents/juggernaut/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Blade Dance. Новая Активная Способность: Wind Ward Призывает тотем, увеличивающий скорость атаки союзников и уменьшающий скорость атаки противников. Передвигается со скоростью 325. При уничтожении дарует усиленный эффект на 2 сек.. Действует 25 сек. Изменение Скорости Атаки: 30/60 Изменение Скорости Атаки при Уничтожении: 120/240 Радиус: 400 Атак для Уничтожения: 1",
+                  "en": "Removes Blade Dance. New Active Ability: Wind Ward Summons a Wind Ward that increases allies' attack speed and decreasing attack speed of enemies. Moves at a speed of 325. When destroyed, grants an increased effect for 2 seconds. Duration 25 seconds. Attack Speed Change: 30/60 Attack Speed Change on Kill: 120/240 Radius: 400 Hit to Destroy: 1",
+                  "uk": "Прибирає Blade Dance. Нова Активна Здатність: Wind Ward Закликає тотем, який збільшує швидкість атаки союзників і зменшує швидкість атаки супротивників. Пересувається зі швидкістю 325. При знищенні дарує посилений ефект на 2 сек. Діє 25 сек. Зміна Швидкості Атаки: 30/60 Зміна Швидкості Атаки при Знищенні: 120/240 Радіус: 400 Атак для Знищення: 1"
+                },
+                "new_raw_value": {
+                  "ru": "Тотем. Убирает Blade Dance. Новая Активная Способность: Wind Ward Призывает тотем, увеличивающий скорость атаки союзников и уменьшающий скорость атаки противников. Передвигается со скоростью 325. При уничтожении дарует усиленный эффект на 2 сек.. Действует 25 сек. Изменение Скорости Атаки: 30/60 Изменение Скорости Атаки при Уничтожении: 120/240 Радиус: 400 Атак для Уничтожения: 1",
+                  "en": "Totem. Removes Blade Dance. New Active Ability: Wind Ward Summons a totem that increases allies' attack speed and reduces enemies' attack speed. Moves at a speed of 325. Upon destruction, grants a stronger effect for 2 sec. Lasts 25 sec. Attack Speed Change: 30/60 Attack Speed Change on Destruction: 120/240 Radius: 400 Hits to Destroy: 1",
+                  "uk": "Тотем. Видаляє Blade Dance. Нова Активна Здібність: Wind Ward Викликає тотем, що збільшує швидкість атаки союзників і зменшує швидкість атаки ворогів. Рухається зі швидкістю 325. При знищенні надає посилений ефект на 2 сек. Діє 25 сек. Зміна Швидкості Атаки: 30/60 Зміна при Знищенні: 120/240 Радіус: 400 Ударів для Знищення: 1"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_juggernaut_6",
+            "image": "images/heroes/talents/juggernaut/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Omnislash. Новая Активная Способность: Ice Ward Призывает тотем, накладывающий оцепенение на противников каждые 5 сек. и передвигающийся со скоростью 325. При уничтожении оглушает противников. Действует 25 сек. Длительность Оцепенения: 0.75/1.5 сек. Длительность Оглушения: 1.5/3 сек. Радиус: 400 Атак для Уничтожения: 1",
+                  "en": "Removes Omnislash. New Active Ability: Ice Ward Summons a Ice Ward that roots enemies every 5 seconds and moving at a speed of 325. When destroyed, stuns enemies. Duration 25 seconds. Root Duration: 0.75/1.5 seconds Stun Duration: 1.5/3 seconds Radius: 400 Hit to Destroy: 1",
+                  "uk": "Прибирає Omnislash. Нова Активна Здатність: Ice Ward Закликає тотем, що накладає заціпеніння на супротивників кожні 5 сік і пересувається зі швидкістю 325. При знищенні оглушує супротивників.Діє 25 сік.: 400 Атак для Знищення: 1"
+                },
+                "new_raw_value": {
+                  "ru": "Тотем. Убирает Omnislash. Новая Активная Способность: Ice Ward Призывает тотем, накладывающий оцепенение на противников каждые 5 сек. и передвигающийся со скоростью 325. При уничтожении оглушает противников. Действует 25 сек. Длительность Оцепенения: 0.75/1.5 сек. Длительность Оглушения: 1.5/3 сек. Радиус: 400 Атак для Уничтожения: 1",
+                  "en": "Totem. Removes Omnislash. New Active Ability: Ice Ward Summons a totem that applies chill to enemies every 5 sec. and moves at a speed of 325. Stuns enemies upon destruction. Lasts 25 sec. Chill Duration: 0.75/1.5 sec Stun Duration: 1.5/3 sec Radius: 400 Hits to Destroy: 1",
+                  "uk": "Тотем. Видаляє Omnislash. Нова Активна Здібність: Ice Ward Викликає тотем, що накладає заціпеніння на ворогів кожні 5 сек. і рухається зі швидкістю 325. При знищенні оглушає ворогів. Діє 25 сек. Тривалість Заціпеніння: 0.75/1.5 сек Тривалість Оглушення: 1.5/3 сек Радіус: 400 Ударів для Знищення: 1"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "old_raw_value": "1",
+          "new_raw_value": "0",
+          "note": {
+            "ru": "Armor Physical: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Armor Physical: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Armor Physical: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "sniper_assassinate_custom",
+          "name": "assassinate",
+          "image": "abilities/sniper_assassinate.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_range",
+              "old_raw_value": null,
+              "new_raw_value": "50 100 150",
+              "note": {
+                "ru": "Bonus Range: {change_label}: {new_raw_value}",
+                "en": "Bonus Range: {change_label}: {new_raw_value}",
+                "uk": "Bonus Range: {change_label}: {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "old_raw_value": "31",
+          "new_raw_value": "34",
+          "note": {
+            "ru": "Attack Damage Min: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Damage Min: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Damage Min: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "AttackDamageMax",
+          "old_raw_value": "41",
+          "new_raw_value": "44",
+          "note": {
+            "ru": "Attack Damage Max: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Damage Max: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Damage Max: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "old_raw_value": "26",
+          "new_raw_value": "28",
+          "note": {
+            "ru": "Attack Damage Min: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Damage Min: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Damage Min: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "AttackDamageMax",
+          "old_raw_value": "32",
+          "new_raw_value": "34",
+          "note": {
+            "ru": "Attack Damage Max: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Damage Max: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Damage Max: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

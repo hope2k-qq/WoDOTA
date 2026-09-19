@@ -1,4 +1,4 @@
-const { replacementsHeroes } = require('../../config/replacements_heroes2');
+const { replacementsHeroes, reversedHeroes } = require('../../config/replacements_heroes2');
 const { formatParameterNote, DROP_NOTE, stripAbilityTypePrefix } = require('./parameterFormatters');
 const { deepDiff } = require('./diffSnapshots');
 
@@ -22,6 +22,7 @@ const PER_LEVEL_SUFFIX = {
 };
 const ATTRIBUTE_CATEGORY_KEYS = { 1: 'strength', 2: 'agility', 3: 'intelligence' };
 const IGNORED_HERO_SECTIONS = new Set([
+    'AbilityDefinitions',
     'Bot', 'ItemSlots', 'Persona', 'IdleSoundLoop',
     'particle_folder', 'GameSoundsFile', 'VoiceFile',
     'CMEnabled',
@@ -40,6 +41,8 @@ const isIgnoredHeroField = (field) =>
 // этот дефолт. Тогда это не «добавлено», а переход с дефолта на новое значение.
 const HERO_BASE_DEFAULTS = {
     BaseAttackSpeed: '100',
+    StatusHealthRegen: '0.25',
+    StatusManaRegen: '0',
 };
 // Приводит added-параметр с известным дефолтом к changed (old = дефолт),
 // чтобы в патчлоге вышло «… с <дефолт> до <new>», а не «добавлено».
@@ -70,6 +73,86 @@ const STAT_ICONS = {
     AttributeBaseIntelligence: '/int.png',
     AttributeIntelligenceGain: '/int.png',
 };
+const FEMALE_HEROES = new Set([
+    'broodmother', 'crystal_maiden', 'dark_willow', 'dawnbreaker', 'death_prophet', 'drow_ranger',
+    'enchantress', 'hoodwink', 'legion_commander', 'lina', 'luna', 'marci', 'medusa', 'mirana', 'muerta',
+    'naga_siren', 'phantom_assassin', 'queen_of_pain', 'snapfire', 'spectre', 'templar_assassin',
+    'vengeful_spirit', 'windranger', 'winter_wyvern',
+]);
+const PRIMARY_ATTRIBUTE_NOTES = {
+    DOTA_ATTRIBUTE_STRENGTH: { icon: '/str.png', ru: (f) => `Теперь является ${f ? 'героиней' : 'героем'} силы`, en: 'Is now a Strength Hero', uk: 'Тепер герой сили' },
+    DOTA_ATTRIBUTE_AGILITY: { icon: '/agi.png', ru: (f) => `Теперь является ${f ? 'героиней' : 'героем'} ловкости`, en: 'Is now an Agility Hero', uk: 'Тепер герой спритності' },
+    DOTA_ATTRIBUTE_INTELLECT: { icon: '/int.png', ru: (f) => `Теперь является ${f ? 'героиней' : 'героем'} интеллекта`, en: 'Is now an Intelligence Hero', uk: 'Тепер герой інтелекту' },
+    DOTA_ATTRIBUTE_ALL: { icon: '/uni.png', ru: (f) => `Теперь является ${f ? 'универсальной героиней' : 'универсальным героем'}`, en: 'Is now a Universal Hero', uk: 'Тепер універсальний герой' },
+};
+
+function baseDamageNote(dmin, dmax, values = {}) {
+    const up = (dmin || dmax) > 0;
+    const verb = { ru: up ? 'увеличен' : 'уменьшен', en: up ? 'increased' : 'decreased', uk: up ? 'збільшено' : 'зменшено' };
+    const num = (x, lang) => {
+        const s = String(Number(x));
+        return lang === 'en' ? s : s.replace('.', ',');
+    };
+    let note;
+    if (!dmin || !dmax) {
+        const n = Math.abs(dmin || dmax);
+        const isMin = Boolean(dmin);
+        note = {
+            ru: `${isMin ? 'Минимальный' : 'Максимальный'} базовый урон ${verb.ru} на ${n}`,
+            en: `${isMin ? 'Minimum' : 'Maximum'} base damage ${verb.en} by ${n}`,
+            uk: `${isMin ? 'Мінімальну' : 'Максимальну'} базову шкоду ${verb.uk} на ${n}`,
+        };
+    } else if (Math.abs(dmin) === Math.abs(dmax)) {
+        const n = Math.abs(dmin);
+        note = {
+            ru: `Базовый урон ${verb.ru} на ${n}`,
+            en: `Base damage ${verb.en} by ${n}`,
+            uk: `Базову шкоду ${verb.uk} на ${n}`,
+        };
+    } else {
+        const range = (a, b, lang) => `${num(a, lang)}${lang === 'en' ? '-' : '–'}${num(b, lang)}`;
+        const { oldMin, oldMax, newMin, newMax } = values;
+        note = {
+            ru: `Базовый урон ${verb.ru} с ${range(oldMin, oldMax, 'ru')} до ${range(newMin, newMax, 'ru')}`,
+            en: `Base damage ${verb.en} from ${range(oldMin, oldMax, 'en')} to ${range(newMin, newMax, 'en')}`,
+            uk: `Базову шкоду ${verb.uk} з ${range(oldMin, oldMax, 'uk')} до ${range(newMin, newMax, 'uk')}`,
+        };
+    }
+    return { ...note, cs: note.en };
+}
+
+function polishHeroBaseNotes(notes, heroId) {
+    const list = [...(notes || [])];
+    const minNote = list.find((n) => n.parameter === 'AttackDamageMin');
+    const maxNote = list.find((n) => n.parameter === 'AttackDamageMax');
+    let damage = null;
+    if (minNote || maxNote) {
+        const delta = (n) => (n ? Number(n.new_raw_value) - Number(n.old_raw_value) : 0);
+        const dmin = delta(minNote);
+        const dmax = delta(maxNote);
+        const sameDirection = !(dmin && dmax && Math.sign(dmin) !== Math.sign(dmax));
+        if (Number.isFinite(dmin) && Number.isFinite(dmax) && (dmin || dmax) && sameDirection) {
+            damage = minNote || maxNote;
+            damage.note = baseDamageNote(dmin, dmax, {
+                oldMin: minNote?.old_raw_value,
+                newMin: minNote?.new_raw_value,
+                oldMax: maxNote?.old_raw_value,
+                newMax: maxNote?.new_raw_value,
+            });
+            if (minNote && maxNote) list.splice(list.indexOf(maxNote), 1);
+        }
+    }
+    const primary = list.find((n) => n.parameter === 'AttributePrimary');
+    const attribute = primary && PRIMARY_ATTRIBUTE_NOTES[String(primary.new_raw_value).toUpperCase()];
+    if (!attribute) return list;
+    const ru = attribute.ru(FEMALE_HEROES.has(heroId));
+    primary.note = { ru, en: attribute.en, uk: attribute.uk, cs: attribute.en };
+    primary.icon = attribute.icon;
+    const attributes = list.filter((n) => /^Attribute(Base|\w+Gain)/.test(n.parameter || ''));
+    const rest = list.filter((n) => n !== primary && n !== damage && !attributes.includes(n));
+    return [primary, ...attributes, ...(damage ? [damage] : []), ...rest];
+}
+
 const IGNORED_ITEM_FIELDS = new Set([
     'SideShop', 'SecretShop',
     'IsObsolete', 'ItemPurchasable', 'AbilityTextureName',
@@ -115,6 +198,17 @@ const HERO_REPLACEMENTS = Object.entries(replacementsHeroes)
 function replaceHeroKey(value) {
     if (typeof value !== 'string') return value;
     return HERO_REPLACEMENTS.reduce(
+        (result, [source, replacement]) => result.split(source).join(replacement),
+        value
+    );
+}
+
+const HERO_REPLACEMENTS_REVERSED = Object.entries(reversedHeroes)
+    .sort(([left], [right]) => right.length - left.length);
+
+function restoreHeroKey(value) {
+    if (typeof value !== 'string') return value;
+    return HERO_REPLACEMENTS_REVERSED.reduce(
         (result, [source, replacement]) => result.split(source).join(replacement),
         value
     );
@@ -244,6 +338,35 @@ function talentRawNote(type, oldValue, newValue) {
     return result;
 }
 
+const TALENT_ABILITY_SWAP = /нов(ая|ый)\s+\S+\s+способност|new\s+\S+\s+ability|нова\s+\S+\s+здатн/i;
+function talentTextReplaced(oldValue, newValue) {
+    const plain = (value) => stripTalentRed(normTalentText(value || '')).toLowerCase().replace(/ё/g, 'е');
+    const pick = (lang) => [plain(oldValue?.[lang]), plain(newValue?.[lang])];
+    let [oldText, newText] = pick('ru');
+    if (!oldText || !newText) [oldText, newText] = pick('en');
+    if (!oldText || !newText || oldText === newText) return false;
+    if (TALENT_ABILITY_SWAP.test(oldText) !== TALENT_ABILITY_SWAP.test(newText)) return true;
+    const words = (text) => new Set(text.match(/[a-zа-яіїєґ']{3,}/g) || []);
+    const oldWords = words(oldText);
+    const newWords = words(newText);
+    const smaller = Math.min(oldWords.size, newWords.size);
+    if (!smaller) return true;
+    const shared = [...oldWords].filter((word) => newWords.has(word)).length;
+    return shared / smaller < 0.5;
+}
+
+function talentReplacementNote(oldValue, newValue) {
+    const connector = { ru: 'заменено на', en: 'replaced with', uk: 'замінено на', cs: 'nahrazeno za' };
+    const note = {};
+    for (const lang of LANGS) {
+        const source = lang === 'cs' ? 'en' : lang;
+        const oldText = stripTalentRed(normTalentText(oldValue?.[source] || ''));
+        const newText = stripTalentRed(normTalentText(newValue?.[source] || ''));
+        note[lang] = `«${oldText}» ${connector[lang]} «${newText}»`;
+    }
+    return note;
+}
+
 function readyNote(type, oldValue, newValue, note) {
     return {
         ...rawNote(type, oldValue, newValue),
@@ -262,18 +385,55 @@ function talentPositionText(position, lang) {
     return labels[lang];
 }
 
-function localizedTalentText(localization, lang, talentId) {
-    if (!talentId) return '';
+function rawTalentToken(localization, lang, talentId) {
+    if (!talentId) return null;
     const sourceLang = lang === 'cs' ? 'en' : lang;
     const tokens = localization[sourceLang] || {};
-    return normText(tokens[`${talentId}_0`] ?? tokens[talentId] ?? talentId);
+    let raw = tokens[`${talentId}_0`] ?? tokens[talentId];
+    if (Array.isArray(raw)) raw = raw[raw.length - 1];
+    return raw == null ? null : String(raw);
+}
+
+function localizedTalentText(localization, lang, talentId) {
+    if (!talentId) return '';
+    return normTalentText(rawTalentToken(localization, lang, talentId) ?? talentId);
+}
+
+function internalTalentId(talentId) {
+    return String(talentId).replace(/^modifier_(.+)_(\d+)$/, (match, hero, num) =>
+        reversedHeroes[hero] ? `modifier_${reversedHeroes[hero]}_${num}` : match
+    );
+}
+
+function talentTooltipText(localization, talentId) {
+    if (!talentId) return null;
+    const out = {};
+    for (const lang of RAW_TALENT_LANGS) {
+        const raw = rawTalentToken(localization, lang, talentId) ?? rawTalentToken(localization, lang, internalTalentId(talentId));
+        if (raw == null || !String(raw).trim()) continue;
+        out[lang] = String(raw)
+            .replace(/[ \t]*<br\s*\/?>[ \t]*/gi, '\n')
+            .trim();
+    }
+    return Object.keys(out).length ? out : null;
+}
+
+function talentDescriptionNote(localization, talentId) {
+    if (!LANGS.some((lang) => rawTalentToken(localization, lang, talentId))) return null;
+    return Object.fromEntries(LANGS.map((lang) => [
+        lang, localizedTalentText(localization, lang, talentId) || null,
+    ]));
+}
+
+function talentDestinationOccupant(move, oldPositions) {
+    const destination = move.new || move.old;
+    return Object.entries(oldPositions || {}).find(([, position]) =>
+        position.branch === destination.branch && position.level === destination.level
+    )?.[0];
 }
 
 function structuralTalentNote(move, context) {
-    const destination = move.new || move.old;
-    const oldDestinationId = Object.entries(context.oldPositions).find(([, position]) =>
-        position.branch === destination.branch && position.level === destination.level
-    )?.[0];
+    const oldDestinationId = talentDestinationOccupant(move, context.oldPositions);
     const oldTalentId = move.type === 'removed' ? move.id : (move.old?.id || oldDestinationId);
     const newTalentId = move.type === 'removed' ? null : (move.new?.id || move.id);
 
@@ -284,11 +444,11 @@ function structuralTalentNote(move, context) {
         RAW_TALENT_LANGS.map((lang) => [lang, localizedTalentText(context.newLocalization, lang, newTalentId) || null])
     );
     const note = {};
-    
+
     const quote = (text) => (text ? `«${text}»` : text);
     for (const lang of LANGS) {
-        const oldText = localizedTalentText(context.oldLocalization, lang, oldTalentId);
-        const newText = localizedTalentText(context.newLocalization, lang, newTalentId);
+        const oldText = stripTalentRed(localizedTalentText(context.oldLocalization, lang, oldTalentId));
+        const newText = stripTalentRed(localizedTalentText(context.newLocalization, lang, newTalentId));
         if (move.type === 'added') {
             const prefix = { ru: 'Добавлен талант', en: 'Talent added', uk: 'Додано талант', cs: 'Přidán talent' }[lang];
             note[lang] = `${prefix}: ${quote(newText)}`;
@@ -307,11 +467,11 @@ function structuralTalentNote(move, context) {
 
 const WHOLE_ENTITY_LABELS = {
     ability: {
-        added: { ru: 'Добавлена способность', en: 'Ability added', uk: 'Додано здібність', cs: 'Přidána schopnost' },
+        added: { ru: 'Новая способность', en: 'New ability', uk: 'Нова здібність', cs: 'Nová schopnost' },
         removed: { ru: 'Удалена способность', en: 'Ability removed', uk: 'Видалено здібність', cs: 'Schopnost odebrána' },
     },
     item: {
-        added: { ru: 'Добавлен предмет', en: 'Item added', uk: 'Додано предмет', cs: 'Přidán předmět' },
+        added: { ru: 'Новый предмет', en: 'New item', uk: 'Новий предмет', cs: 'Nový předmět' },
         removed: { ru: 'Удалён предмет', en: 'Item removed', uk: 'Видалено предмет', cs: 'Předmět odebrán' },
     },
 };
@@ -412,10 +572,10 @@ function itemPlacementNote(parameter, oldValue, newValue, itemId = null) {
             uk: `Переміщено з розряду ${oldValue} до розряду ${newValue}`,
             cs: `Přesunuto z ranku ${oldValue} do ranku ${newValue}`,
         } : {
-            ru: `Перемещён с тира ${oldValue} в тир ${newValue}`,
-            en: `Moved from tier ${oldValue} to tier ${newValue}`,
-            uk: `Переміщено з тіру ${oldValue} до тіру ${newValue}`,
-            cs: `Přesunuto z tieru ${oldValue} do tieru ${newValue}`,
+            ru: `Разряд артефакта изменён с ${oldValue} на ${newValue}`,
+            en: `Artifact tier changed from ${oldValue} to ${newValue}`,
+            uk: `Розряд артефакту змінено з ${oldValue} на ${newValue}`,
+            cs: `Tier artefaktu změněn z ${oldValue} na ${newValue}`,
         })
         : {
             ru: `Перемещён из категории «${oldValue}» в «${newValue}»`,
@@ -436,9 +596,9 @@ function itemTierMembershipNote(type, tier, itemId = null) {
             uk: `Додано до нового розряду ${tier}`,
             cs: `Přidáno do nového ranku ${tier}`,
         } : {
-            ru: `Добавлен в тир ${tier}`,
+            ru: `Добавлен в разряд ${tier}`,
             en: `Added to tier ${tier}`,
-            uk: `Додано до тіру ${tier}`,
+            uk: `Додано до розряду ${tier}`,
             cs: `Přidáno do tieru ${tier}`,
         })
         : (isRank ? {
@@ -447,9 +607,9 @@ function itemTierMembershipNote(type, tier, itemId = null) {
             uk: `Видалено з розряду ${tier}`,
             cs: `Odebráno z ranku ${tier}`,
         } : {
-            ru: `Удалён из тира ${tier}`,
+            ru: `Удалён из разряда ${tier}`,
             en: `Removed from tier ${tier}`,
-            uk: `Видалено з тіру ${tier}`,
+            uk: `Видалено з розряду ${tier}`,
             cs: `Odebráno z tieru ${tier}`,
         });
     return {
@@ -526,6 +686,7 @@ const INNATE_HEAD = {
 const NEW_HEAD = {
     innate: { ru: 'Новая врождённая способность', en: 'New innate ability', uk: 'Нова вроджена здібність', cs: 'Nová vrozená schopnost' },
     basic: { ru: 'Новая базовая способность', en: 'New basic ability', uk: 'Нова базова здібність', cs: 'Nová základní schopnost' },
+    ultimate: { ru: 'Новая ультимативная способность', en: 'New ultimate ability', uk: 'Нова ультимативна здібність', cs: 'Nová ultimátní schopnost' },
     unknown: { ru: 'Новая способность', en: 'New ability', uk: 'Нова здібність', cs: 'Nová schopnost' },
 };
 
@@ -538,7 +699,9 @@ function abilityNatureNote(kind, kv, innate, innateKnown, context) {
         return Object.fromEntries(NATURE_LANGS.map((lang) =>
             [lang, `${head[lang]}. ${kindLabel[lang]}, ${lvl[lang]}`]));
     }
-    const head = !innateKnown ? NEW_HEAD.unknown : (innate ? NEW_HEAD.innate : NEW_HEAD.basic);
+    const isUltimate = /ULTIMATE/.test(String((kv && kv.AbilityType) || ''));
+    const head = !innateKnown ? NEW_HEAD.unknown : (innate ? NEW_HEAD.innate : (isUltimate ? NEW_HEAD.ultimate : NEW_HEAD.basic));
+    if (!kv || !kv.AbilityBehavior) return Object.fromEntries(NATURE_LANGS.map((lang) => [lang, head[lang]]));
     const sep = innateKnown ? '. ' : ', ';
     return Object.fromEntries(NATURE_LANGS.map((lang) => [lang, `${head[lang]}${sep}${kindLabel[lang]}.`]));
 }
@@ -551,6 +714,7 @@ const NATURE_HEAD_RU = [
     INNATE_HEAD.became_basic.ru,
     NEW_HEAD.innate.ru,
     NEW_HEAD.basic.ru,
+    NEW_HEAD.ultimate.ru,
     NEW_HEAD.unknown.ru,
 ];
 function isAbilityNatureNote(note) {
@@ -560,30 +724,54 @@ function isAbilityNatureNote(note) {
     return NATURE_HEAD_RU.some((head) => ru.startsWith(head));
 }
 
+const ITEM_POSSESSIVE_WORDS = {
+    aghanims: "Aghanim's", arcanists: "Arcanist's", ascetics: "Ascetic's", avianas: "Aviana's", behemoths: "Behemoth's",
+    brigands: "Brigand's", conjurers: "Conjurer's", crellas: "Crella's", eldwurms: "Eldwurm's", enchanters: "Enchanter's",
+    euls: "Eul's", fairys: "Fairy's", flayers: "Flayer's", foragers: "Forager's", forebearers: "Forebearer's",
+    giants: "Giant's", heavens: "Heaven's", hydras: "Hydra's", illusionists: "Illusionist's", leviathans: "Leviathan's",
+    linkens: "Linken's", mans: "Man's", martyrs: "Martyr's", partisans: "Partisan's", philosophers: "Philosopher's",
+    princes: "Prince's", prophets: "Prophet's", pupils: "Pupil's", revenants: "Revenant's", rippers: "Ripper's",
+    roshans: "Roshan's", sages: "Sage's", shivas: "Shiva's", sisters: "Sister's", specialists: "Specialist's",
+    thors: "Thor's", tumblers: "Tumbler's", vindicators: "Vindicator's", vladmirs: "Vladmir's",
+};
+
 function itemDisplayName(itemId) {
     const smallWords = new Set(['a', 'an', 'and', 'at', 'for', 'from', 'in', 'of', 'on', 'the', 'to', 'with']);
     return String(itemId)
         .replace(/^item_/, '')
         .replace(/_custom$/, '')
         .split('_')
-        .map((word, index) => index > 0 && smallWords.has(word)
-            ? word
-            : `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
+        .map((word, index) => {
+            if (index > 0 && smallWords.has(word)) return word;
+            if (ITEM_POSSESSIVE_WORDS[word]) return ITEM_POSSESSIVE_WORDS[word];
+            return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+        })
         .join(' ');
 }
 
 function localizedItemName(itemId, localizationSources) {
     const canonicalId = String(itemId).replace(/_custom$/, '');
-    const targets = [`dota_tooltip_ability_${itemId}`, `dota_tooltip_ability_${canonicalId}`]
-        .map((target) => target.toLowerCase());
-    for (const source of localizationSources || []) {
-        const tokens = source?.en || {};
-        const key = Object.keys(tokens).find((token) => targets.includes(token.toLowerCase()));
-        if (key && String(tokens[key]).trim()) {
-            return normText(String(tokens[key]).replace(/<[^>]+>/g, ' '));
+    const pickFor = (id) => {
+        const target = `dota_tooltip_ability_${id}`.toLowerCase();
+        for (const source of localizationSources || []) {
+            const tokens = source?.en || {};
+            const key = Object.keys(tokens).find((token) => token.toLowerCase() === target || token.toLowerCase() === `${target}:n`);
+            if (key && String(tokens[key]).trim()) {
+                return normText(String(tokens[key]).replace(/#\|[a-z]\|#/g, '').replace(/<[^>]+>/g, ' '));
+            }
         }
-    }
-    return itemDisplayName(itemId);
+        return null;
+    };
+    return pickFor(itemId) || (canonicalId !== itemId ? pickFor(canonicalId) : null) || itemDisplayName(itemId);
+}
+
+const ABILITY_NAME_SMALL_WORDS = new Set(['a', 'an', 'and', 'at', 'for', 'from', 'in', 'of', 'on', 'the', 'to', 'with']);
+function normalizeAbilityNameCase(name) {
+    const text = String(name || '');
+    if (!/^[A-Z' ]+$/.test(text) || !/[A-Z]/.test(text)) return text;
+    return text.toLowerCase().split(' ')
+        .map((word, index) => (index > 0 && ABILITY_NAME_SMALL_WORDS.has(word) ? word : word.charAt(0).toUpperCase() + word.slice(1)))
+        .join(' ');
 }
 
 function localizedAbilityName(abilityId, localizationSources) {
@@ -598,13 +786,41 @@ function localizedAbilityName(abilityId, localizationSources) {
         }
         return null;
     };
-    const en = pick('en');
-    const ru = pick('ru');
+    const en = normalizeAbilityNameCase(pick('en'));
+    const ru = normalizeAbilityNameCase(pick('ru'));
     if (!en && !ru) return null;
-    return { ru: ru || en, en: en || ru, uk: pick('uk') || en || ru, cs: en || ru };
+    const uk = normalizeAbilityNameCase(pick('uk'));
+    return { ru: ru || en, en: en || ru, uk: uk || en || ru, cs: en || ru };
 }
 
 function recipeIndex(items, localizationSources = []) {
+    const recipeByResult = {};
+    for (const [, recipe] of Object.entries(items || {})) {
+        if (!recipe || typeof recipe !== 'object' || recipe.ItemRecipe !== '1' || !recipe.ItemResult) continue;
+        const reqs = recipe.ItemRequirements || {};
+        const firstKey = Object.keys(reqs).sort()[0];
+        const raw = firstKey != null ? reqs[firstKey] : '';
+        const ids = (Array.isArray(raw) ? raw : String(raw || '').split(';'))
+            .map((s) => String(s).trim().replace(/\*$/, '')).filter(Boolean);
+        recipeByResult[recipe.ItemResult] = { recipeCost: Number(recipe.ItemCost) || 0, componentIds: ids };
+    }
+    const costCache = new Map();
+    const trueCost = (rawId, seen) => {
+        const id = String(rawId).replace(/\*$/, '');
+        if (costCache.has(id)) return costCache.get(id);
+        const built = recipeByResult[id];
+        let cost;
+        if (built && !(seen && seen.has(id))) {
+            const nextSeen = new Set(seen || []);
+            nextSeen.add(id);
+            cost = built.componentIds.reduce((t, cid) => t + trueCost(cid, nextSeen), built.recipeCost);
+        } else {
+            cost = Number(items[id]?.ItemCost) || 0;
+        }
+        costCache.set(id, cost);
+        return cost;
+    };
+
     const recipes = {};
     for (const [recipeId, recipe] of Object.entries(items || {})) {
         if (!recipe || typeof recipe !== 'object' || recipe.ItemRecipe !== '1' || !recipe.ItemResult) continue;
@@ -623,7 +839,7 @@ function recipeIndex(items, localizationSources = []) {
                     return {
                         id,
                         name: localizedItemName(lookupId, localizationSources),
-                        cost: Number(items[lookupId]?.ItemCost) || 0,
+                        cost: trueCost(lookupId),
                     };
                 });
             return {
@@ -654,32 +870,77 @@ function recipeChangeLines(oldR, newR) {
     const norm = (id) => stripCustom(String(id)).replace(/\*+$/, '');
     const oldC = comps(oldR);
     const newC = comps(newR);
-    const oldIds = new Set(oldC.map((c) => norm(c.id)));
-    const newIds = new Set(newC.map((c) => norm(c.id)));
-    const added = newC.filter((c) => !oldIds.has(norm(c.id)));
-    const removed = oldC.filter((c) => !newIds.has(norm(c.id)));
+    const countBy = (arr) => arr.reduce((m, c) => m.set(norm(c.id), (m.get(norm(c.id)) || 0) + 1), new Map());
+    const oldCount = countBy(oldC);
+    const newCount = countBy(newC);
+    const extraCopies = (from, otherCount) => {
+        const seen = new Map();
+        const out = [];
+        for (const c of from) {
+            const id = norm(c.id);
+            const k = (seen.get(id) || 0) + 1;
+            seen.set(id, k);
+            if (k > (otherCount.get(id) || 0)) out.push({ ...c, ordinal: (otherCount.get(id) || 0) > 0 ? k : null });
+        }
+        return out;
+    };
+    const added = extraCopies(newC, oldCount);
+    const removed = extraCopies(oldC, newCount);
     const lines = { ru: [], en: [], uk: [], cs: [] };
 
     // --- состав ---
-    if (added.length === 1 && removed.length === 1) {
-        const a = added[0];
-        const r = removed[0];
-        lines.ru.push(`Теперь для сборки требуется не ${r.name} (${r.cost} золота), а ${a.name} (${a.cost} золота)`);
-        lines.en.push(`Now requires ${a.name} (${a.cost} gold) instead of ${r.name} (${r.cost} gold)`);
-        lines.uk.push(`Тепер для збирання потрібен ${a.name} (${a.cost} золота) замість ${r.name} (${r.cost} золота)`);
-        lines.cs.push(`Nyní vyžaduje ${a.name} (${a.cost} zlata) místo ${r.name} (${r.cost} zlata)`);
-    } else {
-        for (const a of added) {
-            lines.ru.push(`Теперь для сборки также требуется ${a.name} (${a.cost} золота)`);
-            lines.en.push(`Now also requires ${a.name} (${a.cost} gold)`);
-            lines.uk.push(`Тепер для збирання також потрібен ${a.name} (${a.cost} золота)`);
-            lines.cs.push(`Nyní také vyžaduje ${a.name} (${a.cost} zlata)`);
+    const ORDINAL = {
+        2: { ru: 'второй', en: 'a second', uk: 'другий', cs: 'druhý' },
+        3: { ru: 'третий', en: 'a third', uk: 'третій', cs: 'třetí' },
+        other: { ru: 'ещё один', en: 'another', uk: 'ще один', cs: 'další' },
+    };
+    const label = (c, lang, withCost) => {
+        const ord = c.ordinal ? `${(ORDINAL[c.ordinal] || ORDINAL.other)[lang]} ` : '';
+        if (!withCost) return `${ord}${c.name}`;
+        if (lang === 'en') return `${ord}${c.name} (${c.cost})`;
+        return `${ord}${c.name} (${c.cost} ${lang === 'cs' ? 'zlata' : 'золота'})`;
+    };
+    const grouped = (arr) => {
+        const out = [];
+        for (const c of arr) {
+            const same = !c.ordinal && out.find((g) => !g.ordinal && norm(g.id) === norm(c.id));
+            if (same) same.count += 1;
+            else out.push({ ...c, count: 1 });
         }
-        for (const r of removed) {
-            lines.ru.push(`Больше не требует ${r.name} для сборки`);
-            lines.en.push(`No longer requires ${r.name}`);
-            lines.uk.push(`Більше не потребує ${r.name} для збирання`);
-            lines.cs.push(`Již nevyžaduje ${r.name}`);
+        return out;
+    };
+    const groupLabel = (g, lang, withCost) => {
+        if (g.count < 2) return label(g, lang, withCost);
+        if (!withCost) return `${g.count} ${g.name}`;
+        if (lang === 'en') return `${g.count} ${g.name} (${g.cost} each)`;
+        return `${g.count} ${g.name} (${lang === 'cs' ? 'po' : 'по'} ${g.cost} ${lang === 'cs' ? 'zlata' : 'золота'})`;
+    };
+    const list = (arr, lang, withCost) => {
+        const parts = grouped(arr).map((g) => groupLabel(g, lang, withCost));
+        const and = { ru: 'и', uk: 'і', en: 'and', cs: 'a' }[lang];
+        return parts.length < 2 ? (parts[0] || '') : `${parts.slice(0, -1).join(', ')} ${and} ${parts[parts.length - 1]}`;
+    };
+    const requires = (arr) => (arr.length > 1 ? 'требуются' : 'требуется');
+    if (added.length || removed.length) {
+        lines.ru.push('Рецепт изменён');
+        lines.en.push('Recipe changed');
+        lines.uk.push('Рецепт змінено');
+        lines.cs.push('Recept změněn');
+        if (added.length && removed.length) {
+            lines.ru.push(`Теперь для сборки ${requires(added)} не ${list(removed, 'ru', true)}, а ${list(added, 'ru', true)}`);
+            lines.en.push(`Now requires ${list(added, 'en', true)} instead of ${list(removed, 'en', true)}`);
+            lines.uk.push(`Тепер для збирання потрібно не ${list(removed, 'uk', true)}, а ${list(added, 'uk', true)}`);
+            lines.cs.push(`Nyní vyžaduje ${list(added, 'cs', true)} místo ${list(removed, 'cs', true)}`);
+        } else if (added.length) {
+            lines.ru.push(`Теперь для сборки также ${requires(added)} ${list(added, 'ru', true)}`);
+            lines.en.push(`Now requires ${list(added, 'en', true)}`);
+            lines.uk.push(`Тепер для збирання також потрібно ${list(added, 'uk', true)}`);
+            lines.cs.push(`Nyní také vyžaduje ${list(added, 'cs', true)}`);
+        } else {
+            lines.ru.push(`Теперь для сборки не ${requires(removed)} ${list(removed, 'ru', false)}`);
+            lines.en.push(`No longer requires ${list(removed, 'en', false)}`);
+            lines.uk.push(`Тепер для збирання не потрібно ${list(removed, 'uk', false)}`);
+            lines.cs.push(`Již nevyžaduje ${list(removed, 'cs', false)}`);
         }
     }
 
@@ -697,46 +958,101 @@ function recipeChangeLines(oldR, newR) {
     const ot = oldR.total_cost;
     const nt = newR.total_cost;
     const compChanged = added.length > 0 || removed.length > 0;
-    if (oc !== nc) {
-        // стоимость рецепта изменилась → строка с рецептом и общей стоимостью в скобках
+    const oldCostById = new Map(oldC.map((c) => [norm(c.id), c]));
+    const movedAll = compChanged ? [] : newC
+        .map((c) => ({ c, was: oldCostById.get(norm(c.id)) }))
+        .filter((x) => x.was && Number(x.was.cost) !== Number(x.c.cost));
+    const movedParts = (lang) => {
+        const groups = new Map();
+        for (const { c, was } of movedAll) {
+            const key = `${c.name}|${was.cost}|${c.cost}`;
+            groups.set(key, { c, was, n: (groups.get(key)?.n || 0) + 1 });
+        }
+        return [...groups.values()].map(({ c, was, n }) => {
+            const cheaper = Number(c.cost) < Number(was.cost);
+            if (lang === 'ru') return `${c.name} ${cheaper ? 'подешевел' : 'подорожал'} с ${was.cost} до ${c.cost} золота`;
+            if (lang === 'uk') return `${c.name} ${cheaper ? 'подешевшав' : 'подорожчав'} з ${was.cost} до ${c.cost} золота`;
+            if (lang === 'cs') return `${c.name} ${cheaper ? 'zlevnil' : 'zdražil'} z ${was.cost} na ${c.cost} zlata`;
+            return `${c.name} ${cheaper ? 'decreased' : 'increased'} from ${was.cost}g to ${c.cost}g`;
+        });
+    };
+    const movedTail = (lang) => { const p = movedParts(lang); return p.length ? `, ${p.join(', ')}` : ''; };
+    const totalSuffix = (lang) => {
+        if (ot === nt) {
+            return { ru: ` (общая стоимость прежняя — ${nt} золота)`, en: `. Total cost unchanged at ${nt}g`, uk: ` (загальна вартість незмінна — ${nt} золота)`, cs: ` (celková cena beze změny — ${nt} zlata)` }[lang];
+        }
+        const td = nt > ot ? 'inc' : 'dec';
+        return { ru: ` (общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота)`, en: `. Total cost ${TC[td].en} from ${ot}g to ${nt}g`, uk: ` (загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота)`, cs: ` (celková cena ${TC[td].cs} z ${ot} na ${nt} zlata)` }[lang];
+    };
+    const hasOldScroll = Number(oc) > 0;
+    const hasNewScroll = Number(nc) > 0;
+    if (compChanged && hasOldScroll && !hasNewScroll) {
+        lines.ru.push(`Теперь для сборки не требуется рецепт за ${oc} золота${totalSuffix('ru')}`);
+        lines.en.push(`No longer requires a ${oc}g recipe${totalSuffix('en')}`);
+        lines.uk.push(`Тепер для збирання не потрібен рецепт за ${oc} золота${totalSuffix('uk')}`);
+        lines.cs.push(`Již nevyžaduje recept za ${oc} zlata${totalSuffix('cs')}`);
+    } else if (compChanged && !hasOldScroll && hasNewScroll) {
+        lines.ru.push(`Теперь для сборки требуется рецепт за ${nc} золота${totalSuffix('ru')}`);
+        lines.en.push(`Now requires a ${nc}g recipe${totalSuffix('en')}`);
+        lines.uk.push(`Тепер для збирання потрібен рецепт за ${nc} золота${totalSuffix('uk')}`);
+        lines.cs.push(`Nyní vyžaduje recept za ${nc} zlata${totalSuffix('cs')}`);
+    } else if (compChanged && oc !== nc) {
+        const d = nc > oc ? 'inc' : 'dec';
+        lines.ru.push(`Стоимость рецепта ${RC[d].ru} с ${oc} до ${nc} золота${totalSuffix('ru')}`);
+        lines.en.push(`Recipe cost ${RC[d].en} from ${oc} to ${nc}${totalSuffix('en')}`);
+        lines.uk.push(`Вартість рецепта ${RC[d].uk} з ${oc} до ${nc} золота${totalSuffix('uk')}`);
+        lines.cs.push(`Cena receptu ${RC[d].cs} z ${oc} na ${nc} zlata${totalSuffix('cs')}`);
+    } else if (compChanged) {
+        if (ot !== nt) {
+            const td = nt > ot ? 'inc' : 'dec';
+            lines.ru.push(`Общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота`);
+            lines.en.push(`Total cost ${TC[td].en} from ${ot}g to ${nt}g`);
+            lines.uk.push(`Загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота`);
+            lines.cs.push(`Celková cena ${TC[td].cs} z ${ot} na ${nt} zlata`);
+        } else {
+            lines.ru.push(`Общая стоимость прежняя — ${nt} золота`);
+            lines.en.push(`Total cost unchanged at ${nt}g`);
+            lines.uk.push(`Загальна вартість незмінна — ${nt} золота`);
+            lines.cs.push(`Celková cena beze změny — ${nt} zlata`);
+        }
+    } else if (oc !== nc) {
         const d = nc > oc ? 'inc' : 'dec';
         let ruT;
         let enT;
         let ukT;
         let csT;
+        const enMoved = movedParts('en').length ? ` (${movedParts('en').join(', ')})` : '';
         if (ot === nt) {
-            ruT = ` (общая стоимость прежняя — ${nt} золота)`;
-            enT = `. Total cost unchanged at ${nt}g`;
-            ukT = ` (загальна вартість незмінна — ${nt} золота)`;
-            csT = ` (celková cena beze změny — ${nt} zlata)`;
+            ruT = ` (общая стоимость прежняя — ${nt} золота${movedTail('ru')})`;
+            enT = `. Total cost unchanged at ${nt}g${enMoved}`;
+            ukT = ` (загальна вартість незмінна — ${nt} золота${movedTail('uk')})`;
+            csT = ` (celková cena beze změny — ${nt} zlata${movedTail('cs')})`;
         } else {
             const td = nt > ot ? 'inc' : 'dec';
-            ruT = ` (общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота)`;
-            enT = `. Total cost ${TC[td].en} from ${ot}g to ${nt}g`;
-            ukT = ` (загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота)`;
-            csT = ` (celková cena ${TC[td].cs} z ${ot} na ${nt} zlata)`;
+            ruT = ` (общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота${movedTail('ru')})`;
+            enT = `. Total cost ${TC[td].en} from ${ot}g to ${nt}g${enMoved}`;
+            ukT = ` (загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота${movedTail('uk')})`;
+            csT = ` (celková cena ${TC[td].cs} z ${ot} na ${nt} zlata${movedTail('cs')})`;
         }
         lines.ru.push(`Стоимость рецепта ${RC[d].ru} с ${oc} до ${nc} золота${ruT}`);
         lines.en.push(`Recipe cost ${RC[d].en} from ${oc} to ${nc}${enT}`);
         lines.uk.push(`Вартість рецепта ${RC[d].uk} з ${oc} до ${nc} золота${ukT}`);
         lines.cs.push(`Cena receptu ${RC[d].cs} z ${oc} na ${nc} zlata${csT}`);
-    } else if (ot !== nt && !compChanged) {
-        // стоимость рецепта та же, а общая изменилась (каскад цены компонента)
+    } else if (ot !== nt) {
         const td = nt > ot ? 'inc' : 'dec';
+        const because = (lang) => { const parts = movedParts(lang); return parts.length ? ` (${parts.join(', ')})` : ''; };
         if (nc > 0) {
-            lines.ru.push(`Стоимость рецепта прежняя (${nc} золота). Общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота`);
-            lines.en.push(`Recipe cost unchanged at ${nc}. Total cost ${TC[td].en} from ${ot}g to ${nt}g`);
-            lines.uk.push(`Вартість рецепта незмінна (${nc} золота). Загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота`);
-            lines.cs.push(`Cena receptu beze změny (${nc} zlata). Celková cena ${TC[td].cs} z ${ot} na ${nt} zlata`);
+            lines.ru.push(`Стоимость рецепта прежняя (${nc} золота). Общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота${because('ru')}`);
+            lines.en.push(`Recipe cost unchanged at ${nc}. Total cost ${TC[td].en} from ${ot}g to ${nt}g${because('en')}`);
+            lines.uk.push(`Вартість рецепта незмінна (${nc} золота). Загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота${because('uk')}`);
+            lines.cs.push(`Cena receptu beze změny (${nc} zlata). Celková cena ${TC[td].cs} z ${ot} na ${nt} zlata${because('cs')}`);
         } else {
-            lines.ru.push(`Общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота`);
-            lines.en.push(`Total cost ${TC[td].en} from ${ot}g to ${nt}g`);
-            lines.uk.push(`Загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота`);
-            lines.cs.push(`Celková cena ${TC[td].cs} z ${ot} na ${nt} zlata`);
+            lines.ru.push(`Общая стоимость ${TC[td].ru} с ${ot} до ${nt} золота${because('ru')}`);
+            lines.en.push(`Total cost ${TC[td].en} from ${ot}g to ${nt}g${because('en')}`);
+            lines.uk.push(`Загальну вартість ${TC[td].uk} з ${ot} до ${nt} золота${because('uk')}`);
+            lines.cs.push(`Celková cena ${TC[td].cs} z ${ot} na ${nt} zlata${because('cs')}`);
         }
     }
-    // если менялся только состав (oc===nc, а общую объясняют компоненты) — строку про
-    // стоимость не добавляем, достаточно строк про компоненты
 
     if (!lines.ru.length) return null;
     return {
@@ -821,8 +1137,10 @@ function orderItemNotes(notes, costShownInIntro = false) {
     // общая стоимость уже указана
     const hasRecipe = costShownInIntro || list.some((note) => note.parameter === 'recipe');
     const filtered = hasRecipe ? list.filter((note) => note.parameter !== 'ItemCost') : list;
-    // стоимость (Item Cost) — в самый верх, затем рецепт, затем остальное
-    const rank = (note) => (note.parameter === 'ItemCost' ? 0 : note.parameter === 'recipe' ? 1 : 2);
+    const rank = (note) => (note.parameter === 'neutral_tier' ? 0
+        : note.parameter === 'ItemCost' ? 1
+        : note.parameter === 'recipe' ? 2
+        : /^(Предмет )?[Бб]ольше (не|нельзя)(?![а-яё])/.test(note.note?.ru || '') ? 3 : 4);
     return filtered.sort((a, b) => rank(a) - rank(b));
 }
 
@@ -868,8 +1186,43 @@ const bossIdFromAbility = (abilityId, abilityKV) => {
 function normText(value) {
     return String(value ?? '')
         .replace(/<[^>]+>/g, '')
+        .replace(/[’ʼ]/g, "'")
         .replace(/\s+/g, ' ')
         .replace(/[.\s]+$/, '')
+        .trim();
+}
+
+const TALENT_RED = '#e03e2e';
+const TALENT_RED_OPEN = '';
+const TALENT_RED_CLOSE = '';
+function normTalentText(value) {
+    return String(value ?? '')
+        .replace(
+            /<font\b[^>]*\bcolor\s*=\s*['"]?#(?:ff0000|e03e2e)\b[^>]*>([\s\S]*?)<\/font>/gi,
+            (_, inner) => `${TALENT_RED_OPEN}${inner}${TALENT_RED_CLOSE}`
+        )
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<[^>]+>/g, '')
+        .replace(new RegExp(`${TALENT_RED_OPEN}\\s*`, 'g'), TALENT_RED_OPEN)
+        .replace(new RegExp(`\\s*${TALENT_RED_CLOSE}`, 'g'), TALENT_RED_CLOSE)
+        .split(/\n+/)
+        .map((segment) => segment.replace(/\s+/g, ' ').trim()
+            .replace(new RegExp(`[.\\s]+(?=${TALENT_RED_CLOSE}*$)`), ''))
+        .filter((segment) => segment.replace(/[]/g, '').trim())
+        .join('. ')
+        .replace(/:\.\s/g, ': ')
+        .replace(new RegExp(`${TALENT_RED_CLOSE}\\.`, 'g'), `.${TALENT_RED_CLOSE}`)
+        .replace(new RegExp(`${TALENT_RED_OPEN}([\\s\\S]*?)${TALENT_RED_CLOSE}`, 'g'),
+            (_, inner) => `<font color='${TALENT_RED}'>${inner.trim()}</font>`)
+        .replace(/\s+/g, ' ')
+        .replace(/[.\s]+$/, '')
+        .trim();
+}
+
+function stripTalentRed(value) {
+    return String(value ?? '')
+        .replace(/<\/?font\b[^>]*>/gi, '')
+        .replace(/\s+/g, ' ')
         .trim();
 }
 
@@ -911,6 +1264,80 @@ function heroTalentPositions(heroTree, heroShort) {
     }
     return positions;
 }
+
+function heroTalentMeta(heroTree, heroShort) {
+    const meta = {};
+    const pattern = new RegExp(`^modifier_${heroShort}_\\d+$`);
+    for (const levels of Object.values(heroTree || {})) {
+        if (!levels || typeof levels !== 'object') continue;
+        for (const entries of Object.values(levels)) {
+            if (!Array.isArray(entries)) continue;
+            for (const entry of entries) {
+                if (!Array.isArray(entry) || typeof entry[0] !== 'string' || !pattern.test(entry[0])) continue;
+                const req = Array.isArray(entry[4]) && entry[4].length ? `${entry[4][0]}:${entry[4][1]}` : null;
+                meta[entry[0]] = { requires: req };
+            }
+        }
+    }
+    return meta;
+}
+
+function requiredPlace(meta, positions, talentId) {
+    const req = meta[talentId] && meta[talentId].requires;
+    if (!req) return null;
+    const partner = positions[req.split(':')[0]];
+    return partner ? `${partner.branch}|${partner.level}` : `?${req.split(':')[0]}`;
+}
+const TALENT_BRANCH_RU = { 1: 'сила', 2: 'ловкость', 3: 'интеллект' };
+function placeLabel(place, ownBranch) {
+    if (!place) return null;
+    if (place.startsWith('?')) return place.slice(1);
+    const [branch, level] = place.split('|').map(Number);
+    return branch === Number(ownBranch) ? `Талант ${level}` : `Талант ${level} (${TALENT_BRANCH_RU[branch] || branch})`;
+}
+
+const REL_BRANCH = {
+    1: { ru: 'Силы', en: 'Strength', uk: 'Сили' },
+    2: { ru: 'Ловкости', en: 'Agility', uk: 'Спритності' },
+    3: { ru: 'Интеллекта', en: 'Intelligence', uk: 'Інтелекту' },
+};
+const REL_AND = { ru: 'и', en: 'and', uk: 'та' };
+const relQuote = (n, lang) => `«${lang === 'en' ? 'Talent' : 'Талант'} ${n}»`;
+const relJoin = (items, lang) => (items.length < 2
+    ? items[0]
+    : `${items.slice(0, -1).join(', ')} ${REL_AND[lang]} ${items[items.length - 1]}`);
+function relPartners(places, lang) {
+    const byBranch = {};
+    for (const p of places) (byBranch[p.branch] = byBranch[p.branch] || []).push(p.level);
+    const branches = Object.keys(byBranch).map(Number).sort((a, b) => a - b);
+    branches.forEach((b) => { byBranch[b] = [...new Set(byBranch[b])].sort((x, y) => x - y); });
+    const branchPhrase = (names, many) => (lang === 'en'
+        ? `from the ${names} branch${many ? 'es' : ''}`
+        : `${lang === 'ru' ? (many ? 'из веток' : 'из ветки') : (many ? 'з гілок' : 'з гілки')} ${names}`);
+    if (branches.length > 1 && branches.every((b) => byBranch[b].join() === byBranch[branches[0]].join())) {
+        const talents = relJoin(byBranch[branches[0]].map((n) => relQuote(n, lang)), lang);
+        return `${talents} ${branchPhrase(relJoin(branches.map((b) => REL_BRANCH[b][lang]), lang), true)}`;
+    }
+    return branches
+        .map((b) => `${relJoin(byBranch[b].map((n) => relQuote(n, lang)), lang)} ${branchPhrase(REL_BRANCH[b][lang], false)}`)
+        .join(', ');
+}
+const relText = (build) => ({ ru: build('ru'), en: build('en'), uk: build('uk') });
+const LINK_TEXT = {
+    new: (n) => relText((l) => ({ ru: `Требует прокачки ${relQuote(n, l)}`, en: `Requires upgrading ${relQuote(n, l)}`, uk: `Потребує прокачування ${relQuote(n, l)}` })[l]),
+    add: (n) => relText((l) => ({ ru: `Теперь требует прокачки ${relQuote(n, l)}`, en: `Now requires upgrading ${relQuote(n, l)}`, uk: `Тепер потребує прокачування ${relQuote(n, l)}` })[l]),
+    was: (n) => relText((l) => ({ ru: `Раньше требовался для прокачки ${relQuote(n, l)}`, en: `Previously required upgrading ${relQuote(n, l)}`, uk: `Раніше потребував прокачування ${relQuote(n, l)}` })[l]),
+    del: () => ({ ru: 'Больше не требует прокачки других талантов', en: 'No longer requires upgrading other talents', uk: 'Більше не потребує прокачування інших талантів' }),
+};
+const LOCK_TEXT = {
+    mutual: (pl) => relText((l) => ({ ru: `Нельзя изучить вместе с ${relPartners(pl, l)}`, en: `Cannot be learned together with ${relPartners(pl, l)}`, uk: `Не можна вивчити разом із ${relPartners(pl, l)}` })[l]),
+    oneway: (pl) => relText((l) => ({ ru: `Нельзя изучить, если уже изучен ${relPartners(pl, l)}`, en: `Cannot be learned if ${relPartners(pl, l)} is already learned`, uk: `Не можна вивчити, якщо вже вивчено ${relPartners(pl, l)}` })[l]),
+    addMutual: (pl) => relText((l) => ({ ru: `Теперь нельзя изучить вместе с ${relPartners(pl, l)}`, en: `Can no longer be learned together with ${relPartners(pl, l)}`, uk: `Тепер не можна вивчити разом із ${relPartners(pl, l)}` })[l]),
+    addOneway: (pl) => relText((l) => ({ ru: `Теперь нельзя изучить, если уже изучен ${relPartners(pl, l)}`, en: `Can no longer be learned if ${relPartners(pl, l)} is already learned`, uk: `Тепер не можна вивчити, якщо вже вивчено ${relPartners(pl, l)}` })[l]),
+    del: (pl) => relText((l) => ({ ru: `Теперь можно изучить вместе с ${relPartners(pl, l)}`, en: `Can now be learned together with ${relPartners(pl, l)}`, uk: `Тепер можна вивчити разом із ${relPartners(pl, l)}` })[l]),
+    was: (pl) => relText((l) => ({ ru: `Раньше нельзя было изучить вместе с ${relPartners(pl, l)}`, en: `Previously could not be learned together with ${relPartners(pl, l)}`, uk: `Раніше не можна було вивчити разом із ${relPartners(pl, l)}` })[l]),
+};
+const placeLevelOf = (place) => Number(String(place).split('|')[1]);
 
 function talentMoves(oldTree, newTree, heroShort) {
     const oldPositions = heroTalentPositions(oldTree, heroShort);
@@ -958,7 +1385,7 @@ function talentMoves(oldTree, newTree, heroShort) {
 }
 
 function formatPatchNumber(version) {
-    return String(version).replace('.', ',');
+    return String(version);
 }
 
 function shopCategoryMap(shops) {
@@ -1005,8 +1432,25 @@ function substituteItemVars(template, values) {
         .replace(new RegExp(`${UNKNOWN_START}([^${UNKNOWN_END}]+)${UNKNOWN_END}`, 'g'), '%$1%');
 }
 
-function buildItemDescription(itemId, itemKV, localizationSources) {
-    const values = itemValueMap(itemKV);
+function normalizeDescriptionText(text, lang) {
+    if (typeof text !== 'string') return text;
+    let out = text.replace(/’/g, "'").replace(/(\d)\.0(?!\d)/g, '$1');
+    if (lang === 'ru' || lang === 'uk') out = out.replace(/(\d)\.(\d)/g, '$1,$2');
+    return out;
+}
+
+function stripUnresolvedVars(text) {
+    if (typeof text !== 'string' || !/%[a-zA-Z0-9_]+%/.test(text)) return text;
+    return text
+        .replace(/%[a-zA-Z0-9_]+%/g, '')
+        .replace(/[ \t]{2,}/g, ' ')
+        .replace(/\s+([.,;:!?])/g, '$1')
+        .replace(/\(\s*\)/g, '')
+        .trim();
+}
+
+function buildItemDescription(itemId, itemKV, localizationSources, fallbackKV) {
+    const values = { ...itemValueMap(fallbackKV), ...itemValueMap(itemKV) };
     const targets = [
         `dota_tooltip_ability_${itemId}_description`,
         `dota_tooltip_ability_${String(itemId).replace(/_custom$/, '')}_description`,
@@ -1035,7 +1479,10 @@ function buildItemDescription(itemId, itemKV, localizationSources) {
                 `${normText(String(head).replace(/<[^>]+>/g, ' ')).replace(/[.\s]+$/, '')}. `)
             .replace(/<[^>]+>|\\n|<br\s*\/?>/gi, ' ');
         // убрать пробел перед пунктуацией и точку в конце
-        const cleaned = normText(spaced).replace(/\s+([.,;:!?])/g, '$1');
+        const cleaned = normalizeDescriptionText(
+            stripUnresolvedVars(normText(spaced).replace(/\s+([.,;:!?])/g, '$1')),
+            lang
+        );
         if (!cleaned) return null;
         return /[.!?]$/.test(cleaned) ? cleaned : `${cleaned}.`;
     };
@@ -1090,11 +1537,15 @@ function buildItemDescriptionSections(itemId, itemKV, localizationSources) {
 }
 
 const ABILITY_FIELD_LABELS = {
-    AbilityCooldown: { ru: 'Перезарядка', en: 'Cooldown', uk: 'Перезаряджання', cs: 'Cooldown' },
+    AbilityCooldown: { ru: 'Перезарядка', en: 'Cooldown', uk: 'Перезарядка', cs: 'Cooldown' },
     AbilityChargeRestoreTime: { ru: 'Восстановление заряда', en: 'Charge restore time', uk: 'Відновлення заряду', cs: 'Charge restore time' },
+    AbilityCastRange: { ru: 'Дальность применения', en: 'Cast range', uk: 'Дальність застосування', cs: 'Cast range' },
     AbilityManaCost: { ru: 'Расход маны', en: 'Mana cost', uk: 'Витрати мани', cs: 'Mana cost' },
     ItemCost: { ru: 'Стоимость', en: 'Cost', uk: 'Вартість', cs: 'Cost' },
 };
+
+const isNumericValue = (value) =>
+    typeof value === 'string' && /^[\d.,%]+(?: \/ [\d.,%]+)*$/.test(value);
 
 const COMMON_VALUE_LABELS = {
     bonus_damage: { ru: 'Дополнительный урон', en: 'Bonus damage', uk: 'Додаткова шкода', cs: 'Bonus damage' },
@@ -1197,8 +1648,10 @@ function buildAbilityValues(abilityId, abilityKV, localizationSources, options =
     }
 
     for (const [key, label] of Object.entries(ABILITY_FIELD_LABELS)) {
-        const value = normalizedAbilityValue(abilityKV[key]);
-        if (value) result.push({ key, label, value });
+        if (result.some((entry) => entry.key === key)) continue;
+        const raw = abilityKV[key] !== undefined ? abilityKV[key] : abilityKV.AbilityValues?.[key];
+        const value = normalizedAbilityValue(raw);
+        if (value && isNumericValue(value)) result.push({ key, label, value });
     }
     return result;
 }
@@ -1222,7 +1675,9 @@ function mergeAbilityDescription(descNote, values) {
                 : entry.value;
             segments.push(`${nice}: ${valueText}`);
         }
-        result[lang] = segments.length ? `${segments.join('. ')}.` : null;
+        result[lang] = segments.length
+            ? normalizeDescriptionText(`${segments.join('. ')}.`, lang)
+            : null;
     }
     return result;
 }
@@ -1370,15 +1825,13 @@ function buildItemCharacteristics(itemId, itemKV, localizationSources, options =
         if (!labels.ru && !labels.en) continue;
 
         const percent = prefix.includes('%');
-        const positive = prefix.includes('+');
         const reduce = prefix.includes('-');
         let value = normalizedAbilityValue(raw, percent, options);
         if (!value) continue;
-        if (positive) {
-            value = value.split(' / ').map((part) => part.startsWith('-') ? part : `+${part}`).join(' / ');
-        } else if (reduce) {
-            // reduce-статы: в токене префикс «-» → показываем как отрицательное значение
+        if (reduce) {
             value = value.split(' / ').map((part) => /^[+-]/.test(part) ? part : `-${part}`).join(' / ');
+        } else if (options.signPositive && prefix.includes('+')) {
+            value = value.split(' / ').map((part) => /^[+-]/.test(part) ? part : `+${part}`).join(' / ');
         }
         // красный маркер (дебафф) — по наличию <font color='#e03e2e'> в токене source
         const highlighted = /color\s*=\s*['"]?#e03e2e/i.test(
@@ -1427,28 +1880,42 @@ const STD_IMAGE = {
 // у врождённых способностей запасная — иконка врождённости, а не стандартная
 const INNATE_ICON = 'abilities/innate_icon.png';
 
-// Кандидаты ключа картинки предмета: и по texture, и по id, у чар — без «enhancement_».
 function itemImageCandidates(id, texture) {
-    const clean = (s) => String(s).replace(/^item_/, '').replace(/_custom$/, '');
+    const base = (s) => String(s).replace(/^item_/, '');
+    const strip = (s) => base(s).replace(/_custom$/, '');
     const names = [];
-    if (texture) names.push(clean(texture));
-    names.push(clean(id));
+    if (texture) names.push(base(texture), strip(texture));
+    names.push(base(id), strip(id));
     const cands = [];
+    const seen = new Set();
+    const push = (c) => { if (c && !seen.has(c)) { seen.add(c); cands.push(c); } };
     for (const n of names) {
         const noEnh = n.replace(/^enhancement_/, '');
-        cands.push(`images/items/${noEnh}.webp`);
-        if (noEnh !== n) cands.push(`images/items/${n}.webp`);
+        push(`images/items/${n}.webp`);
+        if (noEnh !== n) push(`images/items/${noEnh}.webp`);
     }
     return cands;
 }
-// Кандидаты ключа способности: по texture, по id и по id с заменой имени героя
-// (antimage → anti-mage), т.к. в бакете файлы бывают с дефисом.
+function friendlyHeroPrefix(value) {
+    const s = String(value);
+    for (const [source, replacement] of HERO_REPLACEMENTS) {
+        if (s.startsWith(`${source}_`)) return replacement + s.slice(source.length);
+    }
+    return s;
+}
+
 function abilityImageCandidates(id, texture, altId) {
     const clean = (s) => String(s).replace(/_custom$/, '');
     const cands = [];
-    if (texture) cands.push(`abilities/${clean(texture)}.webp`);
-    cands.push(`abilities/${clean(id)}.webp`);
-    if (altId && altId !== id) cands.push(`abilities/${clean(altId)}.webp`);
+    const push = (s) => {
+        const key = `abilities/${clean(s)}.webp`;
+        if (!cands.includes(key)) cands.push(key);
+    };
+    if (texture) push(friendlyHeroPrefix(texture));
+    push(friendlyHeroPrefix(id));
+    if (texture) push(texture);
+    push(id);
+    if (altId) push(altId);
     return cands;
 }
 const heroImagePath = (heroId) => `images/heroes/heroesPreview/${heroId}.webp`;
@@ -1475,12 +1942,16 @@ function dedupeAbilities(abilities) {
     return [...byCanon.values()];
 }
 
-// Порядок способностей в списке: врождённая → упразднённая → новая → обычные.
-function orderAbilities(list) {
+function orderAbilities(list, slotOrder) {
     const rank = (ab) => (ab.innate ? 0 : ab.is_removed ? 1 : ab.is_new ? 2 : 3);
+    const slot = (ab) => {
+        if (!slotOrder) return Number.MAX_SAFE_INTEGER;
+        const index = slotOrder.get(abilityCanon(replaceHeroKey(ab.ability_id)));
+        return index === undefined ? Number.MAX_SAFE_INTEGER : index;
+    };
     return list
         .map((ab, index) => ({ ab, index }))
-        .sort((a, b) => rank(a.ab) - rank(b.ab) || a.index - b.index)
+        .sort((a, b) => rank(a.ab) - rank(b.ab) || slot(a.ab) - slot(b.ab) || a.index - b.index)
         .map(({ ab }) => ab);
 }
 
@@ -1502,17 +1973,24 @@ const isLevelupNote = (note) =>
 // Порядок заметок способности: врождёнка/природа (одна) → смысловые изменения
 // (тип урона, иммунитет к магии, «Больше не улучшается со способностью» и пр.) →
 // прирост за уровень → обычные числовые параметры.
+const isArenaModeNote = (note) => /Arena/i.test((note && note.note && (note.note.ru || note.note.en)) || '');
+const isMechanicNote = (note) => note && note.parameter === 'Description' && !isArenaModeNote(note);
+
 function orderAbilityNotes(notes) {
     const list = [...(notes || [])];
     const natureNotes = list.filter(isAbilityNatureNote);
-    const nonNature = list.filter((note) => !isAbilityNatureNote(note));
+    const afterNature = list.filter((note) => !isAbilityNatureNote(note));
+    const arena = afterNature.filter(isArenaModeNote);
+    const nonNature = afterNature.filter((note) => !isArenaModeNote(note));
     const levelup = nonNature.filter(isLevelupNote);
     const semantic = nonNature.filter((note) => !isLevelupNote(note) && !abilityNoteHasPlaceholder(note));
     const ordinary = nonNature.filter((note) => !isLevelupNote(note) && abilityNoteHasPlaceholder(note));
+    const mechanic = semantic.filter(isMechanicNote);
+    const others = semantic.filter((note) => !isMechanicNote(note));
     const head = natureNotes.length
         ? [natureNotes.find((note) => note.parameter === 'Innate') || natureNotes[0]]
         : [];
-    return [...head, ...semantic, ...levelup, ...ordinary];
+    return [...head, ...mechanic, ...others, ...levelup, ...ordinary, ...arena];
 }
 
 // Порядок полей способности: image/innate/описание выше, ability_notes — последним.
@@ -1562,12 +2040,14 @@ function readableItemName(id) {
         .replace(/^item_/, '')
         .replace(/_custom$/, '')
         .replace(/^enhancement_/, '')
-        .replace(/_/g, ' ');
+        .split('_')
+        .map((word) => (ITEM_POSSESSIVE_WORDS[word] ? ITEM_POSSESSIVE_WORDS[word].toLowerCase() : word))
+        .join(' ');
 }
 
 // читаемое имя сущности из id: antimage -> «antimage», phantom_assassin -> «phantom assassin»
 function readableEntityName(id) {
-    return String(id).replace(/^boss_/, '').replace(/_/g, ' ');
+    return String(id).replace(/_/g, ' ');
 }
 
 // читаемое имя способности из id (фолбэк, когда нет локализации)
@@ -1582,9 +2062,12 @@ function itemCaption(categoryKey) {
     return Object.fromEntries(NATURE_LANGS.map((l) => [l, `${NEW_ITEM_IN_CATEGORY[l]} «${cat[l]}»`]));
 }
 
-// «+4% / +5%» -> «+4%/5%» (плюс только у первого тира)
 function joinTierValue(value) {
-    return String(value).split(' / ').map((p, i) => (i === 0 ? p : p.replace(/^\+/, ''))).join('/');
+    const parts = String(value).split(' / ');
+    const signed = /^[+-]/.test(parts[0] || '');
+    return parts
+        .map((p, i) => (i === 0 && signed ? p : p.replace(/^[+-]/, '')))
+        .join('/');
 }
 
 // Подпись новой нейтралки: «Новые чары N разряда» / «Новый артефакт N разряда»
@@ -1600,16 +2083,106 @@ function neutralCaption(kind, value) {
     };
 }
 
-// Параметры чар готовыми нотами: «+4%/5% к здоровью» (+ флаг красного из данных)
+const DECIMAL_COMMA_LANGS = new Set(['ru', 'uk', 'cs']);
+function localizeDecimals(value, lang) {
+    return DECIMAL_COMMA_LANGS.has(lang)
+        ? String(value).replace(/(\d)\.(\d)/g, '$1,$2')
+        : String(value);
+}
 function enhancementStatNotes(values) {
     return (values || []).map((v) => {
         const value = joinTierValue(v.value);
         const label = (l) => (v.label && (v.label[l] || v.label.en || v.label.ru)) || '';
         return {
-            note: Object.fromEntries(NATURE_LANGS.map((l) => [l, `${value} ${label(l)}`.trim()])),
+            note: Object.fromEntries(NATURE_LANGS.map(
+                (l) => [l, `${localizeDecimals(value, l)} ${label(l)}`.trim()]
+            )),
             ...(v.negative && { negative: true }),
         };
     });
+}
+
+const BASIC_TALENT_TITLE = { ru: 'Таланты', en: 'Talents', uk: 'Таланти' };
+const BASIC_TALENT_BRANCHES = [
+    ['strength', { ru: 'Сила', en: 'Strength', uk: 'Сила' }],
+    ['agility', { ru: 'Ловкость', en: 'Agility', uk: 'Спритність' }],
+    ['intelligence', { ru: 'Интеллект', en: 'Intelligence', uk: 'Інтелект' }],
+];
+const BASIC_TALENT_FIELDS = [
+    ['level', 'Уровень', 'Level', 'Рівень'],
+    ['branch', 'Ветка', 'Branch', 'Гілка'],
+    ['requires', 'Связка', 'Requires', 'Зв\u2019язка'],
+    ['text_ru', 'Текст (ru)', 'Text (ru)', 'Текст (ru)'],
+    ['text_en', 'Текст (en)', 'Text (en)', 'Текст (en)'],
+    ['text_uk', 'Текст (uk)', 'Текст (uk)', 'Текст (uk)'],
+];
+
+function pushBasicTalentChanges(target, oldMap, newMap) {
+    const before = (oldMap && typeof oldMap === 'object' && !oldMap._error) ? oldMap : null;
+    const after = (newMap && typeof newMap === 'object' && !newMap._error) ? newMap : null;
+    if (!before || !after) return;
+    const notes = [];
+    const push = (branch, note) => notes.push({ branch, note });
+    for (const name of Object.keys(after).sort()) {
+        const a = before[name];
+        const b = after[name];
+        if (!a) {
+            push(b.branch, {
+                parameter: `basic_talent.${name}`,
+                old_raw_value: null,
+                new_raw_value: b.text_ru || name,
+                note: {
+                    ru: `${name}: новый общий талант — {new_raw_value}`,
+                    en: `${name}: new basic talent — {new_raw_value}`,
+                    uk: `${name}: новий загальний талант — {new_raw_value}`,
+                },
+            });
+            continue;
+        }
+        for (const [field, ru, en, uk] of BASIC_TALENT_FIELDS) {
+            const oldValue = a[field] == null ? '' : String(a[field]);
+            const newValue = b[field] == null ? '' : String(b[field]);
+            if (oldValue === newValue) continue;
+            push(b.branch, {
+                parameter: `basic_talent.${name}.${field}`,
+                old_raw_value: oldValue || null,
+                new_raw_value: newValue || null,
+                note: {
+                    ru: `${name} · ${ru}: {change_label} с {old_raw_value} до {new_raw_value}`,
+                    en: `${name} · ${en}: {change_label} from {old_raw_value} to {new_raw_value}`,
+                    uk: `${name} · ${uk}: {change_label} з {old_raw_value} до {new_raw_value}`,
+                },
+            });
+        }
+    }
+    for (const name of Object.keys(before)) {
+        if (after[name]) continue;
+        push(before[name].branch, {
+            parameter: `basic_talent.${name}`,
+            old_raw_value: before[name].text_ru || name,
+            new_raw_value: null,
+            note: {
+                ru: `${name}: общий талант удалён`,
+                en: `${name}: basic talent removed`,
+                uk: `${name}: загальний талант вилучено`,
+            },
+        });
+    }
+    if (!notes.length) return;
+    target.push({ title: { ...BASIC_TALENT_TITLE } });
+    const known = new Set(BASIC_TALENT_BRANCHES.map(([key]) => key));
+    const groups = [
+        ...BASIC_TALENT_BRANCHES,
+        ...[...new Set(notes.map((n) => n.branch))]
+            .filter((key) => !known.has(key))
+            .map((key) => [key, { ru: String(key), en: String(key), uk: String(key) }]),
+    ];
+    for (const [key, label] of groups) {
+        const group = notes.filter((n) => n.branch === key);
+        if (!group.length) continue;
+        target.push({ subtitle: { ...label } });
+        target.push(...group.map((n) => n.note));
+    }
 }
 
 function buildChangelogData(diff, options = {}) {
@@ -1632,7 +2205,11 @@ function buildChangelogData(diff, options = {}) {
     };
     const oldRecipes = recipeIndex(oldItems, localizationSources);
     const newRecipes = recipeIndex(newItems, localizationSources);
-    const describeNew = (id, kv) => buildItemDescription(id, kv, localizationSources);
+    const siblingKV = (id) => {
+        const alt = /_custom$/.test(String(id)) ? String(id).replace(/_custom$/, '') : `${id}_custom`;
+        return newAbilities[alt] || oldAbilities[alt] || newItems[alt] || oldItems[alt] || null;
+    };
+    const describeNew = (id, kv) => buildItemDescription(id, kv, localizationSources, siblingKV(id));
     const describeNewSections = (id, kv) => buildItemDescriptionSections(id, kv, localizationSources);
     const describeNewValues = (id, kv) => buildItemCharacteristics(id, kv, itemStatLocalizationSources);
     // Новая способность: описание + параметры единой строкой (параметры больше не выносятся отдельно)
@@ -1696,9 +2273,14 @@ function buildChangelogData(diff, options = {}) {
         }
         return heroes.get(key);
     };
+    const abilityDisplayName = (abilityId) => {
+        const localized = localizedAbilityName(abilityId, [newLocalization, oldLocalization, newBaseLocalization]);
+        return localized ? (localized.en || localized.ru) : undefined;
+    };
     const abilityBlock = (hero, abilityId) => {
         if (!hero.abilities.has(abilityId)) {
-            hero.abilities.set(abilityId, { ability_id: replaceHeroKey(abilityId), ability_notes: [] });
+            const name = abilityDisplayName(abilityId);
+            hero.abilities.set(abilityId, { ability_id: replaceHeroKey(abilityId), ...(name && { name }), ability_notes: [] });
         }
         return hero.abilities.get(abilityId);
     };
@@ -1716,7 +2298,8 @@ function buildChangelogData(diff, options = {}) {
     const bossAbilityBlock = (bossId, abilityId) => {
         const boss = bossBlock(bossId);
         if (!boss.abilities.has(abilityId)) {
-            boss.abilities.set(abilityId, { ability_id: replaceHeroKey(abilityId), ability_notes: [] });
+            const bossAbilityName = abilityDisplayName(abilityId);
+            boss.abilities.set(abilityId, { ability_id: replaceHeroKey(abilityId), ...(bossAbilityName && { name: bossAbilityName }), ability_notes: [] });
         }
         return boss.abilities.get(abilityId);
     };
@@ -1825,7 +2408,7 @@ function buildChangelogData(diff, options = {}) {
         }
     }
     
-    if (options.oldPresent?.neutrals && options.newPresent?.neutrals) {
+    if (Object.keys(oldNeutrals).length && Object.keys(newNeutrals).length) {
         const neutralItemIds = new Set([
             ...Object.keys(oldNeutrals),
             ...Object.keys(newNeutrals),
@@ -1950,6 +2533,8 @@ function buildChangelogData(diff, options = {}) {
 
     const globalChanges = [];
 
+    pushBasicTalentChanges(globalChanges, options.oldBasicTalents, options.newBasicTalents);
+
     const addedHeroIds = new Set();
     const isAddedHero = (heroId) => addedHeroIds.has(replaceHeroKey(heroId));
     const generalBlock = (generalId, entityId = null) => {
@@ -2005,14 +2590,43 @@ function buildChangelogData(diff, options = {}) {
             .map((entry) => abilityCanon(entry.path[0]))
     );
     const resolveAbility = (abilities, mappedId) => {
-        if (mappedId in abilities) return { id: mappedId, value: abilities[mappedId] };
-        const customId = `${mappedId}_custom`;
-        if (customId in abilities) return { id: customId, value: abilities[customId] };
-        const canonicalId = abilityCanon(mappedId);
-        if (canonicalId in abilities) return { id: canonicalId, value: abilities[canonicalId] };
+        const tryIds = (base) => [base, `${base}_custom`, abilityCanon(base)];
+        const restoredId = restoreHeroKey(mappedId);
+        const candidates = restoredId === mappedId
+            ? tryIds(mappedId)
+            : [...tryIds(mappedId), ...tryIds(restoredId)];
+        for (const id of candidates) {
+            if (id in abilities) return { id, value: abilities[id] };
+        }
         return { id: mappedId, value: undefined };
     };
     
+    const newlyAssignedCanons = new Set();
+    const oldSlotCanons = new Map();
+    for (const [key, data] of Object.entries(options.oldHeroes || {})) {
+        const slots = new Set();
+        for (const [field, value] of Object.entries(data || {})) {
+            if (/^Ability\d+$/.test(field) && typeof value === 'string' && value) slots.add(abilityCanon(replaceHeroKey(value)));
+        }
+        oldSlotCanons.set(replaceHeroKey(stripHeroPrefix(key)), slots);
+    }
+    const newSlotOrder = new Map();
+    for (const [key, data] of Object.entries(newHeroes)) {
+        const order = new Map();
+        Object.entries(data || {})
+            .filter(([field]) => /^Ability\d+$/.test(field))
+            .sort((left, right) => Number(left[0].slice(7)) - Number(right[0].slice(7)))
+            .forEach(([, value], index) => {
+                if (typeof value !== 'string' || !value) return;
+                const canon = abilityCanon(replaceHeroKey(value));
+                if (!order.has(canon)) order.set(canon, index);
+            });
+        newSlotOrder.set(replaceHeroKey(stripHeroPrefix(key)), order);
+    }
+    const hadInOldSlots = (heroKey, abilityId) => {
+        const slots = oldSlotCanons.get(replaceHeroKey(stripHeroPrefix(String(heroKey))));
+        return !!slots && slots.has(abilityCanon(replaceHeroKey(abilityId)));
+    };
     if (options.oldPresent?.heroesAbilities && options.newPresent?.heroesAbilities) {
         const mappedAbilityIds = new Set([
             ...Object.keys(oldHeroAbilityMap),
@@ -2034,8 +2648,13 @@ function buildChangelogData(diff, options = {}) {
                     mappedHero: oldHero,
                 });
             }
+            const newlyAssigned = !!newHero && !oldHero && !hadInOldSlots(newHero, mappedId);
+            if (newlyAssigned) {
+                newlyAssignedCanons.add(abilityCanon(mappedId));
+                newlyAssignedCanons.add(abilityCanon(resolveAbility(newAbilities, mappedId).id));
+            }
             if (newHero && !structuralAbilityChanges.has(`added:${abilityCanon(mappedId)}`)
-                && !changedAbilityCanons.has(abilityCanon(mappedId))) {
+                && (!changedAbilityCanons.has(abilityCanon(mappedId)) || newlyAssigned)) {
                 const newAbility = resolveAbility(newAbilities, mappedId);
                 abilityDiffEntries.push({
                     type: 'added',
@@ -2048,6 +2667,12 @@ function buildChangelogData(diff, options = {}) {
         }
     }
     
+    if (newlyAssignedCanons.size) {
+        const kept = abilityDiffEntries.filter((e) => !(e.path.length >= 2 && newlyAssignedCanons.has(abilityCanon(e.path[0]))));
+        abilityDiffEntries.length = 0;
+        abilityDiffEntries.push(...kept);
+    }
+
     // поле могло переехать между верхним уровнем и AbilityValues (напр. AbilityCooldown):
     // это даёт пару removed(верхний)+added(в AbilityValues) с одним именем поля.
     // Схлопываем: значение то же — убираем обе заметки, изменилось — оставляем одну «изменено».
@@ -2193,6 +2818,7 @@ function buildChangelogData(diff, options = {}) {
             ? stripHeroPrefix(heroKey)
             : (heroesAbilitiesPresent ? null : matchHero(abilityId));
         if (heroId) {
+            if (isAddedHero(heroId)) continue;
 
             const isInnate =
                 innateAbilities.has(abilityId) || innateAbilities.has(canonicalAbilityId) ||
@@ -2210,8 +2836,13 @@ function buildChangelogData(diff, options = {}) {
             const innateParam = cleanLabel(entry.path) === 'Innate'
                 && String(entry.new ?? '') !== String(entry.old ?? '');
             if (isWholeAdd) {
-                // Новую способность показываем только описанием (block.description),
-                // без пометки «Новая базовая/врождённая способность. Активная/Пассивная.»
+                if (!block.ability_notes.some(isAbilityNatureNote)) {
+                    block.ability_notes.push({
+                        parameter: 'Innate',
+                        ...readyNote('added', null, null,
+                            abilityNatureNote('new', heroKv, isInnate, true, abilityNoteContext)),
+                    });
+                }
             } else if (innateParam) {
                 const nowInnate = String(entry.new ?? '') === '1';
                 // была ли способность скрытой раньше и перестала быть скрытой сейчас
@@ -2237,16 +2868,130 @@ function buildChangelogData(diff, options = {}) {
         }
     }
 
+    {
+        const kitByHero = new Map();
+        for (const [mappedId, heroKey] of Object.entries(newHeroAbilityMap)) {
+            const heroId = stripHeroPrefix(heroKey);
+            if (!isAddedHero(heroId)) continue;
+            if (!kitByHero.has(heroId)) kitByHero.set(heroId, []);
+            kitByHero.get(heroId).push(mappedId);
+        }
+        for (const [heroId, mappedIds] of kitByHero) {
+            for (const mappedId of mappedIds) {
+                const { id: abilityId, value: abilityKV } = resolveAbility(newAbilities, mappedId);
+                if (!abilityKV) continue;
+                const texture = typeof abilityKV.AbilityTextureName === 'string' ? abilityKV.AbilityTextureName : null;
+                const isInnate =
+                    innateAbilities.has(abilityId) || innateAbilities.has(abilityCanon(abilityId)) ||
+                    innateAbilities.has(mappedId);
+                const block = abilityBlock(heroBlock(heroId), abilityId);
+                block.image = resolveImage(
+                    assetKeys,
+                    abilityImageCandidates(abilityId, texture, replaceHeroKey(abilityId)),
+                    isInnate ? INNATE_ICON : STD_IMAGE.ability
+                );
+                if (isInnate) block.innate = true;
+                block.ability_notes = [];
+                block.description = [describeNewAbility(abilityId, abilityKV)];
+            }
+        }
+    }
+
+    {
+        const RAW_LANGS = ['ru', 'en', 'uk'];
+        const descKeys = (id) => [
+            `dota_tooltip_ability_${id}_description`,
+            `dota_tooltip_ability_${String(id).replace(/_custom$/, '')}_description`,
+        ].map((key) => key.toLowerCase());
+        const template = (id, sources, lang) => {
+            for (const source of sources) {
+                const tokens = (source && source[lang]) || {};
+                const key = Object.keys(tokens).find((token) => descKeys(id).includes(token.toLowerCase()));
+                if (key && String(tokens[key]).trim()) return String(tokens[key]);
+            }
+            return null;
+        };
+        const describeWith = (id, kv, sources) =>
+            buildItemDescription(id, kv, sources, siblingKV(id));
+
+        const bareTemplate = (text) =>
+            normText(String(text).replace(/<[^>]+>/g, ' ').replace(/\\n/g, ' '));
+        const changedIn = (id, lang) => {
+            const before = template(id, [oldLocalization], lang);
+            const after = template(id, [newLocalization, newBaseLocalization], lang);
+            if (!before || !after) return null;
+            return bareTemplate(before) !== bareTemplate(after);
+        };
+        const descriptionNote = (id, oldKV, newKV) => {
+            const changed = changedIn(id, 'ru') ?? changedIn(id, 'en') ?? false;
+            if (!changed) return null;
+            const before = describeWith(id, oldKV, [oldLocalization]);
+            const after = describeWith(id, newKV, [newLocalization, newBaseLocalization]);
+            if (!before || !after) return null;
+            const pick = (src) => Object.fromEntries(RAW_LANGS.map((lang) => [lang, src[lang] || null]));
+            const oldText = pick(before);
+            const newText = pick(after);
+            if (JSON.stringify(oldText) === JSON.stringify(newText)) return null;
+            return { parameter: 'Description', ...rawNote('changed', oldText, newText) };
+        };
+
+        for (const itemId of Object.keys(newItems)) {
+            if (!(itemId in oldItems)) continue;
+            const note = descriptionNote(itemId, oldItems[itemId], newItems[itemId]);
+            if (note) ensureItem(itemId).item_notes.push(note);
+        }
+
+        for (const abilityId of Object.keys(newAbilities)) {
+            if (!(abilityId in oldAbilities) || /^woda_/.test(abilityId)) continue;
+            const note = descriptionNote(abilityId, oldAbilities[abilityId], newAbilities[abilityId]);
+            if (!note) continue;
+            const kv = newAbilities[abilityId];
+            const texture = typeof kv.AbilityTextureName === 'string' ? kv.AbilityTextureName : null;
+            const image = () => resolveImage(
+                assetKeys, abilityImageCandidates(abilityId, texture, replaceHeroKey(abilityId)), STD_IMAGE.ability);
+            if (isNeutralCreepAbility(kv)) {
+                for (const creepId of creepAbilityMap[abilityId] || []) {
+                    const block = creepAbilityBlock(creepId, abilityId);
+                    block.image = image();
+                    block.ability_notes.push(note);
+                }
+                continue;
+            }
+            if (isBossAbility(kv)) {
+                const block = bossAbilityBlock(bossIdFromAbility(abilityId, kv), abilityId);
+                block.image = image();
+                block.ability_notes.push(note);
+                continue;
+            }
+            const canon = abilityCanon(abilityId);
+            const heroKey = heroAbilityMap[abilityId] || heroAbilityMap[canon] || heroAbilityMapCanon[canon];
+            if (!heroKey) continue;
+            const heroId = stripHeroPrefix(heroKey);
+            if (isAddedHero(heroId)) continue;
+            const block = abilityBlock(heroBlock(heroId), abilityId);
+            block.image = image();
+            block.ability_notes.push(note);
+        }
+    }
+
     const oldTalents = options.oldTalents || {};
     const newTalents = options.newTalents || {};
     const talentPositions = new Map();
+    const structuralTalents = new Set();
     for (const heroKey of new Set([...Object.keys(oldTalents), ...Object.keys(newTalents)])) {
         const heroId = stripHeroPrefix(heroKey);
         if (isAddedHero(heroId)) continue;
         const oldPositions = heroTalentPositions(oldTalents[heroKey], heroId);
         const newPositions = heroTalentPositions(newTalents[heroKey], heroId);
         talentPositions.set(heroId, { old: oldPositions, new: newPositions });
-        for (const move of talentMoves(oldTalents[heroKey], newTalents[heroKey], heroId)) {
+        const moves = talentMoves(oldTalents[heroKey], newTalents[heroKey], heroId);
+        const quotedByMoves = new Set(moves
+            .filter((move) => move.type === 'moved')
+            .map((move) => talentDestinationOccupant(move, oldPositions))
+            .filter(Boolean));
+        for (const move of moves) {
+            structuralTalents.add(`${heroId}|${move.id}`);
+            if (move.type === 'removed' && quotedByMoves.has(move.id)) continue;
             talentBlock(heroBlock(heroId), move.id, move.new || move.old).talents_notes.push(
                 structuralTalentNote(move, {
                     oldPositions,
@@ -2254,6 +2999,79 @@ function buildChangelogData(diff, options = {}) {
                     newLocalization,
                 })
             );
+        }
+        const oldMeta = heroTalentMeta(oldTalents[heroKey], heroId);
+        const newMeta = heroTalentMeta(newTalents[heroKey], heroId);
+        const oldSlots = {};
+        for (const [id, p] of Object.entries(oldPositions)) {
+            (oldSlots[`${p.branch}|${p.level}`] = oldSlots[`${p.branch}|${p.level}`] || []).push(id);
+        }
+        for (const [talentId, position] of Object.entries(newPositions)) {
+            const olds = oldSlots[`${position.branch}|${position.level}`] || [];
+            const oldId = olds.length === 1 ? olds[0] : (olds.includes(talentId) ? talentId : null);
+            const sourceId = oldMeta[talentId] ? talentId : oldId;
+            const before = sourceId ? requiredPlace(oldMeta, oldPositions, sourceId) : null;
+            const after = requiredPlace(newMeta, newPositions, talentId);
+            const known = (place) => place && !String(place).startsWith('?');
+            if (before === after || (known(before) && known(after) && placeLevelOf(before) === placeLevelOf(after))) continue;
+            const type = !before ? 'added' : !after ? 'removed' : 'changed';
+            const text = type === 'removed' || !known(after) ? LINK_TEXT.del() : LINK_TEXT.add(placeLevelOf(after));
+            talentBlock(heroBlock(heroId), talentId, position).talents_notes.push({
+                parameter: 'talent_requires',
+                ...readyNote(type, placeLabel(before, position.branch), placeLabel(after, position.branch), text),
+                ...(type === 'changed' && known(before) && { tooltip: LINK_TEXT.was(placeLevelOf(before)) }),
+            });
+        }
+    }
+
+    const oldLocked = (options.oldLockedTalents && !options.oldLockedTalents._error) ? options.oldLockedTalents : {};
+    const newLocked = (options.newLockedTalents && !options.newLockedTalents._error) ? options.newLockedTalents : {};
+    const lockList = (map, hero, talent) => {
+        const raw = map[hero] && map[hero][talent];
+        const list = Array.isArray(raw) ? raw : (raw && typeof raw === 'object' ? Object.values(raw) : []);
+        return [...new Set(list.map(String))].sort();
+    };
+    for (const heroKey of new Set([...Object.keys(oldLocked), ...Object.keys(newLocked)])) {
+        const heroId = stripHeroPrefix(heroKey);
+        if (isAddedHero(heroId)) continue;
+        const positions = talentPositions.get(heroId);
+        if (!positions) continue;
+        const placeKey = (p) => `${p.branch}|${p.level}`;
+        const talentIds = new Set([
+            ...Object.keys(newLocked[heroKey] || {}),
+            ...Object.keys(oldLocked[heroKey] || {}),
+        ]);
+        for (const talentId of talentIds) {
+            const me = positions.new[talentId];
+            if (!me) continue;
+            const now = lockList(newLocked, heroKey, talentId).filter((p) => positions.new[p]);
+            const sourceId = positions.old[talentId]
+                ? talentId
+                : Object.entries(positions.old).find(([, p]) => p.branch === me.branch && p.level === me.level)?.[0];
+            const wasIds = sourceId ? lockList(oldLocked, heroKey, sourceId).filter((p) => positions.old[p]) : [];
+            const add = now.filter((p) => !wasIds.some((w) => placeKey(positions.old[w]) === placeKey(positions.new[p])));
+            const delIds = wasIds.filter((w) => !now.some((p) => placeKey(positions.new[p]) === placeKey(positions.old[w])));
+            if (!add.length && !delIds.length) continue;
+            const delOld = delIds.map((p) => positions.old[p]);
+            const delNow = delIds.map((p) => positions.new[p] || positions.old[p]);
+            const isMutual = (p) => lockList(newLocked, heroKey, p).includes(talentId);
+            const addMutual = add.filter(isMutual).map((p) => positions.new[p]);
+            const addOneWay = add.filter((p) => !isMutual(p)).map((p) => positions.new[p]);
+            const tooltip = add.length && delIds.length ? LOCK_TEXT.was(delOld) : null;
+            const raw = (places) => (places.length
+                ? places.map((p) => placeLabel(`${p.branch}|${p.level}`, 0)).join(', ')
+                : null);
+            const push = (type, places, text, withTooltip) => {
+                talentBlock(heroBlock(heroId), talentId, me).talents_notes.push({
+                    parameter: 'LockedTalents',
+                    ...readyNote(type, raw(delOld), raw(places), text),
+                    ...(withTooltip && tooltip && { tooltip }),
+                });
+            };
+            const addType = tooltip ? 'changed' : 'added';
+            if (addMutual.length) push(addType, addMutual, LOCK_TEXT.addMutual(addMutual), true);
+            if (addOneWay.length) push(addType, addOneWay, LOCK_TEXT.addOneway(addOneWay), !addMutual.length);
+            if (delIds.length && !add.length) push('removed', [], LOCK_TEXT.del(delNow), false);
         }
     }
 
@@ -2274,7 +3092,10 @@ function buildChangelogData(diff, options = {}) {
     for (const [key, values] of localizedByKey) {
         const heroId = matchHero(modifierHeroName(key));
         if (!heroId || isAddedHero(heroId)) continue;
-        const note = talentRawNote('changed', values.old, values.new);
+        if (structuralTalents.has(`${heroId}|${key}`)) continue;
+        const note = talentTextReplaced(values.old, values.new)
+            ? readyNote('changed', values.old, values.new, talentReplacementNote(values.old, values.new))
+            : talentRawNote('changed', values.old, values.new);
         const positions = talentPositions.get(heroId);
         const position = positions?.new[key] || positions?.old[key];
         talentBlock(heroBlock(heroId), key, position).talents_notes.push(note);
@@ -2284,12 +3105,36 @@ function buildChangelogData(diff, options = {}) {
         const heroId = stripHeroPrefix(heroKey);
         if (!isAddedHero(heroId)) continue;
         const positions = heroTalentPositions(newTalents[heroKey], heroId);
+        const metaOfNew = heroTalentMeta(newTalents[heroKey], heroId);
         for (const [talentId, position] of Object.entries(positions)) {
-            const note = Object.fromEntries(
-                LANGS.map((lang) => [lang, localizedTalentText(newLocalization, lang, talentId) || null])
-            );
-            if (!LANGS.some((lang) => note[lang])) continue;
-            talentBlock(heroBlock(heroId), talentId, position).talents_notes.push(readyNote('added', null, null, note));
+            const note = talentDescriptionNote(newLocalization, talentId);
+            if (!note) continue;
+            const block = talentBlock(heroBlock(heroId), talentId, position);
+            block.talents_notes.push(readyNote('added', null, null, note));
+            const requiredAt = requiredPlace(metaOfNew, positions, talentId);
+            if (requiredAt && !requiredAt.startsWith('?')) {
+                block.talents_notes.push({
+                    parameter: 'talent_requires',
+                    ...readyNote('added', null, placeLabel(requiredAt, position.branch), LINK_TEXT.new(placeLevelOf(requiredAt))),
+                });
+            }
+            const partners = lockList(newLocked, heroKey, talentId);
+            const mutual = partners.filter((p) => lockList(newLocked, heroKey, p).includes(talentId));
+            const oneWay = partners.filter((p) => !mutual.includes(p));
+            const placesOf = (ids) => ids.map((p) => positions[p]).filter(Boolean);
+            const lockRaw = (ids) => placesOf(ids).map((p) => placeLabel(`${p.branch}|${p.level}`, 0)).join(', ') || null;
+            if (placesOf(mutual).length) {
+                block.talents_notes.push({
+                    parameter: 'LockedTalents',
+                    ...readyNote('added', null, lockRaw(mutual), LOCK_TEXT.mutual(placesOf(mutual))),
+                });
+            }
+            if (placesOf(oneWay).length) {
+                block.talents_notes.push({
+                    parameter: 'LockedTalents',
+                    ...readyNote('added', null, lockRaw(oneWay), LOCK_TEXT.oneway(placesOf(oneWay))),
+                });
+            }
         }
     }
 
@@ -2325,8 +3170,11 @@ function buildChangelogData(diff, options = {}) {
                 image: resolveImage(assetKeys, heroImagePath(replaceHeroKey(hero.hero_id)), STD_IMAGE.hero),
                 ...(addedHeroIds.has(hero.hero_id) ? { is_new: true } : {}),
                 ...(primaryAttrById[hero.hero_id] ? { primary_attribute: primaryAttrById[hero.hero_id] } : {}),
-                hero_notes: hero.hero_notes,
-                abilities: orderAbilities(dedupeAbilities([...hero.abilities.values()])).map((ab) => orderAbilityFields(ab, heroName)),
+                hero_notes: addedHeroIds.has(hero.hero_id) ? [] : polishHeroBaseNotes(hero.hero_notes, replaceHeroKey(hero.hero_id)),
+                abilities: orderAbilities(
+                    dedupeAbilities([...hero.abilities.values()]),
+                    newSlotOrder.get(replaceHeroKey(stripHeroPrefix(String(hero.hero_id)))),
+                ).map((ab) => orderAbilityFields(ab, heroName)),
                 talents: groupTalents(hero.talents, replaceHeroKey(hero.hero_id)),
             };
         })
@@ -2340,12 +3188,15 @@ function buildChangelogData(diff, options = {}) {
         .sort((a, b) => Number(!!b.is_new) - Number(!!a.is_new) || a.hero_id.localeCompare(b.hero_id));
 
     const bossResult = [...bosses.values()]
-        .map((boss) => ({
-            boss_id: boss.boss_id,
-            name: readableEntityName(boss.boss_id),
-            image: resolveImage(assetKeys, heroImagePath(boss.boss_id.replace(/^boss_/, '').replace(/_boss.*$/, '')), STD_IMAGE.hero),
-            abilities: dedupeAbilities([...boss.abilities.values()]).map(orderAbilityFields),
-        }))
+        .map((boss) => {
+            const bossName = readableEntityName(boss.boss_id);
+            return {
+                boss_id: boss.boss_id,
+                name: bossName,
+                image: resolveImage(assetKeys, heroImagePath(boss.boss_id.replace(/^boss_/, '').replace(/_boss.*$/, '')), STD_IMAGE.hero),
+                abilities: dedupeAbilities([...boss.abilities.values()]).map((ab) => orderAbilityFields(ab, bossName)),
+            };
+        })
         .filter((boss) => boss.abilities.length)
         .sort((a, b) => a.boss_id.localeCompare(b.boss_id));
     
@@ -2358,7 +3209,7 @@ function buildChangelogData(diff, options = {}) {
             image: resolveImage(assetKeys, null, STD_IMAGE.creep),
             ...(newCreepAdded(creep.creep_id) && { is_new: true }),
             neutral_creep_notes: creep.base_notes,
-            abilities: dedupeAbilities([...creep.abilities.values()]).map(orderAbilityFields),
+            abilities: dedupeAbilities([...creep.abilities.values()]).map((ab) => orderAbilityFields(ab)),
         }))
         .filter((creep) => hasCreepName(creep.name) && (creep.neutral_creep_notes.length || creep.abilities.length))
         .sort((a, b) => Number(!!b.is_new) - Number(!!a.is_new) || a.neutral_creep_id.localeCompare(b.neutral_creep_id));
@@ -2401,6 +3252,16 @@ function buildChangelogData(diff, options = {}) {
         added.is_removed = false;
         added.item_notes = notes;
         delete added.recipe;
+    }
+
+    const removedItemLabel = WHOLE_ENTITY_LABELS.item.removed;
+    for (const item of items.values()) {
+        if (!item.is_removed || item.is_new) continue;
+        const removalOnly = (item.item_notes || []).filter(
+            (n) => n && n.note && n.note.en === removedItemLabel.en
+        );
+        if (removalOnly.length) item.item_notes = removalOnly;
+        delete item.recipe;
     }
 
     const neutralResult = [];
@@ -2456,7 +3317,7 @@ function buildChangelogData(diff, options = {}) {
             }
             regularResult.push({
                 item_id: item.item_id,
-                name: readableItemName(item.item_id),
+                name: localizedItemName(item.item_id, item.is_removed && !item.is_new ? [oldLocalization, ...localizationSources] : localizationSources),
                 image: resolveImage(assetKeys, itemImageCandidates(item.item_id, texture), STD_IMAGE.item),
                 is_new: item.is_new,
                 // улучшение = собирается из других предметов (есть свой рецепт), иначе основной
@@ -2477,7 +3338,8 @@ function buildChangelogData(diff, options = {}) {
             // если предмет уже существовал в прошлом патче как обычный (тот же id
             // или базовый без _custom), не считаем нейтралку новой
             const existedBefore = (item.item_id in oldItems) || (stripCustom(item.item_id) in oldItems);
-            const isNew = item.is_new && !existedBefore;
+            const enteredPool = !(item.item_id in oldNeutrals) && (item.item_id in newNeutrals);
+            const isNew = enteredPool || (item.is_new && !existedBefore);
             const ranks = normalizeEnhancementRanks(newNeutrals[item.item_id]);
             const newRanks = addedNeutralRanks.get(item.item_id) || [];
             const rankNumbers = (isNew ? ranks : newRanks).map((entry) => entry.tier);
@@ -2485,9 +3347,7 @@ function buildChangelogData(diff, options = {}) {
             const enhancementLevels = (isNew ? ranks : newRanks).map((entry) => entry.level);
             const enhancementLevel = enhancementLevels.length > 1 ? enhancementLevels : enhancementLevels[0] ?? null;
             const currentTiers = normalizeTiers(newNeutrals[item.item_id]);
-            const tierValue = isNew
-                ? (currentTiers.length > 1 ? currentTiers : currentTiers[0] ?? null)
-                : null;
+            const tierValue = currentTiers.length > 1 ? currentTiers : currentTiers[0] ?? null;
             const selectedLevel = newRanks[0]?.level ?? (isNew ? ranks[0]?.level : null);
             const newRankValue = kind === 'enhancement' && newRanks.length > 0
                 ? (newRanks.length > 1 ? newRanks.map((entry) => entry.tier) : newRanks[0].tier)
@@ -2500,7 +3360,7 @@ function buildChangelogData(diff, options = {}) {
             }
             const neutral = {
                 neutral_item_id: item.item_id,
-                name: readableItemName(item.item_id),
+                name: localizedItemName(item.item_id, item.is_removed && !item.is_new ? [oldLocalization, ...localizationSources] : localizationSources),
                 image: resolveImage(assetKeys, itemImageCandidates(item.item_id, texture), STD_IMAGE.item),
                 neutral_type: kind,
                 is_new: isNew,
@@ -2508,8 +3368,8 @@ function buildChangelogData(diff, options = {}) {
                 ...(kind === 'enhancement' && rankValue != null && { rank: rankValue }),
                 ...(kind === 'enhancement' && enhancementLevel != null && { enhancement_level: enhancementLevel }),
                 ...(newRankValue != null && { new_rank: newRankValue }),
-                // у нейтралок нет покупной стоимости — заметку Item Cost не выводим
-                neutral_item_notes: orderItemNotes((item.item_notes || []).filter((note) => note.parameter !== 'ItemCost')),
+                neutral_item_notes: orderItemNotes((item.item_notes || [])
+                    .filter((note) => note.parameter !== 'ItemCost' && note.parameter !== 'MaxLevel')),
             };
             // готовая подпись «Новые чары N разряда» / «Новый артефакт N разряда»
             if (isNew) {
@@ -2517,13 +3377,14 @@ function buildChangelogData(diff, options = {}) {
                 const caption = neutralCaption(kind, captionValue);
                 if (caption) neutral.caption = caption;
             }
-            if (isNew || selectedLevel != null) {
+            if (isNew) {
                 neutral.description = describeNew(item.item_id, newItems[item.item_id]);
                 neutral.description_sections = describeNewSections(item.item_id, newItems[item.item_id]);
                 if (kind === 'enhancement') {
                     // чары: параметры готовыми нотами (+4%/5% к здоровью, красный флаг)
                     const values = buildItemCharacteristics(item.item_id, newItems[item.item_id], itemStatLocalizationSources, {
                         includeReadableTokens: true,
+                        signPositive: true,
                     });
                     neutral.stat_notes = enhancementStatNotes(values);
                 } else {
@@ -2587,8 +3448,12 @@ module.exports = {
     buildItemDescription,
     buildItemDescriptionSections,
     buildAbilityValues,
+    orderAbilityNotes,
     buildItemCharacteristics,
     flattenDiff,
     isCosmetic,
     normText,
+    normTalentText,
+    talentDescriptionNote,
+    talentTooltipText,
 };

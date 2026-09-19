@@ -1,0 +1,1798 @@
+{
+  "patch_number": "1.02",
+  "patch_name": "1.02",
+  "patch_timestamp": 1789150065,
+  "general": {
+    "global_changes": [
+      {
+        "title": {
+          "ru": "Таланты",
+          "en": "Talents",
+          "uk": "Таланти"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Сила",
+          "en": "Strength",
+          "uk": "Сила"
+        }
+      },
+      {
+        "parameter": "basic_talent.octar.level",
+        "old_raw_value": "6",
+        "new_raw_value": "4",
+        "note": {
+          "ru": "octar · Уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "octar · Level: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "octar · Рівень: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.octar.text_ru",
+        "old_raw_value": "Дополнительная Дальность Заклинаний: 150/300",
+        "new_raw_value": "Дополнительная Дальность Заклинаний: 100/200",
+        "note": {
+          "ru": "octar · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "octar · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "octar · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.octar.text_en",
+        "old_raw_value": "Additional Cast Range: 150/300",
+        "new_raw_value": "Additional Cast Range: 100/200",
+        "note": {
+          "ru": "octar · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "octar · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "octar · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.octar.text_uk",
+        "old_raw_value": "Додаткова Дальність Заклинань: 150/300",
+        "new_raw_value": "Додаткова Дальність Заклинань: 100/200",
+        "note": {
+          "ru": "octar · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "octar · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "octar · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.requires",
+        "old_raw_value": "regenhp1:3",
+        "new_raw_value": null,
+        "note": {
+          "ru": "quickhp · Связка: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Requires: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Зв’язка: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_ru",
+        "old_raw_value": "Усиление Восстановления Здоровья: 7%/14%",
+        "new_raw_value": "Уменьшение Получаемого Урона от Атак: 4%/8%/12%",
+        "note": {
+          "ru": "quickhp · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_en",
+        "old_raw_value": "Health Regen Amplification: 7%/14%",
+        "new_raw_value": "Reducing Damage Received from Attacks: 4%/8%/12%",
+        "note": {
+          "ru": "quickhp · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_uk",
+        "old_raw_value": "Посилення Відновлення Здоров'я: 7%/14%",
+        "new_raw_value": "Зменшення Одержуваної шкоди від Атак: 4%/8%/12%",
+        "note": {
+          "ru": "quickhp · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenhp1.text_ru",
+        "old_raw_value": "Восстановление Здоровья: 3/6/9",
+        "new_raw_value": "Восстановление Здоровья: 5/10",
+        "note": {
+          "ru": "regenhp1 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenhp1 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenhp1 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenhp1.text_en",
+        "old_raw_value": "Health Regeneration: 3/6/9",
+        "new_raw_value": "Health Regeneration: 5/10",
+        "note": {
+          "ru": "regenhp1 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenhp1 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenhp1 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenhp1.text_uk",
+        "old_raw_value": "Відновлення Здоров'я: 3/6/9",
+        "new_raw_value": "Відновлення Здоров'я: 5/10",
+        "note": {
+          "ru": "regenhp1 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenhp1 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenhp1 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenhp2.level",
+        "old_raw_value": "5",
+        "new_raw_value": "6",
+        "note": {
+          "ru": "regenhp2 · Уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenhp2 · Level: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenhp2 · Рівень: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenhp2.requires",
+        "old_raw_value": "quickhp:2",
+        "new_raw_value": null,
+        "note": {
+          "ru": "regenhp2 · Связка: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenhp2 · Requires: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenhp2 · Зв’язка: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.sliver.level",
+        "old_raw_value": "4",
+        "new_raw_value": "6",
+        "note": {
+          "ru": "sliver · Уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "sliver · Level: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "sliver · Рівень: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.sliver.text_ru",
+        "old_raw_value": "Сопротивление Эффектам: 7%/14%/21%",
+        "new_raw_value": "Сопротивление Эффектам: 10%/20%",
+        "note": {
+          "ru": "sliver · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "sliver · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "sliver · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.sliver.text_en",
+        "old_raw_value": "Status Resistance: 7%/14%/21%",
+        "new_raw_value": "Status Resistance: 10%/20%",
+        "note": {
+          "ru": "sliver · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "sliver · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "sliver · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.sliver.text_uk",
+        "old_raw_value": "Опір Ефектам: 7%/14%/21%",
+        "new_raw_value": "Опір Ефектам: 10%/20%",
+        "note": {
+          "ru": "sliver · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "sliver · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "sliver · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Ловкость",
+          "en": "Agility",
+          "uk": "Спритність"
+        }
+      },
+      {
+        "parameter": "basic_talent.attackspeed2.level",
+        "old_raw_value": "5",
+        "new_raw_value": "6",
+        "note": {
+          "ru": "attackspeed2 · Уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "attackspeed2 · Level: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "attackspeed2 · Рівень: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.attackspeed2.requires",
+        "old_raw_value": "attackspeed1:3",
+        "new_raw_value": null,
+        "note": {
+          "ru": "attackspeed2 · Связка: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "attackspeed2 · Requires: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "attackspeed2 · Зв’язка: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.miss2.text_ru",
+        "old_raw_value": "Шанс Уклониться от Любого Урона: 4%/8%/12%",
+        "new_raw_value": "Шанс Уклониться от Любого Урона: 4%/8%",
+        "note": {
+          "ru": "miss2 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "miss2 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "miss2 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.miss2.text_en",
+        "old_raw_value": "Chance to Avoid Any Damage: 4%/8%/12%",
+        "new_raw_value": "Chance to Avoid Any Damage: 4%/8%",
+        "note": {
+          "ru": "miss2 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "miss2 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "miss2 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.miss2.text_uk",
+        "old_raw_value": "Шанс Ухилитися від будь-якої шкоди: 4%/8%/12%",
+        "new_raw_value": "Шанс Ухилитися від будь-якої шкоди: 4%/8%",
+        "note": {
+          "ru": "miss2 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "miss2 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "miss2 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Интеллект",
+          "en": "Intelligence",
+          "uk": "Інтелект"
+        }
+      },
+      {
+        "parameter": "basic_talent.blood.requires",
+        "old_raw_value": "mask2:2",
+        "new_raw_value": null,
+        "note": {
+          "ru": "blood · Связка: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "blood · Requires: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "blood · Зв’язка: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.blood.text_ru",
+        "old_raw_value": "Усиление Вампиризма Заклинаниями: 7%/14%/21%",
+        "new_raw_value": "Навсегда дарует Барьер поглощающий Любой Урон: 150/300 <br><br> Время Перезарядки: 15 сек.",
+        "note": {
+          "ru": "blood · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "blood · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "blood · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.blood.text_en",
+        "old_raw_value": "Spell Lifesteal Amplification: 7%/14%/21%",
+        "new_raw_value": "Permanently grants a Barrier that absorbs Any Damage: 150/300 <br><br> Cooldown: 15 sec.",
+        "note": {
+          "ru": "blood · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "blood · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "blood · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.blood.text_uk",
+        "old_raw_value": "Посилення Вампіризму Заклинаннями: 7%/14%/21%",
+        "new_raw_value": "Назавжди надає Бар'єр, що поглинає Будь-яку Шкоду: 150/300 <br><br> Час Перезарядки: 15 сек.",
+        "note": {
+          "ru": "blood · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "blood · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "blood · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask2.text_ru",
+        "old_raw_value": "Вампиризм Заклинаниями: 7%/14%",
+        "new_raw_value": "Вампиризм Заклинаниями: 7%/14%/21%",
+        "note": {
+          "ru": "mask2 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask2 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask2 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask2.text_en",
+        "old_raw_value": "Spell Lifesteal: 7%/14%",
+        "new_raw_value": "Spell Lifesteal: 7%/14%/21%",
+        "note": {
+          "ru": "mask2 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask2 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask2 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask2.text_uk",
+        "old_raw_value": "Вампіризм Заклинаннями: 7%/14%",
+        "new_raw_value": "Вампіризм Заклинаннями: 7%/14%/21%",
+        "note": {
+          "ru": "mask2 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask2 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask2 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenmp1.text_ru",
+        "old_raw_value": "Восстановление Маны: 3/6/9",
+        "new_raw_value": "Восстановление Маны: 5/10",
+        "note": {
+          "ru": "regenmp1 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenmp1 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenmp1 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenmp1.text_en",
+        "old_raw_value": "Mana Regeneration: 3/6/9",
+        "new_raw_value": "Mana Regeneration: 5/10",
+        "note": {
+          "ru": "regenmp1 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenmp1 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenmp1 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenmp1.text_uk",
+        "old_raw_value": "Відновлення Мани: 3/6/9",
+        "new_raw_value": "Відновлення Мани: 5/10",
+        "note": {
+          "ru": "regenmp1 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenmp1 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenmp1 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenmp2.level",
+        "old_raw_value": "5",
+        "new_raw_value": "6",
+        "note": {
+          "ru": "regenmp2 · Уровень: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenmp2 · Level: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenmp2 · Рівень: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.regenmp2.requires",
+        "old_raw_value": "regenmp1:3",
+        "new_raw_value": null,
+        "note": {
+          "ru": "regenmp2 · Связка: {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "regenmp2 · Requires: {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "regenmp2 · Зв’язка: {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_revenants_brooch_custom",
+        "name": "revenants brooch",
+        "image": "images/items/revenants_brooch_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "manacost_per_hit",
+            "old_raw_value": "150",
+            "new_raw_value": "120",
+            "note": {
+              "ru": "Manacost Per Hit: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Manacost Per Hit: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Manacost Per Hit: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_tome_of_aghanim_custom",
+        "name": "tome of aghanim",
+        "image": "images/items/tome_of_aghanim.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityBehavior",
+            "old_raw_value": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+            "new_raw_value": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
+            "note": {
+              "ru": "Теперь пассивная способность",
+              "en": "Now a passive ability",
+              "uk": "Тепер пасивна здібність"
+            }
+          },
+          {
+            "parameter": "Description",
+            "old_raw_value": {
+              "ru": "Использование: Consume. Поглощает предмет и навсегда добавляет эффект Attribute Master. Можно поглотить лишь один Tome of Aghanim. Пассивное: Attribute Master. 1% уменьшения всего получаемого урона за каждые 60 силы 1% увеличения всего наносимого урона за каждые 60 ловкости 1% урона от заклинаний за каждые 12 интеллекта Максимальный бонус достигается при 300 каждой характеристики.",
+              "en": "Use: Consume. Consumes an item and permanently adds the Attribute Master effect. You can only consume one Tome of Aghanim. Passive: Attribute Master. 1% damage reduction per every 60 strength 1% increase all damage per every 60 agility 1% spell damage per every 12 intellect The maximum bonus is reached at 300 of each attribute.",
+              "uk": "Використання: Consume. Поглинає предмет і назавжди додає ефект Attribute Master. Можна поглинути лише один Tome of Aghanim. Пасивне: Attribute Master. 1% зменшення всієї одержуваної шкоди за кожні60 сили %agi_damage _to_bonus% спритності 1% втрати від заклинань за кожні12 інтелекту Максимальний бонус досягається при 300 кожної характеристики."
+            },
+            "new_raw_value": {
+              "ru": "Пассивное: Attribute Wizard. 1% уменьшения всего получаемого урона за каждые 60 силы 1% увеличения всего наносимого урона за каждые 60 ловкости 1% урона от заклинаний за каждые 12 интеллекта Максимальный бонус достигается при 300 каждой характеристики.",
+              "en": "Passive: Attribute Wizard. 1% reduction of all incoming damage for every 60 Strength 1% increase to all outgoing damage for every 60 Agility 1% spell damage for every 12 Intelligence The maximum bonus is reached at 300 of each attribute.",
+              "uk": "Пасивна: Маг Атрибутів. 1% зменшення всього отриманого урону за кожні 60 сили 1% збільшення всього завданого урону за кожні 60 спритності 1% шкоди від заклять за кожні 12 інтелекту Максимальний бонус досягається при 300 кожного атрибуту."
+            },
+            "note": {
+              "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "is_new": true,
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "axe_berserkers_call_custom",
+          "name": "berserkers call",
+          "image": "abilities/axe_berserkers_call.webp",
+          "description": [
+            {
+              "ru": "Герой бросает вызов ближайшим врагам, заставляя их атаковать его, а также получает бонус к броне на время действия способности. Радиус: 315. Доп. броня: 12 / 13 / 14 / 15. Длительность: 1,8 / 2,1 / 2,4 / 2,7. Перезарядка: 17 / 15 / 13 / 11. Расход маны: 80 / 90 / 100 / 110.",
+              "en": "Axe taunts nearby enemy units, forcing them to attack him while he gains bonus armor during the duration. Radius: 315. Bonus armor: 12 / 13 / 14 / 15. Duration: 1.8 / 2.1 / 2.4 / 2.7. Cooldown: 17 / 15 / 13 / 11. Mana cost: 80 / 90 / 100 / 110.",
+              "uk": "Провокує навколишніх ворогів атакувати Axe, надаючи йому бонус до броні на час дії. Радіус: 315. Додаткова броня: 12 / 13 / 14 / 15. Тривалість: 1,8 / 2,1 / 2,4 / 2,7. Перезарядка: 17 / 15 / 13 / 11. Витрати мани: 80 / 90 / 100 / 110."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "axe_battle_hunger_custom",
+          "name": "battle hunger",
+          "image": "abilities/axe_battle_hunger.webp",
+          "description": [
+            {
+              "ru": "Приводит врага в бешенство, нанося ему урон, пока он кого-нибудь не убьёт или действие способности не закончится. Урон от способности увеличивается в зависимости от брони владельца способности. Скорость передвижения жертвы уменьшается, когда она не смотрит в сторону владельца способности. Длительность: 12. Замедление передвижения: -15% / -20% / -25% / -30%. Урон в секунду: 12 / 18 / 24 / 30. Множитель брони: 1. Перезарядка: 20 / 15 / 10 / 5. Дальность применения: 700 / 775 / 850 / 925. Расход маны: 50 / 60 / 70 / 80.",
+              "en": "Enrages an enemy unit, causing it to take damage over time until it kills another unit or the duration ends. The damage is increased by a factor of Axe's armor. The enemy is also slowed as long as they are facing away from Axe. Duration: 12. Movement speed slow: -15% / -20% / -25% / -30%. Damage per second: 12 / 18 / 24 / 30. Armor multiplier: 1. Cooldown: 20 / 15 / 10 / 5. Cast range: 700 / 775 / 850 / 925. Mana cost: 50 / 60 / 70 / 80.",
+              "uk": "Охоплює ворога кривавим гнівом, завдаючи шкоди з часом, поки той не вб'є когось або ефект не завершиться. Шкода збільшується залежно від броні користувача. Якщо ворог стоїть спиною, він сповільнюється. Тривалість: 12. Зменшення швидкості руху: -15% / -20% / -25% / -30%. Шкода за секунду: 12 / 18 / 24 / 30. Множник броні: 1. Перезарядка: 20 / 15 / 10 / 5. Дальність застосування: 700 / 775 / 850 / 925. Витрати мани: 50 / 60 / 70 / 80."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "axe_counter_helix_custom",
+          "name": "counter helix",
+          "image": "abilities/axe_counter_helix.webp",
+          "description": [
+            {
+              "ru": "После определённого числа полученных атак герой прокручивает вокруг себя топор, нанося чистый урон всем врагам неподалёку. Урон: 100 / 120 / 140 / 160. Атак для срабатывания: 7 / 6 / 5 / 4. Радиус: 275. Перезарядка: 0,3.",
+              "en": "After a set number of attacks, Axe will perform a helix counter attack, dealing pure damage to all nearby enemies. Damage: 100 / 120 / 140 / 160. Attacks to trigger: 7 / 6 / 5 / 4. Radius: 275. Cooldown: 0.3.",
+              "uk": "Після певної кількості атак Axe обертається, завдаючи чисту шкоду навколишнім ворогам. Шкода: 100 / 120 / 140 / 160. Атак до спрацьовування: 7 / 6 / 5 / 4. Радіус: 275. Перезарядка: 0,3."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "axe_culling_blade_custom",
+          "name": "culling blade",
+          "image": "abilities/axe_culling_blade.webp",
+          "description": [
+            {
+              "ru": "Герой находит слабую точку врага и наносит ему чистый урон. Если убить этой способностью вражеского героя, её перезарядка сбрасывается, а все союзники поблизости временно получат дополнительную скорость передвижения и броню. Урон: 275 / 375 / 475. Доп. скорость передвижения: 20% / 25% / 30%. Бонус к броне: 20 / 25 / 30. Длительность бонуса: 6. Радиус бонуса союзникам: 900. Перезарядка: 80 / 75 / 70. Дальность применения: 175. Расход маны: 100 / 125 / 150.",
+              "en": "Axe spots a weakness and strikes, dealing pure damage. When an enemy hero is killed with Culling Blade, its cooldown is reset, and all nearby allied units gain bonus movement speed and armor. Damage: 275 / 375 / 475. Bonus movement speed: 20% / 25% / 30%. Bonus armor: 20 / 25 / 30. Bonus duration: 6. Ally bonus radius: 900. Cooldown: 80 / 75 / 70. Cast range: 175. Mana cost: 100 / 125 / 150.",
+              "uk": "Завдає чистої шкоди ворогу. Якщо вбиває, оновлює перезарядку і надає союзникам поблизу броню та швидкість руху. Шкода: 275 / 375 / 475. Бонус швидкості руху (%): 20% / 25% / 30%. Бонус броні: 20 / 25 / 30. Тривалість бонусу: 6. Радіус бонусу для союзників: 900. Перезарядка: 80 / 75 / 70. Дальність застосування: 175. Витрати мани: 100 / 125 / 150."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_1",
+            "image": "images/heroes/talents/axe/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Berserker's Call увеличивает Скорость Атаки Жертв: 25/50. Berserker's Call увеличивает Скорость Атаки: 25/50",
+                  "en": "Berserker's Call increases Victims' Attack Speed: 25/50. Berserker's Call increases Attack Speed: 25/50",
+                  "uk": "Berserker's Call збільшує Швидкість Атаки Жертв: 25/50. Berserker's Call збільшує Швидкість Атаки: 25/50"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_2",
+            "image": "images/heroes/talents/axe/2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Брони на 0.2/0.3 за каждое Убийство вражеского героя. Убийство способностью Culling Blade даёт сразу 3 эффекта. Убийства до изучения таланта также учитываются. Броня: 2/4",
+                  "en": "Increase Armor by 0.2/0.3 for each enemy hero kill. A kill with Culling Blade grants 3 stacks at once. Kills before learning the talent also count. Armor: 2/4",
+                  "uk": "Збільшення Броні на 0.2/0.3 за кожне Вбивство ворожого героя. Вбивство здатністю Culling Blade дає одразу 3 ефекти. Вбивства до вивчення таланту також враховуються. Броня: 2/4"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_3",
+            "image": "images/heroes/talents/axe/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Counter Helix можно активировать. Совершает 2/4 прокручивания вокруг себя топором. Интервал: 0.3 сек. Время Перезарядки: 15 сек",
+                  "en": "Counter Helix can be activated. Performs 2/4 spins around himself with the axe. Interval: 0.3 sec. Cooldown: 15 sec",
+                  "uk": "Counter Helix можна активувати. Виконує 2/4 обертання сокирою навколо себе. Інтервал: 0.3 сек. Перезарядка: 15 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_4",
+            "image": "images/heroes/talents/axe/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Времени Перезарядки Culling Blade: 15/30/45 сек. Если убить крипа способностью Culling Blade, её перезарядка сбрасывается",
+                  "en": "Culling Blade Cooldown Reduction: 15/30/45 sec. Killing a creep with Culling Blade resets its cooldown",
+                  "uk": "Зменшення Перезарядки Culling Blade: 15/30/45 сек. Якщо вбити крипа здатністю Culling Blade, її перезарядка скидається"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "images/heroes/talents/axe/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона Culling Blade: 300%/450%/600% от Брони",
+                  "en": "Culling Blade Damage Increase: 300%/450%/600% of Armor",
+                  "uk": "Збільшення Шкоди Culling Blade: 300%/450%/600% від Броні"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_6",
+            "image": "images/heroes/talents/axe/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Culling Blade может быть применён на область, а также перемещает вас в точку применения. Радиус: 300. Увеличение Дальности Применения: 225",
+                  "en": "Culling Blade can be cast on an area and also teleports you to the cast point. Radius: 300. Increased Cast Range: 225",
+                  "uk": "Culling Blade можна застосувати до області, а також переносить вас у точку застосування. Радіус: 300. Збільшення Дальності Застосування: 225"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_7",
+            "image": "images/heroes/talents/axe/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "При подсчёте атак для срабатывания Counter Helix учитываются и атаки владельца. Увеличение Брони на 1 за каждые 14 Силы",
+                  "en": "When calculating attacks for Counter Helix to trigger, the owner's attacks are also taken into account. Increase Armor by 1 for every 14 Strength",
+                  "uk": "Під час підрахунку атак для активації Counter Helix враховуються також атаки власника. Збільшення Броні на 1 за кожні 14 Сили"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_axe_8",
+            "image": "images/heroes/talents/axe/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Сопротивление Замедлениям: 15%. Скорость Передвижения: 15",
+                  "en": "Slow Resistance: 15%. Movement Speed: 15",
+                  "uk": "Спротив Уповільненням: 15%. Швидкість Пересування: 15"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_9",
+            "image": "images/heroes/talents/axe/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Вы не можете атаковать.</font> Убирает перезарядку способности Counter Helix. Создаёт Counter Helix каждые 650/600/550 преодолённых единиц. Добавляет 1 Уровень к способности Counter Helix",
+                  "en": "<font color='#e03e2e'>You cannot attack.</font> Removes the cooldown of Counter Helix. Creates Counter Helix every 650/600/550 units traveled. Adds 1 Level to Counter Helix",
+                  "uk": "<font color='#e03e2e'>Ви не можете атакувати.</font> Забирає перезарядку з Counter Helix. Створює Counter Helix кожні 650/600/550 подоланих одиниць. Додає 1 Рівень до Counter Helix"
+                }
+              },
+              {
+                "parameter": "LockedTalents",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 2 (интеллект)",
+                "note": {
+                  "ru": "Нельзя изучить вместе с «Талант 2» из ветки Интеллекта",
+                  "en": "Cannot be learned together with «Talent 2» from the Intelligence branch",
+                  "uk": "Не можна вивчити разом із «Талант 2» з гілки Інтелекту"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_10",
+            "image": "images/heroes/talents/axe/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Каждое 5 срабатывание Counter Helix накладывает на вас эффект Tornado of Axe. Tornado of Axe наносит противникам Физический Урон в секунду: 100%/150% от Ловкости. Радиус: 275. Длительность: 3 сек",
+                  "en": "Every 5 Counter Helix activations apply the Tornado of Axe effect to you. Tornado of Axe deals Physical Damage per second to enemies: 100%/150% of Agility. Radius: 275. Duration: 3 sec",
+                  "uk": "Кожне 5-те спрацювання Counter Helix накладає на вас ефект Tornado of Axe. Tornado of Axe завдає супротивникам Фізичної Шкоди за секунду: 100%/150% від Спритності. Радіус: 275. Тривалість: 3 сек"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 2",
+                "note": {
+                  "ru": "Требует прокачки «Талант 2»",
+                  "en": "Requires upgrading «Talent 2»",
+                  "uk": "Потребує прокачування «Талант 2»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_11",
+            "image": "images/heroes/talents/axe/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Berserker's Call применяется моментально. Позволяет ходить сквозь существ",
+                  "en": "Berserker's Call is cast instantly. Allows you to walk through creatures",
+                  "uk": "Berserker's Call застосовується миттєво. Дозволяє проходити крізь істот"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 3",
+                "note": {
+                  "ru": "Требует прокачки «Талант 3»",
+                  "en": "Requires upgrading «Talent 3»",
+                  "uk": "Потребує прокачування «Талант 3»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_12",
+            "image": "images/heroes/talents/axe/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Всего Получаемого Урона во время Передвижения: 6%/12%/18%",
+                  "en": "Reduce All Damage Taken while Moving: 6%/12%/18%",
+                  "uk": "Зменшення Загальної Отримуваної Шкоди під час Руху: 6%/12%/18%"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 4",
+                "note": {
+                  "ru": "Требует прокачки «Талант 4»",
+                  "en": "Requires upgrading «Talent 4»",
+                  "uk": "Потребує прокачування «Талант 4»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_13",
+            "image": "images/heroes/talents/axe/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона Counter Helix: 10%/20%/30% от Ловкости",
+                  "en": "Counter Helix Damage Increase: 10%/20%/30% of Agility",
+                  "uk": "Збільшення Шкоди Counter Helix: 10%/20%/30% від Спритності"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_14",
+            "image": "images/heroes/talents/axe/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Каждое срабатывание Counter Helix применяет на жертв складывающийся эффект, уменьшающий весь наносимый ими урон. Снижение Наносимого Урона: 5%. Максимум Эффектов: 6. Длительность Эффекта: 5 сек. Ловкость: 20",
+                  "en": "Each Counter Helix cast applies a stacking effect to the victims, reducing all damage dealt by them. Damage Reduction: 5%. Maximum Effects: 6. Effect Duration: 5 sec. Agility: 20",
+                  "uk": "Кожне спрацювання Counter Helix накладає на жертв ефект, що накопичується, зменшуючи всю завдану ними шкоду. Зниження Завданої Шкоди: 5%. Максимум Ефектів: 6. Тривалість Ефекту: 5 сек. Спритність: 20"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_15",
+            "image": "images/heroes/talents/axe/15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Berserker's Call наносит Физический Урон: 100 + 80%/120% от Интеллекта",
+                  "en": "Berserker's Call deals Physical Damage: 100 + 80%/120% of Intellect",
+                  "uk": "Berserker's Call завдає Фізичної Шкоди: 100 + 80%/120% від Інтелекту"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_16",
+            "image": "images/heroes/talents/axe/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Убирает Counter Helix.</font> Убийства не развеивают Battle Hunger. Урон от Заклинаний: 5%/10%/15%. Броня: 3/6/9",
+                  "en": "<font color='#e03e2e'>Removes Counter Helix.</font> Kills do not dispel Battle Hunger. Spell Damage: 5%/10%/15%. Armor: 3/6/9",
+                  "uk": "<font color='#e03e2e'>Видаляє Counter Helix.</font> Вбивства не розсіюють Battle Hunger. Шкода від Заклять: 5%/10%/15%. Броня: 3/6/9"
+                }
+              },
+              {
+                "parameter": "LockedTalents",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 2 (ловкость)",
+                "note": {
+                  "ru": "Нельзя изучить вместе с «Талант 2» из ветки Ловкости",
+                  "en": "Cannot be learned together with «Talent 2» from the Agility branch",
+                  "uk": "Не можна вивчити разом із «Талант 2» з гілки Спритності"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_18",
+            "image": "images/heroes/talents/axe/18.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Berserker's Call применяет на жертв эффект способности Battle Hunger. Интеллект: 10",
+                  "en": "Berserker's Call applies effect of the Battle Hunger to the victims. Intellect: 10",
+                  "uk": "Berserker's Call накладає на жертв ефект здібності Battle Hunger. Інтелект: 10"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_17",
+            "image": "images/heroes/talents/axe/17.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Радиуса Berserker's Call: 50/100. Увеличение Брони Berserker's Call: 10/20",
+                  "en": "Berserker's Call Radius Increase: 50/100. Berserker's Call Armor Increase: 10/20",
+                  "uk": "Збільшення Радіусу Berserker's Call: 50/100. Збільшення Броні Berserker's Call: 10/20"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "images/heroes/talents/axe/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Множителя Брони Battle Hunger: 1/2/3",
+                  "en": "Battle Hunger Armor Multiplier Increase: 1/2/3",
+                  "uk": "Збільшення Множника Броні Battle Hunger: 1/2/3"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_20",
+            "image": "images/heroes/talents/axe/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Battle Hunger всегда замедляет передвижение противника. Battle Hunger уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями противников: 15%/30%",
+                  "en": "Battle Hunger always slows enemy movement. Battle Hunger reduces enemy healing, health regeneration, lifesteal, and spell lfesteal: 15%/30%",
+                  "uk": "Battle Hunger завжди сповільнює рух супротивника. Battle Hunger зменшує лікування, відновлення здоров'я, вампіризм і вампіризм від здібностей супротивників: 15%/30%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_21",
+            "image": "images/heroes/talents/axe/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Berserker's Call не Провоцирует противников, а накладывает Страх",
+                  "en": "Berserker's Call does not Taunt enemies, but applies Fear",
+                  "uk": "Berserker's Call не Провокує супротивників, а накладає Страх"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_earthshaker_10",
+            "image": "images/heroes/talents/earthshaker/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Aftershock: 25%/50% от Ловкости",
+                  "en": "Aftershock Damage Increase: 25%/50% of Agility",
+                  "uk": "Збільшення втрати Aftershock: 25%/50% від Спритності"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Aftershock: 50%/100% от Ловкости",
+                  "en": "Aftershock Damage Increase: 50%/100% of Agility",
+                  "uk": "Збільшення втрати Aftershock: 50%/100% від Спритності"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_jakiro_8",
+            "image": "images/heroes/talents/jakiro/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Liquid Fire Герой наполняет свою атаку жидким пламенем, поджигая цель и всех врагов вокруг неё. Жертвы получают периодический урон и медленнее атакуют. Замедление Атаки: 25/50 Огненный Урон: 25/50 Радиус: 300 Длительность: 4 сек. Время Перезарядки: 12 сек",
+                  "en": "New Active Ability: Liquid Fire The hero fills his attack with liquid flame, setting the target and all enemies around it on fire. Victims take periodic damage and attack slower. Attack Slow: 25/50 Fire Damage: 25/50 Radius: 300 Duration: 4 sec. Cooldown: 12 sec",
+                  "uk": "Нова Активна Здатність: Liquid Fire Герой наповнює свою атаку рідким полум'ям, підпалюючи мету та всіх ворогів навколо неї. Жертви отримують періодичні збитки і повільніше атакують. Уповільнення Атаки: 25/50 Вогняна Втрата: 25/50 Радіус: 300 Тривалість: 4 сек. Час Перезарядки: 12 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Огненного Урона Liquid Fire: 15/30",
+                  "en": "Increased Fire Damage of Liquid Fire: 15/30",
+                  "uk": "Збільшення Вогняної Шкоди Liquid Fire: 15/30"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_jakiro_9",
+            "image": "images/heroes/talents/jakiro/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Liquid Fire: 4/8 сек. Урон: 10/20",
+                  "en": "Liquid Fire Cooldown Reduction: 4/8 sec. Damage: 10/20",
+                  "uk": "Зменшення Часу Перезарядки Liquid Fire: 4/8 сек. Втрата: 10/20"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Liquid Fire: 3/6 сек. Урон: 10/20",
+                  "en": "Liquid Fire Cooldown Reduction: 3/6 sec. Damage: 10/20",
+                  "uk": "Зменшення Часу Перезарядки Liquid Fire: 3/6 сек. Втрата: 10/20"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_jakiro_11",
+            "image": "images/heroes/talents/jakiro/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Liquid Frost Герой наполняет свою атаку жидким морозом, который замедляет передвижение жертвы на 4 сек. и увеличивает урон, получаемый ей от атак и других способностей этого героя. Замедление Передвижения: 15%/30% Увеличение Урона: 15/30 Длительность: 4 сек. Время Перезарядки: 12",
+                  "en": "New Active Ability: Liquid Frost The hero fills his attack with liquid frost, which slows the victim's movement for 4 sec. and increases the damage they receive from attacks and other abilities of this hero. Movement Slow: 15%/30% Damage Increase: 15/30 Duration: 4 sec. Cooldown: 12",
+                  "uk": "Нова Активна Здатність: Liquid Frost Герой наповнює свою атаку рідким морозом, який уповільнює пересування жертви на 4 сек. і збільшує шкоду, яку він отримує від атак та інших здібностей цього героя. Уповільнення Пересування: 15%/30% Збільшення Урону: 15/30 Тривалість: 4 сек. Час Перезарядки: 12"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Первичного Урона Liquid Frost: 50/100",
+                  "en": "Increased Base Damage of Liquid Frost: 50/100",
+                  "uk": "Збільшення Базової Шкоди Liquid Frost: 50/100"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_jakiro_12",
+            "image": "images/heroes/talents/jakiro/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Liquid Frost: 4/8 сек. Здоровье: 250/500",
+                  "en": "Liquid Frost Cooldown Reduction: 4/8 sec. Health: 250/500",
+                  "uk": "Зменшення часу Перезаряджання Liquid Frost: 4/8 сек. Здоров'я: 250/500"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Liquid Frost: 3/6 сек. Здоровье: 250/500",
+                  "en": "Liquid Frost Cooldown Reduction: 3/6 sec. Health: 250/500",
+                  "uk": "Зменшення часу Перезаряджання Liquid Frost: 3/6 сек. Здоров'я: 250/500"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_switch_weapons_custom",
+          "name": "switch weapons",
+          "image": "abilities/kez_switch_weapons_sai.webp",
+          "description": [
+            {
+              "ru": "Герой меняет боевой стиль, переключаясь между катаной казураев и сай Шодо. У каждого стиля свои способности и характеристики атаки. Способности, занимающие одну ячейку, имеют общие уровни и перезарядки для обоих стилей. Перезарядка этой способности уменьшается на 0,2 сек. с каждым уровнем героя. Дальность атаки (катана): 225. Базовый интервал атак (катана): 2. Доп. урон (катана): 20%. Дальность атаки (сай): 150. Базовый интервал атак (сай): 1,5. Перезарядка: 8.",
+              "en": "Kez switches between his Kazurai Katana and Shodo Sai. He gains different attack capabilities and abilities based on the weapon equipped. The abilities level up together, and when an ability is used, the associated alternate weapon ability also goes on cooldown. Switch Discipline cooldown decreases by 0.2s per Hero level. Katana attack range: 225. Katana base attack time: 2. Katana bonus damage: 20%. Sai attack range: 150. Sai base attack time: 1.5. Cooldown: 8.",
+              "uk": "Зміна дисципліни Боривітер перемикається між своїми казурайською катаною і саями ордену Шодо. Залежно від спорядженої зброї він здобуває різні можливості та здібності. Рівень здібностей підвищується разом, а якщо здібність застосувати, то альтернативна збройова здібність теж починає заряджатися. Зарядка Зміни дисципліни зменшується на 0,2 с за рівень героя. Дальність атаки (катана): 225. Базовий інтервал атак (катана): 2. Доп. урон (катана): 20%. Дальність атаки (сай): 150. Базовий інтервал атак (сай): 1,5. Перезарядка: 8."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kunkka_torrent_custom",
+          "name": "torrent",
+          "image": "abilities/kunkka_torrent.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "100",
+              "new_raw_value": "90",
+              "note": {
+                "ru": "Ability Mana Cost: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Mana Cost: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Mana Cost: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "name": "legion commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "legion_commander_duel_custom",
+          "name": "duel",
+          "image": "abilities/legion_commander_duel.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "old_raw_value": "200 250 300",
+              "new_raw_value": "200",
+              "note": {
+                "ru": "Ability Cast Range: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cast Range: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cast Range: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lone_druid_7",
+            "image": "images/heroes/talents/lone_druid/7.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Этот талант не работает если вы уже изучили Moonlight. Новая Активная Способность: Summon Spirit Bear. Призывает могучего духа-медведя. Он не может атаковать, если расстояние до владельца больше 1100. У медведя есть способности Savage Roar и Entangling Claws. Время Перезарядки: 50 сек» заменено на «Скорость Атаки Spirit Bear: 0.5/1/1.5 за 1 Силу Героя»",
+                  "en": "«This talent does not work if you have already learned Moonlight. New Active Ability: Summon Spirit Bear. Summons a powerful Spirit Bear companion. If the bear moves 1100 distance away from the Lone Druid, it cannot attack. Spirit Bear has the Savage Roar and Entangling Claws abilities. Cooldown: 50 seconds» replaced with «Spirit Bear Attack Speed: 0.5/1/1.5 per 1 Hero Strength»",
+                  "uk": "«Цей талант не працює якщо ви вже вивчили Moonlight. Нова Активна Здатність: Summon Spirit Bear. Він не може атакувати, якщо відстань до власника більше 1100. У ведмедя є здібності Savage Roar та Entangling Claws. Час Перезарядки: 50 сек» замінено на «Швидкість Атаки Духовного Ведмедя: 0.5/1/1.5 за 1 Силу Героя»"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": "Талант 3",
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Больше не требует прокачки других талантов",
+                  "en": "No longer requires upgrading other talents",
+                  "uk": "Більше не потребує прокачування інших талантів"
+                }
+              },
+              {
+                "parameter": "LockedTalents",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 1 (интеллект), Талант 1 (ловкость)",
+                "note": {
+                  "ru": "Теперь нельзя изучить вместе с «Талант 1» из веток Ловкости и Интеллекта",
+                  "en": "Can no longer be learned together with «Talent 1» from the Agility and Intelligence branches",
+                  "uk": "Тепер не можна вивчити разом із «Талант 1» з гілок Спритності та Інтелекту"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_lone_druid_9",
+            "image": "images/heroes/talents/lone_druid/9.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 1 (сила)",
+                "note": {
+                  "ru": "Теперь нельзя изучить вместе с «Талант 1» из ветки Силы",
+                  "en": "Can no longer be learned together with «Talent 1» from the Strength branch",
+                  "uk": "Тепер не можна вивчити разом із «Талант 1» з гілки Сили"
+                }
+              },
+              {
+                "old_raw_value": {
+                  "ru": "Атаки Героя с вероятностью 30% могут наложить корни на противника. Урон в Секунду: 30/60 Длительность: 1.4/2.2 сек. Время Перезарядки: 5 сек",
+                  "en": "Hero's attacks have a 30% chance to place roots on the enemy. Damage per Second: 30/60 Duration: 1.4/2.2 seconds Cooldown: 5 seconds",
+                  "uk": "Атаки Героя з ймовірністю 30% можуть накласти коріння на противника. Втрата в Секунду: 30/60 Тривалість: 1.4/2.2 сек. Час Перезарядки: 5 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Summon Spirit Bear. Атаки Героя с вероятностью 30% могут наложить корни на противника. Урон в Секунду: 30/60 Длительность: 1.4/2.2 сек. Время Перезарядки: 5 сек",
+                  "en": "Removes Summon Spirit Bear. Hero's attacks have a 30% chance to place roots on the enemy. Damage per Second: 30/60 Duration: 1.4/2.2 seconds Cooldown: 5 seconds",
+                  "uk": "Видаляє Виклик Духовного Ведмедя. Атаки Героя з ймовірністю 30% можуть накласти коріння на противника. Втрата в Секунду: 30/60 Тривалість: 1.4/2.2 сек. Час Перезарядки: 5 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lone_druid_17",
+            "image": "images/heroes/talents/lone_druid/17.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Этот талант не работает если вы уже изучили Summon Spirit Bear. Новая Активная Способность: Moonlight Луч лунного света обжигает противника нанося магический урон. Если в радиусе 300 от цели будут крипы, то Moonlight сработает на них ещё два раза. Способность имеет 4 уровня прокачки.Урон: 150 Дальность Применения: 650 Время Перезарядки: 8 сек",
+                  "en": "This talent does not work if you have already learned Summon Spirit Bear. New Active Ability: Moonlight A ray of moonlight burns the enemy, causing magical damage. If there are creeps within a radius of 300 from the target, then Moonlight will work on them two more times. The ability has 4 upgrade levels. Damage: 150 Cast Range: 650 Cooldown: 8 seconds",
+                  "uk": "Цей талант не працює якщо ви вже вивчили Summon Spirit Bear. Нова Активна Здатність: Moonlight Промінь місячного світла обпалює противника завдаючи магічної шкоди. Якщо в радіусі 300 від мети будуть крипи, Moonlight спрацює на них ще два рази. Здатність має 4 рівня прокачування. Втрата: 150 Дальність Застосування: 650 Час Перезарядки: 8 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Summon Spirit Bear. Новая Активная Способность: Moonlight Луч лунного света обжигает противника нанося магический урон. Если в радиусе 300 от цели будут крипы, то Moonlight сработает на них ещё два раза. Способность имеет 4 уровня прокачки.Урон: 150 Дальность Применения: 650 Время Перезарядки: 8 сек",
+                  "en": "Removes Summon Spirit Bear. New Active Ability: Moonlight A ray of moonlight burns the enemy, causing magical damage. If there are creeps within a radius of 300 from the target, then Moonlight will work on them two more times. The ability has 4 upgrade levels. Damage: 150 Cast Range: 650 Cooldown: 8 seconds",
+                  "uk": "Видаляє Виклик Духовного Ведмедя. Нова Активна Здатність: Moonlight Промінь місячного світла обпалює противника завдаючи магічної шкоди. Якщо в радіусі 300 від мети будуть крипи, Moonlight спрацює на них ще два рази. Здатність має 4 рівня прокачування. Втрата: 150 Дальність Застосування: 650 Час Перезарядки: 8 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_lunar_blessing_custom",
+          "name": "lunar blessing",
+          "image": "abilities/luna_9.webp",
+          "ability_notes": [
+            {
+              "old_raw_value": {
+                "BaseClass": "ability_lua",
+                "ScriptFile": "heroes/npc_dota_hero_luna_custom/luna_lunar_blessing_custom",
+                "AbilityTextureName": "luna_9",
+                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE",
+                "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
+                "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP",
+                "AbilityUnitTargetFlags": "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES",
+                "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_YES",
+                "MaxLevel": "1",
+                "AbilityValues": {
+                  "damage_bonus": "1",
+                  "self_mult": "2",
+                  "night_vision": "250",
+                  "night_level_vision": "25",
+                  "radius": "1200"
+                }
+              },
+              "new_raw_value": null,
+              "note": {
+                "ru": "Удалена способность",
+                "en": "Ability removed",
+                "uk": "Видалено здібність"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "luna_lunar_orbit_custom",
+          "name": "lunar orbit",
+          "image": "abilities/luna_lunar_orbit.webp",
+          "description": [
+            {
+              "ru": "Создаёт вокруг владельца 4 глефы, которые вращаются в радиусе 250 от него. Попав по врагу, глефа нанесёт ему долю от урона владельца. Длительность: 5 / 6 / 7 / 8. Радиус вращения: 175. Урон от попадания: 18% / 22% / 26% / 30%. Перезарядка: 40 / 35 / 30 / 25. Расход маны: 65 / 70 / 75 / 80.",
+              "en": "Creates 4 glaives that rotate 250 radius around Luna. Any enemy unit that collides with a glaive will take a percentage of Luna's Attack Damage. Duration: 5 / 6 / 7 / 8. Collision radius: 175. Collision damage: 18% / 22% / 26% / 30%. Cooldown: 40 / 35 / 30 / 25. Mana cost: 65 / 70 / 75 / 80.",
+              "uk": "Створює навколо власника 4 гліфи, які обертаються в радіусі 250 від нього. Потрапивши по ворогові, гліфа завдасть йому частку від шкоди власника. Тривальність: 5 / 6 / 7 / 8. Радіус обертання: 175. Урон від попадання: 18% / 22% / 26% / 30%. Перезарядка: 40 / 35 / 30 / 25. Витрати мани: 65 / 70 / 75 / 80."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_medusa_17",
+            "image": "images/heroes/talents/medusa/17.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Герой получает Ауру которая уменьшает Восстановление Здоровья и Восстановление Маны окружающих противников: 7%/14%/21%. Радиус: 1200» заменено на «Восстановления Маны: 10/20/30»",
+                  "en": "«The hero receives an Aura that reduces the Health Regeneration and Mana Regeneration of surrounding enemies: 7%/14%/21%. Radius: 1200» replaced with «Mana Regeneration: 10/20/30»",
+                  "uk": "«Герой отримує Ауру яка зменшує Відновлення Здоров'я та Відновлення Мани оточуючих супротивників: 7%/14%/21%. Радіус: 1200» замінено на «Відновлення Мани: 10/20/30»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_medusa_19",
+            "image": "images/heroes/talents/medusa/19.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Восстановления Маны: 10/20/30» заменено на «Герой получает Ауру которая уменьшает Восстановление Здоровья и Восстановление Маны окружающих противников: 7%/14%/21%. Радиус: 1200»",
+                  "en": "«Mana Regeneration: 10/20/30» replaced with «The hero receives an Aura that reduces the Health Regeneration and Mana Regeneration of surrounding enemies: 7%/14%/21%. Radius: 1200»",
+                  "uk": "«Відновлення Мани: 10/20/30» замінено на «Герой отримує Ауру яка зменшує Відновлення Здоров'я та Відновлення Мани оточуючих супротивників: 7%/14%/21%. Радіус: 1200»"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "techies_minefield_sign_custom",
+          "name": "minefield sign",
+          "image": "abilities/techies_minefield_sign.webp",
+          "description": [
+            {
+              "ru": "На 60 сек. устанавливает предостерегающую табличку, мины в области действия которой неуязвимы. Нельзя ставить больше одной таблички одновременно. Радиус действия: 500. Длительность таблички: 60. Перезарядка: 60. Дальность применения: 10.",
+              "en": "Plant a warning sign, causing mines within its radius to be invulnerable. Only one sign can exist at a time. Lasts 60 seconds. Effect radius: 500. Sign duration: 60. Cooldown: 60. Cast range: 10.",
+              "uk": "На 60 сек. встановлює застережливу табличку, міни в області дії якої невразливі. Не можна ставити більше однієї таблички одночасно. Радіус дії: 500. Тривальність таблички: 60. Перезарядка: 60. Дальність застосування: 10."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_warlock_1",
+            "image": "images/heroes/talents/warlock/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Fatal Bonds каждую секунду наносит противникам Физический Урон: 30% от Урона Атаки",
+                  "en": "Fatal Bonds deals Physical Damage to enemies every second: 30% of Attack Damage",
+                  "uk": "Fatal Bonds кожну секунду завдає противникам Фізичний Втрата: 30% від Втрати Атаки"
+                },
+                "new_raw_value": {
+                  "ru": "Fatal Bonds каждую секунду наносит противникам Физический Урон: 50% от Урона Атаки",
+                  "en": "Fatal Bonds deals Physical Damage to enemies every second: 50% of Attack Damage",
+                  "uk": "Fatal Bonds кожну секунду завдає противникам Фізичний Втрата: 50% від Втрати Атаки"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_warlock_17",
+            "image": "images/heroes/talents/warlock/17.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Урона Upheaval: 50%/75%/100% от Восстановления Здоровья и Маны» заменено на «Увеличение Восстановления Здоровья и Маны у союзников внутри Upheaval: 15/30»",
+                  "en": "«Upheaval Damage Increase: 50%/75%/100% of Health and Mana Regeneration» replaced with «Increased Health and Mana Regeneration for allies inside Upheaval: 15/30»",
+                  "uk": "«Збільшення збитків Upheaval: 50%/75%/100% від Відновлення Здоров'я і Мани» замінено на «Збільшення Відновлення Здоров'я та Мани у союзників усередині Upheaval: 15/30»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_warlock_18",
+            "image": "images/heroes/talents/warlock/18.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Восстановления Здоровья и Маны у союзников внутри Upheaval: 15/30» заменено на «Увеличение Урона Upheaval: 100%/150%/200% от Восстановления Здоровья и Маны»",
+                  "en": "«Increased Health and Mana Regeneration for allies inside Upheaval: 15/30» replaced with «Upheaval Damage Increase: 100%/150%/200% of Health and Mana Regeneration»",
+                  "uk": "«Збільшення Відновлення Здоров'я та Мани у союзників усередині Upheaval: 15/30» замінено на «Збільшення збитків Upheaval: 100%/150%/200% від Відновлення Здоров'я і Мани»"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_windranger_2",
+            "image": "images/heroes/talents/windranger/2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Focus Fire: 10 сек",
+                  "en": "Focus Fire Cooldown Reduction: 10 sec",
+                  "uk": "Зменшення часу перезарядження Focus Fire: 10 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Focus Fire и Whirlwind: 10 сек",
+                  "en": "Cooldown Reduction for Focus Fire and Whirlwind: 10 sec",
+                  "uk": "Зменшення Часу Перезарядки Focus Fire і Whirlwind: 10 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_windranger_10",
+            "image": "images/heroes/talents/windranger/10.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Tornado: 30%/45%/60% от Ловкости",
+                  "en": "Tornado Damage Increase: 30%/45%/60% of Agility",
+                  "uk": "Aumento del daño causado por tornados: 30%/45%/60% від Спритності"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Tornado: 60%/90%/120% от Ловкости",
+                  "en": "Tornado Damage Increase: 60%/90%/120% of Agility",
+                  "uk": "Aumento del daño causado por tornados: 60%/90%/120% від Спритності"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_windranger_7",
+            "image": "images/heroes/talents/windranger/7.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": "Талант 3",
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Больше не требует прокачки других талантов",
+                  "en": "No longer requires upgrading other talents",
+                  "uk": "Більше не потребує прокачування інших талантів"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_windranger_14",
+            "image": "images/heroes/talents/windranger/14.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Длительности Windrun на 0.5 сек. за каждые 1500/1200 преодолённых единиц",
+                  "en": "Increase Windrun Duration by 0.5 seconds for every 1500/1200 units moved",
+                  "uk": "Збільшення Тривалості Windrun на 0.5 сек. за кожні 1500/1200 подоланих одиниць"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Windrun: 2/4 сек",
+                  "en": "Cooldown Reduction for Windrun: 2/4 sec",
+                  "uk": "Зменшення Часу Перезарядки Windrun: 2/4 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "winter_wyvern_arctic_burn_custom",
+          "name": "arctic burn",
+          "image": "abilities/winter_wyvern_arctic_burn.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "old_raw_value": {
+                "ru": "Герой взмывает в небо на арктическом ветре, получая беспрепятственное передвижение и вдыхая жгучий мороз в каждую свою атаку. В полёте можно атаковать дальше и быстрее. Цель морозных атак замедляется и каждую секунду получает урон в размере 2 3 4 5% от текущего запаса здоровья.",
+                "en": "Winter Wyvern soars upon an arctic wind, granting her unobstructed movement and allowing her to exhale a blistering chill into each attack. While soaring, her attacks travel further and faster, and slow enemies with a magical freeze that strips them of 2 3 4 5% of their current health each second.",
+                "uk": "Герой злітає в небо на арктичному вітрі, отримуючи безперешкодне пересування і вдихаючи пекучий мороз у кожну свою атаку. У польоті можна атакувати далі і швидше. Мета морозних атак сповільнюється і кожну секунду отримує шкоду в розмірі 2 3 4 5% від поточного."
+              },
+              "new_raw_value": {
+                "ru": "Герой взмывает в небо на арктическом ветре, получая беспрепятственное передвижение и вдыхая жгучий мороз в каждую свою атаку. В полёте можно атаковать дальше и быстрее. Цель морозных атак замедляется и каждую секунду получает урон в размере 2 3 4 5% от текущего запаса здоровья. Урон от Максимального здоровья работает только на 50% по Крипам.",
+                "en": "Winter Wyvern soars upon an arctic wind, granting her unobstructed movement and allowing her to exhale a blistering chill into each attack. While soaring, her attacks travel further and faster, and slow enemies with a magical freeze that strips them of 2 3 4 5% of their current health each second. Damage from Maximum Health only works at 50% against Creeps.",
+                "uk": "Герой злітає в небо на арктичному вітрі, отримуючи безперешкодне пересування і вдихаючи пекучий мороз у кожну свою атаку. У польоті можна атакувати далі і швидше. Мета морозних атак сповільнюється і кожну секунду отримує шкоду в розмірі 2 3 4 5% від поточного. Втрата від Максимального здоров'я працює лише на 50% за Крипами."
+              },
+              "note": {
+                "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_8",
+            "image": "images/heroes/talents/winter_wyvern/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Arctic Burn: 15/30",
+                  "en": "Arctic Burn Damage Increase: 15/30",
+                  "uk": "Збільшення збитків Arctic Burn: 15/30"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Arctic Burn: 40/80",
+                  "en": "Arctic Burn Damage Increase: 40/80",
+                  "uk": "Збільшення збитків Arctic Burn: 40/80"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_winter_wyvern_21",
+            "image": "images/heroes/talents/winter_wyvern/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Winter's Curse. Новая Активная Способность: Frozen CemeteryFrozen Cemetery Создаёт ледяное кладбище в указанной точке. Противники попавшие в него получают магический урон каждую секунду, а их скорость передвижения всегда равна 100 и не может быть изменена. Замедление работает сквозь невосприимчивость к магии. Урон в Секунду: 600% от Сопротивления Магии Радиус: 525 Длительность: 10 сек. Затраты Маны: 250 Время Перезарядки: 30 сек",
+                  "en": "Removes Winter's Curse. New Active Ability: Frozen CemeteryFrozen Cemetery Creates an icy cemetery at the target point. Enemies caught in it take magic damage every second, and their movement speed is always 100 and cannot be changed. The slowdown works through magic immunity. Damage per Second: 600% of Magic Resistance Radius: 525 Duration: 10 sec. Mana Cost: 250 Cooldown: 30 sec",
+                  "uk": "Забирає Winter's Curse. Нова Активна Здатність: Frozen CemeteryFrozen Cemetery Створює крижаний цвинтар у зазначеній точці. Противники, що потрапили в нього, отримують магічну шкоду кожну секунду, а їх швидкість пересування завжди дорівнює 100 і не може бути змінена. Уповільнення працює через несприйнятливість до магії. Втрата в Секунду: 600% від Опору Магії Радіус: 525 Тривалість: 10 сек. Витрати Мани: 250 Час Перезарядки: 30 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Winter's Curse. Новая Активная Способность: Frozen Cemetery Создаёт ледяное кладбище в указанной точке. Противники попавшие в него получают магический урон каждую секунду, а их скорость передвижения всегда равна 100 и не может быть изменена. Замедление работает сквозь невосприимчивость к магии. Урон в Секунду: 600% от Сопротивления Магии Радиус: 525 Длительность: 10 сек. Затраты Маны: 250 Время Перезарядки: 30 сек",
+                  "en": "Removes Winter's Curse. New Active Ability: Frozen Cemetery Creates an icy cemetery at the target point. Enemies caught in it take magic damage every second, and their movement speed is always 100 and cannot be changed. The slowdown works through magic immunity. Damage per Second: 600% of Magic Resistance Radius: 525 Duration: 10 sec. Mana Cost: 250 Cooldown: 30 sec",
+                  "uk": "Забирає Winter's Curse. Нова Активна Здатність: Frozen Cemetery Створює крижаний цвинтар у зазначеній точці. Противники, що потрапили в нього, отримують магічну шкоду кожну секунду, а їх швидкість пересування завжди дорівнює 100 і не може бути змінена. Уповільнення працює через несприйнятливість до магії. Втрата в Секунду: 600% від Опору Магії Радіус: 525 Тривалість: 10 сек. Витрати Мани: 250 Час Перезарядки: 30 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

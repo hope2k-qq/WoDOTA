@@ -1,0 +1,469 @@
+{
+  "patch_number": "1.05a",
+  "patch_name": "1.05a",
+  "patch_timestamp": 1788985275,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dazzle_1",
+            "image": "dazzle_1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Чистый урон в секунду Good Juju уменьшен с 50 + 2%/3%/4% до 50 + 1,5%/2,5%/3,5% от максимального здоровья",
+                  "en": "Good Juju pure damage per second decreased from 50 + 2%/3%/4% to 50 + 1.5%/2.5%/3.5% of max health",
+                  "uk": "Чисту шкоду за секунду Good Juju зменшено з 50 + 2%/3%/4% до 50 + 1,5%/2,5%/3,5% від максимального здоров'я"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Убирает все способности.</font></b>\n\nНовая Пассивная Способность: Good Juju\n\nИспользование Предметов через 0.5 сек. создаёт под героем область внутри которой противники получают Чистый Урон в секунду: 50 + 1.5%/2.5%/3.5% от Максимального Здоровья\n\nРадиус: 300\nДлительность: 4 сек.\n\n<b><font color='#ff0000'> Не работает на переключаемые предметы. </font></b>",
+              "en": "<b><font color='#ff0000'>Removes all abilities.</font></b>\n\nNew Passive Ability: Good Juju\n\nUsing items triggers, after 0.5s, an area under the hero that deals Pure Damage per second to enemies: 50 + 1.5%/2.5%/3.5% of Max Health\n\nRadius: 300\nDuration: 4s\n\n<b><font color='#ff0000'> Does not work on toggleable items. </font></b>",
+              "uk": "<b><font color='#ff0000'>Видаляє всі здібності.</font></b>\n\nНова Пасивна Здібність: Good Juju\n\nВикористання предметів через 0.5 с створює під героєм зону, в якій вороги щосекунди отримують Чисту Шкоду: 50 + 1.5%/2.5%/3.5% від Максимального Здоров’я\n\nРадіус: 300\nТривалість: 4 с\n\n<b><font color='#ff0000'> Не працює на перемикані предмети. </font></b>"
+            }
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lich",
+      "name": "lich",
+      "image": "images/heroes/heroesPreview/lich.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_lich_8",
+            "image": "lich_8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": {
+                  "ru": "Теперь нельзя изучить вместе с «Талант 4» из ветки Интеллекта",
+                  "en": "Can no longer be learned together with «Talent 4» from the Intelligence branch",
+                  "uk": "Тепер не можна вивчити разом із «Талант 4» з гілки Інтелекту"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Вы не можете атаковать.</font></b>\n\nFrost Shield становится Пассивной Способностью на Герое. Скорость нанесения урона зависит от Скорости Атаки.\n\nДобавляет 1 Уровень к способности Frost Shield.",
+              "en": "<b><font color='#ff0000'>You cannot attack.</font></b>\n\nFrost Shield becomes a Passive Ability on the Hero. The damage dealt speed is affected by the Attack Speed.\n\nAdds 1 Level to Frost Shield.",
+              "uk": "<b><font color='#ff0000'>Ви не можете атакувати.</font></b>\n\nFrost Shield стає пасивною здатністю на герої. Швидкість нанесення шкоди залежить від Швидкості атаки.\n\nДодає 1 Рівень до здатності Frost Shield."
+            }
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lich_16",
+            "image": "lich_16.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": {
+                  "ru": "Теперь нельзя изучить вместе с «Талант 1» из ветки Ловкости",
+                  "en": "Can no longer be learned together with «Talent 1» from the Agility branch",
+                  "uk": "Тепер не можна вивчити разом із «Талант 1» з гілки Спритності"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Убирает Frost Shield.</font></b>\n\nНовая Активная Способность: Frost Blast Ring\n\nПосле небольшой задержки применяет способность Frost Blast по кругу вокруг героя.\n\nРадиус: 500\n\nВремя Перезарядки: 7 сек.\nЗатраты Маны: 140",
+              "en": "<b><font color='#ff0000'>Removes Frost Shield.</font></b>\n\nNew Active Ability: Frost Blast Ring\n\nCasts Frost Blast after a short delay in a circle around the hero.\n\nRadius: 500\n\nCooldown: 7 seconds\nMana Cost: 140",
+              "uk": "<b><font color='#ff0000'>Прибирає Frost Shield.</font></b>\n\nНова Активна Здатність: Frost Blast Ring\n\nПісля невеликої затримки застосовує здатність Frost Blast по колу навколо героя\n\nРадіус: 500\n\nЧас Перезарядки: 7 сек.\nВитрати Мани: 140"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "pudge",
+      "name": "pudge",
+      "image": "images/heroes/heroesPreview/pudge.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "pudge_flesh_heap_custom",
+          "name": "Flesh Heap",
+          "image": "pudge_flesh_heap.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_block",
+              "note": {
+                "ru": "Блок урона увеличен с 7/10/13/16 до 8/14/20/26",
+                "en": "Damage block increased from 7/10/13/16 to 8/14/20/26",
+                "uk": "Блок шкоди збільшено з 7/10/13/16 до 8/14/20/26"
+              }
+            },
+            {
+              "parameter": "duration",
+              "note": {
+                "ru": "Длительность уменьшена с 5/6/7/8 до 4/5/6/7 секунд",
+                "en": "Duration decreased from 5/6/7/8s to 4/5/6/7s",
+                "uk": "Тривалість зменшено з 5/6/7/8 до 4/5/6/7 секунд"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_sniper_1",
+            "image": "sniper_1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Перезарядка активируемого Headshot увеличена с 3 до 6 секунд",
+                  "en": "Activated Headshot cooldown increased from 3s to 6s",
+                  "uk": "Перезарядку активованого Headshot збільшено з 3 до 6 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Headshot можно активировать.\n\nГерой стреляет из дробовика по конической области действия, совершая 1 атаку по всем задетым целям. Гарантированно применяет Headshot на противников. После выстрела герой получает бессилие на 3 секунды. Длительность бессилия уменьшается сопротивленем эффектов.\n\nДальность Выстрела: 450\nВремя Перезарядки: 6 сек.",
+              "en": "Headshot can be activated.\n\nThe hero fires a shotgun in a cone-shaped area, performing 1 attack on all affected targets. Guarantees Headshot on enemies. After firing, the hero becomes disarmed for 3 seconds. Silence duration is reduced by status resistance.\n\nShot Range: 450\nCooldown: 6 sec.",
+              "uk": "Headshot можна активувати.\n\nГерой стріляє з дробовика по конічній області дії, завдаючи 1 атаку всім ураженим цілям. Гарантовано застосовує Headshot до ворогів. Після пострілу герой отримує безсилля на 3 секунди. Тривалість безсилля зменшується опором до ефектів.\n\nДальність Пострілу: 450\nПерезарядка: 6 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_sniper_2",
+            "image": "sniper_2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона Headshot ослаблено с 30/60/90 до 0/30/60",
+                  "en": "Headshot damage bonus decreased from 30/60/90 to 0/30/60",
+                  "uk": "Збільшення шкоди Headshot ослаблено з 30/60/90 до 0/30/60"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Максимальная скорость атаки равна 150. </font></b>\n\nУвеличение Урона Headshot: 0/30/60 + 1.5 за каждые 1 Силы",
+              "en": "<b><font color='#ff0000'> Maximum attack speed is 150. </font></b>\n\nHeadshot Damage Bonus: 0/30/60 + 1.5 per Strength",
+              "uk": "<b><font color='#ff0000'> Максимальна швидкість атаки — 150. </font></b>\n\nДодатковий Урон від Headshot: 0/30/60 + 1.5 за кожну Силу"
+            }
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_sniper_8",
+            "image": "sniper_8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к скорости атаки от Take Aim уменьшен с 30/60/90 до 25/50/75",
+                  "en": "Take Aim attack speed bonus decreased from 30/60/90 to 25/50/75",
+                  "uk": "Бонус до швидкості атаки від Take Aim зменшено з 30/60/90 до 25/50/75"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Take Aim при Активации увеличивает Скорость Атаки: 25/50/75",
+              "en": "Take Aim increases Attack Speed on activation: 25/50/75",
+              "uk": "Take Aim при активації збільшує Швидкість Атаки: 25/50/75"
+            }
+          },
+          {
+            "talent_id": "modifier_sniper_9",
+            "image": "sniper_9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение длительности Take Aim ослаблено с 1/2 до 0,75/1,5 секунды",
+                  "en": "Take Aim duration bonus decreased from 1/2s to 0.75/1.5s",
+                  "uk": "Збільшення тривалості Take Aim ослаблено з 1/2 до 0,75/1,5 секунди"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Длительности Take Aim: 0.75/1.5 сек.",
+              "en": "Increases Take Aim Duration: 0.75/1.5 sec.",
+              "uk": "Збільшення Тривалості Take Aim: 0.75/1.5 сек."
+            }
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_16",
+            "image": "sniper_16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Урон Concussive Grenade увеличен с 50 + 50%/75%/100% до 50 + 50%/100%/150% от урона атаки",
+                  "en": "Concussive Grenade damage increased from 50 + 50%/75%/100% to 50 + 50%/100%/150% of attack damage",
+                  "uk": "Шкоду Concussive Grenade збільшено з 50 + 50%/75%/100% до 50 + 50%/100%/150% від шкоди атаки"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Граната.\n\nУбирает Take Aim. </font></b>\n\nНовая Активная Способность: Concussive Grenade\n\nГерой выпускает в указанную область гранату, отталкиваясь в обратном направлении. Наносит врагам магический урон, а также толкает их от центра взрыва, накладывает на них бессилие и замедляет передвижение.\n\nУрон: 50 + 50%/100%/150% от Урона Атаки\nРадиус: 375\nЗамедление Передвижения: 50%\nДлительность: 2 сек.\nДальность Толчка: 475\nЗатраты Маны: 50\nВремя Перезарядки: 20 сек.",
+              "en": "<b><font color='#ff0000'> Grenade.\n\nRemoves Take Aim. </font></b>\n\nNew Active Ability: Concussive Grenade\n\nThe hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement.\n\nDamage: 50 + 50%/100%/150% of Attack Damage\nRadius: 375\nMovement Slow: 50%\nDuration: 2 sec.\nKnockback Distance: 475\nMana Cost: 50\nCooldown: 20 sec.",
+              "uk": "<b><font color='#ff0000'> Граната.\n\nЗабирає Take Aim. </font></b>\n\nНова Активна Здібність: Concussive Grenade\n\nГерой кидає гранату в зазначену область, відштовхуючись у протилежному напрямку. Завдає ворогам магічної шкоди, а також відштовхує їх від центру вибуху, накладає на них безсилля та уповільнення пересування.\n\nШкода: 50 + 50%/100%/150% від Шкоди Атаки\nРадіус: 375\nУповільнення Пересування: 50%\nТривалість: 2 сек.\nВідстань Відштовхування: 475\nВитрати Мани: 50\nПерезарядка: 20 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_sniper_18",
+            "image": "sniper_18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение длительности Shrapnel ослаблено с 2/3/4 до 1/2/3 секунд",
+                  "en": "Shrapnel duration reduction decreased from 2/3/4s to 1/2/3s",
+                  "uk": "Зменшення тривалості Shrapnel ослаблено з 2/3/4 до 1/2/3 секунд"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Теперь также уменьшает задержку срабатывания Shrapnel на 0,3/0,6/0,9 секунды",
+                  "en": "Now also reduces Shrapnel activation delay by 0.3/0.6/0.9s",
+                  "uk": "Тепер також зменшує затримку спрацювання Shrapnel на 0,3/0,6/0,9 секунди"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Уменьшение Длительности Shrapnel: 1/2/3 сек. </font></b>\n\nУвеличение Урона Shrapnel: 20/40/60\n\nУменьшение Задержки Срабатывания Shrapnel: 0.3/0.6/0.9 сек.",
+              "en": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 1/2/3 sec. </font></b>\n\nShrapnel Damage Increase: 20/40/60\n\nShrapnel Activation Delay Reduction: 0.3/0.6/0.9 sec.",
+              "uk": "<b><font color='#ff0000'> Зменшення Тривалості Shrapnel: 1/2/3 сек. </font></b>\n\nЗбільшення Шкоди Shrapnel: 20/40/60\n\nЗменшення Затримки Активації Shrapnel: 0.3/0.6/0.9 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_sniper_20",
+            "image": "sniper_20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также уменьшает задержку перед применением способностей на 25%/50%",
+                  "en": "Now also reduces ability cast point by 25%/50%",
+                  "uk": "Тепер також зменшує затримку перед застосуванням здібностей на 25%/50%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Зарядов Shrapnel: 1/2\n\nУменьшение задержки перед применением способностей: 25%/50%",
+              "en": "Increases Shrapnel Charges: 1/2\n\nReduces Ability Cast Point: 25%/50%",
+              "uk": "Збільшує кількість Зарядів Shrapnel: 1/2\n\nЗменшує затримку перед застосуванням здібностей: 25%/50%"
+            }
+          },
+          {
+            "talent_id": "modifier_sniper_21",
+            "image": "sniper_21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также увеличивает урон Assassinate на 500",
+                  "en": "Now also increases Assassinate damage by 500",
+                  "uk": "Тепер також збільшує шкоду Assassinate на 500"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Эффекты нескольких Shrapnel складываются.\n\nУвеличение Урона Assassinate: 500",
+              "en": "Effects of multiple Shrapnel stack.\n\nAssassinate Damage Increase: 500",
+              "uk": "Ефекти кількох Shrapnel складаються.\n\nЗбільшення Шкоди Assassinate: 500"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_4",
+            "image": "techies_4.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Навсегда дарует Барьер, поглощающий Любой Урон. Максимальная Прочность Барьера: 15% от Максимального Здоровья. Скорость Восстановления Барьера: 0,9%/1,1%/1,3% от Максимального Здоровья» заменено на «Убирает Reactive Tazer. Новая Активная Способность: Burn Out. Герой ускоряется, оставляя за собой огненный след. Огонь наносит Магический Урон врагам каждую секунду и уничтожает деревья. Скорость Передвижения: 30%. Урон: 3% от Максимального Здоровья. Ширина Следа: 250. Длительность: 8 сек. Время Перезарядки: 15 сек. Затраты Здоровья: 20% от Текущего Здоровья»",
+                  "en": "«Permanently grants a Barrier that absorbs All Damage. Maximum Barrier Strength: 15% of Max Health. Barrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health» replaced with «Removes Reactive Tazer. New Active Ability: Burn Out. The hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees. Movement Speed: 30%. Damage: 3% of Max Health. Trail Width: 250. Duration: 8 sec. Cooldown: 15 sec. Health Cost: 20% of Current Health»",
+                  "uk": "«Назавжди надає Бар'єр, що поглинає Будь-яку Шкоду. Максимальна Міцність Бар'єра: 15% від Максимального Здоров'я. Швидкість Відновлення Бар'єра: 0,9%/1,1%/1,3% від Максимального Здоров'я» замінено на «Прибирає Reactive Tazer. Нова Активна Здібність: Burn Out. Герой прискорюється, залишаючи за собою вогненний слід. Вогонь завдає Магічної шкоди ворогам кожну секунду і знищує дерева. Швидкість Пересування: 30%. Шкода: 3% від Максимального Здоров'я. Ширина Сліду: 250. Тривалість: 8 сек. Час Перезарядки: 15 сек. Витрати Здоров'я: 20% від Поточного Здоров'я»"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "note": {
+                  "ru": "Больше не требует прокачки других талантов",
+                  "en": "No longer requires upgrading other talents",
+                  "uk": "Більше не потребує прокачування інших талантів"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Убирает Reactive Tazer.</font></b>\n\nНовая Активная Способность: Burn Out\n\nГерой ускоряется, оставляя за собой огненный след. Огонь наносит Магический Урон врагам каждую секунду и уничтожает деревья.\n\nСкорость Передвижения: 30%\nУрон: 3% от Максимального Здоровья\nШирина Следа: 250\nДлительность: 8 сек.\nВремя Перезарядки: 15 сек.\nЗатраты Здоровья: 20% от Текущего Здоровья",
+              "en": "<b><font color='#ff0000'>Removes Reactive Tazer.</font></b>\n\nNew Active Ability: Burn Out\n\nThe hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees.\n\nMovement Speed: 30%\nDamage: 3% of Max Health\nTrail Width: 250\nDuration: 8 sec.\nCooldown: 15 sec.\nHealth Cost: 20% of Current Health",
+              "uk": "<b><font color='#ff0000'>Прибирає Reactive Tazer.</font></b>\n\nНова Активна Здатність: Burn Out\n\nГерой прискорюється, залишаючи за собою вогненний слід. Вогонь завдає Магічної шкоди ворогам кожну секунду і знищує дерева.\n\nШвидкість Пересування: 30%\nВтрата: 3% від Максимального Здоров'я\nШирина Сліду: 250\nЗагальна тривалість: 8 сек.\nЧас Перезарядки: 15 сек.\nВитрати Здоров'я: 20% від Поточного Здоров'я"
+            }
+          },
+          {
+            "talent_id": "modifier_techies_2",
+            "image": "techies_2.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Убирает Reactive Tazer. Новая Активная Способность: Burn Out. Герой ускоряется, оставляя за собой огненный след. Огонь наносит Магический Урон врагам каждую секунду и уничтожает деревья. Скорость Передвижения: 30%. Урон: 3% от Максимального Здоровья. Ширина Следа: 250. Длительность: 8 сек. Время Перезарядки: 15 сек. Затраты Здоровья: 20% от Текущего Здоровья» заменено на «Навсегда дарует Барьер, поглощающий Любой Урон. Максимальная Прочность Барьера: 15% от Максимального Здоровья. Скорость Восстановления Барьера: 0,9%/1,1%/1,3% от Максимального Здоровья»",
+                  "en": "«Removes Reactive Tazer. New Active Ability: Burn Out. The hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees. Movement Speed: 30%. Damage: 3% of Max Health. Trail Width: 250. Duration: 8 sec. Cooldown: 15 sec. Health Cost: 20% of Current Health» replaced with «Permanently grants a Barrier that absorbs All Damage. Maximum Barrier Strength: 15% of Max Health. Barrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health»",
+                  "uk": "«Прибирає Reactive Tazer. Нова Активна Здібність: Burn Out. Герой прискорюється, залишаючи за собою вогненний слід. Вогонь завдає Магічної шкоди ворогам кожну секунду і знищує дерева. Швидкість Пересування: 30%. Шкода: 3% від Максимального Здоров'я. Ширина Сліду: 250. Тривалість: 8 сек. Час Перезарядки: 15 сек. Витрати Здоров'я: 20% від Поточного Здоров'я» замінено на «Назавжди надає Бар'єр, що поглинає Будь-яку Шкоду. Максимальна Міцність Бар'єра: 15% від Максимального Здоров'я. Швидкість Відновлення Бар'єра: 0,9%/1,1%/1,3% від Максимального Здоров'я»"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "note": {
+                  "ru": "Теперь требует прокачки «Талант 2»",
+                  "en": "Now requires upgrading «Talent 2»",
+                  "uk": "Тепер потребує прокачування «Талант 2»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Навсегда дарует Барьер поглощающий Любой Урон.\n\nМаксимальная Прочность Барьера: 15% от Максимального Здоровья\n\nСкорость Восстановления Барьера: 0.9%/1.1%/1.3% от Максимального Здоровья",
+              "en": "Permanently grants a Barrier that absorbs All Damage.\n\nMaximum Barrier Strength: 15% of Max Health\n\nBarrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health",
+              "uk": "Назавжди надає Бар'єр, що поглинає Будь-яку Шкоду.\n\nМаксимальна Міцність Бар'єра: 15% від Максимального Здоров'я\n\nШвидкість Відновлення Бар'єра: 0.9%/1.1%/1.3% від Максимального Здоров'я"
+            }
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "windranger_powershot_custom",
+          "name": "Powershot",
+          "image": "windranger_powershot.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": {
+                "ru": "Дальность применения увеличена с 2000 до 2500",
+                "en": "Cast range increased from 2000 to 2500",
+                "uk": "Дальність застосування збільшено з 2000 до 2500"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

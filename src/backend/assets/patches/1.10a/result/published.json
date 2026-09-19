@@ -1,0 +1,800 @@
+{
+  "patch_number": "1.10a",
+  "patch_name": "1.10a",
+  "patch_timestamp": 1788995995,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "abaddon_frostmourne_custom",
+          "name": "Curse of Avernus",
+          "image": "abaddon_frostmourne.webp",
+          "ability_notes": [
+            {
+              "parameter": "curse_dps",
+              "note": {
+                "ru": "Урон в секунду увеличен с 10/20/30/40 до 15/25/35/45",
+                "en": "Damage per second increased from 10/20/30/40 to 15/25/35/45",
+                "uk": "Шкоду за секунду збільшено з 10/20/30/40 до 15/25/35/45"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_abaddon_3",
+            "image": "abaddon_3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона Curse of Avernus усилено с 10/20/30 до 20/40/60",
+                  "en": "Curse of Avernus damage bonus increased from 10/20/30 to 20/40/60",
+                  "uk": "Збільшення шкоди Curse of Avernus посилено з 10/20/30 до 20/40/60"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона Curse of Avernus: 20/40/60",
+              "en": "Increase Curse of Avernus Damage: 20/40/60",
+              "uk": "Збільшення збитків Curse of Avernus: 20/40/60"
+            }
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "axe_5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона Culling Blade ослаблено с 300%/400%/500% до 200%/300%/400% от брони",
+                  "en": "Culling Blade damage bonus decreased from 300%/400%/500% to 200%/300%/400% of Armor",
+                  "uk": "Збільшення шкоди Culling Blade ослаблено з 300%/400%/500% до 200%/300%/400% від броні"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона Culling Blade: 200%/300%/400% от Брони",
+              "en": "Increases Culling Blade Damage: 200%/300%/400% of Armor",
+              "uk": "Збільшує Урон Culling Blade: 200%/300%/400% від Броні"
+            }
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "axe_19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона Battle Hunger ослаблено со 100%/200%/300% до 100%/150%/200% от брони",
+                  "en": "Battle Hunger damage bonus decreased from 100%/200%/300% to 100%/150%/200% of Armor",
+                  "uk": "Збільшення шкоди Battle Hunger ослаблено зі 100%/200%/300% до 100%/150%/200% від броні"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона Battle Hunger: 100%/150%/200% от Брони",
+              "en": "Increased Battle Hunger Damage: 100%/150%/200% of Armor",
+              "uk": "Збільшення Шкоди Battle Hunger: 100%/150%/200% від Броні"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "chaos_knight",
+      "name": "chaos knight",
+      "image": "images/heroes/heroesPreview/chaos_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "chaos_knight_chaos_strike_custom",
+          "name": "Chaos Strike",
+          "image": "chaos_knight_chaos_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "crit_max",
+              "note": {
+                "ru": "Максимальный критический урон уменьшен со 140%/180%/220%/260% до 140%/160%/180%/200%",
+                "en": "Maximum critical damage decreased from 140%/180%/220%/260% to 140%/160%/180%/200%",
+                "uk": "Максимальну критичну шкоду зменшено зі 140%/180%/220%/260% до 140%/160%/180%/200%"
+              }
+            },
+            {
+              "parameter": "lifesteal",
+              "note": {
+                "ru": "Вампиризм при срабатывании уменьшен с 24%/36%/48%/60% до 20%/30%/40%/50%",
+                "en": "Lifesteal on proc decreased from 24%/36%/48%/60% to 20%/30%/40%/50%",
+                "uk": "Вампіризм при спрацюванні зменшено з 24%/36%/48%/60% до 20%/30%/40%/50%"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "chaos_knight_phantasm_custom",
+          "name": "Phantasm",
+          "image": "chaos_knight_phantasm.webp",
+          "ability_notes": [
+            {
+              "parameter": "outgoing_damage_tooltip",
+              "note": {
+                "ru": "Урон иллюзий уменьшен со 100% до 60%",
+                "en": "Illusion damage decreased from 100% to 60%",
+                "uk": "Шкоду ілюзій зменшено зі 100% до 60%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_chaos_knight_1",
+            "image": "chaos_knight_1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Физический урон атакующему уменьшен с 12% до 8% от урона атаки",
+                  "en": "Physical damage dealt to the attacker decreased from 12% to 8% of attack damage",
+                  "uk": "Фізичну шкоду атакуючому зменшено з 12% до 8% від шкоди атаки"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Каждая Атака по герою наносит Физический Урон Атакующему: 8% от Урона Атаки",
+              "en": "Each Attack on a hero deals Physical Damage to the attacker: 8% of Attack Damage",
+              "uk": "Кожна Атака по герою завдає Фізичний Шкоди Атакуючому: 8% від Шкоди Атаки"
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_3",
+            "image": "chaos_knight_3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к силе уменьшен с 4/8/12 до 3/6/9",
+                  "en": "Strength bonus decreased from 4/8/12 to 3/6/9",
+                  "uk": "Бонус до сили зменшено з 4/8/12 до 3/6/9"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Реальность. </font></b>\n\nСила: 3/6/9\n\nReality Rift накладывает Истощение на противников.\n\nДлительность: 1/2/3 сек.",
+              "en": "<b><font color='#ff0000'> Reality. </font></b>\n\nStrength: 3/6/9\n\nReality Rift applies Exhaustion to enemies.\n\nDuration: 1/2/3 sec.",
+              "uk": "<b><font color='#ff0000'> Реальність. </font></b>\n\nСила: 3/6/9\n\nReality Rift накладає Виснаження на ворогів.\n\nТривалість: 1/2/3 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_4",
+            "image": "chaos_knight_4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к урону уменьшен с 25/50 до 20/40",
+                  "en": "Damage bonus decreased from 25/50 to 20/40",
+                  "uk": "Бонус до шкоди зменшено з 25/50 до 20/40"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Урон: 20/40",
+              "en": "Damage: 20/40",
+              "uk": "Шкода: 20/40"
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_5",
+            "image": "chaos_knight_5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение минимального и максимального урона Chaos Strike ослаблено с 20%/40% до 10%/20%",
+                  "en": "Chaos Strike min and max damage bonus decreased from 20%/40% to 10%/20%",
+                  "uk": "Збільшення мінімальної та максимальної шкоди Chaos Strike ослаблено з 20%/40% до 10%/20%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Минимального и Максимального Урона Chaos Strike: 10%/20%",
+              "en": "Increases Minimum and Maximum Chaos Strike Damage: 10%/20%",
+              "uk": "Збільшення Мінімальної та Максимальної Шкоди Chaos Strike: 10%/20%"
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_7",
+            "image": "chaos_knight_7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Урон в секунду Chaos Walk увеличен со 100% до 110% от урона атаки",
+                  "en": "Chaos Walk damage per second increased from 100% to 110% of attack damage",
+                  "uk": "Шкоду за секунду Chaos Walk збільшено зі 100% до 110% від шкоди атаки"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Убирает Phantasm. </font></b>\n\nНовая Пассивная Способность: Chaos Walk\n\nПозволяет ходить сквозь существ и деревья. Герой оставляет за собой адский след который каждую секунду наносит физический урон от его Урона Атаки.\n\nУвеличение Размера Модели: 40%\nУрон в Секунду: 110% от Урона Атаки\nРадиус Следа: 200\nДлительность Следа: 3 сек.",
+              "en": "<b><font color='#ff0000'> Removes Phantasm. </font></b>\n\nNew Passive Ability: Chaos Walk\n\nAllows walking through units and trees. The hero leaves an infernal trail that deals physical damage every second based on their Attack Damage.\n\nModel Size Increase: 40%\nDamage per Second: 110% of Attack Damage\nTrail Radius: 200\nTrail Duration: 3 sec.",
+              "uk": "<b><font color='#ff0000'> Прибирає Phantasm. </font></b>\n\nНова Пасивна Здібність: Chaos Walk\n\nДозволяє ходити крізь істот та дерева. Герой залишає за собою пекельний слід, який щосекунди завдає фізичної шкоди від його Шкоди Атаки.\n\nЗбільшення Розміру Моделі: 40%\nШкода за секунду: 110% від Шкоди Атаки\nРадіус Сліду: 200\nТривалість Сліду: 3 сек."
+            }
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_chaos_knight_9",
+            "image": "chaos_knight_9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение урона иллюзии от Chaos Bolt усилено с 25% до 50%",
+                  "en": "Chaos Bolt illusion damage reduction increased from 25% to 50%",
+                  "uk": "Зменшення шкоди ілюзії від Chaos Bolt посилено з 25% до 50%"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Длительность иллюзии изменена с 3/6 на 3/6/9 секунд",
+                  "en": "Illusion duration changed from 3/6s to 3/6/9s",
+                  "uk": "Тривалість ілюзії змінено з 3/6 на 3/6/9 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Chaos Bolt создаёт рядом с жертвой иллюзию от способности Phantasm, которая атакует цель и наносит на 50% меньше урона.\n\nДлительность Иллюзии: 3/6/9 сек.",
+              "en": "Chaos Bolt creates a Phantasm illusion next to the victim that attacks the target and deals 50% less damage.\n\nIllusion Duration: 3/6/9 sec.",
+              "uk": "Chaos Bolt створює поруч із жертвою ілюзію від здібності Phantasm, яка атакує ціль і завдає на 50% менше шкоди.\n\nТривалість ілюзії: 3/6/9 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_10",
+            "image": "chaos_knight_10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Больше не даёт 4/8/12 к ловкости",
+                  "en": "No longer grants 4/8/12 Agility",
+                  "uk": "Більше не дає 4/8/12 до спритності"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Длительность безмолвия от Reality Rift изменена с 1/2/3 на 1/2 секунды",
+                  "en": "Reality Rift silence duration changed from 1/2/3s to 1/2s",
+                  "uk": "Тривалість безмовності від Reality Rift змінено з 1/2/3 на 1/2 секунди"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Реальность. </font></b>\n\nReality Rift накладывает Безмолвие на противников.\n\nДлительность: 1/2 сек.",
+              "en": "<b><font color='#ff0000'> Reality. </font></b>\n\nReality Rift applies Silence to enemies.\n\nDuration: 1/2 sec.",
+              "uk": "<b><font color='#ff0000'> Реальність. </font></b>\n\nReality Rift накладає мовчання на ворогів.\n\nТривалість: 1/2 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_11",
+            "image": "chaos_knight_11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение урона по иллюзиям Phantasm ослаблено с 75%/125%/175% до 50%/100%/150%",
+                  "en": "Phantasm illusion damage taken reduction decreased from 75%/125%/175% to 50%/100%/150%",
+                  "uk": "Зменшення шкоди по ілюзіях Phantasm ослаблено з 75%/125%/175% до 50%/100%/150%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Урона по Иллюзиям Phantasm: 50%/100%/150%",
+              "en": "Reduced Damage Taken by Phantasm Illusions: 50%/100%/150%",
+              "uk": "Зменшення Шкоди по Ілюзіям Phantasm: 50%/100%/150%"
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_14",
+            "image": "chaos_knight_14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Радиус создания иллюзий других героев уменьшен с 1800 до 1200",
+                  "en": "The radius for creating illusions of other heroes decreased from 1800 to 1200",
+                  "uk": "Радіус створення ілюзій інших героїв зменшено з 1800 до 1200"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Phantasm помимо своих иллюзий создаёт иллюзию каждого союзного или вражеского героя в радиусе 1200, включая владельца. Эти иллюзии появляются рядом с оригинальными героями.",
+              "en": "In addition to its own illusions, Phantasm creates an illusion of every allied or enemy hero within a 1200 radius, including the owner. These illusions spawn near the original heroes.",
+              "uk": "Phantasm крім своїх ілюзій створює ілюзію кожного союзного або ворожого героя у радіусі 1200, включаючи власника. Ці ілюзії з’являються поруч з оригінальними героями."
+            }
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_chaos_knight_16",
+            "image": "chaos_knight_16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение минимального и максимального урона Chaos Bolt усилено с 200%/300%/400% до 300%/450%/600% от восстановления маны",
+                  "en": "Chaos Bolt min and max damage bonus increased from 200%/300%/400% to 300%/450%/600% of mana regen",
+                  "uk": "Збільшення мінімальної та максимальної шкоди Chaos Bolt посилено з 200%/300%/400% до 300%/450%/600% від відновлення мани"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Минимального и Максимального Урона Chaos Bolt: 300%/450%/600% от Восстановления Маны",
+              "en": "Increases Minimum and Maximum Chaos Bolt Damage: 300%/450%/600% of Mana Regeneration",
+              "uk": "Збільшення Мінімальної та Максимальної Шкоди Chaos Bolt: 300%/450%/600% від Відновлення Мани"
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_17",
+            "image": "chaos_knight_17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к интеллекту увеличен с 4/8/12 до 6/12/18",
+                  "en": "Intelligence bonus increased from 4/8/12 to 6/12/18",
+                  "uk": "Бонус до інтелекту збільшено з 4/8/12 до 6/12/18"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Реальность. </font></b>\n\nИнтеллект: 6/12/18\n\nReality Rift накладывает Бессилие на противников.\n\nДлительность: 1/2/3 сек.",
+              "en": "<b><font color='#ff0000'> Reality. </font></b>\n\nIntelligence: 6/12/18\n\nReality Rift applies Break to enemies.\n\nDuration: 1/2/3 sec.",
+              "uk": "<b><font color='#ff0000'> Реальність. </font></b>\n\nІнтелект: 6/12/18\n\nReality Rift накладає Безсилля на ворогів.\n\nТривалість: 1/2/3 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_19",
+            "image": "chaos_knight_19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Восстановление здоровья от Chaos King Bar усилено со 150% до 180% от восстановления маны",
+                  "en": "Chaos King Bar health regen increased from 150% to 180% of mana regen",
+                  "uk": "Відновлення здоров'я від Chaos King Bar посилено зі 150% до 180% від відновлення мани"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Перезарядка Chaos King Bar уменьшена с 90 до 60 секунд",
+                  "en": "Chaos King Bar cooldown decreased from 90s to 60s",
+                  "uk": "Перезарядку Chaos King Bar зменшено з 90 до 60 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Убирает Chaos Strike. </font></b>\n\nНовая Активная Способность: Chaos King Bar\n\nПрименяет на владельца нормальное развеивание. Даёт 50% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья.\n\nДлительность: 2/3 сек.\nВосстановление Здоровья: 180% от Восстановления Маны\nВремя Перезарядки: 60 сек.",
+              "en": "<b><font color='#ff0000'> Removes Chaos Strike. </font></b>\n\nNew Active Ability: Chaos King Bar\n\nApplies a basic dispel to the owner. Grants 50% magic resistance and protects from negative effects. Increases health regeneration.\n\nDuration: 2/3 sec.\nHealth Regeneration: 180% of Mana Regeneration\nCooldown: 60 sec.",
+              "uk": "<b><font color='#ff0000'> Прибирає Chaos Strike. </font></b>\n\nНова Активна Здібність: Chaos King Bar\n\nЗастосовує на власника нормальне розсіювання. Дає 50% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров’я.\n\nТривалість: 2/3 сек.\nВідновлення Здоров’я: 180% від Відновлення Мани\nЧас Перезарядки: 60 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_chaos_knight_20",
+            "image": "chaos_knight_20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также даёт 100 к дальности применения заклинаний",
+                  "en": "Now also grants 100 cast range",
+                  "uk": "Тепер також дає 100 до дальності застосування заклять"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Времени Перезарядки Chaos Bolt: 1.5 сек.\n\nДополнительная Дальность Заклинаний: 100",
+              "en": "Chaos Bolt Cooldown Reduction: 1.5 sec.\n\nBonus Cast Range: 100",
+              "uk": "Зменшення Часу Перезарядки Chaos Bolt: 1.5 сек.\n\nДодаткова Дальність Заклинань: 100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dawnbreaker_luminosity_custom",
+          "name": "Luminosity",
+          "image": "dawnbreaker_luminosity.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal_pct",
+              "note": {
+                "ru": "Лечение от атаки по герою уменьшено с 35%/40%/45%/50% до 25%/30%/35%/40%",
+                "en": "Healing from attacking a hero decreased from 35%/40%/45%/50% to 25%/30%/35%/40%",
+                "uk": "Лікування від атаки по герою зменшено з 35%/40%/45%/50% до 25%/30%/35%/40%"
+              }
+            },
+            {
+              "parameter": "bonus_damage",
+              "note": {
+                "ru": "Критический урон уменьшен со 125%/150%/175%/200% до 120%/140%/160%/180%",
+                "en": "Critical damage decreased from 125%/150%/175%/200% to 120%/140%/160%/180%",
+                "uk": "Критичну шкоду зменшено зі 125%/150%/175%/200% до 120%/140%/160%/180%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_5",
+            "image": "dawnbreaker_5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение критического урона Luminosity ослаблено с 25%/50% до 15%/30%",
+                  "en": "Luminosity critical damage bonus decreased from 25%/50% to 15%/30%",
+                  "uk": "Збільшення критичної шкоди Luminosity ослаблено з 25%/50% до 15%/30%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Критического Урона Luminosity: 15%/30%",
+              "en": "Increases Luminosity Critical Damage: 15%/30%",
+              "uk": "Збільшення Критичної Шкоди Luminosity: 15%/30%"
+            }
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_dawnbreaker_10",
+            "image": "dawnbreaker_10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона за пульсацию Solar Guardian ослаблено с 80%/120% до 45%/90% от ловкости",
+                  "en": "Solar Guardian damage per pulse bonus decreased from 80%/120% to 45%/90% of Agility",
+                  "uk": "Збільшення шкоди за пульсацію Solar Guardian ослаблено з 80%/120% до 45%/90% від спритності"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона за Пульсацию Solar Guardian: 45%/90% от Ловкости",
+              "en": "Increases Damage per Solar Guardian Pulse: 45%/90% of Agility",
+              "uk": "Збільшення Шкоди за Пульсацію Solar Guardian: 45%/90% від Ловкості"
+            }
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_11",
+            "image": "dawnbreaker_11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение лечения за пульсацию Solar Guardian ослаблено с 80%/120% до 45%/90% от ловкости",
+                  "en": "Solar Guardian healing per pulse bonus decreased from 80%/120% to 45%/90% of Agility",
+                  "uk": "Збільшення лікування за пульсацію Solar Guardian ослаблено з 80%/120% до 45%/90% від спритності"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Лечения за Пульсацию Solar Guardian: 45%/90% от Ловкости",
+              "en": "Increases Healing per Solar Guardian Pulse: 45%/90% of Agility",
+              "uk": "Збільшення Лікування за Пульсацію Solar Guardian: 45%/90% від Ловкості"
+            }
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_13",
+            "image": "dawnbreaker_13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение перезарядки Solar Guardian ослаблено с 30/60 до 20/40 секунд",
+                  "en": "Solar Guardian cooldown reduction decreased from 30/60s to 20/40s",
+                  "uk": "Зменшення перезарядки Solar Guardian ослаблено з 30/60 до 20/40 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Времени Перезарядки Solar Guardian: 20/40 сек.",
+              "en": "Reduces Solar Guardian Cooldown: 20/40 sec.",
+              "uk": "Зменшення Часу Перезарядки Solar Guardian: 20/40 сек."
+            }
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dawnbreaker_16",
+            "image": "dawnbreaker_16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона огненного следа Celestial Hammer ослаблено с 50%/75%/100% до 30%/45%/60% от интеллекта",
+                  "en": "Celestial Hammer fire trail damage bonus decreased from 50%/75%/100% to 30%/45%/60% of Intelligence",
+                  "uk": "Збільшення шкоди вогняного сліду Celestial Hammer ослаблено з 50%/75%/100% до 30%/45%/60% від інтелекту"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона Огненного Следа Celestial Hammer: 30%/45%/60% от Интеллекта",
+              "en": "Increases Celestial Hammer Fire Trail Damage: 30%/45%/60% of Intelligence",
+              "uk": "Збільшення Шкоди Вогняного Сліду Celestial Hammer: 30%/45%/60% від Інтелекту"
+            }
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_19",
+            "image": "dawnbreaker_19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Длительность оглушения Celestial Hammer уменьшена с 1/2 до 1/1,5 секунды",
+                  "en": "Celestial Hammer stun duration decreased from 1/2s to 1/1.5s",
+                  "uk": "Тривалість оглушення Celestial Hammer зменшено з 1/2 до 1/1,5 секунди"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Celestial Hammer оглушает задетых противников.\n\nДлительность: 1/1.5 сек.",
+              "en": "Celestial Hammer stuns affected enemies.\n\nDuration: 1/1.5 sec.",
+              "uk": "Celestial Hammer оглушає уражених противників.\n\nТривалість: 1/1.5 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_20",
+            "image": "dawnbreaker_20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение дальности и скорости полёта Celestial Hammer ослаблено с 20%/40% до 15%/30%",
+                  "en": "Celestial Hammer range and travel speed bonus decreased from 20%/40% to 15%/30%",
+                  "uk": "Збільшення дальності та швидкості польоту Celestial Hammer ослаблено з 20%/40% до 15%/30%"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Бонус к броне уменьшен с 4/8 до 3/6",
+                  "en": "Armor bonus decreased from 4/8 to 3/6",
+                  "uk": "Бонус до броні зменшено з 4/8 до 3/6"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Дальности и Скорости Полёта Celestial Hammer: 15%/30%\n\nБроня: 3/6",
+              "en": "Increases Celestial Hammer Travel Range and Speed: 15%/30%\n\nArmor: 3/6",
+              "uk": "Збільшення Дальності та Швидкості Полоту Celestial Hammer: 15%/30%\n\nБроня: 3/6"
+            }
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_21",
+            "image": "dawnbreaker_21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона касания Celestial Hammer ослаблено с 200 до 60",
+                  "en": "Celestial Hammer impact damage bonus decreased from 200 to 60",
+                  "uk": "Збільшення шкоди дотику Celestial Hammer ослаблено з 200 до 60"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Celestial Hammer наносит Чистый Урон, а не Магический.\n\nУвеличение Урона Касания Celestial Hammer: 60\n\nCelestial Hammer работает сквозь Невосприимчивость к Магии.",
+              "en": "Celestial Hammer deals Pure Damage instead of Magical.\n\nIncreases Celestial Hammer Impact Damage: 60\n\nCelestial Hammer works through Magic Immunity.",
+              "uk": "Celestial Hammer завдає Чисту Шкоду, а не Магічну.\n\nЗбільшення Шкоди Дотику Celestial Hammer: 60\n\nCelestial Hammer працює крізь Невразливість до Магії."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_undying_20",
+            "image": "undying_20.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Максимума Целей Soul Rip: 1 за 15/10 Восстановления Маны» заменено на «Flesh Golem Увеличивает Восстановление Маны: 0,5%/1%/1,5%»",
+                  "en": "«Increase Soul Rip Max Target: 1 per 15/10 Mana Regeneration» replaced with «Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%»",
+                  "uk": "«Збільшення Максимуму Цілей Soul Rip: 1 за 15/10 Відновлення Мани» замінено на «Flesh Golem Збільшує Відновлення Мани: 0,5%/1%/1,5%»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Flesh Golem Увеличивает Восстановление Маны: 0.5%/1%/1.5%",
+              "en": "Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%",
+              "uk": "Flesh Golem Збільшує Відновлення Мани: 0.5%/1%/1.5%"
+            }
+          },
+          {
+            "talent_id": "modifier_undying_19",
+            "image": "undying_19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Flesh Golem Увеличивает Восстановление Маны: 0,5%/1%/1,5%» заменено на «Увеличение Максимума Целей Soul Rip: 1 за 20/15 Восстановления Маны»",
+                  "en": "«Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%» replaced with «Increase Soul Rip Maximum Targets: 1 per 20/15 Mana Regeneration»",
+                  "uk": "«Flesh Golem Збільшує Відновлення Мани: 0,5%/1%/1,5%» замінено на «Збільшення Максимуму Цілей Soul Rip: 1 за кожні 20/15 Відновлення Мани»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Максимума Целей Soul Rip: 1 за 20/15 Восстановления Маны",
+              "en": "Increase Soul Rip Maximum Targets: 1 per 20/15 Mana Regeneration",
+              "uk": "Збільшення Максимуму Цілей Soul Rip: 1 за кожні 20/15 Відновлення Мани"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

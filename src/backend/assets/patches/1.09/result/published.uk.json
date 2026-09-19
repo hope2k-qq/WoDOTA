@@ -1,0 +1,2763 @@
+{
+  "patch_number": "1.09",
+  "patch_name": "1.09",
+  "patch_timestamp": 1788989167,
+  "general": {
+    "global_changes": [
+      {
+        "title": "Загальні зміни"
+      },
+      {
+        "note": "Розпочався новий сезон"
+      },
+      {
+        "note": "Largo додано до голосування"
+      },
+      {
+        "note": "Додано нову мирну арену"
+      },
+      {
+        "note": "Невеликі зміни інтерфейсу"
+      },
+      {
+        "note": "Фон профілю тепер відображається під час вибору героя"
+      },
+      {
+        "title": "Косметичні предмети"
+      },
+      {
+        "note": "Додано нові ефекти телепортації та фони профілю"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_branches",
+        "name": "Iron Branch",
+        "image": "branches.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Вартість збільшено з 50 до 55 золота"
+          }
+        ]
+      },
+      {
+        "item_id": "item_clarity",
+        "name": "Clarity",
+        "image": "clarity.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Вартість збільшено з 50 до 60 золота"
+          },
+          {
+            "parameter": "ItemStockMax",
+            "note": "Максимальний запас збільшено з 4 до 5"
+          },
+          {
+            "parameter": "ItemStockInitial",
+            "note": "Початковий запас збільшено з 4 до 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_dust_custom",
+        "name": "Dust of Appearance",
+        "image": "dust.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCanBeUsedWithoutInventory",
+            "note": "Тепер можна застосовувати з рюкзака"
+          }
+        ]
+      },
+      {
+        "item_id": "item_flask",
+        "name": "Healing Salve",
+        "image": "flask.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemStockMax",
+            "note": "Максимальний запас збільшено з 4 до 5"
+          },
+          {
+            "parameter": "ItemStockInitial",
+            "note": "Початковий запас збільшено з 4 до 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ghost",
+        "name": "Ghost Scepter",
+        "image": "ghost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "extra_spell_damage_percent",
+            "note": "Ghost Form: збільшення отримуваної магічної шкоди ослаблено з 40% до 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ring_of_tarrasque",
+        "name": "Ring of Tarrasque",
+        "image": "ring_of_tarrasque.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Вартість зменшено з 1800 до 1700 золота"
+          }
+        ]
+      },
+      {
+        "item_id": "item_smoke_of_deceit",
+        "name": "Smoke of Deceit",
+        "image": "smoke_of_deceit.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCanBeUsedWithoutInventory",
+            "note": "Тепер можна застосовувати з рюкзака"
+          }
+        ]
+      },
+      {
+        "item_id": "item_tango",
+        "name": "Tango",
+        "image": "tango.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemStockMax",
+            "note": "Максимальний запас збільшено з 8 до 10"
+          },
+          {
+            "parameter": "ItemStockInitial",
+            "note": "Початковий запас збільшено з 8 до 10"
+          }
+        ]
+      },
+      {
+        "item_id": "item_tiara_of_selemene",
+        "name": "Tiara of Selemene",
+        "image": "tiara_of_selemene.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Вартість зменшено з 1800 до 1700 золота"
+          }
+        ]
+      },
+      {
+        "item_id": "item_voodoo_mask",
+        "name": "Voodoo Mask",
+        "image": "voodoo_mask.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Вартість зменшено з 700 до 650 золота"
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_aeon_boots",
+        "name": "Aeon Boots",
+        "image": "aeon_boots.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Предмет вилучено з гри"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ancient_guardian_custom",
+        "name": "Ancient Guardian",
+        "image": "ancient_guardian.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібно не Soul Booster (3000 золота), а Diadem (1000 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібен рецепт за 1000 золота (загальну вартість зменшено з 5400 до 4400 золота)"
+          },
+          {
+            "parameter": "bonus_health",
+            "note": "Додаткове здоров'я зменшено з 625 до 200"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Додаткову ману зменшено з 625 до 200"
+          },
+          {
+            "parameter": "bonus_all_stats",
+            "note": "Бонус до всіх атрибутів збільшено з 7 до 14"
+          }
+        ]
+      },
+      {
+        "item_id": "item_blade_mail",
+        "name": "Blade Mail",
+        "image": "blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "Бонус до шкоди зменшено з 18 до 15"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус до броні зменшено з 7 до 6"
+          },
+          {
+            "parameter": "passive_reflection_constant",
+            "note": "Damage Return: пасивне повернення шкоди ослаблено з 20 + 20% до 10 + 15%"
+          },
+          {
+            "parameter": "active_reflection_pct",
+            "note": "Damage Return: повернення шкоди при активації збільшено з 40% до 65%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_bloodstone",
+        "name": "Bloodstone",
+        "image": "bloodstone.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Загальну вартість зменшено з 4400 до 4350 золота (Voodoo Mask подешевшав з 700 до 650 золота)"
+          },
+          {
+            "parameter": "lifesteal_multiplier",
+            "note": "Bloodpact: множник вампіризму закляттями зменшено з 4 до 3"
+          }
+        ]
+      },
+      {
+        "item_id": "item_boots_of_bearing_custom",
+        "name": "Boots of Bearing",
+        "image": "boots_of_bearing.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання також потрібно Ring of Tarrasque (1700 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання не потрібен рецепт за 1500 золота (загальну вартість збільшено з 4350 до 4550 золота)"
+          },
+          {
+            "parameter": "health_regen",
+            "note": "Бонус до відновлення здоров'я збільшено з 15 до 18"
+          }
+        ]
+      },
+      {
+        "item_id": "item_crimson_guard",
+        "name": "Crimson Guard",
+        "image": "crimson_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "note": "Guard: ефект більше не можна розвіяти"
+          }
+        ]
+      },
+      {
+        "item_id": "item_dagon",
+        "name": "Dagon",
+        "image": "dagon.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта незмінна (1150 золота). Загальну вартість зменшено з 2850 до 2800 золота (Voodoo Mask подешевшав з 700 до 650 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_diffusal_blade_2_custom",
+        "name": "Diffusal Blade 2",
+        "image": "diffusal_blade_2_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Предмет вилучено з гри"
+          }
+        ]
+      },
+      {
+        "item_id": "item_disperser",
+        "name": "Disperser",
+        "image": "disperser.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Suppress: тепер базове розвіювання застосовується на будь-яку ціль, а не лише на союзну"
+          },
+          {
+            "parameter": "feedback_mana_burn_illusion_melee",
+            "note": "Manabreak: ілюзії більше не спалюють 8 мани за атаку"
+          }
+        ]
+      },
+      {
+        "item_id": "item_edge_of_discord",
+        "name": "Edge of Discord",
+        "image": "edge_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "health_regen",
+            "note": "Бонус до відновлення здоров'я збільшено з 4 до 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта зменшено з 570 до 0 золота (загальну вартість зменшено з 4950 до 4380 золота)"
+          },
+          {
+            "parameter": "all_stats",
+            "note": "Бонус до всіх атрибутів зменшено з 15 до 14"
+          },
+          {
+            "parameter": "mana_regen",
+            "note": "Бонус до відновлення мани зменшено з 3 до 2"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ethereal_blade",
+        "name": "Ethereal Blade",
+        "image": "ethereal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібно не Aether Lens (2275 золота), а Ultimate Orb (2800 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта зменшено з 1600 до 900 золота (загальну вартість зменшено з 5375 до 5200 золота)"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Більше не дає 300 до мани"
+          },
+          {
+            "parameter": "bonus_cast_range",
+            "note": "Більше не дає 250 до дальності застосування заклять"
+          },
+          {
+            "parameter": "bonus_mana_regen",
+            "note": "Більше не дає 3 до відновлення мани"
+          },
+          {
+            "parameter": "blast_stat_multiplier",
+            "note": "Ether Blast: шкода тепер дорівнює сумі атрибутів, а не 1,5 від основного атрибута"
+          },
+          {
+            "parameter": "bonus_agility",
+            "note": "Бонус до всіх атрибутів збільшено з 8 до 24"
+          },
+          {
+            "parameter": "ethereal_damage_bonus",
+            "note": "Ether Blast: збільшення отримуваної магічної шкоди ослаблено з 40% до 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_eul_storm",
+        "name": "Atos's Storm",
+        "image": "eul_storm.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Storm: перезарядку збільшено з 18 до 19 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_glimmer_cape_custom",
+        "name": "Glimmer Cape",
+        "image": "glimmer_cape.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Glimmer: перезарядку зменшено з 25 до 15 секунд"
+          },
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Glimmer: витрати мани збільшено з 90 до 125"
+          },
+          {
+            "parameter": "duration",
+            "note": "Glimmer: тривалість зменшено з 14 до 5 секунд"
+          },
+          {
+            "parameter": "active_magical_armor",
+            "note": "Glimmer: 12% до опору магії замінено на бар'єр, що поглинає 375 магічної шкоди"
+          }
+        ]
+      },
+      {
+        "item_id": "item_glimmer_shield",
+        "name": "Glimmer Shield",
+        "image": "pages/patches/standard_item.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Предмет вилучено з гри"
+          }
+        ]
+      },
+      {
+        "item_id": "item_glimmer_boots",
+        "name": "Glimmer Boots",
+        "image": "glimmer_shield.webp",
+        "is_new": true,
+        "is_upgrade": true,
+        "caption": "Новий предмет у категорії «Магія»",
+        "item_notes": [
+          {
+            "note": "Збирається з Phase Boots (1500 золота), Glimmer Cape (2700 золота), Gem of True Sight (900 золота) і рецепта (300 золота). Загальна вартість: 5400 золота"
+          },
+          {
+            "note": "Дає 50 до швидкості пересування, 18 шкоди, 4 броні, 20% до опору магії і 5% до зменшення перезарядки"
+          },
+          {
+            "note": "Активне: Glimmer Boots. Збільшує швидкість пересування на 20% і надає безперешкодний огляд у радіусі 600, а також дозволяє проходити крізь істот і швидше повертатися. Накладає бар'єр, що поглинає до 100 магічної шкоди. Діє 3 с. Бонуси до швидкості пересування від кількох пар чобіт не складаються"
+          },
+          {
+            "note": "Має спільну перезарядку з Phase Boots"
+          }
+        ]
+      },
+      {
+        "item_id": "item_guardian_greaves_custom",
+        "name": "Guardian Greaves",
+        "image": "guardian_greaves.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання не потрібно Buckler"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта зменшено з 1550 до 1125 золота (загальну вартість зменшено з 5150 до 4300 золота)"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Mend: перезарядку збільшено з 40 до 45 секунд"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус до броні зменшено з 7 до 5"
+          },
+          {
+            "parameter": "aura_bonus_threshold",
+            "note": "Поріг здоров'я для посиленої аури збільшено з 20% до 25%"
+          },
+          {
+            "parameter": "replenish_health",
+            "note": "Mend: відновлюване здоров'я зменшено з 20% до 15%"
+          },
+          {
+            "parameter": "replenish_mana",
+            "note": "Mend: відновлювану ману зменшено з 20% до 15%"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Бонус до мани у 250 замінено на 1,5 до відновлення мани"
+          },
+          {
+            "parameter": "bonus_hp_regen_threshold",
+            "note": "Guardian Aura: більше не відновлює пораненим союзникам 20 здоров'я за секунду"
+          },
+          {
+            "parameter": "bonus_armor_threshold",
+            "note": "Guardian Aura: більше не дає пораненим союзникам 10 до броні"
+          },
+          {
+            "parameter": "aura_health_regen",
+            "note": "Guardian Aura: тепер аура дає всім союзникам 2,5 до відновлення здоров'я"
+          },
+          {
+            "parameter": "aura_mana_regen",
+            "note": "Guardian Aura: тепер аура дає всім союзникам 1,5 до відновлення мани"
+          },
+          {
+            "parameter": "aura_health_regen_bonus",
+            "note": "Guardian Aura: коли у власника залишається менше 25% здоров'я, його бонус до відновлення здоров'я зростає до 14,5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_hand_of_midas_custom",
+        "name": "Hand of Midas",
+        "image": "hand_of_midas.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Transmute: перезарядку зменшено зі 110 до 90 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heart_custom",
+        "name": "Heart of Tarrasque",
+        "image": "heart.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Вартість зменшено з 5200 до 5100 золота"
+          },
+          {
+            "parameter": "hp_regen",
+            "note": "Відновлення здоров'я від максимуму зменшено з 1,4% до 1%"
+          },
+          {
+            "parameter": "missing_health_regen",
+            "note": "Behemoth's Blood: тепер також збільшує відновлення здоров'я на 1,5% від втраченого здоров'я"
+          },
+          {
+            "note": "Ефекти від кількох екземплярів Behemoth's Blood не складаються"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heaven_shield",
+        "name": "Heaven's Shield",
+        "image": "heaven_shield.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "note": "Disarm: тепер не можна розвіяти"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Disarm: перезарядку збільшено з 18 до 20 секунд"
+          },
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Disarm: витрати мани зменшено зі 100 до 25"
+          },
+          {
+            "parameter": "disarm_range",
+            "note": "Disarm: тривалість більше не залежить від типу атаки цілі й тепер завжди дорівнює 3 секундам"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "Heaven's Halberd",
+        "image": "heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "note": "Disarm: тепер знімається сильним розвіюванням"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Disarm: перезарядку збільшено з 18 до 20 секунд"
+          },
+          {
+            "parameter": "disarm_range",
+            "note": "Disarm: тривалість більше не залежить від типу атаки цілі й тепер завжди дорівнює 3 секундам"
+          }
+        ]
+      },
+      {
+        "item_id": "item_holy_locket",
+        "name": "Holy Locket",
+        "image": "holy_locket.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібно не Diadem (1000 золота), а Crown (450 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта збільшено з 800 до 1340 золота (загальна вартість незмінна — 2250 золота)"
+          },
+          {
+            "parameter": "AbilityCastRange",
+            "note": "Energy Charge: дальність застосування збільшено з 500 до 600"
+          },
+          {
+            "parameter": "AbilityCharges",
+            "note": "Максимум зарядів збільшено з 20 до 25"
+          },
+          {
+            "parameter": "AbilityChargeRestoreTime",
+            "note": "Час відновлення заряду збільшено з 8 до 10 секунд"
+          },
+          {
+            "parameter": "mana_restore_per_charge",
+            "note": "Energy Charge: тепер також відновлює 15 мани за кожен заряд"
+          },
+          {
+            "parameter": "incoming_heal_increase_active",
+            "note": "Energy Charge: тепер також збільшує отримуване ціллю лікування на 10%"
+          },
+          {
+            "parameter": "active_buff_duration",
+            "note": "Energy Charge: тривалість ефекту тепер становить 4 секунди"
+          },
+          {
+            "parameter": "bonus_all_stats",
+            "note": "Бонус до всіх атрибутів зменшено з 9 до 7"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ironwood_staff",
+        "name": "Ironwood Staff",
+        "image": "ironwood_staff.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта незмінна (1250 золота). Загальну вартість збільшено з 4600 до 4610 золота (Iron Branch подорожчав з 50 до 55 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_khanda_custom",
+        "name": "Khanda",
+        "image": "angels_demise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібно не Tiara of Selemene (1800 золота), а Soul Booster (3000 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання не потрібен рецепт за 1500 золота (загальну вартість зменшено з 5700 до 5400 золота)"
+          },
+          {
+            "parameter": "bonus_health_regen",
+            "note": "Тепер також дає 7 до відновлення здоров'я"
+          },
+          {
+            "parameter": "bonus_mana_regen",
+            "note": "Бонус до відновлення мани зменшено з 8 до 3"
+          },
+          {
+            "parameter": "bonus_health",
+            "note": "Додаткове здоров'я збільшено з 200 до 450"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Додаткову ману збільшено з 200 до 450"
+          }
+        ]
+      },
+      {
+        "item_id": "item_madness_blade_mail",
+        "name": "Madness Blade Mail",
+        "image": "madness_blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта зменшено з 1000 до 700 золота (загальну вартість зменшено з 5200 до 4900 золота)"
+          },
+          {
+            "parameter": "bonus_damage",
+            "note": "Бонус до шкоди зменшено з 48 до 38"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус до броні зменшено з 7 до 6"
+          },
+          {
+            "parameter": "damage_return_passive",
+            "note": "Damage Return: пасивне повернення шкоди ослаблено з 20 + 20% до 10 + 15%"
+          },
+          {
+            "parameter": "attack_speed_active",
+            "note": "Berserk Return: бонус до швидкості атаки зменшено зі 110 до 100"
+          },
+          {
+            "parameter": "movespeed_active",
+            "note": "Berserk Return: бонус до швидкості пересування зменшено з 30 до 25"
+          },
+          {
+            "parameter": "damage_return_active",
+            "note": "Berserk Return: повернення шкоди при активації збільшено з 50% до 85%"
+          },
+          {
+            "parameter": "minus_armor_active",
+            "note": "Berserk Return: зниження власної броні ослаблено з 7 до 6"
+          }
+        ]
+      },
+      {
+        "item_id": "item_magic_wand",
+        "name": "Magic Wand",
+        "image": "magic_wand.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта незмінна (150 золота). Загальну вартість збільшено з 450 до 460 золота (Iron Branch подорожчав з 50 до 55 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mekansm",
+        "name": "Mekansm",
+        "image": "mekansm.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус до броні збільшено з 4 до 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "Meteor Hammer",
+        "image": "meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "stun_duration",
+            "note": "Meteor Hammer: тривалість оглушення збільшено з 0,5 до 0,75 секунди"
+          }
+        ]
+      },
+      {
+        "item_id": "item_octarine_core",
+        "name": "Octarine Core",
+        "image": "octarine_core.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта збільшено з 0 до 200 золота (загальну вартість збільшено з 4800 до 4900 золота, Tiara of Selemene подешевшав з 1800 до 1700 золота)"
+          },
+          {
+            "parameter": "ItemDisassembleRule",
+            "note": "Предмет більше не можна розібрати"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pavise",
+        "name": "Pavise",
+        "image": "pavise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус до броні збільшено з 2 до 3"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pers",
+        "name": "Perseverance",
+        "image": "pers.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "ItemDisassembleRule",
+            "note": "Тепер предмет можна розібрати"
+          }
+        ]
+      },
+      {
+        "item_id": "item_phase_boots",
+        "name": "Phase Boots",
+        "image": "phase_boots.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilitySharedCooldown",
+            "note": "Тепер має спільну перезарядку з Glimmer Boots"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pipe",
+        "name": "Pipe of Insight",
+        "image": "pipe.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта збільшено з 700 до 800 золота (загальна вартість незмінна — 3725 золота, Ring of Tarrasque подешевшав з 1800 до 1700 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_radiance_custom",
+        "name": "Radiance",
+        "image": "radiance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "evasion",
+            "note": "Бонус до ухилення збільшено з 15% до 25%"
+          },
+          {
+            "parameter": "blind_pct",
+            "note": "Burn: більше не змушує ворогів хибити в 15% випадків"
+          },
+          {
+            "parameter": "base_damage",
+            "note": "Burn: базову шкоду за секунду зменшено з 50 до 35"
+          }
+        ]
+      },
+      {
+        "item_id": "item_refresher_custom",
+        "name": "Refresher Orb",
+        "image": "refresher.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібно не 2 Cornucopia (по 1200 золота), а Ring of Tarrasque (1700 золота) і Tiara of Selemene (1700 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта зменшено з 2600 до 1600 золота (загальна вартість незмінна — 5000 золота)"
+          },
+          {
+            "parameter": "damage",
+            "note": "Більше не дає 20 до шкоди"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Reset: перезарядку збільшено зі 180 до 210 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_revenants_brooch",
+        "name": "Revenant's Brooch",
+        "image": "revenants_brooch.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта збільшено з 600 до 650 золота (загальна вартість незмінна — 3300 золота, Voodoo Mask подешевшав з 700 до 650 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_sheepstick",
+        "name": "Scythe of Vyse",
+        "image": "sheepstick.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта збільшено з 600 до 700 золота (загальна вартість незмінна — 5200 золота, Tiara of Selemene подешевшав з 1800 до 1700 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "Shiva's Guard",
+        "image": "shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "illusion_multiplier_pct",
+            "note": "Arctic Blast: шкоду по ілюзіях зменшено зі 150% до 100%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_spirit_vessel_custom",
+        "name": "Spirit Vessel",
+        "image": "spirit_vessel_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта незмінна (1800 золота). Загальну вартість зменшено з 4080 до 4030 золота (Voodoo Mask подешевшав з 700 до 650 золота)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_veil_of_discord",
+        "name": "Veil of Discord",
+        "image": "veil_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібно не Helm of Iron Will (975 золота) і Crown (450 золота), а Ring of Health (700 золота), Chainmail (550 золота) і Circlet (155 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта збільшено з 300 до 320 золота (загальна вартість незмінна — 1725 золота)"
+          },
+          {
+            "parameter": "bonus_hp_regen",
+            "note": "Бонус до відновлення здоров'я збільшено з 4 до 4,5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_wind_waker",
+        "name": "Wind Waker",
+        "image": "wind_waker.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Cyclone: перезарядку зменшено з 20 до 19 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_wraith_band",
+        "name": "Wraith Band",
+        "image": "wraith_band.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_attack_speed",
+            "note": "Бонус до швидкості атаки збільшено з 5 до 6"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_ash_legion_shield",
+        "name": "Ash Legion Shield",
+        "image": "ash_legion_shield.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 1,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 1-го розряду",
+        "description": "Активне: Shield Wall. Зменшує швидкість пересування власника на 12, а натомість дає бар'єр, що поглинає 140 фізичної шкоди, всім істотам, підконтрольним союзникам, у радіусі 800. Тривалість: 6 сек.",
+        "description_sections": [
+          {
+            "title": "Активне: Shield Wall",
+            "text": "Зменшує швидкість пересування власника на 12, а натомість дає бар'єр, що поглинає 140 фізичної шкоди, всім істотам, підконтрольним союзникам, у радіусі 800. Тривалість: 6 сек"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_dezun_bloodrite",
+        "name": "Dezun Bloodrite",
+        "image": "dezun_bloodrite.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 5,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 5-го розряду",
+        "description": "Пасивне: Blood Invocation. Чари мають на 16% більшу область дії, але тепер додатково вартують здоров'я обсягом 35% від витрати мани.",
+        "description_sections": [
+          {
+            "title": "Пасивне: Blood Invocation",
+            "text": "Чари мають на 16% більшу область дії, але тепер додатково вартують здоров'я обсягом 35% від витрати мани"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_flayers_bota",
+        "name": "Flayer's Bota",
+        "image": "flayers_bota.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 4-го розряду",
+        "description": "Активне: Bloodthirst. Здобуває 15% базової шкоди та 30 швидкості атаки на 6 с. Пасивне: Bloodrush. Ворожі герої, що помирають в радіусі 1200, скидають перезарядку Bloodthirst.",
+        "description_sections": [
+          {
+            "title": "Активне: Bloodthirst",
+            "text": "Здобуває 15% базової шкоди та 30 швидкості атаки на 6 с"
+          },
+          {
+            "title": "Пасивне: Bloodrush",
+            "text": "Ворожі герої, що помирають в радіусі 1200, скидають перезарядку Bloodthirst"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_idol_of_screeauk",
+        "name": "Idol of Scree'Auk",
+        "image": "idol_of_screeauk.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 4-го розряду",
+        "description": "Активне: False Flight. Здобуває 50% опору сповільненню, фазисний рух та 25% ухилення на 5 с.",
+        "description_sections": [
+          {
+            "title": "Активне: False Flight",
+            "text": "Здобуває 50% опору сповільненню, фазисний рух та 25% ухилення на 5 с"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_metamorphic_mandible",
+        "name": "Metamorphic Mandible",
+        "image": "metamorphic_mandible.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 4-го розряду",
+        "description": "Активне: Pupate. Набуває форми комахи на 4 с, що збільшує опір магії на 35%, а швидкість пересування — на 15%. У формі комахи розмір зменшується і броня також зменшується на 45%.",
+        "description_sections": [
+          {
+            "title": "Активне: Pupate",
+            "text": "Набуває форми комахи на 4 с, що збільшує опір магії на 35%, а швидкість пересування — на 15%. У формі комахи розмір зменшується і броня також зменшується на 45%"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_riftshadow_prism",
+        "name": "Riftshadow Prism",
+        "image": "riftshadow_prism.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 5,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 5-го розряду",
+        "description": "Активне: Refract. Витрачає 10% поточного здоров'я для створення ілюзії з повним здоров'ям, що існуватиме 20 с. Ілюзія завдає 50% вихідної шкоди й зазнає 240% вхідної шкоди.",
+        "description_sections": [
+          {
+            "title": "Активне: Refract",
+            "text": "Витрачає 10% поточного здоров'я для створення ілюзії з повним здоров'ям, що існуватиме 20 с. Ілюзія завдає 50% вихідної шкоди й зазнає 240% вхідної шкоди"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_weighted_dice",
+        "name": "Weighted Dice",
+        "image": "weighted_dice.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 1,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 1-го розряду",
+        "description": "Пасивне: Loaded. Під час обрахунку базової шкоди чи нагороди за кріпа з останнього удару значення випадає кілька разів (2) і береться найвищий результат.",
+        "description_sections": [
+          {
+            "title": "Пасивне: Loaded",
+            "text": "Під час обрахунку базової шкоди чи нагороди за кріпа з останнього удару значення випадає кілька разів (2) і береться найвищий результат"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_arcane_ring_custom",
+        "name": "Arcane Ring",
+        "image": "arcane_ring.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 2 на 6"
+          },
+          {
+            "parameter": "mana_restore",
+            "note": "Replenish Mana: відновлення мани збільшено з 30% до 35%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_book_of_shadows_custom",
+        "name": "Book of Shadows",
+        "image": "book_of_shadows.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Shadows: перезарядку збільшено з 24 до 25 секунд"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_ceremonial_robe",
+        "name": "Ceremonial Robe",
+        "image": "ceremonial_robe.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 6 на 3"
+          },
+          {
+            "parameter": "status_resistance",
+            "note": "Ceremonial Aura: зниження опору ефектам ослаблено з 15% до 8%"
+          },
+          {
+            "parameter": "magic_resistance",
+            "note": "Ceremonial Aura: зниження опору магії ослаблено з 15% до 8%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_cloak_of_flames",
+        "name": "Cloak of Flames",
+        "image": "cloak_of_flames.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 3 на 4"
+          },
+          {
+            "parameter": "damage",
+            "note": "Immolate: шкоду за секунду збільшено з 45 до 60"
+          },
+          {
+            "parameter": "radius",
+            "note": "Immolate: радіус збільшено з 375 до 450"
+          },
+          {
+            "parameter": "damage_illusions",
+            "note": "Immolate: шкоду за секунду в ілюзій збільшено з 30 до 60"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_defiant_shell",
+        "name": "Defiant Shell",
+        "image": "defiant_shell.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 3 на 2"
+          },
+          {
+            "parameter": "counter_damage",
+            "note": "Reciprocity: атака у відповідь тепер завдає 80% від звичайної шкоди атаки"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_duelist_gloves",
+        "name": "Duelist Gloves",
+        "image": "duelist_gloves.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 1,
+        "neutral_item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "Більше не дає 12 до шкоди"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_force_boots_custom",
+        "name": "Force Boots",
+        "image": "force_boots.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 5 на 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "crit_multiplier",
+            "note": "Crushing Blow: критичну шкоду зменшено з 150% до 140%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giants_ring",
+        "name": "Giant's Ring",
+        "image": "giants_ring.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 5 на 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Pollinate: перезарядку зменшено з 45 до 25 секунд"
+          },
+          {
+            "parameter": "hp_damage",
+            "note": "Pollinate: сумарну шкоду від максимального здоров'я зменшено з 12% до 9%"
+          },
+          {
+            "parameter": "debuff_duration",
+            "note": "Pollinate: тривалість зменшено з 12 до 9 секунд"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_rattlecage",
+        "name": "Rattlecage",
+        "image": "rattlecage.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "projectile_damage",
+            "note": "Reverberate: шкоду снаряда зменшено з 125 до 110"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_searing_signet",
+        "name": "Searing Signet",
+        "image": "searing_signet.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "creep_penalty",
+            "note": "Burn Through: тепер завдає на 50% менше шкоди істотам, які не є героями"
+          },
+          {
+            "parameter": "burn_damage",
+            "note": "Burn Through: шкоду від горіння збільшено з 72 до 90"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_spell_prism",
+        "name": "Spell Prism",
+        "image": "spell_prism.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "bonus_cooldown",
+            "note": "Cooldown Reduction: зменшення перезарядки ослаблено з 10% до 8%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_spider_legs",
+        "name": "Spider Legs",
+        "image": "spider_legs.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 4 на 5"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_tome_of_aghanim_custom",
+        "name": "Tome of Aghanim",
+        "image": "tome_of_aghanim.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 6 на 4"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_unrelenting_eye",
+        "name": "Unrelenting Eye",
+        "image": "unrelenting_eye.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 5 на 3"
+          },
+          {
+            "parameter": "hero_check_radius",
+            "note": "Relentless: бонус тепер зменшується за кожного ворожого героя в межах дальності атаки власника, а не у фіксованому радіусі 600"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "keeper_of_the_light",
+      "name": "keeper of the light",
+      "image": "images/heroes/heroesPreview/keeper_of_the_light.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "keeper_of_the_light_illuminate_custom",
+          "name": "Illuminate",
+          "image": "keeper_of_the_light_illuminate.webp",
+          "description": [
+            "ПЕРЕРИВНА — створює перед собою хвилю світлої енергії, яка поступово набирає силу. Випущена хвиля завдає шкоди та тимчасово відкриває туман війни. Чим довше хвиля створювалася, тим більше шкоди вона завдасть. Макс. шкода: 185 / 290 / 395 / 500. Макс. тривалість: 3. Ширина: 400. Дальність: 1550. Перезарядка: 13. Дальність застосування: 1800. Витрати мани: 100 / 125 / 150 / 175."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "keeper_of_the_light_blinding_light_custom",
+          "name": "Blinding Light",
+          "image": "keeper_of_the_light_blinding_light.webp",
+          "description": [
+            "Створює спалах сліпучого світла у вказаній зоні, відштовхуючи та осліплюючи всіх ворогів, змушуючи їх промахуватися при атаках. Відштовхує на відстань 400 за 0,6 сек. Шанс промаху: 45%. Тривалість: 4. Радіус: 425 / 450 / 475 / 500. Шкода: 90 / 140 / 190 / 240. Перезарядка: 24 / 21 / 18 / 15. Дальність застосування: 400 / 500 / 600 / 700. Витрати мани: 120 / 130 / 140 / 150."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "keeper_of_the_light_chakra_magic_custom",
+          "name": "Chakra Magic",
+          "image": "keeper_of_the_light_chakra_magic.webp",
+          "description": [
+            "Відновлює ману та зменшує перезарядку всіх основних здібностей, що перебувають на перезарядці. Діє на власника на 30% сильніше. Відновлення мани: 90 / 160 / 230 / 300. Зменшення перезарядки: 3 / 4 / 5 / 6. Перезарядка: 18 / 16 / 14 / 12. Дальність застосування: 900."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "keeper_of_the_light_spirit_form_custom",
+          "name": "Spirit Form",
+          "image": "keeper_of_the_light_spirit_form.webp",
+          "description": [
+            "Перетворює тіло героя на чисте світло, що дає йому збільшену швидкість пересування та дальність заклять. Здібність Illuminate у цьому образі застосовується окремим духом і лікує союзників. Тривалість: 40 / 45 / 50. Дод. швидкість пересування: 10% / 15% / 20%. Бонус до дальності заклять: 100 / 200 / 300. Лікування від Illuminate: 70%. Перезарядка: 85 / 80 / 75. Витрати мани: 75 / 125 / 175."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_1",
+            "image": "keeper_of_the_light_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Збільшення Шкоди Blinding Light і Blinding Dark: 120%/180% від Сили"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди Blinding Light і Blinding Dark: 120%/180% від Сили"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_2",
+            "image": "keeper_of_the_light_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Spirit Form.</font> Нова Пасивна Здібність: Dark Form. Всі здібності та предмети споживають здоров'я, а не ману. Супротивники поруч сповільнюються, а їх дальність заклять зменшується. Радіус: 900. Сповільнення Руху: 10%/15%/20%. Зменшення Дальності Заклять: 100/200/300"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Spirit Form. </font></b>\n\nНова Пасивна Здібність: Dark Form\n\nВсі здібності та предмети споживають здоров'я, а не ману. Супротивники поруч сповільнюються, а їх дальність заклять зменшується.\n\nРадіус: 900\nСповільнення Руху: 10%/15%/20%\nЗменшення Дальності Заклять: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_3",
+            "image": "keeper_of_the_light_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Chakra Magic.</font> Нова Активна Здібність: Dark Magic. Віднімає ману та збільшує час перезарядки всіх основних здібностей супротивника. Віднімає Ману: 100/200. Збільшення Перезарядок: 2/3 сек. Час Перезарядки: 15 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Chakra Magic. </font></b>\n\nНова Активна Здібність: Dark Magic\n\nВіднімає ману та збільшує час перезарядки всіх основних здібностей супротивника.\n\nВіднімає Ману: 100/200\nЗбільшення Перезарядок: 2/3 сек.\nЧас Перезарядки: 15 сек."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_4",
+            "image": "keeper_of_the_light_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Сила: 9/18"
+              }
+            ],
+            "talent_text": "Сила: 9/18"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_5",
+            "image": "keeper_of_the_light_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Dark Magic завдає Чистої Шкоди: 200 + 120%/240% від Сили"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 3»"
+              }
+            ],
+            "talent_text": "Dark Magic завдає Чистої Шкоди: 200 + 120%/240% від Сили"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_6",
+            "image": "keeper_of_the_light_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Blinding Light.</font> Нова Активна Здібність: Blinding Dark. Створює спалах темряви в обраній зоні, оглушуючи всіх ворогів. Радіус: 500. Тривалість Оглушення: 1,3/2,6 сек. Витрати Мани: 150. Час Перезарядки: 15 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Blinding Light. </font></b>\n\nНова Активна Здібність: Blinding Dark\n\nСтворює спалах темряви в обраній зоні, оглушуючи всіх ворогів.\n\nРадіус: 500\nТривалість Оглушення: 1.3/2.6 сек.\nВитрати Мани: 150\nЧас Перезарядки: 15 сек."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_7",
+            "image": "keeper_of_the_light_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Illuminate.</font> Нова Активна Здібність: Obscure. Створює за собою хвилю темної енергії, яка поступово набирає силу. Випущена хвиля завдає чистої шкоди і тимчасово відкриває туман війни. Чим довше формувалася хвиля, тим більше шкоди вона завдасть. Переміщує героя разом з хвилею. Макс. Шкода: 800. Макс. Тривалість: 2 сек. Ширина: 400. Відстань: 1550. Витрати Мани: 150. Час Перезарядки: 8 сек"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Не можна вивчити, якщо вже вивчено «Талант 1» з гілки Спритності"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Illuminate. </font></b>\n\nНова Активна Здібність: Obscure\n\nСтворює за собою хвилю темної енергії, яка поступово набирає силу. Випущена хвиля завдає чистої шкоди і тимчасово відкриває туман війни. Чим довше формувалася хвиля, тим більше шкоди вона завдасть. Переміщує героя разом з хвилею.\n\nМакс. Шкода: 800\nМакс. Тривалість: 2 сек.\nШирина: 400\nВідстань: 1550\nВитрати Мани: 150\nЧас Перезарядки: 8 сек."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_8",
+            "image": "keeper_of_the_light_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Illuminate та Obscure.</font> Нова Активна Здібність: Light Illusion. Викликає невразливу ілюзію, яка здійснює Атаки Героя з таким самим радіусом атаки. Герой не може атакувати, доки дух живий. У першу чергу атакує героїв. Тривалість Ілюзії: 15 сек. Витрати Мани: 50. Час Перезарядки: 12 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Illuminate та Obscure. </font></b>\n\nНова Активна Здібність: Light Illusion\n\nВикликає невразливу ілюзію, яка здійснює Атаки Героя з таким самим радіусом атаки. Герой не може атакувати, доки дух живий. У першу чергу атакує героїв.\n\nТривалість Ілюзії: 15 сек.\nВитрати Мани: 50\nЧас Перезарядки: 12 сек."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_9",
+            "image": "keeper_of_the_light_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Light Illusion можна активувати повторно. Дух здійснює ривок до точки застосування, вибухає та завдає Магічної Шкоди: 150%/250%/350% від Спритності. Дальність Застосування: 1200. Радіус Вибуху: 300"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 1»"
+              }
+            ],
+            "talent_text": "Light Illusion можна активувати повторно.\n\nДух здійснює ривок до точки застосування, вибухає та завдає Магічної Шкоди: 150%/250%/350% від Спритності\n\nДальність Застосування: 1200\nРадіус Вибуху: 300"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_10",
+            "image": "keeper_of_the_light_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Зменшення Часу Перезарядки Light Illusion: 1 сек. за кожні 10% Ухилення. Ухилення: 7%/14%/21%. Здоров'я: 100/200/300"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 2»"
+              }
+            ],
+            "talent_text": "Зменшення Часу Перезарядки Light Illusion: 1 сек. за кожні 10% Ухилення\n\nУхилення: 7%/14%/21%\n\nЗдоров'я: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_11",
+            "image": "keeper_of_the_light_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Нова Активна Здібність: Will-O-Wisp. Викликає у вибрану область блудний вогник, який мерехтить з певним інтервалом. В активному стані він гіпнотизує всіх ворогів поблизу та змушує їх рухатися до нього. Радіус: 725. Атак для Знищення: 7. Магічна Шкода: 85. Витрати Мани: 150. Час Перезарядки: 60 сек"
+              }
+            ],
+            "talent_text": "Нова Активна Здібність: Will-O-Wisp\n\nВикликає у вибрану область блудний вогник, який мерехтить з певним інтервалом. В активному стані він гіпнотизує всіх ворогів поблизу та змушує їх рухатися до нього.\n\nРадіус: 725\nАтак для Знищення: 7\nМагічна Шкода: 85\nВитрати Мани: 150\nЧас Перезарядки: 60 сек."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_12",
+            "image": "keeper_of_the_light_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Will-O-Wisp здійснює 1/2 атаки по всім ураженим цілям"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 4»"
+              }
+            ],
+            "talent_text": "Will-O-Wisp здійснює 1/2 атаки по всім ураженим цілям."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_13",
+            "image": "keeper_of_the_light_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Збільшення Атак для Знищення Will-o-Wisp: 1/2/3. Зменшення Часу Перезарядки Will-o-Wisp: 10/20/30 сек"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 5»"
+              }
+            ],
+            "talent_text": "Збільшення Атак для Знищення Will-o-Wisp: 1/2/3\n\nЗменшення Часу Перезарядки Will-o-Wisp: 10/20/30 сек."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_14",
+            "image": "keeper_of_the_light_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Зменшення Тривалості Spirit Form: 25 сек.</font> Spirit Form надає Безперешкодний Огляд у радіусі 1800. Додаткова Дальність Атаки та Швидкість Снарядів під час Spirit Form: 250"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Зменшення Тривалості Spirit Form: 25 с. </font></b>\n\nSpirit Form надає Безперешкодний Огляд у радіусі 1800.\n\nДодаткова Дальність Атаки та Швидкість Снарядів під час Spirit Form: 250"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_15",
+            "image": "keeper_of_the_light_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Illuminate: 5%/10%/15% від максимального запасу мани"
+              }
+            ],
+            "talent_text": "Збільшення шкоди Illuminate: 5%/10%/15% від максимального запасу мани"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_16",
+            "image": "keeper_of_the_light_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Нова Активна Здібність: Solar Bind. Зменшує магічний опір вибраного ворога і сповільнює його сильніше, чим більше він рухається. Тривалість: 6 сек. Сповільнення за 100 одиниць: 10%. Зменшення Магічного Опору: 10%/20%/30%. Витрати Мани: 150. Час Перезарядки: 20 сек"
+              }
+            ],
+            "talent_text": "Нова Активна Здібність: Solar Bind\n\nЗменшує магічний опір вибраного ворога і сповільнює його сильніше, чим більше він рухається.\n\nТривалість: 6 сек.\nСповільнення за 100 одиниць: 10%\nЗменшення Магічного Опору: 10%/20%/30%\nВитрати Мани: 150\nЧас Перезарядки: 20 сек."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_17",
+            "image": "keeper_of_the_light_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Мана героя не може опуститися нижче 75. Мана: 100/300/500"
+              }
+            ],
+            "talent_text": "Мана героя не може опуститися нижче 75.\n\nМана: 100/300/500"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_18",
+            "image": "keeper_of_the_light_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Збільшення шансу промаху Blinding Light: 25%/50%. Збільшення шкоди Blinding Light: 90/180"
+              }
+            ],
+            "talent_text": "Збільшення шансу промаху Blinding Light: 25%/50%\n\nЗбільшення шкоди Blinding Light: 90/180"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_20",
+            "image": "keeper_of_the_light_20.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Spirit Form стає Пасивною Здібністю. Швидкість Пересування: 10%"
+              }
+            ],
+            "talent_text": "Spirit Form стає Пасивною Здібністю.\n\nШвидкість Пересування: 10%"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_19",
+            "image": "keeper_of_the_light_19.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Збільшення Лікування від Illuminate: 30%"
+              }
+            ],
+            "talent_text": "Збільшення Лікування від Illuminate: 30%"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_21",
+            "image": "keeper_of_the_light_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Illuminate заряджається в 2 рази швидше"
+              }
+            ],
+            "talent_text": "Illuminate заряджається в 2 рази швидше."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tinker",
+      "name": "tinker",
+      "image": "images/heroes/heroesPreview/tinker.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "tinker_laser_custom",
+          "name": "Laser",
+          "image": "tinker_laser.webp",
+          "description": [
+            "Випускає промінь сконцентрованої енергії, який завдає шкоди цілі та осліплює її, через що вона промахується при кожній атаці. Шанс промаху: 100%. Тривалість осліплення: 3 / 3,5 / 4 / 4,5. Шкода: 75 / 150 / 225 / 300. Перезарядка: 19 / 18 / 17 / 16. Дальність застосування: 600. Витрати мани: 95 / 105 / 115 / 125."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "tinker_march_of_the_machines_custom",
+          "name": "March of the Machines",
+          "image": "tinker_march_of_the_machines.webp",
+          "description": [
+            "Закликає армію механічних слуг, які атакують ворогів у зоні навколо героя. Радіус: 900. Тривалість: 6. Шкода: 13 / 22 / 31 / 40. Перезарядка: 35 / 33 / 31 / 29. Дальність застосування: 300. Витрати мани: 100 / 120 / 140 / 160."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "tinker_defense_matrix_custom",
+          "name": "Defense Matrix",
+          "image": "tinker_defense_matrix.webp",
+          "description": [
+            "Створює навколо союзної істоти бар'єр, який поглинає шкоду всіх типів і дає опір ефектам. Здоров'я бар'єра: 80 / 160 / 240 / 320. Опір ефектам: 15% / 20% / 25% / 30%. Тривалість: 15. Перезарядка: 20. Дальність застосування: 700. Витрати мани: 90 / 105 / 120 / 135."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "tinker_rearm_custom",
+          "name": "Rearm",
+          "image": "tinker_rearm.webp",
+          "description": [
+            "ПЕРЕРИВНА — скидає перезарядку здібностей героя. Перезарядка: 7 / 6 / 5. Витрати мани: 100 / 150 / 200."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tinker_1",
+            "image": "tinker_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Rearm.</font> Усі здібності та предмети витрачають здоров'я, а не ману. Зменшення Часу Перезарядки Предметів: 1% за кожні 10 Сили. Максимальний бонус досягається при 600 Сили"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Rearm. </font></b>\n\nУсі здібності та предмети витрачають здоров’я, а не ману.\n\nЗменшення Часу Перезарядки Предметів: 1% за кожні 10 Сили\n\nМаксимальний бонус досягається при 600 Сили."
+          },
+          {
+            "talent_id": "modifier_tinker_2",
+            "image": "tinker_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Зменшення Часу Перезарядки March of the Machines: 9/14/19 сек. Збільшення Тривалості March of the Machines: 1/2/3 сек"
+              }
+            ],
+            "talent_text": "Зменшення Часу Перезарядки March of the Machines: 9/14/19 с\n\nЗбільшення Тривалості March of the Machines: 1/2/3 с"
+          },
+          {
+            "talent_id": "modifier_tinker_3",
+            "image": "tinker_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Збільшення Шкоди March of the Machines: 10%/20%/30% від Сили"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди March of the Machines: 10%/20%/30% від Сили"
+          },
+          {
+            "talent_id": "modifier_tinker_4",
+            "image": "tinker_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "March of the Machines об'єднуються в мега-мехів. Їхня кількість зменшується, а розмір і шкода збільшуються у 5 разів"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 1»"
+              }
+            ],
+            "talent_text": "March of the Machines об’єднуються в мега-мехів. Їхня кількість зменшується, а розмір і шкода збільшуються у 5 разів."
+          },
+          {
+            "talent_id": "modifier_tinker_5",
+            "image": "tinker_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Вампіризм Закляттями: 6%/12%/18%"
+              }
+            ],
+            "talent_text": "Вампіризм Закляттями: 6%/12%/18%"
+          },
+          {
+            "talent_id": "modifier_tinker_6",
+            "image": "tinker_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Сила: 0/12. 1% Шкоди від Заклять за кожні 12 Сили. <font color='#e03e2e'>Максимальний бонус досягається при 600 Сили</font>"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 4»"
+              }
+            ],
+            "talent_text": "Сила: 0/12\n\n1% Шкоди від Заклять за кожні 12 Сили\n\n<b><font color='#ff0000'> Максимальний бонус досягається при 600 Сили. </font></b>"
+          },
+          {
+            "talent_id": "modifier_tinker_7",
+            "image": "tinker_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Rearm.</font> Нова активна здатність: Keen Conveyance. Зменшує час перезарядки предметів на 1 секунду. Телепортує героя на відстань до 600 у вибраному напрямку. Витрати мани: 250. Час перезарядки: 15 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Rearm. </font></b>\n\nНова активна здатність: Keen Conveyance\n\nЗменшує час перезарядки предметів на 1 секунду. Телепортує героя на відстань до 600 у вибраному напрямку.\n\nВитрати мани: 250\nЧас перезарядки: 15 с"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_tinker_8",
+            "image": "tinker_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Defense Matrix збільшує Базову Шкоду: 20/40/60. Ефект зберігається 8 сек після завершення бар'єра"
+              }
+            ],
+            "talent_text": "Defense Matrix збільшує Базову Шкоду: 20/40/60\n\nЕфект зберігається 8 с після завершення бар’єра."
+          },
+          {
+            "talent_id": "modifier_tinker_11",
+            "image": "tinker_11.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Коли Defense Matrix закінчується, герой здійснює Атаку по всіх цілях у радіусі атаки"
+              }
+            ],
+            "talent_text": "Коли Defense Matrix закінчується, герой здійснює Атаку по всіх цілях у радіусі атаки."
+          },
+          {
+            "talent_id": "modifier_tinker_10",
+            "image": "tinker_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Збільшення Бар'єра Defense Matrix: 150%/250%/350% від Спритності"
+              }
+            ],
+            "talent_text": "Збільшення Бар’єра Defense Matrix: 150%/250%/350% від Спритності"
+          },
+          {
+            "talent_id": "modifier_tinker_9",
+            "image": "tinker_9.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Збільшення Швидкості Снарядів: 300/600/900. Зменшення Витрат і Втрати Мани: 15%/30%/45%"
+              }
+            ],
+            "talent_text": "Збільшення Швидкості Снарядів: 300/600/900\n\nЗменшення Витрат і Втрати Мани: 15%/30%/45%"
+          },
+          {
+            "talent_id": "modifier_tinker_12",
+            "image": "tinker_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Коли бар'єр від здібності Defense Matrix повністю вичерпується на її власнику, він миттєво переміщується у випадковому напрямку перед собою на відстань 350. Зменшення затримки перед застосуванням здібностей: 50%"
+              }
+            ],
+            "talent_text": "Коли бар'єр від здібності Defense Matrix повністю вичерпується на її власнику, він миттєво переміщується у випадковому напрямку перед собою на відстань 350.\n\nЗменшення затримки перед застосуванням здібностей: 50%"
+          },
+          {
+            "talent_id": "modifier_tinker_13",
+            "image": "tinker_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Додає альтернативне застосування Defense Matrix. Коли бар'єр від здібності Defense Matrix повністю вичерпується на її власнику, він миттєво переміщується у випадковому напрямку позаду себе на відстань 350. Спритність: 15/30"
+              }
+            ],
+            "talent_text": "Додає альтернативне застосування Defense Matrix.\n\nКоли бар'єр від здібності Defense Matrix повністю вичерпується на її власнику, він миттєво переміщується у випадковому напрямку позаду себе на відстань 350.\n\nСпритність: 15/30"
+          },
+          {
+            "talent_id": "modifier_tinker_21",
+            "image": "tinker_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Зменшення Часу Перезарядки Rearm: 2 сек. Зменшення Часу Використання Rearm: 0,75 сек"
+              }
+            ],
+            "talent_text": "Зменшення Часу Перезарядки Rearm: 2 сек.\n\nЗменшення Часу Використання Rearm: 0.75 сек."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tinker_15",
+            "image": "tinker_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає March of the Machines.</font> Нова Активна Здібність: Heat-Seeking Missile. Запускає дві ракети у найближчих видимих ворогів, завдаючи магічної шкоди. Першочергово націлюється на героїв. Радіус Пошуку: 1500. Кількість Цілей: 2. Шкода від Ракети: 100/200/300. Витрати Мани: 125. Час Перезарядки: 15 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає March of the Machines. </font></b>\n\nНова Активна Здібність: Heat-Seeking Missile\n\nЗапускає дві ракети у найближчих видимих ворогів, завдаючи магічної шкоди. Першочергово націлюється на героїв.\n\nРадіус Пошуку: 1500\nКількість Цілей: 2\nШкода від Ракети: 100/200/300\nВитрати Мани: 125\nЧас Перезарядки: 15 сек."
+          },
+          {
+            "talent_id": "modifier_tinker_16",
+            "image": "tinker_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Heat-Seeking Missile Оглушує ворогів: 0,5 сек. Збільшення шкоди Heat-Seeking Missile: 70% від Інтелекту"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 1»"
+              }
+            ],
+            "talent_text": "Heat-Seeking Missile Оглушує ворогів: 0.5 с\n\nЗбільшення шкоди Heat-Seeking Missile: 70% від Інтелекту"
+          },
+          {
+            "talent_id": "modifier_tinker_19",
+            "image": "tinker_19.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Laser спрацьовує на всіх ворогів у Радіусі: 300"
+              }
+            ],
+            "talent_text": "Laser спрацьовує на всіх ворогів у Радіусі: 300"
+          },
+          {
+            "talent_id": "modifier_tinker_18",
+            "image": "tinker_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Збільшення Кількості Цілей Heat-Seeking Missile: 2. Ушкодження від Заклять: 5%/15%/25%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 2»"
+              }
+            ],
+            "talent_text": "Збільшення Кількості Цілей Heat-Seeking Missile: 2\n\nУшкодження від Заклять: 5%/15%/25%"
+          },
+          {
+            "talent_id": "modifier_tinker_20",
+            "image": "tinker_20.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Laser зменшує розмір, а також поточне та максимальне здоров'я основної цілі: 3%/6%/9%. Ефекти від кількох застосувань складаються"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 3»"
+              }
+            ],
+            "talent_text": "Laser зменшує розмір, а також поточне та максимальне здоров'я основної цілі: 3%/6%/9%\n\nЕфекти від кількох застосувань складаються."
+          },
+          {
+            "talent_id": "modifier_tinker_17",
+            "image": "tinker_17.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Прибирає Defense Matrix.</font> Збільшення шкоди Laser: 175/350"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Потребує прокачування «Талант 5»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Defense Matrix. </font></b>\n\nЗбільшення шкоди Laser: 175/350"
+          },
+          {
+            "talent_id": "modifier_tinker_14",
+            "image": "tinker_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Нова Активна Здібність: Warp Flare. Герой випускає снаряд у ворога, який завдає магічного ушкодження, відсуває ціль від власника, накладає на неї оглушення та зменшує її дальність атаки і застосування заклять. Тривалість: 2 сек. Ушкодження: 300. Зменшення Дальності Атаки і Заклять: 40%. Витрати Мани: 80. Час Перезарядки: 15 сек"
+              }
+            ],
+            "talent_text": "Нова Активна Здібність: Warp Flare\n\nГерой випускає снаряд у ворога, який завдає магічного ушкодження, відсуває ціль від власника, накладає на неї оглушення та зменшує її дальність атаки і застосування заклять.\n\nТривалість: 2 сек.\nУшкодження: 300\nЗменшення Дальності Атаки і Заклять: 40%\nВитрати Мани: 80\nЧас Перезарядки: 15 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Збільшення золота Jinada ослаблено з 6/12 до 3/6"
+              },
+              {
+                "note": "Збільшення додаткової шкоди Jinada ослаблено з 75/150 до 50/100"
+              }
+            ],
+            "talent_text": "Jinada дає Золото за Крипів.\n\nЗбільшення Золота Jinada: 3/6\n\nЗбільшення Додаткової Шкоди Jinada: 50/100"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "bounty_hunter_6.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Збільшення відновлення здоров'я героя від Track ослаблено з 0,4%/0,8% до 0,3%/0,6%"
+              }
+            ],
+            "talent_text": "Track зменшує Відновлення Здоров'я ворогів: 20%/40%\n\nTrack підвищує Відновлення Здоров'я героя: 0.3%/0.6%\n\nВідновлення Здоров'я: 0.2%/0.4%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення додаткового золота союзникам від Track ослаблено з 60/120 до 30/60"
+              },
+              {
+                "note": "Збільшення шкоди Track ослаблено з 8%/16% до 4%/8%"
+              }
+            ],
+            "talent_text": "Збільшення Додаткового Золота Союзникам від Track: 30/60\n\nЗбільшення Шкоди Track: 4%/8%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Бонус до сили зменшено з 10/20/30 до 0/8/16"
+              }
+            ],
+            "talent_text": "Shuriken Toss завдає Атаку основній цілі.\n\nЗбільшення Тривалості Сповільнення від Shuriken Toss: 0/1/2 сек.\n\nСила: 0/8/16"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_8",
+            "image": "creep_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "parameter": "cleave",
+                "note": "Прорубну шкоду Path of Anti-Creep зменшено з 30% до 25%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Цей ланцюг талантів не працює якщо ви вже вивчили Path of Mega Creep або Path of Ranged Creep. </font></b>\n\nНова Пасивна Здібність: Path of Anti-Creep\n\nРодичі надихають і мотивують вас, атаки вражають відразу кілька цілей.\n\nПрорубуючий Втрата: 25%\n\n\nНова Пасивна Здатність: Mana Break\n\nКожна атака спалює ману мети і завдає їй шкоди, що дорівнює долі від спаленої мани.\n\nВтрата від Спаленої Мани: 50%\nСпалювання Мани за Атаку: 20/40/60"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "crystal_maiden",
+      "name": "crystal maiden",
+      "image": "images/heroes/heroesPreview/crystal_maiden.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду зменшено на 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "drow_ranger",
+      "name": "drow ranger",
+      "image": "images/heroes/heroesPreview/drow_ranger.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "drow_ranger_marksmanship_custom",
+          "name": "Marksmanship",
+          "image": "drow_ranger_marksmanship.webp",
+          "ability_notes": [
+            {
+              "parameter": "chance",
+              "note": "Шанс спрацювання зменшено з 20% до 15%"
+            },
+            {
+              "parameter": "bonus_damage",
+              "note": "Додаткову шкоду при спрацюванні збільшено з 25/35/45 до 50/70/90"
+            },
+            {
+              "parameter": "agility_multiplier",
+              "note": "Бонус до спритності зменшено з 17%/20%/23% до 8%/12%/16%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "faceless_void",
+      "name": "faceless void",
+      "image": "images/heroes/heroesPreview/faceless_void.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду зменшено на 3",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_shodo_sai_custom",
+          "name": "Shodo Sai",
+          "image": "kez_shodo_sai.webp",
+          "ability_notes": [
+            {
+              "parameter": "base_crit_pct",
+              "note": "Базову критичну шкоду позначки зменшено зі 120%/130%/140%/150% до 110%/120%/130%/140%"
+            },
+            {
+              "parameter": "parry_bonus_crit",
+              "note": "Додаткову критичну шкоду після парирування зменшено з 15%/30%/45%/60% до 10%/20%/30%/40%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 4",
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "MovementSpeed",
+          "note": "Швидкість пересування зменшено з 325 до 300",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lone_druid_3",
+            "image": "lone_druid_3.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Бонус до швидкості атаки Spirit Bear зменшено з 20/40 до 15/30"
+              }
+            ],
+            "talent_text": "Швидкість Атак Spirit Bear: 15/30\n\nТочність Атак Spirit Bear: 100%"
+          },
+          {
+            "talent_id": "modifier_lone_druid_2",
+            "image": "lone_druid_2.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Бонус до шкоди Spirit Bear зменшено з 30/60/90 до 20/40/60"
+              },
+              {
+                "note": "Бонус до швидкості пересування Spirit Bear зменшено з 30/60/90 до 20/40/60"
+              }
+            ],
+            "talent_text": "Шкода Spirit Bear: 20/40/60\n\nШвидкість Пересування Spirit Bear: 20/40/60"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_lunar_orbit_custom",
+          "name": "Lunar Orbit",
+          "image": "luna_lunar_orbit.webp",
+          "ability_notes": [
+            {
+              "parameter": "rotating_glaives_collision_damage",
+              "note": "Шкоду глефи при влучанні збільшено з 18%/22%/26%/30% до 28%/32%/36%/40% від шкоди власника"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "monkey_king",
+      "name": "monkey king",
+      "image": "images/heroes/heroesPreview/monkey_king.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базову швидкість атаки зменшено зі 100 до 95",
+          "icon": "/icon_base_attack_speed.png"
+        },
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Базову броню зменшено на 1",
+          "icon": "/icon_armor.png"
+        },
+        {
+          "parameter": "AttackRate",
+          "note": "Базовий час атаки зменшено з 1,7 до 1,6",
+          "icon": "/icon_attack_time.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Базову броню збільшено на 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Базову броню збільшено на 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "name": "pangolier",
+      "image": "images/heroes/heroesPreview/pangolier.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Швидкість пересування збільшено з 295 до 300",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_7",
+            "image": "phantom_assassin_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Збільшення шансу критичної атаки Coup De Grace змінено з 3% за кожні 30 сили на 1% за кожні 10 сили"
+              }
+            ],
+            "talent_text": "Збільшує шанс критичного удару Coup de Grace на 1% за кожні 10 Сили."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_phoenix_8",
+            "image": "phoenix_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Зменшення перезарядки Icarus Dive посилено з 8/12 до 8/13 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Видаляє Sun Ray. </font></b>\n\nIcarus Dive не витрачає Здоров'я.\n\nЗменшення Часу Перезарядки Icarus Dive: 8/13 сек.\n\nЗменшує Час Перезарядки Icarus Dive на 5 сек., якщо у героя більше ніж 300 Спритності."
+          },
+          {
+            "talent_id": "modifier_phoenix_9",
+            "image": "phoenix_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Тепер також збільшує дальність атаки під час Icarus Dive на 150/225/300"
+              }
+            ],
+            "talent_text": "Збільшення Дальності Атаки та Швидкості Атаки під час Icarus Dive: 150/225/300"
+          },
+          {
+            "talent_id": "modifier_phoenix_13",
+            "image": "phoenix_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Icarus Dive та Fire Spirits посилено з 20%/40% до 40%/60% від спритності"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди Icarus Dive і Fire Spirits: 40%/60% від Спритності"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базову швидкість атаки збільшено зі 100 до 110",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 1",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slardar_21",
+            "image": "slardar_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Збільшення отримуваної шкоди від заклять від Corrosive Haze ослаблено з 65% до 50%"
+              }
+            ],
+            "talent_text": "Corrosive Haze Збільшує Весь Отримуваний Магічний Урон: 50%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "slark",
+      "name": "slark",
+      "image": "images/heroes/heroesPreview/slark.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "slark_saltwater_shiv",
+          "name": "Saltwater Shiv",
+          "image": "slark_saltwater_shiv.webp",
+          "description": [
+            "Slark ріже ціль своїм солонуватим тесаком, викрадаючи частку її швидкості пересування, регенерації здоров'я та відновлення здоров'я. Цей ефект поєднується. Тривалість: 4 / 6 / 8 / 10. Викрадення відновлення за поєднання: 0,5% / 1% / 1,5% / 2%. Викрадення регенерації за поєднання: 2. Викрадення швидкості за поєднання: 2. Перезарядка: 10 / 8 / 6 / 4. Дальність застосування: 150. Витрати мани: 20."
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Нова базова здібність. Активна."
+            }
+          ]
+        },
+        {
+          "ability_id": "slark_essence_shift_custom",
+          "name": "Essence Shift",
+          "image": "slark_essence_shift.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Essence Shift тепер є вродженою здібністю й покращується разом із Shadow Dance"
+            },
+            {
+              "parameter": "duration",
+              "note": "Тривалість зменшено з 4/6/8/10 до 3/5/7/9 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Тепер герой спритності",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Базову силу зменшено з 22 до 20",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Приріст сили зменшено з 2,2 до 2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Базову спритність збільшено з 22 до 25",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Приріст спритності збільшено з 2,2 до 2,5",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Базовий інтелект зменшено з 22 до 20",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Приріст інтелекту зменшено з 2,2 до 2",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 2",
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базову швидкість атаки збільшено з 90 до 110",
+          "icon": "/icon_base_attack_speed.png"
+        },
+        {
+          "parameter": "AttackRate",
+          "note": "Базовий час атаки збільшено з 1,7 до 1,8",
+          "icon": "/icon_attack_time.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_spectre_6",
+            "image": "spectre_6.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус до швидкості атаки зменшено з 20/40 до 15/30"
+              }
+            ],
+            "talent_text": "Швидкість Атаки: 15/30\n\nЗдатність Desolate наносить у 2 рази більше втрат. Ілюзій героя більше немає цієї здібності."
+          },
+          {
+            "talent_id": "modifier_spectre_5",
+            "image": "spectre_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Підсилення шкоди від здібності Spectre Weakness ослаблено з 10%/15%/20% до 5%/10%/15%"
+              }
+            ],
+            "talent_text": "Нова Пасивна Здібність: Spectre Weakness\n\nПослаблює ворогів у області радіусом 600, через що вони отримують більше шкоди від заклять.\n\nПідсилення Шкоди від Здібностей: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_spectre_7",
+            "image": "spectre_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Збільшення відбиваної шкоди Dispersion ослаблено з 7% до 5%"
+              }
+            ],
+            "talent_text": "Збільшення Відбитої Шкоди Dispersion: 5%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tiny_3",
+            "image": "tiny_3.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Збільшення всієї отримуваної шкоди ослаблено з 4%/8%/12% до 2%/4%/6%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Збільшення Загальної Отримуваної Шкоди: 2%/4%/6% </font></b>\n\nЗбільшення Загальної Завданої Шкоди: 4%/8%/12%"
+          },
+          {
+            "talent_id": "modifier_tiny_7",
+            "image": "tiny_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Бонус до сили збільшено з 20 до 30"
+              }
+            ],
+            "talent_text": "Нова Активна Здатність: Tree Volley\n\nГерой вириває із землі поруч випадкові дерева і жбурляє їх у вказану область. Кожне кинуте дерево завдає противникам шкоди від атаки героя. Здатність працює навіть якщо поряд немає дерев.\n\nРадіус Області: 400\nІнтервал Бросків: 0.5 сек.\nМаксимальна Тривалість: 2.5 сек.\nЧас Перезарядки: 12 сек.\n\n\nСила: 30"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 1",
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "AttackRange",
+          "note": "Дальність атаки збільшено з 425 до 450",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

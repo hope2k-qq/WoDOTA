@@ -1,9 +1,54 @@
 {
-  "patch_number": "2,01",
-  "patch_name": "2,01",
-  "patch_timestamp": 1788823633,
+  "patch_number": "2.01",
+  "patch_name": "2.01",
+  "patch_timestamp": 1789228076,
   "general": {
-    "global_changes": []
+    "global_changes": [
+      {
+        "title": {
+          "ru": "Таланты",
+          "en": "Talents",
+          "uk": "Таланти"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Сила",
+          "en": "Strength",
+          "uk": "Сила"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_ru",
+        "old_raw_value": "Уменьшение Получаемого Урона от Атак: 5%/10%",
+        "new_raw_value": "Уменьшение Получаемого Урона от Атак: 4%/8%",
+        "note": {
+          "ru": "quickhp · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_en",
+        "old_raw_value": "Reducing Damage Received from Attacks: 5%/10%",
+        "new_raw_value": "Reducing Damage Received from Attacks: 4%/8%",
+        "note": {
+          "ru": "quickhp · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_uk",
+        "old_raw_value": "Зменшення Одержуваної шкоди від Атак: 5%/10%",
+        "new_raw_value": "Зменшення Одержуваної шкоди від Атак: 4%/8%",
+        "note": {
+          "ru": "quickhp · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      }
+    ]
   },
   "neutral_creeps": [
     {
@@ -23,12 +68,12 @@
             "en": "Walrus Kick",
             "uk": "Удар Моржа"
           },
-          "image": "pages/patches/standard_ability.webp",
+          "image": "abilities/tusk_walrus_kick.webp",
           "description": [
             {
-              "ru": "Пинает ближайшего врага в указанном направлении, замедляет передвижение. Дальность удара: 1000. Замедление передвижения: -40%. Длительность замедления: 2. Перезарядка: 40.",
-              "en": "Kicks the nearest enemy in the target direction, slowing their movement. Kick distance: 1000. Movement slow: -40%. Slow duration: 2. Cooldown: 40.",
-              "uk": "Б'є найближчого ворога в обраному напрямку, сповільнюючи його рух. Дальність удару: 1000. Сповільнення руху: -40%. Тривалість сповільнення: 2. Перезаряджання: 40."
+              "ru": "Пинает ближайшего врага в указанном направлении, замедляет передвижение. Дальность удара: 1000. Замедление передвижения: -40%. Длительность замедления: 2. Перезарядка: 40. Дальность применения: 150.",
+              "en": "Kicks the nearest enemy in the target direction, slowing their movement. Kick distance: 1000. Movement slow: -40%. Slow duration: 2. Cooldown: 40. Cast range: 150.",
+              "uk": "Б'є найближчого ворога в обраному напрямку, сповільнюючи його рух. Дальність удару: 1000. Сповільнення руху: -40%. Тривалість сповільнення: 2. Перезарядка: 40. Дальність застосування: 150."
             }
           ],
           "ability_notes": [
@@ -138,9 +183,9 @@
           "image": "abilities/necronomicon_warrior_mana_burn.webp",
           "description": [
             {
-              "ru": "Каждая атака сжигает ману цели и наносит ей урон, равный доле от сожжённой маны. Сжигание маны за атаку: 0.5%. Урон от сжигаемой маны: 50%.",
+              "ru": "Каждая атака сжигает ману цели и наносит ей урон, равный доле от сожжённой маны. Сжигание маны за атаку: 0,5%. Урон от сжигаемой маны: 50%.",
               "en": "Each attack burns the target's mana and deals damage based on a percentage of the mana burned. Mana burn per hit: 0.5%. Damage from mana burn: 50%.",
-              "uk": "Кожна атака спалює ману цілі та завдає шкоди, що дорівнює частці від спаленої мани. Спалення мани за атаку: 0.5%. Шкода від спаленої мани: 50%."
+              "uk": "Кожна атака спалює ману цілі та завдає шкоди, що дорівнює частці від спаленої мани. Спалення мани за атаку: 0,5%. Шкода від спаленої мани: 50%."
             }
           ],
           "ability_notes": [
@@ -193,9 +238,9 @@
           "image": "abilities/spawnlord_master_freeze.webp",
           "description": [
             {
-              "ru": "Следующая атака наложит на врага оцепенение, которое наносит урон от максимального здоровья жертвы. Длительность действия: 1.5. Урон: 4.5%. Перезарядка: 15.",
+              "ru": "Следующая атака наложит на врага оцепенение, которое наносит урон от максимального здоровья жертвы. Длительность действия: 1,5. Урон: 4,5%. Перезарядка: 15.",
               "en": "The next attack petrifies the target, dealing damage based on its maximum health. Duration: 1.5. Damage: 4.5%. Cooldown: 15.",
-              "uk": "Наступна атака накладає на ворога скам'яніння, що завдає шкоди залежно від максимального здоров'я цілі. Тривалість: 1.5. Шкода: 4.5%. Перезаряджання: 15."
+              "uk": "Наступна атака накладає на ворога скам'яніння, що завдає шкоди залежно від максимального здоров'я цілі. Тривалість: 1,5. Шкода: 4,5%. Перезарядка: 15."
             }
           ],
           "ability_notes": [
@@ -250,9 +295,9 @@
           "image": "abilities/necronomicon_warrior_mana_burn.webp",
           "description": [
             {
-              "ru": "Каждая атака сжигает ману цели и наносит ей урон, равный доле от сожжённой маны. Сжигание маны за атаку: 0.5%. Урон от сжигаемой маны: 50%.",
+              "ru": "Каждая атака сжигает ману цели и наносит ей урон, равный доле от сожжённой маны. Сжигание маны за атаку: 0,5%. Урон от сжигаемой маны: 50%.",
               "en": "Each attack burns the target's mana and deals damage based on a percentage of the mana burned. Mana burn per hit: 0.5%. Damage from mana burn: 50%.",
-              "uk": "Кожна атака спалює ману цілі та завдає шкоди, що дорівнює частці від спаленої мани. Спалення мани за атаку: 0.5%. Шкода від спаленої мани: 50%."
+              "uk": "Кожна атака спалює ману цілі та завдає шкоди, що дорівнює частці від спаленої мани. Спалення мани за атаку: 0,5%. Шкода від спаленої мани: 50%."
             }
           ],
           "ability_notes": [
@@ -350,7 +395,7 @@
             {
               "ru": "Ударяет по земле, снижая базовую броню противников вокруг. Длительность: 5. Снижение базовой брони: -25%. Радиус: 300. Перезарядка: 20.",
               "en": "Slams the ground, reducing the base armor of nearby enemies. Duration: 5. Base armor reduction: -25%. Radius: 300. Cooldown: 20.",
-              "uk": "Б'є по землі, зменшуючи базову броню ворогів поруч. Тривалість: 5. Зменшення базової броні: -25%. Радіус: 300. Перезаряджання: 20."
+              "uk": "Б'є по землі, зменшуючи базову броню ворогів поруч. Тривалість: 5. Зменшення базової броні: -25%. Радіус: 300. Перезарядка: 20."
             }
           ],
           "ability_notes": [
@@ -406,9 +451,9 @@
           "image": "abilities/spawnlord_master_freeze.webp",
           "description": [
             {
-              "ru": "Следующая атака наложит на врага оцепенение, которое наносит урон от максимального здоровья жертвы. Длительность действия: 1.5. Урон: 4.5%. Перезарядка: 15.",
+              "ru": "Следующая атака наложит на врага оцепенение, которое наносит урон от максимального здоровья жертвы. Длительность действия: 1,5. Урон: 4,5%. Перезарядка: 15.",
               "en": "The next attack petrifies the target, dealing damage based on its maximum health. Duration: 1.5. Damage: 4.5%. Cooldown: 15.",
-              "uk": "Наступна атака накладає на ворога скам'яніння, що завдає шкоди залежно від максимального здоров'я цілі. Тривалість: 1.5. Шкода: 4.5%. Перезаряджання: 15."
+              "uk": "Наступна атака накладає на ворога скам'яніння, що завдає шкоди залежно від максимального здоров'я цілі. Тривалість: 1,5. Шкода: 4,5%. Перезарядка: 15."
             }
           ],
           "ability_notes": [
@@ -482,7 +527,7 @@
     "upgrade": [
       {
         "item_id": "item_aghanims_treads",
-        "name": "aghanims treads",
+        "name": "aghanim's treads",
         "image": "images/items/aghanims_treads.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -582,9 +627,19 @@
               "total_cost": 4500
             },
             "note": {
-              "ru": "Больше не требует Blitz Knuckles для сборки",
-              "en": "No longer requires Blitz Knuckles",
-              "uk": "Більше не потребує Blitz Knuckles для збирання"
+              "ru": "Рецепт изменён",
+              "en": "Recipe changed",
+              "uk": "Рецепт змінено"
+            }
+          },
+          {
+            "parameter": "recipe",
+            "old_raw_value": null,
+            "new_raw_value": null,
+            "note": {
+              "ru": "Теперь для сборки требуется не Blitz Knuckles (1000 золота), а второй Aghanim's Shard (1400 золота)",
+              "en": "Now requires a second Aghanim's Shard (1400) instead of Blitz Knuckles (1000)",
+              "uk": "Тепер для збирання потрібно не Blitz Knuckles (1000 золота), а другий Aghanim's Shard (1400 золота)"
             }
           },
           {
@@ -635,6 +690,24 @@
               "ru": "Bonus Attackspeed: {change_label} с {old_raw_value} до {new_raw_value}",
               "en": "Bonus Attackspeed: {change_label} from {old_raw_value} to {new_raw_value}",
               "uk": "Bonus Attackspeed: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "Description",
+            "old_raw_value": {
+              "ru": "Активное: Switch Attribute. Меняет атрибут, который получает бонус: +30 к силе, ловкости или интеллекту. Бонусы к скорости передвижения от нескольких пар ботинок не складываются.",
+              "en": "Active: Switch Attribute. Switches between +30 Strength, +30 Agility, or +30 Intellect. Movement speed bonuses from multiple pairs of boots do not stack.",
+              "uk": "Активне: Switch Attribute. Змінює атрибут, який отримує бонус: +30 до сили, спритності або інтелекту. Бонуси до швидкості пересування від декількох пар."
+            },
+            "new_raw_value": {
+              "ru": "Бонусы к скорости передвижения от нескольких пар ботинок не складываются.",
+              "en": "Movement speed bonuses from multiple pairs of boots do not stack.",
+              "uk": "Бонуси до швидкості пересування від кількох пар чобіт не складаються."
+            },
+            "note": {
+              "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
             }
           }
         ]
@@ -815,7 +888,7 @@
                     {
                       "id": "item_glimmer_cape_custom",
                       "name": "Glimmer Cape",
-                      "cost": 1950
+                      "cost": 2150
                     },
                     {
                       "id": "item_talisman_of_evasion",
@@ -828,14 +901,14 @@
                       "cost": 225
                     }
                   ],
-                  "total_cost": 4525
+                  "total_cost": 4725
                 }
               ],
               "components": [
                 {
                   "id": "item_glimmer_cape_custom",
                   "name": "Glimmer Cape",
-                  "cost": 1950
+                  "cost": 2150
                 },
                 {
                   "id": "item_talisman_of_evasion",
@@ -849,7 +922,7 @@
                 }
               ],
               "recipe_cost": 1050,
-              "total_cost": 4525
+              "total_cost": 4725
             },
             "new_raw_value": {
               "recipe_id": "item_recipe_evasion_cape",
@@ -888,9 +961,9 @@
               "total_cost": 4900
             },
             "note": {
-              "ru": "Теперь для сборки также требуется Consecrated Wraps (2600 золота)",
-              "en": "Now also requires Consecrated Wraps (2600 gold)",
-              "uk": "Тепер для збирання також потрібен Consecrated Wraps (2600 золота)"
+              "ru": "Рецепт изменён",
+              "en": "Recipe changed",
+              "uk": "Рецепт змінено"
             }
           },
           {
@@ -898,9 +971,9 @@
             "old_raw_value": null,
             "new_raw_value": null,
             "note": {
-              "ru": "Больше не требует Glimmer Cape для сборки",
-              "en": "No longer requires Glimmer Cape",
-              "uk": "Більше не потребує Glimmer Cape для збирання"
+              "ru": "Теперь для сборки требуется не Glimmer Cape (2150 золота) и Wind Lace (225 золота), а Consecrated Wraps (2600 золота)",
+              "en": "Now requires Consecrated Wraps (2600) instead of Glimmer Cape (2150) and Wind Lace (225)",
+              "uk": "Тепер для збирання потрібно не Glimmer Cape (2150 золота) і Wind Lace (225 золота), а Consecrated Wraps (2600 золота)"
             }
           },
           {
@@ -908,19 +981,9 @@
             "old_raw_value": null,
             "new_raw_value": null,
             "note": {
-              "ru": "Больше не требует Wind Lace для сборки",
-              "en": "No longer requires Wind Lace",
-              "uk": "Більше не потребує Wind Lace для збирання"
-            }
-          },
-          {
-            "parameter": "recipe",
-            "old_raw_value": null,
-            "new_raw_value": null,
-            "note": {
-              "ru": "Стоимость рецепта уменьшена с 1050 до 1000 золота (общая стоимость увеличилась с 4525 до 4900 золота)",
-              "en": "Recipe cost decreased from 1050 to 1000. Total cost increased from 4525g to 4900g",
-              "uk": "Вартість рецепта зменшено з 1050 до 1000 золота (загальну вартість збільшено з 4525 до 4900 золота)"
+              "ru": "Стоимость рецепта уменьшена с 1050 до 1000 золота (общая стоимость увеличилась с 4725 до 4900 золота)",
+              "en": "Recipe cost decreased from 1050 to 1000. Total cost increased from 4725g to 4900g",
+              "uk": "Вартість рецепта зменшено з 1050 до 1000 золота (загальну вартість збільшено з 4725 до 4900 золота)"
             }
           },
           {
@@ -1112,6 +1175,24 @@
               "en": "Duration: {change_label} from {old_raw_value} to {new_raw_value}",
               "uk": "Duration: {change_label} з {old_raw_value} до {new_raw_value}"
             }
+          },
+          {
+            "parameter": "Description",
+            "old_raw_value": {
+              "ru": "Бонусы от нескольких Evasion Cape не складываются.",
+              "en": "Bonuses from multiple Evasion Capes do not stack.",
+              "uk": "Бонуси від кількох Evasion Cape не складаються."
+            },
+            "new_raw_value": {
+              "ru": "Пассивное: Hallowed. Каждые 4 сек. владелец получает один заряд этой способности, а его скорость передвижения на 5 сек. увеличивается на 15%. Максимум зарядов: 3. Когда владелец получает урон от подконтрольного игроку существа или Рошана, все заряды расходуются, и на 5 сек. даётся барьер от всех типов урона, имеющий 120 здоровья за заряд (максимум — 360). Бонусы от нескольких Evasion Cape не складываются.",
+              "en": "Passive: Hallowed. Every 4 sec., the owner gains one charge of this ability, increasing their movement speed by 15% for 5 sec. Maximum charges: 3. When the owner takes damage from a player-controlled unit or Roshan, all charges are consumed, granting a barrier against all damage types for 5 sec. with 120 health per charge (up to 360). Bonuses from multiple Evasion Capes do not stack.",
+              "uk": "Пасивне: Hallowed. Кожні 4 сек. власник отримує один заряд цієї здібності, а його швидкість пересування збільшується на 15% на 5 сек. Максимум зарядів: 3. Коли власник отримує шкоду від істоти, контрольованої гравцем, або Рошана, усі заряди витрачаються, надаючи бар'єр від усіх типів шкоди на 5 сек. із 120 здоров'я за кожен заряд (максимум — 360). Бонуси від кількох Плащів Ухилення не складаються."
+            },
+            "note": {
+              "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+            }
           }
         ]
       },
@@ -1133,6 +1214,33 @@
             }
           }
         ]
+      },
+      {
+        "item_id": "item_venom_song",
+        "name": "venom song",
+        "image": "images/items/venom_song.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "Description",
+            "old_raw_value": {
+              "ru": "Пассивное: Venom Corrosion. Атаки дополнительно наносят магический урон 40 + 10% от изначальной атаки в секунду, замедляют жертву и уменьшают пополнение здоровья на -16%. Замедляет цель на -16%. Длительность: 3 сек. Пассивное: Quelling Aura. Уменьшает восстановление маны противников на -30%. Радиус: 1200.",
+              "en": "Passive: Venom Corrosion. Attacks deal additional magical damage of 40 + 10% of the base attack per second, slow the target, and reduce its health restoration by -16%. Slows the target by -16%. Duration: 3 sec. Passive: Quelling Aura. Reduces mana regeneration of enemies by -30%. Radius: 1200.",
+              "uk": "Пасивно: Отруйна Корозія. Атаки завдають додаткової магічної шкоди: 40 + 10% від базової атаки щосекунди, уповільнюють ціль і зменшують її відновлення здоров'я на -16%. Уповільнення: -16%. Тривалість: 3 сек. Пасивно: Аура Придушення. Зменшує регенерацію мани ворогів на -30%. Радіус: 1200."
+            },
+            "new_raw_value": {
+              "ru": "Пассивное: Venom Corrosion. Атаки дополнительно наносят магический урон 40 + 10% от изначальной атаки в секунду, замедляют жертву на -16% и уменьшают пополнение здоровья на -16%. Длительность: 3 сек. Пассивное: Quelling Aura. Уменьшает восстановление маны противников на -30%. Радиус: 1200.",
+              "en": "Passive: Venom Corrosion. Attacks additionally deal 40 + 10% of the original attack as magical damage per second, slow the target by -16%, and reduce Health Restoration by -16%. Duration: 3 sec. Passive: Quelling Aura. Reduces enemy Mana Regeneration by -30%. Radius: 1200.",
+              "uk": "Пасивне: Venom Corrosion. Атаки додатково завдають 40 + 10% від початкової атаки як магічної шкоди щосекунди, сповільнюють ціль на -16% та зменшують відновлення здоров'я на -16%. Тривалість: 3 сек. Пасивне: Quelling Aura. Зменшує відновлення мани ворогів на -30%. Радіус: 1200."
+            },
+            "note": {
+              "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
       }
     ]
   },
@@ -1148,299 +1256,64 @@
       "image": "images/heroes/heroesPreview/ogre_magi.webp",
       "is_new": true,
       "primary_attribute": "strength",
-      "hero_notes": [
-        {
-          "parameter": "Facets",
-          "old_raw_value": {
-            "ogre_magi_fat_chance": {
-              "Icon": "rng",
-              "Color": "Red",
-              "GradientID": "0",
-              "Deprecated": "true"
-            },
-            "ogre_magi_learning_curve": {
-              "Icon": "ogre",
-              "Color": "Blue",
-              "GradientID": "1",
-              "Deprecated": "true"
-            }
-          },
-          "new_raw_value": "",
-          "note": {
-            "ru": "Facets: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Facets: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Facets: {change_label} з {old_raw_value} до {new_raw_value}"
-          }
-        },
-        {
-          "parameter": "AttributeBaseStrength",
-          "old_raw_value": "26",
-          "new_raw_value": "40",
-          "note": {
-            "ru": "Attribute Base Strength: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Base Strength: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Base Strength: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/str.png"
-        },
-        {
-          "parameter": "AttributeStrengthGain",
-          "old_raw_value": "4.0",
-          "new_raw_value": "4.000000",
-          "note": {
-            "ru": "Attribute Strength Gain: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Strength Gain: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Strength Gain: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/str.png"
-        },
-        {
-          "parameter": "AttributeBaseAgility",
-          "old_raw_value": "14",
-          "new_raw_value": "20",
-          "note": {
-            "ru": "Attribute Base Agility: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Base Agility: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Base Agility: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/agi.png"
-        },
-        {
-          "parameter": "AttributeAgilityGain",
-          "old_raw_value": "1.5",
-          "new_raw_value": "2.000000",
-          "note": {
-            "ru": "Attribute Agility Gain: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Agility Gain: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Agility Gain: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/agi.png"
-        },
-        {
-          "parameter": "AttributeIntelligenceGain",
-          "old_raw_value": "0",
-          "new_raw_value": "0.000000",
-          "note": {
-            "ru": "Attribute Intelligence Gain: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Intelligence Gain: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Intelligence Gain: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/int.png"
-        }
-      ],
+      "hero_notes": [],
       "abilities": [
         {
           "ability_id": "ogre_magi_dumb_luck_custom",
-          "name": "ogre magi dumb luck",
+          "name": "dumb luck",
           "image": "abilities/ogre_magi_dumb_luck.webp",
           "innate": true,
           "description": [
             {
-              "ru": "Максимальный интеллект героя равен нулю. Мана героя и её восстановление зависят от его силы. Мана за единицу силы: 6. Восст. маны за единицу силы: 0.02.",
+              "ru": "Максимальный интеллект героя равен нулю. Мана героя и её восстановление зависят от его силы. Мана за единицу силы: 6. Восст. маны за единицу силы: 0,02.",
               "en": "Ogre Magi's max Intelligence is 0. He receives mana and mana regeneration from Strength. Mana per strength: 6. Mana regen per strength: 0.02.",
-              "uk": "Англійською: Dumb Luck Максимальний інтелект Огр-Мага дорівнює 0. Він отримує ману й регенерацію мани від сили. Мана за одиницю сили: 6. Відновлення мани за одиницю сили: 0.02."
+              "uk": "Англійською: Dumb Luck Максимальний інтелект Огр-Мага дорівнює 0. Він отримує ману й регенерацію мани від сили. Мана за одиницю сили: 6. Відновлення мани за одиницю сили: 0,02."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_ogre_magi_custom/ogre_magi_dumb_luck_custom",
-                "AbilityTextureName": "ogre_magi_dumb_luck",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS",
-                "AbilityUnitDamageType": "DAMAGE_TYPE_NONE",
-                "MaxLevel": "1",
-                "Innate": "1",
-                "AbilityValues": {
-                  "mana_per_str_custom": {
-                    "value": "6",
-                    "special_bonus_unique_ogre_magi_dumb_luck_mana": "+2"
-                  },
-                  "mana_regen_per_str_custom": {
-                    "value": "0.02",
-                    "special_bonus_unique_ogre_magi_dumb_luck_mana": "+0.01"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая врождённая способность. Пассивная.",
-                "en": "New innate ability. Passive.",
-                "uk": "Нова вроджена здібність. Пасивна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "ogre_magi_fireblast_custom",
-          "name": "ogre magi fireblast",
+          "name": "fireblast",
           "image": "abilities/ogre_magi_fireblast.webp",
           "description": [
             {
-              "ru": "Поражает врага огненной волной, нанося цели урон и оглушая её. Длительность оглушения: 1.2. Урон: 70 / 130 / 190 / 250. Расход маны: 70 / 85 / 100 / 115.",
-              "en": "Blasts an enemy unit with a wave of fire, dealing damage and stunning the target. Stun duration: 1.2. Damage: 70 / 130 / 190 / 250. Mana cost: 70 / 85 / 100 / 115.",
-              "uk": "Англійською: Fireblast Вражає ворожу істоту хвилею вогню, яка завдає шкоди та приголомшує ціль. Тривалість оглушення: 1.2. Шкода: 70 / 130 / 190 / 250. Витрати мани: 70 / 85 / 100 / 115."
+              "ru": "Поражает врага огненной волной, нанося цели урон и оглушая её. Длительность оглушения: 1,2. Урон: 70 / 130 / 190 / 250. Перезарядка: 11 / 10 / 9 / 8. Дальность применения: 525. Расход маны: 70 / 85 / 100 / 115.",
+              "en": "Blasts an enemy unit with a wave of fire, dealing damage and stunning the target. Stun duration: 1.2. Damage: 70 / 130 / 190 / 250. Cooldown: 11 / 10 / 9 / 8. Cast range: 525. Mana cost: 70 / 85 / 100 / 115.",
+              "uk": "Англійською: Fireblast Вражає ворожу істоту хвилею вогню, яка завдає шкоди та приголомшує ціль. Тривалість оглушення: 1,2. Шкода: 70 / 130 / 190 / 250. Перезарядка: 11 / 10 / 9 / 8. Дальність застосування: 525. Витрати мани: 70 / 85 / 100 / 115."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_ogre_magi_custom/ogre_magi_fireblast_custom",
-                "AbilityTextureName": "ogre_magi_fireblast",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE",
-                "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
-                "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-                "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
-                "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-                "SpellDispellableType": "SPELL_DISPELLABLE_YES_STRONG",
-                "AbilitySound": "Hero_OgreMagi.Fireblast.Cast",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_1",
-                "AbilityCastRange": "525",
-                "AbilityCastPoint": "0.45",
-                "AbilityManaCost": "70 85 100 115",
-                "AbilityValues": {
-                  "AbilityCooldown": {
-                    "value": "11 10 9 8",
-                    "special_bonus_scepter": "-1"
-                  },
-                  "stun_duration": "1.2",
-                  "multicast_delay": "0.6",
-                  "fireblast_damage": {
-                    "value": "70 130 190 250",
-                    "special_bonus_unique_ogre_magi_2": "+175"
-                  },
-                  "fireblast_proc": {
-                    "special_bonus_unique_ogre_magi_3": "17"
-                  },
-                  "bonus_cast_speed": {
-                    "value": "0",
-                    "special_bonus_scepter": "+25"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Активная.",
-                "en": "New basic ability. Active.",
-                "uk": "Нова базова здібність. Активна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "ogre_magi_ignite_custom",
-          "name": "ogre magi ignite",
+          "name": "ignite",
           "image": "abilities/ogre_magi_ignite.webp",
           "description": [
             {
-              "ru": "Обливает цель и ещё одно случайное существо летучим веществом, поджигая их. Жертвы испытывают невероятную боль, получают урон и передвигаются медленнее. Длительность: 5 / 6 / 7 / 8. Периодический урон: 20 / 30 / 40 / 50. Замедление: -25%. Перезарядка: 17. Расход маны: 80 / 90 / 100 / 110.",
-              "en": "Drenches the target and another random unit in volatile chemicals, causing it to burst into flames. The target is in immense pain, taking damage and moving more slowly. Duration: 5 / 6 / 7 / 8. Damage per second: 20 / 30 / 40 / 50. Movement slow: -25%. Cooldown: 17. Mana cost: 80 / 90 / 100 / 110.",
-              "uk": "Англійською: Ignite Обливає ціль та іншу випадкову істоту леткими хімікатами, що призводить до займання. Ціль пронизує біль — вона отримує шкоду, а її рух сповільнюється. Тривалість: 5 / 6 / 7 / 8. Періодична шкода: 20 / 30 / 40 / 50. Сповільнення: -25%. Перезаряджання: 17. Витрати мани: 80 / 90 / 100 / 110."
+              "ru": "Обливает цель и ещё одно случайное существо летучим веществом, поджигая их. Жертвы испытывают невероятную боль, получают урон и передвигаются медленнее. Длительность: 5 / 6 / 7 / 8. Периодический урон: 20 / 30 / 40 / 50. Замедление: -25%. Перезарядка: 17. Дальность применения: 700 / 800 / 900 / 1000. Расход маны: 80 / 90 / 100 / 110.",
+              "en": "Drenches the target and another random unit in volatile chemicals, causing it to burst into flames. The target is in immense pain, taking damage and moving more slowly. Duration: 5 / 6 / 7 / 8. Damage per second: 20 / 30 / 40 / 50. Movement slow: -25%. Cooldown: 17. Cast range: 700 / 800 / 900 / 1000. Mana cost: 80 / 90 / 100 / 110.",
+              "uk": "Англійською: Ignite Обливає ціль та іншу випадкову істоту леткими хімікатами, що призводить до займання. Ціль пронизує біль — вона отримує шкоду, а її рух сповільнюється. Тривалість: 5 / 6 / 7 / 8. Періодична шкода: 20 / 30 / 40 / 50. Сповільнення: -25%. Перезарядка: 17. Дальність застосування: 700 / 800 / 900 / 1000. Витрати мани: 80 / 90 / 100 / 110."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_ogre_magi_custom/ogre_magi_ignite_custom",
-                "AbilityTextureName": "ogre_magi_ignite",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE",
-                "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
-                "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-                "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
-                "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-                "SpellDispellableType": "SPELL_DISPELLABLE_YES",
-                "FightRecapLevel": "1",
-                "AbilitySound": "Hero_OgreMagi.Ignite.Cast",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_2",
-                "AbilityCastRange": "700 800 900 1000",
-                "AbilityCastPoint": "0.35",
-                "AbilityCooldown": "17",
-                "AbilityManaCost": "80 90 100 110",
-                "AbilityValues": {
-                  "duration": "5 6 7 8",
-                  "burn_damage": {
-                    "value": "20 30 40 50",
-                    "special_bonus_unique_ogre_magi_4": "+10"
-                  },
-                  "slow_movement_speed_pct": "-25",
-                  "projectile_speed": "1000",
-                  "multicast_delay": "0.6",
-                  "ignite_multicast_aoe": {
-                    "value": "1400",
-                    "affected_by_aoe_increase": "1"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Активная.",
-                "en": "New basic ability. Active.",
-                "uk": "Нова базова здібність. Активна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "ogre_magi_bloodlust_custom",
-          "name": "ogre magi bloodlust",
+          "name": "bloodlust",
           "image": "abilities/ogre_magi_bloodlust.webp",
           "description": [
             {
-              "ru": "Герой приводит союзную цель в бешенство, повышая скорость её атаки и передвижения. Для владельца бонус к скорости атаки выше. Можно применять на башни. Доп. скорость передвижения: 6% / 8% / 10% / 12%. Доп. скорость атаки: 35 / 50 / 65 / 80. Доп. скорость атаки себе: 40 / 60 / 80 / 100. Длительность: 30. Перезарядка: 20 / 18 / 16 / 14. Расход маны: 40 / 50 / 60 / 70.",
-              "en": "Incites a frenzy in a friendly unit, increasing its movement speed and attack speed. Gives bonus attack speed if cast on Ogre himself. Can be cast on towers. Bonus movement speed: 6% / 8% / 10% / 12%. Bonus attack speed: 35 / 50 / 65 / 80. Self bonus attack speed: 40 / 60 / 80 / 100. Duration: 30. Cooldown: 20 / 18 / 16 / 14. Mana cost: 40 / 50 / 60 / 70.",
-              "uk": "Англійською: Bloodlust Пробуджує безумство в союзній істоті, збільшуючи її швидкість руху й атаки. Надає додаткову швидкість атаки Оґру, якщо чаклується на нього самого. Можна чаклувати на вежі. Дод. швидкість пересування: 6% / 8% / 10% / 12%. Дод. швидкість атаки: 35 / 50 / 65 / 80. Дод. швидкість атаки собі: 40 / 60 / 80 / 100. Тривалість: 30. Перезаряджання: 20 / 18 / 16 / 14. Витрати мани: 40 / 50 / 60 / 70."
+              "ru": "Герой приводит союзную цель в бешенство, повышая скорость её атаки и передвижения. Для владельца бонус к скорости атаки выше. Можно применять на башни. Доп. скорость передвижения: 6% / 8% / 10% / 12%. Доп. скорость атаки: 35 / 50 / 65 / 80. Доп. скорость атаки себе: 40 / 60 / 80 / 100. Длительность: 30. Перезарядка: 20 / 18 / 16 / 14. Дальность применения: 650. Расход маны: 40 / 50 / 60 / 70.",
+              "en": "Incites a frenzy in a friendly unit, increasing its movement speed and attack speed. Gives bonus attack speed if cast on Ogre himself. Can be cast on towers. Bonus movement speed: 6% / 8% / 10% / 12%. Bonus attack speed: 35 / 50 / 65 / 80. Self bonus attack speed: 40 / 60 / 80 / 100. Duration: 30. Cooldown: 20 / 18 / 16 / 14. Cast range: 650. Mana cost: 40 / 50 / 60 / 70.",
+              "uk": "Англійською: Bloodlust Пробуджує безумство в союзній істоті, збільшуючи її швидкість руху й атаки. Надає додаткову швидкість атаки Оґру, якщо чаклується на нього самого. Можна чаклувати на вежі. Дод. швидкість пересування: 6% / 8% / 10% / 12%. Дод. швидкість атаки: 35 / 50 / 65 / 80. Дод. швидкість атаки собі: 40 / 60 / 80 / 100. Тривалість: 30. Перезарядка: 20 / 18 / 16 / 14. Дальність застосування: 650. Витрати мани: 40 / 50 / 60 / 70."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_ogre_magi_custom/ogre_magi_bloodlust_custom",
-                "AbilityTextureName": "ogre_magi_bloodlust",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
-                "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
-                "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING",
-                "AbilityUnitTargetFlags": "DOTA_UNIT_TARGET_FLAG_INVULNERABLE",
-                "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
-                "SpellDispellableType": "SPELL_DISPELLABLE_YES",
-                "AbilitySound": "Hero_OgreMagi.Bloodlust.Target",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3",
-                "AbilityCastRange": "650",
-                "AbilityCastPoint": "0.45",
-                "AbilityCooldown": "20 18 16 14",
-                "AbilityManaCost": "40 50 60 70",
-                "AbilityValues": {
-                  "modelscale": "25.0",
-                  "bonus_movement_speed": "6 8 10 12",
-                  "bonus_attack_speed": {
-                    "value": "35 50 65 80",
-                    "special_bonus_unique_ogre_magi": "+20"
-                  },
-                  "self_bonus": {
-                    "value": "40 60 80 100",
-                    "special_bonus_unique_ogre_magi": "+35"
-                  },
-                  "duration": "30",
-                  "multicast_bloodlust_aoe": {
-                    "value": "700",
-                    "affected_by_aoe_increase": "1"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Активная.",
-                "en": "New basic ability. Active.",
-                "uk": "Нова базова здібність. Активна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "ogre_magi_multicast_custom",
-          "name": "ogre magi multicast",
+          "name": "multicast",
           "image": "abilities/ogre_magi_multicast.webp",
           "description": [
             {
@@ -1449,46 +1322,7 @@
               "uk": "Англійською: Multicast Огр-Маг застосовує свої здібності та предмети кілька разів за використання. Кожна одиниця сили збільшує шанс Мультичаклування (кожні 16 одиниць сили дають 1%). Шанс подвійного спрацювання: 75%. Шанс потрійного спрацювання: 30%. Шанс чотириразового спрацювання: 15%."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_ogre_magi_custom/ogre_magi_multicast_custom",
-                "AbilityTextureName": "ogre_magi_multicast",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
-                "AbilityType": "ABILITY_TYPE_ULTIMATE",
-                "AbilityCastAnimation": "ACT_INVALID",
-                "IsBreakable": "1",
-                "AbilityValues": {
-                  "multicast_2_times": {
-                    "value": "75",
-                    "special_bonus_unique_ogre_magi_multicast_chance": "+10",
-                    "dynamic_value": "true"
-                  },
-                  "multicast_3_times": {
-                    "value": "0 30 30",
-                    "special_bonus_unique_ogre_magi_multicast_chance": "+10",
-                    "dynamic_value": "true"
-                  },
-                  "multicast_4_times": {
-                    "value": "0 0 15",
-                    "special_bonus_unique_ogre_magi_multicast_chance": "+10",
-                    "dynamic_value": "true"
-                  },
-                  "strength_for_one_pct": {
-                    "value": "16"
-                  },
-                  "one_tooltip": "1"
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Пассивная.",
-                "en": "New basic ability. Passive.",
-                "uk": "Нова базова здібність. Пасивна."
-              }
-            }
-          ]
+          "ability_notes": []
         }
       ],
       "talents": {
@@ -1506,9 +1340,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Увеличение Числа снарядов Ignite: 1/2 Уменьшение Времени Перезарядки Ignite: 2/4 сек",
-                  "en": "Increase Ignite Projectile Count: 1/2 Ignite Cooldown Reduction: 2/4 sec",
-                  "uk": "Збільшення Кількості снарядів Ignite: 1/2 Зменшення Часу Перезарядки Ignite: 2/4 сек"
+                  "ru": "Увеличение Числа снарядов Ignite: 1/2. Уменьшение Времени Перезарядки Ignite: 2/4 сек",
+                  "en": "Increase Ignite Projectile Count: 1/2. Ignite Cooldown Reduction: 2/4 sec",
+                  "uk": "Збільшення Кількості снарядів Ignite: 1/2. Зменшення Часу Перезарядки Ignite: 2/4 сек"
                 }
               }
             ]
@@ -1526,9 +1360,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Новая Активная Способность: Fire Shield Создаёт вокруг союзного существа или постройки щит, поглощающий часть урона от следующих 3 атак героев. В нападающего летят огненные шары, которые наносят ему магический урон. Урон от Огненного Шара: 70 + 100% от Силы Длительность Щита: 25 сек. Поглощаемый Урон: 45% Затраты Маны: 50 Дальность Применения: 600 Время Перезарядки: 15 сек",
-                  "en": "New Active Ability: Fire Shield Creates a shield around an allied unit or building that absorbs part of the damage from the next 3 hero attacks. Fireballs are launched at the attacker, dealing magical damage. Fireball Damage: 70 + 100% of Strength Shield Duration: 25 sec. Damage Absorption: 45% Mana Cost: 50 Cast Range: 600 Cooldown: 15 sec",
-                  "uk": "Нова Активна Здібність: Fire Shield Створює навколо союзної істоти або споруди щит, що поглинає частину шкоди від наступних 3 атак героїв. У нападника летять вогняні кулі, які завдають йому магічної шкоди. Шкода від Вогняної Кулі: 70 + 100% від Сили Тривалість Щита: 25 сек. Поглинена Шкода: 45% Витрати Мани: 50 Дальність Застосування: 600 Час Перезарядки: 15 сек"
+                  "ru": "Новая Активная Способность: Fire Shield. Создаёт вокруг союзного существа или постройки щит, поглощающий часть урона от следующих 3 атак героев. В нападающего летят огненные шары, которые наносят ему магический урон. Урон от Огненного Шара: 70 + 100% от Силы. Длительность Щита: 25 сек. Поглощаемый Урон: 45%. Затраты Маны: 50. Дальность Применения: 600. Время Перезарядки: 15 сек",
+                  "en": "New Active Ability: Fire Shield. Creates a shield around an allied unit or building that absorbs part of the damage from the next 3 hero attacks. Fireballs are launched at the attacker, dealing magical damage. Fireball Damage: 70 + 100% of Strength. Shield Duration: 25 sec. Damage Absorption: 45%. Mana Cost: 50. Cast Range: 600. Cooldown: 15 sec",
+                  "uk": "Нова Активна Здібність: Fire Shield. Створює навколо союзної істоти або споруди щит, що поглинає частину шкоди від наступних 3 атак героїв. У нападника летять вогняні кулі, які завдають йому магічної шкоди. Шкода від Вогняної Кулі: 70 + 100% від Сили. Тривалість Щита: 25 сек. Поглинена Шкода: 45%. Витрати Мани: 50. Дальність Застосування: 600. Час Перезарядки: 15 сек"
                 }
               }
             ]
@@ -1546,9 +1380,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Великий Разум. Убирает Fireblast. Уменьшение Времени Перезарядки: 7% Если выучить 3 Великих Разума, то: Вокруг героя летает третья Огр Голова! Multicast применяется с задержкой 0.3 секунды, работает на ненаправленные предметы и может многократно выбирать основную цель",
-                  "en": "Great Mind. Removes Fireblast. Cooldown Reduction: 7% If you learn 3 Great Minds: A third Ogre Head floats around the hero! Multicast triggers with a 0.3 second delay, works with non-targeted items, and can repeatedly select the primary target",
-                  "uk": "Великий Розум. Прибирає Fireblast. Зменшення Часу Перезарядки: 7% Якщо вивчити 3 Великих Розуми, тоді: Навколо героя літає третя Голова Огра! Multicast застосовується із затримкою 0.3 секунди, працює на предмети без вибору цілі та може багаторазово обирати основну ціль"
+                  "ru": "<font color='#e03e2e'>Великий Разум.</font> <font color='#e03e2e'>Убирает Fireblast.</font> Уменьшение Времени Перезарядки: 7%. Если выучить 3 Великих Разума, то: Вокруг героя летает третья Огр Голова! Multicast применяется с задержкой 0.3 секунды, работает на ненаправленные предметы и может многократно выбирать основную цель",
+                  "en": "<font color='#e03e2e'>Great Mind.</font> <font color='#e03e2e'>Removes Fireblast.</font> Cooldown Reduction: 7%. If you learn 3 Great Minds: A third Ogre Head floats around the hero! Multicast triggers with a 0.3 second delay, works with non-targeted items, and can repeatedly select the primary target",
+                  "uk": "<font color='#e03e2e'>Великий Розум.</font> <font color='#e03e2e'>Прибирає Fireblast.</font> Зменшення Часу Перезарядки: 7%. Якщо вивчити 3 Великих Розуми, тоді: Навколо героя літає третя Голова Огра! Multicast застосовується із затримкою 0.3 секунди, працює на предмети без вибору цілі та може багаторазово обирати основну ціль"
                 }
               }
             ]
@@ -1566,9 +1400,19 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Ignite не требует Маны. Fire Shield в конце действия применяет Ignite на всех противников в радиусе 450 и наносит Магический Урон: 100% от Силы Длительность Ignite: 3/6/9 сек",
-                  "en": "Ignite costs no Mana. When Fire Shield expires, it applies Ignite to all enemies within a 450 radius and deals Magic Damage: 100% of Strength Ignite Duration: 3/6/9 sec",
-                  "uk": "Ignite не потребує мани. Після завершення Fire Shield застосовує Ignite до всіх ворогів у радіусі 450 та завдає магічної шкоди: 100% від Сили Тривалість Ignite: 3/6/9 с"
+                  "ru": "Ignite не требует Маны. Fire Shield в конце действия применяет Ignite на всех противников в радиусе 450 и наносит Магический Урон: 100% от Силы. Длительность Ignite: 3/6/9 сек",
+                  "en": "Ignite costs no Mana. When Fire Shield expires, it applies Ignite to all enemies within a 450 radius and deals Magic Damage: 100% of Strength. Ignite Duration: 3/6/9 sec",
+                  "uk": "Ignite не потребує мани. Після завершення Fire Shield застосовує Ignite до всіх ворогів у радіусі 450 та завдає магічної шкоди: 100% від Сили. Тривалість Ignite: 3/6/9 с"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 2",
+                "note": {
+                  "ru": "Требует прокачки «Талант 2»",
+                  "en": "Requires upgrading «Talent 2»",
+                  "uk": "Потребує прокачування «Талант 2»"
                 }
               }
             ]
@@ -1590,6 +1434,16 @@
                   "en": "Fire Shield is cast instantly. Fire Shield Cooldown Reduction: 2/4/6 sec",
                   "uk": "Fire Shield застосовується миттєво. Зменшення Часу Перезарядки Fire Shield: 2/4/6 сек"
                 }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 4",
+                "note": {
+                  "ru": "Требует прокачки «Талант 4»",
+                  "en": "Requires upgrading «Talent 4»",
+                  "uk": "Потребує прокачування «Талант 4»"
+                }
               }
             ]
           },
@@ -1606,9 +1460,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Увеличение Маны за Единицу Силы Dumb Luck: 1/2/3 Увеличение Восстановления Маны за Единицу Силы Dumb Luck: 0.02/0.04/0.06 Сила: 6/12/18",
-                  "en": "Increase Dumb Luck Mana per Strength: 1/2/3 Increase Dumb Luck Mana Regeneration per Strength: 0.02/0.04/0.06 Strength: 6/12/18",
-                  "uk": "Збільшення Мани за Одиницю Сили Dumb Luck: 1/2/3 Збільшення Відновлення Мани за Одиницю Сили Dumb Luck: 0.02/0.04/0.06 Сила: 6/12/18"
+                  "ru": "Увеличение Маны за Единицу Силы Dumb Luck: 1/2/3. Увеличение Восстановления Маны за Единицу Силы Dumb Luck: 0.02/0.04/0.06. Сила: 6/12/18",
+                  "en": "Increase Dumb Luck Mana per Strength: 1/2/3. Increase Dumb Luck Mana Regeneration per Strength: 0.02/0.04/0.06. Strength: 6/12/18",
+                  "uk": "Збільшення Мани за Одиницю Сили Dumb Luck: 1/2/3. Збільшення Відновлення Мани за Одиницю Сили Dumb Luck: 0.02/0.04/0.06. Сила: 6/12/18"
                 }
               }
             ]
@@ -1626,9 +1480,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Увеличение Урона Ignite на 7 за каждую 1 секунду времени действия на противнике. Максимальный бонус достигается при длительности 150 секунд",
-                  "en": "Increase Ignite Damage by 7 for every 1 second it remains active on an enemy. Maximum bonus is reached after 150 seconds",
-                  "uk": "Збільшення Шкоди Ignite на 7 за кожну 1 секунду дії на ворогові. Максимальний бонус досягається за тривалості 150 секунд"
+                  "ru": "Увеличение Урона Ignite на 7 за каждую 1 секунду времени действия на противнике. <font color='#e03e2e'>Максимальный бонус достигается при длительности 150 секунд</font>",
+                  "en": "Increase Ignite Damage by 7 for every 1 second it remains active on an enemy. <font color='#e03e2e'>Maximum bonus is reached after 150 seconds</font>",
+                  "uk": "Збільшення Шкоди Ignite на 7 за кожну 1 секунду дії на ворогові. <font color='#e03e2e'>Максимальний бонус досягається за тривалості 150 секунд</font>"
                 }
               }
             ]
@@ -1648,9 +1502,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Уменьшение Прироста Силы за Уровень: 1/2 Прирост Ловкости за Уровень: 1/2 Скорость Атаки: 10/20",
-                  "en": "Strength Gain per Level Reduced: 1/2 Agility Gain per Level: 1/2 Attack Speed: 10/20",
-                  "uk": "Зменшення приросту Сили за рівень: 1/2 Приріст Спритності за рівень: 1/2 Швидкість атаки: 10/20"
+                  "ru": "<font color='#e03e2e'>Уменьшение Прироста Силы за Уровень: 1/2.</font> Прирост Ловкости за Уровень: 1/2. Скорость Атаки: 10/20",
+                  "en": "<font color='#e03e2e'>Strength Gain per Level Reduced: 1/2.</font> Agility Gain per Level: 1/2. Attack Speed: 10/20",
+                  "uk": "<font color='#e03e2e'>Зменшення приросту Сили за рівень: 1/2.</font> Приріст Спритності за рівень: 1/2. Швидкість атаки: 10/20"
                 }
               }
             ]
@@ -1688,9 +1542,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Великий Разум. Убирает Ignite. Шанс многократного срабатывания Multicast увеличивается на 1% за 30/20 Ловкости",
-                  "en": "Great Mind. Removes Ignite. Multicast multi-cast chance is increased by 1% per 30/20 Agility",
-                  "uk": "Великий Розум. Прибирає Ignite. Шанс багаторазового спрацьовування Multicast збільшується на 1% за кожні 30/20 Спритності"
+                  "ru": "<font color='#e03e2e'>Великий Разум.</font> <font color='#e03e2e'>Убирает Ignite.</font> Шанс многократного срабатывания Multicast увеличивается на 1% за 30/20 Ловкости",
+                  "en": "<font color='#e03e2e'>Great Mind.</font> <font color='#e03e2e'>Removes Ignite.</font> Multicast multi-cast chance is increased by 1% per 30/20 Agility",
+                  "uk": "<font color='#e03e2e'>Великий Розум.</font> <font color='#e03e2e'>Прибирає Ignite.</font> Шанс багаторазового спрацьовування Multicast збільшується на 1% за кожні 30/20 Спритності"
                 }
               }
             ]
@@ -1748,9 +1602,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Увеличение Доп. Скорости Передвижения Bloodlust: 4% Bloodlust становится пассивной аурой вокруг героя. Радиус: 900",
-                  "en": "Increase Bloodlust Bonus Movement Speed: 4% Bloodlust becomes a passive aura around the hero. Radius: 900",
-                  "uk": "Збільшення Дод. Швидкості Пересування Bloodlust: 4% Bloodlust стає пасивною аурою навколо героя. Радіус: 900"
+                  "ru": "Увеличение Доп. Скорости Передвижения Bloodlust: 4%. Bloodlust становится пассивной аурой вокруг героя. Радиус: 900",
+                  "en": "Increase Bloodlust Bonus Movement Speed: 4%. Bloodlust becomes a passive aura around the hero. Radius: 900",
+                  "uk": "Збільшення Дод. Швидкості Пересування Bloodlust: 4%. Bloodlust стає пасивною аурою навколо героя. Радіус: 900"
                 }
               }
             ]
@@ -1790,9 +1644,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Убирает Dumb Luck. Интеллект: 10/20 Fireblast наносит урон в Радиусе: 175",
-                  "en": "Removes Dumb Luck. Intelligence: 10/20 Fireblast deals damage in a 175 radius",
-                  "uk": "Прибирає Dumb Luck. Інтелект: 10/20 Fireblast завдає шкоди в Радіусі: 175"
+                  "ru": "<font color='#e03e2e'>Убирает Dumb Luck.</font> Интеллект: 10/20. Fireblast наносит урон в Радиусе: 175",
+                  "en": "<font color='#e03e2e'>Removes Dumb Luck.</font> Intelligence: 10/20. Fireblast deals damage in a 175 radius",
+                  "uk": "<font color='#e03e2e'>Прибирає Dumb Luck.</font> Інтелект: 10/20. Fireblast завдає шкоди в Радіусі: 175"
                 }
               }
             ]
@@ -1810,9 +1664,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Уменьшение Прироста Силы за Уровень: 2 Прирост Интеллекта за Уровень: 2 Увеличение Урона Fireblast: 20%/40% от Интеллекта",
-                  "en": "Strength Gain Reduction per Level: 2 Intelligence Gain per Level: 2 Fireblast Damage Increase: 20%/40% of Intelligence",
-                  "uk": "Зменшення Приросту Сили за Рівень: 2 Приріст Інтелекту за Рівень: 2 Збільшення Шкоди Fireblast: 20%/40% від Інтелекту"
+                  "ru": "<font color='#e03e2e'>Уменьшение Прироста Силы за Уровень: 2.</font> Прирост Интеллекта за Уровень: 2. Увеличение Урона Fireblast: 20%/40% от Интеллекта",
+                  "en": "<font color='#e03e2e'>Strength Gain Reduction per Level: 2.</font> Intelligence Gain per Level: 2. Fireblast Damage Increase: 20%/40% of Intelligence",
+                  "uk": "<font color='#e03e2e'>Зменшення Приросту Сили за Рівень: 2.</font> Приріст Інтелекту за Рівень: 2. Збільшення Шкоди Fireblast: 20%/40% від Інтелекту"
                 }
               }
             ]
@@ -1830,9 +1684,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Великий Разум. Убирает Bloodlust. Шанс многократного срабатывания Multicast увеличивается на 1% за 30/20 Интеллекта",
-                  "en": "Great Mind. Removes Bloodlust. Multicast multi-cast chance is increased by 1% per 30/20 Intelligence",
-                  "uk": "Великий Розум. Прибирає Bloodlust. Шанс багаторазового спрацьовування Multicast збільшується на 1% за кожні 30/20 Інтелекту"
+                  "ru": "<font color='#e03e2e'>Великий Разум.</font> <font color='#e03e2e'>Убирает Bloodlust.</font> Шанс многократного срабатывания Multicast увеличивается на 1% за 30/20 Интеллекта",
+                  "en": "<font color='#e03e2e'>Great Mind.</font> <font color='#e03e2e'>Removes Bloodlust.</font> Multicast multi-cast chance is increased by 1% per 30/20 Intelligence",
+                  "uk": "<font color='#e03e2e'>Великий Розум.</font> <font color='#e03e2e'>Прибирає Bloodlust.</font> Шанс багаторазового спрацьовування Multicast збільшується на 1% за кожні 30/20 Інтелекту"
                 }
               }
             ]
@@ -1850,9 +1704,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Дополнительная Дальность Заклинаний: 50/100/150 Скорость Передвижения: 10/20/30",
-                  "en": "Bonus Cast Range: 50/100/150 Movement Speed: 10/20/30",
-                  "uk": "Додаткова Дальність Заклинань: 50/100/150 Швидкість Пересування: 10/20/30"
+                  "ru": "Дополнительная Дальность Заклинаний: 50/100/150. Скорость Передвижения: 10/20/30",
+                  "en": "Bonus Cast Range: 50/100/150. Movement Speed: 10/20/30",
+                  "uk": "Додаткова Дальність Заклинань: 50/100/150. Швидкість Пересування: 10/20/30"
                 }
               }
             ]
@@ -1870,9 +1724,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Новая Активная Способность: Lightning Shield Создаёт вокруг союзного существа щит из молний, ​​наносящий урон находящимся рядом противникам. Урон от нескольких щитов складывается. Урон в Секунду: 50/100 Радиус: 200 Длительность: 40 сек. Затраты Маны: 120 Дальность Применения: 600 Время Перезарядки: 40 сек",
-                  "en": "New Active Ability: Lightning Shield Creates a shield of lightning around an allied unit, dealing damage to nearby enemies. Damage from multiple shields stacks. Damage per Second: 50/100 Radius: 200 Duration: 40 sec. Mana Cost: 120 Cast Range: 600 Cooldown: 40 sec",
-                  "uk": "Нова активна здібність: Lightning Shield Створює навколо союзної істоти щит із блискавок, що завдає шкоди ворогам поруч. Шкода від кількох щитів підсумовується. Шкода за секунду: 50/100 Радіус: 200 Тривалість: 40 с Витрати мани: 120 Дальність застосування: 600 Час перезарядки: 40 с"
+                  "ru": "Новая Активная Способность: Lightning Shield. Создаёт вокруг союзного существа щит из молний, ​​наносящий урон находящимся рядом противникам. Урон от нескольких щитов складывается. Урон в Секунду: 50/100. Радиус: 200. Длительность: 40 сек. Затраты Маны: 120. Дальность Применения: 600. Время Перезарядки: 40 сек",
+                  "en": "New Active Ability: Lightning Shield. Creates a shield of lightning around an allied unit, dealing damage to nearby enemies. Damage from multiple shields stacks. Damage per Second: 50/100. Radius: 200. Duration: 40 sec. Mana Cost: 120. Cast Range: 600. Cooldown: 40 sec",
+                  "uk": "Нова активна здібність: Lightning Shield. Створює навколо союзної істоти щит із блискавок, що завдає шкоди ворогам поруч. Шкода від кількох щитів підсумовується. Шкода за секунду: 50/100. Радіус: 200. Тривалість: 40 с. Витрати мани: 120. Дальність застосування: 600. Час перезарядки: 40 с"
                 }
               }
             ]
@@ -1890,9 +1744,19 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Под действием Lightning Shield часть маны, которую герой тратит на способности, преобразуется в Урон от Заклинаний: 2% за каждые 100 Маны Длительность Эффекта: 4/6 сек",
-                  "en": "While under the effects of Lightning Shield, part of the mana spent on abilities is converted into Spell Damage: 2% for every 100 Mana Effect Duration: 4/6 sec",
-                  "uk": "Під дією Lightning Shield частина мани, яку герой витрачає на здібності, перетворюється на Шкоду від Заклинань: 2% за кожні 100 Мани Тривалість Ефекту: 4/6 сек"
+                  "ru": "Под действием Lightning Shield часть маны, которую герой тратит на способности, преобразуется в Урон от Заклинаний: 2% за каждые 100 Маны. Длительность Эффекта: 4/6 сек",
+                  "en": "While under the effects of Lightning Shield, part of the mana spent on abilities is converted into Spell Damage: 2% for every 100 Mana. Effect Duration: 4/6 sec",
+                  "uk": "Під дією Lightning Shield частина мани, яку герой витрачає на здібності, перетворюється на Шкоду від Заклинань: 2% за кожні 100 Мани. Тривалість Ефекту: 4/6 сек"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 5",
+                "note": {
+                  "ru": "Требует прокачки «Талант 5»",
+                  "en": "Requires upgrading «Talent 5»",
+                  "uk": "Потребує прокачування «Талант 5»"
                 }
               }
             ]
@@ -1910,9 +1774,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Новая Активная Способность: Unrefined Fireblast Поражает врага огненной волной, оглушая цель и нанося ей магический урон. На применение этой способности уходит часть от текущего запаса маны. Урон: 200 + 40% от Интеллекта Затраты Маны: 35% Дальность Применения: 525 Время Перезарядки: 16 сек",
-                  "en": "New Active Ability: Unrefined Fireblast Blasts an enemy with a wave of fire, stunning the target and dealing magical damage. Casting this ability consumes a percentage of the caster's current mana. Damage: 200 + 40% of Intelligence Mana Cost: 35% Cast Range: 525 Cooldown: 16 sec",
-                  "uk": "Нова Активна Здібність: Unrefined Fireblast Вражає ворога вогняною хвилею, оглушуючи ціль і завдаючи їй магічної шкоди. На застосування цієї здібності витрачається частина поточного запасу мани. Шкода: 200 + 40% від Інтелекту Витрати Мани: 35% Дальність Застосування: 525 Час Перезарядки: 16 сек"
+                  "ru": "Новая Активная Способность: Unrefined Fireblast. Поражает врага огненной волной, оглушая цель и нанося ей магический урон. На применение этой способности уходит часть от текущего запаса маны. Урон: 200 + 40% от Интеллекта. Затраты Маны: 35%. Дальность Применения: 525. Время Перезарядки: 16 сек",
+                  "en": "New Active Ability: Unrefined Fireblast. Blasts an enemy with a wave of fire, stunning the target and dealing magical damage. Casting this ability consumes a percentage of the caster's current mana. Damage: 200 + 40% of Intelligence. Mana Cost: 35%. Cast Range: 525. Cooldown: 16 sec",
+                  "uk": "Нова Активна Здібність: Unrefined Fireblast. Вражає ворога вогняною хвилею, оглушуючи ціль і завдаючи їй магічної шкоди. На застосування цієї здібності витрачається частина поточного запасу мани. Шкода: 200 + 40% від Інтелекту. Витрати Мани: 35%. Дальність Застосування: 525. Час Перезарядки: 16 сек"
                 }
               }
             ]
@@ -1926,356 +1790,73 @@
       "image": "images/heroes/heroesPreview/visage.webp",
       "is_new": true,
       "primary_attribute": "universal",
-      "hero_notes": [
-        {
-          "parameter": "Facets",
-          "old_raw_value": {
-            "visage_sepulchre": {
-              "Icon": "area_of_effect",
-              "Color": "Gray",
-              "GradientID": "0",
-              "Deprecated": "true"
-            },
-            "visage_faithful_followers": {
-              "Icon": "summons",
-              "Color": "Blue",
-              "GradientID": "2",
-              "Deprecated": "true"
-            },
-            "visage_gold_assumption": {
-              "Icon": "gold",
-              "Color": "Yellow",
-              "GradientID": "0",
-              "Deprecated": "true"
-            }
-          },
-          "new_raw_value": "",
-          "note": {
-            "ru": "Facets: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Facets: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Facets: {change_label} з {old_raw_value} до {new_raw_value}"
-          }
-        },
-        {
-          "parameter": "AttributeStrengthGain",
-          "old_raw_value": "2.8",
-          "new_raw_value": "2.200000",
-          "note": {
-            "ru": "Attribute Strength Gain: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Strength Gain: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Strength Gain: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/str.png"
-        },
-        {
-          "parameter": "AttributeBaseAgility",
-          "old_raw_value": "11",
-          "new_raw_value": "22",
-          "note": {
-            "ru": "Attribute Base Agility: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Base Agility: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Base Agility: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/agi.png"
-        },
-        {
-          "parameter": "AttributeAgilityGain",
-          "old_raw_value": "1.3",
-          "new_raw_value": "2.200000",
-          "note": {
-            "ru": "Attribute Agility Gain: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Agility Gain: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Agility Gain: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/agi.png"
-        },
-        {
-          "parameter": "AttributeIntelligenceGain",
-          "old_raw_value": "2.9",
-          "new_raw_value": "2.200000",
-          "note": {
-            "ru": "Attribute Intelligence Gain: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Attribute Intelligence Gain: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Attribute Intelligence Gain: {change_label} з {old_raw_value} до {new_raw_value}"
-          },
-          "icon": "/int.png"
-        }
-      ],
+      "hero_notes": [],
       "abilities": [
         {
           "ability_id": "visage_silent_as_the_grave_custom",
-          "name": "visage silent as the grave",
+          "name": "silent as the grave",
           "image": "abilities/visage_silent_as_the_grave.webp",
           "innate": true,
           "description": [
             {
-              "ru": "Герой получает беспрепятственное передвижение с увеличенной скоростью. Атаковав или применив заклинание, герой теряет эти бонусы, но он и его гаргульи наносят больше урона атаками в течение 2 сек. Перезарядка: 45.75 - 0.75 за уровень. Длительность полёта: 20. Доп. скорость передвижения: 12%. Длительность доп. урона: 2. Дополнительный урон: 10%. Расход маны: 50.",
-              "en": "Visage gains flying movement and bonus movement speed. Upon attacking or casting, the speed and flying movement are lost and Visage and his familiars deal additional attack damage for 2s. Cooldown: 45.75 - 0.75 per level. Flight duration: 20. Bonus movement speed: 12%. Bonus damage duration: 2. Bonus damage: 10%. Mana cost: 50.",
-              "uk": "Англійською: Silent as the Grave Візаж здобуває політ і додаткову швидкість руху. Під час атаки чи чаклування швидкість і політ втрачаються, але Візаж та його фамільяри завдають додаткової шкоди впродовж 2 с. Перезаряджання: 45.75 - 0.75 за рівень. Тривалість польоту: 20. Дод. швидкість пересування: 12%. Тривалість дод. шкоди: 2. Додаткова шкода: 10%. Витрати мани: 50."
+              "ru": "Герой получает беспрепятственное передвижение с увеличенной скоростью. Атаковав или применив заклинание, герой теряет эти бонусы, но он и его гаргульи наносят больше урона атаками в течение 2 сек. Перезарядка: 45,75. Длительность полёта: 20. Доп. скорость передвижения: 12%. Длительность доп. урона: 2. Дополнительный урон: 10%. Расход маны: 50.",
+              "en": "Visage gains flying movement and bonus movement speed. Upon attacking or casting, the speed and flying movement are lost and Visage and his familiars deal additional attack damage for 2s. Cooldown: 45.75. Flight duration: 20. Bonus movement speed: 12%. Bonus damage duration: 2. Bonus damage: 10%. Mana cost: 50.",
+              "uk": "Англійською: Silent as the Grave Візаж здобуває політ і додаткову швидкість руху. Під час атаки чи чаклування швидкість і політ втрачаються, але Візаж та його фамільяри завдають додаткової шкоди впродовж 2 с. Перезаряджання: 45,75. Тривалість польоту: 20. Дод. швидкість пересування: 12%. Тривалість дод. шкоди: 2. Додаткова шкода: 10%. Витрати мани: 50."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_visage_custom/visage_silent_as_the_grave_custom",
-                "AbilityTextureName": "visage_silent_as_the_grave",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
-                "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-                "SpellDispellableType": "SPELL_DISPELLABLE_NO",
-                "Innate": "1",
-                "MaxLevel": "1",
-                "AbilityCastPoint": "0.0",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_5",
-                "AbilityCastGestureSlot": "DEFAULT",
-                "AbilityManaCost": "50",
-                "AbilityValues": {
-                  "AbilityCooldown": {
-                    "value": "45.75",
-                    "hero_levelup": "-0.75"
-                  },
-                  "flight_duration": {
-                    "value": "20",
-                    "special_bonus_scepter": "+10"
-                  },
-                  "movespeed_bonus": {
-                    "value": "12",
-                    "special_bonus_scepter": "+12"
-                  },
-                  "bonus_duration": {
-                    "value": "2",
-                    "special_bonus_scepter": "+2"
-                  },
-                  "bonus_damage": {
-                    "value": "10",
-                    "special_bonus_scepter": "+10"
-                  },
-                  "invis": {
-                    "value": "0",
-                    "special_bonus_scepter": "=1"
-                  },
-                  "fly_timer": {
-                    "value": "0",
-                    "special_bonus_scepter": "0"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая врождённая способность. Активная.",
-                "en": "New innate ability. Active.",
-                "uk": "Нова вроджена здібність. Активна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "visage_grave_chill_custom",
-          "name": "visage grave chill",
+          "name": "grave chill",
           "image": "abilities/visage_grave_chill.webp",
           "description": [
             {
-              "ru": "Крадёт скорость передвижения и атаки цели, прибавляя эти показатели себе и гаргульям неподалёку. Длительность: 5. Кража скорости передвижения: 12% / 18% / 24% / 30%. Кража скорости атаки: 35 / 45 / 55 / 65. Расход маны: 75.",
-              "en": "Visage drains the movement and attack speed of the targeted unit, gaining the drained speed for itself and nearby Familiars. Duration: 5. Movement speed steal: 12% / 18% / 24% / 30%. Attack speed steal: 35 / 45 / 55 / 65. Mana cost: 75.",
-              "uk": "Англійською: Grave Chill Візаж забирає в цілі швидкість руху й атаки, додаючи відібрану швидкість собі та фамільярам поруч. Тривалість: 5. Крадіжка швидкості пересування: 12% / 18% / 24% / 30%. Крадіжка швидкості атаки: 35 / 45 / 55 / 65. Витрати мани: 75."
+              "ru": "Крадёт скорость передвижения и атаки цели, прибавляя эти показатели себе и гаргульям неподалёку. Длительность: 5. Кража скорости передвижения: 12% / 18% / 24% / 30%. Кража скорости атаки: 35 / 45 / 55 / 65. Перезарядка: 17 / 15 / 13 / 11. Дальность применения: 625. Расход маны: 75.",
+              "en": "Visage drains the movement and attack speed of the targeted unit, gaining the drained speed for itself and nearby Familiars. Duration: 5. Movement speed steal: 12% / 18% / 24% / 30%. Attack speed steal: 35 / 45 / 55 / 65. Cooldown: 17 / 15 / 13 / 11. Cast range: 625. Mana cost: 75.",
+              "uk": "Англійською: Grave Chill Візаж забирає в цілі швидкість руху й атаки, додаючи відібрану швидкість собі та фамільярам поруч. Тривалість: 5. Крадіжка швидкості пересування: 12% / 18% / 24% / 30%. Крадіжка швидкості атаки: 35 / 45 / 55 / 65. Перезарядка: 17 / 15 / 13 / 11. Дальність застосування: 625. Витрати мани: 75."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_visage_custom/visage_grave_chill_custom",
-                "AbilityTextureName": "visage_grave_chill",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
-                "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
-                "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-                "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-                "SpellDispellableType": "SPELL_DISPELLABLE_YES",
-                "AbilityCastPoint": "0.2 0.2 0.2 0.2",
-                "AbilityManaCost": "75",
-                "AbilityCastRange": "625",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3",
-                "AbilityValues": {
-                  "AbilityCooldown": "17 15 13 11",
-                  "chill_duration": "5",
-                  "movespeed_bonus": "12 18 24 30",
-                  "attackspeed_bonus": "35 45 55 65",
-                  "radius": {
-                    "value": "900",
-                    "affected_by_aoe_increase": "1"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Активная.",
-                "en": "New basic ability. Active.",
-                "uk": "Нова базова здібність. Активна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "visage_soul_assumption_custom",
-          "name": "visage soul assumption",
+          "name": "soul assumption",
           "image": "abilities/visage_soul_assumption.webp",
           "description": [
             {
-              "ru": "Способность получает заряд каждый раз, когда нанесённый героям неподалёку урон превышает 100. Наносит выбранной цели урон, зависящий от числа зарядов. Базовый урон: 20. Урон за заряд: 70. Макс. зарядов: 3 / 4 / 5 / 6. Срок действия заряда: 6. Урон для заряда: 100. Радиус сбора зарядов: 1800. Расход маны: 110.",
-              "en": "Visage gathers charges of soul essence each time nearby heroes take more than 100 damage. When the essence is released, it deals base damage as well as damage for each gathered soul charge. Base damage: 20. Damage per charge: 70. Max charges: 3 / 4 / 5 / 6. Charge duration: 6. Damage required for a charge: 100. Charge collection radius: 1800. Mana cost: 110.",
-              "uk": "Англійською: Soul Assumption Візаж накопичує заряди з есенції душ кожного разу, коли герої поблизу отримують більше 100 од. шкоди. Вивільнена есенція завдає базову шкоду, а також додаткову шкоду за кожний накопичений заряд. Базова шкода: 20. Шкода за заряд: 70. Макс. зарядів: 3 / 4 / 5 / 6. Тривалість заряду: 6. Шкода для заряду: 100. Радіус збору зарядів: 1800. Витрати мани: 110."
+              "ru": "Способность получает заряд каждый раз, когда нанесённый героям неподалёку урон превышает 100. Наносит выбранной цели урон, зависящий от числа зарядов. Базовый урон: 20. Урон за заряд: 70. Макс. зарядов: 3 / 4 / 5 / 6. Срок действия заряда: 6. Урон для заряда: 100. Радиус сбора зарядов: 1800. Перезарядка: 4. Дальность применения: 1000. Расход маны: 110.",
+              "en": "Visage gathers charges of soul essence each time nearby heroes take more than 100 damage. When the essence is released, it deals base damage as well as damage for each gathered soul charge. Base damage: 20. Damage per charge: 70. Max charges: 3 / 4 / 5 / 6. Charge duration: 6. Damage required for a charge: 100. Charge collection radius: 1800. Cooldown: 4. Cast range: 1000. Mana cost: 110.",
+              "uk": "Англійською: Soul Assumption Візаж накопичує заряди з есенції душ кожного разу, коли герої поблизу отримують більше 100 од. шкоди. Вивільнена есенція завдає базову шкоду, а також додаткову шкоду за кожний накопичений заряд. Базова шкода: 20. Шкода за заряд: 70. Макс. зарядів: 3 / 4 / 5 / 6. Тривалість заряду: 6. Шкода для заряду: 100. Радіус збору зарядів: 1800. Перезарядка: 4. Дальність застосування: 1000. Витрати мани: 110."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_visage_custom/visage_soul_assumption_custom",
-                "AbilityTextureName": "visage_soul_assumption",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
-                "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_ENEMY",
-                "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-                "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
-                "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
-                "AbilityCastPoint": "0.2",
-                "AbilityManaCost": "110",
-                "AbilityCastRange": "1000",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_2",
-                "AbilityValues": {
-                  "AbilityCooldown": "4",
-                  "bolt_speed": "1000",
-                  "soul_base_damage": "20",
-                  "soul_charge_damage": "70",
-                  "stack_limit": "3 4 5 6",
-                  "stack_duration": "6.0",
-                  "damage_limit": {
-                    "value": "100",
-                    "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
-                  },
-                  "radius": {
-                    "value": "1800",
-                    "affected_by_aoe_increase": "1"
-                  },
-                  "damage_min": "2.0",
-                  "damage_max": "3000.0",
-                  "target_count": {
-                    "value": "1",
-                    "special_bonus_unique_visage_3": "=3"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Активная.",
-                "en": "New basic ability. Active.",
-                "uk": "Нова базова здібність. Активна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "visage_gravekeepers_cloak_custom",
-          "name": "visage gravekeepers cloak",
+          "name": "gravekeepers cloak",
           "image": "abilities/visage_gravekeepers_cloak.webp",
           "description": [
             {
               "ru": "Герой создаёт на себе слоистый защитный покров. Если получить урон от игрока, один слой исчезает и восстанавливается спустя определённое время. Слои покрова, которые есть у героя, защищают и гаргулий в радиусе 900. Максимум слоёв: 4. Уменьшение урона за слой: 8% / 12% / 16% / 20%. Время восстановления слоя: 7 / 6 / 5 / 4. Минимальный урон: 40. Максимальное уменьшение урона: 32% / 48% / 64% / 80%.",
               "en": "Visage generates a layered barrier that protects him from damage. If he receives damage from a player, one layer is removed, and takes time to recover. Visage's Familiars are protected by his cloak when within 900 range of him, based on the number of layers Visage has. Max layers: 4. Damage reduction per layer: 8% / 12% / 16% / 20%. Layer recovery time: 7 / 6 / 5 / 4. Minimum damage: 40. Maximum damage reduction: 32% / 48% / 64% / 80%.",
-              "uk": "Англійською: Gravekeeper's Cloak Створює навколо себе багатошаровий бар’єр, що захищає від шкоди. Після отримання шкоди від ворожого героя зовнішній шар руйнується, а потім певний час відновлюється. Фамільяри Візажа захищені його вбранням у радіусі 900 навколо нього, відповідно до кількості шарів, які має Візаж. Макс. кількість шарів: 4. Зменшення шкоди за шар: 8% / 12% / 16% / 20%. Час відновлення шару: 7 / 6 / 5 / 4. Мінімальна шкода: 40. Макс. зменшення шкоди: 32% / 48% / 64% / 80%."
+              "uk": "Англійською: Gravekeeper's Cloak Створює навколо себе багатошаровий бар'єр, що захищає від шкоди. Після отримання шкоди від ворожого героя зовнішній шар руйнується, а потім певний час відновлюється. Фамільяри Візажа захищені його вбранням у радіусі 900 навколо нього, відповідно до кількості шарів, які має Візаж. Макс. кількість шарів: 4. Зменшення шкоди за шар: 8% / 12% / 16% / 20%. Час відновлення шару: 7 / 6 / 5 / 4. Мінімальна шкода: 40. Макс. зменшення шкоди: 32% / 48% / 64% / 80%."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_visage_custom/visage_gravekeepers_cloak_custom",
-                "AbilityTextureName": "visage_gravekeepers_cloak",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3",
-                "IsBreakable": "1",
-                "MaxLevel": "4",
-                "AbilityValues": {
-                  "max_layers": "4",
-                  "damage_reduction": "8 12 16 20",
-                  "recovery_time": "7 6 5 4",
-                  "minimum_damage": "40",
-                  "minimum_damage_familiars": "0",
-                  "radius": {
-                    "affected_by_aoe_increase": "1",
-                    "value": "900"
-                  },
-                  "max_damage_reduction": "32 48 64 80"
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Пассивная.",
-                "en": "New basic ability. Passive.",
-                "uk": "Нова базова здібність. Пасивна."
-              }
-            }
-          ]
+          "ability_notes": []
         },
         {
           "ability_id": "visage_summon_familiars_custom",
-          "name": "visage summon familiars",
+          "name": "summon familiars",
           "image": "abilities/visage_summon_familiars.webp",
           "description": [
             {
               "ru": "Призывает 2 слепых гаргульи, которые будут сражаться на стороне героя. У гаргулий есть способность Stone Form, которая позволяет им принять каменный облик и приземлиться, чтобы оглушить врагов вокруг, стать неуязвимыми и быстро восстановить здоровье. За убийство гаргулий враг получает значительную награду. Применение в альтернативном режиме возвращает уже призванных гаргулий к владельцу спустя 4 сек. В это время они не могут атаковать или совершать другие действия. Здоровье гаргульи: 450 / 600 / 750. Броня гаргульи: 2 / 3 / 4. Дальность атаки гаргулий: 180. Скорость передвижения гаргульи: 430. Золото за убийство гаргульи: 100. Урон гаргульи: 25 / 50 / 75. Перезарядка: 120 / 110 / 100. Расход маны: 150.",
               "en": "Conjures 2 blind Familiars to fight for Visage. Familiars possess the Stone Form ability, that allows them to turn into stone, stunning enemies upon landing. While in Stone Form, Familiars are invulnerable, and rapidly regenerate their health. Familiars grant high bounty when killed. The ability can be cast in the alt-cast state to recall Visages familiars after 4s, during which they cannot attack or act. Familiar health: 450 / 600 / 750. Familiar armor: 2 / 3 / 4. Familiar attack range: 180. Familiar movement speed: 430. Familiar bounty: 100. Familiar damage: 25 / 50 / 75. Cooldown: 120 / 110 / 100. Mana cost: 150.",
-              "uk": "Англійською: Summon Familiars Викликає в битву 2 незрячих фамільярів. Фамільяри мають здібність Кам’яна форма, що дозволяє їм перетворюватися на камінь, який при падінні на землю приголомшує ворогів навколо. У цій формі фамільяри невразливі й дуже швидко відновлюють здоров’я. За вбивство фамільярів дають багато золота. Здібність можна застосувати в альтернативному стані, щоби повернути фамільярів до Візажа після 4 с (у цей час вони не можуть діяти чи атакувати). Здоров'я гаргулії: 450 / 600 / 750. Броня гаргулії: 2 / 3 / 4. Дальність атаки гаргулій: 180. Швидкість пересування гаргулії: 430. Золото за вбивство гаргулії: 100. Шкода гаргулії: 25 / 50 / 75. Перезаряджання: 120 / 110 / 100. Витрати мани: 150."
+              "uk": "Англійською: Summon Familiars Викликає в битву 2 незрячих фамільярів. Фамільяри мають здібність Кам'яна форма, що дозволяє їм перетворюватися на камінь, який при падінні на землю приголомшує ворогів навколо. У цій формі фамільяри невразливі й дуже швидко відновлюють здоров'я. За вбивство фамільярів дають багато золота. Здібність можна застосувати в альтернативному стані, щоби повернути фамільярів до Візажа після 4 с (у цей час вони не можуть діяти чи атакувати). Здоров'я гаргулії: 450 / 600 / 750. Броня гаргулії: 2 / 3 / 4. Дальність атаки гаргулій: 180. Швидкість пересування гаргулії: 430. Золото за вбивство гаргулії: 100. Шкода гаргулії: 25 / 50 / 75. Перезарядка: 120 / 110 / 100. Витрати мани: 150."
             }
           ],
-          "ability_notes": [
-            {
-              "old_raw_value": null,
-              "new_raw_value": {
-                "BaseClass": "ability_lua",
-                "ScriptFile": "heroes/npc_dota_hero_visage_custom/visage_summon_familiars_custom",
-                "AbilityTextureName": "visage_summon_familiars",
-                "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE",
-                "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
-                "AbilityType": "ABILITY_TYPE_ULTIMATE",
-                "AbilityCastPoint": "0 0 0",
-                "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
-                "AbilityCooldown": "120 110 100",
-                "AbilityManaCost": "150 150 150",
-                "AbilityValues": {
-                  "familiar_hp": "450 600 750",
-                  "familiar_armor": "2 3 4",
-                  "familiar_attack_range": "180",
-                  "familiar_base_movespeed": "430",
-                  "familiar_bounty": "100",
-                  "familiar_attack_damage": {
-                    "value": "25 50 75",
-                    "CalculateSpellDamageTooltip": "0"
-                  },
-                  "familiar_count": "2",
-                  "back_distance": "75",
-                  "side_distance": "75",
-                  "return_distance": {
-                    "value": "1200"
-                  },
-                  "recall_duration": "4",
-                  "max_distance": {
-                    "value": "3500",
-                    "affected_by_aoe_increase": "1"
-                  },
-                  "attack_range_buffer": "200",
-                  "additional_target_search_radius": {
-                    "value": "300",
-                    "affected_by_aoe_increase": "1"
-                  }
-                }
-              },
-              "note": {
-                "ru": "Новая базовая способность. Активная.",
-                "en": "New basic ability. Active.",
-                "uk": "Нова базова здібність. Активна."
-              }
-            }
-          ]
+          "ability_notes": []
         }
       ],
       "talents": {
@@ -2313,7 +1894,7 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "При получении Слоя Gravekeeper's Cloak герой наносит всем противникам в радиусе 600 вокруг себя физический урон: 1%/1.5%/2% от Максимального Здоровья Срабатывает 1 раз даже при максимуме Слоёв",
+                  "ru": "При получении Слоя Gravekeeper's Cloak герой наносит всем противникам в радиусе 600 вокруг себя физический урон: 1%/1.5%/2% от Максимального Здоровья. Срабатывает 1 раз даже при максимуме Слоёв",
                   "en": "Upon gaining a Gravekeeper's Cloak Layer, the Hero deals Physical Damage equal to 1%/1.5%/2% of Max Health to all enemies within a 600 radius. Triggers 1 time even at the maximum number of Layers",
                   "uk": "Під час отримання шару Gravekeeper's Cloak герой завдає всім ворогам у радіусі 600 фізичної шкоди, що дорівнює 1%/1.5%/2% від максимального здоров'я. Спрацьовує 1 раз навіть за максимальної кількості шарів"
                 }
@@ -2333,9 +1914,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Каменные Сердца. Увеличение Здоровья Гаргульи Summon Familiars: 100%/200% от Силы",
-                  "en": "Stone Hearts. Summon Familiars Gargoyle Health Increase: 100%/200% of Strength",
-                  "uk": "Кам'яні Серця. Збільшення Здоров'я Гаргулій Summon Familiars: 100%/200% від Сили"
+                  "ru": "<font color='#e03e2e'>Каменные Сердца.</font> Увеличение Здоровья Гаргульи Summon Familiars: 100%/200% от Силы",
+                  "en": "<font color='#e03e2e'>Stone Hearts.</font> Summon Familiars Gargoyle Health Increase: 100%/200% of Strength",
+                  "uk": "<font color='#e03e2e'>Кам'яні Серця.</font> Збільшення Здоров'я Гаргулій Summon Familiars: 100%/200% від Сили"
                 }
               }
             ]
@@ -2353,9 +1934,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Убирает Soul Assumption. Уменьшение Времени Восстановления Слоя Gravekeeper's Cloak: 1/1.5 сек",
-                  "en": "Removes Soul Assumption. Gravekeeper's Cloak Layer Recovery Time Reduction: 1/1.5 sec",
-                  "uk": "Прибирає Soul Assumption. Зменшення Часу Відновлення Шару Gravekeeper's Cloak: 1/1.5 сек"
+                  "ru": "<font color='#e03e2e'>Убирает Soul Assumption.</font> Уменьшение Времени Восстановления Слоя Gravekeeper's Cloak: 1/1.5 сек",
+                  "en": "<font color='#e03e2e'>Removes Soul Assumption.</font> Gravekeeper's Cloak Layer Recovery Time Reduction: 1/1.5 sec",
+                  "uk": "<font color='#e03e2e'>Прибирає Soul Assumption.</font> Зменшення Часу Відновлення Шару Gravekeeper's Cloak: 1/1.5 сек"
                 }
               }
             ]
@@ -2373,9 +1954,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Уменьшение Количества Призываемых Гаргулий Summon Familiars: 1 Увеличение Здоровья Героя: 80% от Здоровья Гаргульи Summon Familiars Уменьшение Перезарядки Stone Form: 5 сек",
-                  "en": "Summon Familiars Gargoyle Count Reduction: 1 Hero Health Increase: 80% of Summon Familiars Gargoyle Health Stone Form Cooldown Reduction: 5 sec",
-                  "uk": "Зменшення Кількості Прикликаних Гаргулій Summon Familiars: 1 Збільшення Здоров'я Героя: 100% від Здоров'я Гаргулій Summon Familiars Зменшення Перезарядки Stone Form: 5 сек"
+                  "ru": "<font color='#e03e2e'>Уменьшение Количества Призываемых Гаргулий Summon Familiars: 1.</font> Увеличение Здоровья Героя: 80% от Здоровья Гаргульи Summon Familiars. Уменьшение Перезарядки Stone Form: 5 сек",
+                  "en": "<font color='#e03e2e'>Summon Familiars Gargoyle Count Reduction: 1.</font> Hero Health Increase: 80% of Summon Familiars Gargoyle Health. Stone Form Cooldown Reduction: 5 sec",
+                  "uk": "<font color='#e03e2e'>Зменшення Кількості Прикликаних Гаргулій Summon Familiars: 1.</font> Збільшення Здоров'я Героя: 100% від Здоров'я Гаргулій Summon Familiars. Зменшення Перезарядки Stone Form: 5 сек"
                 }
               }
             ]
@@ -2393,9 +1974,19 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Увеличение Радиуса Stone Form: 75/150/225 Увеличение Урона Stone Form: 40%/80%/120% от Максимального Здоровья Гаргульи Summon Familiars",
-                  "en": "Increased Stone Form Radius: 75/150/225 Increased Stone Form Damage: 40%/80%/120% of the Summon Familiars Gargoyle's Maximum Health",
-                  "uk": "Збільшення Радіуса Stone Form: 75/150/225 Збільшення Шкоди Stone Form: 40%/80%/120% від Максимального Здоров'я Гаргулії Summon Familiars"
+                  "ru": "Увеличение Радиуса Stone Form: 75/150/225. Увеличение Урона Stone Form: 40%/80%/120% от Максимального Здоровья Гаргульи Summon Familiars",
+                  "en": "Increased Stone Form Radius: 75/150/225. Increased Stone Form Damage: 40%/80%/120% of the Summon Familiars Gargoyle's Maximum Health",
+                  "uk": "Збільшення Радіуса Stone Form: 75/150/225. Збільшення Шкоди Stone Form: 40%/80%/120% від Максимального Здоров'я Гаргулії Summon Familiars"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 5",
+                "note": {
+                  "ru": "Требует прокачки «Талант 5»",
+                  "en": "Requires upgrading «Talent 5»",
+                  "uk": "Потребує прокачування «Талант 5»"
                 }
               }
             ]
@@ -2413,9 +2004,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Gravekeeper's Cloak можно активировать, чтобы герой принял каменный облик и приземлился, оглушив врагов вокруг, нанеся им магический урон и став неуязвимым. Восстанавливает 15% здоровья и все Слои. Урон: 15% от Максимального Здоровья Радиус: 375 Длительность Оглушения: 2 сек. Длительность Неуязвимости: 2 сек. Время Перезарядки: 40 сек",
-                  "en": "Gravekeeper's Cloak can be activated for the hero to turn into stone and land, stunning nearby enemies, dealing magical damage to them, and becoming invulnerable. Restores 15% health and all Layers. Damage: 15% of Max Health Radius: 375 Stun Duration: 2 sec. Invulnerability Duration: 2 sec. Cooldown: 40 sec",
-                  "uk": "Gravekeeper's Cloak можна активувати, щоб герой набув кам'яної форми й приземлився, оглушивши ворогів навколо, завдавши їм магічної шкоди та ставши невразливим. Відновлює 15% здоров'я й усі Шари. Шкода: 15% від Максимального Здоров'я Радіус: 375 Тривалість Оглушення: 2 сек. Тривалість Невразливості: 2 сек. Час Перезарядки: 40 сек"
+                  "ru": "Gravekeeper's Cloak можно активировать, чтобы герой принял каменный облик и приземлился, оглушив врагов вокруг, нанеся им магический урон и став неуязвимым. Восстанавливает 15% здоровья и все Слои. Урон: 15% от Максимального Здоровья. Радиус: 375. Длительность Оглушения: 2 сек. Длительность Неуязвимости: 2 сек. Время Перезарядки: 40 сек",
+                  "en": "Gravekeeper's Cloak can be activated for the hero to turn into stone and land, stunning nearby enemies, dealing magical damage to them, and becoming invulnerable. Restores 15% health and all Layers. Damage: 15% of Max Health. Radius: 375. Stun Duration: 2 sec. Invulnerability Duration: 2 sec. Cooldown: 40 sec",
+                  "uk": "Gravekeeper's Cloak можна активувати, щоб герой набув кам'яної форми й приземлився, оглушивши ворогів навколо, завдавши їм магічної шкоди та ставши невразливим. Відновлює 15% здоров'я й усі Шари. Шкода: 15% від Максимального Здоров'я. Радіус: 375. Тривалість Оглушення: 2 сек. Тривалість Невразливості: 2 сек. Час Перезарядки: 40 сек"
                 }
               }
             ]
@@ -2437,7 +2028,7 @@
                 "note": {
                   "ru": "Уменьшение Времени Перезарядки Summon Familiars: 25/50 сек. Ловкость: 5/10",
                   "en": "Summon Familiars Cooldown Reduction: 25/50 sec. Agility: 5/10",
-                  "uk": "Зменшення часу перезарядки Summon Familiars: 25/50 с Спритність: 5/10"
+                  "uk": "Зменшення часу перезарядки Summon Familiars: 25/50 с. Спритність: 5/10"
                 }
               }
             ]
@@ -2475,9 +2066,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Каменные Сердца. Увеличение Дальности Атаки Гаргульи Summon Familiars: 75%/150% от Ловкости Если выучить 3 Каменных Сердца, то: Убийства Героев навсегда увеличивают Силу, Ловкость, Интеллект: 1 Убийства до изучения таланта также учитываются",
-                  "en": "Stone Hearts. Summon Familiars Gargoyle Attack Range Increase: 75%/150% of Agility If you learn 3 Stone Hearts: Hero kills permanently increase Strength, Agility, and Intelligence by 1 Kills before learning the talent also count",
-                  "uk": "Кам'яні Серця. Збільшення Дальності Атаки Гаргулій Summon Familiars: 75%/150% від Спритності Якщо вивчити 3 Кам'яні Серця, тоді: Вбивства Героїв назавжди збільшують Силу, Спритність, Інтелект: 1 Вбивства до вивчення таланту також враховуються"
+                  "ru": "<font color='#e03e2e'>Каменные Сердца.</font> Увеличение Дальности Атаки Гаргульи Summon Familiars: 75%/150% от Ловкости. Если выучить 3 Каменных Сердца, то: Убийства Героев навсегда увеличивают Силу, Ловкость, Интеллект: 1. Убийства до изучения таланта также учитываются",
+                  "en": "<font color='#e03e2e'>Stone Hearts.</font> Summon Familiars Gargoyle Attack Range Increase: 75%/150% of Agility. If you learn 3 Stone Hearts: Hero kills permanently increase Strength, Agility, and Intelligence by 1. Kills before learning the talent also count",
+                  "uk": "<font color='#e03e2e'>Кам'яні Серця.</font> Збільшення Дальності Атаки Гаргулій Summon Familiars: 75%/150% від Спритності. Якщо вивчити 3 Кам'яні Серця, тоді: Вбивства Героїв назавжди збільшують Силу, Спритність, Інтелект: 1. Вбивства до вивчення таланту також враховуються"
                 }
               }
             ]
@@ -2535,9 +2126,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Атаки Гаргулий Summon Familiars уменьшают Броню: 0.5 Длительность Эффекта: 1.5/3 сек",
-                  "en": "Summon Familiars Gargoyle attacks reduce Armor: 0.5 Effect Duration: 1.5/3 sec",
-                  "uk": "Атаки Гаргулій Summon Familiars зменшують Броню: 0.5 Тривалість Ефекту: 1.5/3 сек"
+                  "ru": "Атаки Гаргулий Summon Familiars уменьшают Броню: 0.5. Длительность Эффекта: 1.5/3 сек",
+                  "en": "Summon Familiars Gargoyle attacks reduce Armor: 0.5. Effect Duration: 1.5/3 sec",
+                  "uk": "Атаки Гаргулій Summon Familiars зменшують Броню: 0.5. Тривалість Ефекту: 1.5/3 сек"
                 }
               }
             ]
@@ -2555,9 +2146,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Увеличение Всего Наносимого Урона: 12% Stone Form не запрещает Атаковать Гаргульям Summon Familiars. Увеличение Дальности Атаки Гаргульи Summon Familiars: 150",
-                  "en": "Total Damage Increase: 12% Stone Form does not prevent Summon Familiars Gargoyles from attacking. Summon Familiars Gargoyle Attack Range Increase: 150",
-                  "uk": "Збільшення всієї завданої шкоди: 12% Stone Form не забороняє Гаргуліям Summon Familiars атакувати. Збільшення дальності атаки Гаргулій Summon Familiars: 150"
+                  "ru": "Увеличение Всего Наносимого Урона: 12%. Stone Form не запрещает Атаковать Гаргульям Summon Familiars. Увеличение Дальности Атаки Гаргульи Summon Familiars: 150",
+                  "en": "Total Damage Increase: 12%. Stone Form does not prevent Summon Familiars Gargoyles from attacking. Summon Familiars Gargoyle Attack Range Increase: 150",
+                  "uk": "Збільшення всієї завданої шкоди: 12%. Stone Form не забороняє Гаргуліям Summon Familiars атакувати. Збільшення дальності атаки Гаргулій Summon Familiars: 150"
                 }
               }
             ]
@@ -2577,9 +2168,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Soul Assumption заряжается от Крипов. Soul Assumption получает Минимальный Заряд: 1/2/3 Интеллект: 5/10/15",
-                  "en": "Soul Assumption gains charges from Creeps. Soul Assumption gains Minimum Charges: 1/2/3 Intelligence: 5/10/15",
-                  "uk": "Soul Assumption накопичує заряди від крипів. Soul Assumption отримує мінімальну кількість зарядів: 1/2/3 Інтелект: 5/10/15"
+                  "ru": "Soul Assumption заряжается от Крипов. Soul Assumption получает Минимальный Заряд: 1/2/3. Интеллект: 5/10/15",
+                  "en": "Soul Assumption gains charges from Creeps. Soul Assumption gains Minimum Charges: 1/2/3. Intelligence: 5/10/15",
+                  "uk": "Soul Assumption накопичує заряди від крипів. Soul Assumption отримує мінімальну кількість зарядів: 1/2/3. Інтелект: 5/10/15"
                 }
               }
             ]
@@ -2597,9 +2188,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Увеличение Числа Целей Soul Assumption: 1/2 Уменьшение Расхода и Потери Маны: 10%/20%",
-                  "en": "Soul Assumption Target Count Increase: 1/2 Mana Cost and Mana Loss Reduction: 10%/20%",
-                  "uk": "Збільшення Кількості Цілей Soul Assumption: 1/2 Зменшення Витрат і Втрати Мани: 10%/20%"
+                  "ru": "Увеличение Числа Целей Soul Assumption: 1/2. Уменьшение Расхода и Потери Маны: 10%/20%",
+                  "en": "Soul Assumption Target Count Increase: 1/2. Mana Cost and Mana Loss Reduction: 10%/20%",
+                  "uk": "Збільшення Кількості Цілей Soul Assumption: 1/2. Зменшення Витрат і Втрати Мани: 10%/20%"
                 }
               }
             ]
@@ -2617,9 +2208,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Каменные Сердца. Увеличение Урона Гаргульи Summon Familiars: 20%/40% от Интеллекта",
-                  "en": "Stone Hearts. Summon Familiars Gargoyle Damage Increase: 20%/40% of Intelligence",
-                  "uk": "Кам'яні Серця. Збільшення Шкоди Гаргулій Summon Familiars: 20%/40% від Інтелекту"
+                  "ru": "<font color='#e03e2e'>Каменные Сердца.</font> Увеличение Урона Гаргульи Summon Familiars: 20%/40% от Интеллекта",
+                  "en": "<font color='#e03e2e'>Stone Hearts.</font> Summon Familiars Gargoyle Damage Increase: 20%/40% of Intelligence",
+                  "uk": "<font color='#e03e2e'>Кам'яні Серця.</font> Збільшення Шкоди Гаргулій Summon Familiars: 20%/40% від Інтелекту"
                 }
               }
             ]
@@ -2657,9 +2248,9 @@
                 "old_raw_value": null,
                 "new_raw_value": null,
                 "note": {
-                  "ru": "Soul Assumption перед нанесением урона снижает Сопротивление Магии за каждый Заряд: 3%/5% Длительность: 7 сек",
-                  "en": "Soul Assumption reduces Magic Resistance before dealing damage for each Charge: 3%/5% Duration: 7 sec",
-                  "uk": "Soul Assumption перед завданням шкоди знижує опір магії за кожен заряд: 3%/5% Тривалість: 7 с"
+                  "ru": "Soul Assumption перед нанесением урона снижает Сопротивление Магии за каждый Заряд: 3%/5%. Длительность: 7 сек",
+                  "en": "Soul Assumption reduces Magic Resistance before dealing damage for each Charge: 3%/5%. Duration: 7 sec",
+                  "uk": "Soul Assumption перед завданням шкоди знижує опір магії за кожен заряд: 3%/5%. Тривалість: 7 с"
                 }
               }
             ]
@@ -2679,7 +2270,7 @@
                 "note": {
                   "ru": "Увеличение Длительности Дополнительного Урона Silent as the Grave: 1/2 сек. Увеличение Дополнительного Урона Silent as the Grave: 5%/10%",
                   "en": "Silent as the Grave Bonus Damage Duration Increase: 1/2 sec. Silent as the Grave Bonus Damage Increase: 5%/10%",
-                  "uk": "Збільшення тривалості додаткової шкоди Silent as the Grave: 1/2 с Збільшення додаткової шкоди Silent as the Grave: 5%/10%"
+                  "uk": "Збільшення тривалості додаткової шкоди Silent as the Grave: 1/2 с. Збільшення додаткової шкоди Silent as the Grave: 5%/10%"
                 }
               }
             ]
@@ -2828,7 +2419,7 @@
       "abilities": [
         {
           "ability_id": "bristleback_bristleback_custom",
-          "name": "bristleback bristleback",
+          "name": "bristleback",
           "image": "abilities/bristleback_bristleback.webp",
           "ability_notes": [
             {
@@ -2959,12 +2550,12 @@
                 "old_raw_value": {
                   "ru": "Убирает Chaos Strike. Новая Активная Способность: Chaos King Bar Применяет на владельца нормальное развеивание. Даёт 60% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья. Длительность: 2/3 сек. Восстановление Здоровья: 200% от Восстановления Маны Время Перезарядки: 60 сек",
                   "en": "Removes Chaos Strike. New Active Ability: Chaos King Bar Applies a basic dispel to the owner. Grants 60% magic resistance and protects from negative effects. Increases health regeneration. Duration: 2/3 sec. Health Regeneration: 200% of Mana Regeneration Cooldown: 60 sec",
-                  "uk": "Прибирає Chaos Strike. Нова Активна Здібність: Chaos King Bar Застосовує на власника нормальне розсіювання. Дає 60% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров’я. Тривалість: 2/3 сек. Відновлення Здоров’я: 200% від Відновлення Мани Час Перезарядки: 60 сек"
+                  "uk": "Прибирає Chaos Strike. Нова Активна Здібність: Chaos King Bar Застосовує на власника нормальне розсіювання. Дає 60% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров'я. Тривалість: 2/3 сек. Відновлення Здоров'я: 200% від Відновлення Мани Час Перезарядки: 60 сек"
                 },
                 "new_raw_value": {
                   "ru": "Убирает Chaos Strike. Новая Активная Способность: Chaos King Bar Применяет на владельца нормальное развеивание. Даёт 60% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья. Длительность: 2/4 сек. Восстановление Здоровья: 200% от Восстановления Маны Время Перезарядки: 60 сек",
                   "en": "Removes Chaos Strike. New Active Ability: Chaos King Bar Applies a basic dispel to the owner. Grants 60% magic resistance and protects from negative effects. Increases health regeneration. Duration: 2/4 sec. Health Regeneration: 200% of Mana Regeneration Cooldown: 60 sec",
-                  "uk": "Прибирає Chaos Strike. Нова Активна Здібність: Chaos King Bar Застосовує на власника нормальне розсіювання. Дає 60% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров’я. Тривалість: 2/4 сек. Відновлення Здоров’я: 200% від Відновлення Мани Час Перезарядки: 60 сек"
+                  "uk": "Прибирає Chaos Strike. Нова Активна Здібність: Chaos King Bar Застосовує на власника нормальне розсіювання. Дає 60% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров'я. Тривалість: 2/4 сек. Відновлення Здоров'я: 200% від Відновлення Мани Час Перезарядки: 60 сек"
                 },
                 "note": {
                   "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
@@ -3081,9 +2672,9 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "«Проклятие. Уменьшает Сопротивление Магии Героя и Окружающих Противников: 20%/40% Радиус: 900» заменено на «Проклятие. Уменьшает Скорость Атаки Героя и Окружающих Противников: 75/150 Радиус: 900»",
-                  "en": "«Curse. Reduces Magic Resistance of the Hero and nearby Enemies: 20%/40% Radius: 900» replaced with «Curse. Reduces Attack Speed of the Hero and nearby Enemies: 75/150 Radius: 900»",
-                  "uk": "«Прокляття. Зменшує Опір Магії Героя та Навколишніх Противників: 20%/40% > Радіус: 900» замінено на «Прокляття. Зменшує Швидкість Атаки Героя та Навколишніх Противників: 75/150 Радіус: 900»"
+                  "ru": "«Проклятие. Уменьшает Сопротивление Магии Героя и Окружающих Противников: 20%/40%. Радиус: 900» заменено на «Проклятие. Уменьшает Скорость Атаки Героя и Окружающих Противников: 75/150. Радиус: 900»",
+                  "en": "«Curse. Reduces Magic Resistance of the Hero and nearby Enemies: 20%/40%. Radius: 900» replaced with «Curse. Reduces Attack Speed of the Hero and nearby Enemies: 75/150. Radius: 900»",
+                  "uk": "«Прокляття. Зменшує Опір Магії Героя та Навколишніх Противників: 20%/40%. > Радіус: 900» замінено на «Прокляття. Зменшує Швидкість Атаки Героя та Навколишніх Противників: 75/150. Радіус: 900»"
                 }
               }
             ]
@@ -3099,9 +2690,9 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "«Проклятие. Уменьшает Скорость Атаки Героя и Окружающих Противников: 75/150 Радиус: 900» заменено на «Проклятие. Уменьшает Сопротивление Магии Героя и Окружающих Противников: 20%/40% Радиус: 900»",
-                  "en": "«Curse. Reduces Attack Speed of the Hero and nearby Enemies: 75/150 Radius: 900» replaced with «Curse. Reduces Magic Resistance of the Hero and nearby Enemies: 20%/40% Radius: 900»",
-                  "uk": "«Прокляття. Зменшує Швидкість Атаки Героя та Навколишніх Противників: 75/150 Радіус: 900» замінено на «Прокляття. Зменшує Опір Магії Героя та Навколишніх Противників: 20%/40% > Радіус: 900»"
+                  "ru": "«Проклятие. Уменьшает Скорость Атаки Героя и Окружающих Противников: 75/150. Радиус: 900» заменено на «Проклятие. Уменьшает Сопротивление Магии Героя и Окружающих Противников: 20%/40%. Радиус: 900»",
+                  "en": "«Curse. Reduces Attack Speed of the Hero and nearby Enemies: 75/150. Radius: 900» replaced with «Curse. Reduces Magic Resistance of the Hero and nearby Enemies: 20%/40%. Radius: 900»",
+                  "uk": "«Прокляття. Зменшує Швидкість Атаки Героя та Навколишніх Противників: 75/150. Радіус: 900» замінено на «Прокляття. Зменшує Опір Магії Героя та Навколишніх Противників: 20%/40%. > Радіус: 900»"
                 }
               }
             ]
@@ -3303,26 +2894,9 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "«Gust телепортирует героя в точку применения. Максимальная дальность телепортации равна дальности применения Gust. Задержка Телепортации: 0.5 сек» заменено на «Броня: 1/2/3 Gust увеличивает Скорость Передвижения: 12%/24%/36%»",
-                  "en": "«Gust teleports the hero to the point of application. The maximum teleportation range is equal to the range of Gust. Teleport Delay: 0.5 seconds» replaced with «Armor: 1/2/3 Gust increases Movement Speed by: 12%/24%/36%»",
-                  "uk": "«Gust телепортує героя в точку застосування. Максимальна дальність телепортації дорівнює дальності застосування Gust. Затримка Телепортації: 0.5 сек» замінено на «Броня: 1/2/3 Gust збільшує швидкість пересування на: 12%/24%/36%»"
-                }
-              },
-              {
-                "old_raw_value": {
-                  "ru": "Увеличение Скорости Передвижения Gust: 12%/24%/36%",
-                  "en": "Gust Movement Speed Increase: 12%/24%/36%",
-                  "uk": "Збільшення Швидкості Пересування Gust: 12%/24%/36%"
-                },
-                "new_raw_value": {
-                  "ru": "Броня: 1/2/3 Gust увеличивает Скорость Передвижения: 12%/24%/36%",
-                  "en": "Armor: 1/2/3 Gust increases Movement Speed by: 12%/24%/36%",
-                  "uk": "Броня: 1/2/3 Gust збільшує швидкість пересування на: 12%/24%/36%"
-                },
-                "note": {
-                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
-                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
-                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                  "ru": "«Gust телепортирует героя в точку применения. Максимальная дальность телепортации равна дальности применения Gust. Задержка Телепортации: 0.5 сек» заменено на «Броня: 1/2/3. Gust увеличивает Скорость Передвижения: 12%/24%/36%»",
+                  "en": "«Gust teleports the hero to the point of application. The maximum teleportation range is equal to the range of Gust. Teleport Delay: 0.5 seconds» replaced with «Armor: 1/2/3. Gust increases Movement Speed by: 12%/24%/36%»",
+                  "uk": "«Gust телепортує героя в точку застосування. Максимальна дальність телепортації дорівнює дальності застосування Gust. Затримка Телепортації: 0.5 сек» замінено на «Броня: 1/2/3. Gust збільшує швидкість пересування на: 12%/24%/36%»"
                 }
               }
             ]
@@ -3581,7 +3155,7 @@
                 "old_raw_value": {
                   "ru": "Увеличение Урона в Секунду за Способность Time Dilation: 0.3%/0.4%/0.5% от Максимального Здоровья",
                   "en": "Increase Damage per Second from Time Dilation: 0.3%/0.4%/0.5% of Maximum Health",
-                  "uk": "Збільшення шкоди за секунду від здібності Time Dilation: 0.3%/0.4%/0.5% від Максимального Здоров’я"
+                  "uk": "Збільшення шкоди за секунду від здібності Time Dilation: 0.3%/0.4%/0.5% від Максимального Здоров'я"
                 },
                 "new_raw_value": {
                   "ru": "Увеличение Урона в Секунду за Способность Time Dilation: 0.3%/0.6% от Максимального Здоровья",
@@ -3611,7 +3185,7 @@
                 "old_raw_value": {
                   "ru": "Time Walk не восстанавливает здоровье. Восстановление Здоровья во время Безмолвия: 15 Time Walk накладывает на героя и противников неподалёку Безмолвие. Радиус: 400 Длительность Безмолвия: 2/3 сек",
                   "en": "Time Walk does not restore health. Health Regeneration during Silence: 15 Time Walk applies Silence to the hero and nearby enemies. Radius: 400 Silence Duration: 2/3 sec",
-                  "uk": "Time Walk не відновлює здоров’я. Відновлення Здоров’я під час Безмовності: 15 Time Walk накладає на героя та ворогів поблизу Безмовність. Радіус: 400 Тривалість Безмовності: 2/3 сек"
+                  "uk": "Time Walk не відновлює здоров'я. Відновлення Здоров'я під час Безмовності: 15 Time Walk накладає на героя та ворогів поблизу Безмовність. Радіус: 400 Тривалість Безмовності: 2/3 сек"
                 },
                 "new_raw_value": {
                   "ru": "Time Walk не восстанавливает здоровье. Восстановление Здоровья во время Безмолвия: 15 Time Walk накладывает на героя и противников неподалёку Безмолвие. Нельзя развеять. Радиус: 400 Длительность Безмолвия: 2/3 сек",
@@ -3736,6 +3310,16 @@
             },
             "talent_notes": [
               {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 3",
+                "note": {
+                  "ru": "Теперь требует прокачки «Талант 3»",
+                  "en": "Now requires upgrading «Talent 3»",
+                  "uk": "Тепер потребує прокачування «Талант 3»"
+                }
+              },
+              {
                 "old_raw_value": {
                   "ru": "Максимум Эффектов Burning Spear: 7 Эффекты Burning Spear обновляют время действия друг друга",
                   "en": "Maximum Burning Spear Effects: 7 Burning Spear effects refresh each other's duration",
@@ -3835,12 +3419,12 @@
                 "old_raw_value": {
                   "ru": "Пополнение Здоровья: 6%/12%/18%",
                   "en": "Health Regeneration: 6%/12%/18%",
-                  "uk": "Відновлення здоров’я: 6%/12%/18%"
+                  "uk": "Відновлення здоров'я: 6%/12%/18%"
                 },
                 "new_raw_value": {
                   "ru": "Пополнение Здоровья: 5%/10%/15%",
                   "en": "Health Restoration: 5%/10%/15%",
-                  "uk": "Відновлення здоров’я: 5%/10%/15%"
+                  "uk": "Відновлення здоров'я: 5%/10%/15%"
                 },
                 "note": {
                   "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
@@ -4130,9 +3714,9 @@
                   "uk": "Здібності в різних стійках Switch Discipline мають окремі часи перезарядки"
                 },
                 "note": {
-                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
-                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
-                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                  "ru": "«Switch Discipline мгновенно перезаряжается при применении других способностей у выбранного стиля боя. Первая способность, применённая в течение 3 сек. после переключения стиля боя, не начнёт перезарядку её альтернативной версии у другого стиля» заменено на «Способности в разных стойках Switch Discipline перезаряжаются отдельно»",
+                  "en": "«Switch Discipline is instantly recharged when using other abilities in the selected fighting style. The first ability used within 3 sec. after switching fighting styles will not start the cooldown of its alternate version in the other style» replaced with «Abilities in different Switch Discipline stances have separate cooldowns»",
+                  "uk": "«Switch Discipline миттєво перезаряджається при застосуванні інших здібностей у вибраного стилю бою. Перша здатність, застосована протягом 3 сек. після перемикання стилю бою, не почне перезаряджання її альтернативної версії в іншого стилю» замінено на «Здібності в різних стійках Switch Discipline мають окремі часи перезарядки»"
                 }
               }
             ]
@@ -4318,12 +3902,12 @@
                 "old_raw_value": {
                   "ru": "Flame Cloak применяет Нормальное Развеивание и восстанавливает долю от максимального здоровья. Восстановление Здоровья: 5%/15%",
                   "en": "Flame Cloak applies a Basic Dispel and restores a portion of maximum health. Health Restoration: 5%/15%",
-                  "uk": "Flame Cloak накладає Базове Розвіювання та відновлює частину максимального здоров’я. Відновлення Здоров’я: 5%/15%"
+                  "uk": "Flame Cloak накладає Базове Розвіювання та відновлює частину максимального здоров'я. Відновлення Здоров'я: 5%/15%"
                 },
                 "new_raw_value": {
                   "ru": "Flame Cloak применяет Нормальное Развеивание и восстанавливает долю от максимального здоровья. Восстановление Здоровья: 10%/20%",
                   "en": "Flame Cloak applies a Basic Dispel and restores a portion of maximum health. Health Restoration: 10%/20%",
-                  "uk": "Flame Cloak накладає Базове Розвіювання та відновлює частину максимального здоров’я. Відновлення Здоров’я: 10%/20%"
+                  "uk": "Flame Cloak накладає Базове Розвіювання та відновлює частину максимального здоров'я. Відновлення Здоров'я: 10%/20%"
                 },
                 "note": {
                   "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
@@ -4602,23 +4186,6 @@
                   "en": "«Rebound Cooldown Reduction: 30%/60% of Evasion» replaced with «Attack Speed is increased by 3 for every 3%/2% Evasion»",
                   "uk": "«Зменшення Часу Перезаряджання Rebound: 30%/60% Ухилення» замінено на «Швидкість атаки збільшується на 3 за кожні 3%/2% Ухилення»"
                 }
-              },
-              {
-                "old_raw_value": {
-                  "ru": "Увеличение Скорости Атаки на 1 за каждые 2%/1% Уклонения",
-                  "en": "Increase Attack Speed ​​by 1 for every 2%/1% Evasion",
-                  "uk": "Збільшення Швидкості Атаки на 1 за кожні 2%/1% Ухилення"
-                },
-                "new_raw_value": {
-                  "ru": "Увеличение Скорости Атаки на 3 за каждые 3%/2% Уклонения",
-                  "en": "Attack Speed is increased by 3 for every 3%/2% Evasion",
-                  "uk": "Швидкість атаки збільшується на 3 за кожні 3%/2% Ухилення"
-                },
-                "note": {
-                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
-                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
-                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
-                }
               }
             ]
           },
@@ -4722,26 +4289,9 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "«Увеличение Критического Урона Boundless Strike: 25%/50%» заменено на «Ловкость: 5/10 Уменьшение Задержки перед применением Boundless Strike: 25%/50% Уменьшение Затрат Маны Boundless Strike: 25%/50%»",
-                  "en": "«Increases Boundless Strike Critical Damage: 25%/50%» replaced with «Agility: 5/10 Boundless Strike Cast Point Reduction: 25%/50% Boundless Strike Mana Cost Reduction: 25%/50%»",
-                  "uk": "«Збільшення Критичного Урону Boundless Strike: 25%/50%» замінено на «Спритність: 5/10 Зменшення затримки перед застосуванням Boundless Strike: 25%/50% Зменшення витрат мани Boundless Strike: 25%/50%»"
-                }
-              },
-              {
-                "old_raw_value": {
-                  "ru": "Уменьшение Задержки перед применением Boundless Strike: 25%/50% Уменьшение Затрат Маны Boundless Strike: 25%/50%",
-                  "en": "Reduces Boundless Strike Cast Point: 25%/50% Reduced Mana Cost for Boundless Strike: 25%/50%",
-                  "uk": "Зменшення затримки перед застосуванням Boundless Strike: 25%/50% Зменшення витрат мани на Boundless Strike: 25%/50%"
-                },
-                "new_raw_value": {
-                  "ru": "Ловкость: 5/10 Уменьшение Задержки перед применением Boundless Strike: 25%/50% Уменьшение Затрат Маны Boundless Strike: 25%/50%",
-                  "en": "Agility: 5/10 Boundless Strike Cast Point Reduction: 25%/50% Boundless Strike Mana Cost Reduction: 25%/50%",
-                  "uk": "Спритність: 5/10 Зменшення затримки перед застосуванням Boundless Strike: 25%/50% Зменшення витрат мани Boundless Strike: 25%/50%"
-                },
-                "note": {
-                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
-                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
-                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                  "ru": "«Увеличение Критического Урона Boundless Strike: 25%/50%» заменено на «Ловкость: 5/10. Уменьшение Задержки перед применением Boundless Strike: 25%/50%. Уменьшение Затрат Маны Boundless Strike: 25%/50%»",
+                  "en": "«Increases Boundless Strike Critical Damage: 25%/50%» replaced with «Agility: 5/10. Boundless Strike Cast Point Reduction: 25%/50%. Boundless Strike Mana Cost Reduction: 25%/50%»",
+                  "uk": "«Збільшення Критичного Урону Boundless Strike: 25%/50%» замінено на «Спритність: 5/10. Зменшення затримки перед застосуванням Boundless Strike: 25%/50%. Зменшення витрат мани Boundless Strike: 25%/50%»"
                 }
               }
             ]
@@ -4757,9 +4307,9 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "«Уменьшение Задержки перед применением Boundless Strike: 25%/50% Уменьшение Затрат Маны Boundless Strike: 25%/50%» заменено на «Увеличение Критического Урона Boundless Strike: 25%/50%»",
-                  "en": "«Reduces Boundless Strike Cast Point: 25%/50% Reduced Mana Cost for Boundless Strike: 25%/50%» replaced with «Increases Boundless Strike Critical Damage: 25%/50%»",
-                  "uk": "«Зменшення затримки перед застосуванням Boundless Strike: 25%/50% Зменшення витрат мани на Boundless Strike: 25%/50%» замінено на «Збільшення Критичного Урону Boundless Strike: 25%/50%»"
+                  "ru": "«Уменьшение Задержки перед применением Boundless Strike: 25%/50%. Уменьшение Затрат Маны Boundless Strike: 25%/50%» заменено на «Увеличение Критического Урона Boundless Strike: 25%/50%»",
+                  "en": "«Reduces Boundless Strike Cast Point: 25%/50%. Reduced Mana Cost for Boundless Strike: 25%/50%» replaced with «Increases Boundless Strike Critical Damage: 25%/50%»",
+                  "uk": "«Зменшення затримки перед застосуванням Boundless Strike: 25%/50%. Зменшення витрат мани на Boundless Strike: 25%/50%» замінено на «Збільшення Критичного Урону Boundless Strike: 25%/50%»"
                 }
               }
             ]
@@ -4959,12 +4509,12 @@
                 "old_raw_value": {
                   "ru": "Энты Nature's Call взрываются при Смерти нанося Магический Урон: 18%/36% от Максимального Здоровья Энта Радиус: 300",
                   "en": "Nature's Call Treants explode on death, dealing Magic Damage: 18%/36% of the Treant's Max Health Radius: 300",
-                  "uk": "Енти Nature's Call вибухають при смерті, завдаючи магічної шкоди: 18%/36% від максимального здоров’я ента Радіус: 300"
+                  "uk": "Енти Nature's Call вибухають при смерті, завдаючи магічної шкоди: 18%/36% від максимального здоров'я ента Радіус: 300"
                 },
                 "new_raw_value": {
                   "ru": "Энты Nature's Call взрываются при Смерти нанося Магический Урон: 30%/50% от Максимального Здоровья Энта Радиус: 300",
                   "en": "Nature's Call Treants explode on death, dealing Magic Damage: 30%/50% of the Treant's Max Health Radius: 300",
-                  "uk": "Енти Nature's Call вибухають при смерті, завдаючи магічної шкоди: 30%/50% від максимального здоров’я ента Радіус: 300"
+                  "uk": "Енти Nature's Call вибухають при смерті, завдаючи магічної шкоди: 30%/50% від максимального здоров'я ента Радіус: 300"
                 },
                 "note": {
                   "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
@@ -5115,7 +4665,7 @@
       "abilities": [
         {
           "ability_id": "nyx_assassin_jolt_custom",
-          "name": "nyx assassin jolt",
+          "name": "jolt",
           "image": "abilities/nyx_assassin_jolt.webp",
           "ability_notes": [
             {
@@ -5161,7 +4711,7 @@
                 "old_raw_value": {
                   "ru": "Восстановление Здоровья: 3/6 Восстановление Маны: 3/6",
                   "en": "Health Regen: 3/6 Mana Regen: 3/6",
-                  "uk": "Відновлення здоров’я: 3/6 Відновлення мани: 3/6"
+                  "uk": "Відновлення здоров'я: 3/6 Відновлення мани: 3/6"
                 },
                 "new_raw_value": {
                   "ru": "Восстановление Здоровья и Маны: 3/6",
@@ -5309,22 +4859,31 @@
                   "en": "«Increase Rot Damage: 0.25%/0.5%/0.75% from Max Health» replaced with «Rot reduces the target's Magic Resistance: 5%/10%/15%»",
                   "uk": "«Збільшення Втрат Rot: 0.25%/0.5%/0.75% від Максимального Здоров'я» замінено на «Rot зменшує опір магії цілі: 5%/10%/15%»"
                 }
-              },
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_pudge_5",
+            "image": "images/heroes/talents/pudge/5.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
               {
-                "old_raw_value": {
-                  "ru": "Rot уменьшает Сопротивление Магии Цели: 4%/8%/12%",
-                  "en": "Rot reduces the Target's Magic Resistance: 4%/8%/12%",
-                  "uk": "Rot зменшує Опір Магії Цілі: 4%/8%/12%"
-                },
-                "new_raw_value": {
-                  "ru": "Rot уменьшает Сопротивление Магии Цели: 5%/10%/15%",
-                  "en": "Rot reduces the target's Magic Resistance: 5%/10%/15%",
-                  "uk": "Rot зменшує опір магії цілі: 5%/10%/15%"
-                },
+                "parameter": "talent_requires",
+                "old_raw_value": "Талант 3",
+                "new_raw_value": "Талант 2",
                 "note": {
-                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
-                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
-                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                  "ru": "Теперь требует прокачки «Талант 2»",
+                  "en": "Now requires upgrading «Talent 2»",
+                  "uk": "Тепер потребує прокачування «Талант 2»"
+                },
+                "tooltip": {
+                  "ru": "Раньше требовался для прокачки «Талант 3»",
+                  "en": "Previously required upgrading «Talent 3»",
+                  "uk": "Раніше потребував прокачування «Талант 3»"
                 }
               }
             ]
@@ -5425,7 +4984,33 @@
       "image": "images/heroes/heroesPreview/razor.webp",
       "primary_attribute": "agility",
       "hero_notes": [],
-      "abilities": [],
+      "abilities": [
+        {
+          "ability_id": "razor_eye_of_the_storm_custom",
+          "name": "eye of the storm",
+          "image": "abilities/razor_eye_of_the_storm.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "old_raw_value": {
+                "ru": "Собирает над героем грозовую тучу, которая бьёт молнией врага с наименьшим здоровьем, нанося ему урон и снижая его броню.",
+                "en": "A powerful lightning storm strikes out at the enemy unit with the lowest health, dealing damage and reducing armor.",
+                "uk": "Англійською: Eye of the Storm Потужна буря з блискавками влучає у ворожу істоту з найменшим здоров'ям, завдає шкоди та послаблює її броню."
+              },
+              "new_raw_value": {
+                "ru": "Собирает над героем грозовую тучу, которая бьёт молнией врага с наименьшим здоровьем, нанося ему урон и снижая его броню. Максимум эффектов: 20.",
+                "en": "A powerful lightning storm strikes out at the enemy unit with the lowest health, dealing damage and reducing armor. Maximum Stacks: 20.",
+                "uk": "Англійською: Eye of the Storm Потужна буря з блискавками влучає у ворожу істоту з найменшим здоров'ям, завдає шкоди та послаблює її броню. Максимум Ефектів: 20."
+              },
+              "note": {
+                "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
       "talents": {
         "strength": [
           {
@@ -5499,7 +5084,7 @@
                 "old_raw_value": {
                   "ru": "Увеличение Скорости Атаки и Скорости Передвижения на 4% за каждый уникальный эффект Связи на герое. Связи создаются моментально",
                   "en": "Increases Attack Speed and Movement Speed by 4% for each unique Link effect on the hero. Links are created instantly",
-                  "uk": "Збільшує швидкість атаки та пересування на 4% за кожен унікальний ефект Зв’язку на герої. Зв’язки створюються миттєво"
+                  "uk": "Збільшує швидкість атаки та пересування на 4% за кожен унікальний ефект Зв'язку на герої. Зв'язки створюються миттєво"
                 },
                 "new_raw_value": {
                   "ru": "Увеличение Скорости Атаки и Всего Наносимого Урона на 4% за каждый уникальный эффект Связи на герое. Связи создаются моментально",
@@ -5527,7 +5112,7 @@
       "abilities": [
         {
           "ability_id": "riki_backstab_custom",
-          "name": "riki backstab",
+          "name": "backstab",
           "image": "abilities/riki_backstab.webp",
           "innate": true,
           "ability_notes": [
@@ -5539,6 +5124,31 @@
                 "ru": "Damage Multiplier: {change_label} с {old_raw_value} до {new_raw_value}",
                 "en": "Damage Multiplier: {change_label} from {old_raw_value} to {new_raw_value}",
                 "uk": "Damage Multiplier: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "riki_permanent_invisibility_custom",
+          "name": "permanent invisibility",
+          "image": "abilities/riki_permanent_invisibility.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "old_raw_value": {
+                "ru": "Герой сливается с тенями, оставаясь едва заметным, пока не совершит атаку или не подйоёдт к вражескому герою слишком быстро. Участие в убийствах приносит ему дополнительный опыт.",
+                "en": "The hero merges with the shadows, remaining barely visible until he attacks or approaches an enemy hero too quickly. Participating in kills grants additional experience.",
+                "uk": "Герой зливається з тінями, залишаючись майже непомітним, доки не атакує або не наблизиться надто швидко до ворожого героя. Участь у вбивствах дає додатковий досвід."
+              },
+              "new_raw_value": {
+                "ru": "Герой сливается с тенями, оставаясь едва заметным, пока не совершит атаку или не подойдёт к вражескому герою слишком быстро. Участие в убийствах приносит ему дополнительный опыт.",
+                "en": "The hero merges with the shadows, remaining barely visible until he attacks or approaches an enemy hero too quickly. Participating in kills grants additional experience.",
+                "uk": "Герой зливається з тінями, залишаючись майже непомітним, доки не атакує або не наблизиться надто швидко до ворожого героя. Участь у вбивствах дає додатковий досвід."
+              },
+              "note": {
+                "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
               }
             }
           ]
@@ -5607,23 +5217,6 @@
                   "ru": "«Увеличение Количества Атак Tricks of the Trade: 1 + 1 за каждые 300/200 Ловкости» заменено на «Союзники внутри Smoke Screen получают Шанс Уклониться от Любого Урона: 8%/16%»",
                   "en": "«Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility» replaced with «Allies inside Smoke Screen gain a Chance to Evade Any Damage: 8%/16%»",
                   "uk": "«Збільшення Кількості Атак Tricks of the Trade: 1 + 1 за кожні 300/200 Спритності» замінено на «Союзники всередині Smoke Screen отримують Шанс Ухилитися від Будь-якої Шкоди: 8%/16%»"
-                }
-              },
-              {
-                "old_raw_value": {
-                  "ru": "Союзники внутри Smoke Screen получают Шанс Уклониться от Любого Урона: 7%/14%",
-                  "en": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 7%/14%",
-                  "uk": "Союзники всередині Smoke Screen отримують Шанс Ухилитися від Будь-якої Шкоди: 7%/14%"
-                },
-                "new_raw_value": {
-                  "ru": "Союзники внутри Smoke Screen получают Шанс Уклониться от Любого Урона: 8%/16%",
-                  "en": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 8%/16%",
-                  "uk": "Союзники всередині Smoke Screen отримують Шанс Ухилитися від Будь-якої Шкоди: 8%/16%"
-                },
-                "note": {
-                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
-                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
-                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
                 }
               }
             ]
@@ -5880,7 +5473,7 @@
       "abilities": [
         {
           "ability_id": "techies_mutually_assured_destruction_custom",
-          "name": "techies mutually assured destruction",
+          "name": "mutually assured destruction",
           "image": "abilities/techies_mutually_assured_destruction.webp",
           "innate": true,
           "ability_notes": [
@@ -5983,8 +5576,8 @@
       "abilities": [
         {
           "ability_id": "tiny_insurmountable",
-          "name": "tiny insurmountable",
-          "image": "abilities/tiny_insurmountable.webp",
+          "name": "insurmountable",
+          "image": "abilities/tiny_craggy_exterior.webp",
           "innate": true,
           "ability_notes": [
             {
@@ -6170,9 +5763,9 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "«Vampiric Spirit больше не призывает Скелетов. Vampiric Spirit призывает Духов с дальним типом атаки и Магическим Уроном. Дальность Атаки Духов: 300/400/500 Доп. Здоровье Духов: 100/150/200» заменено на «Герой получает Ауру на Скорость Атаки и Скорость Передвижения: 10/20 Радиус: 1200»",
-                  "en": "«Vampiric Spirit no longer summons Skeletons. Vampiric Spirit summons Spirits with a ranged attack type and Magic Damage. Spirit Attack Range: 300/400/500 Add. Spirit Health: 100/150/200» replaced with «The hero gains an Aura for Attack Speed and Movement Speed: 10/20 Radius: 1200»",
-                  "uk": "«Vampiric Spirit більше не закликає Скелетов. Vampiric Spirit закликає Духів з далеким типом атаки та Магічною Втратою. Дальність Атаки Духів: 300/400/500 Дод. Здоров'я Духів: 100/150/200» замінено на «Герой отримує Ауру на Швидкість Атаки та Швидкість Пересування: 10/20 Радіус: 1200»"
+                  "ru": "«Vampiric Spirit больше не призывает Скелетов. Vampiric Spirit призывает Духов с дальним типом атаки и Магическим Уроном. Дальность Атаки Духов: 300/400/500. Доп. Здоровье Духов: 100/150/200» заменено на «Герой получает Ауру на Скорость Атаки и Скорость Передвижения: 10/20. Радиус: 1200»",
+                  "en": "«Vampiric Spirit no longer summons Skeletons. Vampiric Spirit summons Spirits with a ranged attack type and Magic Damage. Spirit Attack Range: 300/400/500. Add. Spirit Health: 100/150/200» replaced with «The hero gains an Aura for Attack Speed and Movement Speed: 10/20. Radius: 1200»",
+                  "uk": "«Vampiric Spirit більше не закликає Скелетов. Vampiric Spirit закликає Духів з далеким типом атаки та Магічною Втратою. Дальність Атаки Духів: 300/400/500. Дод. Здоров'я Духів: 100/150/200» замінено на «Герой отримує Ауру на Швидкість Атаки та Швидкість Пересування: 10/20. Радіус: 1200»"
                 }
               }
             ]
@@ -6188,9 +5781,9 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "«Герой получает Ауру на Скорость Атаки и Скорость Передвижения: 10/20 Радиус: 1200» заменено на «Vampiric Spirit больше не призывает Скелетов. Vampiric Spirit призывает Духов с дальним типом атаки и Магическим Уроном. Дальность Атаки Духов: 300/400/500 Доп. Здоровье Духов: 100/150/200»",
-                  "en": "«The hero gains an Aura for Attack Speed and Movement Speed: 10/20 Radius: 1200» replaced with «Vampiric Spirit no longer summons Skeletons. Vampiric Spirit summons Spirits with a ranged attack type and Magic Damage. Spirit Attack Range: 300/400/500 Add. Spirit Health: 100/150/200»",
-                  "uk": "«Герой отримує Ауру на Швидкість Атаки та Швидкість Пересування: 10/20 Радіус: 1200» замінено на «Vampiric Spirit більше не закликає Скелетов. Vampiric Spirit закликає Духів з далеким типом атаки та Магічною Втратою. Дальність Атаки Духів: 300/400/500 Дод. Здоров'я Духів: 100/150/200»"
+                  "ru": "«Герой получает Ауру на Скорость Атаки и Скорость Передвижения: 10/20. Радиус: 1200» заменено на «Vampiric Spirit больше не призывает Скелетов. Vampiric Spirit призывает Духов с дальним типом атаки и Магическим Уроном. Дальность Атаки Духов: 300/400/500. Доп. Здоровье Духов: 100/150/200»",
+                  "en": "«The hero gains an Aura for Attack Speed and Movement Speed: 10/20. Radius: 1200» replaced with «Vampiric Spirit no longer summons Skeletons. Vampiric Spirit summons Spirits with a ranged attack type and Magic Damage. Spirit Attack Range: 300/400/500. Add. Spirit Health: 100/150/200»",
+                  "uk": "«Герой отримує Ауру на Швидкість Атаки та Швидкість Пересування: 10/20. Радіус: 1200» замінено на «Vampiric Spirit більше не закликає Скелетов. Vampiric Spirit закликає Духів з далеким типом атаки та Магічною Втратою. Дальність Атаки Духів: 300/400/500. Дод. Здоров'я Духів: 100/150/200»"
                 }
               }
             ]

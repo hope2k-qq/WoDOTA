@@ -1,0 +1,322 @@
+{
+  "patch_number": "1.05b",
+  "patch_name": "1.05b",
+  "patch_timestamp": 1788985665,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_khanda_custom",
+        "name": "Khanda",
+        "image": "angels_demise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Empower Spell: перезарядку зменшено з 12 до 9 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_phylactery_custom",
+        "name": "Phylactery",
+        "image": "phylactery.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Empower Spell: перезарядку зменшено з 12 до 9 секунд"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "«Shuriken Toss не уповільнює, а оглушує: 0,4/0,8/1,2 сек. Базова Шкода: 8/16/24» замінено на «Jinada дає Золото за Крипів. Додаткове Золото від Jinada: 6/12. Швидкість Пересування: 20/40»"
+              }
+            ],
+            "talent_text": "Jinada дає Золото за Крипів.\n\nДодаткове Золото від Jinada: 6/12\n\nШвидкість Руху: 20/40"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Shuriken Toss застосовує ефект здібності Jinada. Сила: 7/14/21» замінено на «Збільшення Додаткового Золота для Союзників від Track: 60. Збільшення Шкоди від Track: 8%/16%»"
+              }
+            ],
+            "talent_text": "Збільшення Додаткового Золота для Союзників від Track: 60\n\nЗбільшення Урону від Track: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "bounty_hunter_6.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Зменшення відновлення здоров'я противників від Track ослаблено з 25%/50% до 20%/40%"
+              },
+              {
+                "note": "Тепер також збільшує відновлення здоров'я героя на 0,4%/0,8%"
+              }
+            ],
+            "talent_text": "Track зменшує Відновлення Здоров'я ворогів: 20%/40%\n\nTrack збільшує Відновлення Здоров'я героя: 0.4%/0.8%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Track дає безперешкодний Огляд: 1400. Track не можна розвіяти» замінено на «Shuriken Toss здійснює Атаку по основній цілі. Збільшення Тривалості Сповільнення від Shuriken Toss: 0/1/2 сек. Сила: 7/14/21»"
+              }
+            ],
+            "talent_text": "Shuriken Toss завдає Атаку основній цілі.\n\nЗбільшення Тривалості Сповільнення від Shuriken Toss: 0/1/2 сек.\n\nСила: 7/14/21"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_5",
+            "image": "bounty_hunter_5.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Мішечок Золота тепер створює Jinada, а не Shuriken Toss"
+              },
+              {
+                "note": "Більше не дозволяє застосовувати Shuriken Toss на область"
+              },
+              {
+                "note": "Мішечок Золота більше не має здібності Track, його не можна атакувати та на нього не можна застосовувати здібності"
+              },
+              {
+                "note": "Мішечок Золота тепер дає огляд у радіусі 1000"
+              },
+              {
+                "note": "Тривалість Мішечка Золота зменшено з 20 до 12 секунд"
+              },
+              {
+                "note": "Тепер Track не можна розвіяти"
+              }
+            ],
+            "talent_text": "Track не можна розвіяти.\n\nJinada створює безсмертний Мішечок Золота, який збільшує шкоду героя та надає огляд навколо себе.\n\nДодаткова Шкода за Мішечок: 100\nРадіус Огляду: 1000\nТривалість: 12 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_4",
+            "image": "bounty_hunter_4.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Тепер також дає 100/200/300 до мани"
+              }
+            ],
+            "talent_text": "Додаткове Золото за вбивство Крипів: 2/4/6\n\nЗдоров'я: 100/200/300\n\nМана: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_20",
+            "image": "bounty_hunter_20.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Максимальне збільшення шкоди Shuriken Toss змінено зі 100/200/без обмеження на 100/без обмеження"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди від Shuriken Toss: 1% від Загальної Вартості\n\n<b><font color='#ff0000'> Максимальне Збільшення Шкоди: 100/Відсутнє </font></b>"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_3",
+            "image": "bounty_hunter_3.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Jinada надає Золото за крипів. Додаткове Золото від Jinada: 6/12. Швидкість Пересування: 20/40. Шкода від Заклять: 4%/8%» замінено на «Track надає безперешкодний Огляд: 500/1000/1500. Додаткова Дальність Заклять: 50/100/150. Зменшення Затримки перед Застосуванням Здібностей: 10%/20%/30%»"
+              }
+            ],
+            "talent_text": "Track надає безперешкодний Огляд: 500/1000/1500\n\nДодаткова Дальність Заклинань: 50/100/150\n\nЗменшення Затримки перед Застосуванням Здібностей: 10%/20%/30%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_21",
+            "image": "bounty_hunter_21.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Застосування Track також запускає Shuriken Toss по Цілі. Збільшення Тривалості Уповільнення Shuriken Toss: 0/1/2 сек» замінено на «Закляття завдають 120% Критичної Шкоди по цілях з Track»"
+              }
+            ],
+            "talent_text": "Заклинання завдають 120% Критичної Шкоди по цілях з Track."
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_19",
+            "image": "bounty_hunter_19.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Збільшення Додаткового Золота для Союзників від Track: 60. Збільшення Шкоди від Track: 8%» замінено на «Shuriken Toss більше не сповільнює. Shuriken Toss оглушує ворогів: 0,4/0,8/1,2 сек. Інтелект: 7/14/21»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Shuriken Toss більше не сповільнює. </font></b>\n\nShuriken Toss оглушує ворогів: 0.4/0.8/1.2 сек.\n\nІнтелект: 7/14/21"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_18",
+            "image": "bounty_hunter_18.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "«Здібності завдають 150% Критичної шкоди по цілях з Track» замінено на «Застосування Track також запускає Shuriken Toss по Цілі»"
+              }
+            ],
+            "talent_text": "Застосування Track також запускає Shuriken Toss по Цілі."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_juggernaut_2",
+            "image": "juggernaut_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Шкоду за секунду Fire Ward збільшено з 50 + 15%/30% до 80 + 40%/60%/80% від сили"
+              },
+              {
+                "note": "Шкоду при знищенні Fire Ward змінено зі 150 + 150%/300% на 160 + 160%/240%/320% від сили"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Тотем.\n\nВидаляє Blade Fury.</font></b>\n\nНова Активна Здібність: Fire Ward\n\nВикликає тотем, що завдає магічної шкоди ворогам поблизу та рухається зі швидкістю 325. Вибухає при знищенні. Діє 25 сек.\n\nШкода за секунду: 80 + 40%/60%/80% від Сили\nШкода при знищенні: 160 + 160%/240%/320% від Сили\nРадіус: 400\nУдарів для знищення: 1"
+          },
+          {
+            "talent_id": "modifier_juggernaut_3",
+            "image": "juggernaut_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Тепер усі бонуси дає одна прокачка замість двох: тотеми одразу рухаються зі швидкістю героя"
+              }
+            ],
+            "talent_text": "Зменшення Витрати Мани на створення Тотемів: 100%\n\nШвидкість Руху Тотемів дорівнює Швидкості Руху Героя."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Базову броню зменшено на 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "sniper_assassinate_custom",
+          "name": "Assassinate",
+          "image": "sniper_assassinate.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_range",
+              "note": "Тепер дає 50/100/150 до дальності атаки"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 3",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

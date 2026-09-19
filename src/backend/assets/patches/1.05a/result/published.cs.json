@@ -1,0 +1,289 @@
+{
+  "patch_number": "1.05a",
+  "patch_name": "1.05a",
+  "patch_timestamp": 1788985275,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dazzle_1",
+            "image": "dazzle_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Good Juju pure damage per second decreased from 50 + 2%/3%/4% to 50 + 1.5%/2.5%/3.5% of max health"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes all abilities.</font></b>\n\nNew Passive Ability: Good Juju\n\nUsing items triggers, after 0.5s, an area under the hero that deals Pure Damage per second to enemies: 50 + 1.5%/2.5%/3.5% of Max Health\n\nRadius: 300\nDuration: 4s\n\n<b><font color='#ff0000'> Does not work on toggleable items. </font></b>"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lich",
+      "name": "lich",
+      "image": "images/heroes/heroesPreview/lich.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_lich_8",
+            "image": "lich_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": "Can no longer be learned together with «Talent 4» from the Intelligence branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>You cannot attack.</font></b>\n\nFrost Shield becomes a Passive Ability on the Hero. The damage dealt speed is affected by the Attack Speed.\n\nAdds 1 Level to Frost Shield."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lich_16",
+            "image": "lich_16.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": "Can no longer be learned together with «Talent 1» from the Agility branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Frost Shield.</font></b>\n\nNew Active Ability: Frost Blast Ring\n\nCasts Frost Blast after a short delay in a circle around the hero.\n\nRadius: 500\n\nCooldown: 7 seconds\nMana Cost: 140"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "pudge",
+      "name": "pudge",
+      "image": "images/heroes/heroesPreview/pudge.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "pudge_flesh_heap_custom",
+          "name": "Flesh Heap",
+          "image": "pudge_flesh_heap.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_block",
+              "note": "Damage block increased from 7/10/13/16 to 8/14/20/26"
+            },
+            {
+              "parameter": "duration",
+              "note": "Duration decreased from 5/6/7/8s to 4/5/6/7s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_sniper_1",
+            "image": "sniper_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Activated Headshot cooldown increased from 3s to 6s"
+              }
+            ],
+            "talent_text": "Headshot can be activated.\n\nThe hero fires a shotgun in a cone-shaped area, performing 1 attack on all affected targets. Guarantees Headshot on enemies. After firing, the hero becomes disarmed for 3 seconds. Silence duration is reduced by status resistance.\n\nShot Range: 450\nCooldown: 6 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_2",
+            "image": "sniper_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Headshot damage bonus decreased from 30/60/90 to 0/30/60"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Maximum attack speed is 150. </font></b>\n\nHeadshot Damage Bonus: 0/30/60 + 1.5 per Strength"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_sniper_8",
+            "image": "sniper_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Take Aim attack speed bonus decreased from 30/60/90 to 25/50/75"
+              }
+            ],
+            "talent_text": "Take Aim increases Attack Speed on activation: 25/50/75"
+          },
+          {
+            "talent_id": "modifier_sniper_9",
+            "image": "sniper_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Take Aim duration bonus decreased from 1/2s to 0.75/1.5s"
+              }
+            ],
+            "talent_text": "Increases Take Aim Duration: 0.75/1.5 sec."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_16",
+            "image": "sniper_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Concussive Grenade damage increased from 50 + 50%/75%/100% to 50 + 50%/100%/150% of attack damage"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Grenade.\n\nRemoves Take Aim. </font></b>\n\nNew Active Ability: Concussive Grenade\n\nThe hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement.\n\nDamage: 50 + 50%/100%/150% of Attack Damage\nRadius: 375\nMovement Slow: 50%\nDuration: 2 sec.\nKnockback Distance: 475\nMana Cost: 50\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_18",
+            "image": "sniper_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Shrapnel duration reduction decreased from 2/3/4s to 1/2/3s"
+              },
+              {
+                "note": "Now also reduces Shrapnel activation delay by 0.3/0.6/0.9s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 1/2/3 sec. </font></b>\n\nShrapnel Damage Increase: 20/40/60\n\nShrapnel Activation Delay Reduction: 0.3/0.6/0.9 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_20",
+            "image": "sniper_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now also reduces ability cast point by 25%/50%"
+              }
+            ],
+            "talent_text": "Increases Shrapnel Charges: 1/2\n\nReduces Ability Cast Point: 25%/50%"
+          },
+          {
+            "talent_id": "modifier_sniper_21",
+            "image": "sniper_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also increases Assassinate damage by 500"
+              }
+            ],
+            "talent_text": "Effects of multiple Shrapnel stack.\n\nAssassinate Damage Increase: 500"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_4",
+            "image": "techies_4.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Permanently grants a Barrier that absorbs All Damage. Maximum Barrier Strength: 15% of Max Health. Barrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health» replaced with «Removes Reactive Tazer. New Active Ability: Burn Out. The hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees. Movement Speed: 30%. Damage: 3% of Max Health. Trail Width: 250. Duration: 8 sec. Cooldown: 15 sec. Health Cost: 20% of Current Health»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Reactive Tazer.</font></b>\n\nNew Active Ability: Burn Out\n\nThe hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees.\n\nMovement Speed: 30%\nDamage: 3% of Max Health\nTrail Width: 250\nDuration: 8 sec.\nCooldown: 15 sec.\nHealth Cost: 20% of Current Health"
+          },
+          {
+            "talent_id": "modifier_techies_2",
+            "image": "techies_2.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Removes Reactive Tazer. New Active Ability: Burn Out. The hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees. Movement Speed: 30%. Damage: 3% of Max Health. Trail Width: 250. Duration: 8 sec. Cooldown: 15 sec. Health Cost: 20% of Current Health» replaced with «Permanently grants a Barrier that absorbs All Damage. Maximum Barrier Strength: 15% of Max Health. Barrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Permanently grants a Barrier that absorbs All Damage.\n\nMaximum Barrier Strength: 15% of Max Health\n\nBarrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "windranger_powershot_custom",
+          "name": "Powershot",
+          "image": "windranger_powershot.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Cast range increased from 2000 to 2500"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

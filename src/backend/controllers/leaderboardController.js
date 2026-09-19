@@ -6,6 +6,16 @@ let cachedRatingData = null;
 let cachedArenaData = null;
 let updating = false;
 
+const STEAM_BASE_ID = BigInt('76561197960265728');
+
+const toSteamId64 = (code) => {
+    try {
+        return (BigInt(code) + STEAM_BASE_ID).toString();
+    } catch {
+        return null;
+    }
+};
+
 const updateRatingData = async (app, steam_data) => {
     try {
         console.log('Fetching fresh rating data');
@@ -28,6 +38,26 @@ const updateRatingData = async (app, steam_data) => {
         
         cachedRatingData = players;
         console.log('Rating data updated');
+
+        const maxRatingOps = playersData.reduce((ops, player) => {
+            const steamid = toSteamId64(player.steamid);
+            const rating = Number(player.rating);
+            if (steamid && Number.isFinite(rating)) {
+                ops.push({
+                    updateOne: {
+                        filter: { steamid },
+                        update: { $max: { max_rating: rating } }
+                    }
+                });
+            }
+            return ops;
+        }, []);
+
+        if (maxRatingOps.length > 0) {
+            await steam_data.bulkWrite(maxRatingOps);
+            console.log(`[MongoDB] max_rating updated for ${maxRatingOps.length} players`);
+        }
+
         const collection = app;
         const currentDate = new Date().toISOString();
 
@@ -109,6 +139,30 @@ const updateArenaData = async (app, steam_data) => {
         
         cachedArenaData = playersByKey;
         console.log('Arena data updated');
+
+        const maxArenaOps = [];
+        Object.keys(playersByKey).forEach(key => {
+            playersByKey[key].forEach(group => {
+                const wave = Number(group.wave_count);
+                if (!Number.isFinite(wave)) return;
+                group.steamids.forEach(code => {
+                    const steamid = toSteamId64(code);
+                    if (!steamid) return;
+                    maxArenaOps.push({
+                        updateOne: {
+                            filter: { steamid },
+                            update: { $max: { max_rating_arena: wave } }
+                        }
+                    });
+                });
+            });
+        });
+
+        if (maxArenaOps.length > 0) {
+            await steam_data.bulkWrite(maxArenaOps);
+            console.log(`[MongoDB] max_rating_arena updated for ${maxArenaOps.length} entries`);
+        }
+
         const collection = app;
         const currentDate = new Date().toISOString();
 
@@ -165,7 +219,7 @@ const getRating = async (req, res) => {
 const getArena = async (req, res) => {
     try {
         if (!cachedArenaData) {
-            await updateArenaData(req.app.locals.sitemap);
+            await updateArenaData(req.app.locals.sitemap, req.app.locals.steam_data_players);
         }
 
         res.json(cachedArenaData || []);

@@ -5,6 +5,7 @@
 }
 
 .note {
+    position: relative;
     display: flex;
     align-items: flex-start;
     font-size: 17px;
@@ -15,15 +16,28 @@
     white-space: pre-line;
 }
 
+.text {
+    flex: 1;
+    min-width: 0;
+}
+
 .dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 6px;
-    height: 6px;
     min-width: 6px;
-    border-radius: 3px;
-    margin-top: 8px;
+    height: 1.3em;
     margin-left: 8px;
     margin-right: 8px;
-    background-color: #8b989e;
+
+    &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #8b989e;
+    }
 }
 
 .icon {
@@ -35,4 +49,115 @@
     margin-left: 2px;
     margin-right: 4px;
     opacity: 0.85;
+}
+
+@media (max-width: 650px) {
+    .note{
+        font-size: 15px;
+        gap: 4px;
+    }
+
+    .icon{
+        width: 16px;
+        height: 16px;
+    }
+
+    .dot{
+        width: 5px;
+        min-width: 5px;
+        &::before {
+            width: 5px;
+            height: 5px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .note{
+        font-size: 14px;
+    }
+
+    .icon{
+        width: 15px;
+        height: 15px;
+        min-width: 15px;
+    }
+}
+
+.info {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 1.3em;
+    vertical-align: top;
+    margin-left: 6px;
+    cursor: help;
+    outline: none;
+}
+
+.info_icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+}
+
+.info:hover .info_icon,
+.info:focus .info_icon {
+    opacity: 1;
+}
+
+.info::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 4px;
+    width: 9px;
+    height: 9px;
+    margin-bottom: 4px;
+    background: #262c37;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    transform: rotate(45deg);
+    display: none;
+    z-index: 21;
+}
+
+.info:hover::after,
+.info:focus::after {
+    display: block;
+}
+
+.info_bubble {
+    position: absolute;
+    bottom: 100%;
+    right: -12px;
+    left: auto;
+    margin-bottom: 8px;
+    padding: 8px 14px;
+    background: #262c37;
+    border: 1px solid black;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: left;
+    white-space: normal;
+    width: max-content;
+    max-width: min(360px, calc(100vw - 32px));
+    overflow-wrap: anywhere;
+    z-index: 20;
+    display: none;
+
+}
+
+.info:hover .info_bubble,
+.info:focus .info_bubble {
+    display: block;
+}
+
+@media (max-width: 650px) {
+    .info_bubble {
+        font-size: 13px;
+        max-width: calc(100vw - 16px);
+    }
 }

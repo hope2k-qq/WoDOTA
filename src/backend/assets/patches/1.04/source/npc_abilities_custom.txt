@@ -8673,7 +8673,7 @@
         "AbilityTextureName"            "abaddon_rain_of_coil"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastPoint"				"0.25"
-		"AbilityCooldown"				"50"
+		"AbilityCooldown"				"35"
         "MaxLevel"                      "1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityValues"
@@ -8965,7 +8965,7 @@
         {
             "damage_per_mana"                       "1.4"
             "illusion_damage_per_mana"              "1.2"
-            "damage_per_mana_per_level"             "0.02"
+            "damage_per_mana_per_level"             "0.015"
         }
     }
 
@@ -9566,7 +9566,7 @@
 		{
 			"health_cost"               "90"
             "mana_cost"                 "90"
-            "shield"                    "50"
+            "shield"                    "40"
             "duration"                  "20"
 		}
 	}
@@ -9820,8 +9820,8 @@
 
 		"AbilityValues"
 		{
-            "duration"                      "8"
-            "damage_strength"               "100"
+            "duration"                      "7"
+            "damage_strength"               "75"
             "radius"                        "1200"
             "incoming_damage"               "15"
 		}
@@ -9836,7 +9836,7 @@
 		"SpellDispellableType"				"SPELL_DISPELLABLE_YES"
 		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"					"0.2"
-        "AbilityCooldown"                   "40"
+        "AbilityCooldown"                   "30"
         "MaxLevel"                          "1"
         "AbilityCastRange"                  "400"
         
@@ -9845,7 +9845,7 @@
             "radius"                        "550"
             "duration"                      "6"
             "delay"                         "0.25"
-            "bonus_speed"                   "20"
+            "bonus_speed"                   "30"
 		}
 	}
 
@@ -13458,7 +13458,7 @@
 		"AbilityValues"
 		{
 			"drain_length"              "10"
-			"drain_duration"		    "12 14 16 18"
+			"drain_duration"		    "10"
 			"drain_rate"                "5 10 15 20"
 			"drain_range_buffer"	    "250"
 			"radius"				    "200 200 200 200"
@@ -13650,7 +13650,7 @@
 		"ScriptFile"					"heroes/npc_dota_hero_wisp_custom/wisp_tether_custom"
 		"AbilityTextureName"			"wisp_tether"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
@@ -13674,7 +13674,7 @@
             "latch_speed"				"1000"
             "tether_heal_amp"			"60 80 100 120"
             "tether_mana_amp"			"60 80 100 120"
-            "slow"				        "-15 -30 -45 -60"
+            "slow"				        "-10 -20 -30 -40"
             "slow_duration"				"0.2"
             "tick_rate"			        "0.5"
 		}
@@ -13868,9 +13868,9 @@
                 "affected_by_aoe_increase"	"1"		
             }
             "duration"			    "4.0"
-            "attackspeed_slow"	    "-50 -80 -110 -140"
+            "attackspeed_slow"	    "-40 -60 -80 -100"
             "damage_per_second"		"20 40 60 80"
-            "spirit_count"		    "5"
+            "spirit_count"		    "4"
             "tick_interval"		    "0.2"
 		}
 	}
@@ -13900,7 +13900,7 @@
                 "affected_by_aoe_increase"	"1"		
             }
             "duration"			    "4.0"
-            "attackspeed_slow"	    "-50 -80 -110 -140"
+            "attackspeed_slow"	    "-40 -60 -80 -100"
             "damage_per_second"		"20 40 60 80"
             "spirit_count"		    "5"
             "tick_interval"		    "0.2"
@@ -13993,5 +13993,166 @@
             "max_hero_attacks"	            "6 8 10"
             "egg_duration"                  "6"
 		}
+	}
+
+    "phoenix_super_supernova_custom"
+	{
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/npc_dota_hero_phoenix_custom/phoenix_super_supernova_custom"
+		"AbilityTextureName"			"phoenix_super_supernova_custom"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.01"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCooldown"				"90"
+        "MaxLevel"                      "1"
+		"AbilityValues"
+		{
+            "invul_duration"            "1"
+            "health_restore"            "25"
+            "radius"                    "1200"
+            "stun_duration"             "2.4"
+		}
+	}
+
+    "phoenix_freezing_spirits"
+	{
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/npc_dota_hero_phoenix_custom/phoenix_freezing_spirits"
+		"AbilityTextureName"			"phoenix_freezing_spirits"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.01"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+        "MaxLevel"                      "2"
+		"AbilityValues"
+		{
+            "birds_counter"             "1 2"
+            "damage"                    "3"
+            "cooldown"                  "3"
+		}
+	}
+
+    "phoenix_live_spirits"
+	{
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/npc_dota_hero_phoenix_custom/phoenix_live_spirits"
+		"AbilityTextureName"			"phoenix_live_spirits"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.01"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+        "MaxLevel"                      "2"
+		"AbilityValues"
+		{
+            "birds_counter"             "1 2"
+            "heal"                      "60"
+            "cooldown"                  "3"
+		}
+	}
+
+    "phoenix_icicle_shard"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/npc_dota_hero_phoenix_custom/phoenix_icicle_shard"
+		"AbilityTextureName"			"phoenix_icicle_shard"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"						"3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_SUN_STRIKE"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"180"
+        "AbilityCastRange"              "900"
+
+		"AbilityValues"
+		{
+			"damage"                    "8 12 16"
+            "slow"                      "-50"
+            "slow_duration"             "2"
+            "radius"                    "300"
+		}
+	}
+
+    "phoenix_freezing_storm"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/npc_dota_hero_phoenix_custom/phoenix_freezing_storm"
+		"AbilityTextureName"			"phoenix_freezing_storm"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"						"2"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_SUN_STRIKE"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"50"
+		"AbilityValues"
+		{
+			"radius"                    "500"
+            "radius_knockback"          "250"
+            "movement_speed"            "20 30"
+            "duration"                  "2 3"
+		}
+	}
+
+    "phoenix_frost_ray"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/npc_dota_hero_phoenix_custom/phoenix_frost_ray"
+		"AbilityTextureName"			"phoenix_frost_ray"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"MaxLevel"						"1"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_SUN_STRIKE"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityValues"
+		{
+			"damage"                    "24"
+            "duration"                  "3"
+            "knockback_distance"        "350"
+            "length_distance"           "1150"
+            "width"                     "130"
+		}
+	}
+
+    "phoenix_ice_debuff"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/npc_dota_hero_phoenix_custom/phoenix_ice_debuff"
+		"AbilityTextureName"			"phoenix_20"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "MaxLevel"                      "1"
 	}
 }

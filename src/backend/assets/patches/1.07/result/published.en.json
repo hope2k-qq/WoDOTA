@@ -1,0 +1,1902 @@
+{
+  "patch_number": "1.07",
+  "patch_name": "1.07",
+  "patch_timestamp": 1788987207,
+  "general": {
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "Added a new map"
+      },
+      {
+        "note": "Interface changes"
+      },
+      {
+        "note": "Added Battle Pass 2025"
+      },
+      {
+        "note": "Added double rating tokens"
+      },
+      {
+        "title": "Cosmetic Items"
+      },
+      {
+        "note": "Added new effects, TIPs, profile backgrounds, sets and pets"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_ancient_guardian_custom",
+        "name": "Ancient Guardian",
+        "image": "ancient_guardian.webp",
+        "is_new": true,
+        "is_upgrade": true,
+        "caption": "New item in category «Artifacts»",
+        "item_notes": [
+          {
+            "note": "Built from Soul Booster (3000 gold) and Phylactery (2400 gold). Total cost: 5400 gold"
+          },
+          {
+            "note": "Gives 625 Health, 625 Mana, 7 All Attributes and 25% Cast Speed"
+          },
+          {
+            "note": "Passive: Ancient Empower Spell. If your ability deals at least 100 damage to an enemy, they additionally take 1.5% of their maximum health as pure damage. Item Sponsor: Tinkerino (Dmitry Nazarov)"
+          },
+          {
+            "note": "Deals only 50% damage to bosses"
+          }
+        ]
+      },
+      {
+        "item_id": "item_aeon_disk",
+        "name": "Aeon Disk",
+        "image": "aeon_disk.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "initial_cooldown",
+            "note": "Combo Breaker: initial cooldown is now 6s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_bracer",
+        "name": "Bracer",
+        "image": "bracer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_max_health_percentage",
+            "note": "Health bonus changed from 3% to 50"
+          },
+          {
+            "parameter": "bonus_health_regen",
+            "note": "Now also grants 0.75 health regen"
+          }
+        ]
+      },
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "debuff_increase",
+            "note": "Elementalist: Void debuff duration amplification increased from 15% to 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_gungir",
+        "name": "Gleipnir",
+        "image": "gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_aoe",
+            "note": "Once again grants 75 ability AoE"
+          }
+        ]
+      },
+      {
+        "item_id": "item_health_radiance",
+        "name": "Health Radiance",
+        "image": "health_radiance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health",
+            "note": "Health bonus decreased from 350 to 250"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heaven_shield",
+        "name": "Heaven's Shield",
+        "image": "heaven_shield.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "disarm_range",
+            "note": "Disarm: disarm duration against ranged heroes decreased from 4s to 3.5s"
+          },
+          {
+            "parameter": "disarm_melee",
+            "note": "Disarm: disarm duration against melee heroes decreased from 3s to 2.5s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mana_radiance",
+        "name": "Mana Radiance",
+        "image": "mana_radiance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_mana",
+            "note": "Mana bonus decreased from 350 to 250"
+          },
+          {
+            "parameter": "damage",
+            "note": "Mana Burn: damage per second decreased from 2.5% to 2.4% of max mana"
+          }
+        ]
+      },
+      {
+        "item_id": "item_null_talisman",
+        "name": "Null Talisman",
+        "image": "null_talisman.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_mana_regen",
+            "note": "Now also grants 1 mana regen"
+          }
+        ]
+      },
+      {
+        "item_id": "item_venom_song",
+        "name": "Venom Song",
+        "image": "venom_song.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "movespeed_reduce",
+            "note": "Venom Corrosion: movement slow decreased from 20% to 16%"
+          },
+          {
+            "parameter": "minus_regen",
+            "note": "Venom Corrosion: health restoration reduction decreased from 20% to 16%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_wraith_band",
+        "name": "Wraith Band",
+        "image": "wraith_band.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_attack_speed",
+            "note": "Attack speed bonus changed from 3% base attack speed to 5"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Now also grants 1.75 armor"
+          }
+        ]
+      },
+      {
+        "item_id": "item_yasha_lens",
+        "name": "Yasha Lens",
+        "image": "yasha_lens.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_agility",
+            "note": "Agility bonus decreased from 20 to 16"
+          },
+          {
+            "parameter": "bonus_mana_regen",
+            "note": "Mana regen bonus decreased from 5 to 3"
+          },
+          {
+            "parameter": "Description",
+            "note": "Yasha Sight: now also grants the owner unobstructed movement"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_force_boots_custom",
+        "name": "Force Boots",
+        "image": "force_boots.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 4 to 5"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_spider_legs",
+        "name": "Spider Legs",
+        "image": "spider_legs.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 5 to 4"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Cooldown increased from 25s to 30s"
+          },
+          {
+            "parameter": "duration",
+            "note": "Duration decreased from 10s to 5s"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [
+    {
+      "boss_id": "boss_sand_king",
+      "name": "boss sand king",
+      "image": "images/heroes/heroesPreview/sand_king.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_sand_king_burrow",
+          "name": "burrow",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage",
+              "note": "Damage as max health increased from 25% to 50%"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_sand_king_sandstorm",
+          "name": "sandstorm",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "damagu",
+              "note": "Damage as max health per second increased from 4% to 5%"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "hero_id": "faceless_void",
+      "name": "faceless void",
+      "image": "images/heroes/heroesPreview/faceless_void.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "faceless_void_time_walk_custom",
+          "name": "Time Walk",
+          "image": "faceless_void_time_walk.webp",
+          "description": [
+            "Rushes to a target location while backtracking any damage taken the last 2 seconds. Cast range: 650 / 700 / 750 / 800. Damage reversal time: 2. Cooldown: 21 / 17 / 13 / 9. Mana cost: 40."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "faceless_void_time_dilation_custom",
+          "name": "Time Dilation",
+          "image": "faceless_void_time_dilation.webp",
+          "description": [
+            "Applies a temporal field to nearby enemies, extending their ability cooldowns by 7 8 9 10 sec. Each affected ability slows movement by -7 -8 -9 -10% and attack speed by -7 -8 -9 -10, while dealing damage per second. Radius: 775. Duration: 7 / 8 / 9 / 10. Slow per ability: -7% / -8% / -9% / -10%. Cooldown extension: 30% / 40% / 50% / 60%. Damage per second per ability: 7 / 9 / 11 / 13. Cooldown: 28 / 24 / 20 / 16. Mana cost: 90."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "faceless_void_time_lock_custom",
+          "name": "Time Lock",
+          "image": "faceless_void_time_lock.webp",
+          "description": [
+            "Adds the chance for an attack to lock an enemy unit in time while attacking it a second time. Duration: 0.5. Chance: 10% / 12% / 14% / 16%. Bonus damage: 18 / 22 / 26 / 30."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "faceless_void_chronosphere_custom",
+          "name": "Chronosphere",
+          "image": "faceless_void_chronosphere.webp",
+          "description": [
+            "Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it. Only Faceless Void and any units he controls are unaffected. Invisible enemies in the sphere will be revealed. Radius: 500. Duration: 2.5. Cooldown: 140 / 130 / 120. Cast range: 500. Mana cost: 125."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_faceless_void_1",
+            "image": "faceless_void_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Time Dilation always considers 1 additional Ability"
+              }
+            ],
+            "talent_text": "Time Dilation always considers 1 additional Ability."
+          },
+          {
+            "talent_id": "modifier_faceless_void_2",
+            "image": "faceless_void_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increase Damage per Second from Time Dilation: 0.3%/0.4%/0.5% of Maximum Health"
+              }
+            ],
+            "talent_text": "Increase Damage per Second from Time Dilation: 0.3%/0.4%/0.5% of Maximum Health"
+          },
+          {
+            "talent_id": "modifier_faceless_void_3",
+            "image": "faceless_void_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "New Passive Ability: Distortion Field. Enemy attack projectiles within a 600 radius are slowed by 35%. Health: 50/150"
+              }
+            ],
+            "talent_text": "New Passive Ability: Distortion Field\n\nEnemy attack projectiles within a 600 radius are slowed by 35%.\n\nHealth: 50/150"
+          },
+          {
+            "talent_id": "modifier_faceless_void_4",
+            "image": "faceless_void_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Time Dilation becomes a Passive Ability, requires no mana and triggers automatically. Time Dilation Cooldown Reduction: 0/2/4 sec"
+              }
+            ],
+            "talent_text": "Time Dilation becomes a Passive Ability, requires no mana and triggers automatically.\n\nTime Dilation Cooldown Reduction: 0/2/4 sec."
+          },
+          {
+            "talent_id": "modifier_faceless_void_5",
+            "image": "faceless_void_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Increase Duration of Time Dilation: 2 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Increase Duration of Time Dilation: 2 sec."
+          },
+          {
+            "talent_id": "modifier_faceless_void_6",
+            "image": "faceless_void_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Cooldown Reduction: 4%/8%/12%"
+              }
+            ],
+            "talent_text": "Cooldown Reduction: 4%/8%/12%"
+          },
+          {
+            "talent_id": "modifier_faceless_void_7",
+            "image": "faceless_void_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Chronosphere.</font> New Active Ability: Time Zone. Creates a space-time cube that increases movement, turn, spell casting, and projectile speed for allies inside, and decreases these values for enemies. Also accelerates allied cooldowns and halts enemy cooldowns. Duration: 3 sec. Movement Speed Change: 50%. Spell Speed Change: 50%. Turn Speed Change: 50%. Projectile Speed Change: 40%. Cooldown Acceleration: 400%. Radius: 700. Cast Range: 500. Cooldown: 90 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Chronosphere. </font></b>\n\nNew Active Ability: Time Zone\n\nCreates a space-time cube that increases movement, turn, spell casting, and projectile speed for allies inside, and decreases these values for enemies. Also accelerates allied cooldowns and halts enemy cooldowns.\n\nDuration: 3 sec.\nMovement Speed Change: 50%\nSpell Speed Change: 50%\nTurn Speed Change: 50%\nProjectile Speed Change: 40%\nCooldown Acceleration: 400%\nRadius: 700\nCast Range: 500\nCooldown: 90 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_faceless_void_8",
+            "image": "faceless_void_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Time Walk does not restore health.</font> Health Regeneration during Silence: 15. Time Walk applies Silence to the hero and nearby enemies. Radius: 400. Silence Duration: 2/3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Time Walk does not restore health. </font></b>\n\nHealth Regeneration during Silence: 15\n\nTime Walk applies Silence to the hero and nearby enemies.\n\nRadius: 400\nSilence Duration: 2/3 sec."
+          },
+          {
+            "talent_id": "modifier_faceless_void_9",
+            "image": "faceless_void_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increased Attack Speed during Silence: 30/60"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "Increased Attack Speed during Silence: 30/60"
+          },
+          {
+            "talent_id": "modifier_faceless_void_10",
+            "image": "faceless_void_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Time Walk Cooldown Reduction: 0.5/1 sec. Increased Time Walk Cast Range: 50/100"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Time Walk Cooldown Reduction: 0.5/1 sec.\n\nIncreased Time Walk Cast Range: 50/100"
+          },
+          {
+            "talent_id": "modifier_faceless_void_13",
+            "image": "faceless_void_13.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Increased Time Lock Chance during Silence: 3%/6%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Increased Time Lock Chance during Silence: 3%/6%"
+          },
+          {
+            "talent_id": "modifier_faceless_void_12",
+            "image": "faceless_void_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Enemies inside Chronosphere take increased damage: 8%/16%"
+              }
+            ],
+            "talent_text": "Enemies inside Chronosphere take increased damage: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_faceless_void_11",
+            "image": "faceless_void_11.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Increases Base Damage by 1/2/3 for each enemy hero killed during Silence. Kills before learning the talent also count"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Increases Base Damage by 1/2/3 for each enemy hero killed during Silence.\n\nKills before learning the talent also count."
+          },
+          {
+            "talent_id": "modifier_faceless_void_14",
+            "image": "faceless_void_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Time Walk can be used during Silence. Chronosphere can be used during Silence. Chronosphere grants Silence to the hero"
+              }
+            ],
+            "talent_text": "Time Walk can be used during Silence.\n\nChronosphere can be used during Silence.\n\nChronosphere grants Silence to the hero."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_faceless_void_15",
+            "image": "faceless_void_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>You cannot use active item abilities, only toggleable ones.</font> Chance to Evade Any Damage: 20%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> You cannot use active item abilities, only toggleable ones. </font></b>\n\nChance to Evade Any Damage: 20%"
+          },
+          {
+            "talent_id": "modifier_faceless_void_16",
+            "image": "faceless_void_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Bash Wave. The hero sends a shockwave in the chosen direction, applying Time Lock to enemies and dealing magical damage. Damage: 100/150/200. Time Lock Targets: 1/2/3. Wave Range: 1000. Mana Cost: 100. Cooldown: 17s"
+              }
+            ],
+            "talent_text": "New Active Ability: Bash Wave\n\nThe hero sends a shockwave in the chosen direction, applying Time Lock to enemies and dealing magical damage.\n\nDamage: 100/150/200\nTime Lock Targets: 1/2/3\nWave Range: 1000\nMana Cost: 100\nCooldown: 17s"
+          },
+          {
+            "talent_id": "modifier_faceless_void_17",
+            "image": "faceless_void_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Face Ward. Places an invisible observer totem that provides ground vision. Duration: 120 sec. Cast Range: 500. Vision Radius: 1400. Hero Attacks to Destroy: 2. Cooldown: 240/160 sec"
+              }
+            ],
+            "talent_text": "New Active Ability: Face Ward\n\nPlaces an invisible observer totem that provides ground vision.\n\nDuration: 120 sec.\nCast Range: 500\nVision Radius: 1400\nHero Attacks to Destroy: 2\nCooldown: 240/160 sec."
+          },
+          {
+            "talent_id": "modifier_faceless_void_18",
+            "image": "faceless_void_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Increased Time Lock Damage: 40%/60%/80% of Intelligence"
+              }
+            ],
+            "talent_text": "Increased Time Lock Damage: 40%/60%/80% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_faceless_void_19",
+            "image": "faceless_void_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "An enemy attacking Face Ward will receive a Time Lock in return. Each active Face Ward increases Intelligence: 10/20/30"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "An enemy attacking Face Ward will receive a Time Lock in return.\n\nEach active Face Ward increases Intelligence: 10/20/30"
+          },
+          {
+            "talent_id": "modifier_faceless_void_20",
+            "image": "faceless_void_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Reverse Time Walk. This ability can be used within 1.5 seconds after Time Walk to return to the previous position"
+              }
+            ],
+            "talent_text": "New Active Ability: Reverse Time Walk\n\nThis ability can be used within 1.5 seconds after Time Walk to return to the previous position."
+          },
+          {
+            "talent_id": "modifier_faceless_void_21",
+            "image": "faceless_void_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Time Walk applies the Time Lock ability to enemies at the end point of the jump. Radius: 400"
+              }
+            ],
+            "talent_text": "Time Walk applies the Time Lock ability to enemies at the end point of the jump.\n\nRadius: 400"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "anti-mage",
+      "name": "anti-mage",
+      "image": "images/heroes/heroesPreview/anti-mage.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_anti-mage_5",
+            "image": "anti-mage_5.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Activated Mana Break cooldown increased from 9s to 11s"
+              }
+            ],
+            "talent_text": "Mana Break can be activated.\n\nThe hero attacks all nearby enemies.\n\nRadius: 200/400\nCooldown: 11 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_anti-mage_9",
+            "image": "anti-mage_9.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Counterspell passively reduces enemy spell damage. Spell Damage Reduction: 5%/10%. Radius: 900» replaced with «Blink Cast Range Increase: 100/200»"
+              }
+            ],
+            "talent_text": "Increased Blink Cast Range: 100/200"
+          },
+          {
+            "talent_id": "modifier_anti-mage_10",
+            "image": "anti-mage_10.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "Counterspell Passively Reduces Spell Damage from opponents.\n\nSpell Damage Reduction: 10%/20%\nRadius: 300"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_anti-mage_18",
+            "image": "anti-mage_18.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Attack speed bonus increased from 7/14/21 to 10/20/30"
+              },
+              {
+                "note": "Attack damage taken reduction at full mana decreased from 7%/14%/21% to 5%/10%/15%"
+              }
+            ],
+            "talent_text": "Attack Speed: 10/20/30\n\nIf the hero has Maximum Mana:\nReduces Incoming Attack Damage: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_anti-mage_15",
+            "image": "anti-mage_15.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Mana Loss Reduction: 18%/36%. Health: 125/250. Mana: 125/250» replaced with «Blink restores Health: 10%/20% of Current Mana»"
+              }
+            ],
+            "talent_text": "Blink restores Health: 10%/20% of Current Mana"
+          },
+          {
+            "talent_id": "modifier_anti-mage_17",
+            "image": "anti-mage_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Blink Restores Health: 8%/16% of Current Mana» replaced with «Mana Loss Reduction: 18%/36%. Health: 125/250. Mana: 125/250»"
+              }
+            ],
+            "talent_text": "Mana Loss Reduction: 18%/36%\n\nHealth: 125/250\n\nMana: 125/250"
+          },
+          {
+            "talent_id": "modifier_anti-mage_20",
+            "image": "anti-mage_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Spell immunity duration after Blink increased from 0.1s to 0.3s"
+              }
+            ],
+            "talent_text": "Basic Dispel and Magic Immunity after Blink: 0.3 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "crystal_maiden",
+      "name": "crystal maiden",
+      "image": "images/heroes/heroesPreview/crystal_maiden.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "crystal_maiden_crystal_nova_custom",
+          "name": "Crystal Nova",
+          "image": "crystal_maiden_crystal_nova.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost increased from 90/100/110/120 to 115/135/155/175"
+            },
+            {
+              "parameter": "movespeed_slow",
+              "note": "Movement slow increased from 20%/27%/34%/41% to 20%/30%/40%/50%"
+            },
+            {
+              "parameter": "duration",
+              "note": "Duration decreased from 4.5s to 4s"
+            },
+            {
+              "parameter": "nova_damage",
+              "note": "Damage decreased from 130/170/210/260 to 110/160/210/260"
+            }
+          ]
+        },
+        {
+          "ability_id": "crystal_maiden_freezing_field_custom",
+          "name": "Freezing Field",
+          "image": "crystal_maiden_freezing_field.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage",
+              "note": "Damage increased from 105/170/250 to 110/180/250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_crystal_maiden_2",
+            "image": "crystal_maiden_2.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Crystal Nova is triggered instantly around the character. Crystal Nova Radius Increase: 80/160» replaced with «Mana Regeneration: 10. Every 3rd hit of Crystal Nova on the same enemy applies Frostbite to them. Effect Duration: 15 sec»"
+              }
+            ],
+            "talent_text": "Mana Regeneration: 10\n\nEvery 3rd hit of Crystal Nova on the same enemy applies Frostbite to them.\n\nEffect Duration: 15 sec."
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_3",
+            "image": "crystal_maiden_3.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Every 3 Crystal Nova hits on the same enemy will inflict Frostbite on them. Effect Duration: 15 seconds» replaced with «Crystal Nova instantly triggers around the hero. Crystal Nova Radius Increase: 100/200»"
+              }
+            ],
+            "talent_text": "Crystal Nova instantly triggers around the hero.\n\nCrystal Nova Radius Increase: 100/200"
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_6",
+            "image": "crystal_maiden_6.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Crystal Nova reduces Enemy Health Restoration: 10%/20%/30%. Duration: 4.5 sec» replaced with «Casting Crystal Nova applies Frost Blood on you. Frost Blood Increases Health Recovery Rate: 0.2%. Effect Duration: 10 seconds. Max Effect: 2/4/6»"
+              }
+            ],
+            "talent_text": "Casting Crystal Nova applies Frost Blood on you.\n\nFrost Blood Increases Health Recovery Rate: 0.2%\n\nEffect Duration: 10 seconds\nMax Effect: 2/4/6"
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_5",
+            "image": "crystal_maiden_5.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Casting Crystal Nova applies Frost Blood on you. Frost Blood Increases Health Recovery Rate: 0.2%. Effect Duration: 10 seconds. Max Effect: 2/4/6» replaced with «Crystal Nova reduces enemy Health Regeneration: 10%/20%/30%. Duration: 5 sec»"
+              }
+            ],
+            "talent_text": "Crystal Nova reduces enemy Health Regeneration: 10%/20%/30%\n\nDuration: 5 sec."
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_7",
+            "image": "crystal_maiden_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Freezing Field upkeep health cost decreased from 13% to 12% of max health"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Arcane Aura.</font></b>\n\nFreezing Field becomes a toggleable ability. It can no longer be interrupted. Does not cost Mana. Allows moving, attacking, and casting spells while active.\n\nMaintaining it consumes 12% of Maximum Health as Magical Damage each second."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_crystal_maiden_11",
+            "image": "crystal_maiden_11.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Frostbite damage per second bonus increased from 30%/60%/90% to 40%/65%/90% of Agility"
+              }
+            ],
+            "talent_text": "Increased Frostbite Damage per Second: 40%/65%/90% of Agility"
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_9",
+            "image": "crystal_maiden_9.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100/200/300 health"
+              }
+            ],
+            "talent_text": "Health: 100/200/300\n\nWhen taking Damage from a Hero, automatically applies Frostbite to them.\n\nCooldown: 45/30/15 sec."
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_13",
+            "image": "crystal_maiden_13.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Whenever an enemy receives Frostbite, you dispel yourself and any negative effect from enemy spells has no effect: 0.5 seconds. DISPEL TYPE: Basic Dispel» replaced with «Attack Speed: 50/100/150»"
+              }
+            ],
+            "talent_text": "Attack Speed: 50/100/150"
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_10",
+            "image": "crystal_maiden_10.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Attack Speed: 50/100/150» replaced with «Each time an enemy is affected by Frostbite, you apply a Basic Dispel and gain Debuff Immunity: 0.5s»"
+              }
+            ],
+            "talent_text": "Each time an enemy is affected by Frostbite, you apply a Basic Dispel and gain Debuff Immunity: 0.5s"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_crystal_maiden_19",
+            "image": "crystal_maiden_19.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Maximum barrier strength increased from 800 to 900"
+              },
+              {
+                "note": "Barrier regeneration rate increased from 20 + 10%/20%/30% to 20 + 15%/30%/45% of mana regen"
+              }
+            ],
+            "talent_text": "Permanently grants a barrier that absorbs any damage.\n\nMaximum Barrier Strength: 900\n\nBarrier Regeneration Rate: 20 + 15%/30%/45% of Mana Regeneration"
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_12",
+            "image": "crystal_maiden_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100 cast range"
+              }
+            ],
+            "talent_text": "Increases Frostbite Duration: 0.5s\n\nAdditional Cast Range: 100"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_doom_2",
+            "image": "doom_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Creep DOOM: now dispels the target's buffs on cast"
+              },
+              {
+                "note": "Creep DOOM: now prevents the target from casting abilities and restoring health in any way"
+              },
+              {
+                "note": "Creep DOOM: damage increased from 30/60/90 to 60/105/150"
+              },
+              {
+                "note": "Creep DOOM: duration decreased from 10s to 5s"
+              }
+            ],
+            "talent_text": "New Active Ability: Creep DOOM\n\nCasts a dreadful fate upon a creep: upon cast it dispels positive effects, then for a short duration deals periodic damage, disables ability usage, and prevents any form of health regeneration.\n\nDamage: 60/105/150\nDuration: 5 sec.\nDispel Type: Basic\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_doom_3",
+            "image": "doom_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now also applies to Creep DOOM"
+              }
+            ],
+            "talent_text": "DOOM and Creep DOOM affect an area within a radius of 300 around the target."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "juggernaut_blade_dance_custom",
+          "name": "Blade Dance",
+          "image": "juggernaut_blade_dance.webp",
+          "ability_notes": [
+            {
+              "parameter": "blade_dance_crit_chance",
+              "note": "Critical strike chance increased from 20%/25%/30%/35% to 35%"
+            },
+            {
+              "parameter": "blade_dance_crit_mult",
+              "note": "Critical damage decreased from 180% to 130%/140%/150%/160%"
+            }
+          ]
+        },
+        {
+          "ability_id": "juggernaut_omni_slash_custom",
+          "name": "Omnislash",
+          "image": "juggernaut_omni_slash.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 80s to 100s"
+            },
+            {
+              "parameter": "bonus_damage",
+              "note": "Bonus damage increased from 20/25/30 to 25/30/35"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_juggernaut_4",
+            "image": "juggernaut_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Wind Ward attack speed change increased from 30/60 to 40/80"
+              },
+              {
+                "note": "Wind Ward destruction attack speed change increased from 120/240 to 160/320"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Totem.\n\nRemoves Blade Dance.</font></b>\n\nNew Active Ability: Wind Ward\n\nSummons a totem that increases allies' attack speed and decreases enemies' attack speed. Moves at a speed of 325. Upon destruction grants an enhanced effect for 2 sec. Lasts 25 sec.\n\nAttack Speed Change: 40/80\nAttack Speed Change on Destruction: 160/320\nRadius: 400\nAttacks to Destroy: 1"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_juggernaut_17",
+            "image": "juggernaut_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Blade Fury no longer applies a strong dispel when it ends"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Blade Fury does not provide Strong Dispel at the end. </font></b>\n\nBlade Fury cooldown finishes instantly if you did not take health damage during Blade Fury."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "lion",
+      "name": "lion",
+      "image": "images/heroes/heroesPreview/lion.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lion_20",
+            "image": "lion_20.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Earth Spike damage bonus increased from 30%/60%/90% to 50%/75%/100% of Intelligence"
+              }
+            ],
+            "talent_text": "Increases Earth Spike Damage: 50%/75%/100% of Intelligence"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_luna_20",
+            "image": "luna_20.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Lucent Beam Damage Increase: 25%/50% of Intellect» replaced with «Eclipse Cooldown Reduction: 20/35/50 sec»"
+              }
+            ],
+            "talent_text": "Eclipse Cooldown Reduction: 20/35/50 sec"
+          },
+          {
+            "talent_id": "modifier_luna_17",
+            "image": "luna_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«When taking damage from a Hero, automatically casts Lucent Beam on them. Cooldown: 30/15 sec» replaced with «Lucent Beam Damage Increase: 25%/50% of Intellect»"
+              }
+            ],
+            "talent_text": "Lucent Beam Damage Increase: 25%/50% of Intellect"
+          },
+          {
+            "talent_id": "modifier_luna_18",
+            "image": "luna_18.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Total Damage Reduction at Night: 4%/8%/12%» replaced with «When taking damage from a Hero, automatically casts Lucent Beam on them. Cooldown: 30/15 sec»"
+              }
+            ],
+            "talent_text": "When taking damage from a Hero, automatically casts Lucent Beam on them.\n\nCooldown: 30/15 sec."
+          },
+          {
+            "talent_id": "modifier_luna_19",
+            "image": "luna_19.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Eclipse Cooldown Reduction: 20/35/50 sec» replaced with «Total Damage Reduction at Night: 4%/8%/12%»"
+              }
+            ],
+            "talent_text": "Total Damage Reduction at Night: 4%/8%/12%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "monkey_king",
+      "name": "monkey king",
+      "image": "images/heroes/heroesPreview/monkey_king.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_monkey_king_2",
+            "image": "monkey_king_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Jingu Mastery damage bonus increased from 20/40 to 40/80"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Tree Dance, Primal Spring. </font></b>\n\nIncreased Lifesteal from Jingu Mastery: 5%/10%\n\nIncreased Damage from Jingu Mastery: 40/80\n\nIncreased Spell Lifesteal from Jingu Magic: 5%/10%\n\nIncreased Spell Damage from Jingu Magic: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_6",
+            "image": "monkey_king_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Wukong's Command cooldown reduction increased from 13/26/39s to 15/30/45s"
+              }
+            ],
+            "talent_text": "Reduces Wukong's Command cooldown: 15/30/45 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_monkey_king_9",
+            "image": "monkey_king_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Boundless Strike critical damage bonus increased from 15%/30% to 25%/50%"
+              }
+            ],
+            "talent_text": "Increases Boundless Strike Critical Damage: 25%/50%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_10",
+            "image": "monkey_king_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Boundless Strike cooldown reduction per attack increased from 0.1/0.2/0.3s to 0.2/0.3/0.4s"
+              }
+            ],
+            "talent_text": "Each attack reduces Boundless Strike cooldown: 0.2/0.3/0.4 sec."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_monkey_king_20",
+            "image": "monkey_king_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Primal Spring from Boundless Strike is now applied at 75% charge instead of 100%"
+              }
+            ],
+            "talent_text": "Applies the effect of Primal Spring, charged at 75%, to enemies hit by Boundless Strike or near its endpoint."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "muerta",
+      "name": "muerta",
+      "image": "images/heroes/heroesPreview/muerta.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_muerta_7",
+            "image": "muerta_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "No longer grants 20 Strength"
+              }
+            ],
+            "talent_text": "The Calling becomes a Passive Ability around the character. Disabled by break."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "night_stalker",
+      "name": "night stalker",
+      "image": "images/heroes/heroesPreview/night_stalker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "night_stalker_darkness_custom",
+          "name": "Dark Ascension",
+          "image": "night_stalker_darkness.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 100/90/80s to 115/110/105s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_night_stalker_4",
+            "image": "night_stalker_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "No longer grants 10 Strength"
+              }
+            ],
+            "talent_text": "Hunter In The Night can be cast on an area to devour the poor Nyx Assassin."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_night_stalker_12",
+            "image": "night_stalker_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Day Walker cooldown increased from 65s to 95s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Dark Ascension.</font></b>\n\nNew Active Ability: Day Walker\n\nDispels the darkness, creating clear light and fully revealing the hero’s power. He gains unobstructed vision with night radius, flight, and his attacks burn mana while dealing the same amount as physical damage. Resets cooldowns of all other abilities.\n\nAttacks Burn Mana: 120\nDuration: 30s\nCooldown: 95s\nMana Cost: 50"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "riki",
+      "name": "riki",
+      "image": "images/heroes/heroesPreview/riki.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "riki_backstab_custom",
+          "name": "Backstab",
+          "image": "riki_backstab.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_multiplier",
+              "note": "Damage per Agility increased from 0.3/0.4/0.5/0.6 to 0.4/0.5/0.6/0.7"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_riki_3",
+            "image": "riki_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Frontstab damage per Strength increased from 0.6/0.9 to 0.7/1"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Tricks of the Trade. </font></b>\n\nNew Passive Ability: Frontstab\n\nAttacking from the front deals bonus physical damage based on Strength.\n\nDamage per Strength: 0.7/1"
+          },
+          {
+            "talent_id": "modifier_riki_4",
+            "image": "riki_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Blink Strike cooldown reduction increased from 2/4/6s to 4/6/8s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Backstab. </font></b>\n\nBlink Strike teleports to the front of the enemy.\n\nBlink Strike Cooldown Reduction: 4/6/8 sec."
+          },
+          {
+            "talent_id": "modifier_riki_6",
+            "image": "riki_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Blink Strike cast range reduction decreased from 250 to 200"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reduction of Blink Strike Cast Range: 200 </font></b>\n\nBlink Strike can be cast on an area.\n\nIncrease of Blink Strike Charges: 1"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_riki_9",
+            "image": "riki_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Smoke Screen reduces enemy Armor: 3/6» replaced with «Tricks of the Trade allows you to hide inside an allied hero during its duration and adds 1 victim for each attack. Agility: 10»"
+              }
+            ],
+            "talent_text": "Tricks of the Trade allows you to hide inside an allied hero during its duration and adds 1 victim for each attack.\n\nAgility: 10"
+          },
+          {
+            "talent_id": "modifier_riki_10",
+            "image": "riki_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Tricks of the Trade allows you to hide inside an allied hero during its duration and adds 1 victim for each attack. Agility: 10» replaced with «Smoke Screen reduces enemy Armor: 3/6»"
+              }
+            ],
+            "talent_text": "Smoke Screen reduces enemy Armor: 3/6"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_roshan_3",
+            "image": "roshan_3.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Increased Bash Chance: 3%/6%» replaced with «Bash can be activated. The hero accelerates and runs in the selected direction. When colliding with enemies, uses the Bash ability on them. Can be stopped at any time with the cancel command. Removes the limit on maximum movement speed during the charge. Increased Movement Speed during Bash Charge: 200. Maximum Charge Duration: 3 sec. Radius: 300. Cooldown: 15 sec»"
+              }
+            ],
+            "talent_text": "Bash can be activated.\n\nThe hero accelerates and runs in the selected direction. When colliding with enemies, uses the Bash ability on them. Can be stopped at any time with the cancel command. Removes the limit on maximum movement speed during the charge.\n\nIncreased Movement Speed ​​during Bash Charge: 200\nMaximum Charge Duration: 3 sec.\nRadius: 300\nCooldown: 15 sec."
+          },
+          {
+            "talent_id": "modifier_roshan_9",
+            "image": "roshan_9.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Bash can be activated. The hero accelerates and runs in the selected direction. When colliding with enemies, uses the Bash ability on them. Can be stopped at any time with the cancel command. Removes the limit on maximum movement speed during the charge. Increased Movement Speed during Bash Charge: 200. Maximum Charge Duration: 3 sec. Radius: 300. Cooldown: 15 sec» replaced with «Increased Bash Chance: 3%/6%»"
+              }
+            ],
+            "talent_text": "Increased Bash Chance: 3%/6%"
+          },
+          {
+            "talent_id": "modifier_roshan_4",
+            "image": "roshan_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 2»",
+                "tooltip": "Previously required upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Increased Movement Speed ​​during Bash Run: 200/400"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_roshan_8",
+            "image": "roshan_8.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Attack speed bonus from using items increased from 15 to 30"
+              },
+              {
+                "note": "Effect duration decreased from 10/15s to 4/8s"
+              }
+            ],
+            "talent_text": "Using Items increases Attack Speed: 30\n\nEffect Duration: 4/8 sec."
+          },
+          {
+            "talent_id": "modifier_roshan_14",
+            "image": "roshan_14.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Using Items applies Bash to a random enemy within Radius: 900. Proc Chance: 100%. Prioritizes heroes» replaced with «Base Attack Time: 1.6»"
+              }
+            ],
+            "talent_text": "Base Attack Time: 1.6"
+          },
+          {
+            "talent_id": "modifier_roshan_12",
+            "image": "roshan_12.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«Base Attack Speed: 1.5» replaced with «Using Items applies Bash to a random enemy within Radius: 800. Prioritizes heroes first»"
+              }
+            ],
+            "talent_text": "Using Items applies Bash to a random enemy within Radius: 800\n\nPrioritizes heroes first."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_rubick_19",
+            "image": "rubick_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Spell Steal ability cooldown reduction decreased from 10%/20%/30% to 8%/16%/24%"
+              }
+            ],
+            "talent_text": "Spell Steal Cooldown Reduction: 8%/16%/24%"
+          },
+          {
+            "talent_id": "modifier_rubick_21",
+            "image": "rubick_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Spell Steal ability damage amplification decreased from 65% to 50%"
+              }
+            ],
+            "talent_text": "Increased Total Damage Dealt by Spell Steal abilities: 50%\n\nSpell Damage: 15%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "shadow_fiend_requiem_custom",
+          "name": "Requiem of Souls",
+          "image": "shadow_fiend_requiem.webp",
+          "ability_notes": [
+            {
+              "parameter": "requiem_line_width_end",
+              "note": "Maximum wave width decreased from 350 to 300"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_sniper_6",
+            "image": "sniper_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Bonus cast range decreased from 100/200 to 75/150"
+              },
+              {
+                "note": "Cooldown reduction decreased from 5%/10% to 3%/6%"
+              }
+            ],
+            "talent_text": "Bonus Cast Range: 75/150\n\nCooldown Reduction: 3%/6%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "spectre_spectral_dagger_custom",
+          "name": "Spectral Dagger",
+          "image": "spectre_spectral_dagger.webp",
+          "ability_notes": [
+            {
+              "parameter": "hero_path_duration",
+              "note": "Duration increased from 6s to 7s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spectre_17",
+            "image": "spectre_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "The Shadow Trail now appears only after casting Spectral Dagger"
+              },
+              {
+                "note": "Shadow Trail duration increased from 2s to 2/3/4s"
+              }
+            ],
+            "talent_text": "After using Spectral Dagger, the hero leaves a Shadow Trail.\n\nDuration: 2/3/4 sec.\n\nStrength, Intelligence: 3/6/9"
+          },
+          {
+            "talent_id": "modifier_spectre_18",
+            "image": "spectre_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Now also grants 20 movement speed"
+              }
+            ],
+            "talent_text": "Hero Reveal Radius on Shadow Trail: 1200\n\nMovement Speed: 20"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "spirit_breaker_charge_of_darkness_custom",
+          "name": "Charge of Darkness",
+          "image": "spirit_breaker_charge_of_darkness.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 17/15/13/11s to 22/19/16/13s"
+            },
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost changed from 100 to 90/100/110/120"
+            },
+            {
+              "parameter": "windup_time",
+              "note": "The charge now starts at 25% of the bonus speed and reaches maximum after 1.5s"
+            },
+            {
+              "parameter": "movement_speed",
+              "note": "Charge bonus speed changed from 325/350/375/400 to 275/325/375/425"
+            }
+          ]
+        },
+        {
+          "ability_id": "spirit_breaker_bulldoze_custom",
+          "name": "Bulldoze",
+          "image": "spirit_breaker_bulldoze.webp",
+          "ability_notes": [
+            {
+              "parameter": "movement_speed",
+              "note": "Movement speed bonus decreased from 10%/15%/20%/25% to 8%/12%/16%/20%"
+            },
+            {
+              "parameter": "status_resistance",
+              "note": "Status resistance increased from 10%/15%/20%/25% to 20%/25%/30%/35%"
+            }
+          ]
+        },
+        {
+          "ability_id": "spirit_breaker_greater_bash_custom",
+          "name": "Greater Bash",
+          "image": "spirit_breaker_greater_bash.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage",
+              "note": "Movement speed damage multiplier increased from 20%/22%/24%/26% to 20%/25%/30%/35%"
+            }
+          ]
+        },
+        {
+          "ability_id": "spirit_breaker_nether_strike_custom",
+          "name": "Nether Strike",
+          "image": "spirit_breaker_nether_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 70/50/30s to 75/55/35s"
+            },
+            {
+              "parameter": "damage",
+              "note": "Bonus damage increased from 150/225/300 to 150/250/350"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_spirit_breaker_5",
+            "image": "spirit_breaker_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Bulldoze movement speed bonus decreased from 7%/14% to 6%/12%"
+              },
+              {
+                "note": "Bulldoze status resistance bonus decreased from 7%/14% to 6%/12%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Charge of Darkness.</font></b>\n\nIncrease Bulldoze Movement Speed: 7%/14%\n\nIncrease Bulldoze Status Resistance: 7%/14%"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_21",
+            "image": "spirit_breaker_21.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Nether Strike dispels the target. Nether Strike disables the target's passive abilities. Duration: 4 seconds» replaced with «Aura of Time increases All Damage Dealt against enemies by 25%, but the further away the enemy is, the weaker the effect. Radius: 1200»"
+              }
+            ],
+            "talent_text": "Aura of Time increases All Damage Dealt against enemies by 25%, but the further away the enemy is, the weaker the effect.\n\nRadius: 1200"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_spirit_breaker_13",
+            "image": "spirit_breaker_13.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Attack speed bonus against the beacon changed from 300/400 to 350"
+              },
+              {
+                "note": "Attacks on the beacon now grant 4/6 attack speed instead of 3% spell damage"
+              },
+              {
+                "note": "Beacon attack bonus duration increased from 7s to 10s"
+              },
+              {
+                "note": "No longer grants 25/50 attack speed"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Nether Strike. </font></b>\n\nGreater Bash can be activated.\n\nCreates a Time Beacon that the hero can attack with +350 Attack Speed. Each attack on the beacon restores 3% of Max Health and increases Attack Speed by 4/6.\n\nBonus Attack Speed Duration: 10 sec.\nBeacon Duration: 20 sec.\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_12",
+            "image": "spirit_breaker_12.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Maximum charges changed from 7/14/21 to 10/20"
+              }
+            ],
+            "talent_text": "While standing still, the hero accumulates charges every 0.5 sec. that increase Movement Speed: 10\n\nThe hero gradually loses charges while moving.\n\nMaximum charges: 10/20"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_9",
+            "image": "spirit_breaker_9.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Charge of Darkness can be cast on a point. Charge of Darkness is cast instantly. Strength, Agility: 15» replaced with «Base Attack Time: 1.85/1.8/1.75»"
+              }
+            ],
+            "talent_text": "Base Attack Time: 1.85/1.8/1.75"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_20",
+            "image": "spirit_breaker_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«New Active Ability: Astral Charge. Sends an astral copy at the enemy, ignoring obstacles in its path. All enemy units passed through and the targeted unit will be hit by a Greater Bash. If the targeted unit dies, Spirit Breaker will change his target to the nearest enemy unit to that location. Charge Speed Bonus: 400. Stun Duration: 1.5 seconds. Cooldown: 24/18 seconds» replaced with «For the duration of Charge of Darkness, any negative effect from enemy spells has no effect»"
+              }
+            ],
+            "talent_text": "For the duration of Charge of Darkness, any negative effect from enemy spells has no effect."
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_11",
+            "image": "spirit_breaker_11.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Charge of Darkness haste duration after the charge decreased from 3s to 2.5s"
+              }
+            ],
+            "talent_text": "The boost from Charge of Darkness lasts for 2.5 seconds after the end of the run."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spirit_breaker_15",
+            "image": "spirit_breaker_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Astral Charge now also deals the damage along its path"
+              }
+            ],
+            "talent_text": "Charge of Darkness and Astral Charge deal Magical Damage to all enemies in their path: 50 + 10%/15%/20% of Current Mana"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_6",
+            "image": "spirit_breaker_6.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Blocks most targeted spells. Cooldown: 40/20 seconds» replaced with «Nether Strike dispels the target. Nether Strike disables the target's passive abilities. Duration: 4 seconds»"
+              }
+            ],
+            "talent_text": "Nether Strike dispels the target.\n\nNether Strike disables the target's passive abilities.\n\nDuration: 4 seconds"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_18",
+            "image": "spirit_breaker_18.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Aura of Time increases All Damage Dealt against enemies by 25%, but the further away the enemy is, the weaker the effect. Radius: 1200» replaced with «Blocks most targeted spells. Cooldown: 40/20 seconds»"
+              }
+            ],
+            "talent_text": "Blocks most targeted spells.\n\nCooldown: 40/20 seconds"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_10",
+            "image": "spirit_breaker_10.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«For the duration of Charge of Darkness, any negative effect from enemy spells has no effect» replaced with «New Active Ability: Astral Charge. Sends an astral copy at the enemy, ignoring obstacles in its path. Greater Bash will trigger on the target and any enemies it hits along the way. If the target dies before the copy reaches it, the nearest enemy will become the new target. Bonus Speed during Charge: 400. Stun Duration: 1.8 sec. Cooldown: 20 sec»"
+              }
+            ],
+            "talent_text": "New Active Ability: Astral Charge\n\nSends an astral copy at the enemy, ignoring obstacles in its path. Greater Bash will trigger on the target and any enemies it hits along the way. If the target dies before the copy reaches it, the nearest enemy will become the new target.\n\nBonus Speed during Charge: 400\nStun Duration: 1.8 sec.\nCooldown: 20 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_2",
+            "image": "techies_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Removes Reactive Tazer. New Active Ability: Burn Out. The hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees. Movement Speed: 30%. Damage: 3% of Max Health. Trail Width: 250. Duration: 8 sec. Cooldown: 15 sec. Health Cost: 20% of Current Health» replaced with «Removes Reactive Tazer. Permanently grants a Barrier that absorbs any damage. Maximum Barrier Strength: 10% of Maximum Health. Barrier Regeneration Rate: 0.5%/0.75%/1% of Maximum Health»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Reactive Tazer.</font></b>\n\nPermanently grants a Barrier that absorbs any damage.\n\nMaximum Barrier Strength: 10% of Maximum Health\n\nBarrier Regeneration Rate: 0.5%/0.75%/1% of Maximum Health"
+          },
+          {
+            "talent_id": "modifier_techies_4",
+            "image": "techies_4.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Increased Blast Off! Damage: 5%/10%/15% of Maximum Health» replaced with «New Active Ability: Burn Out. The hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees. Movement Speed: 30%. Damage: 3% of Max Health. Trail Width: 250. Duration: 8 sec. Cooldown: 15 sec. Health Cost: 20% of Current Health»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "New Active Ability: Burn Out\n\nThe hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees.\n\nMovement Speed: 30%\nDamage: 3% of Max Health\nTrail Width: 250\nDuration: 8 sec.\nCooldown: 15 sec.\nHealth Cost: 20% of Current Health"
+          },
+          {
+            "talent_id": "modifier_techies_3",
+            "image": "techies_3.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Permanently grants a Barrier that absorbs All Damage. Maximum Barrier Strength: 15% of Max Health. Barrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health» replaced with «Increased Blast Off! Damage: 6%/9%/12% of Maximum Health»"
+              }
+            ],
+            "talent_text": "Increased Blast Off! Damage: 6%/9%/12% of Maximum Health"
+          },
+          {
+            "talent_id": "modifier_techies_5",
+            "image": "techies_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 3»",
+                "tooltip": "Previously required upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Increases Spell Damage by 1% for every 5%/3% Missing Health."
+          },
+          {
+            "talent_id": "modifier_techies_7",
+            "image": "techies_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Blast Off! stun duration bonus decreased from 1s to 0.6s"
+              }
+            ],
+            "talent_text": "Blast Off! costs no Mana.\n\nBlast Off! cast delay reduction: 90%\n\nBlast Off! stun duration increase: 0.6 sec"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tiny_9",
+            "image": "tiny_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Tiny's Ring now grants tree walking instead of unobstructed movement"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Grow.</font></b>\n\nNew Passive Ability: Tiny's Ring\n\nAllows walking through Trees. Enemies under the owner take damage every second based on his Agility.\n\nModel Size Reduction: 10%\nRadius: 100\nDamage per Second: 110% of Agility"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "winter_wyvern_arctic_burn_custom",
+          "name": "Arctic Burn",
+          "image": "winter_wyvern_arctic_burn.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_range_bonus",
+              "note": "Bonus attack range decreased from 275/300/325/350 to 175/200/225/250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_12",
+            "image": "winter_wyvern_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Attack speed bonus decreased from 30/60 to 15/30"
+              }
+            ],
+            "talent_text": "Grants Unobstructed Vision to Arctic Burn targets in Radius: 200/400\n\nAttack Speed: 15/30"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_14",
+            "image": "winter_wyvern_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Mana cost per second increased from 100 to 200"
+              }
+            ],
+            "talent_text": "Arctic Burn becomes a toggled ability and costs mana every second. Removes the limit on the number of attacks on a single target.\n\nMana Cost per Second: 200"
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

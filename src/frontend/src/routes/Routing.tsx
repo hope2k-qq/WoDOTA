@@ -12,7 +12,7 @@ import ScrollToTop from "../widgets/scrollToTop/ScrollToTop";
 import {TelegramNotice} from "../widgets/telegramNotice/TelegramNotice";
 import {HeroBuildPage} from "../pages/heroes/components/heroBuildPage/HeroBuildPage";
 import {NewsPage} from "../pages/news/NewsPage";
-//import {PatchesPage} from "../pages/patches/PatchesPage";
+import {PatchesPage} from "../pages/patches/PatchesPage";
 import {TournamentsPageSolo} from "../pages/tournaments/TournamentsPageSolo";
 import {PrivacyPolicyPage} from "../pages/footerPages/privacyPolicy/PrivacyPolicyPage";
 import {TrackPageView} from "../utils/TrackPageView";
@@ -152,24 +152,24 @@ const routes: { path: string; element: JSX.Element; title: RouteTitle, descripti
             cs: "Sledujte nejnovější zprávy a aktualizace na webu WoDOTA!"
         }
     },
-    // {
-    //     path: "/patches/:version?",
-    //     element: <PatchesPage />,
-    //     title: {
-    //         en: "World of Dota (WoDOTA) — Patch notes",
-    //         ru: "World of Dota (WoDOTA) — Патчлог",
-    //         uk: "World of Dota (WoDOTA) — Патчлог",
-    //         cs: "World of Dota (WoDOTA) — Patch notes"
-    //     },
-    //     description: {
-    //         en: "Changes between WoDOTA patches: abilities, items, talents and texts.",
-    //         ru: "Изменения между патчами WoDOTA: способности, предметы, таланты и тексты.",
-    //         uk: "Зміни між патчами WoDOTA: здібності, предмети, таланти та тексти.",
-    //         cs: "Změny mezi patchi WoDOTA: schopnosti, předměty, talenty a texty."
-    //     }
-    // },
     {
-        path: "/tournament",
+        path: "/patches/:version?",
+        element: <PatchesPage />,
+        title: {
+            en: "World of Dota (WoDOTA) — Patch notes",
+            ru: "World of Dota (WoDOTA) — Патчлог",
+            uk: "World of Dota (WoDOTA) — Патчлог",
+            cs: "World of Dota (WoDOTA) — Patch notes"
+        },
+        description: {
+            en: "Changes between WoDOTA patches: abilities, items, talents and texts.",
+            ru: "Изменения между патчами WoDOTA: способности, предметы, таланты и тексты.",
+            uk: "Зміни між патчами WoDOTA: здібності, предмети, таланти та тексти.",
+            cs: "Změny mezi patchi WoDOTA: schopnosti, předměty, talenty a texty."
+        }
+    },
+    {
+        path: "/tournaments",
         element: <TournamentsPageSolo />,
         title: {
             en: "World of Dota (WoDOTA) — Tournaments",

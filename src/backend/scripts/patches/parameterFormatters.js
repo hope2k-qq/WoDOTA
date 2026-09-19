@@ -230,17 +230,17 @@ const PARAMETER_FORMATTERS = {
         if (wasOn === nowOn) return null;
         if (nowOn) {
             return {
-                ru: 'Теперь пассивную способность можно отключить истощением',
-                en: 'The passive ability can now be disabled by Break',
-                uk: 'Тепер пасивну здібність можна вимкнути виснаженням',
-                cs: 'Pasivní schopnost lze nyní vypnout efektem Break',
+                ru: 'Теперь способность можно отключить истощением',
+                en: 'The ability can now be disabled by Break',
+                uk: 'Тепер здібність можна вимкнути виснаженням',
+                cs: 'Schopnost lze nyní vypnout efektem Break',
             };
         }
         return {
-            ru: 'Теперь пассивную способность нельзя отключить истощением',
-            en: 'The passive ability can no longer be disabled by Break',
-            uk: 'Тепер пасивну здібність не можна вимкнути виснаженням',
-            cs: 'Pasivní schopnost již nelze vypnout efektem Break',
+            ru: 'Теперь способность нельзя отключить истощением',
+            en: 'The ability can no longer be disabled by Break',
+            uk: 'Тепер здібність не можна вимкнути виснаженням',
+            cs: 'Schopnost již nelze vypnout efektem Break',
         };
     },
     AbilitySharedCooldown(oldValue, newValue) {
@@ -276,16 +276,16 @@ const PARAMETER_FORMATTERS = {
         if (newCan === null || newCan === oldCan) return null;
         if (newCan) {
             return {
-                ru: 'Теперь можно разобрать',
+                ru: 'Теперь предмет можно разобрать',
                 en: 'Can now be disassembled',
-                uk: 'Тепер можна розібрати',
+                uk: 'Тепер предмет можна розібрати',
                 cs: 'Nyní lze rozložit',
             };
         }
         return {
-            ru: 'Теперь нельзя разобрать',
+            ru: 'Предмет больше нельзя разобрать',
             en: 'Can no longer be disassembled',
-            uk: 'Тепер не можна розібрати',
+            uk: 'Предмет більше не можна розібрати',
             cs: 'Nyní nelze rozložit',
         };
     },

@@ -1,0 +1,423 @@
+{
+  "patch_number": "1.04b",
+  "patch_name": "1.04b",
+  "patch_timestamp": 1788983030,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Base armor decreased by 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "drow_ranger",
+      "name": "drow ranger",
+      "image": "images/heroes/heroesPreview/drow_ranger.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_drow_ranger_5",
+            "image": "drow_ranger_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«New Passive Ability: Hypothermia. Frost Arrows apply stacks of Hypothermia, which reduce health restoration by 5%. If an enemy dies under the effect of Hypothermia, they will explode and deal Frost Arrow Magic Damage to all nearby enemies for each stack. Max stacks: 6» replaced with «The hero's arrows split when they hit an enemy and hit a random nearby target for 50% damage. Each such arrow counts as a normal attack. Number of targets: 1/2»"
+              }
+            ],
+            "talent_text": "The hero's arrows split when they hit an enemy and hit a random nearby target for 50% damage. Each such arrow counts as a normal attack.\n\nNumber of targets: 1/2"
+          },
+          {
+            "talent_id": "modifier_drow_ranger_4",
+            "image": "drow_ranger_4.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«The hero's arrows split when they hit an enemy and hit a random nearby target for 50% damage. Each such arrow counts as a normal attack. Number of targets: 1/2» replaced with «New Passive Ability: Hypothermia. Frost Arrows apply stacks of Hypothermia, which reduce health restoration by 5%. If an enemy dies under the effect of Hypothermia, they will explode and deal Frost Arrow Magic Damage to all nearby enemies for each stack. Max stacks: 6»"
+              }
+            ],
+            "talent_text": "New Passive Ability: Hypothermia\n\nFrost Arrows apply stacks of Hypothermia, which reduce health restoration by 5%. If an enemy dies under the effect of Hypothermia, they will explode and deal Frost Arrow Magic Damage to all nearby enemies for each stack.\n\nMax stacks: 6"
+          },
+          {
+            "talent_id": "modifier_drow_ranger_6",
+            "image": "drow_ranger_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 5»",
+                "tooltip": "Previously required upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "An explosion from Hypothermia occurs when the target gains maximum stacks.\n\nExplosion Damage Increase: 25%/50% of Strength"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_drow_ranger_13",
+            "image": "drow_ranger_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Marksmanship works even if there is an enemy near you» replaced with «Multishot applies Attack Modifiers»"
+              }
+            ],
+            "talent_text": "Multishot applies Attack Modifiers"
+          },
+          {
+            "talent_id": "modifier_drow_ranger_16",
+            "image": "drow_ranger_16.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«Multishot applies Attack Modifiers» replaced with «Marksmanship works even if there is an enemy near you»"
+              }
+            ],
+            "talent_text": "Marksmanship works even if there is an enemy near you."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "io_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Share of health regeneration and received healing drained from the tethered enemy decreased from 60% to 45%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Spirits. </font></b>\n\n<b><font color='#ff0000'> Tether cannot be used on allies. </font></b>\n\nTether can be used on enemies. Does not increase or copy their movement speed. Drains 30 health per second from the enemy.\n\nHealth regeneration and all received healing drain the tethered enemy's health: 45%."
+          },
+          {
+            "talent_id": "modifier_io_2",
+            "image": "io_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Health regeneration increased from 5/10 to 8/16"
+              }
+            ],
+            "talent_text": "Tether connection works on all affected enemies.\n\nHealth Regeneration: 8/16"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "name": "pangolier",
+      "image": "images/heroes/heroesPreview/pangolier.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "phoenix_sun_ray_custom",
+          "name": "Sun Ray",
+          "image": "phoenix_sun_ray.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastPoint",
+              "note": "Cast point increased from 0.01s to 0.15s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_phoenix_8",
+            "image": "phoenix_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Icarus Dive cooldown reduction decreased from 10/15s to 8/12s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Sun Ray. </font></b>\n\nIcarus Dive does not consume Health.\n\nIcarus Dive Cooldown Reduction: 8/12 sec.\n\nReduces Icarus Dive Cooldown by 5 sec if the hero has more than 300 Agility."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "razor_eye_of_the_storm_custom",
+          "name": "Eye of the Storm",
+          "image": "razor_eye_of_the_storm.webp",
+          "ability_notes": [
+            {
+              "parameter": "armor_reduction",
+              "note": "Armor reduction increased from 0.7 to 0.8"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_razor_5",
+            "image": "razor_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Storm Surge damage bonus increased from 30%/45%/60% to 30%/60%/90% of attack damage"
+              }
+            ],
+            "talent_text": "Increases Storm Surge Damage: 30%/60%/90% of Attack Damage"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_razor_11",
+            "image": "razor_11.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Removes Eye of the Storm. New Active Ability: Armor Link. Creates an electric link with a chosen enemy hero, transferring their armor to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. Link Duration: 10 sec. Effect Duration: 10 sec. Armor Change Rate: 0.5/0.75/1. Cooldown: 40/30/20 sec» replaced with «Links immediately grant the bonus as if maintained for 2/4 seconds»"
+              }
+            ],
+            "talent_text": "Links immediately grant the bonus as if maintained for 2/4 seconds."
+          },
+          {
+            "talent_id": "modifier_razor_12",
+            "image": "razor_12.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Links immediately grant the bonus as if maintained for 1/2 seconds» replaced with «Removes Plasma Field. New Active Ability: Spell Link. Creates an electric link with a chosen enemy hero, transferring their spell damage to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. Link Duration: 10 sec. Effect Duration: 10 sec. Spell Damage Change Rate: 1%/1.5%/2%. Cooldown: 40/30/20 sec»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Plasma Field. </font></b>\n\nNew Active Ability: Spell Link\n\nCreates an electric link with a chosen enemy hero, transferring their spell damage to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link.\n\nLink Duration: 10 sec.\nEffect Duration: 10 sec.\nSpell Damage Change Rate: 1%/1.5%/2%\nCooldown: 40/30/20 sec."
+          },
+          {
+            "talent_id": "modifier_razor_13",
+            "image": "razor_13.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Removes Plasma Field. New Active Ability: Spell Link. Creates an electric link with a chosen enemy hero, transferring their spell damage to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. Link Duration: 10 sec. Effect Duration: 10 sec. Spell Damage Change Rate: 1%/1.5%/2%. Cooldown: 40/30/20 sec» replaced with «Increased Link Effect Duration: 3 sec. Health: 400»"
+              }
+            ],
+            "talent_text": "Increased Link Effect Duration: 3 sec.\n\nHealth: 400"
+          },
+          {
+            "talent_id": "modifier_razor_10",
+            "image": "razor_10.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Increases Link Effect Duration: 3 sec» replaced with «Removes Eye of the Storm. New Active Ability: Armor Link. Creates an electric link with a chosen enemy hero, transferring their armor to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link. Link Duration: 10 sec. Effect Duration: 10 sec. Armor Change Rate: 0.5/0.75/1. Cooldown: 40/30/20 sec»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Eye of the Storm. </font></b>\n\nNew Active Ability: Armor Link\n\nCreates an electric link with a chosen enemy hero, transferring their armor to the ability owner. While the link is active, attacks do not interrupt movement. Using a new link ends the current link.\n\nLink Duration: 10 sec.\nEffect Duration: 10 sec.\nArmor Change Rate: 0.5/0.75/1\nCooldown: 40/30/20 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "terrorblade",
+      "name": "terrorblade",
+      "image": "images/heroes/heroesPreview/terrorblade.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base attack speed decreased from 110 to 100",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "void_spirit_dissimilate_custom",
+          "name": "Dissimilate",
+          "image": "void_spirit_dissimilate.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 20/17/14/11s to 22/20/18/16s"
+            }
+          ]
+        },
+        {
+          "ability_id": "void_spirit_astral_step_custom",
+          "name": "Astral Step",
+          "image": "void_spirit_astral_step.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityChargeRestoreTime",
+              "note": "Charge restore time increased from 25/20/15s to 30/25/20s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_void_spirit_18",
+            "image": "void_spirit_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Dissimilate damage increase decreased from 4%/8%/12% to 4%/6%/8% of current mana"
+              }
+            ],
+            "talent_text": "Increases Dissimilate Damage: 4%/6%/8% of Current Mana"
+          },
+          {
+            "talent_id": "modifier_void_spirit_20",
+            "image": "void_spirit_20.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Increases Resonant Pulse Charges: 1» replaced with «Dissimilate creates an additional outer circle. Dissimilate stuns enemies: 0.5/1/1.5 sec»"
+              }
+            ],
+            "talent_text": "Dissimilate creates an additional outer circle.\n\nDissimilate stuns enemies: 0.5/1/1.5 sec."
+          },
+          {
+            "talent_id": "modifier_void_spirit_19",
+            "image": "void_spirit_19.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Dissimilate creates an additional outer circle. Dissimilate stuns enemies: 1/1.5/2 sec» replaced with «Increases Resonant Pulse Charges: 1»"
+              }
+            ],
+            "talent_text": "Increases Resonant Pulse Charges: 1"
+          },
+          {
+            "talent_id": "modifier_void_spirit_21",
+            "image": "void_spirit_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Dissimilate Burst cooldown increased from 22s to 26s"
+              }
+            ],
+            "talent_text": "New Active Ability: Dissimilate Burst\n\nAfter a short delay, triggers a Dissimilate explosion at the target location.\n\nDamage: 150% of Dissimilate Damage\nCooldown: 26 sec\nCast Range: 700\nMana Cost: 120"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 1",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

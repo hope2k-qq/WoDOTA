@@ -1,0 +1,914 @@
+{
+  "patch_number": "1.10a",
+  "patch_name": "1.10a",
+  "patch_timestamp": 1789149796,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "abaddon_frostmourne_custom",
+          "name": "frostmourne",
+          "image": "abilities/abaddon_frostmourne.webp",
+          "ability_notes": [
+            {
+              "parameter": "curse_dps",
+              "old_raw_value": "10 20 30 40",
+              "new_raw_value": "15 25 35 45",
+              "note": {
+                "ru": "Curse Dps: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Curse Dps: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Curse Dps: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "curse_interval",
+              "old_raw_value": "0.5",
+              "new_raw_value": "0.495",
+              "note": {
+                "ru": "Curse Interval: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Curse Interval: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Curse Interval: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_abaddon_3",
+            "image": "images/heroes/talents/abaddon/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Curse of Avernus: 10/20/30",
+                  "en": "Increase Curse of Avernus Damage: 10/20/30",
+                  "uk": "Збільшення збитків Curse of Avernus: 10/20/30"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Curse of Avernus: 20/40/60",
+                  "en": "Increase Curse of Avernus Damage: 20/40/60",
+                  "uk": "Збільшення збитків Curse of Avernus: 20/40/60"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "images/heroes/talents/axe/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Culling Blade: 300%/400%/500% от Брони",
+                  "en": "Increases Culling Blade Damage: 300%/400%/500% of Armor",
+                  "uk": "Збільшує Урон Culling Blade: 300%/400%/500% від Броні"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Culling Blade: 200%/300%/400% от Брони",
+                  "en": "Increases Culling Blade Damage: 200%/300%/400% of Armor",
+                  "uk": "Збільшує Урон Culling Blade: 200%/300%/400% від Броні"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "images/heroes/talents/axe/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Battle Hunger: 100%/200%/300% от Брони",
+                  "en": "Increased Battle Hunger Damage: 100%/200%/300% of Armor",
+                  "uk": "Збільшення Шкоди Battle Hunger: 100%/200%/300% від Броні"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Battle Hunger: 100%/150%/200% от Брони",
+                  "en": "Increased Battle Hunger Damage: 100%/150%/200% of Armor",
+                  "uk": "Збільшення Шкоди Battle Hunger: 100%/150%/200% від Броні"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "chaos_knight",
+      "name": "chaos knight",
+      "image": "images/heroes/heroesPreview/chaos_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "chaos_knight_chaos_strike_custom",
+          "name": "chaos strike",
+          "image": "abilities/chaos_knight_chaos_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "crit_max",
+              "old_raw_value": "140 180 220 260",
+              "new_raw_value": "140 160 180 200",
+              "note": {
+                "ru": "Crit Max: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Crit Max: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Crit Max: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            },
+            {
+              "parameter": "lifesteal",
+              "old_raw_value": "24 36 48 60",
+              "new_raw_value": "20 30 40 50",
+              "note": {
+                "ru": "Lifesteal: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Lifesteal: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Lifesteal: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "chaos_knight_phantasm_custom",
+          "name": "phantasm",
+          "image": "abilities/chaos_knight_phantasm.webp",
+          "ability_notes": [
+            {
+              "parameter": "outgoing_damage",
+              "old_raw_value": "0",
+              "new_raw_value": "-40",
+              "note": {
+                "ru": "Outgoing Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Outgoing Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Outgoing Damage: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "outgoing_damage_tooltip",
+              "old_raw_value": "100",
+              "new_raw_value": "60",
+              "note": {
+                "ru": "Outgoing Damage Tooltip: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Outgoing Damage Tooltip: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Outgoing Damage Tooltip: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_chaos_knight_1",
+            "image": "images/heroes/talents/chaos_knight/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Каждая Атака по герою наносит Физический Урон Атакующему: 12% от Урона Атаки",
+                  "en": "Each Attack on a hero deals Physical Damage to the attacker: 12% of Attack Damage",
+                  "uk": "Кожна Атака по герою завдає Фізичний Шкоди Атакуючому: 12% від Шкоди Атаки"
+                },
+                "new_raw_value": {
+                  "ru": "Каждая Атака по герою наносит Физический Урон Атакующему: 8% от Урона Атаки",
+                  "en": "Each Attack on a hero deals Physical Damage to the attacker: 8% of Attack Damage",
+                  "uk": "Кожна Атака по герою завдає Фізичний Шкоди Атакуючому: 8% від Шкоди Атаки"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_3",
+            "image": "images/heroes/talents/chaos_knight/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Реальность. Сила: 4/8/12 Reality Rift накладывает Истощение на противников. Длительность: 1/2/3 сек",
+                  "en": "Reality. Strength: 4/8/12 Reality Rift applies Exhaustion to enemies. Duration: 1/2/3 sec",
+                  "uk": "Реальність. Сила: 4/8/12 Reality Rift накладає Виснаження на ворогів. Тривалість: 1/2/3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Реальность. Сила: 3/6/9 Reality Rift накладывает Истощение на противников. Длительность: 1/2/3 сек",
+                  "en": "Reality. Strength: 3/6/9 Reality Rift applies Exhaustion to enemies. Duration: 1/2/3 sec",
+                  "uk": "Реальність. Сила: 3/6/9 Reality Rift накладає Виснаження на ворогів. Тривалість: 1/2/3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_4",
+            "image": "images/heroes/talents/chaos_knight/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Урон: 25/50",
+                  "en": "Damage: 25/50",
+                  "uk": "Шкода: 25/50"
+                },
+                "new_raw_value": {
+                  "ru": "Урон: 20/40",
+                  "en": "Damage: 20/40",
+                  "uk": "Шкода: 20/40"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_5",
+            "image": "images/heroes/talents/chaos_knight/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Минимального и Максимального Урона Chaos Strike: 20%/40%",
+                  "en": "Increases Minimum and Maximum Chaos Strike Damage: 20%/40%",
+                  "uk": "Збільшення Мінімальної та Максимальної Шкоди Chaos Strike: 20%/40%"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Минимального и Максимального Урона Chaos Strike: 10%/20%",
+                  "en": "Increases Minimum and Maximum Chaos Strike Damage: 10%/20%",
+                  "uk": "Збільшення Мінімальної та Максимальної Шкоди Chaos Strike: 10%/20%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_7",
+            "image": "images/heroes/talents/chaos_knight/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Phantasm. Новая Пассивная Способность: Chaos Walk Позволяет ходить сквозь существ и деревья. Герой оставляет за собой адский след который каждую секунду наносит физический урон от его Урона Атаки. Увеличение Размера Модели: 40% Урон в Секунду: 100% от Урона Атаки Радиус Следа: 200 Длительность Следа: 3 сек",
+                  "en": "Removes Phantasm. New Passive Ability: Chaos Walk Allows walking through units and trees. The hero leaves an infernal trail that deals physical damage every second based on their Attack Damage. Model Size Increase: 40% Damage per Second: 100% of Attack Damage Trail Radius: 200 Trail Duration: 3 sec",
+                  "uk": "Прибирає Phantasm. Нова Пасивна Здібність: Chaos Walk Дозволяє ходити крізь істот та дерева. Герой залишає за собою пекельний слід, який щосекунди завдає фізичної шкоди від його Шкоди Атаки. Збільшення Розміру Моделі: 40% Шкода за секунду: 100% від Шкоди Атаки Радіус Сліду: 200 Тривалість Сліду: 3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Phantasm. Новая Пассивная Способность: Chaos Walk Позволяет ходить сквозь существ и деревья. Герой оставляет за собой адский след который каждую секунду наносит физический урон от его Урона Атаки. Увеличение Размера Модели: 40% Урон в Секунду: 110% от Урона Атаки Радиус Следа: 200 Длительность Следа: 3 сек",
+                  "en": "Removes Phantasm. New Passive Ability: Chaos Walk Allows walking through units and trees. The hero leaves an infernal trail that deals physical damage every second based on their Attack Damage. Model Size Increase: 40% Damage per Second: 110% of Attack Damage Trail Radius: 200 Trail Duration: 3 sec",
+                  "uk": "Прибирає Phantasm. Нова Пасивна Здібність: Chaos Walk Дозволяє ходити крізь істот та дерева. Герой залишає за собою пекельний слід, який щосекунди завдає фізичної шкоди від його Шкоди Атаки. Збільшення Розміру Моделі: 40% Шкода за секунду: 110% від Шкоди Атаки Радіус Сліду: 200 Тривалість Сліду: 3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_chaos_knight_9",
+            "image": "images/heroes/talents/chaos_knight/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Chaos Bolt создаёт рядом с жертвой иллюзию от способности Phantasm, которая атакует цель и наносит на 25% меньше урона. Длительность Иллюзии: 3/6 сек",
+                  "en": "Chaos Bolt creates a Phantasm illusion near the victim that attacks the target and deals 25% less damage. Illusion Duration: 3/6 sec",
+                  "uk": "Chaos Bolt створює поруч із жертвою ілюзію від здібності Phantasm, яка атакує ціль і завдає на 25% менше шкоди. Тривалість Ілюзії: 3/6 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Chaos Bolt создаёт рядом с жертвой иллюзию от способности Phantasm, которая атакует цель и наносит на 50% меньше урона. Длительность Иллюзии: 3/6/9 сек",
+                  "en": "Chaos Bolt creates a Phantasm illusion next to the victim that attacks the target and deals 50% less damage. Illusion Duration: 3/6/9 sec",
+                  "uk": "Chaos Bolt створює поруч із жертвою ілюзію від здібності Phantasm, яка атакує ціль і завдає на 50% менше шкоди. Тривалість ілюзії: 3/6/9 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_10",
+            "image": "images/heroes/talents/chaos_knight/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Реальность. Ловкость: 4/8/12 Reality Rift накладывает Безмолвие на противников. Длительность: 1/2/3 сек",
+                  "en": "Reality. Agility: 4/8/12 Reality Rift applies Silence to enemies. Duration: 1/2/3 sec",
+                  "uk": "Реальність. Ловкість: 4/8/12 Reality Rift накладає Мовчання на ворогів. Тривалість: 1/2/3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Реальность. Reality Rift накладывает Безмолвие на противников. Длительность: 1/2 сек",
+                  "en": "Reality. Reality Rift applies Silence to enemies. Duration: 1/2 sec",
+                  "uk": "Реальність. Reality Rift накладає мовчання на ворогів. Тривалість: 1/2 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_11",
+            "image": "images/heroes/talents/chaos_knight/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Урона по Иллюзиям Phantasm: 75%/125%/175%",
+                  "en": "Reduced Damage Taken by Phantasm Illusions: 75%/125%/175%",
+                  "uk": "Зменшення Шкоди по Ілюзіям Phantasm: 75%/125%/175%"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Урона по Иллюзиям Phantasm: 50%/100%/150%",
+                  "en": "Reduced Damage Taken by Phantasm Illusions: 50%/100%/150%",
+                  "uk": "Зменшення Шкоди по Ілюзіям Phantasm: 50%/100%/150%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_14",
+            "image": "images/heroes/talents/chaos_knight/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Phantasm помимо своих иллюзий создаёт иллюзию каждого союзного или вражеского героя в радиусе 1800, включая владельца. Эти иллюзии появляются рядом с оригинальными героями",
+                  "en": "In addition to its own illusions, Phantasm creates an illusion of every allied or enemy hero within a 1800 radius, including the owner. These illusions spawn near the original heroes",
+                  "uk": "Phantasm крім своїх ілюзій створює ілюзію кожного союзного або ворожого героя у радіусі 1800, включаючи власника. Ці ілюзії з'являються поруч з оригінальними героями"
+                },
+                "new_raw_value": {
+                  "ru": "Phantasm помимо своих иллюзий создаёт иллюзию каждого союзного или вражеского героя в радиусе 1200, включая владельца. Эти иллюзии появляются рядом с оригинальными героями",
+                  "en": "In addition to its own illusions, Phantasm creates an illusion of every allied or enemy hero within a 1200 radius, including the owner. These illusions spawn near the original heroes",
+                  "uk": "Phantasm крім своїх ілюзій створює ілюзію кожного союзного або ворожого героя у радіусі 1200, включаючи власника. Ці ілюзії з'являються поруч з оригінальними героями"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_chaos_knight_16",
+            "image": "images/heroes/talents/chaos_knight/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Минимального и Максимального Урона Chaos Bolt: 200%/300%/400% от Восстановления Маны",
+                  "en": "Increases Minimum and Maximum Chaos Bolt Damage: 200%/300%/400% of Mana Regeneration",
+                  "uk": "Збільшення Мінімальної та Максимальної Шкоди Chaos Bolt: 200%/300%/400% від Відновлення Мани"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Минимального и Максимального Урона Chaos Bolt: 300%/450%/600% от Восстановления Маны",
+                  "en": "Increases Minimum and Maximum Chaos Bolt Damage: 300%/450%/600% of Mana Regeneration",
+                  "uk": "Збільшення Мінімальної та Максимальної Шкоди Chaos Bolt: 300%/450%/600% від Відновлення Мани"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_17",
+            "image": "images/heroes/talents/chaos_knight/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Реальность. Интеллект: 4/8/12 Reality Rift накладывает Бессилие на противников. Длительность: 1/2/3 сек",
+                  "en": "Reality. Intelligence: 4/8/12 Reality Rift applies Break to enemies. Duration: 1/2/3 sec",
+                  "uk": "Реальність. Інтелект: 4/8/12 Reality Rift накладає Безсилля на ворогів. Тривалість: 1/2/3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Реальность. Интеллект: 6/12/18 Reality Rift накладывает Бессилие на противников. Длительность: 1/2/3 сек",
+                  "en": "Reality. Intelligence: 6/12/18 Reality Rift applies Break to enemies. Duration: 1/2/3 sec",
+                  "uk": "Реальність. Інтелект: 6/12/18 Reality Rift накладає Безсилля на ворогів. Тривалість: 1/2/3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_19",
+            "image": "images/heroes/talents/chaos_knight/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Chaos Strike. Новая Активная Способность: Chaos King Bar Применяет на владельца нормальное развеивание. Даёт 50% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья. Длительность: 2/3 сек. Восстановление Здоровья: 150% от Восстановления Маны Время Перезарядки: 90 сек",
+                  "en": "Removes Chaos Strike. New Active Ability: Chaos King Bar Applies a basic dispel to the owner. Grants 50% magic resistance and protects from negative effects. Increases health regeneration. Duration: 2/3 sec. Health Regeneration: 150% of Mana Regeneration Cooldown: 90 sec",
+                  "uk": "Прибирає Chaos Strike. Нова Активна Здібність: Chaos King Bar Застосовує на власника нормальне розсіювання. Дає 50% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров'я. Тривалість: 2/3 сек. Відновлення Здоров'я: 150% від Відновлення Мани Час Перезарядки: 90 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Chaos Strike. Новая Активная Способность: Chaos King Bar Применяет на владельца нормальное развеивание. Даёт 50% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья. Длительность: 2/3 сек. Восстановление Здоровья: 180% от Восстановления Маны Время Перезарядки: 60 сек",
+                  "en": "Removes Chaos Strike. New Active Ability: Chaos King Bar Applies a basic dispel to the owner. Grants 50% magic resistance and protects from negative effects. Increases health regeneration. Duration: 2/3 sec. Health Regeneration: 180% of Mana Regeneration Cooldown: 60 sec",
+                  "uk": "Прибирає Chaos Strike. Нова Активна Здібність: Chaos King Bar Застосовує на власника нормальне розсіювання. Дає 50% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров'я. Тривалість: 2/3 сек. Відновлення Здоров'я: 180% від Відновлення Мани Час Перезарядки: 60 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_chaos_knight_20",
+            "image": "images/heroes/talents/chaos_knight/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Chaos Bolt: 1.5 сек",
+                  "en": "Reduces Chaos Bolt Cooldown: 1.5 sec",
+                  "uk": "Зменшення Часу Перезарядки Chaos Bolt: 1.5 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Chaos Bolt: 1.5 сек. Дополнительная Дальность Заклинаний: 100",
+                  "en": "Chaos Bolt Cooldown Reduction: 1.5 sec. Bonus Cast Range: 100",
+                  "uk": "Зменшення Часу Перезарядки Chaos Bolt: 1.5 сек. Додаткова Дальність Заклинань: 100"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dawnbreaker_luminosity_custom",
+          "name": "luminosity",
+          "image": "abilities/dawnbreaker_luminosity.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal_pct",
+              "old_raw_value": "35 40 45 50",
+              "new_raw_value": "25 30 35 40",
+              "note": {
+                "ru": "Heal Pct: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Heal Pct: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Heal Pct: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "bonus_damage",
+              "old_raw_value": "125 150 175 200",
+              "new_raw_value": "120 140 160 180",
+              "note": {
+                "ru": "Bonus Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Bonus Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Bonus Damage: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_5",
+            "image": "images/heroes/talents/dawnbreaker/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Критического Урона Luminosity: 25%/50%",
+                  "en": "Increases Luminosity Critical Damage: 25%/50%",
+                  "uk": "Збільшення Критичної Шкоди Luminosity: 25%/50%"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Критического Урона Luminosity: 15%/30%",
+                  "en": "Increases Luminosity Critical Damage: 15%/30%",
+                  "uk": "Збільшення Критичної Шкоди Luminosity: 15%/30%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_dawnbreaker_10",
+            "image": "images/heroes/talents/dawnbreaker/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона за Пульсацию Solar Guardian: 80%/120% от Ловкости",
+                  "en": "Increases Damage per Solar Guardian Pulse: 80%/120% of Agility",
+                  "uk": "Збільшення Шкоди за Пульсацію Solar Guardian: 80%/120% від Ловкості"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона за Пульсацию Solar Guardian: 45%/90% от Ловкости",
+                  "en": "Increases Damage per Solar Guardian Pulse: 45%/90% of Agility",
+                  "uk": "Збільшення Шкоди за Пульсацію Solar Guardian: 45%/90% від Ловкості"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_11",
+            "image": "images/heroes/talents/dawnbreaker/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Лечения за Пульсацию Solar Guardian: 80%/120% от Ловкости",
+                  "en": "Increases Healing per Solar Guardian Pulse: 80%/120% of Agility",
+                  "uk": "Збільшення Лікування за Пульсацію Solar Guardian: 80%/120% від Ловкості"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Лечения за Пульсацию Solar Guardian: 45%/90% от Ловкости",
+                  "en": "Increases Healing per Solar Guardian Pulse: 45%/90% of Agility",
+                  "uk": "Збільшення Лікування за Пульсацію Solar Guardian: 45%/90% від Ловкості"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_13",
+            "image": "images/heroes/talents/dawnbreaker/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Solar Guardian: 30/60 сек",
+                  "en": "Reduces Solar Guardian Cooldown: 30/60 sec",
+                  "uk": "Зменшення Часу Перезарядки Solar Guardian: 30/60 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Solar Guardian: 20/40 сек",
+                  "en": "Reduces Solar Guardian Cooldown: 20/40 sec",
+                  "uk": "Зменшення Часу Перезарядки Solar Guardian: 20/40 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dawnbreaker_16",
+            "image": "images/heroes/talents/dawnbreaker/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Огненного Следа Celestial Hammer: 50%/75%/100% от Интеллекта",
+                  "en": "Increases Celestial Hammer Fire Trail Damage: 50%/75%/100% of Intelligence",
+                  "uk": "Збільшення Шкоди Вогняного Сліду Celestial Hammer: 50%/75%/100% від Інтелекту"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Огненного Следа Celestial Hammer: 30%/45%/60% от Интеллекта",
+                  "en": "Increases Celestial Hammer Fire Trail Damage: 30%/45%/60% of Intelligence",
+                  "uk": "Збільшення Шкоди Вогняного Сліду Celestial Hammer: 30%/45%/60% від Інтелекту"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_19",
+            "image": "images/heroes/talents/dawnbreaker/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Celestial Hammer оглушает задетых противников. Длительность: 1/2 сек",
+                  "en": "Celestial Hammer stuns affected enemies. Duration: 1/2 sec",
+                  "uk": "Celestial Hammer оглушає уражених противників. Тривалість: 1/2 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Celestial Hammer оглушает задетых противников. Длительность: 1/1.5 сек",
+                  "en": "Celestial Hammer stuns affected enemies. Duration: 1/1.5 sec",
+                  "uk": "Celestial Hammer оглушає уражених противників. Тривалість: 1/1.5 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_20",
+            "image": "images/heroes/talents/dawnbreaker/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Дальности и Скорости Полёта Celestial Hammer: 20%/40% Броня: 4/8",
+                  "en": "Increases Celestial Hammer Travel Range and Speed: 20%/40% Armor: 4/8",
+                  "uk": "Збільшення Дальності та Швидкості Полоту Celestial Hammer: 20%/40% Броня: 4/8"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Дальности и Скорости Полёта Celestial Hammer: 15%/30% Броня: 3/6",
+                  "en": "Increases Celestial Hammer Travel Range and Speed: 15%/30% Armor: 3/6",
+                  "uk": "Збільшення Дальності та Швидкості Полоту Celestial Hammer: 15%/30% Броня: 3/6"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_21",
+            "image": "images/heroes/talents/dawnbreaker/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Celestial Hammer наносит Чистый Урон, а не Магический. Увеличение Урона Касания Celestial Hammer: 200 Celestial Hammer работает сквозь Невосприимчивость к Магии",
+                  "en": "Celestial Hammer deals Pure Damage instead of Magical. Increases Celestial Hammer Impact Damage: 200 Celestial Hammer works through Magic Immunity",
+                  "uk": "Celestial Hammer завдає Чисту Шкоду, а не Магічну. Збільшення Шкоди Дотику Celestial Hammer: 200 Celestial Hammer працює крізь Невразливість до Магії"
+                },
+                "new_raw_value": {
+                  "ru": "Celestial Hammer наносит Чистый Урон, а не Магический. Увеличение Урона Касания Celestial Hammer: 60 Celestial Hammer работает сквозь Невосприимчивость к Магии",
+                  "en": "Celestial Hammer deals Pure Damage instead of Magical. Increases Celestial Hammer Impact Damage: 60 Celestial Hammer works through Magic Immunity",
+                  "uk": "Celestial Hammer завдає Чисту Шкоду, а не Магічну. Збільшення Шкоди Дотику Celestial Hammer: 60 Celestial Hammer працює крізь Невразливість до Магії"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_undying_20",
+            "image": "images/heroes/talents/undying/20.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Максимума Целей Soul Rip: 1 за 15/10 Восстановления Маны» заменено на «Flesh Golem Увеличивает Восстановление Маны: 0.5%/1%/1.5%»",
+                  "en": "«Increase Soul Rip Max Target: 1 per 15/10 Mana Regeneration» replaced with «Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%»",
+                  "uk": "«Збільшення Максимуму Цілей Soul Rip: 1 за 15/10 Відновлення Мани» замінено на «Flesh Golem Збільшує Відновлення Мани: 0.5%/1%/1.5%»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_undying_19",
+            "image": "images/heroes/talents/undying/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Flesh Golem Увеличивает Восстановление Маны: 0.5%/1%/1.5%» заменено на «Увеличение Максимума Целей Soul Rip: 1 за 20/15 Восстановления Маны»",
+                  "en": "«Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%» replaced with «Increase Soul Rip Maximum Targets: 1 per 20/15 Mana Regeneration»",
+                  "uk": "«Flesh Golem Збільшує Відновлення Мани: 0.5%/1%/1.5%» замінено на «Збільшення Максимуму Цілей Soul Rip: 1 за кожні 20/15 Відновлення Мани»"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

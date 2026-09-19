@@ -1,0 +1,612 @@
+{
+  "patch_number": "1.04a",
+  "patch_name": "1.04a",
+  "patch_timestamp": 1789149535,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "images/heroes/talents/io/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 100%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. Health regeneration and all received healing drains health from the tethered enemy: 100%",
+                  "uk": "Видаляє Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Відновлення здоров'я та все отримане лікування віднімає здоров'я у пов'язаного ворога: 100%"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Отнимает у противника 30 здоровья в секунду. Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 60%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. Drains 30 health per second from the enemy. Health regeneration and all received healing drain the tethered enemy's health: 60%",
+                  "uk": "Видаляє Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Віднімає у ворога 30 здоров'я за секунду. Відновлення здоров'я та все отримане лікування віднімає здоров'я у зв'язаного ворога: 60%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_io_12",
+            "image": "images/heroes/talents/io/12.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Всего Получаемого Урона всех Подконтрольных Существ: 25%/50%",
+                  "en": "Reduction of Total Damage Taken by all Controlled Units: 25%/50%",
+                  "uk": "Зменшення загальної отримуваної шкоди усіх підконтрольних істот: 25%/50%"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Всего Получаемого Урона всех Подконтрольных Существ: 20%/40%",
+                  "en": "Reduction of Total Damage Taken by all Controlled Units: 20%/40%",
+                  "uk": "Зменшення загальної отримуваної шкоди усіх підконтрольних істот: 20%/40%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_io_11",
+            "image": "images/heroes/talents/io/11.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Атаки Героя и его Подконтрольных Существ с вероятностью 25%/50% могут создать взрыв наносящий Магический Урон: 50 Радиус: 250",
+                  "en": "Hero and its Controlled Units attacks have a 25%/50% chance to create an explosion dealing Magical Damage: 50 Radius: 250",
+                  "uk": "Атаки героя та його підконтрольних істот із ймовірністю 25%/50% можуть створити вибух, що наносить магічну шкоду: 50 Радіус: 250"
+                },
+                "new_raw_value": {
+                  "ru": "Атаки Героя и его Подконтрольных Существ с вероятностью 20%/40% могут создать взрыв наносящий Магический Урон: 50 Радиус: 250",
+                  "en": "Hero and its Controlled Units attacks have a 20%/40% chance to create an explosion dealing Magical Damage: 50 Radius: 250",
+                  "uk": "Атаки героя та його підконтрольних істот із ймовірністю 20%/40% можуть створити вибух, що наносить магічну шкоду: 50 Радіус: 250"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phoenix_1",
+            "image": "images/heroes/talents/phoenix/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Этот талант не работает если вы уже изучили Freezing Spirits. Новая Пассивная Способность: Dying Light Каждую секунду наносит всем противникам вокруг Магический Урон: 3%/4% от Недостающего Здоровья героя Радиус: 300",
+                  "en": "This talent does not work if you have already learned Freezing Spirits. New Passive Ability: Dying Light Deals Magic Damage every second to all nearby enemies: 3%/4% of the hero's Missing Health Radius: 300",
+                  "uk": "Цей талант не працює, якщо ви вже вивчили Freezing Spirits. Нова Пасивна Здібність: Dying Light Щосекунди завдає Магічної Шкоди всім ворогам поблизу: 3%/4% від Втраченої Здоров'я героя Радіус: 300"
+                },
+                "new_raw_value": {
+                  "ru": "Этот талант не работает если вы уже изучили Icicle Shard. Новая Пассивная Способность: Dying Light Каждую секунду наносит всем противникам вокруг Магический Урон: 3%/4% от Недостающего Здоровья героя Радиус: 300",
+                  "en": "This talent does not work if you have already learned Icicle Shard. New Passive Ability: Dying Light Deals Magic Damage every second to all nearby enemies: 3%/4% of the hero's Missing Health Radius: 300",
+                  "uk": "Цей талант не працює, якщо ви вже вивчили Icicle Shard. Нова Пасивна Здібність: Dying Light Щосекунди завдає Магічної Шкоди всім ворогам поблизу: 3%/4% від Втраченої Здоров'я героя Радіус: 300"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phoenix_4",
+            "image": "images/heroes/talents/phoenix/4.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Уменьшение Времени Перезарядки Sun Ray: 4/8/12 сек. Sun Ray сразу работает с максимальной силой» заменено на «Уменьшение Расхода и Потери Маны: 30%/60%. Увеличение Урона от Заклинаний: 5%/10%»",
+                  "en": "«Reduces Sun Ray Cooldown: 4/8/12 sec. Sun Ray starts at full strength» replaced with «Reduces Mana Cost and Drain: 30%/60%. Increases Spell Damage: 5%/10%»",
+                  "uk": "«Зменшення Часу Перезарядки Sun Ray: 4/8/12 сек. Sun Ray одразу працює з максимальною силою» замінено на «Зменшення Витрат і Втрат Мани: 30%/60%. Збільшення Шкоди від Заклять: 5%/10%»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phoenix_3",
+            "image": "images/heroes/talents/phoenix/3.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Уменьшение Расхода и Потери Маны: 40%/80%. Увеличение Урона от Заклинаний: 8%/16%» заменено на «Уменьшение Времени Перезарядки Sun Ray: 4/8/12 сек. Sun Ray сразу работает с максимальной силой»",
+                  "en": "«Reduces Mana Cost and Drain: 40%/80%. Increases Spell Damage: 8%/16%» replaced with «Reduces Sun Ray Cooldown: 4/8/12 sec. Sun Ray starts at full strength»",
+                  "uk": "«Зменшення Витрат і Втрат Мани: 40%/80%. Збільшення Шкоди від Заклять: 8%/16%» замінено на «Зменшення Часу Перезарядки Sun Ray: 4/8/12 сек. Sun Ray одразу працює з максимальною силою»"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_phoenix_8",
+            "image": "images/heroes/talents/phoenix/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Sun Ray. Icarus Dive не расходует Здоровье. Уменьшение Времени Перезарядки Icarus Dive: 5/10 сек. Уменьшение Времени Перезарядки Icarus Dive на 5 сек., если у героя более 300 Ловкости",
+                  "en": "Removes Sun Ray. Icarus Dive does not consume Health. Reduces Icarus Dive Cooldown: 5/10 sec. Reduces Icarus Dive Cooldown by 5 sec if hero has more than 300 Agility",
+                  "uk": "Прибирає Sun Ray. Icarus Dive не витрачає Здоров'я. Зменшення Часу Перезарядки Icarus Dive: 5/10 сек. Зменшення Часу Перезарядки Icarus Dive на 5 сек., якщо у героя більше 300 Ловкості"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Sun Ray. Icarus Dive не расходует Здоровье. Уменьшение Времени Перезарядки Icarus Dive: 10/15 сек. Уменьшение Времени Перезарядки Icarus Dive на 5 сек., если у героя более 300 Ловкости",
+                  "en": "Removes Sun Ray. Icarus Dive does not consume Health. Icarus Dive Cooldown Reduction: 10/15 sec. Reduces Icarus Dive Cooldown by 5 sec if the hero has more than 300 Agility",
+                  "uk": "Видаляє Sun Ray. Icarus Dive не витрачає Здоров'я. Зменшення Часу Перезарядки Icarus Dive: 10/15 сек. Зменшує Час Перезарядки Icarus Dive на 5 сек., якщо у героя більше ніж 300 Спритності"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_phoenix_15",
+            "image": "images/heroes/talents/phoenix/15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Этот талант не работает если вы уже изучили Dying Light или Super Supernova. Убирает все способности. Мана: 1000 Новая Пассивная Способность: Freezing Spirits Вокруг героя летают 1/2 ледяных птицы, которые атакуют случайного врага неподалёку магическим уроном. Выбирает самую далёкую цель в радиусе. Радиус атаки равен вашему радиусу атаки. Урон: 3% от Максимальной Маны Время Перезарядки: 3 сек",
+                  "en": "This talent does not work if you have already learned Dying Light or Super Supernova. Removes all abilities. Mana: 1000 New Passive Ability: Freezing Spirits 1/2 icy birds fly around the hero, attacking a random nearby enemy with magical damage. Chooses the farthest target within range. Attack range equals your attack range. Damage: 3% of Maximum Mana Cooldown: 3 sec",
+                  "uk": "Цей талант не працює, якщо ви вже вивчили Dying Light або Super Supernova. Видаляє всі здібності. Мана: 1000 Нова Пасивна Здібність: Freezing Spirits Навколо героя літає 1/2 крижаних птахів, які атакують випадкового ворога поблизу магічною шкодою. Вибирає найвіддаленішу ціль у радіусі. Радіус атаки дорівнює вашому. Шкода: 3% від Максимальної Мани Перезарядка: 3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Этот талант не работает если вы уже изучили Dying Light или Super Supernova. Убирает все способности. Мана: 1000 Новая Активная Способность: Icicle Shard Призывает с неба сосульки, которые наносят магический урон всем врагам в области и значительно замедляют их. Урон: 8%/12%/16% от Максимальной Маны Замедление Передвижения: 50% Длительность Замедления: 2 сек. Радиус: 300 Затраты Маны: 180 Время Перезарядки: 9 сек",
+                  "en": "This talent does not work if you have already learned Dying Light or Super Supernova. Removes all abilities. Mana: 1000 New Active Ability: Icicle Shard Summons icicles from the sky that deal magical damage to all enemies in the area and significantly slow them. Damage: 8%/12%/16% of Maximum Mana Movement Slow: 50% Slow Duration: 2 sec. Radius: 300 Mana Cost: 180 Cooldown: 9 sec",
+                  "uk": "Цей талант не працює, якщо ви вже вивчили Dying Light або Super Supernova. Видаляє всі здібності. Мана: 1000 Нова Активна Здібність: Крижаний Осколок Викликає з неба бурульки, які завдають магічної шкоди всім ворогам у зоні та суттєво їх сповільнюють. Шкода: 8%/12%/16% від Максимальної Мани Зниження Швидкості: 50% Тривалість Сповільнення: 2 сек. Радіус: 300 Витрати Мани: 180 Час Перезарядки: 9 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phoenix_16",
+            "image": "images/heroes/talents/phoenix/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Icicle Shard Призывает с неба сосульки, которые наносят магический урон всем врагам в области и значительно замедляют их. Урон: 8%/12%/16% от Максимальной Маны Замедление Передвижения: 50% Длительность Замедления: 2 сек. Радиус: 300 Затраты Маны: 180 Время Перезарядки: 9 сек",
+                  "en": "New Active Ability: Icicle Shard Summons icicles from the sky that deal magic damage to all enemies in the area and significantly slow them. Damage: 8%/12%/16% of Maximum Mana Movement Slow: 50% Slow Duration: 2 sec. Radius: 300 Mana Cost: 180 Cooldown: 9 sec",
+                  "uk": "Нова Активна Здібність: Icicle Shard Викликає крижані сталактити з неба, які завдають магічної шкоди всім ворогам у зоні та значно їх сповільнюють. Шкода: 8%/12%/16% від Максимальної Мани Сповільнення Руху: 50% Тривалість Сповільнення: 2 сек. Радіус: 300 Витрати Мани: 180 Перезарядка: 9 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Пассивная Способность: Freezing Spirits Вокруг героя летают 1/2 ледяных птицы, которые атакуют случайного врага неподалёку магическим уроном. Выбирает самую далёкую цель в радиусе. Радиус атаки равен вашему радиусу атаки. Урон: 3% от Максимальной Маны Время Перезарядки: 3 сек",
+                  "en": "New Passive Ability: Freezing Spirits 1/2 icy birds fly around the hero, attacking a random nearby enemy with magical damage. They target the farthest enemy within range. Attack range is equal to your attack range. Damage: 3% of Maximum Mana Cooldown: 3 sec",
+                  "uk": "Нова Пасивна Здібність: Заморожуючі Духи Навколо героя літають 1/2 крижані птахи, які атакують випадкового ворога поблизу магічною шкодою. Вибирають найдальшу ціль у радіусі. Радіус атаки дорівнює вашому радіусу атаки. Шкода: 3% від Максимальної Мани Час Перезарядки: 3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phoenix_17",
+            "image": "images/heroes/talents/phoenix/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Freezing Storm Ледяная вспышка даёт герою Невосприимчивость к Магии и увеличивает скорость передвижения. Отталкивает противников вокруг. Длительность: 2/3 сек. Скорость Передвижения: 20%/30% Радиус Отталкивания: 500 Дальность Отталкивания: 250 Затраты Маны: 50 Время Перезарядки: 30 сек",
+                  "en": "New Active Ability: Freezing StormA flash of ice grants the hero Magic Immunity and increases movement speed. Knocks back nearby enemies.Duration: 2/3 secMovement Speed: 20%/30%Knockback Radius: 500Knockback Distance: 250Mana Cost: 50Cooldown: 30 sec",
+                  "uk": "Нова Активна Здібність: Freezing Storm Крижана спалах дає герою Неприйнятність до Магії та збільшує швидкість пересування. Відштовхує ворогів навколо. Тривалість: 2/3 с. Швидкість Пересування: 20%/30% Радіус Відштовхування: 500 Дальність Відштовхування: 250 Витрати Мани: 50 Час Перезарядки: 30 с"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Freezing Storm Ледяная вспышка даёт герою Невосприимчивость к Эффектам и увеличивает скорость передвижения. Отталкивает противников вокруг. Длительность: 2/3 сек. Скорость Передвижения: 20%/30% Радиус Отталкивания: 500 Дальность Отталкивания: 250 Затраты Маны: 50 Время Перезарядки: 30 сек",
+                  "en": "New Active Ability: Freezing Storm Freezing burst grants the hero Status Immunity and increases movement speed. Pushes away nearby enemies. Duration: 2/3 sec. Movement Speed: 20%/30% Push Radius: 500 Push Distance: 250 Mana Cost: 50 Cooldown: 30 sec",
+                  "uk": "Нова Активна Здібність: Freezing Storm Крижаний спалах надає герою Невразливість до Ефектів та збільшує швидкість пересування. Відштовхує ворогів навколо. Тривалість: 2/3 сек. Швидкість Пересування: 20%/30% Радіус Відштовхування: 500 Відстань Відштовхування: 250 Витрати Мани: 50 Час Перезарядки: 30 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phoenix_19",
+            "image": "images/heroes/talents/phoenix/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": null,
+                  "en": "New Passive Ability: Live Spirits 1/2 nature-imbued birds fly around the hero, healing a random nearby ally. Chooses the farthest target within radius. Healing radius equals your attack range. Healing: 60 Cooldown: 3 sec",
+                  "uk": "Нова Пасивна Здібність: Live Spirits Навколо героя літають 1/2 наповнені природною енергією птахи, які зцілюють випадкового союзника неподалік. Обирає найвіддаленішу ціль у радіусі. Радіус зцілення дорівнює вашому радіусу атаки. Зцілення: 60 Час Перезарядки: 3 с"
+                },
+                "new_raw_value": {
+                  "ru": null,
+                  "en": "New Passive Ability: Live Spirits 1/2 nature-infused birds fly around the hero, healing a random nearby ally. They target the farthest ally within range. Healing range is equal to your attack range. Healing: 60 Cooldown: 3 sec",
+                  "uk": "Нова Пасивна Здібність: Живі Духи Навколо героя літають 1/2 птахи, наповнені природною енергією, які лікують випадкового союзника поблизу. Вибирають найдальшу ціль у радіусі. Радіус лікування дорівнює вашому радіусу атаки. Лікування: 60 Час Перезарядки: 3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "razor_eye_of_the_storm_custom",
+          "name": "eye of the storm",
+          "image": "abilities/razor_eye_of_the_storm.webp",
+          "ability_notes": [
+            {
+              "parameter": "armor_reduction",
+              "old_raw_value": "-1",
+              "new_raw_value": "-0.7",
+              "note": {
+                "ru": "Armor Reduction: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Armor Reduction: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Armor Reduction: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_razor_13",
+            "image": "images/heroes/talents/razor/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Длительности Эффектов Связи: 2 сек",
+                  "en": "Increases Link Effect Duration: 2 sec",
+                  "uk": "Збільшення Тривалості Ефектів Зв'язку: 2 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Длительности Эффектов Связи: 3 сек",
+                  "en": "Increases Link Effect Duration: 3 sec",
+                  "uk": "Збільшення Тривалості Ефектів Зв'язку: 3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_razor_14",
+            "image": "images/heroes/talents/razor/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Базовой Скорости Атаки и Скорости Передвижения на 2% за каждый уникальный эффект Связи на герое. Связи создаются моментально",
+                  "en": "Increases Base Attack Speed and Movement Speed by 2% for each unique Link effect on the hero. Links are created instantly",
+                  "uk": "Збільшення Базової Швидкості Атаки і Швидкості Руху на 2% за кожен унікальний ефект Зв'язку на герої. Зв'язки створюються миттєво"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Базовой Скорости Атаки и Скорости Передвижения на 4% за каждый уникальный эффект Связи на герое. Связи создаются моментально",
+                  "en": "Increases Base Attack Speed and Movement Speed by 4% for each unique Link effect on the hero. Links are created instantly",
+                  "uk": "Збільшення Базової Швидкості Атаки і Швидкості Руху на 4% за кожен унікальний ефект Зв'язку на герої. Зв'язки створюються миттєво"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_razor_21",
+            "image": "images/heroes/talents/razor/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Каждый 4 Plasma Field будет усиленным: На максимальной дистанции Plasma Field будет удерживаться 3 секунды, а все враги внутри не смогут использовать предметы и будут получать максимальный урон и замедление",
+                  "en": "Every 4th Plasma Field will be empowered: At max range, the Plasma Field will linger for 3 seconds, and all enemies inside will be unable to use items and will receive maximum damage and slow",
+                  "uk": "Кожен 4-й Plasma Field буде посилений: На максимальній дистанції Plasma Field буде утримуватися 3 секунди, а всі вороги всередині не зможуть використовувати предмети і будуть отримувати максимальну шкоду і уповільнення"
+                },
+                "new_raw_value": {
+                  "ru": "Каждый 4 Plasma Field будет усиленным: На максимальной дистанции Plasma Field будет удерживаться 2 секунды, а все враги внутри не смогут использовать предметы и будут получать максимальный урон и замедление",
+                  "en": "Every 4th Plasma Field will be empowered: At max range, the Plasma Field will linger for 2 seconds, and all enemies inside will be unable to use items and will receive maximum damage and slow",
+                  "uk": "Кожен 4-й Plasma Field буде посилений: На максимальній дистанції Plasma Field буде утримуватися 2 секунди, а всі вороги всередині не зможуть використовувати предмети і будуть отримувати максимальну шкоду і уповільнення"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_void_spirit_4",
+            "image": "images/heroes/talents/void_spirit/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Resonant Pulse. Увеличение Зарядов Aether Remnant: 1 Здоровье: 250",
+                  "en": "Removes Resonant Pulse. Aether Remnant Charge Increase: 1 Health: 250",
+                  "uk": "Прибирає Resonant Pulse. Збільшення Зарядів Aether Remnant: 1 Здоров'я: 250"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Resonant Pulse. Увеличение Зарядов Aether Remnant: 1",
+                  "en": "Removes Resonant Pulse. Aether Remnant Charge Increase: 1",
+                  "uk": "Прибирає Resonant Pulse. Збільшення Зарядів Aether Remnant: 1"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_5",
+            "image": "images/heroes/talents/void_spirit/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Aether Remnant создаёт дополнительную линию обзора, которая вращается вокруг копии. Сила: 0/10/20",
+                  "en": "Aether Remnant creates an additional line of vision that rotates around the illusion. Strength: 0/10/20",
+                  "uk": "Aether Remnant створює додаткову лінію огляду, яка обертається навколо копії. Сила: 0/10/20"
+                },
+                "new_raw_value": {
+                  "ru": "Aether Remnant создаёт дополнительную линию обзора, которая вращается вокруг копии. Сила: 0/8/16",
+                  "en": "Aether Remnant creates an additional line of vision that rotates around the illusion. Strength: 0/8/16",
+                  "uk": "Aether Remnant створює додаткову лінію огляду, яка обертається навколо копії. Сила: 0/8/16"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_9",
+            "image": "images/heroes/talents/void_spirit/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Каждая Атака может создать Метку Пустоты Astral Step на противнике. Вероятность Метки: 8%/16% Если Astral Step не изучен, то: Урон: 65 Замедление Передвижения: 20%",
+                  "en": "Each attack has a chance to apply an Astral Step Void Mark to the enemy. Mark Chance: 8%/16% If Astral Step is not learned: Damage: 65 Movement Slow: 20%",
+                  "uk": "Кожна Атака може створити Позначку Пустоти Astral Step на противнику. Ймовірність Позначки: 8%/16% Якщо Astral Step не вивчений, тоді: Шкода: 65 Сповільнення Переміщення: 20%"
+                },
+                "new_raw_value": {
+                  "ru": "Каждая Атака может создать Метку Пустоты Astral Step на противнике. Вероятность Метки: 8%/12% Если Astral Step не изучен, то: Урон: 65 Замедление Передвижения: 20%",
+                  "en": "Each attack has a chance to apply an Astral Step Void Mark to the enemy. Mark Chance: 8%/12% If Astral Step is not learned: Damage: 65 Movement Slow: 20%",
+                  "uk": "Кожна Атака може створити Позначку Пустоти Astral Step на противнику. Ймовірність Позначки: 8%/12% Якщо Astral Step не вивчений, тоді: Шкода: 65 Сповільнення Переміщення: 20%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_void_spirit_11",
+            "image": "images/heroes/talents/void_spirit/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Resonant Pulse накладывает на противников Безмолвие: 1/2 сек",
+                  "en": "Resonant Pulse silences enemies: 1/2 sec",
+                  "uk": "Resonant Pulse накладає на противників Безмовність: 1/2 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Resonant Pulse накладывает на противников Безмолвие: 1/1.5 сек",
+                  "en": "Resonant Pulse silences enemies: 1/1.5 sec",
+                  "uk": "Resonant Pulse накладає на противників Безмовність: 1/1.5 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_void_spirit_18",
+            "image": "images/heroes/talents/void_spirit/18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Dissimilate: 8%/12%/16% от Текущей Маны",
+                  "en": "Increases Dissimilate Damage: 8%/12%/16% of Current Mana",
+                  "uk": "Збільшення шкоди Dissimilate: 8%/12%/16% від Поточної Мани"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Dissimilate: 4%/8%/12% от Текущей Маны",
+                  "en": "Increases Dissimilate Damage: 4%/8%/12% of Current Mana",
+                  "uk": "Збільшення шкоди Dissimilate: 4%/8%/12% від Поточної Мани"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

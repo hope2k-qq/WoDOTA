@@ -1,4 +1,5 @@
 .title {
+    --branch-stop: 60%;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -11,8 +12,50 @@
     background: linear-gradient(to right, rgba(40, 64, 83, 0.59), rgba(131, 51, 18, 0) 60%);
 }
 
+.strength {
+    background: linear-gradient(to right, rgba(224, 82, 75, 0.35), rgba(224, 82, 75, 0) var(--branch-stop));
+}
+
+.agility {
+    background: linear-gradient(to right, rgba(111, 191, 74, 0.35), rgba(111, 191, 74, 0) var(--branch-stop));
+}
+
+.intelligence {
+    background: linear-gradient(to right, rgba(74, 168, 230, 0.35), rgba(74, 168, 230, 0) var(--branch-stop));
+}
+
 .icon {
     height: 1.5rem;
     width: auto;
     flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .title{
+        --branch-stop: 70%;
+    }
+}
+
+@media (max-width: 650px) {
+    .title{
+        --branch-stop: 80%;
+        font-size: 1.08rem;
+        padding: 0.5rem 1.3rem;
+    }
+
+    .icon{
+        height: 1.35rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .title{
+        --branch-stop: 90%;
+        font-size: 1rem;
+        padding: 0.45rem 1rem;
+    }
+
+    .icon{
+        height: 1.2rem;
+    }
 }

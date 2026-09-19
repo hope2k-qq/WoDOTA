@@ -1,0 +1,2496 @@
+{
+  "patch_number": "1.08",
+  "patch_name": "1.08",
+  "patch_timestamp": 1789245230,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_ancient_guardian_custom",
+        "name": "ancient guardian",
+        "image": "images/items/ancient_guardian.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_spell_damage",
+            "old_raw_value": "1.5",
+            "new_raw_value": "3",
+            "note": {
+              "ru": "Bonus Spell Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Bonus Spell Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Bonus Spell Damage: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_crimson_guard",
+        "name": "crimson guard",
+        "image": "images/items/crimson_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "old_raw_value": "SPELL_DISPELLABLE_NO",
+            "new_raw_value": "SPELL_DISPELLABLE_YES",
+            "note": {
+              "ru": "Теперь можно развеять",
+              "en": "Can now be dispelled",
+              "uk": "Тепер можна розвіяти"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_guardian_greaves_custom",
+        "name": "guardian greaves",
+        "image": "images/items/guardian_greaves.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "replenish_health",
+            "old_raw_value": "25",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Replenish Health: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Replenish Health: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Replenish Health: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "replenish_mana",
+            "old_raw_value": "25",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Replenish Mana: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Replenish Mana: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Replenish Mana: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_refresher_custom",
+        "name": "refresher",
+        "image": "images/items/refresher.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "old_raw_value": "350",
+            "new_raw_value": "400",
+            "note": {
+              "ru": "Ability Mana Cost: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Ability Mana Cost: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Ability Mana Cost: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_greater_faerie_fire_custom",
+        "name": "greater faerie fire",
+        "image": "images/items/greater_faerie_fire.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "heal",
+            "old_raw_value": "30",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Heal: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Heal: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Heal: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "lina",
+      "name": "lina",
+      "image": "images/heroes/heroesPreview/lina.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "lina_dragon_slave_custom",
+          "name": "dragon slave",
+          "image": "abilities/lina_dragon_slave.webp",
+          "description": [
+            {
+              "ru": "Герой высвобождает дыхание дракона, сжигающее всех врагов на своём пути. Урон: 85 / 165 / 245 / 325. Перезарядка: 11 / 10 / 9 / 8. Дальность применения: 1075. Расход маны: 100 / 110 / 120 / 130.",
+              "en": "Lina channels the breath of a dragon, sending out a wave of fire that scorches every enemy in its path. Damage: 85 / 165 / 245 / 325. Cooldown: 11 / 10 / 9 / 8. Cast range: 1075. Mana cost: 100 / 110 / 120 / 130.",
+              "uk": "Героїня випускає подих дракона, що спалює всіх ворогів на своєму шляху. Шкода: 85 / 165 / 245 / 325. Перезарядка: 11 / 10 / 9 / 8. Дальність застосування: 1075. Витрати мани: 100 / 110 / 120 / 130."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "lina_light_strike_array_custom",
+          "name": "light strike array",
+          "image": "abilities/lina_light_strike_array.webp",
+          "description": [
+            {
+              "ru": "Призывает столб пламени, который оглушает врагов и наносит им урон. Радиус: 250. Задержка: 0,5. Длительность оглушения: 1 / 1,4 / 1,8 / 2,2. Урон: 110 / 160 / 210 / 260. Перезарядка: 13 / 11 / 9 / 7. Дальность применения: 700. Расход маны: 100 / 110 / 120 / 130.",
+              "en": "Summons a column of flames that damages and stuns enemies. Radius: 250. Delay: 0.5. Stun duration: 1 / 1.4 / 1.8 / 2.2. Damage: 110 / 160 / 210 / 260. Cooldown: 13 / 11 / 9 / 7. Cast range: 700. Mana cost: 100 / 110 / 120 / 130.",
+              "uk": "Закликає стовп полум'я, що оглушує ворогів і завдає їм шкоди. Радіус: 250. Затримка: 0,5. Тривалість оглушення: 1 / 1,4 / 1,8 / 2,2. Шкода: 110 / 160 / 210 / 260. Перезарядка: 13 / 11 / 9 / 7. Дальність застосування: 700. Витрати мани: 100 / 110 / 120 / 130."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "lina_fiery_soul_custom",
+          "name": "fiery soul",
+          "image": "abilities/lina_fiery_soul.webp",
+          "description": [
+            {
+              "ru": "Увеличивает скорость атаки и передвижения всякий раз, когда герой попадает способностью по врагу. Эффекты способности складываются друг с другом. Действует 18 сек. Доп. скорость атаки: 7 / 14 / 21 / 28. Доп. скорость передвижения: 0,5% / 1% / 1,5% / 2%. Макс. эффектов: 7. Длительность: 18.",
+              "en": "Grants bonus attack and movement speed each time Lina hits an enemy with a spell. Stacks with itself. Lasts 18 seconds. Bonus attack speed: 7 / 14 / 21 / 28. Bonus movement speed: 0.5% / 1% / 1.5% / 2%. Max stacks: 7. Duration: 18.",
+              "uk": "Збільшує швидкість атаки та пересування щоразу, коли здібність влучає у ворога. Ефекти накопичуються. Триває 18 сек. Дод. швидкість атаки: 7 / 14 / 21 / 28. Дод. швидкість пересування: 0,5% / 1% / 1,5% / 2%. Макс. ефектів: 7. Тривалість: 18."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "lina_laguna_blade_custom",
+          "name": "laguna blade",
+          "image": "abilities/lina_laguna_blade.webp",
+          "description": [
+            {
+              "ru": "Выпускает разряд молнии в одного врага, нанося сокрушительный урон. Урон: 400 / 650 / 900. Перезарядка: 70 / 60 / 50. Дальность применения: 600. Расход маны: 150 / 300 / 450.",
+              "en": "Fires off a bolt of lightning at a single enemy unit, dealing massive damage. Damage: 400 / 650 / 900. Cooldown: 70 / 60 / 50. Cast range: 600. Mana cost: 150 / 300 / 450.",
+              "uk": "Випускає розряд блискавки у ворога, завдаючи величезної шкоди. Шкода: 400 / 650 / 900. Перезарядка: 70 / 60 / 50. Дальність застосування: 600. Витрати мани: 150 / 300 / 450."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lina_1",
+            "image": "images/heroes/talents/lina/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Убирает Light Strike Array.</font> Новая Активная Способность: Brand of Fire. Размещает огненное клеймо в указанном месте. Когда враг входит в клеймо, оно взрывается через 0.5 сек., оглушает и наносит магический урон. Урон: 100/200/300. Длительность Оглушения: 2 сек. Длительность Клейма: 10 сек. Радиус: 250. Затраты Маны: 100. Время Перезарядки: 10 сек",
+                  "en": "<font color='#e03e2e'>Removes Light Strike Array.</font> New Active Ability: Brand of Fire. Places a fiery brand at the targeted location. When an enemy enters the brand, it explodes after 0.5 sec., stunning and dealing magic damage. Damage: 100/200/300. Stun Duration: 2 sec. Brand Duration: 10 sec. Radius: 250. Mana Cost: 100. Cooldown: 10 sec",
+                  "uk": "<font color='#e03e2e'>Забирає Light Strike Array.</font> Нова Активна Здібність: Brand of Fire. Розміщує вогняне клеймо в вказаному місці. Коли ворог входить у клеймо, воно вибухає через 0.5 сек., оглушує та завдає магічний шкоди. Шкода: 100/200/300. Тривалість Оглушення: 2 сек. Тривалість Клейма: 10 сек. Радіус: 250. Витрати Мани: 100. Час Перезарядки: 10 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_2",
+            "image": "images/heroes/talents/lina/2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Убирает Dragon Slave.</font> Уменьшение Времени Перезарядки Brand of Fire: 1.5/3 сек. Увеличение Длительности Клейма Brand of Fire: 5/10 сек. Увеличение Радиуса Клейма Brand of Fire: 50/100",
+                  "en": "<font color='#e03e2e'>Removes Dragon Slave.</font> Brand of Fire Cooldown Reduction: 1.5/3 sec. Increases Brand of Fire Duration: 5/10 sec. Increases Brand of Fire Radius: 50/100",
+                  "uk": "<font color='#e03e2e'>Забирає Dragon Slave.</font> Зменшення часу перезарядки Brand of Fire: 1.5/3 сек. Збільшення Тривалості Клейма Brand of Fire: 5/10 сек. Збільшення Радіусу Клейма Brand of Fire: 50/100"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 1",
+                "note": {
+                  "ru": "Требует прокачки «Талант 1»",
+                  "en": "Requires upgrading «Talent 1»",
+                  "uk": "Потребує прокачування «Талант 1»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_3",
+            "image": "images/heroes/talents/lina/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона Клейма Brand of Fire: 200%/300%/400% от Силы",
+                  "en": "Increases Brand of Fire Damage: 200%/300%/400% of Strength",
+                  "uk": "Збільшення Шкоди Клейма Brand of Fire: 200%/300%/400% від Сили"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 2",
+                "note": {
+                  "ru": "Требует прокачки «Талант 2»",
+                  "en": "Requires upgrading «Talent 2»",
+                  "uk": "Потребує прокачування «Талант 2»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_6",
+            "image": "images/heroes/talents/lina/6.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Времени Перезарядки Laguna Blade: 15/30 сек. Восстановление Маны: 5/10",
+                  "en": "Reduces Laguna Blade Cooldown Time: 15/30 sec. Mana Restoration: 5/10",
+                  "uk": "Зменшує Час Перезарядки Laguna Blade: 15/30 с. Відновлення Мани: 5/10"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_5",
+            "image": "images/heroes/talents/lina/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Laguna Blade можно использовать на область. Laguna Blade срабатывает на всех противников на своём пути",
+                  "en": "Laguna Blade can be used on an area. Laguna Blade affects all enemies in its path",
+                  "uk": "Laguna Blade можна застосувати на область. Laguna Blade вражає всіх ворогів на своєму шляху"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_4",
+            "image": "images/heroes/talents/lina/4.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Применение Laguna Blade дарует барьер поглощающий Любой Урон: 50%/75% от Нанесённого Урона. Длительность барьера: 7 сек",
+                  "en": "Casting Laguna Blade grants a barrier that absorbs Any Damage: 50%/75% of Dealt Damage. Barrier Duration: 7 sec",
+                  "uk": "Застосування Laguna Blade надає бар’єр, що поглинає Будь-яку Шкоду: 50%/75% від Завданої Шкоди. Тривалість Бар’єра: 7 с"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_7",
+            "image": "images/heroes/talents/lina/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Герой начинает заряжать Laguna Blade. Чем дольше заряжается способность, тем больше урона она нанесёт. Максимальный эффект достигается после 5 сек., однако если не использовать способность через 5,5 секунды, она уйдёт на перезарядку. Макс. Усиление Урона: 250%",
+                  "en": "The hero begins charging Laguna Blade. The longer the ability is charged, the more damage it deals. Maximum effect is reached after 5 sec., but if not used within 5.5 seconds, it goes on cooldown. Max Damage Boost: 250%",
+                  "uk": "Герой починає заряджати Laguna Blade. Чим довше заряджається здатність, тим більше шкоди вона завдає. Максимальний ефект досягається після 5 сек., однак якщо не використати здатність через 5,5 секунди, вона піде на перезарядку. Макс. Посилення Шкоди: 250%"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_lina_8",
+            "image": "images/heroes/talents/lina/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Каждая 6/5/4 атака героя создаёт взрыв наносящий Магический Урон: 25 + 60% от Ловкости. Радиус: 250",
+                  "en": "Every 6/5/4th attack of the hero creates an explosion dealing Magic Damage: 25 + 60% of Agility. Radius: 250",
+                  "uk": "Кожна 6/5/4-та атака героя створює вибух, що завдає Магічної Шкоди: 25 + 60% від Спритності. Радіус: 250"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_9",
+            "image": "images/heroes/talents/lina/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Здоровье: 150/300",
+                  "en": "Health: 150/300",
+                  "uk": "Здоров'я: 150/300"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_10",
+            "image": "images/heroes/talents/lina/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Скорости Атаки Fiery Soul: 4/8. Увеличение Скорости Передвижения Fiery Soul: 0.25%/0.5%",
+                  "en": "Increases Fiery Soul Attack Speed: 4/8. Increases Fiery Soul Movement Speed: 0.25%/0.5%",
+                  "uk": "Збільшення Швидкості Атаки Fiery Soul: 4/8. Збільшення Швидкості Руху Fiery Soul: 0.25%/0.5%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_11",
+            "image": "images/heroes/talents/lina/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Применение Laguna Blade озаряет владельца, давая ему эффекты способности Fiery Soul. Длительность Озарения: 5 сек. Число Эффектов Озарения: 8/10/12",
+                  "en": "Using Laguna Blade empowers the owner, granting them the effects of Fiery Soul. Empower Duration: 5 sec. Number of Empower Effects: 8/10/12",
+                  "uk": "Застосування Laguna Blade осяює володаря, надаючи йому ефекти здібності Fiery Soul. Тривалість Осяяння: 5 сек. Кількість Ефектів Осяяння: 8/10/12"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_12",
+            "image": "images/heroes/talents/lina/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Новая Активная Способность: Flame Cloak. Дарует герою беспрепятственное передвижение. Увеличивает его урон от заклинаний и сопротивление магии. Применение даёт владельцу максимум эффектов способности Fiery Soul. Длительность: 7 сек. Сопротивление Магии: 35%. Доп. Урон от Заклинаний: 35%. Затраты Маны: 50. Время Перезарядки: 25 сек",
+                  "en": "New Active Ability: Flame Cloak. Grants the hero unobstructed movement. Increases their spell damage and magic resistance. Using it grants the owner max stacks of Fiery Soul. Duration: 7 sec. Magic Resistance: 35%. Bonus Spell Damage: 35%. Mana Cost: 50. Cooldown: 25 sec",
+                  "uk": "Нова Активна Здібність: Flame Cloak. Дарує герою безперешкодний рух. Збільшує його шкоду від заклинань та опір магії. Застосування дає володарю максимальні ефекти здібності Fiery Soul. Тривалість: 7 сек. Опір Магії: 35%. Дод. Шкода від Заклинань: 35%. Витрати Мани: 50. Час Перезарядки: 25 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_13",
+            "image": "images/heroes/talents/lina/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Flame Cloak применяет Нормальное Развеивание и восстанавливает долю от максимального здоровья. Восстановление Здоровья: 5%/15%",
+                  "en": "Flame Cloak applies a Basic Dispel and restores a portion of maximum health. Health Restoration: 5%/15%",
+                  "uk": "Flame Cloak накладає Базове Розвіювання та відновлює частину максимального здоров’я. Відновлення Здоров’я: 5%/15%"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 5",
+                "note": {
+                  "ru": "Требует прокачки «Талант 5»",
+                  "en": "Requires upgrading «Talent 5»",
+                  "uk": "Потребує прокачування «Талант 5»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_14",
+            "image": "images/heroes/talents/lina/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Новая Пассивная Способность: Thermal Runaway. Использование любого заклинания накладывает на героя положительный эффект который дарует атакам Критический Урон: 150%. Длительность Эффекта: 3 сек",
+                  "en": "New Passive Ability: Thermal Runaway. Casting any spell grants a buff that gives attacks Critical Damage: 150%. Buff Duration: 3 sec",
+                  "uk": "Нова Пасивна Здібність: Thermal Runaway. Використання будь-якого заклинання накладає на героя позитивний ефект, який дарує атакам Критичний Шкода: 150%. Тривалість Ефекту: 3 сек"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lina_15",
+            "image": "images/heroes/talents/lina/15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Поджигание.</font> Dragon Slave наносит дополнительный Магический Урон в секунду: 20/40. Длительность Поджигания: 3 сек",
+                  "en": "<font color='#e03e2e'>Ignite.</font> Dragon Slave deals bonus Magic Damage per second: 20/40. Ignite Duration: 3 sec",
+                  "uk": "<font color='#e03e2e'>Підпал.</font> Dragon Slave наносить додаткову Магічну Шкоду в секунду: 20/40. Тривалість Підпалу: 3 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_16",
+            "image": "images/heroes/talents/lina/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Поджигание.</font> Light Strike Array наносит дополнительный Магический Урон в секунду: 20/40. Длительность Поджигания: 3 сек",
+                  "en": "<font color='#e03e2e'>Ignite.</font> Light Strike Array deals bonus Magic Damage per second: 20/40. Ignite Duration: 3 sec",
+                  "uk": "<font color='#e03e2e'>Підпал.</font> Light Strike Array наносить додаткову Магічну Шкоду в секунду: 20/40. Тривалість Підпалу: 3 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_17",
+            "image": "images/heroes/talents/lina/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение задержки перед применением способностей: 15%/30%. Dragon Slave вылетает из-за спины героя на расстоянии: 300. Увеличение Дальности Dragon Slave: 300/450. Увеличение Ширины Dragon Slave: 100",
+                  "en": "Ability cast delay reduction: 15%/30%. Dragon Slave shoots from behind the hero at a distance: 300. Increased Dragon Slave Range: 300/450. Increased Dragon Slave Width: 100",
+                  "uk": "Зменшення затримки перед використанням здібностей: 15%/30%. Dragon Slave виходить з-за спини героя на відстані: 300. Збільшення дальності Dragon Slave: 300/450. Збільшення ширини Dragon Slave: 100"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_19",
+            "image": "images/heroes/talents/lina/19.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Поджигание.</font> Fiery Soul поджигает противников вокруг героя в радиусе 375 и наносит дополнительный Магический Урон в секунду: 20/40. Длительность Поджигания: 3 сек",
+                  "en": "<font color='#e03e2e'>Ignition.</font> Fiery Soul ignites enemies around the hero in a 375 radius, dealing additional Magic Damage per second: 20/40. Ignition Duration: 3 sec",
+                  "uk": "<font color='#e03e2e'>Підпал.</font> Fiery Soul підпалює ворогів навколо героя в радіусі 375, завдаючи додаткової Магічної Шкоди за секунду: 20/40. Тривалість Підпалу: 3 с"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_18",
+            "image": "images/heroes/talents/lina/18.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Поджигание.</font> Laguna Blade наносит дополнительный Магический Урон в секунду: 80/160. Длительность Поджигания: 3 сек",
+                  "en": "<font color='#e03e2e'>Ignite.</font> Laguna Blade deals bonus Magic Damage per second: 80/160. Ignite Duration: 3 sec",
+                  "uk": "<font color='#e03e2e'>Підпал.</font> Laguna Blade наносить додаткову Магічну Шкоду в секунду: 80/160. Тривалість Підпалу: 3 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_20",
+            "image": "images/heroes/talents/lina/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Fiery Soul можно активировать. Герой отталкивает огнём всех существ из области вокруг точки применения. Радиус: 400. Дальность Применения: 700. Время Перезарядки: 30 сек. Fiery Soul увеличивает Восстановление Здоровья за эффект: 4/8/12",
+                  "en": "Fiery Soul can be activated. The hero blasts all units in the target area with fire, pushing them away. Radius: 400. Cast Range: 700. Cooldown: 30 sec. Fiery Soul increases Health Regeneration per stack: 4/8/12",
+                  "uk": "Fiery Soul можна активувати. Героїня відштовхує полум’ям усіх істот у вибраній області. Радіус: 400. Дальність Застосування: 700. Перезарядка: 30 с. Fiery Soul збільшує Відновлення Здоров’я за ефект: 4/8/12"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_lina_21",
+            "image": "images/heroes/talents/lina/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона Поджигания: 25% от Интеллекта. Увеличение Длительности Поджигания: 2 сек",
+                  "en": "Increased Ignite Damage: 25% of Intellect. Increased Ignite Duration: 2 sec",
+                  "uk": "Збільшення Шкоди Підпалу: 25% від Інтелекту. Збільшення Тривалості Підпалу: 2 сек"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "abaddon_borrowed_time_custom",
+          "name": "borrowed time",
+          "image": "abilities/abaddon_borrowed_time.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "80 70 60",
+              "new_raw_value": "90 85 80",
+              "note": {
+                "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "name": "aghanim",
+      "image": "images/heroes/heroesPreview/aghanim.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_aghanim_21",
+            "image": "images/heroes/talents/aghanim/21.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Использование Предметов и других Умений не прерывает действие Aghanim's Ray. Поддерживание Aghanim's Ray увеличивает Урон от Заклинаний каждую секунду: 8% Длительность Эффекта: 0/3 сек. Максимум Эффектов: 12",
+                  "en": "Using Items and other Skills does not interrupt Aghanim's Ray. Channeling Aghanim's Ray increases Spell Damage every second: 8% Effect Duration: 0/3 seconds Maximum Effects: 12",
+                  "uk": "Використання Предметів та інших Умінь не перериває дію Aghanim's Ray. Підтримка Aghanim's Ray збільшує Втрату від Заклинань кожну секунду: 8% Тривалість Ефекту: 0/3 сек. Максимум Ефектів: 12"
+                },
+                "new_raw_value": {
+                  "ru": "Использование Предметов и других Умений не прерывает действие Aghanim's Ray. Поддерживание Aghanim's Ray даёт эффект, увеличивающий Урон от Заклинаний каждые 0.5 секунд: 4% Эффект сохраняется 0/3 секунды после завершения Aghanim's Ray. Максимум Эффектов: 12",
+                  "en": "Using Items and other Abilities does not interrupt Aghanim's Ray. Channeling Aghanim's Ray grants an effect that increases Spell Damage every 0.5 seconds: 4% The effect lasts 0/3 seconds after Aghanim's Ray ends. Maximum Effects: 12",
+                  "uk": "Використання Предметів та інших Умінь не перериває дію Aghanim's Ray. Підтримка Aghanim's Ray надає ефект, що збільшує Магічну Шкоду кожні 0.5 секунд: 4% Ефект зберігається 0/3 секунди після завершення Aghanim's Ray. Максимум Ефектів: 12"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_3",
+            "image": "images/heroes/talents/axe/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Counter Helix можно активировать. Совершает 1/2/3 прокручивания вокруг себя топором. Интервал: 0.3 сек. Время Перезарядки: 15 сек",
+                  "en": "Counter Helix can be activated. Performs 1/2/3 spins around himself with an axe. Interval: 0.3 sec. Cooldown: 15 sec",
+                  "uk": "Counter Helix можна активувати. Виконує 1/2/3 обертів сокирою навколо себе. Інтервал: 0.3 сек. Перезарядка: 15 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Counter Helix можно активировать. Совершает 1/2/3 прокручивания вокруг себя топором. Интервал: 0.3 сек. Время Перезарядки: 18 сек",
+                  "en": "Counter Helix can be activated. Performs 1/2/3 spins around himself with an axe. Interval: 0.3 sec. Cooldown: 18 sec",
+                  "uk": "Counter Helix можна активувати. Виконує 1/2/3 обертів сокирою навколо себе. Інтервал: 0.3 сек. Перезарядка: 18 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_4",
+            "image": "images/heroes/talents/axe/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Culling Blade: 15/30/45 сек. Если убить крипа способностью Culling Blade, её перезарядка сбрасывается",
+                  "en": "Culling Blade Cooldown Reduction: 15/30/45 sec. Killing a creep with Culling Blade resets its cooldown",
+                  "uk": "Зменшення Перезарядки Culling Blade: 15/30/45 сек. Якщо вбити крипа здатністю Culling Blade, її перезарядка скидається"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Culling Blade: 12/24/36 сек. Если убить крипа способностью Culling Blade, её перезарядка сбрасывается",
+                  "en": "Culling Blade Cooldown Reduction: 12/24/36 sec. If Culling Blade kills a creep, its cooldown is reset",
+                  "uk": "Зменшення Перезарядження Culling Blade: 12/24/36 с. Якщо Culling Blade вбиває крипа, перезарядження скидається"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "images/heroes/talents/axe/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Culling Blade: 300%/450%/600% от Брони",
+                  "en": "Culling Blade Damage Increase: 300%/450%/600% of Armor",
+                  "uk": "Збільшення Шкоди Culling Blade: 300%/450%/600% від Броні"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Culling Blade: 300%/400%/500% от Брони",
+                  "en": "Increases Culling Blade Damage: 300%/400%/500% of Armor",
+                  "uk": "Збільшує Урон Culling Blade: 300%/400%/500% від Броні"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_axe_9",
+            "image": "images/heroes/talents/axe/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Вы не можете атаковать. Убирает перезарядку способности Counter Helix. Создаёт Counter Helix каждые 650/600/550 преодолённых единиц. Добавляет 1 Уровень к способности Counter Helix",
+                  "en": "You cannot attack. Removes the cooldown of Counter Helix. Creates Counter Helix every 650/600/550 units traveled. Adds 1 Level to Counter Helix",
+                  "uk": "Ви не можете атакувати. Забирає перезарядку з Counter Helix. Створює Counter Helix кожні 650/600/550 подоланих одиниць. Додає 1 Рівень до Counter Helix"
+                },
+                "new_raw_value": {
+                  "ru": "Вы не можете атаковать. Убирает перезарядку способности Counter Helix. Создаёт Counter Helix каждые 850/750/650 преодолённых единиц. Добавляет 1 Уровень к способности Counter Helix",
+                  "en": "You cannot attack. Removes the cooldown of Counter Helix. Triggers Counter Helix every 850/750/650 distance traveled. Adds 1 level to Counter Helix",
+                  "uk": "Ви не можете атакувати. Прибирає перезарядження Counter Helix. Активує Counter Helix кожні 850/750/650 пройдених одиниць. Додає 1 рівень до Counter Helix"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_10",
+            "image": "images/heroes/talents/creep/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Counterspell Пассивно увеличивает сопротивление магическому урону. Можно применить, чтобы создать вокруг себя противомагический щит, который полностью блокирует и отражает все направленные заклинания обратно во врага. Сопротивление Магии: 15%/20%/25% Длительность: 2 сек. Время Перезарядки: 12 сек. Затраты Маны: 50 Здоровье: 100/200/300",
+                  "en": "New Active Ability: Counterspell Passively increases magic resistance. Can be activated to create an anti-magic shield around yourself that completely blocks and reflects all targeted spells back to the enemy. Magic Resistance: 15%/20%/25% Duration: 2 sec Cooldown: 12 sec Mana Cost: 50 Health: 100/200/300",
+                  "uk": "Нова Активна Здібність: Протизакляття Пасивно збільшує опір до магічного урону. Можна активувати, щоб створити навколо себе антимагічний щит, який повністю блокує та відбиває всі спрямовані заклинання назад у ворога. Опір Магії: 15%/20%/25% Тривалість: 2 с Перезарядка: 12 с Витрати мани: 50 Здоров'я: 100/200/300"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Counterspell Пассивно увеличивает сопротивление магическому урону. Можно применить, чтобы создать вокруг себя противомагический щит, который полностью блокирует и отражает все направленные заклинания обратно во врага. Сопротивление Магии: 15%/20%/25% Длительность: 2 сек. Время Перезарядки: 14 сек. Затраты Маны: 50 Здоровье: 100/200/300",
+                  "en": "New Active Ability: Counterspell Passively increases magic resistance. Can be activated to create an anti-magic shield around yourself that completely blocks and reflects all targeted spells back to the enemy. Magic Resistance: 15%/20%/25% Duration: 2 sec Cooldown: 14 sec Mana Cost: 50 Health: 100/200/300",
+                  "uk": "Нова Активна Здібність: Протизакляття Пасивно збільшує опір до магічного урону. Можна активувати, щоб створити навколо себе антимагічний щит, який повністю блокує та відбиває всі спрямовані заклинання назад у ворога. Опір Магії: 15%/20%/25% Тривалість: 2 с Перезарядка: 14 с Витрати мани: 50 Здоров'я: 100/200/300"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_creep_11",
+            "image": "images/heroes/talents/creep/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Manta Style Создаёт 2 иллюзии вашего героя. Урон Иллюзии: 40% Получаемый Урон Иллюзии: 200% Длительность: 20 сек. Затраты Маны: 125 Время Перезарядки: 30 сек",
+                  "en": "New Active Ability: Manta Style Creates 2 illusions of your hero. Illusion Damage: 40% Illusion Damage Received: 200% Duration: 20 sec. Mana Cost: 125 Cooldown: 30 sec",
+                  "uk": "Нова Активна Здатність: Manta Style Створює 2 ілюзії вашого героя. Втрата Ілюзії: 40% Отриманий Втрата Ілюзії: 200% Тривалість: 20 сек. Витрати Мани: 125 Час Перезарядки: 30 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Manta Style Создаёт 2 иллюзии вашего героя. Урон Иллюзии: 40% Получаемый Урон Иллюзии: 200% Длительность: 20 сек. Затраты Маны: 125 Время Перезарядки: 45 сек",
+                  "en": "New Active Ability: Manta Style Creates 2 illusions of your hero. Illusion Damage: 40% Illusion Damage Received: 200% Duration: 20 sec. Mana Cost: 125 Cooldown: 45 sec",
+                  "uk": "Нова Активна Здатність: Manta Style Створює 2 ілюзії вашого героя. Втрата Ілюзії: 40% Отриманий Втрата Ілюзії: 200% Тривалість: 20 сек. Витрати Мани: 125 Час Перезарядки: 45 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "disruptor",
+      "name": "disruptor",
+      "image": "images/heroes/heroesPreview/disruptor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "disruptor_static_storm_custom",
+          "name": "static storm",
+          "image": "abilities/disruptor_static_storm.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "90 80 70",
+              "new_raw_value": "100 85 70",
+              "note": {
+                "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dragon_knight",
+      "name": "dragon knight",
+      "image": "images/heroes/heroesPreview/dragon_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dragon_knight_5",
+            "image": "images/heroes/talents/dragon_knight/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": null,
+                  "en": "Casting Dragon Tail increases Armor: 15/30/45 Duration: 4 seconds",
+                  "uk": "Застосування Dragon Tail збільшує Броню: 15/30/45 Тривалість: 4 сек"
+                },
+                "new_raw_value": {
+                  "ru": null,
+                  "en": "Casting Dragon Tail increases Armor: 15/30/45 Duration: 4 sec",
+                  "uk": "Застосування Dragon Tail збільшує Броню: 15/30/45 Тривалість: 4 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_dragon_knight_6",
+            "image": "images/heroes/talents/dragon_knight/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Dragon Tail снижает Броню: 9 Длительность: 4 сек",
+                  "en": "Dragon Tail reduces Armor: 9 Duration: 4 seconds",
+                  "uk": "Dragon Tail знижує Броню: 9 Тривалість: 4 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Dragon Tail снижает Броню противников: 9 Длительность: 4 сек",
+                  "en": "Dragon Tail reduces enemy Armor: 9 Duration: 4 sec",
+                  "uk": "Dragon Tail знижує Броню ворогів: 9 Тривалість: 4 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dragon_knight_17",
+            "image": "images/heroes/talents/dragon_knight/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Iceball Герой охлаждает область, отчего враги в ней получают магический урон каждую секунду и замедляются. Охлаждение длится ещё 2 секунды, после того как противник покинул область. Урон в Секунду: 25 + 50% от Интеллекта Замедление Скорости Атаки: 40 Замедление Скорости Передвижения: 20% Длительность: 8 сек",
+                  "en": "New Active Ability: Iceball The hero cools an area, causing enemies in it to take magic damage every second and slow down. The cooldown lasts for 2 more seconds after the enemy has left the area. Damage per Second: 25 + 50% of Intellect Attack Speed Slow: 40 Movement Speed Slow: 20% Duration: 8 seconds",
+                  "uk": "Нова Активна Здатність: Iceball Герой охолоджує область, через що вороги в ній отримують магічну шкоду кожну секунду і сповільнюються. Охолодження триває ще 2 секунди, після того, як противник залишив область. Втрата в Секунду: 25 + 50% від Інтелекту Уповільнення Швидкості Атаки: 40 Уповільнення Швидкості Пересування: 20% Тривалість: 8 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Iceball Герой охлаждает область, отчего враги в ней получают магический урон каждую секунду и замедляются. Охлаждение длится ещё 2 секунды, после того как противник покинул область. Урон в Секунду: 25 + 50% от Интеллекта Замедление Скорости Атаки: 40 Замедление Скорости Передвижения: 20% Длительность: 8 сек. Время Перезарядки: 20 сек. Затраты Маны: 120",
+                  "en": "New Active Ability: Iceball The hero chills an area, causing enemies inside it to take magical damage each second and be slowed. The chilling effect lasts 2 more seconds after the enemy leaves the area. Damage per Second: 25 + 50% of Intelligence Attack Speed Slow: 40 Movement Speed Slow: 20% Duration: 8 sec. Cooldown: 20 sec. Mana Cost: 120",
+                  "uk": "Нова Активна Здатність: Iceball Герой охолоджує область, через що вороги в ній щосекунди отримують магічну шкоду та сповільнюються. Охолодження триває ще 2 секунди після того, як ворог залишає область. Шкода за Секунду: 25 + 50% від Інтелекту Сповільнення Швидкості Атаки: 40 Сповільнення Пересування: 20% Тривалість: 8 с Перезарядка: 20 с Витрата Мани: 120"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "earthshaker_aftershock_custom",
+          "name": "aftershock",
+          "image": "abilities/earthshaker_aftershock.webp",
+          "ability_notes": [
+            {
+              "parameter": "aftershock_damage",
+              "old_raw_value": "70 100 130 160",
+              "new_raw_value": "65 90 115 140",
+              "note": {
+                "ru": "Aftershock Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Aftershock Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Aftershock Damage: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "juggernaut_omni_slash_custom",
+          "name": "omni slash",
+          "image": "abilities/juggernaut_omni_slash.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "100",
+              "new_raw_value": "120 110 100",
+              "note": {
+                "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "duration",
+              "old_raw_value": "2.5 2.75 3",
+              "new_raw_value": "2.5 2.5 2.5",
+              "note": {
+                "ru": "Duration: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Duration: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Duration: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_juggernaut_21",
+            "image": "images/heroes/talents/juggernaut/21.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Использование Blade Fury накладывает на героя Щит поглощающий любой урон. Прочность Щита: 9% от Максимальной Маны Под действием Blade Fury герой совершает атаку по ближайшей цели каждые 1 сек",
+                  "en": "Using Blade Fury create a Shield on hero that absorbs any damage. Shield Strength: 9% of Max Mana While under Blade Fury, hero attacks the nearest target every 1 seconds",
+                  "uk": "Використання Blade Fury накладає на героя Щит, що погладжує будь-яку шкоду. Міцність Щита: 9% від Максимальної Мани Під дією Blade Fury герой здійснює атаку по найближчій меті кожні 1 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Использование Blade Fury накладывает на героя Щит поглощающий любой урон. Прочность Щита: 8% от Максимальной Маны Под действием Blade Fury герой совершает атаку по ближайшей цели каждые 1 сек",
+                  "en": "Using Blade Fury grants the hero a Barrier that absorbs all damage. Barrier Strength: 8% of Maximum Mana While under Blade Fury, the hero performs an attack on the nearest target every 1 sec",
+                  "uk": "Використання Blade Fury накладає на героя Щит, що поглинає весь урон. Міцність Щита: 8% від Максимальної Мани Під дією Blade Fury герой завдає атаку найближчій цілі кожні 1 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_juggernaut_18",
+            "image": "images/heroes/talents/juggernaut/18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Blade Fury: 15%/30%/45% от Интеллекта",
+                  "en": "Increase Blade Fury Damage: 15%/30%/45% of Intellect",
+                  "uk": "Збільшення втрати Blade Fury: 15%/30%/45% від Інтелекту"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Blade Fury: 10%/20%/30% от Интеллекта",
+                  "en": "Increase Blade Fury Damage: 10%/20%/30% of Intellect",
+                  "uk": "Збільшення втрати Blade Fury: 10%/20%/30% від Інтелекту"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_juggernaut_16",
+            "image": "images/heroes/talents/juggernaut/16.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Blade Fury Увеличивает Скорость Передвижения: 30/60/90 Blade Fury Замедляет Противников: 5%/10%/15%",
+                  "en": "Blade Fury Increases Movement Speed: 30/60/90 Blade Fury Slows Enemies: 5%/10%/15%",
+                  "uk": "Blade Fury Збільшує Швидкість Пересування: 30/60/90 Blade Fury Уповільнює Супротивників: 5%/10%/15%"
+                },
+                "new_raw_value": {
+                  "ru": "Blade Fury Увеличивает Скорость Передвижения: 25/50/75 Blade Fury Замедляет Противников: 5%/10%/15%",
+                  "en": "Blade Fury Increases Movement Speed: 25/50/75 Blade Fury Slows Enemies: 5%/10%/15%",
+                  "uk": "Blade Fury Збільшує Швидкість Руху: 25/50/75 Blade Fury Сповільнює Противників: 5%/10%/15%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "old_raw_value": "0",
+          "new_raw_value": "0.25",
+          "note": {
+            "ru": "Status Mana Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Mana Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Mana Regen: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/mana_regen.png"
+        },
+        {
+          "parameter": "AttackRate",
+          "old_raw_value": "2.0",
+          "new_raw_value": "1.9",
+          "note": {
+            "ru": "Attack Rate: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Attack Rate: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Attack Rate: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_attack_time.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "kez_raptor_dance_custom",
+          "name": "raptor dance",
+          "image": "abilities/kez_raptor_dance.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityChannelTime",
+              "old_raw_value": "1.0",
+              "new_raw_value": null,
+              "note": {
+                "ru": "Применение длительностью 1 сек заменено на подготовку 1 сек",
+                "en": "1s channel replaced with a 1s cast point",
+                "uk": "Застосування тривалістю 1 сек замінено на підготовку 1 сек"
+              }
+            },
+            {
+              "parameter": "invuln_period",
+              "old_raw_value": null,
+              "new_raw_value": "0.2",
+              "note": {
+                "ru": "Применение способности теперь даёт неуязвимость на 0.2 сек",
+                "en": "Casting the ability now grants 0.2s invulnerability",
+                "uk": "Застосування здібності тепер дає невразливість на 0.2 сек"
+              }
+            },
+            {
+              "parameter": "AbilityBehavior",
+              "old_raw_value": "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING",
+              "new_raw_value": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING",
+              "note": {
+                "ru": "Ability Behavior: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Behavior: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Behavior: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "AbilityCastPoint",
+              "old_raw_value": "0.0",
+              "new_raw_value": "1",
+              "note": {
+                "ru": "Ability Cast Point: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cast Point: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cast Point: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "max_health_damage_pct",
+              "old_raw_value": "3",
+              "new_raw_value": "2.5",
+              "note": {
+                "ru": "Max Health Damage Pct: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Max Health Damage Pct: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Max Health Damage Pct: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            },
+            {
+              "parameter": "Description",
+              "old_raw_value": {
+                "ru": "ПРЕРЫВАЕМАЯ — герой 1 сек. готовится совершить мощный шквал круговых ударов, которые наносят урон в зависимости от максимального здоровья жертв и исцеляют героя на долю от нанесённого урона. При подготовке и во время совершения ударов герой получает невосприимчивость к эффектам и + 100% к сопротивлению магии, а после на него применяется сильное развеивание. Наносит боссам 25% урона.",
+                "en": "Kez enters into an uncontrollable channel for 1 second, gaining debuff immunity and 100% magic resistance. If the channel completes successfully, Kez performs a series of deadly radial slashes around him that deal damage based on the max health of the target and heal Kez for a percentage of all damage dealt. Kez receives a strong dispel upon completion. Deals 25% damage to bosses.",
+                "uk": "Танок хижака Боривітер починає неконтрольоване чаклування, що триває 1 с, здобуваючи імунітет до негативних ефектів та 100% опору до магії. Якщо процес чаклування успішно завершується, Боривітер здійснює серію смертельних радіальних ударів навколо себе, які завдають шкоду на основі максимального здоров'я цілі та лікують Боривітра на відсоток усієї завданої шкоди. Після завершення Боривітер здобуває сильне розвіювання. Завдає босам 25% шкоди."
+              },
+              "new_raw_value": {
+                "ru": "Герой 1 сек. готовится совершить шквал мощных круговых ударов, которые наносят урон в зависимости от максимального здоровья жертв и исцеляют героя на долю от нанесённого урона. Перед подготовкой он становится неуязвимым на 0,2 сек. и получает простое развеивание, а во время неё и при совершении ударов получает полную защиту от магического урона. Наносит боссам 25% урона.",
+                "en": "Kez enters into an uncontrollable state for 1 second, becoming invulnerable for 0.2s and receiving a basic dispel, remaining immune to magic damage for the remainder of the cast time and the duration of the slashes. If the cast completes successfully, Kez performs a series of deadly radial slashes around him that deal damage based on the max health of the target and heal Kez for a percentage of all damage dealt. Deals 25% damage to bosses.",
+                "uk": "Танок хижака Боривітер переходить у неконтрольований стан, що триває 1 с. Під час чаклування він стає невразливим на 0,2 с, отримує базове розвіювання та зберігає імунітет до магічної шкоди до завершення чаклування та нанесення ударів. Якщо застосування успішно завершується, Боривітер здійснює серію смертельних радіальних ударів навколо себе, які завдають шкоди на основі максимального здоров'я цілі та лікують Боривітра на відсоток усієї завданої шкоди. Завдає босам 25% шкоди."
+              },
+              "note": {
+                "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_falcon_rush_custom",
+          "name": "falcon rush",
+          "image": "abilities/kez_falcon_rush.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_speed_factor",
+              "old_raw_value": "6 7 8 9",
+              "new_raw_value": "9 9 9 9",
+              "note": {
+                "ru": "Attack Speed Factor: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Attack Speed Factor: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Attack Speed Factor: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_kunkka_4",
+            "image": "images/heroes/talents/kunkka/4.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Урона Torrent: 80%/120%/160% от Восстановления Здоровья» заменено на «Увеличение Урона Tidebringer: 120%/180%/240% от Восстановления Здоровья»",
+                  "en": "«Increase Torrent Damage: 80%/120%/160% of Health Regeneration» replaced with «Increases Tidebringer Damage: 120%/180%/240% of Health Regeneration»",
+                  "uk": "«Збільшення збитків Torrent: 80%/120%/160% від Відновлення Здоров'я» замінено на «Збільшення Урону Tidebringer: 120%/180%/240% від Відновлення Здоров'я»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_kunkka_2",
+            "image": "images/heroes/talents/kunkka/2.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Урона Tidebringer: 80%/120%/160% от Восстановления Здоровья» заменено на «Увеличение Урона Torrent: 80%/120%/160% от Восстановления Здоровья»",
+                  "en": "«Increase Tidebringer Damage: 80%/120%/160% of Health Regeneration» replaced with «Increase Torrent Damage: 80%/120%/160% of Health Regeneration»",
+                  "uk": "«Збільшення втрати Tidebringer: 80%/120%/160% від Відновлення Здоров'я» замінено на «Збільшення збитків Torrent: 80%/120%/160% від Відновлення Здоров'я»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_kunkka_6",
+            "image": "images/heroes/talents/kunkka/6.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": null,
+                  "en": "While under the effect of Rum Ghostship applies to hero Strong Dispel every 2.5 seconds",
+                  "uk": "Під дією Рома Ghostship герой отримує Сильне Розвіювання кожні 2.5 сек"
+                },
+                "new_raw_value": {
+                  "ru": null,
+                  "en": "While under Ghostship Rum effect, the hero receives a Strong Dispel every 2.5 sec",
+                  "uk": "Під дією Рому Ghostship герой отримує Сильне Розвіювання кожні 2.5 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_kunkka_5",
+            "image": "images/heroes/talents/kunkka/5.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Torrent Storm Применяет способность Torrent в случайной области вокруг владельца каждые 0.3 сек. Радиус действия: 1100 Длительность: 5 сек. Время Перезарядки: 70 сек",
+                  "en": "New Active Ability: Torrent Storm Casts the Torrent ability in a random area around the owner every 0.3 seconds. Radius: 1100 Duration: 5 seconds Cooldown: 70 seconds",
+                  "uk": "Нова Активна Здатність: Torrent Storm Застосовує здатність Torrent у випадковій області навколо власника кожні 0.3 сек. Радіус дії: 1100 Тривалість: 5 сек. Перезаряджання: 70 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Torrent Storm Применяет способность Torrent в случайной области вокруг владельца каждые 0.3 сек. Радиус действия: 1100 Длительность: 5 сек. Затраты Маны: 100 Время Перезарядки: 60 сек",
+                  "en": "New Active Ability: Torrent Storm Casts Torrent in a random area around the owner every 0.3s. Radius: 1100 Duration: 5s Mana Cost: 100 Cooldown: 60s",
+                  "uk": "Нова Активна Здібність: Torrent Storm Застосовує Torrent у випадковій області навколо героя кожні 0.3 с. Радіус: 1100 Тривалість: 5 с Витрати Мани: 100 Час Перезарядки: 60 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_kunkka_7",
+            "image": "images/heroes/talents/kunkka/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Радиуса Torrent: 80 Torrent оставляет на земле небольшую лужу в которой союзные существа имеют Усиление Восстановления Здоровья: 70% Длительность Лужи: 5 сек",
+                  "en": "Increase Torrent Radius: 80 Torrent leaves a small puddle on the ground in which allied units have Health Regeneration Amplify: 70% Puddle Duration: 5 seconds",
+                  "uk": "Збільшення Радіуса Torrent: 80 Torrent залишає на землі невелику калюжу в якій союзні істоти мають Посилення Відновлення Здоров'я: 70% Тривалість Лужі: 5 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Радиуса Torrent: 80 Torrent оставляет на земле небольшую лужу в которой союзные существа имеют Усиление Восстановления Здоровья: 80% Длительность Лужи: 5 сек",
+                  "en": "Increases Torrent Radius: 80 Torrent leaves a small puddle on the ground where allied units gain Increased Health Regeneration: 80% Puddle Duration: 5 sec",
+                  "uk": "Збільшення Радіуса Torrent: 80 Torrent залишає на землі калюжу, у якій союзні істоти отримують Посилене Відновлення Здоров'я: 80% Тривалість Калюжі: 5 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_nyx_assassin_6",
+            "image": "images/heroes/talents/nyx_assassin/6.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Spiked Carapace не Оглушает Противников. Spiked Carapace возвращает урон неограниченное количество раз",
+                  "en": "Spiked Carapace does not Stun Enemies. Spiked Carapace returns damage an unlimited number of times",
+                  "uk": "Spiked Carapace не Приголомшує Противників. Spiked Carapace повертає шкоду необмежену кількість разів"
+                },
+                "new_raw_value": {
+                  "ru": "Spiked Carapace не Оглушает Противников и не отключает их Вампиризм. Spiked Carapace возвращает урон неограниченное количество раз",
+                  "en": "Spiked Carapace does not Stun Enemies and does not disable their Lifesteal. Spiked Carapace reflects damage an unlimited number of times",
+                  "uk": "Spiked Carapace не оглушує ворогів і не вимикає їхній вампіризм. Spiked Carapace відбиває шкоду необмежену кількість разів"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_purification_custom",
+          "name": "purification",
+          "image": "abilities/omniknight_purification.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "old_raw_value": "550",
+              "new_raw_value": "700",
+              "note": {
+                "ru": "Ability Cast Range: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cast Range: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cast Range: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_phoenix_20",
+            "image": "images/heroes/talents/phoenix/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Ледяные Способности героя накладывают на противников эффекты заморозки. Frost Ray накладывает сразу 3 эффекта заморозки. Эффекты обновляют время действия друг друга. При достижении 11 эффектов оглушает. Работает сквозь Невосприимчивость к Магии. Длительность Эффекта: 5 сек. Длительность Оглушения: 1.6/2/2.4 сек",
+                  "en": "The hero's Ice Abilities apply freezing effects to enemies. Frost Ray applies 3 freezing effects at once. Effects refresh each other's duration. Stuns when reaching 11 effects. Works through Magic Immunity. Effect Duration: 5 sec. Stun Duration: 1.6/2/2.4 sec",
+                  "uk": "Крижані Здібності героя накладають на ворогів ефекти замороження. Frost Ray накладає одразу 3 ефекти замороження. Ефекти оновлюють час дії один одного. При досягненні 11 ефектів оглушує. Працює крізь Неприйнятність до Магії. Тривалість Ефекту: 5 с. Тривалість Оглушення: 1.6/2/2.4 с"
+                },
+                "new_raw_value": {
+                  "ru": "Ледяные Способности героя накладывают на противников эффекты заморозки. Frost Ray накладывает сразу 3 эффекта заморозки. Эффекты обновляют время действия друг друга. При достижении 9 эффектов оглушает. Работает сквозь Невосприимчивость к Магии. Длительность Эффекта: 5 сек. Длительность Оглушения: 1.6/2/2.4 сек",
+                  "en": "The hero's Ice Abilities apply freezing effects to enemies. Frost Ray applies 3 freezing effects at once. Effects refresh each other's duration. Upon reaching 9 effects, it stuns. Works through Magic Immunity. Effect Duration: 5 sec. Stun Duration: 1.6/2/2.4 sec",
+                  "uk": "Крижані здібності героя накладають на ворогів ефекти замороження. Frost Ray одразу накладає 3 ефекти замороження. Ефекти оновлюють тривалість один одного. Після накопичення 9 ефектів — оглушує. Працює крізь Імунітет до Магії. Тривалість Ефекту: 5 с Тривалість Оглушення: 1.6/2/2.4 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "razor_static_link_custom",
+          "name": "static link",
+          "image": "abilities/razor_static_link.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "50 40 30 20",
+              "new_raw_value": "44 36 28 20",
+              "note": {
+                "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "riki",
+      "name": "riki",
+      "image": "images/heroes/heroesPreview/riki.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "riki_blink_strike_custom",
+          "name": "blink strike",
+          "image": "abilities/riki_blink_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "slow",
+              "old_raw_value": "0.4",
+              "new_raw_value": "0.5",
+              "note": {
+                "ru": "Slow: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Slow: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Slow: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_riki_3",
+            "image": "images/heroes/talents/riki/3.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Урона Blink Strike: 100% от Силы. Увеличение Урона Blink Strike: 50% от Ловкости. Увеличение Урона Blink Strike: 50% от Интеллекта» заменено на «Убирает Tricks of the Trade. Новая Пассивная Способность: Frontstab. Атакуя в лицо, герой наносит дополнительный физический урон, который зависит от силы. Урон за Единицу Силы: 0.7/1»",
+                  "en": "«Increased Blink Strike Damage: 100% of Strength. Increased Blink Strike Damage: 50% of Agility. Increased Blink Strike Damage: 50% of Intelligence» replaced with «Removes Tricks of the Trade. New Passive Ability: Frontstab. Attacking from the front deals bonus physical damage based on Strength. Damage per Strength: 0.7/1»",
+                  "uk": "«Збільшення Шкоди Blink Strike: 100% від Сили. Збільшення Шкоди Blink Strike: 50% від Спритності. Збільшення Шкоди Blink Strike: 50% від Інтелекту» замінено на «Прибирає Tricks of the Trade. Нова Пасивна Здібність: Frontstab. Атакуючи в обличчя, герой завдає додаткової фізичної шкоди, що залежить від сили. Шкода за Одиницю Сили: 0.7/1»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_4",
+            "image": "images/heroes/talents/riki/4.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Убирает Tricks of the Trade. Новая Пассивная Способность: Frontstab. Атакуя в лицо, герой наносит дополнительный физический урон, который зависит от силы. Урон за Единицу Силы: 0.7/1» заменено на «Убирает Backstab. Blink Strike перемещает к передней части противника. Уменьшение Времени Перезарядки Blink Strike: 4/6/8 сек»",
+                  "en": "«Removes Tricks of the Trade. New Passive Ability: Frontstab. Attacking from the front deals bonus physical damage based on Strength. Damage per Strength: 0.7/1» replaced with «Removes Backstab. Blink Strike teleports to the front of the enemy. Blink Strike Cooldown Reduction: 4/6/8 sec»",
+                  "uk": "«Прибирає Tricks of the Trade. Нова Пасивна Здібність: Frontstab. Атакуючи в обличчя, герой завдає додаткової фізичної шкоди, що залежить від сили. Шкода за Одиницю Сили: 0.7/1» замінено на «Прибирає Backstab. Blink Strike переміщує до передньої частини противника. Зменшення Часу Перезарядки Blink Strike: 4/6/8 сек»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_2",
+            "image": "images/heroes/talents/riki/2.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Убирает Backstab. Blink Strike перемещает к передней части противника. Уменьшение Времени Перезарядки Blink Strike: 4/6/8 сек» заменено на «Увеличение Урона Blink Strike: 150% от Силы. Увеличение Урона Blink Strike: 75% от Ловкости. Увеличение Урона Blink Strike: 75% от Интеллекта»",
+                  "en": "«Removes Backstab. Blink Strike teleports to the front of the enemy. Blink Strike Cooldown Reduction: 4/6/8 sec» replaced with «Blink Strike Damage Increase: 150% of Strength. Blink Strike Damage Increase: 75% of Agility. Blink Strike Damage Increase: 75% of Intelligence»",
+                  "uk": "«Прибирає Backstab. Blink Strike переміщує до передньої частини противника. Зменшення Часу Перезарядки Blink Strike: 4/6/8 сек» замінено на «Збільшення Урону від Blink Strike: 150% від Сили. Збільшення Урону від Blink Strike: 75% від Спритності. Збільшення Урону від Blink Strike: 75% від Інтелекту»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_5",
+            "image": "images/heroes/talents/riki/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": "Талант 4",
+                "new_raw_value": "Талант 3",
+                "note": {
+                  "ru": "Теперь требует прокачки «Талант 3»",
+                  "en": "Now requires upgrading «Talent 3»",
+                  "uk": "Тепер потребує прокачування «Талант 3»"
+                },
+                "tooltip": {
+                  "ru": "Раньше требовался для прокачки «Талант 4»",
+                  "en": "Previously required upgrading «Talent 4»",
+                  "uk": "Раніше потребував прокачування «Талант 4»"
+                }
+              },
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение задержки перед применением способностей: 20%/40%/60% Уменьшение Расхода Маны Blink Strike: 20%/40%/60%",
+                  "en": "Ability Cast Point Reduction: 20%/40%/60% Blink Strike Mana Cost Reduction: 20%/40%/60%",
+                  "uk": "Зменшення затримки перед застосуванням здібностей: 20%/40%/60% Зменшення Витрати Мани Blink Strike: 20%/40%/60%"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение задержки перед применением способностей: 25%/50%/75% Уменьшение Расхода Маны Blink Strike: 25%/50%/75%",
+                  "en": "Ability Cast Point Reduction: 25%/50%/75% Blink Strike Mana Cost Reduction: 25%/50%/75%",
+                  "uk": "Зменшення затримки перед застосуванням здібностей: 25%/50%/75% Зменшення Витрати Мани Blink Strike: 25%/50%/75%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "skywrath_mage",
+      "name": "skywrath mage",
+      "image": "images/heroes/heroesPreview/skywrath_mage.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_skywrath_mage_4",
+            "image": "images/heroes/talents/skywrath_mage/4.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Восстановление Здоровья увеличивает Восстановление Маны: 10%/20%/30%. Вампиризм Заклинаниями: 3%/6%/9%» заменено на «Arcane Bolt наносит Урон от Силы, а не от Интеллекта. Arcane Bolt расходует Здоровье, а не Ману»",
+                  "en": "«Health Regeneration increases Mana Regeneration: 10%/20%/30%. Spell Lifesteal: 3%/6%/9%» replaced with «Arcane Bolt deals damage based on Strength instead of Intelligence. Arcane Bolt consumes Health instead of Mana»",
+                  "uk": "«Відновлення Здоров'я збільшує Відновлення Мани: 10%/20%/30%. Вампіризм Заклинаннями: 3%/6%/9%» замінено на «Arcane Bolt завдає шкоди, що залежить від Сили, а не від Інтелекту. Arcane Bolt витрачає Здоров’я замість Мани»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_skywrath_mage_3",
+            "image": "images/heroes/talents/skywrath_mage/3.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Arcane Bolt наносит Урон от Силы, а не от Интеллекта» заменено на «Восстановление Здоровья увеличивает Восстановление Маны: 10%/20%/30%. Вампиризм Заклинаниями: 4%/8%/12%»",
+                  "en": "«Arcane Bolt deals Strength damage, not Intellect damage» replaced with «Health Regeneration increases Mana Regeneration: 10%/20%/30%. Spell Lifesteal: 4%/8%/12%»",
+                  "uk": "«Arcane Bolt завдає шкоди від Сили, а не від Інтелекту» замінено на «Відновлення Здоров'я збільшує Відновлення Мани: 10%/20%/30%. Вампіризм Заклинаннями: 4%/8%/12%»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_skywrath_mage_8",
+            "image": "images/heroes/talents/skywrath_mage/8.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Arcane Bolt: 0.5 сек Arcane Bolt расходует Здоровье, а не Ману. Увеличение Скорости Полёта Arcane Bolt в 2 раза",
+                  "en": "Arcane Bolt Cooldown Reduction: 0.5 sec Arcane Bolt consumes Health, not Mana. Increases Arcane Bolt's Flight Speed by 2 times",
+                  "uk": "Зменшення часу Перезаряджання Arcane Bolt: 0.5 сек Arcane Bolt витрачає Здоров'я, а не Ману. Збільшення Швидкості Польоту Arcane Bolt у 2 рази"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Arcane Bolt: 0.5 сек. Увеличение Скорости Полёта Arcane Bolt в 2 раза",
+                  "en": "Arcane Bolt Cooldown Reduction: 0.5 sec. Arcane Bolt Flight Speed increased by 2x",
+                  "uk": "Зменшення Перезарядки Arcane Bolt: 0.5 сек. Швидкість польоту Arcane Bolt збільшується у 2 рази"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slardar_20",
+            "image": "images/heroes/talents/slardar/20.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": null,
+                  "en": "Increase Bash of The Deep Damage: 70%/140%/210% of Intellect",
+                  "uk": "Збільшення збитків Bash of The Deep: 70%/140%/210% від Інтелекту"
+                },
+                "new_raw_value": {
+                  "ru": null,
+                  "en": "Bash of the Deep Damage Increase: 70%/140%/210% of Intelligence",
+                  "uk": "Збільшення Урону від Bash of the Deep: 70%/140%/210% від Інтелекту"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_slardar_19",
+            "image": "images/heroes/talents/slardar/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Зарядов Slithereen Crush: 1 Увеличение Времени Перезарядки Slithereen Crush: 3 сек",
+                  "en": "Increase Slithereen Crush Charges: 1 Increase Slithereen Crush Cooldown: 3 seconds",
+                  "uk": "Збільшення зарядів Slithereen Crush: 1 Збільшення Часу Перезарядження Slithereen Crush: 3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Зарядов Slithereen Crush: 1 Увеличение Времени Перезарядки Slithereen Crush: 2 сек",
+                  "en": "Increases Slithereen Crush Charges: 1 Increases Slithereen Crush Cooldown: 2 sec",
+                  "uk": "Збільшення Зарядів Slithereen Crush: 1 Збільшення Часу Перезарядки Slithereen Crush: 2 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_slardar_21",
+            "image": "images/heroes/talents/slardar/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Corrosive Haze Увеличивает Весь Получаемый Урон от Заклинаний: 50%",
+                  "en": "Corrosive Haze Increases All Damage Received from Spells: 50%",
+                  "uk": "Corrosive Haze Збільшує Весь Отриманий Втрата від Заклинань: 50%"
+                },
+                "new_raw_value": {
+                  "ru": "Corrosive Haze Увеличивает Весь Получаемый Урон от Заклинаний: 65%",
+                  "en": "Corrosive Haze Increases All Spell Damage Taken: 65%",
+                  "uk": "Corrosive Haze Збільшує Весь Отримуваний Магічний Урон: 65%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spectre_17",
+            "image": "images/heroes/talents/spectre/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "После применения Spectral Dagger герой оставляет за собой Теневой След. Длительность: 2/3/4 сек. Сила, Интеллект: 3/6/9",
+                  "en": "After using Spectral Dagger, the hero leaves a Shadow Trail. Duration: 2/3/4 sec. Strength, Intelligence: 3/6/9",
+                  "uk": "Після використання Spectral Dagger герой залишає Тіньовий Слід. Тривалість: 2/3/4 сек. Сила, Інтелект: 3/6/9"
+                },
+                "new_raw_value": {
+                  "ru": "После применения Spectral Dagger герой оставляет за собой Теневой След. Длительность: 2/4/6 сек. Сила, Интеллект: 3/6/9",
+                  "en": "After using Spectral Dagger, the hero leaves a Shadow Trail. Duration: 2/4/6 sec. Strength, Intelligence: 3/6/9",
+                  "uk": "Після використання Spectral Dagger герой залишає Тіньовий Слід. Тривалість: 2/4/6 сек. Сила, Інтелект: 3/6/9"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spectre_18",
+            "image": "images/heroes/talents/spectre/18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Радиус Раскрытия Героя на Теневом Следе: 1200 Скорость Передвижения: 20",
+                  "en": "Hero Reveal Radius on Shadow Trail: 1200 Movement Speed: 20",
+                  "uk": "Радіус Виявлення Героя на Тіньовому Сліді: 1200 Швидкість Руху: 20"
+                },
+                "new_raw_value": {
+                  "ru": "Радиус Раскрытия Героя на Теневом Следе: 1200 Скорость Передвижения: 30",
+                  "en": "Hero Reveal Radius on Shadow Trail: 1200 Movement Speed: 30",
+                  "uk": "Радіус Виявлення Героя на Тіньовому Сліді: 1200 Швидкість Руху: 30"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_spirit_breaker_21",
+            "image": "images/heroes/talents/spirit_breaker/21.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Аура Времени увеличивает Весь Наносимый Урон по противникам на 25%, но чем дальше враг, тем слабее эффект. Радиус: 1200",
+                  "en": "Aura of Time increases All Damage Dealt against enemies by 25%, but the further away the enemy is, the weaker the effect. Radius: 1200",
+                  "uk": "Аура Часу збільшує Весь збиток, Що Завдається, по противникам на 25%, але чим далі ворог, тим слабший ефект. Радіус: 1200"
+                },
+                "new_raw_value": {
+                  "ru": "Аура Времени увеличивает Весь Наносимый Урон по противникам на 15%, но чем дальше враг, тем слабее эффект. Радиус: 1200",
+                  "en": "Time Aura increases all damage dealt to enemies by 15%, but the farther the enemy, the weaker the effect. Radius: 1200",
+                  "uk": "Аура Часу збільшує весь завданий ворогам шкоду на 15%, але що далі ворог, то слабший ефект. Радіус: 1200"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_7",
+            "image": "images/heroes/talents/spirit_breaker/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Bulldoze нельзя развеять. Восстановление Здоровья: 0.5%",
+                  "en": "Bulldoze cannot be dispelled. Health Regeneration: 0.5%",
+                  "uk": "Bulldoze не можна розвіяти. Відновлення Здоров'я: 0.5%"
+                },
+                "new_raw_value": {
+                  "ru": "Bulldoze нельзя развеять",
+                  "en": "Bulldoze cannot be dispelled",
+                  "uk": "Bulldoze неможливо розвіяти"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_spirit_breaker_14",
+            "image": "images/heroes/talents/spirit_breaker/14.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Greater Bash не отталкивает противников. Greater Bash сработает гарантированно после 9/8/7 неудачных атак",
+                  "en": "Greater Bash does not knock back enemies. Greater Bash will trigger guaranteed after 9/8/7 unsuccessful attacks",
+                  "uk": "Greater Bash не відштовхує противників. Greater Bash гарантовано спрацює після 9/8/7 невдалих атак"
+                },
+                "new_raw_value": {
+                  "ru": "Greater Bash не отталкивает противников. Greater Bash сработает гарантированно после 9/8/7 неудачных атак. Ловкость: 5/10/15",
+                  "en": "Greater Bash does not knock enemies back. Greater Bash will trigger guaranteed after 9/8/7 unsuccessful attacks. Agility: 5/10/15",
+                  "uk": "Greater Bash не відштовхує противників. Greater Bash гарантовано спрацює після 9/8/7 невдалих атак. Спритність: 5/10/15"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_12",
+            "image": "images/heroes/talents/spirit_breaker/12.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Убирает Nether Strike. Greater Bash можно активировать. Создаёт светоч времени, который герой может атаковать с увеличенной на 350 Скоростью Атаки. Каждая атака по светочу восстанавливает 3% от Максимального Здоровья и увеличивает Скорость Атаки на 4/6. Длительность Доп. Скорости Атаки: 10 сек. Длительность Светоча: 20 сек. Время Перезарядки: 20 сек» заменено на «Находясь на одном месте герой каждые 0.5 сек. накапливает заряды увеличивающие Скорость Передвижения: 12. Герой постепенно теряет заряды когда перемещается. Максимум зарядов: 10/20»",
+                  "en": "«Removes Nether Strike. Greater Bash can be activated. Creates a Time Beacon that the hero can attack with +350 Attack Speed. Each attack on the beacon restores 3% of Max Health and increases Attack Speed by 4/6. Bonus Attack Speed Duration: 10 sec. Beacon Duration: 20 sec. Cooldown: 20 sec» replaced with «While standing still, the hero gains charges every 0.5 sec. that increase Movement Speed: 12. The hero gradually loses charges while moving. Maximum charges: 10/20»",
+                  "uk": "«Прибирає Nether Strike. Greater Bash можна активувати. Створює Світильник Часу, який герой може атакувати з +350 Швидкістю Атаки. Кожна атака по світильнику відновлює 3% від Максимального Здоров’я та збільшує Швидкість Атаки на 4/6. Тривалість додаткової Швидкості Атаки: 10 сек. Тривалість Світильника: 20 сек. Перезарядка: 20 сек» замінено на «Стоячи на місці, герой кожні 0.5 с накопичує заряди, що збільшують Швидкість Руху: 12. Герой поступово втрачає заряди під час руху. Максимум зарядів: 10/20»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_9",
+            "image": "images/heroes/talents/spirit_breaker/9.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Находясь на одном месте герой каждые 0.5 сек. накапливает заряды увеличивающие Скорость Передвижения: 10. Герой постепенно теряет заряды когда перемещается. Максимум зарядов: 10/20» заменено на «Базовая Скорость Атаки: 1.85/1.8/1.75. Увеличение Длительности Оглушения Greater Bash: 0.1/0.2/0.3 сек»",
+                  "en": "«While standing still, the hero accumulates charges every 0.5 sec. that increase Movement Speed: 10. The hero gradually loses charges while moving. Maximum charges: 10/20» replaced with «Base Attack Time: 1.85/1.8/1.75. Increase in Greater Bash Stun Duration: 0.1/0.2/0.3 sec»",
+                  "uk": "«Стоячи на місці, герой кожні 0.5 сек. накопичує заряди, що збільшують Швидкість Руху: 10. Герой поступово втрачає заряди під час руху. Максимум зарядів: 10/20» замінено на «Базова Швидкість Атаки: 1.85/1.8/1.75. Збільшення Тривалості Оглушення Greater Bash: 0.1/0.2/0.3 сек»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_13",
+            "image": "images/heroes/talents/spirit_breaker/13.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Базовая Скорость Атаки: 1.85/1.8/1.75» заменено на «Убирает Nether Strike. Greater Bash можно активировать. Создаёт светоч времени, который герой может атаковать с увеличенной на 350 Скоростью Атаки. Каждая атака по светочу восстанавливает 3% от Максимального Здоровья и увеличивает Скорость Атаки на 4/6. Длительность Доп. Скорости Атаки: 10 сек. Длительность Светоча: 20 сек. Время Перезарядки: 20 сек»",
+                  "en": "«Base Attack Time: 1.85/1.8/1.75» replaced with «Removes Nether Strike. Greater Bash can be activated. Creates a Time Beacon that the hero can attack with +350 Attack Speed. Each attack on the beacon restores 3% of Max Health and increases Attack Speed by 4/6. Bonus Attack Speed Duration: 10 sec. Beacon Duration: 20 sec. Cooldown: 20 sec»",
+                  "uk": "«Базовий Час Атаки: 1.85/1.8/1.75» замінено на «Прибирає Nether Strike. Greater Bash можна активувати. Створює Світильник Часу, який герой може атакувати з +350 Швидкістю Атаки. Кожна атака по світильнику відновлює 3% від Максимального Здоров’я та збільшує Швидкість Атаки на 4/6. Тривалість додаткової Швидкості Атаки: 10 сек. Тривалість Світильника: 20 сек. Перезарядка: 20 сек»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_20",
+            "image": "images/heroes/talents/spirit_breaker/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Защищает владельца от действия отрицательных эффектов во время разбега Charge of Darkness",
+                  "en": "For the duration of Charge of Darkness, any negative effect from enemy spells has no effect",
+                  "uk": "Захищає власника від дії негативних ефектів під час розбігу Charge of Darkness"
+                },
+                "new_raw_value": {
+                  "ru": "Защищает владельца от действия отрицательных эффектов во время разбега Charge of Darkness. Здоровье: 300",
+                  "en": "Protects the owner from negative effects while charging with Charge of Darkness. Health: 300",
+                  "uk": "Захищає власника від дії негативних ефектів під час розгону Charge of Darkness. Здоров'я: 300"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_11",
+            "image": "images/heroes/talents/spirit_breaker/11.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Ускорение от Charge of Darkness действует ещё 2.5 сек. после окончания разбега",
+                  "en": "The boost from Charge of Darkness lasts for 2.5 seconds after the end of the run",
+                  "uk": "Прискорення Charge of Darkness діє ще 2.5 секунди після закінчення розбігу"
+                },
+                "new_raw_value": {
+                  "ru": "Ускорение от Charge of Darkness действует ещё 3 сек. после окончания разбега",
+                  "en": "The boost from Charge of Darkness lasts for 3 seconds after the end of the run",
+                  "uk": "Прискорення Charge of Darkness діє ще 3 секунди після закінчення розбігу"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spirit_breaker_15",
+            "image": "images/heroes/talents/spirit_breaker/15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Charge of Darkness и Astral Charge наносят всем противникам на своём пути Магический Урон: 50 + 10%/15%/20% от Текущей Маны",
+                  "en": "Charge of Darkness and Astral Charge deal Magical Damage to all enemies in their path: 50 + 10%/15%/20% of Current Mana",
+                  "uk": "Charge of Darkness і Astral Charge завдають Магічної Шкоди всім противникам на своєму шляху: 50 + 10%/15%/20% від Поточної Мани"
+                },
+                "new_raw_value": {
+                  "ru": "Charge of Darkness и Astral Charge наносят всем противникам на своём пути Магический Урон: 50 + 8%/12%/16% от Текущей Маны",
+                  "en": "Charge of Darkness and Astral Charge deal Magical Damage to all enemies in their path: 50 + 8%/12%/16% of Current Mana",
+                  "uk": "Charge of Darkness та Astral Charge завдають Магічної Шкоди всім противникам на своєму шляху: 50 + 8%/12%/16% від Поточної Мани"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_10",
+            "image": "images/heroes/talents/spirit_breaker/10.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Astral Charge Отправляет астральную копию на врага, игнорируя препятствия на своём пути. На цель разбега и любых врагов, которых он заденет, сработает способность Greater Bash. Если цель умрёт раньше, чем копия добежит до неё, то целью станет ближайший враг неподалёку. Доп. Скорость при Разбеге: 400 Длительность Оглушения: 1.8 сек. Время Перезарядки: 20 сек",
+                  "en": "New Active Ability: Astral Charge Sends an astral copy at the enemy, ignoring obstacles in its path. Greater Bash will trigger on the target and any enemies it hits along the way. If the target dies before the copy reaches it, the nearest enemy will become the new target. Bonus Speed during Charge: 400 Stun Duration: 1.8 sec. Cooldown: 20 sec",
+                  "uk": "Нова Активна Здібність: Astral Charge Відправляє астральну копію на ворога, ігноруючи перешкоди на своєму шляху. Greater Bash спрацює на цілі розбігу та всіх ворогах, яких вона зачепить. Якщо ціль помре раніше, ніж копія добіжить до неї, новою ціллю стане найближчий ворог. Дод. Швидкість під час Розбігу: 400 Тривалість Оглушення: 1.8 сек. Перезарядка: 20 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Astral Charge Отправляет астральную копию на врага, игнорируя препятствия на своём пути. На цель разбега и любых врагов, которых он заденет, сработает способность Greater Bash. Если цель умрёт раньше, чем копия добежит до неё, то целью станет ближайший враг неподалёку. Доп. Скорость при Разбеге: 400 Длительность Оглушения: 1.8 сек. Время Перезарядки: 24 сек",
+                  "en": "New Active Ability: Astral Charge Sends an astral copy at the enemy, ignoring obstacles in its path. Greater Bash will trigger on the target and any enemies it hits along the way. If the target dies before the copy reaches it, the nearest enemy will become the new target. Bonus Speed during Charge: 400 Stun Duration: 1.8 sec. Cooldown: 24 sec",
+                  "uk": "Нова Активна Здібність: Astral Charge Відправляє астральну копію на ворога, ігноруючи перешкоди на своєму шляху. Greater Bash спрацює на цілі розбігу та всіх ворогах, яких вона зачепить. Якщо ціль помре раніше, ніж копія добіжить до неї, новою ціллю стане найближчий ворог. Дод. Швидкість під час Розбігу: 400 Тривалість Оглушення: 1.8 сек. Перезарядка: 24 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tiny_9",
+            "image": "images/heroes/talents/tiny/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Grow. Новая Пассивная Способность: Tiny's Ring Позволяет ходить сквозь Деревья. Враги под владельцем каждую секунду получают урон от его Ловкости. Уменьшение Размера Модели: 10% Радиус: 100 Урон в Секунду: 110% от Ловкости",
+                  "en": "Removes Grow. New Passive Ability: Tiny's Ring Allows walking through Trees. Enemies under the owner take damage every second based on his Agility. Model Size Reduction: 10% Radius: 100 Damage per Second: 110% of Agility",
+                  "uk": "Забирає Grow. Нова Пасивна Здібність: Tiny's Ring Дозволяє ходити крізь Дерева. Вороги під героєм щосекунди отримують шкоду від його Спритності. Зменшення Розміру Моделі: 10% Радіус: 100 Шкода за Секунду: 110% від Спритності"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Grow. Новая Пассивная Способность: Tiny's Ring Позволяет ходить сквозь существ и деревья. Враги под владельцем каждую секунду получают урон от его Ловкости. Уменьшение Размера Модели: 10% Радиус: 100 Урон в Секунду: 110% от Ловкости",
+                  "en": "Removes Grow. New Passive Ability: Tiny's Ring Allows the hero to walk through units and trees. Enemies beneath the hero take damage every second based on his Agility. Model Size Reduction: 10% Radius: 100 Damage per Second: 110% of Agility",
+                  "uk": "Прибирає Grow. Нова Пасивна Здатність: Кільце Tiny Дозволяє герою проходити крізь істот і дерева. Вороги під героєм щосекунди отримують шкоду, що залежить від його Спритності. Зменшення Розміру Моделі: 10% Радіус: 100 Шкода за Секунду: 110% від Спритності"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_maledict_custom",
+          "name": "maledict",
+          "image": "abilities/witch_doctor_maledict.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellDispellableType",
+              "old_raw_value": "SPELL_DISPELLABLE_NO",
+              "new_raw_value": "SPELL_DISPELLABLE_YES",
+              "note": {
+                "ru": "Теперь можно развеять",
+                "en": "Can now be dispelled",
+                "uk": "Тепер можна розвіяти"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "witch_doctor_death_ward_custom",
+          "name": "death ward",
+          "image": "abilities/witch_doctor_death_ward.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "60.0",
+              "new_raw_value": "100 90 80",
+              "note": {
+                "ru": "Ability Cooldown: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Ability Cooldown: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Ability Cooldown: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            },
+            {
+              "parameter": "damage",
+              "old_raw_value": "90 150 210",
+              "new_raw_value": "60 95 130",
+              "note": {
+                "ru": "Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Damage: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_witch_doctor_8",
+            "image": "images/heroes/talents/witch_doctor/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Пассивная Способность: Auto Voodoo Вокруг героя летает череп от способности Death Ward который стреляет по случайному врагу неподалёку. Выбирает самую далёкую цель в радиусе. Радиус атаки равен вашему радиусу атаки. Пока Death Ward не изучен, такая атака будет наносить 60 физического урона. Время Перезарядки: 6/3 сек",
+                  "en": "New Passive Ability: Auto Voodoo A Death Ward's skull flies around the hero, attacks at a random nearby enemy. Selects the furthest target within the radius. The attack radius is equal to your attack radius. Until Death Ward is learned, this attack will deal 60 physical damage. Cooldown: 6/3 seconds",
+                  "uk": "Нова Пасивна Здатність: Auto Voodoo Навколо героя літає череп від здібності Death Ward, який стріляє по випадковому ворогові неподалік. Вибирає найдальшу мету у радіусі. Радіус атаки дорівнює вашому радіусу атаки.Поки Death Ward не вивчений, така атака завдаватиме 60 фізичних втрат. Час Перезарядки: 6/3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Пассивная Способность: Auto Voodoo Вокруг героя летает череп от способности Death Ward который стреляет по случайному врагу неподалёку. Выбирает самую далёкую цель в радиусе. Радиус атаки равен вашему радиусу атаки. Пока Death Ward не изучен, такая атака будет наносить 45 чистого урона. Время Перезарядки: 6/3 сек",
+                  "en": "New Passive Ability: Auto Voodoo A skull from Death Ward orbits the hero and shoots at a random nearby enemy. It chooses the farthest target within range. Attack range equals your own attack range. If Death Ward is not learned, the attack deals 45 pure damage. Cooldown: 6/3 sec",
+                  "uk": "Нова Пасивна Здібність: Auto Voodoo Череп з Death Ward літає навколо героя та стріляє у випадкового ворога поблизу. Обирає найдальшу ціль у радіусі. Радіус атаки дорівнює вашому. Якщо Death Ward не вивчено, така атака завдає 45 чистого урону. Перезарядка: 6/3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_9",
+            "image": "images/heroes/talents/witch_doctor/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Атаки Death Ward отскакивают в Ближайшую Цель: 1/2/3 раза",
+                  "en": "Death Ward Attacks Bounce to Nearest Target: 1/2/3 times",
+                  "uk": "Атаки Death Ward відскакують до Найближчої Цілі: 1/2/3 рази"
+                },
+                "new_raw_value": {
+                  "ru": "Атаки Death Ward отскакивают в ближайшую цель 1/2/3 раза. Здоровье: 50/100/150",
+                  "en": "Death Ward attacks bounce to the nearest target 1/2/3 times. Health: 50/100/150",
+                  "uk": "Атаки Death Ward відскакують у найближчу ціль 1/2/3 рази. Здоров'я: 50/100/150"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_10",
+            "image": "images/heroes/talents/witch_doctor/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Death Ward не нужно поддерживать. Длительность Death Ward: 1/2/3 сек",
+                  "en": "Death Ward does not need channeled. Death Ward duration: 1/2/3 seconds",
+                  "uk": "Death Ward не потрібно підтримувати. Тривалість Death Ward: 1/2/3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Death Ward не нужно поддерживать. Длительность Death Ward: 2/3/4 сек",
+                  "en": "Death Ward no longer requires channeling. Death Ward Duration: 2/3/4 sec",
+                  "uk": "Death Ward більше не потребує підтримки. Тривалість Death Ward: 2/3/4 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_12",
+            "image": "images/heroes/talents/witch_doctor/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Death Ward: 10/20/30 сек",
+                  "en": "Death Ward Cooldown Reduction: 10/20/30 seconds",
+                  "uk": "Зменшення Часу Перезаряджання Death Ward: 10/20/30 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Death Ward: 20/40/60 сек",
+                  "en": "Death Ward Cooldown Reduction: 20/40/60 sec",
+                  "uk": "Зменшення Перезарядки Death Ward: 20/40/60 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_13",
+            "image": "images/heroes/talents/witch_doctor/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Активная Способность: Voodoo Switcheroo Ненадолго превращает владельца в тотем от способности Death Ward. Скрывает героя на время действия. Длительность: 3 сек",
+                  "en": "New Active Ability: Voodoo Switcheroo Turns Witch Doctor into a Death Ward briefly. He is hidden during this time. Duration: 3 seconds",
+                  "uk": "Нова Активна Здатність: Voodoo Switcheroo Ненадовго перетворює власника на тотем від здібності Death Ward. Приховує героя на час дії. Тривалість: 3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Активная Способность: Voodoo Switcheroo Ненадолго превращает владельца в тотем от способности Death Ward. Скрывает героя на время действия. Длительность: 3 сек. Затраты Маны: 150 Время Перезарядки: 40 сек",
+                  "en": "New Active Ability: Voodoo Switcheroo Briefly transforms the caster into a Death Ward totem. Hides the hero during the effect. Duration: 3 sec. Mana Cost: 150 Cooldown: 40 sec",
+                  "uk": "Нова Активна Здібність: Voodoo Switcheroo Ненадовго перетворює героя на тотем від уміння Death Ward. Приховує героя на час дії. Тривалість: 3 сек. Витрати Мани: 150 Перезарядка: 40 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

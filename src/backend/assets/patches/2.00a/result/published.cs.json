@@ -1,0 +1,848 @@
+{
+  "patch_number": "2.00a",
+  "patch_name": "2.00a",
+  "patch_timestamp": 1788999535,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [
+    {
+      "neutral_creep_id": "npc_woda_creep81",
+      "name": "Poison Spider",
+      "image": "pages/patches/standard_creep.webp",
+      "neutral_creep_notes": [
+        {
+          "parameter": "StatusHealth",
+          "note": "Max health decreased from 300 to 275"
+        }
+      ],
+      "abilities": []
+    }
+  ],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_blade_mail",
+        "name": "Blade Mail",
+        "image": "blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "active_reflection_pct",
+            "note": "Damage Return: active damage return decreased from 65% to 55%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_madness_blade_mail",
+        "name": "Madness Blade Mail",
+        "image": "madness_blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "damage_return_active",
+            "note": "Berserk Return: active damage return decreased from 85% to 75%"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [
+    {
+      "boss_id": "boss_tiny_boss",
+      "name": "boss tiny boss",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "abilities": [
+        {
+          "ability_id": "tiny_boss_toss",
+          "name": "tiny boss toss",
+          "image": "woda_tiny_boss_2.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown is now 15 seconds"
+            },
+            {
+              "parameter": "first_use_hp",
+              "note": "The first use no longer requires a 66% health threshold"
+            },
+            {
+              "parameter": "second_use_hp",
+              "note": "The second use no longer requires a 33% health threshold"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base attack speed increased from 95 to 100",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "name": "aghanim",
+      "image": "images/heroes/heroesPreview/aghanim.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_aghanim_1",
+            "image": "aghanim_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«Health: 50/100/150. Base Damage: 5/10/15» replaced with «The hero gains an aura that reduces enemy armor by 2/3/4. Radius: 900»"
+              }
+            ],
+            "talent_text": "The hero gains an Aura that reduces enemy Armor by 2/3/4\n\nRadius: 900"
+          },
+          {
+            "talent_id": "modifier_aghanim_3",
+            "image": "aghanim_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now also reduces Shard Blast mana cost by 50%"
+              }
+            ],
+            "talent_text": "Shard Blast deals Physical Damage instead of Magical Damage.\n\nShard Blast Mana Cost Reduction: 50%\n\nAdditional Shard Blast Charges: 1"
+          },
+          {
+            "talent_id": "modifier_aghanim_5",
+            "image": "aghanim_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Now also increases Shard Blast damage by 2%/4%/6% of max health"
+              }
+            ],
+            "talent_text": "Shard Blast Damage Increase: 2%/4%/6% of Max Health\n\nShard Blast disables the target's passive abilities for: 0.5/1/1.5 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Base health regen decreased by 0.5",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_2",
+            "image": "dawnbreaker_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Starbreaker mana cost reduction increased from 30%/60% to 40%/80%"
+              },
+              {
+                "note": "Mana regeneration increased from 2/4 to 3/6"
+              }
+            ],
+            "talent_text": "Starbreaker Mana Cost Reduction: 40%/80%\n\nMana Regeneration: 3/6"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_4",
+            "image": "dawnbreaker_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Starbreaker cooldown is now reduced by 1 second for every 55/45 Strength instead of 65/50"
+              }
+            ],
+            "talent_text": "Starbreaker Cooldown is reduced by 1 sec. for every 55/45 Strength.\n\nStarbreaker's Cooldown cannot be reduced below 3 seconds."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "disruptor",
+      "name": "disruptor",
+      "image": "images/heroes/heroesPreview/disruptor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Movement speed increased from 295 to 300",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": "Base mana regen increased by 0.25",
+          "icon": "/mana_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lion",
+      "name": "lion",
+      "image": "images/heroes/heroesPreview/lion.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_lion_13",
+            "image": "lion_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Hex duration increase decreased from 0.3/0.6s to 0.2/0.4s"
+              }
+            ],
+            "talent_text": "Hex Duration Increase: 0.2/0.4 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_luna_8",
+            "image": "luna_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Lunar Orbit cooldown reduction decreased from 2/4/6s to 2/3/4s"
+              }
+            ],
+            "talent_text": "Lunar Orbit deals additional Physical Damage on hit: 10/15/20\n\nLunar Orbit Cooldown Reduction: 2/3/4 sec."
+          },
+          {
+            "talent_id": "modifier_luna_12",
+            "image": "luna_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Lunar Orbit now gains 1 additional glaive for every 150 Strength instead of 100"
+              }
+            ],
+            "talent_text": "Lunar Orbit gains 1 additional Glaive for every 150 Strength."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "marci_special_delivery_custom",
+          "name": "Special Delivery",
+          "image": "marci_special_delivery.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastPoint",
+              "note": "Cast point decreased from 1s to 0.3s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_marci_1",
+            "image": "marci_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Dispose damage increase raised from 50/100 to 70/140"
+              }
+            ],
+            "talent_text": "Dispose Damage Increase: 70/140"
+          },
+          {
+            "talent_id": "modifier_marci_4",
+            "image": "marci_4.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Movement Speed: 15/30. Status Resistance: 5%/10%» replaced with «Bodyguard works only on heroes. Barrier Health Regeneration Increase: 10%/20%. Total Barrier Health Increase: 100/200»"
+              }
+            ],
+            "talent_text": "Bodyguard works only on heroes.\n\nBarrier Health Regeneration Increase: 10%/20%\n\nTotal Barrier Health Increase: 100/200"
+          },
+          {
+            "talent_id": "modifier_marci_3",
+            "image": "marci_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Unleash duration increase raised from 3/6s to 4/8s"
+              }
+            ],
+            "talent_text": "Unleash Duration Increase: 4/8 sec.\n\nMana Regeneration: 3/6"
+          },
+          {
+            "talent_id": "modifier_marci_2",
+            "image": "marci_2.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Bodyguard works only on heroes. Barrier Health Regeneration Increase: 10%/20%. Total Barrier Health Increase: 100/200» replaced with «Movement Speed: 15/30. Status Resistance: 5%/10%»"
+              }
+            ],
+            "talent_text": "Movement Speed: 15/30\n\nStatus Resistance: 5%/10%"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_marci_15",
+            "image": "marci_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100/150/200 health"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Unleash. </font></b>\n\nHealth: 100/150/200\n\nNew Active Ability: Beautiful Illusion\n\nThere is never too much beauty! Creates a hero illusion.\n\nMax Illusions: 1\nIllusion Damage: 50%/75%/100%\nDamage Taken by Illusion: 100%\nDuration: 20 sec.\nCooldown: 10 sec.\nMana Cost: 50"
+          },
+          {
+            "talent_id": "modifier_marci_20",
+            "image": "marci_20.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Beautiful Illusion Damage Taken Reduction: 35%/70%» replaced with «Dispose Damage Increase: 10%/15%/20% of Max Mana»"
+              }
+            ],
+            "talent_text": "Dispose Damage Increase: 10%/15%/20% of Max Mana"
+          },
+          {
+            "talent_id": "modifier_marci_19",
+            "image": "marci_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Mana bonus increased from 300 to 450"
+              }
+            ],
+            "talent_text": "Bodyguard can be cast on allied Illusions or Creeps.\n\nMana: 450"
+          },
+          {
+            "talent_id": "modifier_marci_18",
+            "image": "marci_18.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Dispose Damage Increase: 10%/15%/20% of Max Mana» replaced with «Beautiful Illusion Damage Taken Reduction: 35%/70%»"
+              }
+            ],
+            "talent_text": "Beautiful Illusion Damage Taken Reduction: 35%/70%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "medusa_mana_shield",
+          "name": "Mana Shield",
+          "image": "medusa_mana_shield.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "damage_per_mana",
+              "note": "Damage absorbed per point of mana decreased from 2 + 0.04 per level to 1.9 + 0.03 per level"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_medusa_16",
+            "image": "medusa_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "The maximum bonus is now reached at 500 mana regeneration"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Split Shot. </font></b>\n\nDamage: 80% of Mana Regeneration\n\n<b><font color='#ff0000'> The maximum bonus is reached at 500 Mana Regeneration.</font></b>"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "nyx_assassin_mana_burn_custom",
+          "name": "Mana Burn",
+          "image": "nyx_assassin_mana_burn.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "mana_burn_pct",
+              "note": "Mana burned decreased from 12% to 10% of the damage dealt"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_nyx_assassin_19",
+            "image": "nyx_assassin_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Mana Burn increase decreased from 3%/6% to 2%/4%"
+              }
+            ],
+            "talent_text": "Mana Burn Burned Mana Increase: 2%/4%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_martyr_custom",
+          "name": "Repel",
+          "image": "omniknight_martyr.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellDispellableType",
+              "note": "Can no longer be dispelled"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "name": "pangolier",
+      "image": "images/heroes/heroesPreview/pangolier.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Base armor decreased by 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "pangolier_lucky_shot_custom",
+          "name": "Lucky Shot",
+          "image": "pangolier_lucky_shot.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_slow",
+              "note": "Attack slow decreased from 35/70/105/140 to 25/50/75/100"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_pangolier_18",
+            "image": "pangolier_18.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Rolling Thunder cooldown reduction decreased from 20/30/40s to 15/25/35s"
+              }
+            ],
+            "talent_text": "Rolling Thunder always starts with Shield Crash.\n\nRolling Thunder Cooldown Reduction: 15/25/35 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base attack speed increased from 100 to 110",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_spectre_11",
+            "image": "spectre_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Haunt now also affects 1 nearest creep"
+              }
+            ],
+            "talent_text": "Haunt Cooldown Reduction: 30/60/90 sec.\n\nHaunt also affects 1 nearest creep."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spectre_19",
+            "image": "spectre_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Shadow Step can now also be used on creeps"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Haunt. </font></b>\n\nShadow Step can be used on creeps.\n\nCasting Reality launches a Spectral Dagger at the target.\n\nMana: 300/600/900"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tinker",
+      "name": "tinker",
+      "image": "images/heroes/heroesPreview/tinker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tinker_9",
+            "image": "tinker_9.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Deploy Turrets mana cost reduction decreased from 30%/60%/90% to 20%/40%/60%"
+              }
+            ],
+            "talent_text": "Projectile Speed Increase: 300/600/900\n\nDeploy Turrets Mana Cost Reduction: 20%/40%/60%"
+          },
+          {
+            "talent_id": "modifier_tinker_21",
+            "image": "tinker_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Deploy Turrets missiles now apply attack effects"
+              }
+            ],
+            "talent_text": "Deploy Turrets Missiles apply Attack Effects.\n\nDeploy Turrets Missile Damage Increase: 40% of the Hero's Attack Damage"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tinker_18",
+            "image": "tinker_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Defense Matrix barrier health increased from 100/200/300 to 200/300/400"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Deploy Turrets. </font></b>\n\nNew Active Ability: Defense Matrix\n\nCreates a barrier around an allied unit that absorbs all types of damage and grants status resistance.\n\nBarrier Health: 200/300/400\nStatus Resistance: 10%/20%/30%\nBarrier Duration: 15 sec.\nMana Cost: 120\nCast Range: 700\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_tinker_17",
+            "image": "tinker_17.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Defense Matrix barrier increase raised from 125%/250% to 150%/300% of Intelligence"
+              }
+            ],
+            "talent_text": "Defense Matrix Barrier Increase: 150%/300% of Intelligence"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": "Base mana regen increased by 0.25",
+          "icon": "/mana_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Base health regen increased by 0.5",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_winter_wyvern_6",
+            "image": "winter_wyvern_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Cold Embrace cooldown reduction decreased from 2/4s to 0/2s"
+              }
+            ],
+            "talent_text": "During Cold Embrace, the hero can turn, attack, use Abilities and Items.\n\nCold Embrace Cooldown Reduction: 0/2 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_witch_doctor_15",
+            "image": "witch_doctor_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Paralyzing Cask bounce increase raised from 1/2/3 to 2/3/4"
+              }
+            ],
+            "talent_text": "Paralyzing Cask Bounce Increase: 2/3/4"
+          },
+          {
+            "talent_id": "modifier_witch_doctor_19",
+            "image": "witch_doctor_19.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Paralyzing Cask Cooldown Reduction: 3 sec» replaced with «If Paralyzing Cask stops bouncing prematurely, the last target will take 10%/15%/20% of the remaining damage and be stunned 1 additional time»"
+              }
+            ],
+            "talent_text": "If Paralyzing Cask stops bouncing prematurely, the last target will take 10%/15%/20% of the remaining damage and be stunned 1 additional time."
+          },
+          {
+            "talent_id": "modifier_witch_doctor_16",
+            "image": "witch_doctor_16.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«If Paralyzing Cask stops bouncing early, the last target will take 8%/12%/16% residual Damage and be stunned 1 additional time» replaced with «Paralyzing Cask Cooldown Reduction: 3 sec»"
+              }
+            ],
+            "talent_text": "Paralyzing Cask Cooldown Reduction: 3 sec."
+          },
+          {
+            "talent_id": "modifier_witch_doctor_17",
+            "image": "witch_doctor_17.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«If Paralyzing Cask stops bouncing early, Decreases Paralyzing Cask Cooldown: 2/4 seconds» replaced with «Maledict Damage over Time Increase: 30/60»"
+              }
+            ],
+            "talent_text": "Maledict Damage over Time Increase: 30/60"
+          },
+          {
+            "talent_id": "modifier_witch_doctor_20",
+            "image": "witch_doctor_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Maledict Damage over Time Increase: 30/60» replaced with «If Paralyzing Cask stops bouncing early, Decreases Paralyzing Cask Cooldown: 2/4 seconds»"
+              }
+            ],
+            "talent_text": "If Paralyzing Cask stops bouncing early, Decreases Paralyzing Cask Cooldown: 2/4 seconds"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_wraith_king_21",
+            "image": "wraith_king_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Mana bonus decreased from 750 to 500"
+              }
+            ],
+            "talent_text": "Controlled Units Attack Accuracy: 100%\n\nMana: 500"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1951 @@
+{
+  "patch_number": "1.05",
+  "patch_name": "1.05",
+  "patch_timestamp": 1788983979,
+  "general": {
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "A new ranked season has begun"
+      },
+      {
+        "note": "Added per-hero rating for Arena"
+      },
+      {
+        "note": "Minor improvements to Arena mode"
+      },
+      {
+        "note": "Added a chat wheel for all heroes with rank progression"
+      },
+      {
+        "title": "Talents"
+      },
+      {
+        "subtitle": "Strength"
+      },
+      {
+        "note": "Strength talent: base damage per attribute bonus decreased from 0.1 to 0.05"
+      },
+      {
+        "subtitle": "Agility"
+      },
+      {
+        "note": "Agility talent: base damage per attribute bonus decreased from 0.1 to 0.05"
+      },
+      {
+        "subtitle": "Intelligence"
+      },
+      {
+        "note": "Intelligence talent: base damage per attribute bonus decreased from 0.1 to 0.05"
+      },
+      {
+        "title": "Cosmetic Items"
+      },
+      {
+        "note": "Added 7 new effects"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_desolator",
+        "name": "Desolator",
+        "image": "desolator.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "Damage bonus increased from 50 to 55"
+          },
+          {
+            "parameter": "max_damage",
+            "note": "Soul Stealer: maximum damage bonus decreased from 50 to 30"
+          }
+        ]
+      },
+      {
+        "item_id": "item_devastator",
+        "name": "Parasma",
+        "image": "devastator.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus decreased from 8 to 7"
+          }
+        ]
+      },
+      {
+        "item_id": "item_dragon_lance",
+        "name": "Dragon Lance",
+        "image": "dragon_lance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "base_attack_range",
+            "note": "Attack range bonus decreased from 150 to 140"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heaven_shield",
+        "name": "Heaven's Shield",
+        "image": "heaven_shield.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellImmunityType",
+            "note": "Disarm: now pierces spell immunity"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "Heaven's Halberd",
+        "image": "heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "disarm_range",
+            "note": "Disarm: disarm duration against ranged heroes increased from 4s to 4.5s"
+          },
+          {
+            "parameter": "disarm_melee",
+            "note": "Disarm: disarm duration against melee heroes increased from 3s to 3.5s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_hurricane_pike",
+        "name": "Hurricane Pike",
+        "image": "hurricane_pike.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "base_attack_range",
+            "note": "Attack range bonus decreased from 150 to 140"
+          }
+        ]
+      },
+      {
+        "item_id": "item_maelstrom",
+        "name": "Maelstrom",
+        "image": "maelstrom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "illusion_multiplier_pct",
+            "note": "Chain Lightning: damage to illusions decreased from 150% to 100%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mask_of_madness",
+        "name": "Mask of Madness",
+        "image": "mask_of_madness.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "berserk_bonus_attack_speed",
+            "note": "Berserk: attack speed bonus decreased from 110 to 100"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mjollnir",
+        "name": "Mjollnir",
+        "image": "mjollnir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "illusion_multiplier_pct",
+            "note": "Chain Lightning: damage to illusions decreased from 150% to 100%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_octarine_core",
+        "name": "Octarine Core",
+        "image": "octarine_core.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health",
+            "note": "Health bonus decreased from 500 to 450"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Mana bonus decreased from 500 to 450"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pavise",
+        "name": "Pavise",
+        "image": "pavise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Protect: mana cost decreased from 100 to 60"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_desolator_2",
+        "name": "Stygian Desolator",
+        "image": "desolator_2.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "corruption_armor",
+            "note": "Armor reduction decreased from 13 to 10"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_psychic_headband",
+        "name": "Psychic Headband",
+        "image": "psychic_headband.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Cooldown decreased from 20s to 15s"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "sniper_shrapnel_custom",
+          "name": "Shrapnel",
+          "image": "sniper_shrapnel.webp",
+          "description": [
+            "Consumes a charge to launch a ball of shrapnel that showers the target area in explosive pellets. Enemies are subject to damage and slowed movement. Reveals the targeted area. Shrapnel charges restore every 35 seconds. Movement slow: -12% / -18% / -24% / -30%. Radius: 400 / 425 / 450 / 475. Damage: 30 / 45 / 60 / 75. Duration: 10. Charge restore time: 35. Cast range: 1800. Mana cost: 75."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "sniper_headshot_custom",
+          "name": "Headshot",
+          "image": "sniper_headshot.webp",
+          "description": [
+            "Sniper increases his accuracy, giving him a chance to deal extra damage and knock back his enemies. Knockback distance increases based on how close the enemy is to Sniper. Headshots briefly slow enemy movement and attack speed by -100%. Damage: 20 / 50 / 80 / 110. Chance: 40%. Max knockback distance: 50. Slow duration: 0.2 / 0.3 / 0.4 / 0.5."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "sniper_take_aim_custom",
+          "name": "Take Aim",
+          "image": "sniper_take_aim.webp",
+          "description": [
+            "Increases vision range, Headshot chance, and attack range. Slows you by 65% for the duration and restricts your vision to a frontal cone. Duration: 3. Bonus attack range: 100 / 150 / 200 / 250. Headshot proc chance: 100%. Bonus vision: 500 / 750 / 1000 / 1250. Cooldown: 20 / 18 / 16 / 14. Mana cost: 50."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "sniper_assassinate_custom",
+          "name": "Assassinate",
+          "image": "sniper_assassinate.webp",
+          "description": [
+            "Sniper locks onto a target enemy unit and, after a short aiming duration, fires a devastating shot that deals Sniper's attack damage plus bonus damage at long range and mini-stuns the target. Whenever Sniper kills an enemy hero, Assassinate is refreshed. Damage: 300 / 400 / 500. Cooldown: 20 / 15 / 10. Cast range: 3000. Mana cost: 175."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_sniper_1",
+            "image": "sniper_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Headshot can be activated. The hero fires a shotgun in a cone-shaped area, performing 1 attack on all affected targets. Guarantees Headshot on enemies. After firing, the hero becomes silenced for 3 seconds. Silence duration is reduced by status resistance. Shot Range: 450. Cooldown: 3 sec"
+              }
+            ],
+            "talent_text": "Headshot can be activated.\n\nThe hero fires a shotgun in a cone-shaped area, performing 1 attack on all affected targets. Guarantees Headshot on enemies. After firing, the hero becomes silenced for 3 seconds. Silence duration is reduced by status resistance.\n\nShot Range: 450\nCooldown: 3 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_2",
+            "image": "sniper_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Maximum attack speed is 150.</font> Headshot Damage Bonus: 30/60/90 + 1.5 per point of Strength"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Maximum attack speed is 150. </font></b>\n\nHeadshot Damage Bonus: 30/60/90 + 1.5 per Strength"
+          },
+          {
+            "talent_id": "modifier_sniper_3",
+            "image": "sniper_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Grenade. Removes Assassinate.</font> New Active Ability: Molotov Cocktail. The hero throws a grenade at the target area, igniting enemies and dealing magic damage. Damage: 2%/3%/4% of Max Health. Radius: 375. Burn Duration: 2 sec. Area Duration: 8 sec. Mana Cost: 50. Cooldown: 20 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Grenade.\n\nRemoves Assassinate. </font></b>\n\nNew Active Ability: Molotov Cocktail\n\nThe hero throws a grenade at the target area, igniting enemies and dealing magic damage.\n\nDamage: 2%/3%/4% of Max Health\nRadius: 375\nBurn Duration: 2 sec.\nArea Duration: 8 sec.\nMana Cost: 50\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_4",
+            "image": "sniper_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Status Resistance: 10%/20%"
+              }
+            ],
+            "talent_text": "Status Resistance: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_sniper_5",
+            "image": "sniper_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Increased Number of Attacks when Headshot is activated: 1 + 1 for every 300/200 Strength"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Increased Number of Attacks when Headshot is activated: 1 + 1 for every 300/200 Strength"
+          },
+          {
+            "talent_id": "modifier_sniper_6",
+            "image": "sniper_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Bonus Cast Range: 100/200. Cooldown Reduction: 5%/10%"
+              }
+            ],
+            "talent_text": "Bonus Cast Range: 100/200\n\nCooldown Reduction: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_sniper_7",
+            "image": "sniper_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Maximum attack speed is 150.</font> Increased Headshot Slow Duration: 1 sec. Increased Headshot Knockback Distance: 50"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Maximum attack speed is 150. </font></b>\n\nIncreased Headshot Slow Duration: 1 sec.\n\nIncreased Headshot Knockback Distance: 50"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_sniper_8",
+            "image": "sniper_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Take Aim increases Attack Speed on activation: 30/60/90"
+              }
+            ],
+            "talent_text": "Take Aim increases Attack Speed on activation: 30/60/90"
+          },
+          {
+            "talent_id": "modifier_sniper_9",
+            "image": "sniper_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increases Take Aim Duration: 1/2 sec"
+              }
+            ],
+            "talent_text": "Increases Take Aim Duration: 1/2 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_10",
+            "image": "sniper_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Grenade. Removes Shrapnel.</font> New Active Ability: Smoke Grenade. The hero throws a grenade into the target area, creating a smoke screen. Enemies inside the smoke miss attacks and cannot use abilities. Radius: 375. Miss Chance: 100%. Duration: 8 sec. Mana Cost: 50. Cooldown: 20 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Grenade.\n\nRemoves Shrapnel. </font></b>\n\nNew Active Ability: Smoke Grenade\n\nThe hero throws a grenade into the target area, creating a smoke screen. Enemies inside the smoke miss attacks and cannot use abilities.\n\nRadius: 375\nMiss Chance: 100%\nDuration: 8 sec.\nMana Cost: 50\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_11",
+            "image": "sniper_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Kills with Assassinate increase Agility: 1/2. Kills with Assassinate increase Attack Range: 5/10. Kills made before learning the talent also count"
+              }
+            ],
+            "talent_text": "Kills with Assassinate increase Agility: 1/2\n\nKills with Assassinate increase Attack Range: 5/10\n\nKills made before learning the talent also count."
+          },
+          {
+            "talent_id": "modifier_sniper_12",
+            "image": "sniper_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "New Passive Ability: Survive. The hero's battle experience boosts health and mana regeneration if no damage was taken in the last 3 seconds. Health and Mana Regeneration: 1%/2%"
+              }
+            ],
+            "talent_text": "New Passive Ability: Survive\n\nThe hero’s battle experience boosts health and mana regeneration if no damage was taken in the last 3 seconds.\n\nHealth and Mana Regeneration: 1%/2%"
+          },
+          {
+            "talent_id": "modifier_sniper_13",
+            "image": "sniper_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Assassinate stuns enemies: 0.5/1/1.5 sec. Assassinate Cast Time Reduction: 0.5/1/1.5 sec"
+              }
+            ],
+            "talent_text": "Assassinate stuns enemies: 0.5/1/1.5 sec.\n\nAssassinate Cast Time Reduction: 0.5/1/1.5 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_14",
+            "image": "sniper_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Take Aim provides unobstructed vision in all directions"
+              }
+            ],
+            "talent_text": "Take Aim provides unobstructed vision in all directions."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_15",
+            "image": "sniper_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Shrapnel Cooldown Reduction: 10/15/20 sec"
+              }
+            ],
+            "talent_text": "Shrapnel Cooldown Reduction: 10/15/20 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_16",
+            "image": "sniper_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Grenade. Removes Take Aim.</font> New Active Ability: Concussive Grenade. The hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement. Damage: 50 + 50%/75%/100% of Attack Damage. Radius: 375. Movement Slow: 50%. Duration: 2 sec. Knockback Distance: 475. Mana Cost: 50. Cooldown: 20 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Grenade.\n\nRemoves Take Aim. </font></b>\n\nNew Active Ability: Concussive Grenade\n\nThe hero throws a grenade into the target area, propelling himself in the opposite direction. Deals magic damage to enemies, knocks them back from the explosion center, silences them, and slows their movement.\n\nDamage: 50 + 50%/75%/100% of Attack Damage\nRadius: 375\nMovement Slow: 50%\nDuration: 2 sec.\nKnockback Distance: 475\nMana Cost: 50\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_17",
+            "image": "sniper_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Grenade. Removes Headshot.</font> New Active Ability: Flashbang Grenade. The hero throws a grenade into the target area, reducing enemy vision and stunning them. Radius: 375. Vision Reduction: 75%. Stun Duration: 1.5 sec. Mana Cost: 50. Cooldown: 20 sec. If you learn 4 grenades, using a grenade reduces the cooldown of other grenades by 2 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Grenade.\n\nRemoves Headshot. </font></b>\n\nNew Active Ability: Flashbang Grenade\n\nThe hero throws a grenade into the target area, reducing enemy vision and stunning them.\n\nRadius: 375\nVision Reduction: 75%\nStun Duration: 1.5 sec.\nMana Cost: 50\nCooldown: 20 sec.\n\n\nIf you learn 4 grenades:\n\nUsing a grenade reduces the cooldown of other grenades by 2 sec."
+          },
+          {
+            "talent_id": "modifier_sniper_18",
+            "image": "sniper_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Shrapnel Duration Reduction: 2/3/4 sec.</font> Shrapnel Damage Increase: 20/40/60"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Shrapnel Duration Reduction: 2/3/4 sec. </font></b>\n\nShrapnel Damage Increase: 20/40/60"
+          },
+          {
+            "talent_id": "modifier_sniper_19",
+            "image": "sniper_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Shrapnel Radius Increase: 125. Shrapnel Damage Increase: 50% of Mana Regeneration"
+              }
+            ],
+            "talent_text": "Shrapnel Radius Increase: 125\n\nShrapnel Damage Increase: 50% of Mana Regeneration"
+          },
+          {
+            "talent_id": "modifier_sniper_20",
+            "image": "sniper_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Shrapnel Charge Increase: 1/2"
+              }
+            ],
+            "talent_text": "Shrapnel Charge Increase: 1/2"
+          },
+          {
+            "talent_id": "modifier_sniper_21",
+            "image": "sniper_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Effects of multiple Shrapnels stack"
+              }
+            ],
+            "talent_text": "Effects of multiple Shrapnels stack."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "name": "aghanim",
+      "image": "images/heroes/heroesPreview/aghanim.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_aghanim_7",
+            "image": "aghanim_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Aghanim Blast cooldown decreased from 25s to 18s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Water Bubble.</font></b>\n\nNew Active Ability: Aghanim Blast\n\nCreates a powerful explosion around the hero that stuns enemies and casts Shard Blast on them.\n\nStun Duration: 2.2 seconds\nRadius: 900\nCooldown: 18 seconds"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "bounty_hunter_track_custom",
+          "name": "Track",
+          "image": "bounty_hunter_track.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 14s to 14/12/10s"
+            },
+            {
+              "parameter": "duration",
+              "note": "Duration increased from 18s to 25s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_7",
+            "image": "bounty_hunter_7.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Jinada bonus damage increase raised from 100/200 to 150/300"
+              }
+            ],
+            "talent_text": "Jinada Extra Damage Increase: 150/300"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Strength bonus increased from 0/8/16 to 7/14/21"
+              }
+            ],
+            "talent_text": "Shuriken Toss applies the effect of Jinada.\n\nStrength: 7/14/21"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_5",
+            "image": "bounty_hunter_5.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Damage bonus per living Gold Bag increased from 80 to 100"
+              }
+            ],
+            "talent_text": "Shuriken Toss can be cast on an area.\n\nShuriken Toss creates an immortal Gold Pouch with the Track ability, which can be attacked and targeted by abilities. Increases the hero's damage for each living pouch.\n\nDamage: 100\nDuration: 20 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_bounty_hunter_9",
+            "image": "bounty_hunter_9.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Now also grants 5/10 Agility"
+              }
+            ],
+            "talent_text": "Shadow Walk effect ends only after 2/3 Attacks.\n\nAgility: 5/10"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_13",
+            "image": "bounty_hunter_13.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Shadow Walk increases Chance to Avoid Any Damage: 4%/8%/12%» replaced with «Shadow Walk applies a Strong Dispel. Health Regeneration: 15»"
+              }
+            ],
+            "talent_text": "Shadow Walk applies a Strong Dispel.\n\nHealth Regeneration: 15"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_12",
+            "image": "bounty_hunter_12.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Shadow Walk applies a Strong Dispel» replaced with «Shadow Walk increases Chance to Avoid Any Damage: 4%/8%/12%»"
+              }
+            ],
+            "talent_text": "Shadow Walk increases Chance to Avoid Any Damage: 4%/8%/12%"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Movement speed bonus increased from 15/30 to 20/40"
+              },
+              {
+                "note": "Now also grants 4%/8% spell damage"
+              }
+            ],
+            "talent_text": "Jinada grants Gold for Creeps.\n\nJinada Bonus Gold: 6/12\n\nMovement Speed: 20/40\n\nSpell Damage: 4%/8%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Track damage increase raised from 6% to 8%"
+              }
+            ],
+            "talent_text": "Increase Extra Gold to Allies Track: 60\n\nIncrease Damage Track: 8%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bristleback",
+      "name": "bristleback",
+      "image": "images/heroes/heroesPreview/bristleback.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bristleback_3",
+            "image": "bristleback_3.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Warpath does not grant Damage. Warpath grants Attack Speed per Stack: 10/14/18» replaced with «Using Quill Spray increases Health Regeneration: 4. Effect Duration: 10/20 sec. Does not work on Quill Spray from Bristleback»"
+              }
+            ],
+            "talent_text": "Using Quill Spray increases Health Regeneration: 4\n\nEffect Duration: 10/20 sec.\n\n<b><font color='#ff0000'>Does not work on Quill Spray from Bristleback.</font></b>"
+          },
+          {
+            "talent_id": "modifier_bristleback_2",
+            "image": "bristleback_2.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Using Quill Spray increases Health Regeneration: 4. Effect Duration: 10/20 sec. Does not work on Quill Spray from Bristleback» replaced with «Warpath grants Strength per Stack: 2/3/4»"
+              }
+            ],
+            "talent_text": "Warpath grants Strength per Stack: 2/3/4"
+          },
+          {
+            "talent_id": "modifier_bristleback_6",
+            "image": "bristleback_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Quill Spray bonus damage increased from 1%/2%/3% to 2%/3%/4% of max health"
+              }
+            ],
+            "talent_text": "Using Quill Spray costs 1% of Max Health\n\nQuill Spray additionally deals damage to enemies: 2%/3%/4% of Max Health\n\n<b><font color='#ff0000'>Does not work with Quill Spray triggered by Bristleback.</font></b>"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_10",
+            "image": "creep_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Counterspell cooldown increased from 11s to 12s"
+              },
+              {
+                "note": "Counterspell mana cost increased from 45 to 50"
+              }
+            ],
+            "talent_text": "New Active Ability: Counterspell\n\nPassively increases magic resistance. Can be activated to create an anti-magic shield around yourself that completely blocks and reflects all targeted spells back to the enemy.\n\nMagic Resistance: 15%/20%/25%\nDuration: 2 sec\nCooldown: 12 sec\nMana Cost: 50\n\n\nHealth: 100/200/300"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_creep_16",
+            "image": "creep_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Purge mana cost decreased from 100 to 50"
+              },
+              {
+                "note": "Purge cooldown decreased from 16s to 14s"
+              },
+              {
+                "note": "Purge cast range increased from 1000 to 1200"
+              }
+            ],
+            "talent_text": "New Active Ability: Purge\n\nThe creep can remove negative effects from an ally or positive effects from an enemy. Slows the enemy target’s movement.\n\nDamage: 50\nMovement Slow: 40%\nDuration: 2/4 sec.\nCast Range: 1200\nMana Cost: 50\nCooldown: 14 sec."
+          },
+          {
+            "talent_id": "modifier_creep_18",
+            "image": "creep_18.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Petrify cooldown decreased from 10s to 8s"
+              }
+            ],
+            "talent_text": "New Active Ability: Petrify\n\nYour next attack will root the enemy, dealing magic damage every second.\n\nDamage per Second: 110% of Intelligence\nDuration: 2 sec.\nCooldown: 8 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "crystal_maiden",
+      "name": "crystal maiden",
+      "image": "images/heroes/heroesPreview/crystal_maiden.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "crystal_maiden_arcane_aura_custom",
+          "name": "Arcane Aura",
+          "image": "crystal_maiden_arcane_aura.webp",
+          "ability_notes": [
+            {
+              "parameter": "base_mana_regen",
+              "note": "Mana regeneration changed from 4.5/6/7.5/9 to 0.4/0.6/0.8/1"
+            },
+            {
+              "parameter": "proximity_mana_regen_tooltip",
+              "note": "Now 3 times stronger on allies within a 1200 radius, granting 1.2/1.8/2.4/3"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_crystal_maiden_16",
+            "image": "crystal_maiden_16.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Arcane Aura health regen bonus decreased from 4.5/9 to 1.5/3"
+              },
+              {
+                "note": "Now 3 times stronger on allies within a 1200 radius"
+              }
+            ],
+            "talent_text": "Arcane Aura increases Health Regeneration: 1.5/3\n\nWorks 3 times stronger on allies within a 1200 radius."
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_17",
+            "image": "crystal_maiden_17.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "The 5x restoration bonus now applies only to the hero"
+              }
+            ],
+            "talent_text": "Arcane Aura restores 5x more Mana and Health to the hero if you haven’t cast a spell in the last: 4/2 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dazzle_1",
+            "image": "dazzle_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Good Juju pure damage per second increased from 50 + 1%/2%/3% to 50 + 2%/3%/4% of max health"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes all abilities.</font></b>\n\nNew Passive Ability: Good Juju\n\nUsing items after 0.5s creates an area under the hero where enemies take Pure Damage per second: 50 + 2%/3%/4% of Max Health\n\nRadius: 300\nDuration: 4s\n\n<b><font color='#ff0000'> Does not work on toggle items. </font></b>"
+          },
+          {
+            "talent_id": "modifier_dazzle_5",
+            "image": "dazzle_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Mana regen bonus from health regen increased from 15%/30% to 20%/40%"
+              }
+            ],
+            "talent_text": "Health Regeneration increases Mana Regeneration: 20%/40%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_spirit_siphon_custom",
+          "name": "Spirit Siphon",
+          "image": "death_prophet_spirit_siphon.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityChargeRestoreTime",
+              "note": "Base charge restore time increased from 38s to 40s"
+            },
+            {
+              "parameter": "haunt_duration",
+              "note": "Duration increased from 5s to 6s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_death_prophet_19",
+            "image": "death_prophet_19.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Witchcraft bonus per hero level increased from 0.1%/0.2%/0.3% to 0.2%/0.3%/0.4%"
+              }
+            ],
+            "talent_text": "New Passive Ability: Witchcraft\n\nOccult knowledge expands as you gain experience. Each hero level increases Movement Speed ​​and reduces Cooldown: 0.2%/0.3%/0.4%"
+          },
+          {
+            "talent_id": "modifier_death_prophet_21",
+            "image": "death_prophet_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Astral Mind magic resistance reduction increased from 10% to 20%"
+              }
+            ],
+            "talent_text": "Exorcism deals Magic Damage instead of Physical.\n\nNew Passive Ability: Astral Mind\n\nAstral Mind reduces enemy Magic Resistance within 1200 radius around the Hero: 20%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_doom_14",
+            "image": "doom_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Fueling Hell cooldown decreased from 22s to 20s"
+              },
+              {
+                "note": "Fueling Hell no longer costs 75 mana"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes DOOM.</font></b>\n\nNew Active Ability: Fueling Hell\n\nFires a circular wave that inflicts an Infernal Blade on targets hit. Ability has 2 charges.\n\nRadius: 1600\nCooldown: 20 seconds"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_earthshaker_16",
+            "image": "earthshaker_16.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Mana regen bonus increased from 0.3%/0.6% to 0.5%/1%"
+              },
+              {
+                "note": "Spell damage bonus increased from 4%/8% to 5%/10%"
+              }
+            ],
+            "talent_text": "Mana Regeneration: 0.5%/1%\n\nSpell Damage: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_earthshaker_21",
+            "image": "earthshaker_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Echo Slam base damage bonus increased from 15% to 20% of max mana"
+              },
+              {
+                "note": "Echo Slam echo damage bonus increased from 3% to 4% of max mana"
+              }
+            ],
+            "talent_text": "Increases Base Damage of Echo Slam: 20% of Max Mana\n\nIncreases Echo Damage of Echo Slam: 4% of Max Mana"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_jakiro_2",
+            "image": "jakiro_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Fire Gush cooldown decreased from 12s to 9s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Ice Path. </font></b>\n\nNew Active Ability: Fire Gush\n\nSummons a fiery stream that deals magic damage to enemies and increases the damage they take. Affects all enemies in its path.\n\nWave Radius: 260\nWave Range: 1200\nDamage: 100 + 100%/200% of Strength\nIncreased Damage to Enemies: 15%\nEffect Duration: 4 sec.\nMana Cost: 50\nCooldown: 9 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_kazurai_katana_custom",
+          "name": "Kazurai Katana",
+          "image": "kez_kazurai_katana.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal_reduction_pct",
+              "note": "No longer reduces healing by 10%/15%/20%/25%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_kunkka_2",
+            "image": "kunkka_2.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Torrent damage bonus increased from 40%/80%/120% to 80%/120%/160% of health regen"
+              }
+            ],
+            "talent_text": "Increase Torrent Damage: 80%/120%/160% of Health Regeneration"
+          },
+          {
+            "talent_id": "modifier_kunkka_4",
+            "image": "kunkka_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Tidebringer damage bonus increased from 40%/80%/120% to 80%/120%/160% of health regen"
+              }
+            ],
+            "talent_text": "Increase Tidebringer Damage: 80%/120%/160% of Health Regeneration"
+          },
+          {
+            "talent_id": "modifier_kunkka_7",
+            "image": "kunkka_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Health regen amplification in the Torrent puddle increased from 50% to 70%"
+              }
+            ],
+            "talent_text": "Increase Torrent Radius: 80\n\nTorrent leaves a small puddle on the ground in which allied units have Health Regeneration Amplify: 70%\n\nPuddle Duration: 5 seconds"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_kunkka_19",
+            "image": "kunkka_19.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«X Marks the Spot is cast instantly. X Marks the Spot Heals allies or deals Magic Damage to enemies every second: 30%/45%/60% of Distance Traveled» replaced with «Tidebringer knocks back hit targets: 250/500. Spell Damage: 8%/16%»"
+              }
+            ],
+            "talent_text": "Tidebringer knocks back hit targets: 250/500\n\nSpell Damage: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_kunkka_15",
+            "image": "kunkka_15.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Tidebringer knocks back hit targets for 225/450. Spell Damage: 8%/16%» replaced with «X Marks the Spot is cast instantly. X Marks the Spot Heals allies or deals Magic Damage to enemies every second: 30%/45%/60% of Distance Traveled»"
+              }
+            ],
+            "talent_text": "X Marks the Spot is cast instantly.\n\nX Marks the Spot Heals allies or deals Magic Damage to enemies every second: 30%/45%/60% of Distance Traveled."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "lion",
+      "name": "lion",
+      "image": "images/heroes/heroesPreview/lion.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lion_15",
+            "image": "lion_15.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 10 Intelligence"
+              }
+            ],
+            "talent_text": "Increase Earth Spike Count: 2\n\nIntelligence: 10"
+          },
+          {
+            "talent_id": "modifier_lion_17",
+            "image": "lion_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Spell damage bonus increased from 8% to 10%"
+              }
+            ],
+            "talent_text": "Finger of Death hits all units in a small area.\n\nRadius: 300\n\nSpell Damage: 10%"
+          },
+          {
+            "talent_id": "modifier_lion_18",
+            "image": "lion_18.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Finger of Death cooldown reduction increased from 5/10/15s to 6/12/18s"
+              }
+            ],
+            "talent_text": "Finger of Death Cooldown Reduction: 6/12/18 seconds"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_lone_druid_12",
+            "image": "lone_druid_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Savage Roar cooldown reduction decreased from 5/10s to 4/8s"
+              }
+            ],
+            "talent_text": "Reduced Savage Roar Cooldown: 4/8 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_morphling_21",
+            "image": "morphling_21.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Movement speed bonus increased from 30 to 50"
+              }
+            ],
+            "talent_text": "1 Health for every 2 Maximum Mana\n\nMovement Speed: 50"
+          },
+          {
+            "talent_id": "modifier_morphling_18",
+            "image": "morphling_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Cooldown after three procs decreased from 10s to 5s"
+              }
+            ],
+            "talent_text": "Each enemy ability cast during Morph triggers a weakened Waterraze on the nearest target, prioritizing heroes. Goes on a 5 sec. cooldown after three triggers.\n\nDamage: 50% of Waterraze Damage\nRadius: 900"
+          },
+          {
+            "talent_id": "modifier_morphling_20",
+            "image": "morphling_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Max mana bonus from Waterraze increased from 2%/4%/6% to 3%/4.5%/6%"
+              }
+            ],
+            "talent_text": "Casting Waterraze increases Max Mana: 3%/4.5%/6%\n\nEffect Duration: 15 seconds"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_necrophos_4",
+            "image": "necrophos_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Now also grants 4/8/12 Strength"
+              }
+            ],
+            "talent_text": "Ghost Shroud increases Movement Speed per Enemy: 8%/16%/24%\n\nStrength: 4/8/12"
+          },
+          {
+            "talent_id": "modifier_necrophos_5",
+            "image": "necrophos_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Heartstopper Aura enemy health restoration reduction changed from 5%/10%/15% to 10%/20%"
+              }
+            ],
+            "talent_text": "Heartstopper Aura reduces Enemy Health Regeneration: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_necrophos_6",
+            "image": "necrophos_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Heartstopper Aura damage bonus changed from 0.1%/0.2% to 0.1%/0.2%/0.3%"
+              }
+            ],
+            "talent_text": "Heartstopper Aura Damage Increase: 0.1%/0.2%/0.3%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pudge",
+      "name": "pudge",
+      "image": "images/heroes/heroesPreview/pudge.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_pudge_6",
+            "image": "pudge_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Rot enemy health restoration reduction increased from 8%/16% to 10%/20%"
+              }
+            ],
+            "talent_text": "Rot reduces Enemy Health Restoration: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_pudge_7",
+            "image": "pudge_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also reduces Dismember cooldown by 5s"
+              }
+            ],
+            "talent_text": "Reduces Dismember Cooldown: 5 sec.\n\nIncreases Dismember Duration: 1 sec.\n\nDismember disables the Target's Passive Abilities while active."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_pudge_21",
+            "image": "pudge_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also grants 15% spell damage"
+              }
+            ],
+            "talent_text": "Meat Hook activates in all directions around the hero.\n\nSpell Damage: 15%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_roshan_12",
+            "image": "roshan_12.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Using items now applies Bash with a 100% chance instead of Bash's own proc chance"
+              }
+            ],
+            "talent_text": "Using Items applies Bash to a random enemy within Radius: 900\n\nProc Chance: 100%\n\nPrioritizes heroes."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_shadow_fiend_3",
+            "image": "shadow_fiend_3.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Health regen increased from 0.25%/0.5%/0.75% to 0.3%/0.6%/0.9%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Feast of Souls.</font></b>\n\nHealth Regeneration: 0.3%/0.6%/0.9%"
+          },
+          {
+            "talent_id": "modifier_shadow_fiend_5",
+            "image": "shadow_fiend_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Spell damage penalty decreased from 45%/40%/35% to 40%/35%/30%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Presence Of The Dark Lord.</font></b>\n\n<b><font color='#ff0000'>Spell Damage: -40%/-35%/-30%</font></b>\n\nRighteous Lord deals Pure Damage to enemies."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "skywrath_mage",
+      "name": "skywrath mage",
+      "image": "images/heroes/heroesPreview/skywrath_mage.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_skywrath_mage_16",
+            "image": "skywrath_mage_16.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "The barrier now absorbs all damage"
+              }
+            ],
+            "talent_text": "Casting any abilities grants a Barrier that absorbs All Damage: 10/20\n\nEffect Duration: 20 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_slardar_5",
+            "image": "slardar_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Corrosive Haze armor reduction bonus increased from 5 to 8"
+              }
+            ],
+            "talent_text": "Increases Corrosive Haze Armor Reduction: 8"
+          },
+          {
+            "talent_id": "modifier_slardar_3",
+            "image": "slardar_3.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Slithereen Crush stun duration bonus increased from 0.3/0.6s to 0.4/0.8s"
+              }
+            ],
+            "talent_text": "Slithereen Crush Increase Stun Duration: 0.4/0.8 seconds"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slardar_21",
+            "image": "slardar_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Corrosive Haze spell damage amplification increased from 40% to 50%"
+              }
+            ],
+            "talent_text": "Corrosive Haze Increases All Damage Received from Spells: 50%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_spirit_breaker_1",
+            "image": "spirit_breaker_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "The 6/12 attack speed bonus has been replaced with 2/4 armor"
+              }
+            ],
+            "talent_text": "Health Regeneration: 3/6\n\nArmor: 2/4"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_2",
+            "image": "spirit_breaker_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Bulldoze damage per second increased from 100%/150% to 20 + 100%/150% of health regen"
+              }
+            ],
+            "talent_text": "Bulldoze deals Magic Damage per second to enemies near you: 20 + 100%/150% of Health Regeneration\n\nRadius: 300"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_7",
+            "image": "spirit_breaker_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also grants 0.5% health regen"
+              }
+            ],
+            "talent_text": "Bulldoze cannot be dispelled.\n\nHealth Regeneration: 0.5%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_spirit_breaker_13",
+            "image": "spirit_breaker_13.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Attack speed bonus increased from 20/40 to 25/50"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Nether Strike.</font></b>\n\nGreater Bash becomes activatable.\n\nCreates a time beacon that can only be attacked by the hero with increased Attack Speed by 300/400. Each hit on the beacon restores 3% of Max Health and increases Spell Damage by 3%.\n\nSpell Damage Duration: 7 sec.\nBeacon Duration: 20 sec.\nCooldown: 20 sec.\n\n\nAttack Speed: 25/50"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spirit_breaker_16",
+            "image": "spirit_breaker_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "The 2/4 armor bonus has been replaced with 200/400 mana"
+              }
+            ],
+            "talent_text": "Evasion: 7%/14%\n\nMana: 200/400"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_17",
+            "image": "spirit_breaker_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Nether Strike magic resistance reduction increased from 10%/20% to 15%/30%"
+              },
+              {
+                "note": "Effect duration is now 8s"
+              }
+            ],
+            "talent_text": "Nether Strike reduces Magic Resistance of affected targets: 15%/30%\n\nDuration: 8 sec.\n\nNether Strike hits all units in a radius of: 400"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_19",
+            "image": "spirit_breaker_19.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Nether Strike cooldown reduction increased from 2/4/6s to 4/6/8s"
+              }
+            ],
+            "talent_text": "Cast Point Reduction: 10%/20%/30%\n\nNether Strike Cooldown Reduction: 4/6/8 seconds"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_21",
+            "image": "spirit_breaker_21.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Time Aura damage amplification increased from 20% to 25%"
+              }
+            ],
+            "talent_text": "Aura of Time increases All Damage Dealt against enemies by 25%, but the further away the enemy is, the weaker the effect.\n\nRadius: 1200"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_2",
+            "image": "techies_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "No longer caps current health at 75%"
+              },
+              {
+                "note": "Maximum barrier strength decreased from 25% to 15% of max health"
+              }
+            ],
+            "talent_text": "Permanently grants a Barrier that absorbs All Damage.\n\nMaximum Barrier Strength: 15% of Max Health\n\nBarrier Regeneration Rate: 0.9%/1.1%/1.3% of Max Health"
+          },
+          {
+            "talent_id": "modifier_techies_7",
+            "image": "techies_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Blast Off! no longer costs mana"
+              }
+            ],
+            "talent_text": "Blast Off! costs no Mana.\n\nBlast Off! cast delay reduction: 90%\n\nBlast Off! stun duration increase: 1 sec"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tidehunter",
+      "name": "tidehunter",
+      "image": "images/heroes/heroesPreview/tidehunter.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tidehunter_2",
+            "image": "tidehunter_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Ravage Tentacle chance increased from 20%/30%/40% to 20%/40%/60%"
+              }
+            ],
+            "talent_text": "Each attack on the hero has a chance to create a Ravage Tentacle near the enemy.\n\nDamage: 50% of Ravage\nStun: 50% of Ravage\nChance: 20%/40%/60%\nCooldown: 10/9/8 seconds\n\nIf Ravage is not learned, then:\nDamage: 75\nStun: 1 seconds"
+          },
+          {
+            "talent_id": "modifier_tidehunter_3",
+            "image": "tidehunter_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Tendrils of the Deep damage increased from 50% to 75% of Ravage damage"
+              },
+              {
+                "note": "Tendrils of the Deep stun duration increased from 50% to 75% of Ravage stun"
+              }
+            ],
+            "talent_text": "New Active Ability: Tendrils of the Deep\n\nThe hero releases a wave of Ravage Tentacles in the targeted direction, stunning and damaging enemies.\n\nDamage: 75% of Ravage\nStun: 75% of Ravage\nMana Cost: 80\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_tidehunter_4",
+            "image": "tidehunter_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Kraken Shell damage block bonus increased from 6/12 to 8/16"
+              }
+            ],
+            "talent_text": "Kraken Shell Damage Block Increase: 8/16"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tiny_17",
+            "image": "tiny_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Spell damage bonus during Tree Grab increased from 8%/16%/24% to 10%/20%/30%"
+              }
+            ],
+            "talent_text": "Increase Spell Damage while using Tree Grab: 10%/20%/30%"
+          },
+          {
+            "talent_id": "modifier_tiny_21",
+            "image": "tiny_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also grants 20 Intelligence"
+              }
+            ],
+            "talent_text": "Toss can be cast on an area.\n\nToss Damage Radius Increase: 100\n\nIntelligence: 20"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "undying_flesh_golem_custom",
+          "name": "Flesh Golem",
+          "image": "undying_flesh_golem.webp",
+          "ability_notes": [
+            {
+              "parameter": "slow",
+              "note": "Movement slow increased from 15%/20%/25% to 20%/25%/30%"
+            },
+            {
+              "parameter": "damage_amp",
+              "note": "Damage amplification on attacked enemies increased from 10%/15%/20% to 15%/20%/25%"
+            },
+            {
+              "parameter": "movement_bonus",
+              "note": "Movement speed bonus decreased from 20/30/40 to 20"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_undying_2",
+            "image": "undying_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Decay pull distance increased from 50/100 to 60/120"
+              }
+            ],
+            "talent_text": "Decay pulls all affected enemies towards the Hero by a Distance: 60/120"
+          },
+          {
+            "talent_id": "modifier_undying_3",
+            "image": "undying_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Hypnodancer cooldown decreased from 30s to 25s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Tombstone. </font></b>\n\nNew Active Ability: Hypnodancer\n\nThe hero gains speed and casts Decay around himself every 3 seconds. You cannot attack and also gain unlimited vision.\n\nDuration: 3 sec.\nMovement Speed: 20% Radius: 600\nCooldown: 25 sec."
+          },
+          {
+            "talent_id": "modifier_undying_5",
+            "image": "undying_5.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Decay steal duration bonus increased from 5/10s to 10/20s"
+              }
+            ],
+            "talent_text": "Hypnodancer Mana Cost and Loss Reduction: 50%/100%\n\nDecay Duration Increase: 10/20 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_8",
+            "image": "void_spirit_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Resonant Pulse barrier bonus increased from 50%/100% to 100%/200% of Agility"
+              }
+            ],
+            "talent_text": "The Resonant Pulse barrier cannot be dispelled and absorbs all damage.\n\nResonant Pulse Barrier Increase: 100%/200% of Agility"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_warlock_7",
+            "image": "warlock_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Damage bonus per Fatal Bonds target increased from 100 to 150"
+              }
+            ],
+            "talent_text": "Damage Increase by 150 for each Fatal Bonds target."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_windranger_22",
+            "image": "windranger_22.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Powershot damage bonus increased from 30%/50%/70% to 30%/55%/80% of Intelligence"
+              }
+            ],
+            "talent_text": "Powershot Damage Increase: 30%/55%/80% of Intellect"
+          },
+          {
+            "talent_id": "modifier_windranger_18",
+            "image": "windranger_18.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Shackleshot before stunning reduces Status Resistance: 8%/16%/24%. Duration: 10 seconds» replaced with «Shackleshot duration is always maximum. Magic Resistance: 7%/14%»"
+              }
+            ],
+            "talent_text": "Shackleshot duration is always maximum.\n\nMagic Resistance: 7%/14%"
+          },
+          {
+            "talent_id": "modifier_windranger_17",
+            "image": "windranger_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Shackleshot duration is always maximum. Magic Resistance: 7%/14%» replaced with «Shackleshot before stunning reduces Status Resistance: 8%/16%/24%. Duration: 10 seconds»"
+              }
+            ],
+            "talent_text": "Shackleshot before stunning reduces Status Resistance: 8%/16%/24%\n\nDuration: 10 seconds"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_winter_wyvern_1",
+            "image": "winter_wyvern_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Cleave damage changed from 20%/40% to 30%"
+              }
+            ],
+            "talent_text": "Hero attacks deal area damage.\n\nCleave Damage: 30%\nRadius: 250"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_2",
+            "image": "winter_wyvern_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Damage bonus changed from 12/24 to 15/30/45"
+              },
+              {
+                "note": "Armor bonus changed from 3/6 to 2/4/6"
+              }
+            ],
+            "talent_text": "Damage: 15/30/45\n\nArmor: 2/4/6"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_5",
+            "image": "winter_wyvern_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Cold Embrace damage return bonus increased from 40%/60%/80% to 50%/75%/100%"
+              },
+              {
+                "note": "Now also reduces mana cost and drain by 10%/20%/30%"
+              }
+            ],
+            "talent_text": "Cold Embrace increases damage return from all sources: 50%/75%/100%\n\nMana Cost and Loss Reduction: 10%/20%/30%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_wraith_king_12",
+            "image": "wraith_king_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Mana cost and drain reduction decreased from 60% to 50%"
+              },
+              {
+                "note": "No longer grants 9 Agility"
+              }
+            ],
+            "talent_text": "Mana Loss Reduction: 50%"
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

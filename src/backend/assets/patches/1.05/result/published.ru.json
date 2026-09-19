@@ -1,0 +1,1951 @@
+{
+  "patch_number": "1.05",
+  "patch_name": "1.05",
+  "patch_timestamp": 1788983979,
+  "general": {
+    "global_changes": [
+      {
+        "title": "Общие изменения"
+      },
+      {
+        "note": "Начался новый рейтинговый сезон"
+      },
+      {
+        "note": "Добавлен рейтинг по героям для Arena"
+      },
+      {
+        "note": "Небольшие улучшения режима Arena"
+      },
+      {
+        "note": "Добавлено колесо чата для всех героев с прокачкой за ранг"
+      },
+      {
+        "title": "Таланты"
+      },
+      {
+        "subtitle": "Сила"
+      },
+      {
+        "note": "Талант «Сила»: прибавка к базовому урону за атрибут уменьшена с 0,1 до 0,05"
+      },
+      {
+        "subtitle": "Ловкость"
+      },
+      {
+        "note": "Талант «Ловкость»: прибавка к базовому урону за атрибут уменьшена с 0,1 до 0,05"
+      },
+      {
+        "subtitle": "Интеллект"
+      },
+      {
+        "note": "Талант «Интеллект»: прибавка к базовому урону за атрибут уменьшена с 0,1 до 0,05"
+      },
+      {
+        "title": "Косметические предметы"
+      },
+      {
+        "note": "Добавлено 7 новых эффектов"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_desolator",
+        "name": "Desolator",
+        "image": "desolator.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "Бонус к урону увеличен с 50 до 55"
+          },
+          {
+            "parameter": "max_damage",
+            "note": "Soul Stealer: максимальный бонус к урону уменьшен с 50 до 30"
+          }
+        ]
+      },
+      {
+        "item_id": "item_devastator",
+        "name": "Parasma",
+        "image": "devastator.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус к броне уменьшен с 8 до 7"
+          }
+        ]
+      },
+      {
+        "item_id": "item_dragon_lance",
+        "name": "Dragon Lance",
+        "image": "dragon_lance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "base_attack_range",
+            "note": "Бонус к дальности атаки уменьшен со 150 до 140"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heaven_shield",
+        "name": "Heaven's Shield",
+        "image": "heaven_shield.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellImmunityType",
+            "note": "Disarm: теперь проходит сквозь невосприимчивость к эффектам"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "Heaven's Halberd",
+        "image": "heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "disarm_range",
+            "note": "Disarm: длительность бессилия для героев дальнего боя увеличена с 4 до 4,5 секунды"
+          },
+          {
+            "parameter": "disarm_melee",
+            "note": "Disarm: длительность бессилия для героев ближнего боя увеличена с 3 до 3,5 секунды"
+          }
+        ]
+      },
+      {
+        "item_id": "item_hurricane_pike",
+        "name": "Hurricane Pike",
+        "image": "hurricane_pike.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "base_attack_range",
+            "note": "Бонус к дальности атаки уменьшен со 150 до 140"
+          }
+        ]
+      },
+      {
+        "item_id": "item_maelstrom",
+        "name": "Maelstrom",
+        "image": "maelstrom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "illusion_multiplier_pct",
+            "note": "Chain Lightning: урон по иллюзиям уменьшен со 150% до 100%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mask_of_madness",
+        "name": "Mask of Madness",
+        "image": "mask_of_madness.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "berserk_bonus_attack_speed",
+            "note": "Berserk: бонус к скорости атаки уменьшен со 110 до 100"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mjollnir",
+        "name": "Mjollnir",
+        "image": "mjollnir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "illusion_multiplier_pct",
+            "note": "Chain Lightning: урон по иллюзиям уменьшен со 150% до 100%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_octarine_core",
+        "name": "Octarine Core",
+        "image": "octarine_core.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health",
+            "note": "Бонус к здоровью уменьшен с 500 до 450"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Бонус к мане уменьшен с 500 до 450"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pavise",
+        "name": "Pavise",
+        "image": "pavise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Protect: расход маны уменьшен со 100 до 60"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_desolator_2",
+        "name": "Stygian Desolator",
+        "image": "desolator_2.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "corruption_armor",
+            "note": "Снижение брони ослаблено с 13 до 10"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_psychic_headband",
+        "name": "Psychic Headband",
+        "image": "psychic_headband.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Перезарядка уменьшена с 20 до 15 секунд"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "sniper_shrapnel_custom",
+          "name": "Shrapnel",
+          "image": "sniper_shrapnel.webp",
+          "description": [
+            "Использует заряд шрапнели, покрывая указанную область дождём из разрывной дроби. Противники под ней получают урон и замедляются. Раскрывает туман войны в области действия. Заряд способности восстанавливается каждые 35 секунд. Замедление передвижения: -12% / -18% / -24% / -30%. Радиус: 400 / 425 / 450 / 475. Урон: 30 / 45 / 60 / 75. Длительность: 10. Восстановление заряда: 35. Дальность применения: 1800. Расход маны: 75."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "sniper_headshot_custom",
+          "name": "Headshot",
+          "image": "sniper_headshot.webp",
+          "description": [
+            "Герой стреляет точнее, отчего каждая его атака может нанести дополнительный урон, оттолкнуть жертву и ненадолго замедлить её передвижение и атаку на -100%. Чем ближе цель атаки, тем больше дальность отталкивания. Урон: 20 / 50 / 80 / 110. Шанс: 40%. Макс. дальность отталкивания: 50. Длительность замедления: 0,2 / 0,3 / 0,4 / 0,5."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "sniper_take_aim_custom",
+          "name": "Take Aim",
+          "image": "sniper_take_aim.webp",
+          "description": [
+            "Увеличивает радиус обзора, дальность атаки и шанс срабатывания Headshot. Под действием этой способности герой передвигается на 65% медленнее и видит только в конусе перед собой. Длительность: 3. Доп. дальность атаки: 100 / 150 / 200 / 250. Шанс срабатывания headshot: 100%. Доп. обзор: 500 / 750 / 1000 / 1250. Перезарядка: 20 / 18 / 16 / 14. Расход маны: 50."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "sniper_assassinate_custom",
+          "name": "Assassinate",
+          "image": "sniper_assassinate.webp",
+          "description": [
+            "Герой с огромного расстояния целится во вражеское существо и после небольшой задержки совершает сокрушительный выстрел, ненадолго оглушающий цель и наносящий как базовый урон, так и урон от атаки героя. Когда владелец этой способности убивает героя, её перезарядка сбрасывается. Урон: 300 / 400 / 500. Перезарядка: 20 / 15 / 10. Дальность применения: 3000. Расход маны: 175."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_sniper_1",
+            "image": "sniper_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Headshot можно активировать. Герой стреляет из дробовика по конической области действия, совершая 1 атаку по всем задетым целям. Гарантированно применяет Headshot на противников. После выстрела герой получает бессилие на 3 секунды. Длительность бессилия уменьшается сопротивлением эффектов. Дальность Выстрела: 450. Время Перезарядки: 3 сек"
+              }
+            ],
+            "talent_text": "Headshot можно активировать.\n\nГерой стреляет из дробовика по конической области действия, совершая 1 атаку по всем задетым целям. Гарантированно применяет Headshot на противников. После выстрела герой получает бессилие на 3 секунды. Длительность бессилия уменьшается сопротивленем эффектов.\n\nДальность Выстрела: 450\nВремя Перезарядки: 3 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_2",
+            "image": "sniper_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Максимальная скорость атаки равна 150.</font> Увеличение Урона Headshot: 30/60/90 + 1,5 за каждую единицу Силы"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 1»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Максимальная скорость атаки равна 150. </font></b>\n\nУвеличение Урона Headshot: 30/60/90 + 1.5 за каждые 1 Силы"
+          },
+          {
+            "talent_id": "modifier_sniper_3",
+            "image": "sniper_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Граната. Убирает Assassinate.</font> Новая Активная Способность: Molotov Cocktail. Герой выпускает в указанную область гранату, которая поджигает врагов нанося магический урон. Урон: 2%/3%/4% от Максимального Здоровья. Радиус: 375. Длительность Горения: 2 сек. Длительность Области: 8 сек. Затраты Маны: 50. Время Перезарядки: 20 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Граната.\n\nУбирает Assassinate. </font></b>\n\nНовая Активная Способность: Molotov Cocktail\n\nГерой выпускает в указанную область гранату, которая поджигает врагов нанося магический урон.\n\nУрон: 2%/3%/4% от Максимального Здоровья\nРадиус: 375\nДлительность Горения: 2 сек.\nДлительность Области: 8 сек.\nЗатраты Маны: 50\nВремя Перезарядки: 20 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_4",
+            "image": "sniper_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Сопротивление Эффектам: 10%/20%"
+              }
+            ],
+            "talent_text": "Сопротивление Эффектам: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_sniper_5",
+            "image": "sniper_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение Количества Атак при активации Headshot: 1 + 1 за каждые 300/200 Силы"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 2»"
+              }
+            ],
+            "talent_text": "Увеличение Количества Атак при активации Headshot: 1 + 1 за каждые 300/200 Силы"
+          },
+          {
+            "talent_id": "modifier_sniper_6",
+            "image": "sniper_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Дополнительная Дальность Заклинаний: 100/200. Уменьшение Времени Перезарядки: 5%/10%"
+              }
+            ],
+            "talent_text": "Дополнительная Дальность Заклинаний: 100/200\n\nУменьшение Времени Перезарядки: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_sniper_7",
+            "image": "sniper_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Максимальная скорость атаки равна 150.</font> Увеличение Длительности Замедления Headshot: 1 сек. Увеличение Дальности Отталкивания Headshot: 50"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Максимальная скорость атаки равна 150. </font></b>\n\nУвеличение Длительности Замедления Headshot: 1 сек.\n\nУвеличение Дальности Отталкивания Headshot: 50"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_sniper_8",
+            "image": "sniper_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Take Aim при Активации увеличивает Скорость Атаки: 30/60/90"
+              }
+            ],
+            "talent_text": "Take Aim при Активации увеличивает Скорость Атаки: 30/60/90"
+          },
+          {
+            "talent_id": "modifier_sniper_9",
+            "image": "sniper_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение Длительности Take Aim: 1/2 сек"
+              }
+            ],
+            "talent_text": "Увеличение Длительности Take Aim: 1/2 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_10",
+            "image": "sniper_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Граната. Убирает Shrapnel.</font> Новая Активная Способность: Smoke Grenade. Герой выпускает в указанную область гранату, которая создаёт дымовую завесу. Противники внутри завесы промахиваются атаками и не могут использовать способности. Радиус: 375. Шанс Промахнуться: 100%. Длительность: 8 сек. Затраты Маны: 50. Время Перезарядки: 20 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Граната.\n\nУбирает Shrapnel. </font></b>\n\nНовая Активная Способность: Smoke Grenade\n\nГерой выпускает в указанную область гранату, которая создаёт дымовую завесу. Противники внутри завесы промахиваются атаками и не могут использовать способности.\n\nРадиус: 375\nШанс Промахнуться: 100%\nДлительность: 8 сек.\nЗатраты Маны: 50\nВремя Перезарядки: 20 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_11",
+            "image": "sniper_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Убийства с помощью Assassinate увеличивают Ловкость: 1/2. Убийства с помощью Assassinate увеличивают Дальность Атаки: 5/10. Убийства до изучения таланта также учитываются"
+              }
+            ],
+            "talent_text": "Убийства с помощью Assassinate увеличивают Ловкость: 1/2\n\nУбийства с помощью Assassinate увеличивают Дальность Атаки: 5/10\n\nУбийства до изучения таланта также учитываются."
+          },
+          {
+            "talent_id": "modifier_sniper_12",
+            "image": "sniper_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Новая Пассивная Способность: Survive. Боевой опыт героя повышает восстановление здоровья и маны, если вы не получали урон за последние 3 секунды. Восстановление Здоровья и Маны: 1%/2%"
+              }
+            ],
+            "talent_text": "Новая Пассивная Способность: Survive\n\nБоевой опыт героя повышает восстановление здоровья и маны, если вы не получали урон за последние 3 секунды.\n\nВосстановление Здоровья и Маны: 1%/2%"
+          },
+          {
+            "talent_id": "modifier_sniper_13",
+            "image": "sniper_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Assassinate оглушает противников: 0,5/1/1,5 сек. Уменьшение Времени Подготовки Assassinate: 0,5/1/1,5 сек"
+              }
+            ],
+            "talent_text": "Assassinate оглушает противников: 0.5/1/1.5 сек.\n\nУменьшение Времени Подготовки Assassinate: 0.5/1/1.5 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_14",
+            "image": "sniper_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Take Aim даёт беспрепятственный обзор во все стороны"
+              }
+            ],
+            "talent_text": "Take Aim даёт беспрепятственный обзор во все стороны."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_15",
+            "image": "sniper_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Времени Перезарядки Shrapnel: 10/15/20 сек"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Shrapnel: 10/15/20 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_16",
+            "image": "sniper_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Граната. Убирает Take Aim.</font> Новая Активная Способность: Concussive Grenade. Герой выпускает в указанную область гранату, отталкиваясь в обратном направлении. Наносит врагам магический урон, а также толкает их от центра взрыва, накладывает на них бессилие и замедляет передвижение. Урон: 50 + 50%/75%/100% от Урона Атаки. Радиус: 375. Замедление Передвижения: 50%. Длительность: 2 сек. Дальность Толчка: 475. Затраты Маны: 50. Время Перезарядки: 20 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Граната.\n\nУбирает Take Aim. </font></b>\n\nНовая Активная Способность: Concussive Grenade\n\nГерой выпускает в указанную область гранату, отталкиваясь в обратном направлении. Наносит врагам магический урон, а также толкает их от центра взрыва, накладывает на них бессилие и замедляет передвижение.\n\nУрон: 50 + 50%/75%/100% от Урона Атаки\nРадиус: 375\nЗамедление Передвижения: 50%\nДлительность: 2 сек.\nДальность Толчка: 475\nЗатраты Маны: 50\nВремя Перезарядки: 20 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_17",
+            "image": "sniper_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Граната. Убирает Headshot.</font> Новая Активная Способность: Flashbang Grenade. Герой выпускает в указанную область гранату, которая уменьшает обзор врагов и оглушает их. Радиус: 375. Уменьшение Обзора: 75%. Длительность Оглушения: 1,5 сек. Затраты Маны: 50. Время Перезарядки: 20 сек. Если выучить 4 гранаты, то применение Гранат уменьшает Время Перезарядки других Гранат: 2 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Граната.\n\nУбирает Headshot. </font></b>\n\nНовая Активная Способность: Flashbang Grenade\n\nГерой выпускает в указанную область гранату, которая уменьшает обзор врагов и оглушает их.\n\nРадиус: 375\nУменьшение Обзора: 75%\nДлительность Оглушения: 1.5 сек.\nЗатраты Маны: 50\nВремя Перезарядки: 20 сек.\n\n\nЕсли выучить 4 гранаты, то:\n\nПрименение Гранат уменьшает Время Перезарядки других Гранат: 2 сек."
+          },
+          {
+            "talent_id": "modifier_sniper_18",
+            "image": "sniper_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Уменьшение Длительности Shrapnel: 2/3/4 сек.</font> Увеличение Урона Shrapnel: 20/40/60"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Уменьшение Длительности Shrapnel: 2/3/4 сек. </font></b>\n\nУвеличение Урона Shrapnel: 20/40/60"
+          },
+          {
+            "talent_id": "modifier_sniper_19",
+            "image": "sniper_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение Радиуса Shrapnel: 125. Увеличение Урона Shrapnel: 50% от Восстановления Маны"
+              }
+            ],
+            "talent_text": "Увеличение Радиуса Shrapnel: 125\n\nУвеличение Урона Shrapnel: 50% от Восстановления Маны"
+          },
+          {
+            "talent_id": "modifier_sniper_20",
+            "image": "sniper_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение Зарядов Shrapnel: 1/2"
+              }
+            ],
+            "talent_text": "Увеличение Зарядов Shrapnel: 1/2"
+          },
+          {
+            "talent_id": "modifier_sniper_21",
+            "image": "sniper_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Эффекты нескольких Shrapnel складываются"
+              }
+            ],
+            "talent_text": "Эффекты нескольких Shrapnel складываются."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "name": "aghanim",
+      "image": "images/heroes/heroesPreview/aghanim.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_aghanim_7",
+            "image": "aghanim_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Aghanim Blast уменьшена с 25 до 18 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Water Bubble.</font></b>\n\nНовая Активная Способность: Aghanim Blast\n\nСоздаёт мощный взрыв вокруг героя, который оглушает противников и применяет на них Shard Blast.\n\nДлительность Оглушения: 2.2 сек.\nРадиус: 900\nВремя Перезарядки: 18 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "bounty_hunter_track_custom",
+          "name": "Track",
+          "image": "bounty_hunter_track.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядка уменьшена с 14 до 14/12/10 секунд"
+            },
+            {
+              "parameter": "duration",
+              "note": "Длительность увеличена с 18 до 25 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_7",
+            "image": "bounty_hunter_7.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение дополнительного урона Jinada усилено со 100/200 до 150/300"
+              }
+            ],
+            "talent_text": "Увеличение Дополнительного Урона Jinada: 150/300"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Бонус к силе увеличен с 0/8/16 до 7/14/21"
+              }
+            ],
+            "talent_text": "Shuriken Toss применяет эффект способности Jinada.\n\nСила: 7/14/21"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_5",
+            "image": "bounty_hunter_5.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Бонус к урону за каждый живой Мешочек Золота увеличен с 80 до 100"
+              }
+            ],
+            "talent_text": "Shuriken Toss можно применить на область.\n\nShuriken Toss создаёт бессмертный Мешочек Золота со способностью Track, который можно атаковать и на который можно применять способности. Увеличивает урон героя за каждый живой мешок.\n\nУрон: 100\nДлительность: 20 сек."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_bounty_hunter_9",
+            "image": "bounty_hunter_9.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 5/10 к ловкости"
+              }
+            ],
+            "talent_text": "Эффект Shadow Walk заканчивается только после 2/3 Атак.\n\nЛовкость: 5/10"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_13",
+            "image": "bounty_hunter_13.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Shadow Walk увеличивает Шанс Уклониться от Любого Урона: 4%/8%/12%» заменено на «Shadow Walk применяет Сильное Развеивание. Восстановление Здоровья: 15»"
+              }
+            ],
+            "talent_text": "Shadow Walk применяет Сильное Развеивание.\n\nВосстановление Здоровья: 15"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_12",
+            "image": "bounty_hunter_12.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Shadow Walk применяет Сильное Развеивание» заменено на «Shadow Walk увеличивает Шанс Уклониться от Любого Урона: 4%/8%/12%»"
+              }
+            ],
+            "talent_text": "Shadow Walk увеличивает Шанс Уклониться от Любого Урона: 4%/8%/12%"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Бонус к скорости передвижения увеличен с 15/30 до 20/40"
+              },
+              {
+                "note": "Теперь также даёт 4%/8% к урону от заклинаний"
+              }
+            ],
+            "talent_text": "Jinada даёт Золото за Крипов.\n\nУвеличение Золота Jinada: 6/12\n\nСкорость Передвижения: 20/40\n\nУрон от Заклинаний: 4%/8%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Track усилено с 6% до 8%"
+              }
+            ],
+            "talent_text": "Увеличение Доп. Золота Союзникам Track: 60\n\nУвеличение Урона Track: 8%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bristleback",
+      "name": "bristleback",
+      "image": "images/heroes/heroesPreview/bristleback.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bristleback_3",
+            "image": "bristleback_3.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "«Warpath не даёт Урон. Warpath даёт Скорость Атаки за Эффект: 10/14/18» заменено на «Применение Quill Spray увеличивает Восстановление Здоровья: 4. Длительность Эффекта: 10/20 сек. Не работает на Quill Spray от Bristleback»"
+              }
+            ],
+            "talent_text": "Применение Quill Spray увеличивает Восстановление Здоровья: 4\n\nДлительность Эффекта: 10/20 сек.\n\n<b><font color='#ff0000'>Не работает на Quill Spray от Bristleback.</font></b>"
+          },
+          {
+            "talent_id": "modifier_bristleback_2",
+            "image": "bristleback_2.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Применение Quill Spray увеличивает Восстановление Здоровья: 4. Длительность Эффекта: 10/20 сек. Не работает на Quill Spray от Bristleback» заменено на «Warpath увеличивает Силу за Эффект: 2/3/4»"
+              }
+            ],
+            "talent_text": "Warpath увеличивает Силу за Эффект: 2/3/4"
+          },
+          {
+            "talent_id": "modifier_bristleback_6",
+            "image": "bristleback_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Дополнительный урон Quill Spray увеличен с 1%/2%/3% до 2%/3%/4% от максимального здоровья"
+              }
+            ],
+            "talent_text": "Применение Quill Spray расходует 1% от Максимального Здоровья\n\nQuill Spray дополнительно наносит противникам Урон: 2%/3%/4% от Максимального Здоровья\n\n<b><font color='#ff0000'>Не работает на Quill Spray от Bristleback.</font></b>"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_10",
+            "image": "creep_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Counterspell увеличена с 11 до 12 секунд"
+              },
+              {
+                "note": "Расход маны Counterspell увеличен с 45 до 50"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Counterspell\n\nПассивно увеличивает сопротивление магическому урону. Можно применить, чтобы создать вокруг себя противомагический щит, который полностью блокирует и отражает все направленные заклинания обратно во врага.\n\nСопротивление Магии: 15%/20%/25%\nДлительность: 2 сек.\nВремя Перезарядки: 12 сек.\nЗатраты Маны: 50\n\n\nЗдоровье: 100/200/300"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_creep_16",
+            "image": "creep_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Расход маны Purge уменьшен со 100 до 50"
+              },
+              {
+                "note": "Перезарядка Purge уменьшена с 16 до 14 секунд"
+              },
+              {
+                "note": "Дальность применения Purge увеличена с 1000 до 1200"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Purge\n\nКрип способен снять отрицательные эффекты с союзника или положительные эффекты с врага. Замедляет передвижение вражеской цели.\n\nУрон: 50\nЗамедление Передвижения: 40%\nДлительность: 2/4 сек.\nДальность Применения: 1200\nЗатраты Маны: 50\nВремя Перезарядки: 14 сек."
+          },
+          {
+            "talent_id": "modifier_creep_18",
+            "image": "creep_18.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Petrify уменьшена с 10 до 8 секунд"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Petrify\n\nСледующая атака наложит на врага оцепенение, которое наносит магический урон каждую секунду.\n\nУрон в Секунду: 110% от Интеллекта\nДлительность: 2 сек.\nВремя Перезарядки: 8 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "crystal_maiden",
+      "name": "crystal maiden",
+      "image": "images/heroes/heroesPreview/crystal_maiden.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "crystal_maiden_arcane_aura_custom",
+          "name": "Arcane Aura",
+          "image": "crystal_maiden_arcane_aura.webp",
+          "ability_notes": [
+            {
+              "parameter": "base_mana_regen",
+              "note": "Восстановление маны изменено с 4,5/6/7,5/9 на 0,4/0,6/0,8/1"
+            },
+            {
+              "parameter": "proximity_mana_regen_tooltip",
+              "note": "Теперь на союзников в радиусе 1200 действует в 3 раза сильнее и даёт 1,2/1,8/2,4/3"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_crystal_maiden_16",
+            "image": "crystal_maiden_16.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение восстановления здоровья от Arcane Aura ослаблено с 4,5/9 до 1,5/3"
+              },
+              {
+                "note": "Теперь действует в 3 раза сильнее на союзников в радиусе 1200"
+              }
+            ],
+            "talent_text": "Arcane Aura увеличивает Восстановление Здоровья: 1.5/3\n\nДействует в 3 раза сильнее на союзников в радиусе 1200."
+          },
+          {
+            "talent_id": "modifier_crystal_maiden_17",
+            "image": "crystal_maiden_17.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Теперь усиление восстановления в 5 раз действует только на самого героя"
+              }
+            ],
+            "talent_text": "Arcane Aura восстанавливает герою в 5 раз больше Маны и Здоровья, если вы не использовали заклинание за последние: 4/2 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dazzle_1",
+            "image": "dazzle_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Чистый урон в секунду Good Juju увеличен с 50 + 1%/2%/3% до 50 + 2%/3%/4% от максимального здоровья"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает все способности.</font></b>\n\nНовая Пассивная Способность: Good Juju\n\nИспользование Предметов через 0.5 сек. создаёт под героем область внутри которой противники получают Чистый Урон в секунду: 50 + 2%/3%/4% от Максимального Здоровья\n\nРадиус: 300\nДлительность: 4 сек.\n\n<b><font color='#ff0000'> Не работает на переключаемые предметы. </font></b>"
+          },
+          {
+            "talent_id": "modifier_dazzle_5",
+            "image": "dazzle_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение восстановления маны от восстановления здоровья усилено с 15%/30% до 20%/40%"
+              }
+            ],
+            "talent_text": "Восстановление Здоровья увеличивает Восстановление Маны: 20%/40%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_spirit_siphon_custom",
+          "name": "Spirit Siphon",
+          "image": "death_prophet_spirit_siphon.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityChargeRestoreTime",
+              "note": "Базовое время восстановления заряда увеличено с 38 до 40 секунд"
+            },
+            {
+              "parameter": "haunt_duration",
+              "note": "Длительность увеличена с 5 до 6 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_death_prophet_19",
+            "image": "death_prophet_19.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус Witchcraft за уровень героя увеличен с 0,1%/0,2%/0,3% до 0,2%/0,3%/0,4%"
+              }
+            ],
+            "talent_text": "Новая Пассивная Способность: Witchcraft\n\nОккультные знания расширяются по мере получения опыта. Каждый уровень героя увеличивает Скорость Передвижения и уменьшает Время Перезарядки: 0.2%/0.3%/0.4%"
+          },
+          {
+            "talent_id": "modifier_death_prophet_21",
+            "image": "death_prophet_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Снижение сопротивления магии от Astral Mind усилено с 10% до 20%"
+              }
+            ],
+            "talent_text": "Exorcism наносит Магический Урон, а не Физический.\n\nНовая Пассивная Способность: Astral Mind\n\nAstral Mind уменьшает Сопротивление Магии противников в радиусе 1200 вокруг Героя: 20%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_doom_14",
+            "image": "doom_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Fueling Hell уменьшена с 22 до 20 секунд"
+              },
+              {
+                "note": "Fueling Hell больше не расходует 75 маны"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает DOOM.</font></b>\n\nНовая Активная Способность: Fueling Hell\n\nВыпускает круговую волну накладывающую Infernal Blade на задетые цели. Способность имеет 2 заряда.\n\nРадиус: 1600\nВремя Перезарядки: 20 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_earthshaker_16",
+            "image": "earthshaker_16.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Бонус к восстановлению маны увеличен с 0,3%/0,6% до 0,5%/1%"
+              },
+              {
+                "note": "Бонус к урону от заклинаний увеличен с 4%/8% до 5%/10%"
+              }
+            ],
+            "talent_text": "Восстановление Маны: 0.5%/1%\n\nУрон от Заклинаний: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_earthshaker_21",
+            "image": "earthshaker_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Увеличение базового урона Echo Slam усилено с 15% до 20% от максимальной маны"
+              },
+              {
+                "note": "Увеличение урона эха Echo Slam усилено с 3% до 4% от максимальной маны"
+              }
+            ],
+            "talent_text": "Увеличение Базового Урона Echo Slam: 20% от Максимальной Маны\n\nУвеличение Урона Эха Echo Slam: 4% от Максимальной Маны"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_jakiro_2",
+            "image": "jakiro_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Fire Gush уменьшена с 12 до 9 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Ice Path. </font></b>\n\nНовая Активная Способность: Fire Gush\n\nПризывает огненный поток, наносящий противникам магический урон и увеличивающий получаемый ими урон. Подействует на всех врагов на своём пути.\n\nРадиус волны: 260\nДальность волны: 1200\nУрон: 100 + 100%/200% от Силы\nУвеличение Урона по Противникам: 15%\nДлительность Эффекта: 4 сек.\nЗатраты Маны: 50\nВремя Перезарядки: 9 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_kazurai_katana_custom",
+          "name": "Kazurai Katana",
+          "image": "kez_kazurai_katana.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal_reduction_pct",
+              "note": "Больше не уменьшает лечение на 10%/15%/20%/25%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_kunkka_2",
+            "image": "kunkka_2.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Torrent усилено с 40%/80%/120% до 80%/120%/160% от восстановления здоровья"
+              }
+            ],
+            "talent_text": "Увеличение Урона Torrent: 80%/120%/160% от Восстановления Здоровья"
+          },
+          {
+            "talent_id": "modifier_kunkka_4",
+            "image": "kunkka_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Tidebringer усилено с 40%/80%/120% до 80%/120%/160% от восстановления здоровья"
+              }
+            ],
+            "talent_text": "Увеличение Урона Tidebringer: 80%/120%/160% от Восстановления Здоровья"
+          },
+          {
+            "talent_id": "modifier_kunkka_7",
+            "image": "kunkka_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Усиление восстановления здоровья в луже Torrent усилено с 50% до 70%"
+              }
+            ],
+            "talent_text": "Увеличение Радиуса Torrent: 80\n\nTorrent оставляет на земле небольшую лужу в которой союзные существа имеют Усиление Восстановления Здоровья: 70%\n\nДлительность Лужи: 5 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_kunkka_19",
+            "image": "kunkka_19.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "«X Marks the Spot применяется моментально. X Marks the Spot каждую секунду Исцеляет союзников или наносит Магический Урон противникам: 30%/45%/60% от Преодолённого Расстояния» заменено на «Tidebringer отталкивает задетые цели: 250/500. Урон от Заклинаний: 8%/16%»"
+              }
+            ],
+            "talent_text": "Tidebringer отталкивает задетые цели: 250/500\n\nУрон от Заклинаний: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_kunkka_15",
+            "image": "kunkka_15.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Tidebringer отталкивает задетые цели на 225/450. Урон от Заклинаний: 8%/16%» заменено на «X Marks the Spot применяется моментально. X Marks the Spot каждую секунду Исцеляет союзников или наносит Магический Урон противникам: 30%/45%/60% от Преодолённого Расстояния»"
+              }
+            ],
+            "talent_text": "X Marks the Spot применяется моментально.\n\nX Marks the Spot каждую секунду Исцеляет союзников или наносит Магический Урон противникам: 30%/45%/60% от Преодолённого Расстояния."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "lion",
+      "name": "lion",
+      "image": "images/heroes/heroesPreview/lion.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lion_15",
+            "image": "lion_15.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 10 к интеллекту"
+              }
+            ],
+            "talent_text": "Увеличение Числа Earth Spike: 2\n\nИнтеллект: 10"
+          },
+          {
+            "talent_id": "modifier_lion_17",
+            "image": "lion_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус к урону от заклинаний увеличен с 8% до 10%"
+              }
+            ],
+            "talent_text": "Finger of Death действует на существ в небольшой области.\n\nРадиус: 300\n\nУрон от Заклинаний: 10%"
+          },
+          {
+            "talent_id": "modifier_lion_18",
+            "image": "lion_18.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Уменьшение перезарядки Finger of Death усилено с 5/10/15 до 6/12/18 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Finger of Death: 6/12/18 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_lone_druid_12",
+            "image": "lone_druid_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Уменьшение перезарядки Savage Roar ослаблено с 5/10 до 4/8 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Savage Roar: 4/8 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_morphling_21",
+            "image": "morphling_21.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Бонус к скорости передвижения увеличен с 30 до 50"
+              }
+            ],
+            "talent_text": "1 Здоровья за каждые 2 Максимума Маны\n\nСкорость Передвижения: 50"
+          },
+          {
+            "talent_id": "modifier_morphling_18",
+            "image": "morphling_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Перезарядка после трёх срабатываний уменьшена с 10 до 5 секунд"
+              }
+            ],
+            "talent_text": "Каждое применение вражеской способности во время Morph создаёт ослабленный Waterraze на ближайшей цели. В первую очередь на героях. Уходит на перезарядку в 5 сек. после трёх срабатываний.\n\nУрон: 50% от Урона Waterraze\nРадиус: 900"
+          },
+          {
+            "talent_id": "modifier_morphling_20",
+            "image": "morphling_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение максимума маны от Waterraze усилено с 2%/4%/6% до 3%/4,5%/6%"
+              }
+            ],
+            "talent_text": "Применение Waterraze увеличивает Максимум Маны: 3%/4.5%/6%\n\nДлительность Эффекта: 15 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_necrophos_4",
+            "image": "necrophos_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 4/8/12 к силе"
+              }
+            ],
+            "talent_text": "Ghost Shroud увеличивает Скорость Передвижения за Каждого Врага: 8%/16%/24%\n\nСила: 4/8/12"
+          },
+          {
+            "talent_id": "modifier_necrophos_5",
+            "image": "necrophos_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Уменьшение пополнения здоровья противников от Heartstopper Aura изменено с 5%/10%/15% на 10%/20%"
+              }
+            ],
+            "talent_text": "Heartstopper Aura уменьшает Пополнение Здоровья Противников: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_necrophos_6",
+            "image": "necrophos_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Heartstopper Aura изменено с 0,1%/0,2% на 0,1%/0,2%/0,3%"
+              }
+            ],
+            "talent_text": "Увеличение Урона Heartstopper Aura: 0.1%/0.2%/0.3%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pudge",
+      "name": "pudge",
+      "image": "images/heroes/heroesPreview/pudge.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_pudge_6",
+            "image": "pudge_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Уменьшение пополнения здоровья противников от Rot усилено с 8%/16% до 10%/20%"
+              }
+            ],
+            "talent_text": "Rot уменьшает Пополнение Здоровья Противников: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_pudge_7",
+            "image": "pudge_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Теперь также уменьшает перезарядку Dismember на 5 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Dismember: 5 сек.\n\nУвеличение Длительности Dismember: 1 сек.\n\nDismember отключает Пассивные Способности Цели во время действия."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_pudge_21",
+            "image": "pudge_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 15% к урону от заклинаний"
+              }
+            ],
+            "talent_text": "Meat Hook срабатывает во Все Стороны вокруг героя.\n\nУрон от Заклинаний: 15%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_roshan_12",
+            "image": "roshan_12.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Использование предметов теперь применяет Bash со 100% шансом, а не с шансом срабатывания Bash"
+              }
+            ],
+            "talent_text": "Использование Предметов применяет Bash на случайного противника в Радиусе: 900\n\nШанс срабатывания: 100%\n\nВ первую очередь на героев."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_shadow_fiend_3",
+            "image": "shadow_fiend_3.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Восстановление здоровья увеличено с 0,25%/0,5%/0,75% до 0,3%/0,6%/0,9%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Feast of Souls.</font></b>\n\nВосстановление Здоровья: 0.3%/0.6%/0.9%"
+          },
+          {
+            "talent_id": "modifier_shadow_fiend_5",
+            "image": "shadow_fiend_5.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Штраф к урону от заклинаний ослаблен с 45%/40%/35% до 40%/35%/30%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Presence Of The Dark Lord.</font></b>\n\n<b><font color='#ff0000'>Урон от Заклинаний: -40%/-35%/-30%</font></b>\n\nRighteous Lord наносит Противникам Чистый Урон."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "skywrath_mage",
+      "name": "skywrath mage",
+      "image": "images/heroes/heroesPreview/skywrath_mage.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_skywrath_mage_16",
+            "image": "skywrath_mage_16.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Барьер теперь поглощает любой урон"
+              }
+            ],
+            "talent_text": "Применение любых способностей дарует Барьер поглощающий Любой Урон: 10/20\n\nДлительность Эффекта: 20 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_slardar_5",
+            "image": "slardar_5.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение снижения брони Corrosive Haze усилено с 5 до 8"
+              }
+            ],
+            "talent_text": "Увеличение Снижения Брони Corrosive Haze: 8"
+          },
+          {
+            "talent_id": "modifier_slardar_3",
+            "image": "slardar_3.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение длительности оглушения Slithereen Crush усилено с 0,3/0,6 до 0,4/0,8 секунды"
+              }
+            ],
+            "talent_text": "Увеличение Длительности Оглушения Slithereen Crush: 0.4/0.8 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slardar_21",
+            "image": "slardar_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Увеличение получаемого урона от заклинаний от Corrosive Haze усилено с 40% до 50%"
+              }
+            ],
+            "talent_text": "Corrosive Haze Увеличивает Весь Получаемый Урон от Заклинаний: 50%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_spirit_breaker_1",
+            "image": "spirit_breaker_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Бонус к скорости атаки в 6/12 заменён на 2/4 к броне"
+              }
+            ],
+            "talent_text": "Восстановление Здоровья: 3/6\n\nБроня: 2/4"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_2",
+            "image": "spirit_breaker_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Урон в секунду Bulldoze увеличен со 100%/150% до 20 + 100%/150% от восстановления здоровья"
+              }
+            ],
+            "talent_text": "Bulldoze наносит противникам рядом с вами Магический Урон в секунду: 20 + 100%/150% от Восстановления Здоровья\n\nРадиус: 300"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_7",
+            "image": "spirit_breaker_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 0,5% к восстановлению здоровья"
+              }
+            ],
+            "talent_text": "Bulldoze нельзя развеять.\n\nВосстановление Здоровья: 0.5%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_spirit_breaker_13",
+            "image": "spirit_breaker_13.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус к скорости атаки увеличен с 20/40 до 25/50"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Nether Strike.</font></b>\n\nGreater Bash можно активировать.\n\nСоздаёт светоч времени, который может атаковать только герой с увеличенной на 300/400 Скоростью Атаки. Каждая атака по светочу восстанавливает 3% от Максимального Здоровья и увеличивает Урон от Заклинаний на 3%.\n\nДлительность Урона от Заклинаний: 7 сек.\nДлительность Светоча: 20 сек.\nВремя Перезарядки: 20 сек.\n\n\nСкорость Атаки: 25/50"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spirit_breaker_16",
+            "image": "spirit_breaker_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Бонус к броне в 2/4 заменён на 200/400 к мане"
+              }
+            ],
+            "talent_text": "Уклонение: 7%/14%\n\nМана: 200/400"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_17",
+            "image": "spirit_breaker_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Снижение сопротивления магии от Nether Strike усилено с 10%/20% до 15%/30%"
+              },
+              {
+                "note": "Длительность эффекта теперь составляет 8 секунд"
+              }
+            ],
+            "talent_text": "Nether Strike уменьшает Сопротивление Магии задетых целей: 15%/30%\n\nДлительность: 8 сек.\n\nNether Strike срабатывает на всех существ в радиусе: 400"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_19",
+            "image": "spirit_breaker_19.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Уменьшение перезарядки Nether Strike усилено с 2/4/6 до 4/6/8 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение задержки перед применением способностей: 10%/20%/30%\n\nУменьшение Времени Перезарядки Nether Strike: 4/6/8 сек."
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_21",
+            "image": "spirit_breaker_21.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение всего наносимого урона от Ауры Времени усилено с 20% до 25%"
+              }
+            ],
+            "talent_text": "Аура Времени увеличивает Весь Наносимый Урон по противникам на 25%, но чем дальше враг, тем слабее эффект.\n\nРадиус: 1200"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_2",
+            "image": "techies_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Больше не ограничивает текущее здоровье 75%"
+              },
+              {
+                "note": "Максимальная прочность барьера уменьшена с 25% до 15% от максимального здоровья"
+              }
+            ],
+            "talent_text": "Навсегда дарует Барьер поглощающий Любой Урон.\n\nМаксимальная Прочность Барьера: 15% от Максимального Здоровья\n\nСкорость Восстановления Барьера: 0.9%/1.1%/1.3% от Максимального Здоровья"
+          },
+          {
+            "talent_id": "modifier_techies_7",
+            "image": "techies_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Blast Off! теперь не расходует ману"
+              }
+            ],
+            "talent_text": "Blast Off! не требует Маны.\n\nУменьшение задержки перед применением Blast Off!: 90%\n\nУвеличение Длительности Оглушения Blast Off!: 1 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tidehunter",
+      "name": "tidehunter",
+      "image": "images/heroes/heroesPreview/tidehunter.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tidehunter_2",
+            "image": "tidehunter_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Шанс создания Щупальца Ravage увеличен с 20%/30%/40% до 20%/40%/60%"
+              }
+            ],
+            "talent_text": "Каждая Атака по герою может создать рядом с противником Щупальце Ravage.\n\nУрон: 50% от Ravage\nОглушение: 50% от Ravage\nШанс: 20%/40%/60%\nВремя Перезарядки: 10/9/8 сек.\n\nЕсли Ravage не изучен, то:\nУрон: 75\nОглушение: 1 сек."
+          },
+          {
+            "talent_id": "modifier_tidehunter_3",
+            "image": "tidehunter_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Урон Tendrils of the Deep увеличен с 50% до 75% от урона Ravage"
+              },
+              {
+                "note": "Длительность оглушения Tendrils of the Deep увеличена с 50% до 75% от оглушения Ravage"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Tendrils of the deep\n\nГерой выпускает в указанном напралении волну Щупалец Ravage, оглушающую врагов и наносящую им урон.\n\nУрон: 75% от Ravage\nОглушение: 75% от Ravage\nЗатраты Маны: 80\nВремя Перезарядки: 20 сек."
+          },
+          {
+            "talent_id": "modifier_tidehunter_4",
+            "image": "tidehunter_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение блока урона Kraken Shell усилено с 6/12 до 8/16"
+              }
+            ],
+            "talent_text": "Увеличение Блока Урона Kraken Shell: 8/16"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tiny_17",
+            "image": "tiny_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона от заклинаний во время Tree Grab усилено с 8%/16%/24% до 10%/20%/30%"
+              }
+            ],
+            "talent_text": "Увеличение Урона от Заклинаний во время использования Tree Grab: 10%/20%/30%"
+          },
+          {
+            "talent_id": "modifier_tiny_21",
+            "image": "tiny_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 20 к интеллекту"
+              }
+            ],
+            "talent_text": "Toss можно применять на область.\n\nУвеличение Радиуса Урона Toss: 100\n\nИнтеллект: 20"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "undying_flesh_golem_custom",
+          "name": "Flesh Golem",
+          "image": "undying_flesh_golem.webp",
+          "ability_notes": [
+            {
+              "parameter": "slow",
+              "note": "Замедление передвижения усилено с 15%/20%/25% до 20%/25%/30%"
+            },
+            {
+              "parameter": "damage_amp",
+              "note": "Увеличение урона, получаемого жертвами атак, усилено с 10%/15%/20% до 15%/20%/25%"
+            },
+            {
+              "parameter": "movement_bonus",
+              "note": "Бонус к скорости передвижения уменьшен с 20/30/40 до 20"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_undying_2",
+            "image": "undying_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Дальность подтягивания противников Decay увеличена с 50/100 до 60/120"
+              }
+            ],
+            "talent_text": "Decay подтягивает к Герою всех Задетых Противников на Расстояние: 60/120"
+          },
+          {
+            "talent_id": "modifier_undying_3",
+            "image": "undying_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Hypnodancer уменьшена с 30 до 25 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Tombstone. </font></b>\n\nНовая Активная Способность: Hypnodancer\n\nГерой ускоряется и применяет Decay вокруг себя раз в 3 секунды. Вы не можете атаковать, а также получаете Беспрепятственный Обзор.\n\nДлительность: 3 сек.\nСкорость Передвижения: 20%\nРадиус: 600\nВремя Перезарядки: 25 сек."
+          },
+          {
+            "talent_id": "modifier_undying_5",
+            "image": "undying_5.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение длительности похищения Decay усилено с 5/10 до 10/20 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение Расхода и Потери Маны во время Hypnodancer: 50%/100%\n\nУвеличение Длительности Похищения Decay: 10/20 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_void_spirit_8",
+            "image": "void_spirit_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение барьера Resonant Pulse усилено с 50%/100% до 100%/200% от ловкости"
+              }
+            ],
+            "talent_text": "Барьер Resonant Pulse нельзя развеять и он поглощает любой урон.\n\nУвеличение Барьера Resonant Pulse: 100%/200% от Ловкости"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_warlock_7",
+            "image": "warlock_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона за каждую цель Fatal Bonds усилено со 100 до 150"
+              }
+            ],
+            "talent_text": "Увеличение Урона на 150 за каждую цель Fatal Bonds."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_windranger_22",
+            "image": "windranger_22.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Powershot усилено с 30%/50%/70% до 30%/55%/80% от интеллекта"
+              }
+            ],
+            "talent_text": "Увеличение Урона Powershot: 30%/55%/80% от Интеллекта"
+          },
+          {
+            "talent_id": "modifier_windranger_18",
+            "image": "windranger_18.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Shackleshot перед оглушением снижает Сопротивление Эффектам: 8%/16%/24%. Длительность: 10 сек» заменено на «Длительность Shackleshot всегда максимальная, независимо от привязки цели. Сопротивление Магии: 7%/14%»"
+              }
+            ],
+            "talent_text": "Длительность Shackleshot всегда максимальная, независимо от привязки цели.\n\nСопротивление Магии: 7%/14%"
+          },
+          {
+            "talent_id": "modifier_windranger_17",
+            "image": "windranger_17.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Длительность Shackleshot всегда максимальная, независимо от привязки цели. Сопротивление Магии: 7%/14%» заменено на «Shackleshot перед оглушением снижает Сопротивление Эффектам: 8%/16%/24%. Длительность: 10 сек»"
+              }
+            ],
+            "talent_text": "Shackleshot перед оглушением снижает Сопротивление Эффектам: 8%/16%/24%\n\nДлительность: 10 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_winter_wyvern_1",
+            "image": "winter_wyvern_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Прорубающий урон изменён с 20%/40% на 30%"
+              }
+            ],
+            "talent_text": "Атаки героя наносят урон по области.\n\nПрорубающий Урон: 30%\nРадиус: 250"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_2",
+            "image": "winter_wyvern_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Бонус к урону изменён с 12/24 на 15/30/45"
+              },
+              {
+                "note": "Бонус к броне изменён с 3/6 на 2/4/6"
+              }
+            ],
+            "talent_text": "Урон: 15/30/45\n\nБроня: 2/4/6"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_5",
+            "image": "winter_wyvern_5.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение возврата урона от Cold Embrace усилено с 40%/60%/80% до 50%/75%/100%"
+              },
+              {
+                "note": "Теперь также уменьшает расход и потерю маны на 10%/20%/30%"
+              }
+            ],
+            "talent_text": "Cold Embrace увеличивает возвращение урона от всех источников: 50%/75%/100%\n\nУменьшение Расхода и Потери Маны: 10%/20%/30%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_wraith_king_12",
+            "image": "wraith_king_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Уменьшение расхода и потери маны ослаблено с 60% до 50%"
+              },
+              {
+                "note": "Больше не даёт 9 к ловкости"
+              }
+            ],
+            "talent_text": "Уменьшение Расхода и Потери Маны: 50%"
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

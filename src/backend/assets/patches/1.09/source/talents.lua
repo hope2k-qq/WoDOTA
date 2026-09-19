@@ -130,10 +130,29 @@ function WodaTalents:talent_learn(params)
     -- Сохранение визуала
     CustomNetTables:SetTableValue("playerstalents", tostring(player_id), WodaTalents.playerstalents[player_id])
     -- Добавление модификатора
-    Timers:CreateTimer(0,function()	
-        if hero and not hero:IsAlive() then return 0.1 end
-        local modifier_talent = hero:AddNewModifier(hero, nil, talent_name, {})
-    end)
+
+    if not hero.talents_timers_list then
+        hero.talents_timers_list = {}
+    end
+    
+    table.insert(hero.talents_timers_list, talent_name)
+
+    if not hero.RespawnTimer then
+        hero.RespawnTimer = Timers:CreateTimer(0,function()
+            if not hero.RespawnTimer then return end
+            if hero and not hero:IsAlive() then return 0.1 end
+            if hero.talents_timers_list and #hero.talents_timers_list > 0 then
+                for i=1, #hero.talents_timers_list do
+                    local talent_name_backup = table.remove(hero.talents_timers_list, 1)
+                    if talent_name_backup then
+                        hero:AddNewModifier(hero, nil, talent_name_backup, {})
+                    end
+                end
+            end
+            hero.RespawnTimer = nil
+        end)
+    end
+
     -- Квесты на талант
     if params.attribute == "str" then
         player_system:PlayerQuestProgress(player_id, 15, 1)

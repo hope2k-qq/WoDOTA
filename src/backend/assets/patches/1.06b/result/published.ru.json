@@ -1,0 +1,176 @@
+{
+  "patch_number": "1.06b",
+  "patch_name": "1.06b",
+  "patch_timestamp": 1788986931,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "juggernaut_omni_slash_custom",
+          "name": "Omnislash",
+          "image": "juggernaut_omni_slash.webp",
+          "ability_notes": [
+            {
+              "parameter": "duration",
+              "note": "Длительность увеличена с 2,5 до 2,5/2,75/3 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "monkey_king",
+      "name": "monkey king",
+      "image": "images/heroes/heroesPreview/monkey_king.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_monkey_king_13",
+            "image": "monkey_king_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение перезарядки Mischief ослаблено с 8 до 5 секунд"
+              },
+              {
+                "note": "Длительность эффекта Руны увеличена с 1/1,5/2 до 1/2/3 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Увеличение Времени Перезарядки Mischief: 5 сек. </font></b>\n\nMischief всегда превращает в Руну. Когда маскировка спадает, герой получает кратковременный бонус соответствующей Руны: Усиление Урона, Волшебство, Ускорение, Иллюзии, Регенерация, Щит.\n\nДлительность Эффекта Руны: 1/2/3 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "riki",
+      "name": "riki",
+      "image": "images/heroes/heroesPreview/riki.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_riki_1",
+            "image": "riki_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Теперь Blink Strike всегда совершает атаку"
+              }
+            ],
+            "talent_text": "Blink Strike наносит урон всем противникам в радиусе 300 вокруг цели.\n\nBlink Strike всегда совершает Атаку."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_riki_8",
+            "image": "riki_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение дополнительной ловкости Tricks of the Trade усилено с 10/20/30 до 15/30/45"
+              }
+            ],
+            "talent_text": "Увеличение Доп. Ловкости Tricks of the Trade: 15/30/45\n\nУвеличение Дальности Применения Tricks of the Trade: 50/100/150"
+          },
+          {
+            "talent_id": "modifier_riki_9",
+            "image": "riki_9.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 10 к ловкости"
+              }
+            ],
+            "talent_text": "Tricks of the Trade позволяет спрятаться в союзного героя на время действия и добавляет 1 жертву для каждой атаки.\n\nЛовкость: 10"
+          },
+          {
+            "talent_id": "modifier_riki_11",
+            "image": "riki_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Шанс союзников уклониться от любого урона в Smoke Screen увеличен с 6%/12% до 7%/14%"
+              }
+            ],
+            "talent_text": "Союзники внутри Smoke Screen получают Шанс Уклониться от Любого Урона: 7%/14%"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_riki_17",
+            "image": "riki_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Smoke Screen усилено с 30%/50%/70% до 40%/60%/80% от интеллекта"
+              },
+              {
+                "note": "Увеличение радиуса Smoke Screen усилено с 20/40/60 до 40/60/80"
+              }
+            ],
+            "talent_text": "Увеличение Урона Smoke Screen: 40%/60%/80% от Интеллекта\n\nУвеличение Радиуса Smoke Screen: 40/60/80"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_death_ward_custom",
+          "name": "Death Ward",
+          "image": "witch_doctor_death_ward.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Дальность применения уменьшена с 600 до 500"
+            },
+            {
+              "parameter": "attack_range_tooltip",
+              "note": "Дальность атаки тотема уменьшена с 700 до 600"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

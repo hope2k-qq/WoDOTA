@@ -1,0 +1,423 @@
+{
+  "patch_number": "1.04b",
+  "patch_name": "1.04b",
+  "patch_timestamp": 1788983030,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Базовая броня уменьшена на 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "drow_ranger",
+      "name": "drow ranger",
+      "image": "images/heroes/heroesPreview/drow_ranger.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_drow_ranger_5",
+            "image": "drow_ranger_5.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Новая Пассивная Способность: Переохлаждение. Frost Arrow накладывают стаки Переохлаждения, которые уменьшают пополнение здоровья на 5%. Если враг умирает под действием Переохлаждения, то он взорвётся и нанесёт Магический Урон от Frost Arrow всем вокруг за каждый стак. Максимум стаков: 6» заменено на «Стрелы героя разделяются при попадании по противнику и поражают случайную цель неподалёку нанося 50% урона. Каждая такая стрела считается обычной атакой. Количество целей: 1/2»"
+              }
+            ],
+            "talent_text": "Стрелы героя разделяются при попадании по противнику и поражают случайную цель неподалёку нанося 50% урона. Каждая такая стрела считается обычной атакой.\n\nКоличество целей: 1/2"
+          },
+          {
+            "talent_id": "modifier_drow_ranger_4",
+            "image": "drow_ranger_4.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Стрелы героя разделяются при попадании по противнику и поражают случайную цель неподалёку нанося 50% урона. Каждая такая стрела считается обычной атакой. Количество целей: 1/2» заменено на «Новая Пассивная Способность: Переохлаждение. Frost Arrow накладывают стаки Переохлаждения, которые уменьшают пополнение здоровья на 5%. Если враг умирает под действием Переохлаждения, то он взорвётся и нанесёт Магический Урон от Frost Arrow всем вокруг за каждый стак. Максимум стаков: 6»"
+              }
+            ],
+            "talent_text": "Новая Пассивная Способность: Переохлаждение\n\nFrost Arrow накладывают стаки Переохлаждения, которые уменьшают пополнение здоровья на 5%. Если враг умирает под действием Переохлаждения, то он взорвётся и нанесёт Магический Урон от Frost Arrow всем вокруг за каждый стак.\n\nМаксимум стаков: 6"
+          },
+          {
+            "talent_id": "modifier_drow_ranger_6",
+            "image": "drow_ranger_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "Теперь требует прокачки «Талант 5»",
+                "tooltip": "Раньше требовался для прокачки «Талант 4»"
+              }
+            ],
+            "talent_text": "Взрыв от Переохлаждения происходит когда цель получает максимум стаков.\n\nУвеличение Урона Взрыва: 25%/50% от Силы"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_drow_ranger_13",
+            "image": "drow_ranger_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Marksmanship работает даже если рядом с вами есть противник» заменено на «Multishot накладывает Эффекты Атаки»"
+              }
+            ],
+            "talent_text": "Multishot накладывает Эффекты Атаки"
+          },
+          {
+            "talent_id": "modifier_drow_ranger_16",
+            "image": "drow_ranger_16.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "«Multishot накладывает Эффекты Атаки» заменено на «Marksmanship работает даже если рядом с вами есть противник»"
+              }
+            ],
+            "talent_text": "Marksmanship работает даже если рядом с вами есть противник."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "io_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Доля восстановления здоровья и получаемого лечения, отнимаемая у связанного противника, уменьшена с 60% до 45%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Spirits. </font></b>\n\n<b><font color='#ff0000'> Tether нельзя использовать на союзников. </font></b>\n\nTether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Отнимает у противника 30 здоровья в секунду.\n\nВосстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 45%"
+          },
+          {
+            "talent_id": "modifier_io_2",
+            "image": "io_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Восстановление здоровья увеличено с 5/10 до 8/16"
+              }
+            ],
+            "talent_text": "Связь Tether отнимает здоровье у всех задетых противников.\n\nВосстановление Здоровья: 8/16"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "name": "pangolier",
+      "image": "images/heroes/heroesPreview/pangolier.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базовый урон уменьшен на 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "phoenix_sun_ray_custom",
+          "name": "Sun Ray",
+          "image": "phoenix_sun_ray.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastPoint",
+              "note": "Задержка перед применением увеличена с 0,01 до 0,15 секунды"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_phoenix_8",
+            "image": "phoenix_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Уменьшение перезарядки Icarus Dive ослаблено с 10/15 до 8/12 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Sun Ray. </font></b>\n\nIcarus Dive не расходует Здоровье.\n\nУменьшение Времени Перезарядки Icarus Dive: 8/12 сек.\n\nУменьшение Времени Перезарядки Icarus Dive на 5 сек., если у героя более 300 Ловкости."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "razor_eye_of_the_storm_custom",
+          "name": "Eye of the Storm",
+          "image": "razor_eye_of_the_storm.webp",
+          "ability_notes": [
+            {
+              "parameter": "armor_reduction",
+              "note": "Снижение брони усилено с 0,7 до 0,8"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_razor_5",
+            "image": "razor_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Storm Surge усилено с 30%/45%/60% до 30%/60%/90% от урона атаки"
+              }
+            ],
+            "talent_text": "Увеличение Урона Storm Surge: 30%/60%/90% от Урона Атаки"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_razor_11",
+            "image": "razor_11.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Убирает Eye of the Storm. Новая Активная Способность: Armor Link. Создаёт электрическую связь с выбранным вражеским героем, передавая его броню владельцу способности. Пока связь действует, атаки не прерывают передвижение. Использование новой связи завершает текущую связь. Длительность Связи: 10 сек. Длительность Эффекта: 10 сек. Скорость Изменения Брони: 0,5/0,75/1. Время Перезарядки: 40/30/20 сек» заменено на «Связи сразу дают бонус, как при 2/4 секундах поддержания»"
+              }
+            ],
+            "talent_text": "Cвязи сразу дают бонус как при 2/4 секундах поддержания."
+          },
+          {
+            "talent_id": "modifier_razor_12",
+            "image": "razor_12.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Связи сразу дают бонус, как при 1/2 секундах поддержания» заменено на «Убирает Plasma Field. Новая Активная Способность: Spell Link. Создаёт электрическую связь с выбранным вражеским героем, передавая его урон от заклинаний владельцу способности. Пока связь действует, атаки не прерывают передвижение. Использование новой связи завершает текущую связь. Длительность Связи: 10 сек. Длительность Эффекта: 10 сек. Скорость Изменения Урона от Заклинаний: 1%/1,5%/2%. Время Перезарядки: 40/30/20 сек»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Plasma Field. </font></b>\n\nНовая Активная Способность: Spell Link\n\nСоздаёт электрическую связь с выбранным вражеским героем, передавая его урон от заклинаний владельцу способности. Пока связь действует, атаки не прерывают передвижение. Использование новой связи, завершает текущую связь.\n\nДлительность Связи: 10 сек.\nДлительность Эффекта: 10 сек.\nСкорость Изменения Урона от Заклинаний: 1%/1.5%/2%\nВремя Перезарядки: 40/30/20 сек."
+          },
+          {
+            "talent_id": "modifier_razor_13",
+            "image": "razor_13.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Убирает Plasma Field. Новая Активная Способность: Spell Link. Создаёт электрическую связь с выбранным вражеским героем, передавая его урон от заклинаний владельцу способности. Пока связь действует, атаки не прерывают передвижение. Использование новой связи завершает текущую связь. Длительность Связи: 10 сек. Длительность Эффекта: 10 сек. Скорость Изменения Урона от Заклинаний: 1%/1,5%/2%. Время Перезарядки: 40/30/20 сек» заменено на «Увеличение Длительности Эффектов Связи: 3 сек. Здоровье: 400»"
+              }
+            ],
+            "talent_text": "Увеличение Длительности Эффектов Связи: 3 сек.\n\nЗдоровье: 400"
+          },
+          {
+            "talent_id": "modifier_razor_10",
+            "image": "razor_10.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Увеличение Длительности Эффектов Связи: 3 сек» заменено на «Убирает Eye of the Storm. Новая Активная Способность: Armor Link. Создаёт электрическую связь с выбранным вражеским героем, передавая его броню владельцу способности. Пока связь действует, атаки не прерывают передвижение. Использование новой связи завершает текущую связь. Длительность Связи: 10 сек. Длительность Эффекта: 10 сек. Скорость Изменения Брони: 0,5/0,75/1. Время Перезарядки: 40/30/20 сек»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Eye of the Storm. </font></b>\n\nНовая Активная Способность: Armor Link\n\nСоздаёт электрическую связь с выбранным вражеским героем, передавая его броню владельцу способности. Пока связь действует, атаки не прерывают передвижение. Использование новой связи, завершает текущую связь.\n\nДлительность Связи: 10 сек.\nДлительность Эффекта: 10 сек.\nСкорость Изменения Брони: 0.5/0.75/1\nВремя Перезарядки: 40/30/20 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "terrorblade",
+      "name": "terrorblade",
+      "image": "images/heroes/heroesPreview/terrorblade.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базовый урон уменьшен на 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базовая скорость атаки уменьшена со 110 до 100",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "void_spirit_dissimilate_custom",
+          "name": "Dissimilate",
+          "image": "void_spirit_dissimilate.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядка увеличена с 20/17/14/11 до 22/20/18/16 секунд"
+            }
+          ]
+        },
+        {
+          "ability_id": "void_spirit_astral_step_custom",
+          "name": "Astral Step",
+          "image": "void_spirit_astral_step.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityChargeRestoreTime",
+              "note": "Время восстановления заряда увеличено с 25/20/15 до 30/25/20 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_void_spirit_18",
+            "image": "void_spirit_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Dissimilate ослаблено с 4%/8%/12% до 4%/6%/8% от текущей маны"
+              }
+            ],
+            "talent_text": "Увеличение Урона Dissimilate: 4%/6%/8% от Текущей Маны"
+          },
+          {
+            "talent_id": "modifier_void_spirit_20",
+            "image": "void_spirit_20.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Увеличение Зарядов Resonant Pulse: 1» заменено на «Dissimilate создаёт дополнительный внешний круг. Dissimilate накладывает на противников Оцепенение: 0,5/1/1,5 сек»"
+              }
+            ],
+            "talent_text": "Dissimilate создаёт дополнительный внешний круг.\n\nDissimilate накладывает на противников Оцепенение: 0.5/1/1.5 сек."
+          },
+          {
+            "talent_id": "modifier_void_spirit_19",
+            "image": "void_spirit_19.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Dissimilate создаёт дополнительный внешний круг. Dissimilate накладывает на противников Оцепенение: 1/1,5/2 сек» заменено на «Увеличение Зарядов Resonant Pulse: 1»"
+              }
+            ],
+            "talent_text": "Увеличение Зарядов Resonant Pulse: 1"
+          },
+          {
+            "talent_id": "modifier_void_spirit_21",
+            "image": "void_spirit_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Dissimilate Burst увеличена с 22 до 26 секунд"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Dissimilate Burst\n\nПосле небольшой задержки совершает взрыв от способности Dissimilate в указанной точке.\n\nУрон: 150% от Урона Dissimilate\nВремя Перезарядки: 26 сек.\nДальность Применения: 700\nЗатраты Маны: 120"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базовый урон увеличен на 1",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

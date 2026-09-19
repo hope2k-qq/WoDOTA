@@ -1,0 +1,1142 @@
+{
+  "patch_number": "1.10",
+  "patch_name": "1.10",
+  "patch_timestamp": 1788989171,
+  "general": {
+    "global_changes": [
+      {
+        "title": "Общие изменения"
+      },
+      {
+        "note": "Добавлена новая мирная арена"
+      },
+      {
+        "note": "Большие изменения интерфейса"
+      },
+      {
+        "title": "Действие на неуязвимых существ"
+      },
+      {
+        "note": "Обновлены правила, по которым некоторые предметы и способности действуют на неуязвимых существ"
+      },
+      {
+        "note": "Большинство эффектов, которые раньше позволяли выбрать целью неуязвимых существ и/или действовали на них, больше так не работают"
+      },
+      {
+        "title": "Косметические предметы"
+      },
+      {
+        "note": "Добавлен предпросмотр эффектов, фонов профиля, эффектов телепортации и «дай пять»"
+      },
+      {
+        "note": "Добавлены новые косметические предметы"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_nullifier",
+        "name": "Nullifier",
+        "image": "nullifier.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mute_duration",
+            "note": "Nullify: длительность увеличена с 3 до 4 секунд"
+          },
+          {
+            "parameter": "slow_pct",
+            "note": "Nullify: замедление передвижения ослаблено с 80% до 10%"
+          },
+          {
+            "parameter": "AbilityUnitTargetFlags",
+            "note": "Nullify: больше нельзя применять на неуязвимых существ"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_spell_prism",
+        "name": "Spell Prism",
+        "image": "spell_prism.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Разряд артефакта изменён с 6 на 2"
+          },
+          {
+            "parameter": "bonus_cooldown",
+            "note": "Cooldown Reduction: уменьшение перезарядки ослаблено с 8% до 7%"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "chaos_knight",
+      "name": "chaos knight",
+      "image": "images/heroes/heroesPreview/chaos_knight.webp",
+      "is_new": true,
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "chaos_knight_chaos_bolt_custom",
+          "name": "Chaos Bolt",
+          "image": "chaos_knight_chaos_bolt.webp",
+          "description": [
+            "Выпускает таинственный заряд энергии в указанного врага, оглушая его на случайное время и нанося случайный урон. Мин. длительность оглушения: 1,25 / 1,5 / 1,75 / 2. Макс. длительность оглушения: 1,75 / 2,25 / 2,75 / 3,25. Минимальный урон: 90 / 120 / 150 / 180. Максимальный урон: 155 / 240 / 325 / 410. Перезарядка: 13 / 12 / 11 / 10. Дальность применения: 600. Расход маны: 110."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "chaos_knight_reality_rift_custom",
+          "name": "Reality Rift",
+          "image": "chaos_knight_reality_rift.webp",
+          "description": [
+            "Переносит героя, все его иллюзии и выбранного врага в точку между владельцем способности и жертвой. Уменьшает броню цели на 6 сек. Дальность притягивания: 300 / 350 / 400 / 450. Снижение брони: -4 / -5 / -6 / -7. Перезарядка: 18 / 15 / 12 / 9. Дальность применения: 600 / 650 / 700 / 750. Расход маны: 50."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "chaos_knight_chaos_strike_custom",
+          "name": "Chaos Strike",
+          "image": "chaos_knight_chaos_strike.webp",
+          "description": [
+            "Герой и его иллюзии имеют шанс совершить критическую атаку случайной силы и восстановить себе здоровье на часть от нанесённого урона. Вампиризм от крипов меньше. Шанс: 33,33%. Мин. критический урон: 120%. Макс. критический урон: 140% / 180% / 220% / 260%. Вампиризм при срабатывании: 24% / 36% / 48% / 60%."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "chaos_knight_phantasm_custom",
+          "name": "Phantasm",
+          "image": "chaos_knight_phantasm.webp",
+          "description": [
+            "Призывает несколько копий героя из параллельных измерений. Копии являются иллюзиями, наносят 100% урона, а получают 350% урона. ТИП РАЗВЕИВАНИЯ: нормальное. Число иллюзий: 1 / 2 / 3. Время жизни иллюзий: 30. Урон иллюзий: 100%. Урон по иллюзиям: 350%. Перезарядка: 75. Расход маны: 100 / 200 / 300."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_chaos_knight_1",
+            "image": "chaos_knight_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Каждая Атака по герою наносит Физический Урон Атакующему: 12% от Урона Атаки"
+              }
+            ],
+            "talent_text": "Каждая Атака по герою наносит Физический Урон Атакующему: 12% от Урона Атаки"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_2",
+            "image": "chaos_knight_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Броня: 2/4. Восстановление Здоровья: 4/8"
+              }
+            ],
+            "talent_text": "Броня: 2/4\n\nВосстановление Здоровья: 4/8"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_3",
+            "image": "chaos_knight_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Реальность.</font> Сила: 4/8/12. Reality Rift накладывает Истощение на противников. Длительность: 1/2/3 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальность. </font></b>\n\nСила: 4/8/12\n\nReality Rift накладывает Истощение на противников.\n\nДлительность: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_4",
+            "image": "chaos_knight_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Урон: 25/50"
+              }
+            ],
+            "talent_text": "Урон: 25/50"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_5",
+            "image": "chaos_knight_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение Минимального и Максимального Урона Chaos Strike: 20%/40%"
+              }
+            ],
+            "talent_text": "Увеличение Минимального и Максимального Урона Chaos Strike: 20%/40%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_6",
+            "image": "chaos_knight_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Если Текущее Здоровье меньше 20%, то:. Увеличение Шанса Chaos Strike: 11,11%/22,22%/33,33%"
+              }
+            ],
+            "talent_text": "Если Текущее Здоровье меньше 20%, то:\n\nУвеличение Шанса Chaos Strike: 11.11%/22.22%/33.33%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_7",
+            "image": "chaos_knight_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Phantasm.</font> Новая Пассивная Способность: Chaos Walk. Позволяет ходить сквозь существ и деревья. Герой оставляет за собой адский след который каждую секунду наносит физический урон от его Урона Атаки. Увеличение Размера Модели: 40%. Урон в Секунду: 100% от Урона Атаки. Радиус Следа: 200. Длительность Следа: 3 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Phantasm. </font></b>\n\nНовая Пассивная Способность: Chaos Walk\n\nПозволяет ходить сквозь существ и деревья. Герой оставляет за собой адский след который каждую секунду наносит физический урон от его Урона Атаки.\n\nУвеличение Размера Модели: 40%\nУрон в Секунду: 100% от Урона Атаки\nРадиус Следа: 200\nДлительность Следа: 3 сек."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_chaos_knight_8",
+            "image": "chaos_knight_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Реальность.</font> Отрицательные эффекты от Reality Rift также распространяются на всех врагов в радиусе 450 вокруг цели или точки применения. Если выучить 4 Реальности, то:. Reality Rift можно использовать на точку. Переносит героя и все его иллюзии в точку применения"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальность. </font></b>\n\nОтрицательные эффекты от Reality Rift также распространяются на всех врагов в радиусе 450 вокруг цели или точки применения.\n\nЕсли выучить 4 Реальности, то:\n\nReality Rift можно использовать на точку. Переносит героя и все его иллюзии в точку применения."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_9",
+            "image": "chaos_knight_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Chaos Bolt создаёт рядом с жертвой иллюзию от способности Phantasm, которая атакует цель и наносит на 25% меньше урона. Длительность Иллюзии: 3/6 сек"
+              }
+            ],
+            "talent_text": "Chaos Bolt создаёт рядом с жертвой иллюзию от способности Phantasm, которая атакует цель и наносит на 25% меньше урона.\n\nДлительность Иллюзии: 3/6 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_10",
+            "image": "chaos_knight_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Реальность.</font> Ловкость: 4/8/12. Reality Rift накладывает Безмолвие на противников. Длительность: 1/2/3 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальность. </font></b>\n\nЛовкость: 4/8/12\n\nReality Rift накладывает Безмолвие на противников.\n\nДлительность: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_11",
+            "image": "chaos_knight_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Урона по Иллюзиям Phantasm: 75%/125%/175%"
+              }
+            ],
+            "talent_text": "Уменьшение Урона по Иллюзиям Phantasm: 75%/125%/175%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_12",
+            "image": "chaos_knight_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Иллюзии героя всегда появляются с полным запасом Здоровья"
+              }
+            ],
+            "talent_text": "Иллюзии героя всегда появляются с полным запасом Здоровья."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_13",
+            "image": "chaos_knight_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Каждый раз, когда создаётся иллюзия этого героя, с шансом в 20%/40%/60% может создаться ещё 1"
+              }
+            ],
+            "talent_text": "Каждый раз, когда создаётся иллюзия этого героя, с шансом в 20%/40%/60% может создаться ещё 1."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_14",
+            "image": "chaos_knight_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Phantasm помимо своих иллюзий создаёт иллюзию каждого союзного или вражеского героя в радиусе 1800, включая владельца. Эти иллюзии появляются рядом с оригинальными героями"
+              }
+            ],
+            "talent_text": "Phantasm помимо своих иллюзий создаёт иллюзию каждого союзного или вражеского героя в радиусе 1800, включая владельца. Эти иллюзии появляются рядом с оригинальными героями."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_chaos_knight_15",
+            "image": "chaos_knight_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Chaos Bolt отскакивает ещё 1/2 раза в радиусе применения способности. Восстановление Маны: 5/10"
+              }
+            ],
+            "talent_text": "Chaos Bolt отскакивает ещё 1/2 раза в радиусе применения способности.\n\nВосстановление Маны: 5/10"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_16",
+            "image": "chaos_knight_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение Минимального и Максимального Урона Chaos Bolt: 200%/300%/400% от Восстановления Маны"
+              }
+            ],
+            "talent_text": "Увеличение Минимального и Максимального Урона Chaos Bolt: 200%/300%/400% от Восстановления Маны"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_17",
+            "image": "chaos_knight_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Реальность.</font> Интеллект: 4/8/12. Reality Rift накладывает Бессилие на противников. Длительность: 1/2/3 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальность. </font></b>\n\nИнтеллект: 4/8/12\n\nReality Rift накладывает Бессилие на противников.\n\nДлительность: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_18",
+            "image": "chaos_knight_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Уменьшение задержки перед применением способностей: 30%/60%. Увеличение Скорости Полёта Chaos Bolt: 30%/60%"
+              }
+            ],
+            "talent_text": "Уменьшение задержки перед применением способностей: 30%/60%\n\nУвеличение Скорости Полёта Chaos Bolt: 30%/60%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_19",
+            "image": "chaos_knight_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Chaos Strike.</font> Новая Активная Способность: Chaos King Bar. Применяет на владельца нормальное развеивание. Даёт 50% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья. Длительность: 2/3 сек. Восстановление Здоровья: 150% от Восстановления Маны. Время Перезарядки: 90 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Chaos Strike. </font></b>\n\nНовая Активная Способность: Chaos King Bar\n\nПрименяет на владельца нормальное развеивание. Даёт 50% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья.\n\nДлительность: 2/3 сек.\nВосстановление Здоровья: 150% от Восстановления Маны\nВремя Перезарядки: 90 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_20",
+            "image": "chaos_knight_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Времени Перезарядки Chaos Bolt: 1,5 сек"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Chaos Bolt: 1.5 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_21",
+            "image": "chaos_knight_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Phantasm.</font> Новая Активная Способность: Berserk Eclipse. Затмение призывает адских демонов вокруг героя, которые напрямую снижают сопротивление магии противников. Работает сквозь невосприимчивость к магии. Снижение Сопротивления Магии: 66%. Радиус: 666. Длительность: 6 сек. Время Перезарядки: 30 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Phantasm. </font></b>\n\nНовая Активная Способность: Berserk Eclipse\n\nЗатмение призывает адских демонов вокруг героя, которые напрямую снижают сопротивление магии противников. Работает сквозь невосприимчивость к магии.\n\nСнижение Сопротивления Магии: 66%\nРадиус: 666\nДлительность: 6 сек.\nВремя Перезарядки: 30 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "is_new": true,
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dawnbreaker_fire_wreath_custom",
+          "name": "Starbreaker",
+          "image": "dawnbreaker_fire_wreath.webp",
+          "description": [
+            "Герой 3 раза вращает молотом вокруг себя, нанося врагам увеличенный урон от своей атаки. С последним взмахом герой бьёт молотом по земле, оглушая врагов перед собой и нанося им урон. Длительность: 1,1. Радиус взмахов и удара: 300. Доп. урон от взмахов и удара: 25 / 40 / 55 / 70. Длительность оглушения: 0,6 / 0,8 / 1 / 1,2. Перезарядка: 17 / 15 / 13 / 11. Расход маны: 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "dawnbreaker_celestial_hammer_custom",
+          "name": "Celestial Hammer",
+          "image": "dawnbreaker_celestial_hammer.webp",
+          "description": [
+            "Герой бросает свой молот в цель, нанося урон всем врагам на пути. Молот застывает на месте на 2 сек., а затем возвращается, оставляя за собой замедляющий огненный след. Герой может воззвать к своему молоту и раньше, чтобы полететь ему навстречу и встретиться посередине. Урон молота: 50 / 80 / 110 / 140. Длительность огненного следа: 2,5 / 3 / 3,5 / 4. Радиус огненного следа: 200. Замедление передвижения от огненного следа: 24% / 28% / 32% / 36%. Урон в секунду от огненного следа: 20 / 30 / 40 / 50. Дальность применения: 700 / 900 / 1100 / 1300. Перезарядка: 18 / 16 / 14 / 12. Расход маны: 100 / 110 / 120 / 130."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "dawnbreaker_luminosity_custom",
+          "name": "Luminosity",
+          "image": "dawnbreaker_luminosity.webp",
+          "description": [
+            "После нескольких атак герой преисполняется мощью, отчего его следующая атака наносит критический урон и излечивает всех союзных героев в радиусе 650 на 50% от урона. Лечение от атаки по крипу или нейтральному существу будет слабее. Атак для срабатывания: 3. Лечение от атаки по герою: 35% / 40% / 45% / 50%. Уменьшение лечения при атаке по крипу: 40%. Критический урон: 125% / 150% / 175% / 200%."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "dawnbreaker_solar_guardian_custom",
+          "name": "Solar Guardian",
+          "image": "dawnbreaker_solar_guardian.webp",
+          "description": [
+            "ПРЕРЫВАЕМАЯ — герой создаёт пульсирующий эффект в радиусе 350 от любого союзного героя. Каждая пульсация наносит урон врагам и излечивает союзников. После небольшой подготовки герой летит в указанную область, при приземлении нанося врагам дополнительный урон и оглушая их. Начав применение этой способности, её нельзя прервать. Лечение за пульсацию: 45 / 70 / 95. Радиус приземления: 500. Урон за пульсацию: 30 / 50 / 70. Урон от приземления: 130 / 160 / 190. Длительность оглушения: 1,4 / 1,6 / 1,8. Время в полёте: 0,8. Перезарядка: 120 / 105 / 90. Расход маны: 150 / 200 / 250."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_1",
+            "image": "dawnbreaker_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение Доп. Урона от Взмахов и Удара Starbreaker: 15/30/45"
+              }
+            ],
+            "talent_text": "Увеличение Доп. Урона от Взмахов и Удара Starbreaker: 15/30/45"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_2",
+            "image": "dawnbreaker_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Затрат Маны Starbreaker: 30%/60%. Восстановление Маны: 2/4"
+              }
+            ],
+            "talent_text": "Уменьшение Затрат Маны Starbreaker: 30%/60%\n\nВосстановление Маны: 2/4"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_3",
+            "image": "dawnbreaker_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение Радиуса Взмахов и Удара Starbreaker: 40/80. Убийства Героев навсегда увеличивают Радиус Взмахов и Удара Starbreaker: 4. Убийства до изучения таланта также учитываются"
+              }
+            ],
+            "talent_text": "Увеличение Радиуса Взмахов и Удара Starbreaker: 40/80\n\nУбийства Героев навсегда увеличивают Радиус Взмахов и Удара Starbreaker: 4\n\nУбийства до изучения таланта также учитываются."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_4",
+            "image": "dawnbreaker_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Времени Перезарядки Starbreaker на 1 сек. за каждые 60/45 Силы. Время Перезарядки Starbreaker не может быть меньше 2 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Starbreaker на 1 сек. за каждые 60/45 Силы.\n\nВремя Перезарядки Starbreaker не может быть меньше 2 секунд."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_5",
+            "image": "dawnbreaker_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение Критического Урона Luminosity: 25%/50%"
+              }
+            ],
+            "talent_text": "Увеличение Критического Урона Luminosity: 25%/50%"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_6",
+            "image": "dawnbreaker_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Starbreaker даёт невосприимчивость к эффектам и 30%/60% к сопротивлению магии на время применения. Позволяет передвигаться во время применения Starbreaker, но замедляет владельца на 35%. Скорость не может упасть ниже 215"
+              }
+            ],
+            "talent_text": "Starbreaker даёт невосприимчивость к эффектам и 30%/60% к сопротивлению магии на время применения.\n\nПозволяет передвигаться во время применения Starbreaker, но замедляет владельца на 35%. Скорость не может упасть ниже 215."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_7",
+            "image": "dawnbreaker_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Последний удар Starbreaker вызывает эффект приземления Solar Guardian"
+              }
+            ],
+            "talent_text": "Последний удар Starbreaker вызывает эффект приземления Solar Guardian."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_dawnbreaker_8",
+            "image": "dawnbreaker_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение Радиуса применения вокруг союзника Solar Guardian: 200/400. Ловкость: 5/10"
+              }
+            ],
+            "talent_text": "Увеличение Радиуса применения вокруг союзника Solar Guardian: 200/400\n\nЛовкость: 5/10"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_9",
+            "image": "dawnbreaker_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Каждое 3/2 срабатывание Luminosity вызывает Пульсацию Solar Guardian"
+              }
+            ],
+            "talent_text": "Каждое 3/2 срабатывание Luminosity вызывает Пульсацию Solar Guardian."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_10",
+            "image": "dawnbreaker_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение Урона за Пульсацию Solar Guardian: 80%/120% от Ловкости"
+              }
+            ],
+            "talent_text": "Увеличение Урона за Пульсацию Solar Guardian: 80%/120% от Ловкости"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_11",
+            "image": "dawnbreaker_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение Лечения за Пульсацию Solar Guardian: 80%/120% от Ловкости"
+              }
+            ],
+            "talent_text": "Увеличение Лечения за Пульсацию Solar Guardian: 80%/120% от Ловкости"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_12",
+            "image": "dawnbreaker_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Убирает подготовку у Solar Guardian. Аура Solar Guardian действует ещё 1/2/3 сек. после приземления и следует за владельцем"
+              }
+            ],
+            "talent_text": "Убирает подготовку у Solar Guardian.\n\nАура Solar Guardian действует ещё 1/2/3 сек. после приземления и следует за владельцем."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_13",
+            "image": "dawnbreaker_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Времени Перезарядки Solar Guardian: 30/60 сек"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Solar Guardian: 30/60 сек."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_14",
+            "image": "dawnbreaker_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Solar Guardian больше не зависит от наличия других героев и имеет неограниченную дальность применения. Дарует обзор в точке применения. Solar Guardian не требует маны"
+              }
+            ],
+            "talent_text": "Solar Guardian больше не зависит от наличия других героев и имеет неограниченную дальность применения. Дарует обзор в точке применения.\n\nSolar Guardian не требует маны."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dawnbreaker_15",
+            "image": "dawnbreaker_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Времени Перезарядки Celestial Hammer: 1/2 сек"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Celestial Hammer: 1/2 сек."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_16",
+            "image": "dawnbreaker_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение Урона Огненного Следа Celestial Hammer: 50%/75%/100% от Интеллекта"
+              }
+            ],
+            "talent_text": "Увеличение Урона Огненного Следа Celestial Hammer: 50%/75%/100% от Интеллекта"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_17",
+            "image": "dawnbreaker_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Starbreaker.</font> Повторное нажатие Celestial Hammer перемещает героя к молоту, а не в точку по середине. Celestial Hammer совершает Атаку по всем задетым целям"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Starbreaker.</font></b>\n\nПовторное нажатие Celestial Hammer перемещает героя к молоту, а не в точку по середине.\n\nCelestial Hammer совершает Атаку по всем задетым целям."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_18",
+            "image": "dawnbreaker_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение Длительности Огненного Следа Celestial Hammer: 2/3/4 сек"
+              }
+            ],
+            "talent_text": "Увеличение Длительности Огненного Следа Celestial Hammer: 2/3/4 сек."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_19",
+            "image": "dawnbreaker_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer оглушает задетых противников. Длительность: 1/2 сек"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 3»"
+              }
+            ],
+            "talent_text": "Celestial Hammer оглушает задетых противников.\n\nДлительность: 1/2 сек."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_20",
+            "image": "dawnbreaker_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение Дальности и Скорости Полёта Celestial Hammer: 20%/40%. Броня: 4/8"
+              }
+            ],
+            "talent_text": "Увеличение Дальности и Скорости Полёта Celestial Hammer: 20%/40%\n\nБроня: 4/8"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_21",
+            "image": "dawnbreaker_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer наносит Чистый Урон, а не Магический. Увеличение Урона Касания Celestial Hammer: 200. Celestial Hammer работает сквозь Невосприимчивость к Магии"
+              }
+            ],
+            "talent_text": "Celestial Hammer наносит Чистый Урон, а не Магический.\n\nУвеличение Урона Касания Celestial Hammer: 200\n\nCelestial Hammer работает сквозь Невосприимчивость к Магии."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "axe_battle_hunger_custom",
+          "name": "Battle Hunger",
+          "image": "axe_battle_hunger.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitDamageType",
+              "note": "Тип урона изменён с физического на чистый"
+            },
+            {
+              "parameter": "armor_multiplier",
+              "note": "Больше не увеличивает урон от брони владельца"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_16",
+            "image": "axe_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Больше не даёт 5%/10%/15% к урону от заклинаний"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Counter Helix. </font></b>\n\nУбийства не развеивают Battle Hunger.\n\nБроня: 3/6/9"
+          },
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "axe_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Увеличение Множителя Брони Battle Hunger: 1/2/3» заменено на «Увеличение Урона Battle Hunger: 100%/200%/300% от Брони»"
+              }
+            ],
+            "talent_text": "Увеличение Урона Battle Hunger: 100%/200%/300% от Брони"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_11",
+            "image": "creep_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Manta Style теперь применяет нормальное развеивание"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Manta Style\n\nСоздаёт 2 иллюзии вашего героя. Применяет Нормальное Развеивание.\n\nУрон Иллюзии: 40%\nПолучаемый Урон Иллюзии: 200%\nДлительность: 20 сек.\nЗатраты Маны: 125\nВремя Перезарядки: 45 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "invoker_ice_wall_custom",
+          "name": "Ice Wall",
+          "image": "invoker_ice_wall.webp",
+          "ability_notes": [
+            {
+              "parameter": "wall_place_distance",
+              "note": "Расстояние, на котором стена создаётся перед героем, уменьшено с 200 до 15"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_io_17",
+            "image": "io_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Скорость пополнения барьера ослаблена со 100% до 70% от восстановления маны"
+              }
+            ],
+            "talent_text": "Навсегда дарует барьер поглощающий любой урон. Барьер восстанавливается со скоростью Восстановления Маны и только тогда, когда запас маны героя полон.\n\nСкорость Пополнения Барьера: 70% от Восстановления Маны\nМаксимальная Прочность Барьера: 7%/14% от Максимальной Маны"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "keeper_of_the_light",
+      "name": "keeper of the light",
+      "image": "images/heroes/heroesPreview/keeper_of_the_light.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_8",
+            "image": "keeper_of_the_light_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Длительность иллюзии Light Illusion уменьшена с 15 до 10 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Illuminate и Obscure. </font></b>\n\nНовая Активная Способность: Light Illusion\n\nПризывает неуязвимую иллюзию которая совершает Атаки Героя с тем же радиусом. Герой не может атаковать, пока дух жив. В первую очередь атакует героев.\n\nДлительность Иллюзии: 10 сек.\nЗатраты Маны: 50\nВремя Перезарядки: 12 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_switch_weapons_custom",
+          "name": "Switch Discipline",
+          "image": "kez_switch_weapons_sai.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Теперь можно использовать под безмолвием"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lone_druid_6",
+            "image": "lone_druid_6.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "«Скорость Атаки Spirit Bear: 0,5/1/1,5 за 1 Силу Героя» заменено на «Урон Spirit Bear: 0,5/1 за 1 Силу»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Больше не требует прокачки других талантов"
+              }
+            ],
+            "talent_text": "Урон Spirit Bear: 0.5/1 за 1 Силу"
+          },
+          {
+            "talent_id": "modifier_lone_druid_7",
+            "image": "lone_druid_7.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "«Здоровье Spirit Bear: 5/10 за 1 Силу Героя» заменено на «Скорость Атаки Spirit Bear: 0,5/1/1,5 за 1 Силу»"
+              }
+            ],
+            "talent_text": "Скорость Атаки Spirit Bear: 0.5/1/1.5 за 1 Силу"
+          },
+          {
+            "talent_id": "modifier_lone_druid_5",
+            "image": "lone_druid_5.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Позволяет призвать сразу 2 Spirit Bear. Новая Активная Способность: Unity with Nature. Вы объеденяетесь с Spirit Bear» заменено на «Здоровье Spirit Bear: 5/10 за 1 Силу»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Больше не требует прокачки других талантов"
+              }
+            ],
+            "talent_text": "Здоровье Spirit Bear: 5/10 за 1 Силу"
+          },
+          {
+            "talent_id": "modifier_lone_druid_4",
+            "image": "lone_druid_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Урон Spirit Bear: 0,5/1 за 1 Силу Героя» заменено на «Позволяет призвать сразу 2 Spirit Bear. Новая Активная Способность: Unity with Nature. Вы объеденяетесь с Spirit Bear. Герой может использовать предметы не выходя из Spirit Bear. Здоровье героя всегда становится равно здоровью Spirit Bear в процентном соотношении. Дальность Применения: 150. Затраты Маны: 200. Время Перезарядки: 60 сек»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Больше не требует прокачки других талантов"
+              }
+            ],
+            "talent_text": "Позволяет призвать сразу 2 Spirit Bear.\n\n\nНовая Активная Способность: Unity with Nature\n\nВы объеденяетесь с Spirit Bear. Герой может использовать предметы не выходя из Spirit Bear. Здоровье героя всегда становится равно здоровью Spirit Bear в процентном соотношении.\n\nДальность Применения: 150\nЗатраты Маны: 200\nВремя Перезарядки: 60 сек."
+          },
+          {
+            "talent_id": "modifier_lone_druid_3",
+            "image": "lone_druid_3.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "Больше не требует прокачки других талантов"
+              }
+            ],
+            "talent_text": "Скорость Атаки Spirit Bear: 15/30\n\nТочность Атак Spirit Bear: 100%"
+          },
+          {
+            "talent_id": "modifier_lone_druid_2",
+            "image": "lone_druid_2.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "Больше не требует прокачки других талантов"
+              }
+            ],
+            "talent_text": "Урон Spirit Bear: 20/40/60\n\nСкорость Передвижения Spirit Bear: 20/40/60"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_lone_druid_9",
+            "image": "lone_druid_9.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": "Теперь нельзя изучить вместе с «Талант 2» из ветки Силы",
+                "tooltip": "Раньше нельзя было изучить вместе с «Талант 1» из ветки Силы"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Summon Spirit Bear.</font></b>\n\nАтаки Героя с вероятностью 30% могут наложить корни на противника.\n\nУрон в Секунду: 30/60\nДлительность: 1.4/2.2 сек.\nВремя Перезарядки: 5 сек."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lone_druid_17",
+            "image": "lone_druid_17.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": "Теперь нельзя изучить вместе с «Талант 2» из ветки Силы",
+                "tooltip": "Раньше нельзя было изучить вместе с «Талант 1» из ветки Силы"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Summon Spirit Bear. </font></b>\n\nНовая Активная Способность: Moonlight\n\nЛуч лунного света обжигает противника нанося магический урон. Если в радиусе 300 от цели будут крипы, то Moonlight сработает на них ещё два раза. Способность имеет 4 уровня прокачки.\n\nУрон: 150\nДальность Применения: 650\nЗатраты Маны: 100\nВремя Перезарядки: 8 сек."
+          },
+          {
+            "talent_id": "modifier_lone_druid_20",
+            "image": "lone_druid_20.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Расход маны Entangling Roots уменьшен со 150 до 50"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Spirit Link. </font></b>\n\nНовая Активная Способность: Entangling Roots\n\nНакладывает корни на противника, запрещяя ему двигаться и атаковать. Как только вы совершите Удар по противнику - эффект прервётся.\n\nДлительность: 3/6/9 сек.\nДальность Применения: 650\nЗатраты Маны: 50\nВремя Перезарядки: 30 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_omniknight_7",
+            "image": "omniknight_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Радиус Rain of Purification уменьшен с 1100 до 900"
+              },
+              {
+                "note": "Расход маны Rain of Purification уменьшен с 450 до 400"
+              },
+              {
+                "note": "Перезарядка Rain of Purification уменьшена с 50 до 45 секунд"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Rain of Purification\n\nСоздаёт множество ослабленных Purification в случайной области вокруг владельца.\n\nИнтервал Purification: 0.25 сек.\nУрон Purification: 50%\nДлительность: 5 сек.\nРадиус: 900\nЗатраты Маны: 400\nВремя Перезарядки: 45 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_4",
+            "image": "techies_4.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Ширина огненного следа Burn Out увеличена со 100 до 150"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Burn Out\n\nГерой ускоряется, оставляя за собой огненный след. Огонь наносит Магический Урон врагам каждую секунду и уничтожает деревья.\n\nСкорость Передвижения: 30%\nУрон: 3% от Максимального Здоровья\nШирина Следа: 150\nДлительность: 8 сек.\nВремя Перезарядки: 15 сек.\nЗатраты Здоровья: 20% от Текущего Здоровья"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tidehunter",
+      "name": "tidehunter",
+      "image": "images/heroes/heroesPreview/tidehunter.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tidehunter_9",
+            "image": "tidehunter_9.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "parameter": "AbilityDamage",
+                "note": "Dead in the Water больше не наносит 100 урона"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Dead in the Water\n\nГерой бросает во вражеского героя цепь, которая приковывает к нему тяжёлый якорь. Если жертва попытается отойти от якоря на расстояние больше 350, её скорость уменьшится до 100, а якорь потянется за ней. Якорь можно уничтожить 5 атаками героев. В момент попадания цепь наносит 200 магического урона. Цепь летит со скоростью 100, и её можно сбить с цели. Способность даёт обзор по цели.\n\nДальность применения: 350\nДлительность: 10 секунд\nРасход маны: 80\nПерезарядка: 25 секунд"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tinker",
+      "name": "tinker",
+      "image": "images/heroes/heroesPreview/tinker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tinker_4",
+            "image": "tinker_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Теперь также уменьшает ширину появления March of the Machines на 30%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Уменьшение ширины появления March of the Machines: 30% </font></b>\n\nMarch of the Machines объеденяются в мега-мехов. Их количество уменьшается, а размер и урон увеличиваются в 5 раз."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "tiny_avalanche_custom",
+          "name": "Avalanche",
+          "image": "tiny_avalanche.webp",
+          "ability_notes": [
+            {
+              "parameter": "total_duration",
+              "note": "Общая длительность увеличена с 1,4 до 1,5 секунды"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_voodoo_restoration_custom",
+          "name": "Voodoo Restoration",
+          "image": "witch_doctor_voodoo_restoration.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "note": "Voodoo Restoration больше не наносит урон противникам"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_witch_doctor_1",
+            "image": "witch_doctor_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Теперь Voodoo Restoration наносит противникам магический урон в размере 100% от лечения"
+              }
+            ],
+            "talent_text": "Voodoo Restoration наносит противникам Магический Урон: 100% от Лечения\n\nУменьшение Расхода Маны Voodoo Restoration: 15%/30%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

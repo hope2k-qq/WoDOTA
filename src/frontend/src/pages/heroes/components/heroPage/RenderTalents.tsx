@@ -14,6 +14,18 @@ import { ReactComponent as SuccessIcon } from "../../../../assets/icons/SuccessI
 
 import {useTranslation} from "react-i18next";
 import {useMyData} from "../../../../context/HeroesDataContext";
+import { TalentPreview, TalentPreviewAlign, TalentPreviewVertical } from "../../../../widgets/talentPreview/TalentPreview";
+
+const previewPlacement = (rowIndex: number, colIndex: number, text: string | null):
+    { vertical: TalentPreviewVertical; align: TalentPreviewAlign } => {
+    const vertical: TalentPreviewVertical = rowIndex <= 1 ? 'down' : 'up';
+    const long = (text ?? '').replace(/{[^}]*}/g, '').length >= 22;
+    if (colIndex === 0) return { vertical, align: 'left' };
+    if (colIndex === 1) return { vertical, align: long ? 'near-left' : 'center' };
+    if (colIndex === 3) return { vertical, align: long ? 'near-right' : 'center' };
+    if (colIndex === 4) return { vertical, align: 'right' };
+    return { vertical, align: 'center' };
+};
 
 interface TalentImage {
     text: string;
@@ -914,12 +926,6 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
             return <div>No talents available.</div>;
         }
 
-        function formatText(text: string) {
-            text = text.replace(/\n\n/g, '<div style="margin-bottom: 1.2rem"></div>');
-            text = text.replace(/\n/g, '<br>');
-            return text;
-        }
-
 
 
         return (
@@ -958,63 +964,22 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                         const src = getImageForHero(item);
                                         const key = `${part}-${rowIndex}-${colIndex}`;
                                         const isLoaded = loadedImages[key];
-                                        let text = item ? getTalentText(item.talentInfo, part) : null;
+                                        const text = item ? getTalentText(item.talentInfo, part) : null;
                                         const isUpgradeAllowed = item ?
                                             isTalentUpgradeable(item, rowIndex, part) : false;
-                                        let menuClass = '';
-                                        let menuClass2 = '';
-                                        let menuClass3 = '';
-                                        let text2 = '';
-                                        let menuClassArrow = '';
-                                        if (
-                                            (rowIndex === 0 && colIndex >= 0 && colIndex <= 4) ||
-                                            (rowIndex === 1 && colIndex >= 0 && colIndex <= 4)
-                                        ) {
-                                            menuClass = styles.menu_center_down;
-                                            menuClassArrow = styles.square_arrow_down;
-                                        } else {
-                                            menuClass = styles.menu_center_up;
-                                            menuClassArrow = styles.square_arrow_up;
-                                        }
-
-                                        if (colIndex >= 0 && colIndex <= 1) {
-                                            if (text !== null) {
-                                                text2 = text.replace(/{[^}]*}/g, '');
-                                            }
-                                            if (text2 && colIndex === 1 && text2.length >= 22) {
-                                                menuClass3 = styles.menu_type_left_location;
-                                            } else if (text2 && colIndex === 1 && text2.length < 22) {
-                                                menuClass3 = styles.menu_type_center_location
-                                            }
-                                            menuClass2 = styles.menu_type_left;
-                                        } else if (colIndex === 2) {
-                                            menuClass2 = styles.menu_type_center;
-                                        } else if (colIndex >= 3 && colIndex <= 4) {
-                                            if (text !== null) {
-                                                text2 = text.replace(/{[^}]*}/g, '');
-                                            }
-                                            if (text2 && colIndex === 3 && text2.length >= 22) {
-                                                menuClass3 = styles.menu_type_right_location;
-                                            } else if (text2 && colIndex === 3 && text2.length < 22) {
-                                                menuClass3 = styles.menu_type_center_location
-                                            }
-                                            menuClass2 = styles.menu_type_right;
-                                        }
+                                        const { vertical, align } = previewPlacement(rowIndex, colIndex, text);
                                         return (
-                                            <div key={`${rowIndex}-${colIndex}`}
-                                                 className={`${styles.square} ${isLoaded ? menuClassArrow : ''}`}
+                                            <TalentPreview key={`${rowIndex}-${colIndex}`}
+                                                 className={styles.square}
+                                                 text={text}
+                                                 vertical={vertical}
+                                                 align={align}
+                                                 enabled={!!isLoaded && (!isUpgradeMode || showText)}
+                                                 arrow={showText}
                                                  onClick={() => item && isUpgradeMode && !isBuild && isUpgradeAllowed && upgradeTalent(item.talentInfo, rowIndex, part)}>
-                                                {isLoaded  && (!isUpgradeMode || (isUpgradeMode && showText)) && text ? (
-                                                    <div
-                                                        className={`${styles.menu} ${menuClass} ${menuClass2} ${menuClass3}`}>
-                                                        <div dangerouslySetInnerHTML={{__html:  formatText(text)}}/>
-                                                    </div>
-                                                ) : null}
-
-
                                                 {src ? (
                                                         <div
-                                                            className={`${styles.imageContainer} ${showText ? '' : styles.noPseudo}`}>
+                                                            className={styles.imageContainer}>
                                                             <div style={{display: "flex"}}
                                                                  className={`${isUpgradeMode && !isBuild && borderClass && isUpgradeAllowed ? styles.withBorder : ''}`}>
                                                                 {hydrated && !isLoaded && (
@@ -1053,7 +1018,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
 
                                                         </div>
                                                     ) : ''}
-                                            </div>
+                                            </TalentPreview>
                                         );
                                     })
                                 ))}

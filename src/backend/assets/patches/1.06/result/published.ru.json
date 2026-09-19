@@ -1,0 +1,1153 @@
+{
+  "patch_number": "1.06",
+  "patch_name": "1.06",
+  "patch_timestamp": 1788986257,
+  "general": {
+    "global_changes": [
+      {
+        "title": "Общие изменения"
+      },
+      {
+        "note": "Небольшие улучшения режима Arena"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_gungir",
+        "name": "Gleipnir",
+        "image": "gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_aoe",
+            "note": "Больше не даёт 75 к радиусу действия способностей"
+          },
+          {
+            "parameter": "radius_tooltip",
+            "note": "Eternal Chains: радиус уменьшен с 350 до 275"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [
+    {
+      "boss_id": "boss_keeper_boss",
+      "name": "boss keeper boss",
+      "image": "pages/patches/standard_hero.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_keeper_mana",
+          "name": "boss keeper mana",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Больше не проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_medusa",
+      "name": "boss medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_medusa_stone",
+          "name": "stone",
+          "image": "medusa_stone_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Теперь проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_phoenix_boss",
+      "name": "boss phoenix boss",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "abilities": [
+        {
+          "ability_id": "phoenix_boss_wave",
+          "name": "phoenix boss wave",
+          "image": "phoenix_icarus_dive.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Больше не проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        },
+        {
+          "ability_id": "phoenix_boss_beam",
+          "name": "phoenix boss beam",
+          "image": "phoenix_sun_ray.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Больше не проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_sand_king",
+      "name": "boss sand king",
+      "image": "images/heroes/heroesPreview/sand_king.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_sand_king_burrowstrike",
+          "name": "burrowstrike",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Больше не проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_sand_king_burrow",
+          "name": "burrow",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "note": "Теперь действует на существ с невосприимчивостью к эффектам"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_shadow_fiend",
+      "name": "boss shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_shadow_fiend_passive_shadowraze",
+          "name": "passive shadowraze",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Теперь блокируется невосприимчивостью к эффектам"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_shadow_fiend_passive_ultimate",
+          "name": "passive ultimate",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Теперь блокируется невосприимчивостью к эффектам"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_shadow_fiend_passive_dark_cyclone",
+          "name": "passive dark cyclone",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Теперь блокируется невосприимчивостью к эффектам"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_tiny_boss",
+      "name": "boss tiny boss",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "abilities": [
+        {
+          "ability_id": "tiny_boss_avalanche",
+          "name": "tiny boss avalanche",
+          "image": "woda_tiny_boss_1.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Больше не проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_boss_stone_throw",
+          "name": "tiny boss stone throw",
+          "image": "woda_tiny_boss_3.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Больше не проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_boss_toss",
+          "name": "tiny boss toss",
+          "image": "woda_tiny_boss_2.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "note": "Теперь действует на существ с невосприимчивостью к эффектам"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_ursa",
+      "name": "boss ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_ursa_jump",
+          "name": "jump",
+          "image": "ursa_earthshock.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Больше не проходит сквозь невосприимчивость к эффектам"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_ursa_fury_swipes",
+          "name": "fury swipes",
+          "image": "ursa_fury_swipes.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "note": "Теперь действует на существ с невосприимчивостью к эффектам"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "hero_id": "monkey_king",
+      "name": "monkey king",
+      "image": "images/heroes/heroesPreview/monkey_king.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "monkey_king_boundless_strike_custom",
+          "name": "Boundless Strike",
+          "image": "monkey_king_boundless_strike.webp",
+          "description": [
+            "Герой увеличивает свой посох и бьёт им по земле, оглушая всех задетых врагов. Этим ударом нельзя промахнуться, и он наносит как базовый урон, так и критический урон от атаки. Длительность оглушения: 0,7 / 0,9 / 1,1 / 1,3. Критический урон: 120% / 140% / 160% / 180%. Базовый урон: 20 / 40 / 60 / 80. Дальность: 1100. Перезарядка: 24 / 21 / 18 / 15. Дальность применения: 1100. Расход маны: 85 / 90 / 95 / 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_tree_dance_custom",
+          "name": "Tree Dance",
+          "image": "monkey_king_tree_dance.webp",
+          "description": [
+            "Герой запрыгивает на верхушку выбранного дерева. Там он получает прерываемую способность Primal Spring — направленную атаку в прыжке. Если разрушить дерево, герой упадёт и будет оглушён на 4 сек. Если получить урон на земле, способность уходит на перезарядку. Расстояние: 800. Перезарядка при получении урона: 3. Перезарядка: 2 / 1,8 / 1,6 / 1,4. Дальность применения: 800."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_primal_spring_custom",
+          "name": "Primal Spring",
+          "image": "monkey_king_primal_spring.webp",
+          "description": [
+            "ПРЕРЫВАЕМАЯ — герой спрыгивает с дерева, нанося урон врагам в указанной области и замедляя их. Урон и замедление усиливаются в зависимости от времени подготовки способности. Урон: 110 / 200 / 290 / 380. Замедление передвижения: 35% / 50% / 65% / 80%. Макс. длительность замедления: 4. Перезарядка: 18 / 16 / 14 / 12. Дальность применения: 800. Расход маны: 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_jingu_mastery_custom",
+          "name": "Jingu Mastery",
+          "image": "monkey_king_jingu_mastery.webp",
+          "description": [
+            "Удары героя пробуждают мощь Цзиньгубана. Каждая четвёртая атака по вражескому герою дарует 4 усиленные атаки с дополнительным уроном и вампиризмом. Число атак для активации: 4. Длительность эффектов на врагах: 5,5 / 7 / 8,5 / 10. Дополнительный урон: 30 / 50 / 70 / 90. Доп. вампиризм: 20% / 25% / 30% / 35%. Длительность усиления: 20."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_mischief_custom",
+          "name": "Mischief",
+          "image": "monkey_king_mischief.webp",
+          "description": [
+            "Изменяет облик героя, чтобы обхитрить противников. Маскировка зависит от окружения и спадает при получении урона, попытке атаковать и применении предметов или способностей. Защищает героя от урона на 0,1 сек. Доп. скорость передвижения: 8%. Перезарядка: 24 / 20 / 16 / 12."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_wukongs_command_custom",
+          "name": "Wukong's Command",
+          "image": "monkey_king_wukongs_command.webp",
+          "description": [
+            "Герой создаёт круговую формацию солдат, которые расходятся из его местоположения. Если герой покинет область действия способности, его солдаты исчезнут. Их атака идентична атаке владельца способности, а своей целью они выбирают только вражеских героев. На время действия способности герой получает дополнительную броню. Дополнительная броня: 15 / 20 / 25. Интервал атаки солдат: 1,1. Длительность: 13. Перезарядка: 100 / 90 / 80. Расход маны: 100."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_monkey_king_1",
+            "image": "monkey_king_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Каждая 4 атака по вражескому крипу дарует 1 усиленную атаку Jingu Mastery. Сила: 5"
+              }
+            ],
+            "talent_text": "Каждая 4 атака по вражескому крипу дарует 1 усиленную атаку Jingu Mastery.\n\nСила: 5"
+          },
+          {
+            "talent_id": "modifier_monkey_king_2",
+            "image": "monkey_king_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Tree Dance, Primal Spring.</font> Увеличение Вампиризма Jingu Mastery: 5%/10%. Увеличение Урона Jingu Mastery: 20/40. Увеличение Вампиризма Заклинаниями Jingu Magic: 5%/10%. Увеличение Урона от Заклинаний Jingu Magic: 5%/10%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Tree Dance, Primal Spring. </font></b>\n\nУвеличение Вампиризма Jingu Mastery: 5%/10%\n\nУвеличение Урона Jingu Mastery: 20/40\n\nУвеличение Вампиризма Заклинаниями Jingu Magic: 5%/10%\n\nУвеличение Урона от Заклинаний Jingu Magic: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_3",
+            "image": "monkey_king_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Раз в несколько секунд создаёт неподалёку солдата Wukong's Command. Каждый солдат имеет свой счётчик зарядов способности Jingu Mastery. Интервал Солдат: 6 сек. Длительность Солдат: 1/2/3 + 2 сек. за каждые 50 Силы"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 2»"
+              }
+            ],
+            "talent_text": "Раз в несколько секунд создаёт неподалёку солдата Wukong's Command. Каждый солдат имеет свой счётчик зарядов способности Jingu Mastery.\n\nИнтервал Солдат: 6 сек.\nДлительность Солдат: 1/2/3 + 2 сек. за каждые 50 Силы"
+          },
+          {
+            "talent_id": "modifier_monkey_king_4",
+            "image": "monkey_king_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Дополнительная Дальность Атаки: 75"
+              }
+            ],
+            "talent_text": "Дополнительная Дальность Атаки: 75"
+          },
+          {
+            "talent_id": "modifier_monkey_king_5",
+            "image": "monkey_king_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Интервала Атак солдат Wukong's Command: 0,1/0,2/0,3 сек"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 3»"
+              }
+            ],
+            "talent_text": "Уменьшение Интервала Атак солдат Wukong's Command: 0.1/0.2/0.3 сек."
+          },
+          {
+            "talent_id": "modifier_monkey_king_6",
+            "image": "monkey_king_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Времени Перезарядки Wukong's Command: 13/26/39 сек"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Wukong's Command: 13/26/39 сек."
+          },
+          {
+            "talent_id": "modifier_monkey_king_7",
+            "image": "monkey_king_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Новая Активная Способность: Changing of the Guard. Герой может поменяться местами с одним из солдат от способности Wukong's Command и превратиться в его неотличимую копию на 1,8 сек. В образе солдата герой неуязвим, но не может атаковать или применять заклинания. Дальность Применения: 1200. Время Перезарядки: 18 сек"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Changing of the Guard\n\nГерой может поменяться местами с одним из солдат от способности Wukong's Command и превратиться в его неотличимую копию на 1.8 сек. В образе солдата герой неуязвим, но не может атаковать или применять заклинания.\n\nДальность Применения: 1200\nВремя Перезарядки: 18 сек."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_monkey_king_8",
+            "image": "monkey_king_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Восстановление Здоровья: 4/8. Восстановление Маны: 4/8"
+              }
+            ],
+            "talent_text": "Восстановление Здоровья: 4/8\n\nВосстановление Маны: 4/8"
+          },
+          {
+            "talent_id": "modifier_monkey_king_9",
+            "image": "monkey_king_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение Критического Урона Boundless Strike: 15%/30%"
+              }
+            ],
+            "talent_text": "Увеличение Критического Урона Boundless Strike: 15%/30%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_10",
+            "image": "monkey_king_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Каждая Атака уменьшает Время Перезарядки Boundless Strike: 0,1/0,2/0,3 сек"
+              }
+            ],
+            "talent_text": "Каждая Атака уменьшает Время Перезарядки Boundless Strike: 0.1/0.2/0.3 сек."
+          },
+          {
+            "talent_id": "modifier_monkey_king_11",
+            "image": "monkey_king_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Boundless Strike становится переключаемой способностью. Когда эта способность активирована, герой прыгает к концу своего посоха, как только тот ударит землю"
+              }
+            ],
+            "talent_text": "Boundless Strike становится переключаемой способностью.\n\nКогда эта способность активирована, герой прыгает к концу своего посоха, как только тот ударит землю."
+          },
+          {
+            "talent_id": "modifier_monkey_king_12",
+            "image": "monkey_king_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Задержки перед применением Boundless Strike: 25%/50%. Уменьшение Затрат Маны Boundless Strike: 25%/50%"
+              }
+            ],
+            "talent_text": "Уменьшение Задержки перед применением Boundless Strike: 25%/50%\n\nУменьшение Затрат Маны Boundless Strike: 25%/50%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_13",
+            "image": "monkey_king_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Увеличение Времени Перезарядки Mischief: 8 сек.</font> Mischief всегда превращает в Руну. Когда маскировка спадает, герой получает кратковременный бонус соответствующей Руны: Усиление Урона, Волшебство, Ускорение, Иллюзии, Регенерация, Щит. Длительность Эффекта Руны: 1/1,5/2 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Увеличение Времени Перезарядки Mischief: 8 сек. </font></b>\n\nMischief всегда превращает в Руну. Когда маскировка спадает, герой получает кратковременный бонус соответствующей Руны: Усиление Урона, Волшебство, Ускорение, Иллюзии, Регенерация, Щит.\n\nДлительность Эффекта Руны: 1/1.5/2 сек."
+          },
+          {
+            "talent_id": "modifier_monkey_king_14",
+            "image": "monkey_king_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Каждая атака может с вероятностью в 80% пройти сквозь уклонение и нанести 70 дополнительного магического урона"
+              }
+            ],
+            "talent_text": "Каждая атака может с вероятностью в 80% пройти сквозь уклонение и нанести 70 дополнительного магического урона."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_monkey_king_15",
+            "image": "monkey_king_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение Урона Primal Spring: 80%/120%/160% от Интеллекта"
+              }
+            ],
+            "talent_text": "Увеличение Урона Primal Spring: 80%/120%/160% от Интеллекта"
+          },
+          {
+            "talent_id": "modifier_monkey_king_16",
+            "image": "monkey_king_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Времени Перезарядки Primal Spring: 1/2 сек. Интеллект: 5/10"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Primal Spring: 1/2 сек.\n\nИнтеллект: 5/10"
+          },
+          {
+            "talent_id": "modifier_monkey_king_19",
+            "image": "monkey_king_19.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Primal Spring сразу работает с максимальной силой. Уменьшение Длительности Оглушения Tree Dance при падении с Дерева: 1,5/3 сек. Уменьшение Времени Перезарядки Tree Dance: 0,2/0,4 сек"
+              }
+            ],
+            "talent_text": "Primal Spring сразу работает с максимальной силой.\n\nУменьшение Длительности Оглушения Tree Dance при падении с Дерева: 1.5/3 сек.\n\nУменьшение Времени Перезарядки Tree Dance: 0.2/0.4 сек."
+          },
+          {
+            "talent_id": "modifier_monkey_king_18",
+            "image": "monkey_king_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Jingu Mastery.</font> Новая Пассивная Способность: Jingu Magic. Применение предметов или способностей пробуждают мощь Цзиньгубана. Каждая 4 активация предмета или способности дарует усиление урона от заклинаний и вампиризм заклинаниями. Длительность Усиления: 4 сек. Урон от Заклинаний: 5%/10%/15%. Вампиризм Заклинаниями: 5%/10%/15%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Jingu Mastery. </font></b>\n\nНовая Пассивная Способность: Jingu Magic\n\nПрименение предметов или способностей пробуждают мощь Цзиньгубана. Каждая 4 активация предмета или способности дарует усиленние урона от заклинаний и вампиризм заклинаниями.\n\nДлительность Усиления: 4 сек.\nУрон от Заклинаний: 5%/10%/15%\nВампиризм Заклинаниями: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_17",
+            "image": "monkey_king_17.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Применение Mischief дарует Барьер, поглощающий Любой Урон: 200/400. Длительность Эффекта: 24 сек"
+              }
+            ],
+            "talent_text": "Применение Mischief дарует Барьер поглощающий Любой Урон: 200/400\n\nДлительность Эффекта: 24 сек."
+          },
+          {
+            "talent_id": "modifier_monkey_king_20",
+            "image": "monkey_king_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Накладывает на врагов, задетых Boundless Strike или находящихся вокруг его конца, эффект способности Primal Spring, подготовленной на 100%"
+              }
+            ],
+            "talent_text": "Накладывает на врагов, задетых Boundless Strike или находящихся вокруг его конца, эффект способности Primal Spring, подготовленной на 100%."
+          },
+          {
+            "talent_id": "modifier_monkey_king_21",
+            "image": "monkey_king_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Mischief всегда превращает в Курьера. Применение предметов или способностей не завершает Mischief. Mischief применяет Нормальное Развеивание. Увеличение Длительности Защиты от Урона Mischief: 0,4 сек"
+              }
+            ],
+            "talent_text": "Mischief всегда превращает в Курьера.\n\nПрименение предметов или способностей не завершает Mischief.\n\nMischief применяет Нормальное Развеивание.\n\nУвеличение Длительности Защиты от Урона Mischief: 0.4 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "riki",
+      "name": "riki",
+      "image": "images/heroes/heroesPreview/riki.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "riki_smoke_screen_custom",
+          "name": "Smoke Screen",
+          "image": "riki_smoke_screen.webp",
+          "description": [
+            "Герой бросает дымовую бомбу, которая не позволяет врагам применять способности и заставляет их промахиваться атаками. Длительность: 6. Радиус: 425. Шанс промаха: 30% / 45% / 60% / 75%. Перезарядка: 17 / 16 / 15 / 14. Дальность применения: 550. Расход маны: 65 / 70 / 75 / 80."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_blink_strike_custom",
+          "name": "Blink Strike",
+          "image": "riki_blink_strike.webp",
+          "description": [
+            "Герой перемещается за спину выбранного существа и, если это враг, замедляет и атакует его, нанося увеличенный урон. Доп. урон: 40 / 55 / 70 / 85. Длительность замедления: 0,4. Перезарядка: 0,1. Восстановление заряда: 25 / 22 / 19 / 16. Дальность применения: 600 / 700 / 800 / 900. Расход маны: 50 / 55 / 60 / 65."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_tricks_of_the_trade_custom",
+          "name": "Tricks of the Trade",
+          "image": "riki_tricks_of_the_trade.webp",
+          "description": [
+            "ПРЕРЫВАЕМАЯ — герой пропадает из нашего мира и периодически атакует в спину случайного врага в области действия. На время действия уменьшает урон от атак, но значительно увеличивает ловкость. Радиус: 450. Число атак: 4. Урон от атаки: 40%. Доп. ловкость: 55 / 70 / 85 / 100. Перезарядка: 20 / 18 / 16 / 14. Дальность применения: 400. Расход маны: 45 / 55 / 65 / 75."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_permanent_invisibility_custom",
+          "name": "Cloak and Dagger",
+          "image": "riki_permanent_invisibility.webp",
+          "description": [
+            "Герой размывает свои очертания, становясь едва заметным. Если приблизится к вражескому герою или атаковать врага, невидимость пропадёт. Задержка до невидимости: 4 / 3 / 2. Радиус: 1000."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_backstab_custom",
+          "name": "Backstab",
+          "image": "riki_backstab.webp",
+          "description": [
+            "Атакуя со спины, герой наносит дополнительный урон, который зависит от ловкости. Урон за единицу ловкости: 0,3 / 0,4 / 0,5 / 0,6."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_riki_1",
+            "image": "riki_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Blink Strike наносит урон всем противникам в радиусе 300 вокруг цели"
+              }
+            ],
+            "talent_text": "Blink Strike наносит урон всем противникам в радиусе 300 вокруг цели."
+          },
+          {
+            "talent_id": "modifier_riki_2",
+            "image": "riki_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение Урона Blink Strike: 50% от Силы. Увеличение Урона Blink Strike: 50% от Ловкости. Увеличение Урона Blink Strike: 50% от Интеллекта"
+              }
+            ],
+            "talent_text": "Увеличение Урона Blink Strike: 50% от Силы\n\nУвеличение Урона Blink Strike: 50% от Ловкости\n\nУвеличение Урона Blink Strike: 50% от Интеллекта"
+          },
+          {
+            "talent_id": "modifier_riki_3",
+            "image": "riki_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Tricks of the Trade.</font> Новая Пассивная Способность: Frontstab. Атакуя в лицо, герой наносит дополнительный физический урон, который зависит от силы. Урон за Единицу Силы: 0,6/0,9"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Tricks of the Trade. </font></b>\n\nНовая Пассивная Способность: Frontstab\n\nАтакуя в лицо, герой наносит дополнительный физический урон, который зависит от силы.\n\nУрон за Единицу Силы: 0.6/0.9"
+          },
+          {
+            "talent_id": "modifier_riki_4",
+            "image": "riki_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Убирает Backstab.</font> Blink Strike перемещает к передней части противника. Уменьшение Времени Перезарядки Blink Strike: 1/2/3 сек"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Backstab. </font></b>\n\nBlink Strike перемещает к передней части противника.\n\nУменьшение Времени Перезарядки Blink Strike: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_riki_5",
+            "image": "riki_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Уменьшение задержки перед применением способностей: 20%/40%/60%. Уменьшение Расхода Маны Blink Strike: 20%/40%/60%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 4»"
+              }
+            ],
+            "talent_text": "Уменьшение задержки перед применением способностей: 20%/40%/60%\n\nУменьшение Расхода Маны Blink Strike: 20%/40%/60%"
+          },
+          {
+            "talent_id": "modifier_riki_6",
+            "image": "riki_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Уменьшение Дальности Применения Blink Strike: 300.</font> Blink Strike можно применять на область. Увеличение Зарядов Blink Strike: 1"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 5»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Уменьшение Дальности Применения Blink Strike: 300 </font></b>\n\nBlink Strike можно применять на область.\n\nУвеличение Зарядов Blink Strike: 1"
+          },
+          {
+            "talent_id": "modifier_riki_7",
+            "image": "riki_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Раскрытие Cloak and Dagger временно дарует Беспрепятственный Обзор и Силу. Радиус: 1200. Доп. Сила: 50. Длительность: 5 сек. Время Перезарядки: 5 сек"
+              }
+            ],
+            "talent_text": "Раскрытие Cloak and Dagger временно дарует Беспрепятственный Обзор и Силу.\n\nРадиус: 1200\nДоп. Сила: 50\nДлительность: 5 сек.\nВремя Перезарядки: 5 сек."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_riki_8",
+            "image": "riki_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Увеличение Доп. Ловкости Tricks of the Trade: 10/20/30. Увеличение Дальности Применения Tricks of the Trade: 50/100/150"
+              }
+            ],
+            "talent_text": "Увеличение Доп. Ловкости Tricks of the Trade: 10/20/30\n\nУвеличение Дальности Применения Tricks of the Trade: 50/100/150"
+          },
+          {
+            "talent_id": "modifier_riki_10",
+            "image": "riki_10.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Smoke Screen уменьшает Броню противников: 3/6"
+              }
+            ],
+            "talent_text": "Smoke Screen уменьшает Броню противников: 3/6"
+          },
+          {
+            "talent_id": "modifier_riki_9",
+            "image": "riki_9.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Tricks of the Trade позволяет спрятаться в союзного героя на время действия и добавляет 1 жертву для каждой атаки"
+              }
+            ],
+            "talent_text": "Tricks of the Trade позволяет спрятаться в союзного героя на время действия и добавляет 1 жертву для каждой атаки."
+          },
+          {
+            "talent_id": "modifier_riki_11",
+            "image": "riki_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Союзники внутри Smoke Screen получают Шанс Уклониться от Любого Урона: 6%/12%"
+              }
+            ],
+            "talent_text": "Союзники внутри Smoke Screen получают Шанс Уклониться от Любого Урона: 6%/12%"
+          },
+          {
+            "talent_id": "modifier_riki_12",
+            "image": "riki_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение Количества Атак Tricks of the Trade: 1 + 1 за каждые 300/200 Ловкости"
+              }
+            ],
+            "talent_text": "Увеличение Количества Атак Tricks of the Trade: 1 + 1 за каждые 300/200 Ловкости"
+          },
+          {
+            "talent_id": "modifier_riki_13",
+            "image": "riki_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение Урона за Единицу Ловкости Backstab: 0,1/0,2/0,3"
+              }
+            ],
+            "talent_text": "Увеличение Урона за Единицу Ловкости Backstab: 0.1/0.2/0.3"
+          },
+          {
+            "talent_id": "modifier_riki_14",
+            "image": "riki_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Cloak and Dagger становится активной способностью. Создаёт Иллюзию рядом с Героем. Пока эта Иллюзия жива Cloak and Dagger не пропадает. Иллюзия исчезнет если отдалится от героя на 600 единиц. Здоровье Иллюзии: 300. Урон Иллюзии: 100%. Получаемый Урон Иллюзии: 100%. Длительность: 25 сек. Время Перезарядки: 25 сек"
+              }
+            ],
+            "talent_text": "Cloak and Dagger становится активной способностью.\n\nСоздаёт Иллюзию рядом с Героем. Пока эта Иллюзия жива Cloak and Dagger не пропадает. Иллюзия исчезнет если отдалится от героя на 600 единиц.\n\nЗдоровье Иллюзии: 300\nУрон Иллюзии: 100%\nПолучаемый Урон Иллюзии: 100%\nДлительность: 25 сек.\nВремя Перезарядки: 25 сек."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_riki_15",
+            "image": "riki_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Smoke Screen наносит Магический Урон в Секунду: 40. Уменьшение Затрат Маны Smoke Screen: 20%"
+              }
+            ],
+            "talent_text": "Smoke Screen наносит Магический Урон в Секунду: 40\n\nУменьшение Затрат Маны Smoke Screen: 20%"
+          },
+          {
+            "talent_id": "modifier_riki_16",
+            "image": "riki_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Новая Активная Способность: Sleeping Dart. Герой стреляет дротиком в выбранного врага. Враг проснётся через 4 секунды или получив 200 урона. Проснувшись, цель получает магический урон и замедляется. Урон: 150/300. Замедление Передвижения: 30%. Длительность Замедления: 3 сек. Дальность Применения: 600. Затраты Маны: 75. Время Перезарядки: 24 сек"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Sleeping Dart\n\nГерой стреляет дротиком в выбранного врага. Враг проснётся через 4 секунды или получив 200 урона. Проснувшись, цель получает магический урон и замедляется.\n\nУрон: 150/300\nЗамедление Передвижения: 30%\nДлительность Замедления: 3 сек.\nДальность Применения: 600\nЗатраты Маны: 75\nВремя Перезарядки: 24 сек."
+          },
+          {
+            "talent_id": "modifier_riki_17",
+            "image": "riki_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение Урона Smoke Screen: 50%/75%/100% от Интеллекта. Увеличение Радиуса Smoke Screen: 20/40/60"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 1»"
+              }
+            ],
+            "talent_text": "Увеличение Урона Smoke Screen: 50%/75%/100% от Интеллекта\n\nУвеличение Радиуса Smoke Screen: 20/40/60"
+          },
+          {
+            "talent_id": "modifier_riki_18",
+            "image": "riki_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Невидимость Cloak and Dagger увеличивает Скорость Передвижения: 10%/20%"
+              }
+            ],
+            "talent_text": "Невидимость Cloak and Dagger увеличивает Скорость Передвижения: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_riki_19",
+            "image": "riki_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Smoke Screen уменьшает Сопротивление Магии противников: 5%/10%/15%. Отрицательный эффект Smoke Screen сохраняется после выхода из тучи: 0,5/1/1,5 сек"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Требует прокачки «Талант 3»"
+              }
+            ],
+            "talent_text": "Smoke Screen уменьшает Сопротивление Магии противников: 5%/10%/15%\n\nОтрицательный эффект Smoke Screen сохраняется после выхода из тучи: 0.5/1/1.5 сек."
+          },
+          {
+            "talent_id": "modifier_riki_20",
+            "image": "riki_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "При получении Смертельного Урона Cloak and Dagger дарует полную Невидимость и Неуязвимость на 1/2 секунды. По окончании эффекта восстанавливает 10%/20% от Максимального Здоровья. Время Перезарядки: 120 сек"
+              }
+            ],
+            "talent_text": "При получении Смертельного Урона Cloak and Dagger дарует полную Невидимость и Неуязвимость на 1/2 секунды. По окончании эффекта восстанавливает 10%/20% от Максимального Здоровья.\n\nВремя Перезарядки: 120 сек."
+          },
+          {
+            "talent_id": "modifier_riki_21",
+            "image": "riki_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Уменьшение Радиуса Раскрытия Cloak and Dagger: 100. Уменьшение Задержки до Невидимости Cloak and Dagger: 1 сек"
+              }
+            ],
+            "talent_text": "Уменьшение Радиуса Раскрытия Cloak and Dagger: 100\n\nУменьшение Задержки до Невидимости Cloak and Dagger: 1 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Больше не даёт 20/40 к скорости передвижения"
+              },
+              {
+                "note": "Теперь также увеличивает дополнительный урон Jinada на 75/150"
+              }
+            ],
+            "talent_text": "Jinada даёт Золото за Крипов.\n\nУвеличение Золота Jinada: 6/12\n\nУвеличение Дополнительного Урона Jinada: 75/150"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_7",
+            "image": "bounty_hunter_7.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Увеличение Дополнительного Урона Jinada: 150/300» заменено на «Атаки уменьшают Броню: 3/6. Длительность: 4 сек»"
+              }
+            ],
+            "talent_text": "Атаки Уменьшают Броню: 3/6\n\nДлительность: 4 сек."
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "bounty_hunter_6.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Увеличение Доп. Золота Союзникам Track: 60. Увеличение Урона Track: 8%/16%» заменено на «Track уменьшает Восстановление Здоровья противников: 20%/40%. Track увеличивает Восстановление Здоровья героя: 0,4%/0,8%. Восстановление Здоровья: 0,2%/0,4%»"
+              }
+            ],
+            "talent_text": "Track уменьшает Восстановление Здоровья противников: 20%/40%\n\nTrack увеличивает Восстановление Здоровья героя: 0.4%/0.8%\n\nВосстановление Здоровья: 0.2%/0.4%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Track уменьшает Восстановление Здоровья противников: 20%/40%. Track увеличивает Восстановление Здоровья героя: 0,4%/0,8%» заменено на «Увеличение Доп. Золота Союзникам Track: 60/120. Увеличение Урона Track: 8%/16%»"
+              }
+            ],
+            "talent_text": "Увеличение Доп. Золота Союзникам Track: 60/120\n\nУвеличение Урона Track: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Бонус к силе увеличен с 7/14/21 до 10/20/30"
+              }
+            ],
+            "talent_text": "Shuriken Toss совершает Атаку по основной цели.\n\nУвеличение Длительности Замедления Shuriken Toss: 0/1/2 сек.\n\nСила: 10/20/30"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_20",
+            "image": "bounty_hunter_20.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 5%/10% к урону от заклинаний"
+              }
+            ],
+            "talent_text": "Увеличение Урона Shuriken Toss: 1% от Общей Стоимости\n\n<b><font color='#ff0000'> Максимальное Увеличение Урона: 100/Отсутствует </font></b>\n\nУрон от Заклинаний: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_21",
+            "image": "bounty_hunter_21.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Теперь Track можно применять на крипов, но без дополнительного золота"
+              }
+            ],
+            "talent_text": "Track можно использовать на Крипов, но без доп. золота.\n\nЗаклинания наносят 120% Критического Урона по целям Track."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "io_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Теперь замедление связанного противника равно ускорению героя"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Spirits. </font></b>\n\n<b><font color='#ff0000'> Tether нельзя использовать на союзников. </font></b>\n\nTether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Замедление со связанным противником равно ускорению героя. Отнимает у противника здоровья в секунду: 30 + 2 за Уровень Героя\n\nВосстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 40%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_eclipse_custom",
+          "name": "Eclipse",
+          "image": "luna_eclipse.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядка уменьшена со 110 до 105 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_roshan_10",
+            "image": "roshan_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Использование Предметов применяет Bash на случайного противника в Радиусе: 900. Шанс срабатывания: 100%. В первую очередь на героев» заменено на «Новая Активная Способность: Roshpit. После небольшой подготовки герой призывает каменное логово, которое блокирует передвижение противников и ограничивает их обзор. Ускоряет героя внутри логова. Скорость Передвижения: 30%. Длительность: 6 сек. Дальность Применения: 400. Радиус: 550. Время Перезарядки: 30 сек»"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Roshpit\n\nПосле небольшой подготовки герой призывает каменное логово, которое блокирует передвижение противников и ограничивает их обзор. Ускоряет героя внутри логова.\n\nСкорость Передвижения: 30%\nДлительность: 6 сек.\nДальность Применения: 400\nРадиус: 550\nВремя Перезарядки: 30 сек."
+          },
+          {
+            "talent_id": "modifier_roshan_11",
+            "image": "roshan_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Новая Активная Способность: Roshpit. После небольшой подготовки герой призывает каменное логово, которое блокирует передвижение противников и ограничивает их обзор. Ускоряет героя внутри логова. Скорость Передвижения: 30%. Длительность: 6 сек. Дальность Применения: 400. Радиус: 550. Время Перезарядки: 30 сек» заменено на «Противники у стен внутри логова получают Оглушение: 1/2/3 сек. Урон от Заклинаний: 5%/10%/15%»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Теперь требует прокачки «Талант 3»",
+                "tooltip": "Раньше требовался для прокачки «Талант 4»"
+              }
+            ],
+            "talent_text": "Противники у стен внутри логова получают Оглушение: 1/2/3 сек.\n\nУрон от Заклинаний: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_roshan_12",
+            "image": "roshan_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Уменьшение Времени Перезарядки Предметов: 10%/15%/20%» заменено на «Использование Предметов применяет Bash на случайного противника в Радиусе: 900. Шанс срабатывания: 100%. В первую очередь на героев»"
+              }
+            ],
+            "talent_text": "Использование Предметов применяет Bash на случайного противника в Радиусе: 900\n\nШанс срабатывания: 100%\n\nВ первую очередь на героев."
+          },
+          {
+            "talent_id": "modifier_roshan_13",
+            "image": "roshan_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Противники у стен внутри логова получают Оглушение: 1/2/3 сек» заменено на «Уменьшение Времени Перезарядки Предметов: 10%/15%/20%»"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Предметов: 10%/15%/20%"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_rubick_6",
+            "image": "rubick_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Теперь уменьшает интервал ударов Fade Lightning, а не его перезарядку"
+              }
+            ],
+            "talent_text": "Уменьшение Интервала Ударов Fade Lightning: 1/2/3 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slark",
+      "name": "slark",
+      "image": "images/heroes/heroesPreview/slark.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slark_21",
+            "image": "slark_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Больше не лишает Dark Pact развеивания"
+              }
+            ],
+            "talent_text": "Dark Pact становится Пассивной Способностью.\n\nDark Pact срабатывает на цели каждый раз, когда вы попадаете по ней Направленной Способностью или Предметом."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_17",
+            "image": "sniper_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 30% к урону от заклинаний"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Граната.\n\nУбирает Headshot. </font></b>\n\nНовая Активная Способность: Flashbang Grenade\n\nГерой выпускает в указанную область гранату, которая уменьшает обзор врагов и оглушает их.\n\nРадиус: 375\nУменьшение Обзора: 75%\nДлительность Оглушения: 1.5 сек.\nЗатраты Маны: 50\nВремя Перезарядки: 20 сек.\n\n\nЕсли выучить 4 гранаты, то:\n\nПрименение Гранат уменьшает Время Перезарядки других Гранат: 2 сек.\n\nУрон от Заклинаний: 30%"
+          }
+        ]
+      }
+    }
+  ]
+}

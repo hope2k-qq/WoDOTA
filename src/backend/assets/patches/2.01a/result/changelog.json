@@ -1,6 +1,6 @@
 {
-  "patch_number": "2,01a",
-  "patch_name": "2,01a",
+  "patch_number": "2.01a",
+  "patch_name": "2.01a",
   "patch_timestamp": 1788784572,
   "general": {
     "global_changes": []
@@ -21,7 +21,7 @@
           "name": {
             "ru": "Last Will",
             "en": "Last Will",
-            "uk": "Остання Воля"
+            "uk": "Last Will"
           },
           "image": "abilities/necronomicon_warrior_last_will.webp",
           "ability_notes": [
@@ -30,9 +30,9 @@
               "old_raw_value": "10",
               "new_raw_value": "25",
               "note": {
-                "ru": "Урон увеличен с 10 до 25",
-                "en": "Damage increased from 10 to 25",
-                "uk": "Шкоду збільшено з 10 до 25"
+                "ru": "Урон от максимального здоровья увеличен с 10% до 25%",
+                "en": "Damage based on max health increased from 10% to 25%",
+                "uk": "Шкоду від максимального здоров'я збільшено з 10% до 25%"
               }
             }
           ]
@@ -45,7 +45,7 @@
     "upgrade": [
       {
         "item_id": "item_soul_reaver",
-        "name": "soul reaver",
+        "name": "Soul Reaver",
         "image": "images/items/soul_reaver.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -57,7 +57,7 @@
             "note": {
               "ru": "Бонус к здоровью изменён с 250 на 8% от максимального здоровья",
               "en": "Health bonus changed from 250 to 8% of max health",
-              "uk": "Бонус до здоров'я змінено з 250 на 8% від максимального здоров'я"
+              "uk": "Додаткове здоров'я змінено з 250 на 8% від максимального здоров'я"
             }
           }
         ]
@@ -155,48 +155,6 @@
       }
     },
     {
-      "hero_id": "legion_commander",
-      "name": "legion commander",
-      "image": "images/heroes/heroesPreview/legion_commander.webp",
-      "primary_attribute": "strength",
-      "hero_notes": [],
-      "abilities": [],
-      "talents": {
-        "strength": [
-          {
-            "talent_id": "modifier_legion_commander_5",
-            "image": "images/heroes/talents/legion_commander/5.webp",
-            "title": {
-              "ru": "Талант 7",
-              "en": "Talent 7",
-              "uk": "Талант 7"
-            },
-            "talent_notes": [
-              {
-                "old_raw_value": {
-                  "ru": "Moment of Courage может сработать от Ваших Атак",
-                  "en": "Moment of Courage can trigger from Your Attacks",
-                  "uk": "Moment of Courage може спрацювати від ваших атак"
-                },
-                "new_raw_value": {
-                  "ru": "При подсчёте атак для срабатывания Moment of Courage учитываются и атаки владельца",
-                  "en": "The owner's attacks are also counted toward triggering Moment of Courage",
-                  "uk": "Під час підрахунку атак для спрацювання Moment of Courage враховуються також атаки власника"
-                },
-                "note": {
-                  "ru": "Теперь при подсчёте атак для срабатывания Moment of Courage учитываются и атаки владельца",
-                  "en": "Owner's attacks now also count toward Moment of Courage's proc",
-                  "uk": "Тепер при підрахунку атак для спрацювання Moment of Courage враховуються й атаки власника"
-                }
-              }
-            ]
-          }
-        ],
-        "agility": [],
-        "intelligence": []
-      }
-    },
-    {
       "hero_id": "ogre_magi",
       "name": "ogre magi",
       "image": "images/heroes/heroesPreview/ogre_magi.webp",
@@ -238,7 +196,7 @@
               }
             }
           ],
-          "name": "bloodlust"
+          "name": "Bloodlust"
         }
       ],
       "talents": {
@@ -264,9 +222,9 @@
                   "uk": "Великий Розум. Прибирає Fireblast. Зменшення Часу Перезарядки: 13% Якщо вивчити 3 Великих Розуми, тоді: Навколо героя літає третя Голова Огра! Multicast застосовується із затримкою 0.3 секунди, працює на предмети без вибору цілі та може багаторазово обирати основну ціль"
                 },
                 "note": {
-                  "ru": "Уменьшение времени перезарядки усилено с 7% до 13%",
+                  "ru": "Уменьшение перезарядки усилено с 7% до 13%",
                   "en": "Cooldown Reduction increased from 7% to 13%",
-                  "uk": "Зменшення часу перезарядки посилено з 7% до 13%"
+                  "uk": "Зменшення перезарядки посилено з 7% до 13%"
                 }
               }
             ]
@@ -292,9 +250,9 @@
                   "uk": "Ignite не потребує мани. Після завершення Fire Shield застосовує Ignite до всіх ворогів у радіусі 450 та завдає магічної шкоди: 200% від Сили Тривалість Ignite від Fire Shield: 3/6/9 с"
                 },
                 "note": {
-                  "ru": "Магический урон Ignite от Fire Shield увеличен с 100% до 200% от силы",
-                  "en": "Fire Shield's Ignite magic damage increased from 100% to 200% of Strength",
-                  "uk": "Магічну шкоду Ignite від Fire Shield збільшено з 100% до 200% від сили"
+                  "ru": "Магический урон Fire Shield в конце действия увеличен с 100% до 200% от силы",
+                  "en": "Fire Shield end-of-effect magic damage increased from 100% to 200% of Strength",
+                  "uk": "Магічну шкоду Fire Shield після завершення дії збільшено з 100% до 200% від сили"
                 }
               }
             ]
@@ -352,9 +310,9 @@
                   "uk": "Нова Активна Здібність: Unrefined Fireblast Вражає ворога вогняною хвилею, оглушуючи ціль і завдаючи їй магічної шкоди. На застосування цієї здібності витрачається частина поточного запасу мани. Шкода: 250 + 40% від Інтелекту Витрати Мани: 35% Дальність Застосування: 525 Час Перезарядки: 16 сек"
                 },
                 "note": {
-                  "ru": "Урон Unrefined Fireblast увеличен с 200 до 250",
-                  "en": "Unrefined Fireblast damage increased from 200 to 250",
-                  "uk": "Шкоду Unrefined Fireblast збільшено з 200 до 250"
+                  "ru": "Урон Unrefined Fireblast увеличен со 150 до 250",
+                  "en": "Unrefined Fireblast damage increased from 150 to 250",
+                  "uk": "Шкоду Unrefined Fireblast збільшено зі 150 до 250"
                 }
               }
             ]
@@ -435,9 +393,9 @@
                   "uk": "Збільшення тривалості Grave Chill: 1/2 с. Сила: 5/10"
                 },
                 "note": {
-                  "ru": "Теперь также даёт +5/10 к силе",
-                  "en": "Now also grants +5/10 Strength",
-                  "uk": "Тепер також дає +5/10 до сили"
+                  "ru": "Теперь также даёт 5/10 к силе",
+                  "en": "Now also grants 5/10 Strength",
+                  "uk": "Тепер також дає 5/10 до сили"
                 }
               }
             ]
@@ -594,9 +552,9 @@
                   "uk": "Вільне пересування та збільшена швидкість пересування від Silent as the Grave втрачаються не одразу, а одночасно з додатковою шкодою. Збільшення тривалості додаткової шкоди Silent as the Grave: 1/2 с. Silent as the Grave збільшує відновлення здоров'я: 20/40"
                 },
                 "note": {
-                  "ru": "Теперь также увеличивает длительность дополнительного урона Silent as the Grave на 1/2 сек",
-                  "en": "Now also increases Silent as the Grave bonus damage duration by 1/2 sec",
-                  "uk": "Тепер також збільшує тривалість додаткової шкоди Silent as the Grave на 1/2 сек"
+                  "ru": "Теперь также увеличивает длительность дополнительного урона Silent as the Grave на 1/2 секунды",
+                  "en": "Now also increases Silent as the Grave bonus damage duration by 1/2s",
+                  "uk": "Тепер також збільшує тривалість додаткової шкоди Silent as the Grave на 1/2 секунди"
                 }
               }
             ]
@@ -650,9 +608,9 @@
                   "uk": "Збільшення максимальної кількості зарядів Soul Assumption: 3 Здоров'я: 500"
                 },
                 "note": {
-                  "ru": "Теперь также даёт +500 к здоровью",
-                  "en": "Now also grants +500 Health",
-                  "uk": "Тепер також дає +500 до здоров'я"
+                  "ru": "Теперь также даёт 500 к здоровью",
+                  "en": "Now also grants 500 Health",
+                  "uk": "Тепер також дає 500 до здоров'я"
                 }
               }
             ]
@@ -669,7 +627,7 @@
       "abilities": [
         {
           "ability_id": "void_spirit_resonant_pulse_custom",
-          "name": "resonant pulse",
+          "name": "Resonant Pulse",
           "image": "abilities/void_spirit_resonant_pulse.webp",
           "ability_notes": [
             {
@@ -677,9 +635,9 @@
               "old_raw_value": "50 70 90 100",
               "new_raw_value": "50 70 90 110",
               "note": {
-                "ru": "Поглощение за попадание по герою увеличено с 50/70/90/100 до 50/70/90/110",
-                "en": "Absorb per hero hit increased from 50/70/90/100 to 50/70/90/110",
-                "uk": "Поглинання за влучання по герою збільшено з 50/70/90/100 до 50/70/90/110"
+                "ru": "Дополнительное поглощение урона за героя увеличено с 50/70/90/100 до 50/70/90/110",
+                "en": "Bonus damage absorbed per hero increased from 50/70/90/100 to 50/70/90/110",
+                "uk": "Додаткове поглинання шкоди за героя збільшено з 50/70/90/100 до 50/70/90/110"
               }
             }
           ]
@@ -766,9 +724,9 @@
                   "uk": "Бар'єр Resonant Pulse не можна розвіяти, і він поглинає будь-яку шкоду. Збільшення Бар'єру Resonant Pulse: 75%/150% від Спритності"
                 },
                 "note": {
-                  "ru": "Увеличение барьера Resonant Pulse уменьшено с 100%/200% до 75%/150% от ловкости",
+                  "ru": "Увеличение барьера Resonant Pulse ослаблено с 100%/200% до 75%/150% от ловкости",
                   "en": "Resonant Pulse barrier increase decreased from 100%/200% to 75%/150% of Agility",
-                  "uk": "Збільшення бар'єра Resonant Pulse зменшено з 100%/200% до 75%/150% від спритності"
+                  "uk": "Збільшення бар'єра Resonant Pulse ослаблено з 100%/200% до 75%/150% від спритності"
                 }
               }
             ]
@@ -892,9 +850,9 @@
                   "uk": "Збільшення тривалості оглушення при виклику Chaotic Offering: 1 сек"
                 },
                 "note": {
-                  "ru": "Увеличение длительности оглушения Chaotic Offering уменьшено с 1,2 до 1 секунды",
+                  "ru": "Увеличение длительности оглушения Chaotic Offering ослаблено с 1,2 до 1 секунды",
                   "en": "Chaotic Offering stun duration bonus decreased from 1.2 to 1 second",
-                  "uk": "Збільшення тривалості оглушення Chaotic Offering зменшено з 1,2 до 1 секунди"
+                  "uk": "Збільшення тривалості оглушення Chaotic Offering ослаблено з 1,2 до 1 секунди"
                 }
               }
             ]
@@ -920,9 +878,9 @@
                   "uk": "Chaotic Offering спрацьовує миттєво. Зменшення часу перезарядки Chaotic Offering: 100/125/150 с. Chaotic Offering створить додаткового Голема, якщо герой має понад 300 Спритності"
                 },
                 "note": {
-                  "ru": "Уменьшение времени перезарядки Chaotic Offering ослаблено с 115/135/155 до 100/125/150 секунд",
+                  "ru": "Уменьшение перезарядки Chaotic Offering ослаблено с 115/135/155 до 100/125/150 секунд",
                   "en": "Chaotic Offering cooldown reduction decreased from 115/135/155 to 100/125/150 seconds",
-                  "uk": "Зменшення часу перезарядки Chaotic Offering послаблено з 115/135/155 до 100/125/150 секунд"
+                  "uk": "Зменшення перезарядки Chaotic Offering ослаблено з 115/135/155 до 100/125/150 секунд"
                 }
               }
             ]

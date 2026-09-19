@@ -1,0 +1,797 @@
+{
+  "patch_number": "1.01a",
+  "patch_name": "1.01a",
+  "patch_timestamp": 1788917318,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_invoker_21",
+            "image": "invoker_21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение толщины и длины Ice Wall ослаблено со 160 до 80",
+                  "en": "Ice Wall thickness and length bonus decreased from 160 to 80",
+                  "uk": "Збільшення товщини і довжини Ice Wall ослаблено зі 160 до 80"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение толщины и длины Ice Wall: 80\n\nIce Wall замораживает вражеских героев, пробывших в ней 3 сек., отчего они получают 300 магического урона и 1.5 сек. оцепенения.",
+              "en": "Increased Ice Wall thickness and length: 80\n\nIce Wall freezes enemy heroes that stand in it for 3 seconds, causing them to take 300 magic damage and 1.5 seconds of roots.",
+              "uk": "Збільшення товщини і довжини Ice Wall: 80\n\nIce Wall заморожує ворожих героїв, що пробули в ній 3 сек., через що вони отримують 300 магічних збитків і 1.5 секунди заціпеніння."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_lunar_orbit_custom",
+          "name": "Lunar Orbit",
+          "image": "luna_lunar_orbit.webp",
+          "ability_notes": [
+            {
+              "parameter": "rotating_glaives_collision_damage",
+              "note": {
+                "ru": "Урон глефы при попадании увеличен с 15%/20%/25%/30% до 22%/28%/34%/40% от урона владельца",
+                "en": "Glaive collision damage increased from 15%/20%/25%/30% to 22%/28%/34%/40% of the owner's damage",
+                "uk": "Шкоду глефи при влучанні збільшено з 15%/20%/25%/30% до 22%/28%/34%/40% від шкоди власника"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "luna_moon_glaive_custom",
+          "name": "Moon Glaives",
+          "image": "luna_moon_glaive.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_reduction_percent",
+              "note": {
+                "ru": "Снижение урона за отскок ослаблено с 60%/55%/50%/45% до 50%/45%/40%/35%",
+                "en": "Damage reduction per bounce decreased from 60%/55%/50%/45% to 50%/45%/40%/35%",
+                "uk": "Зниження шкоди за відскок ослаблено з 60%/55%/50%/45% до 50%/45%/40%/35%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_luna_8",
+            "image": "luna_8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Урона Ночью: 16/32» заменено на «Увеличение Урона от Попадания Lunar Orbit: 10/15/20. Уменьшение Времени Перезарядки Lunar Orbit: 2/4/6 сек»",
+                  "en": "«Night damage bonus: 16/32» replaced with «Lunar Orbit hit damage bonus: 10/15/20. Lunar Orbit cooldown reduction: 2/4/6s»",
+                  "uk": "«Збільшення збитків Вночі: 16/32» замінено на «Збільшення втрат від Попадання Lunar Orbit: 10/15/20. Зменшення Часу Перезарядки Lunar Orbit: 2/4/6 сек»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона от Попадания Lunar Orbit: 10/15/20\n\nУменьшение Времени Перезарядки Lunar Orbit: 2/4/6 сек.",
+              "en": "Lunar Orbit Hit Damage Increase: 10/15/20\n\nLunar Orbit Cooldown Decreased: 2/4/6 sec.",
+              "uk": "Збільшення втрат від Попадання Lunar Orbit: 10/15/20\n\nЗменшення Часу Перезарядки Lunar Orbit: 2/4/6 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_luna_9",
+            "image": "luna_9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Попадание Lucent Beam увеличивает Урон от Атак: 4/8/12. Длительность Эффекта: 15 сек. Уменьшение Затрат Маны Lucent Beam: 15%/30%/45%» заменено на «Новая Пассивная Способность: Lunar Blessing. Повышает урон от атак союзников неподалёку на 1 за каждый уровень владельца, а на него действует вдвое сильнее. Ночью работает по всей карте и увеличивает обзор владельца на 250 + 25 за его уровень. Радиус: 1200»",
+                  "en": "«Lucent Beam hits increase attack damage: 4/8/12. Effect duration: 15s. Lucent Beam mana cost reduction: 15%/30%/45%» replaced with «New passive ability: Lunar Blessing. Increases the attack damage of nearby allies by 1 per owner level, and affects the owner twice as strongly. At night it works across the whole map and increases the owner's vision by 250 + 25 per level. Radius: 1200»",
+                  "uk": "«Попадання Lucent Beam збільшує Втрату від Атак: 4/8/12. Тривалість Ефекту: 15 сек. Зменшення Витрат Мани Lucent Beam: 15%/30%/45%» замінено на «Нова Пасивна Здатність: Lunar Blessing. Підвищує збитки від атак союзників неподалік на 1 за кожен рівень власника, а на нього діє вдвічі сильніше. Вночі працює по всій карті і збільшує огляд власника на 250 + 25 за його рівень. Радіус: 1200»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Новая Пассивная Способность: Lunar Blessing\n\nПовышает урон от атак союзников неподалёку на 1 за каждый уровень владельца, а на него действует вдвое сильнее. Ночью работает по всей карте и увеличивает обзор владельца на 250 + 25 за его уровень.\n\nРадиус: 1200",
+              "en": "New Passive Ability: Lunar Blessing\n\nIncreases damage from nearby allies' attacks by 1 for each owner's level, and affects them twice as much. At night, works across the entire map and increases the owner's vision by 250 + 25 per owner's level.\n\nRadius: 1200",
+              "uk": "Нова Пасивна Здатність: Lunar Blessing\n\nПідвищує збитки від атак союзників неподалік на 1 за кожен рівень власника, а на нього діє вдвічі сильніше. Вночі працює по всій карті і збільшує огляд власника на 250 + 25 за його рівень"
+            }
+          },
+          {
+            "talent_id": "modifier_luna_10",
+            "image": "luna_10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Уменьшение Снижения Урона за Отскок Moon Glaives: 5%/10%» заменено на «Новая Активная Способность: Lunar Field. Создаёт Lunar Orbit в указанной точке. Длительность: 8 сек. Дальность Применения: 800. Затраты Маны: 50. Время Перезарядки: 24/12 сек»",
+                  "en": "«Reduces Moon Glaives damage reduction per bounce: 5%/10%» replaced with «New active ability: Lunar Field. Creates a Lunar Orbit at the target point. Duration: 8s. Cast range: 800. Mana cost: 50. Cooldown: 24/12s»",
+                  "uk": "«Зменшення Зниження Втрат за Відскок Moon Glaives: 5%/10%» замінено на «Нова Активна Здатність: Lunar Field. Створює Lunar Orbit у вказаній точці. Тривалість: 8 сек. Дальність Застосування: 800. Витрати Мани: 50. Час Перезарядки: 24/12 сек»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Новая Активная Способность: Lunar Field\n\nСоздаёт Lunar Orbit в указанной точке.\n\nДлительность: 8 сек.\nДальность Применения: 800\nЗатраты Маны: 50\nВремя Перезарядки: 24/12 сек.",
+              "en": "New Active Ability: Lunar Field\n\nCreates a Lunar Orbit at the target location.\n\nDuration: 8 sec.\nCast Range: 800\nMana Cost: 50\nCooldown: 24/12 sec.",
+              "uk": "Нова Активна Здатність: Lunar Field\n\nСтворює Lunar Orbit у вказаній точці.\nВитрати Мани: 50\nЧас Перезарядки: 24/12 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_luna_11",
+            "image": "luna_11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Отскоки Moon Glaives замедляют Скорость Передвижения противников: 20%/40%/60%. Длительность: 1 сек» заменено на «Сила, Ловкость: 6/12/18»",
+                  "en": "«Moon Glaives bounces slow enemy movement speed: 20%/40%/60%. Duration: 1s» replaced with «Strength, Agility: 6/12/18»",
+                  "uk": "«Оскоки Moon Glaives уповільнюють Швидкість Пересування супротивників: 20%/40%/60%. Тривалість: 1 сек» замінено на «Сила, Спритність: 6/12/18»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Сила, Ловкость: 6/12/18",
+              "en": "Strength, Agility: 6/12/18",
+              "uk": "Сила, Спритність: 6/12/18"
+            }
+          },
+          {
+            "talent_id": "modifier_luna_12",
+            "image": "luna_12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Lucent Beam совершает Атаку по задетой цели» заменено на «Увеличение Числа Глеф Lunar Orbit на 1 за каждые 100 Силы»",
+                  "en": "«Lucent Beam performs an attack on the struck target» replaced with «Increases Lunar Orbit glaives by 1 for every 100 Strength»",
+                  "uk": "«Lucent Beam здійснює Атаку за зачепленою метою» замінено на «Збільшення Числа Глеф Lunar Orbit на 1 за кожні 100 Сили»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Числа Глеф Lunar Orbit на 1 за каждые 100 Силы.",
+              "en": "Increase Lunar Orbit Glaives by 1 for every 100 Strength.",
+              "uk": "Збільшення Числа Глеф Lunar Orbit на 1 за кожні 100 Сили."
+            }
+          },
+          {
+            "talent_id": "modifier_luna_13",
+            "image": "luna_13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Длительности Оглушения Lucent Beam: 0,3/0,6 сек» заменено на «Lunar Orbit накладывает на противников складывающийся эффект, увеличивающий урон от следующего попадания: 1%. Максимум Эффектов: 10/20/30. Длительность: 2 сек»",
+                  "en": "«Lucent Beam stun duration bonus: 0.3/0.6s» replaced with «Lunar Orbit applies a stacking effect to enemies that increases the damage of their next hit: 1%. Max stacks: 10/20/30. Duration: 2s»",
+                  "uk": "«Збільшення Тривалості Оглушення Lucent Beam: 0,3/0,6 сек» замінено на «Lunar Orbit накладає на противників ефект, що складається, що збільшує шкоду від наступного влучення: 1%. Максимум Ефектів: 10/20/30. Тривалість: 2 сек»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Lunar Orbit накладывает на противников складывающийся эффект, увеличивающий урон от следующего попадания: 1%\n\nМаксимум Эффектов: 10/20/30\nДлительность: 2 сек.",
+              "en": "Lunar Orbit places a stacking effect on enemies that increases the damage of their next hit by: 1%\n\nMax Effects: 10/20/30\nDuration: 2 sec.",
+              "uk": "Lunar Orbit накладає на противників ефект, що складається, що збільшує шкоду від наступного влучення: 1%\n\nМаксимум Ефектів: 10/20/30\nТривалість: 2 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_luna_14",
+            "image": "luna_14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Moon Glaives могут отскакивать от Героя не нанося ему урон и не замедляя. Увеличение Радиуса Отскока Moon Glaives: 150» заменено на «Lunar Orbit становится Пассивной Способностью. Отключается истощением»",
+                  "en": "«Moon Glaives can bounce off the hero without dealing damage or slowing. Moon Glaives bounce radius bonus: 150» replaced with «Lunar Orbit becomes a passive ability. Toggled off by break»",
+                  "uk": "«Moon Glaives можуть відскакувати від Героя не завдаючи йому шкоди і не уповільнюючи. Збільшення Радіуса Відскоку Moon Glaives: 150» замінено на «Lunar Orbit стає пасивною здатністю. Вимикається виснаженням»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Lunar Orbit становится Пассивной Способностью. Отключается истощением.",
+              "en": "Lunar Orbit becomes a Passive Ability. Disabled by break.",
+              "uk": "Lunar Orbit стає пасивною здатністю. Вимикається виснаженням."
+            }
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_luna_1",
+            "image": "luna_1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Урона от Попадания Lunar Orbit: 10/15/20. Уменьшение Времени Перезарядки Lunar Orbit: 2/4/6 сек» заменено на «Урон: 8/16. Увеличение Урона Ночью: 8/16»",
+                  "en": "«Lunar Orbit hit damage bonus: 10/15/20. Lunar Orbit cooldown reduction: 2/4/6s» replaced with «Damage: 8/16. Night damage bonus: 8/16»",
+                  "uk": "«Збільшення втрат від Попадання Lunar Orbit: 10/15/20. Зменшення Часу Перезарядки Lunar Orbit: 2/4/6 сек» замінено на «Втрата: 8/16. Збільшення Втрата Вночі: 8/16»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Урон: 8/16\n\nУвеличение Урона Ночью: 8/16",
+              "en": "Damage: 8/16\n\nDamage Increase at Night: 8/16",
+              "uk": "Втрата: 8/16\n\nЗбільшення Втрата Вночі: 8/16"
+            }
+          },
+          {
+            "talent_id": "modifier_luna_2",
+            "image": "luna_2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Новая Пассивная Способность: Lunar Blessing. Повышает урон от атак союзников неподалёку на 1 за каждый уровень владельца, а на него действует вдвое сильнее. Ночью работает по всей карте и увеличивает обзор владельца на 250 + 25 за его уровень. Радиус: 1200» заменено на «Попадание Lucent Beam увеличивает Урон от Атак: 4/8/12. Длительность Эффекта: 15 сек. Уменьшение Затрат Маны Lucent Beam: 15%/30%/45%»",
+                  "en": "«New passive ability: Lunar Blessing. Increases the attack damage of nearby allies by 1 per owner level, and affects the owner twice as strongly. At night it works across the whole map and increases the owner's vision by 250 + 25 per level. Radius: 1200» replaced with «Lucent Beam hits increase attack damage: 4/8/12. Effect duration: 15s. Lucent Beam mana cost reduction: 15%/30%/45%»",
+                  "uk": "«Нова Пасивна Здатність: Lunar Blessing. Підвищує збитки від атак союзників неподалік на 1 за кожен рівень власника, а на нього діє вдвічі сильніше. Вночі працює по всій карті і збільшує огляд власника на 250 + 25 за його рівень. Радіус: 1200» замінено на «Попадання Lucent Beam збільшує Втрату від Атак: 4/8/12. Тривалість Ефекту: 15 сек. Зменшення Витрат Мани Lucent Beam: 15%/30%/45%»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Попадание Lucent Beam увеличивает Урон от Атак: 4/8/12\n\nДлительность Эффекта: 15 сек.\n\nУменьшение Затрат Маны Lucent Beam: 15%/30%/45%",
+              "en": "Lucent Beam hits increase Attack Damage: 4/8/12\n\nEffect Duration: 15 sec.\n\nLucent Beam Mana Cost Reduction: 15%/30%/45%",
+              "uk": "Попадання Lucent Beam збільшує Втрату від Атак: 4/8/12\n\nТривалість Ефекту: 15 сек.\n\nЗменшення Витрат Мани Lucent Beam: 15%/30%/45%"
+            }
+          },
+          {
+            "talent_id": "modifier_luna_3",
+            "image": "luna_3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Убирает Eclipse. Новая Активная Способность: Lunar Field. Создаёт Lunar Orbit в указанной точке. Длительность: 8 сек. Дальность Применения: 800. Затраты Маны: 150. Время Перезарядки: 24/16 сек» заменено на «Уменьшение Снижения Урона за Отскок Moon Glaives: 5%/10%»",
+                  "en": "«Removes Eclipse. New active ability: Lunar Field. Creates a Lunar Orbit at the target point. Duration: 8s. Cast range: 800. Mana cost: 150. Cooldown: 24/16s» replaced with «Reduces Moon Glaives damage reduction per bounce: 5%/10%»",
+                  "uk": "«Прибирає Eclipse. Нова Активна Здатність: Lunar Field. Створює Lunar Orbit у вказаній точці. Тривалість: 8 сек. Дальність Застосування: 800. Витрати Мани: 150. Час Перезарядки: 24/16 сек» замінено на «Зменшення Зниження Втрат за Відскок Moon Glaives: 5%/10%»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Снижения Урона за Отскок Moon Glaives: 5%/10%",
+              "en": "Moon Glaives Damage Reduction per Bounce: 5%/10%",
+              "uk": "Зменшення Зниження Втрат за Відскок Moon Glaives: 5%/10%"
+            }
+          },
+          {
+            "talent_id": "modifier_luna_5",
+            "image": "luna_5.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Сила, Ловкость: 6/12/18» заменено на «Lucent Beam совершает Атаку по задетой цели»",
+                  "en": "«Strength, Agility: 6/12/18» replaced with «Lucent Beam performs an attack on the struck target»",
+                  "uk": "«Сила, Спритність: 6/12/18» замінено на «Lucent Beam здійснює Атаку за зачепленою метою»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Lucent Beam совершает Атаку по задетой цели.",
+              "en": "Lucent Beam makes an Attack on the hit target.",
+              "uk": "Lucent Beam здійснює Атаку за зачепленою метою."
+            }
+          },
+          {
+            "talent_id": "modifier_luna_4",
+            "image": "luna_4.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Числа Глеф Lunar Orbit на 1 за каждые 150 Ловкости. Увеличение Радиуса Вращения Lunar Orbit на 1 за каждые 2 Ловкости» заменено на «Отскоки Moon Glaives замедляют Скорость Передвижения противников: 20%/40%/60%. Длительность: 1 сек»",
+                  "en": "«Increases Lunar Orbit glaives by 1 for every 150 Agility. Increases Lunar Orbit rotation radius by 1 for every 2 Agility» replaced with «Moon Glaives bounces slow enemy movement speed: 20%/40%/60%. Duration: 1s»",
+                  "uk": "«Збільшення Числа Глеф Lunar Orbit на 1 за кожні 150 Спритності. Збільшення Радіуса Обертання Lunar Orbit на 1 за кожні 2 Спритності» замінено на «Оскоки Moon Glaives уповільнюють Швидкість Пересування супротивників: 20%/40%/60%. Тривалість: 1 сек»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Отскоки Moon Glaives замедляют Скорость Передвижения противников: 20%/40%/60%\n\nДлительность: 1 сек.",
+              "en": "Moon Glaives bounces slow enemy Movement Speed: 20%/40%/60%\n\nDuration: 1 sec.",
+              "uk": "Оскоки Moon Glaives уповільнюють Швидкість Пересування супротивників: 20%/40%/60%\n\nТривалість: 1 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_luna_6",
+            "image": "luna_6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Lunar Orbit накладывает на противников складывающийся эффект, увеличивающий урон от следующего попадания: 1%. Максимум Эффектов: 10/20/30. Длительность: 1 сек» заменено на «Увеличение Длительности Оглушения Lucent Beam: 0,3/0,6 сек»",
+                  "en": "«Lunar Orbit applies a stacking effect to enemies that increases the damage of their next hit: 1%. Max stacks: 10/20/30. Duration: 1s» replaced with «Lucent Beam stun duration bonus: 0.3/0.6s»",
+                  "uk": "«Lunar Orbit накладає на противників ефект, що складається, що збільшує шкоду від наступного влучення: 1%. Максимум Ефектів: 10/20/30. Тривалість: 1 сек» замінено на «Збільшення Тривалості Оглушення Lucent Beam: 0,3/0,6 сек»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Длительности Оглушения Lucent Beam: 0.3/0.6 сек.",
+              "en": "Lucent Beam Stun Duration Increase: 0.3/0.6 sec.",
+              "uk": "Збільшення Тривалості Оглушення Lucent Beam: 0.3/0.6 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_luna_7",
+            "image": "luna_7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Lunar Orbit становится Пассивной Способностью. Отключается истощением» заменено на «Moon Glaives могут отскакивать от Героя не нанося ему урон и не замедляя. Увеличение Радиуса Отскока Moon Glaives: 150»",
+                  "en": "«Lunar Orbit becomes a passive ability. Toggled off by break» replaced with «Moon Glaives can bounce off the hero without dealing damage or slowing. Moon Glaives bounce radius bonus: 150»",
+                  "uk": "«Lunar Orbit стає пасивною здатністю. Вимикається виснаженням» замінено на «Moon Glaives можуть відскакувати від Героя не завдаючи йому шкоди і не уповільнюючи. Збільшення Радіуса Відскоку Moon Glaives: 150»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Moon Glaives могут отскакивать от Героя не нанося ему урон и не замедляя.\n\nУвеличение Радиуса Отскока Moon Glaives: 150",
+              "en": "Moon Glaives can bounce off the Hero without damaging or slowing them.\n\nMoon Glaives Bounce Radius Increase: 150",
+              "uk": "Moon Glaives можуть відскакувати від Героя не завдаючи йому шкоди і не уповільнюючи.\n\nЗбільшення Радіуса Відскоку Moon Glaives: 150"
+            }
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_luna_15",
+            "image": "luna_15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Больше не убирает Moon Glaives",
+                  "en": "No longer removes Moon Glaives",
+                  "uk": "Більше не прибирає Moon Glaives"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Lucent Beam срабатывает на случайных противников вокруг цели: 1 + 1 за каждые 150 Интеллекта\n\nРадиус: 500",
+              "en": "Lucent Beam triggers on random enemies around the target: 1 + 1 for every 150 Intellect\n\nRadius: 500",
+              "uk": "Lucent Beam спрацьовує на випадкових супротивників навколо мети: 1 + 1 за кожні 150 Інтелекту\n\nРадіус: 500"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_marci_18",
+            "image": "marci_18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение урона по иллюзии Beautiful Illusion ослаблено с 50%/100% до 35%/70%",
+                  "en": "Beautiful Illusion damage taken reduction decreased from 50%/100% to 35%/70%",
+                  "uk": "Зменшення шкоди по ілюзії Beautiful Illusion ослаблено з 50%/100% до 35%/70%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Урона по Иллюзии Beautiful Illusion: 35%/70%",
+              "en": "Beautiful Illusion Damage Taken Reduction: 35%/70%",
+              "uk": "Зменшення збитків з Ілюзії Beautiful Illusion: 35%/70%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_rubick_21",
+            "image": "rubick_21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Урон от заклинаний уменьшен с 50% до 30%",
+                  "en": "Spell damage decreased from 50% to 30%",
+                  "uk": "Шкоду від заклять зменшено з 50% до 30%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Всего Наносимого Урона у способностей Spell Steal: 50%\n\nУрон от Заклинаний: 30%",
+              "en": "Spell Steal Total Damage Increase: 50%\n\nSpell Damage: 30%",
+              "uk": "Збільшення Усього Ушкодження, що наноситься у здібностей Spell Steal: 50%\n\nВтрата від Заклинань: 30%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "ursa",
+      "name": "ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_ursa_7",
+            "image": "ursa_7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение длительности Enrage усилено с 1 до 2 секунд",
+                  "en": "Enrage duration bonus increased from 1s to 2s",
+                  "uk": "Збільшення тривалості Enrage посилено з 1 до 2 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Enrage не Уменьшает Весь Получаемый Урон.</font></b>\n\nEnrage Увеличивает Весь Наносимый Урон.\n\nУвеличение Длительности Enrage: 2 сек.",
+              "en": "<b><font color='#ff0000'>Enrage does not Reduce All Damage Taken.</font></b>\n\nEnrage Increases All Damage Dealt.\n\nEnrage Duration Increase: 2 sec.",
+              "uk": "<b><font color='#ff0000'>Enrage не Зменшує Усю Отриману Втрату.</font></b>\n\nEnrage Збільшує Усю Втрату, що наноситься.\n\nЗбільшення Тривалості Enrage: 2 сек."
+            }
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_winter_wyvern_1",
+            "image": "winter_wyvern_1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Прорубающий урон увеличен с 15%/30% до 20%/40%",
+                  "en": "Cleave damage increased from 15%/30% to 20%/40%",
+                  "uk": "Прорубну шкоду збільшено з 15%/30% до 20%/40%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Атаки героя наносят урон по области.\n\nПрорубающий Урон: 20%/40%\nРадиус: 250",
+              "en": "Hero's attacks deal area damage.\n\nCleave Damage: 20%/40%\nRadius: 250",
+              "uk": "Атаки героя завдають шкоди області.\n\nПрорубуючий Втрата: 20%/40%\nРадіус: 250"
+            }
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_5",
+            "image": "winter_wyvern_5.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Уменьшение Времени Перезарядки Winter's Curse: 20/40 сек» заменено на «Cold Embrace увеличивает возвращение урона от всех источников: 40%/60%/80%»",
+                  "en": "«Winter's Curse cooldown reduction: 20/40s» replaced with «Cold Embrace increases damage return from all sources: 40%/60%/80%»",
+                  "uk": "«Зменшення часу перезарядки Winter's Curse: 20/40 сек» замінено на «Cold Embrace збільшує повернення шкоди від усіх джерел: 40%/60%/80%»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Cold Embrace увеличивает возвращение урона от всех источников: 40%/60%/80%",
+              "en": "Cold Embrace increases damage return from all sources: 40%/60%/80%",
+              "uk": "Cold Embrace збільшує повернення втрат від усіх джерел: 40%/60%/80%"
+            }
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_4",
+            "image": "winter_wyvern_4.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Cold Embrace увеличивает возвращение урона от всех источников: 40%/60%/80%» заменено на «Уменьшение Времени Перезарядки Winter's Curse: 20/40 сек. Урон от Заклинаний: 10%/20%»",
+                  "en": "«Cold Embrace increases damage return from all sources: 40%/60%/80%» replaced with «Winter's Curse cooldown reduction: 20/40s. Spell damage: 10%/20%»",
+                  "uk": "«Cold Embrace збільшує повернення шкоди від усіх джерел: 40%/60%/80%» замінено на «Зменшення часу перезарядки Winter's Curse: 20/40 сек. Шкода від заклять: 10%/20%»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Времени Перезарядки Winter's Curse: 20/40 сек.\n\nУрон от Заклинаний: 10%/20%",
+              "en": "Winter's Curse Cooldown Reduction: 20/40 sec.\n\nSpell Damage: 10%/20%",
+              "uk": "Зменшення Часу Перезаряджання Winter's Curse: 20/40 сек.\n\nВтрата від Заклинань: 10%/20%"
+            }
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_9",
+            "image": "winter_wyvern_9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Восстановление маны увеличено с 10%/20%/30% до 12%/24%/36% от ловкости",
+                  "en": "Mana regen increased from 10%/20%/30% to 12%/24%/36% of Agility",
+                  "uk": "Відновлення мани збільшено з 10%/20%/30% до 12%/24%/36% від спритності"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Бонус к ловкости увеличен с 5/10/15 до 6/12/18",
+                  "en": "Agility bonus increased from 5/10/15 to 6/12/18",
+                  "uk": "Бонус до спритності збільшено з 5/10/15 до 6/12/18"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Восстановление Маны: 12%/24%/36% от Ловкости\n\nЛовкость: 6/12/18",
+              "en": "Mana Regeneration: 12%/24%/36% of Agility\n\nAgility: 6/12/18",
+              "uk": "Відновлення Мани: 12%/24%/36% від Спритності\n\nСпритність: 6/12/18"
+            }
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_10",
+            "image": "winter_wyvern_10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также даёт 100/200/300 к здоровью",
+                  "en": "Now also grants 100/200/300 health",
+                  "uk": "Тепер також дає 100/200/300 до здоров'я"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Убирает Cold Embrace. </font></b>\n\nУменьшение Получаемого Урона от Атак Героев: 10%/15%/20%\n\nЗдоровье: 100/200/300",
+              "en": "<b><font color='#ff0000'> Remove Cold Embrace. </font></b>\n\nHero Attack Damage Reduction: 10%/15%/20%\n\nHealth: 100/200/300",
+              "uk": "<b><font color='#ff0000'> Забирає Cold Embrace. </font></b>\n\nЗменшення Отриманої шкоди від Атак Героїв: 10%/15%/20%\n\nЗдоров'я: 100/200/300"
+            }
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_11",
+            "image": "winter_wyvern_11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Перезарядка Frozen Staff уменьшена с 24 до 16 секунд",
+                  "en": "Frozen Staff cooldown decreased from 24s to 16s",
+                  "uk": "Перезарядку Frozen Staff зменшено з 24 до 16 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Новая Активная Способность: Frozen Staff\n\nТолкает выбранное существо в направлении его взгляда.\n\nРасстояние Толчка: 600\nДлительность Толчка: 0.5 сек.\nЗатраты Маны: 150\nВремя Перезарядки: 16 сек.",
+              "en": "New Active Ability: Frozen Staff\n\nPushes the target unit in the direction it is facing.\n\nPush Range: 600\nPush Duration: 0.5 sec.\nMana Cost: 150\nCooldown: 16 sec.",
+              "uk": "Нова Активна Здатність: Frozen Staff\n\nВиштовхує обрану істоту в напрямку його погляду.\n\nВідстань Поштовху: 600\nТривалість Поштовху: 0.5 сек.\nВитрати Мани: 150\nЧас Перезарядки: 16 сек."
+            }
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_12",
+            "image": "winter_wyvern_12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к скорости атаки увеличен с 20/40 до 30/60",
+                  "en": "Attack speed bonus increased from 20/40 to 30/60",
+                  "uk": "Бонус до швидкості атаки збільшено з 20/40 до 30/60"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Дарует Беспрепятственный Обзор по целям Arctic Burn в Радиусе: 200/400\n\nСкорость Атаки: 30/60",
+              "en": "Grants Unobstructed Vision to Arctic Burn targets in Radius: 200/400\n\nAttack Speed: 30/60",
+              "uk": "Дарує Безперешкодний Огляд за цілями Arctic Burn у Радіусі: 200/400\n\nШвидкість Атаки: 30/60"
+            }
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_winter_wyvern_16",
+            "image": "winter_wyvern_16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение урона Splinter Blast от сопротивления магии ослаблено с 200%/300%/400% до 100%/200%/300%",
+                  "en": "Splinter Blast damage bonus from Magic Resistance decreased from 200%/300%/400% to 100%/200%/300%",
+                  "uk": "Збільшення шкоди Splinter Blast від опору магії ослаблено з 200%/300%/400% до 100%/200%/300%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона Splinter Blast: 100%/200%/300% от Сопротивления Магии",
+              "en": "Splinter Blast Damage Increase: 100%/200%/300% of Magic Resistance",
+              "uk": "Збільшення збитків Splinter Blast: 100%/200%/300% від Опір Магії"
+            }
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_21",
+            "image": "winter_wyvern_21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Урон в секунду Frozen Cemetery уменьшен с 1000% до 600% от сопротивления магии",
+                  "en": "Frozen Cemetery damage per second decreased from 1000% to 600% of Magic Resistance",
+                  "uk": "Шкоду в секунду Frozen Cemetery зменшено з 1000% до 600% від опору магії"
+                }
+              },
+              {
+                "note": {
+                  "ru": "Перезарядка Frozen Cemetery увеличена с 20 до 30 секунд",
+                  "en": "Frozen Cemetery cooldown increased from 20s to 30s",
+                  "uk": "Перезарядку Frozen Cemetery збільшено з 20 до 30 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'> Убирает Winter's Curse. </font></b>\n\nНовая Активная Способность: Frozen Cemetery\n\nСоздаёт ледяное кладбище в указанной точке. Противники попавшие в него получают магический урон каждую секунду, а их скорость передвижения всегда равна 100 и не может быть изменена. Замедление работает сквозь невосприимчивость к магии.\n\nУрон в Секунду: 600% от Сопротивления Магии\nРадиус: 525\nДлительность: 10 сек.\nЗатраты Маны: 250\nВремя Перезарядки: 30 сек.",
+              "en": "<b><font color='#ff0000'> Removes Winter's Curse. </font></b>\n\nNew Active Ability: Frozen Cemetery\n\nCreates an icy cemetery at the target location. Enemies caught in it take magic damage every second, and their movement speed is always 100 and cannot be changed. The slow works through magic immunity.\n\nDamage per Second: 600% of Magic Resistance\nRadius: 525\nDuration: 10 sec.\nMana Cost: 250\nCooldown: 30 sec.",
+              "uk": "<b><font color='#ff0000'> Забирає Winter's Curse. </font></b>\n\nНова Активна Здатність: Frozen Cemetery\n\nСтворює крижаний цвинтар у зазначеній точці. Противники, що потрапили в нього, отримують магічну шкоду кожну секунду, а їх швидкість пересування завжди дорівнює 100 і не може бути змінена. Уповільнення працює через несприйнятливість до магії.\n\nВтрата в Секунду: 600% Опір Магії\nРадіус: 525\nТривалість: 10 сек.\nВитрати Мани: 250\nЧас Перезарядки: 30 сек."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

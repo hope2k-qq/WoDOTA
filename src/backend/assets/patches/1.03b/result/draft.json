@@ -1,0 +1,1640 @@
+{
+  "patch_number": "1.03b",
+  "patch_name": "1.03b",
+  "patch_timestamp": 1789149496,
+  "general": {
+    "global_changes": [
+      {
+        "title": {
+          "ru": "Таланты",
+          "en": "Talents",
+          "uk": "Таланти"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Сила",
+          "en": "Strength",
+          "uk": "Сила"
+        }
+      },
+      {
+        "parameter": "basic_talent.attack1.text_ru",
+        "old_raw_value": "Базовый Урон: 8/16/24",
+        "new_raw_value": "Базовый Урон: 10/20/30",
+        "note": {
+          "ru": "attack1 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "attack1 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "attack1 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.attack1.text_en",
+        "old_raw_value": "Base Damage: 8/16/24",
+        "new_raw_value": "Base Damage: 10/20/30",
+        "note": {
+          "ru": "attack1 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "attack1 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "attack1 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.attack1.text_uk",
+        "old_raw_value": "Базова Шкода: 8/16/24",
+        "new_raw_value": "Базова Шкода: 10/20/30",
+        "note": {
+          "ru": "attack1 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "attack1 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "attack1 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_ru",
+        "old_raw_value": "Уменьшение Получаемого Урона от Атак: 4%/8%/12%",
+        "new_raw_value": "Уменьшение Получаемого Урона от Атак: 5%/10%",
+        "note": {
+          "ru": "quickhp · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_en",
+        "old_raw_value": "Reducing Damage Received from Attacks: 4%/8%/12%",
+        "new_raw_value": "Reducing Damage Received from Attacks: 5%/10%",
+        "note": {
+          "ru": "quickhp · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.quickhp.text_uk",
+        "old_raw_value": "Зменшення Одержуваної шкоди від Атак: 4%/8%/12%",
+        "new_raw_value": "Зменшення Одержуваної шкоди від Атак: 5%/10%",
+        "note": {
+          "ru": "quickhp · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "quickhp · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "quickhp · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.str6.text_ru",
+        "old_raw_value": "Меняет основную характеристику персонажа на Силу. <br><br> Прирост Силы за Уровень: 0.5 <br><br> <b><font color='#ff0000'>Основная характеристика не меняется, если это уже ваша основная характеристика или вы выучили аналогичный талант в другой ветке.</font></b> <br><br> Меняет основную характеристику персонажа на Универсальную, если выучить аналогичные таланты в Силе, Ловкости и Интеллекте.",
+        "new_raw_value": "<b><font color='#ff0000'>Сила.</font></b> <br><br> Меняет основную характеристику на Силу. <br><br> Прирост Силы за Уровень: 0.5 <br><br> Если выучить Силу, Ловкость и Интеллект, то меняет основную характеристику на Универсальную и увеличивает Базовый Урон за Атрибут: 0.1",
+        "note": {
+          "ru": "str6 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "str6 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "str6 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.str6.text_en",
+        "old_raw_value": "Changes the character's primary attribute to Strength. <br><br> Strength Gain per Level: 0.5 <br><br> <b><font color='#ff0000'>Primary attribute does not change if it is already your primary attribute or if you learned a similar talent in another tree.</font></b> <br><br> Changes the character's primary attribute to Universal if you learn similar talents in Strength, Agility and Intellect.",
+        "new_raw_value": "<b><font color='#ff0000'>Strength.</font></b> <br><br> Changes the primary attribute to Strength. <br><br> Strength Gain per Level: 0.5 <br><br> If Strength, Agility, and Intelligence are learned, changes the primary attribute to Universal and increases Base Damage per Attribute: 0.1",
+        "note": {
+          "ru": "str6 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "str6 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "str6 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.str6.text_uk",
+        "old_raw_value": "Змінює основну характеристику персонажа на Силу. <br><br> Приріст Сили за Рівень: 0.5 <br><br><b><font color='#ff0000'>Основна характеристика не змінюється, якщо це вже ваша основна характеристика або ви вивчили аналогічний талант в іншій гілці.</font></b> <br><br> Змінює основну характеристику персонажа на Універсальну, якщо вивчити аналогічні таланти в Силі, Спритності та Інтелекті.",
+        "new_raw_value": "<b><font color='#ff0000'>Сила.</font></b> <br><br> Змінює основну характеристику на Силу. <br><br> Приріст Сили за Рівень: 0.5 <br><br> Якщо вивчені Сила, Спритність і Інтелект, змінює основну характеристику на Універсальну та збільшує Базову Шкоду за Атрибут: 0.1",
+        "note": {
+          "ru": "str6 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "str6 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "str6 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Ловкость",
+          "en": "Agility",
+          "uk": "Спритність"
+        }
+      },
+      {
+        "parameter": "basic_talent.agi6.text_ru",
+        "old_raw_value": "Меняет основную характеристику персонажа на Ловкость. <br><br> Прирост Ловкости за Уровень: 0.5 <br><br> <b><font color='#ff0000'>Основная характеристика не меняется, если это уже ваша основная характеристика или вы выучили аналогичный талант в другой ветке.</font></b> <br><br> Меняет основную характеристику персонажа на Универсальную, если выучить аналогичные таланты в Силе, Ловкости и Интеллекте.",
+        "new_raw_value": "<b><font color='#ff0000'>Ловкость.</font></b> <br><br> Меняет основную характеристику на Ловкость. <br><br> Прирост Ловкости за Уровень: 0.5 <br><br> Если выучить Силу, Ловкость и Интеллект, то меняет основную характеристику на Универсальную и увеличивает Базовый Урон за Атрибут: 0.1",
+        "note": {
+          "ru": "agi6 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "agi6 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "agi6 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.agi6.text_en",
+        "old_raw_value": "Changes the character's primary attribute to Agility. <br><br> Agility Gain per Level: 0.5 <br><br> <b><font color='#ff0000'>Primary attribute does not change if it is already your primary attribute or if you learned a similar talent in another tree.</font></b> <br><br> Changes the character's primary attribute to Universal if you learn similar talents in Strength, Agility and Intellect.",
+        "new_raw_value": "<b><font color='#ff0000'>Agility.</font></b> <br><br> Changes the primary attribute to Agility. <br><br> Agility Gain per Level: 0.5 <br><br> If Strength, Agility, and Intelligence are learned, changes the primary attribute to Universal and increases Base Damage per Attribute: 0.1",
+        "note": {
+          "ru": "agi6 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "agi6 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "agi6 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.agi6.text_uk",
+        "old_raw_value": "Змінює основну характеристику персонажа на Спритність. <br><br> Приріст Спритності за Рівень: 0.5 <br><br><b><font color='#ff0000'>Основна характеристика не змінюється, якщо це вже ваша основна характеристика або ви вивчили аналогічний талант в іншій гілці.</font></b> <br><br> Змінює основну характеристику персонажа на Універсальну, якщо вивчити аналогічні таланти в Силі, Спритності та Інтелекті.",
+        "new_raw_value": "<b><font color='#ff0000'>Спритність.</font></b> <br><br> Змінює основну характеристику на Спритність. <br><br> Приріст Спритності за Рівень: 0.5 <br><br> Якщо вивчені Сила, Спритність і Інтелект, змінює основну характеристику на Універсальну та збільшує Базову Шкоду за Атрибут: 0.1",
+        "note": {
+          "ru": "agi6 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "agi6 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "agi6 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask1.text_ru",
+        "old_raw_value": "Вампиризм: 7%/14%/21%",
+        "new_raw_value": "Вампиризм: 7%/14%",
+        "note": {
+          "ru": "mask1 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask1 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask1 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask1.text_en",
+        "old_raw_value": "Lifesteal: 7%/14%/21%",
+        "new_raw_value": "Lifesteal: 7%/14%",
+        "note": {
+          "ru": "mask1 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask1 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask1 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask1.text_uk",
+        "old_raw_value": "Вампіризм: 7%/14%/21%",
+        "new_raw_value": "Вампіризм: 7%/14%",
+        "note": {
+          "ru": "mask1 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask1 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask1 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Интеллект",
+          "en": "Intelligence",
+          "uk": "Інтелект"
+        }
+      },
+      {
+        "parameter": "basic_talent.blood.text_ru",
+        "old_raw_value": "Навсегда дарует Барьер поглощающий Любой Урон: 150/300 <br><br> Время Перезарядки: 15 сек.",
+        "new_raw_value": "Навсегда дарует Барьер поглощающий Любой Урон: 200/400 <br><br> Время Перезарядки: 15 сек.",
+        "note": {
+          "ru": "blood · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "blood · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "blood · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.blood.text_en",
+        "old_raw_value": "Permanently grants a Barrier that absorbs Any Damage: 150/300 <br><br> Cooldown: 15 sec.",
+        "new_raw_value": "Permanently grants a Barrier that absorbs Any Damage: 200/400 <br><br> Cooldown: 15 sec.",
+        "note": {
+          "ru": "blood · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "blood · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "blood · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.blood.text_uk",
+        "old_raw_value": "Назавжди надає Бар'єр, що поглинає Будь-яку Шкоду: 150/300 <br><br> Час Перезарядки: 15 сек.",
+        "new_raw_value": "Назавжди надає Бар'єр, що поглинає Будь-яку Шкоду: 200/400 <br><br> Час Перезарядки: 15 сек.",
+        "note": {
+          "ru": "blood · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "blood · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "blood · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.int6.text_ru",
+        "old_raw_value": "Меняет основную характеристику персонажа на Интеллект. <br><br> Прирост Интеллекта за Уровень: 0.5 <br><br> <b><font color='#ff0000'>Основная характеристика не меняется, если это уже ваша основная характеристика или вы выучили аналогичный талант в другой ветке.</font></b> <br><br> Меняет основную характеристику персонажа на Универсальную, если выучить аналогичные таланты в Силе, Ловкости и Интеллекте.",
+        "new_raw_value": "<b><font color='#ff0000'>Интеллект.</font></b> <br><br> Меняет основную характеристику на Интеллект. <br><br> Прирост Интеллекта за Уровень: 0.5 <br><br> Если выучить Силу, Ловкость и Интеллект, то меняет основную характеристику на Универсальную и увеличивает Базовый Урон за Атрибут: 0.1",
+        "note": {
+          "ru": "int6 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "int6 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "int6 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.int6.text_en",
+        "old_raw_value": "Changes the character's primary attribute to Intellect. <br><br> Intellect Gain per Level: 0.5 <br><br> <b><font color='#ff0000'>Primary attribute does not change if it is already your primary attribute or if you learned a similar talent in another tree.</font></b> <br><br> Changes the character's primary attribute to Universal if you learn similar talents in Strength, Agility and Intellect.",
+        "new_raw_value": "<b><font color='#ff0000'>Intelligence.</font></b> <br><br> Changes the primary attribute to Intelligence. <br><br> Intelligence Gain per Level: 0.5 <br><br> If Strength, Agility, and Intelligence are learned, changes the primary attribute to Universal and increases Base Damage per Attribute: 0.1",
+        "note": {
+          "ru": "int6 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "int6 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "int6 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.int6.text_uk",
+        "old_raw_value": "Змінює основну характеристику персонажа на Інтелект. <br><br> Приріст Інтелекту за Рівень: 0.5 <br><br><b><font color='#ff0000'>Основна характеристика не змінюється, якщо це вже ваша основна характеристика або ви вивчили аналогічний талант в іншій гілці.</font></b> <br><br> Змінює основну характеристику персонажа на Універсальну, якщо вивчити аналогічні таланти в Силі, Спритності та Інтелекті.",
+        "new_raw_value": "<b><font color='#ff0000'>Інтелект.</font></b> <br><br> Змінює основну характеристику на Інтелект. <br><br> Приріст Інтелекту за Рівень: 0.5 <br><br> Якщо вивчені Сила, Спритність і Інтелект, змінює основну характеристику на Універсальну та збільшує Базову Шкоду за Атрибут: 0.1",
+        "note": {
+          "ru": "int6 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "int6 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "int6 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask2.text_ru",
+        "old_raw_value": "Вампиризм Заклинаниями: 7%/14%/21%",
+        "new_raw_value": "Вампиризм Заклинаниями: 7%/14%",
+        "note": {
+          "ru": "mask2 · Текст (ru): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask2 · Text (ru): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask2 · Текст (ru): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask2.text_en",
+        "old_raw_value": "Spell Lifesteal: 7%/14%/21%",
+        "new_raw_value": "Spell Lifesteal: 7%/14%",
+        "note": {
+          "ru": "mask2 · Текст (en): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask2 · Text (en): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask2 · Текст (en): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      },
+      {
+        "parameter": "basic_talent.mask2.text_uk",
+        "old_raw_value": "Вампіризм Заклинаннями: 7%/14%/21%",
+        "new_raw_value": "Вампіризм Заклинаннями: 7%/14%",
+        "note": {
+          "ru": "mask2 · Текст (uk): {change_label} с {old_raw_value} до {new_raw_value}",
+          "en": "mask2 · Текст (uk): {change_label} from {old_raw_value} to {new_raw_value}",
+          "uk": "mask2 · Текст (uk): {change_label} з {old_raw_value} до {new_raw_value}"
+        }
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_khanda_custom",
+        "name": "khanda",
+        "image": "images/items/angels_demise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_crit_multiplier",
+            "old_raw_value": null,
+            "new_raw_value": "35",
+            "note": {
+              "ru": "Spell Crit Multiplier: {change_label}: {new_raw_value}",
+              "en": "Spell Crit Multiplier: {change_label}: {new_raw_value}",
+              "uk": "Spell Crit Multiplier: {change_label}: {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "Description",
+            "old_raw_value": {
+              "ru": "Пассивное: Empower Spell. Если ваша способность наносит противнику минимум 100 урона, он отдельно получает ещё 250 урона, замедлит его на -30% и наложит на него истощение, отключающее пассивные способности. Длительность: 3 сек.",
+              "en": "Passive: Empower Spell. If your ability deals at least 100 damage to an enemy, they will take an additional 250 damage, slow them by -30%, and Break them, disabling their passive abilities. Duration: 3 sec.",
+              "uk": "Пасивне: Empower Spell. Якщо ваша здатність наносить противнику мінімум 100 шкоди, він окремо отримує ще 250 шкоди, сповільнить його на -30% і накладе на нього безсилля, що відключає пасивні здібності. Тривалість: 3 с."
+            },
+            "new_raw_value": {
+              "ru": "Пассивное: Empower Spell. Если ваша способность наносит противнику минимум 100 урона, он отдельно получает ещё 250 + 35% от урона атаки, замедлит его на -30% и наложит на него истощение, отключающее пассивные способности. Длительность: 3 сек.",
+              "en": "Passive: Empower Spell. If your ability deals at least 100 damage to an enemy, it additionally deals 250 + 35% of attack damage, slows them by -30%, and applies Exhaustion, disabling their passive abilities. Duration: 3 sec.",
+              "uk": "Пасивна: Посилене закляття. Якщо ваша здібність завдає ворогу щонайменше 100 шкоди, вона додатково завдає 250 + 35% від шкоди атаки, сповільнює його на -30% та накладає Виснаження, яке вимикає пасивні здібності. Тривалість: 3 сек."
+            },
+            "note": {
+              "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_revenants_brooch_custom",
+        "name": "revenants brooch",
+        "image": "images/items/revenants_brooch_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "manacost_per_hit",
+            "old_raw_value": "120",
+            "new_raw_value": "150",
+            "note": {
+              "ru": "Manacost Per Hit: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Manacost Per Hit: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Manacost Per Hit: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_venom_song",
+        "name": "venom song",
+        "image": "images/items/venom_song.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "Description",
+            "old_raw_value": {
+              "ru": "Пассивное: Venom Corrosion. Атаки дополнительно наносят магический урон 40 + 10% от изначальной атаки в секунду, замедляют жертву и уменьшают получаемое ей здоровье от лечения, восстановления и вампиризма на -20%. Замедляет цель на -20%. Длительность: 3 сек. Пассивное: Quelling Aura. Уменьшает восстановление маны противников на -30%. Радиус: 1200.",
+              "en": "Passive: Venom Corrosion. Attacks deal an additional 40 + 10% of the initial attack per second of magic damage, slow the victim, and reduce the health they receive from healing, restoration, and lifesteal by -20%. Slows the target by -20%. Duration: 3 sec. Passive: Quelling Aura. Reduces enemy mana regeneration by -30%. Radius: 1200.",
+              "uk": "Пасивне: Venom Corrosion. Атаки додатково завдають магічних втрат 40 + 10% від початкової атаки в секунду, уповільнюють жертву і зменшують одержуване їй здоров'я від лікування, відновлення та вампіризму на -20%. Уповільнює ціль на -20%. Тривалість: 3 сек. Пасивне: Quelling Aura. Зменшує відновлення мани супротивників на -30%. Радіус: 1200."
+            },
+            "new_raw_value": {
+              "ru": "Пассивное: Venom Corrosion. Атаки дополнительно наносят магический урон 40 + 10% от изначальной атаки в секунду, замедляют жертву и уменьшают пополнение здоровья на -20%. Замедляет цель на -20%. Длительность: 3 сек. Пассивное: Quelling Aura. Уменьшает восстановление маны противников на -30%. Радиус: 1200.",
+              "en": "Passive: Venom Corrosion. Attacks deal additional magical damage of 40 + 10% of the base attack per second, slow the target, and reduce its health restoration by -20%. Slows the target by -20%. Duration: 3 sec. Passive: Quelling Aura. Reduces mana regeneration of enemies by -30%. Radius: 1200.",
+              "uk": "Пасивно: Отруйна Корозія. Атаки завдають додаткової магічної шкоди: 40 + 10% від базової атаки щосекунди, уповільнюють ціль і зменшують її відновлення здоров'я на -20%. Уповільнення: -20%. Тривалість: 3 сек. Пасивно: Аура Придушення. Зменшує регенерацію мани ворогів на -30%. Радіус: 1200."
+            },
+            "note": {
+              "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_crude",
+        "name": "crude",
+        "image": "images/items/enhancement_crude.webp",
+        "neutral_type": "enhancement",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "intelligence_pct",
+            "old_raw_value": "10",
+            "new_raw_value": "-10",
+            "note": {
+              "ru": "Intelligence Pct: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Intelligence Pct: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Intelligence Pct: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_keen_eyed",
+        "name": "keen eyed",
+        "image": "images/items/enhancement_keen_eyed.webp",
+        "neutral_type": "enhancement",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "mana_reduction_pct",
+            "old_raw_value": "10",
+            "new_raw_value": "-10",
+            "note": {
+              "ru": "Mana Reduction Pct: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Mana Reduction Pct: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Mana Reduction Pct: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "anti-mage",
+      "name": "anti-mage",
+      "image": "images/heroes/heroesPreview/anti-mage.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_anti-mage_18",
+            "image": "images/heroes/talents/anti-mage/18.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Если у героя Максимум Маны, то Уменьшает Получаемый Урон от Атак: 7%/14%/21% Скорость Атаки: 7/14/21",
+                  "en": "If the hero has Max Mana, then Decreases Damage Taken from Attacks: 7%/14%/21% Attack Speed: 7/14/21",
+                  "uk": "Якщо у героя Максимум Мани, то Зменшує Отриманий Втрата від Атак: 7%/14%/21% Швидкість Атаки: 7/14/21"
+                },
+                "new_raw_value": {
+                  "ru": "Скорость Атаки: 7/14/21 Если у героя Максимум Маны, то: Уменьшает Получаемый Урон от Атак: 7%/14%/21%",
+                  "en": "Attack Speed: 7/14/21 If the hero has Full Mana: Reduces Incoming Attack Damage: 7%/14%/21%",
+                  "uk": "Швидкість Атаки: 7/14/21 Якщо у героя Повна Мана: Зменшує Отримувану Шкоду від Атак: 7%/14%/21%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_20",
+            "image": "images/heroes/talents/axe/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Battle Hunger всегда замедляет передвижение противника. Battle Hunger уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями противников: 10%/20%",
+                  "en": "Battle Hunger always slows enemy movement. Battle Hunger reduces enemy healing, health regeneration, lifesteal, and spell lfesteal: 10%/20%",
+                  "uk": "Battle Hunger завжди сповільнює рух супротивника. Battle Hunger зменшує лікування, відновлення здоров'я, вампіризм і вампіризм від здібностей супротивників: 10%/20%"
+                },
+                "new_raw_value": {
+                  "ru": "Battle Hunger всегда замедляет передвижение противника. Battle Hunger уменьшает Пополнение Здоровья Противников: 10%/20%",
+                  "en": "Battle Hunger always slows enemy movement. Battle Hunger reduces Enemy Health Restoration: 10%/20%",
+                  "uk": "Battle Hunger завжди сповільнює пересування ворога. Battle Hunger зменшує поповнення здоров'я ворогів: 10%/20%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "images/heroes/talents/bounty_hunter/6.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Track уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 25%/50%",
+                  "en": "Track Reduces Healing, Health Recovery, Lifesteal and Ability Lifesteal: 25%/50%",
+                  "uk": "Track зменшує лікування, відновлення здоров'я, вампіризм i вампіризм здібностями: 25%/50%"
+                },
+                "new_raw_value": {
+                  "ru": "Track уменьшает Пополнение Здоровья Противников: 25%/50%",
+                  "en": "Track reduces Enemy Health Restoration: 25%/50%",
+                  "uk": "Track зменшує поповнення здоров'я ворогів: 25%/50%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "crystal_maiden",
+      "name": "crystal maiden",
+      "image": "images/heroes/heroesPreview/crystal_maiden.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_crystal_maiden_5",
+            "image": "images/heroes/talents/crystal_maiden/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Crystal Nova уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 10%/20%/30% Длительность: 4.5 сек",
+                  "en": "Crystal Nova reduces healing, health regeneration, lifesteal and ability lifesteal: 10%/20%/30% Duration: 4.5 seconds",
+                  "uk": "Crystal Nova зменшує лікування, відновлення здоров'я, вампіризм i вампіризм здібностями: 10%/20%/30% Тривалість: 4.5 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Crystal Nova уменьшает Пополнение Здоровья Противников: 10%/20%/30% Длительность: 4.5 сек",
+                  "en": "Crystal Nova reduces Enemy Health Restoration: 10%/20%/30% Duration: 4.5 sec",
+                  "uk": "Crystal Nova зменшує Відновлення Здоров'я Ворогів: 10%/20%/30% Тривалість: 4.5 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dazzle_6",
+            "image": "images/heroes/talents/dazzle/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Good Juju уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 12%/24%",
+                  "en": "Good Juju reduces healing, health regeneration, lifesteal and ability lifesteal: 12%/24%",
+                  "uk": "Good Juju зменшує лікування, відновлення здоров'я, вампіризм та вампіризм здібностями: 12%/24%"
+                },
+                "new_raw_value": {
+                  "ru": "Good Juju уменьшает Пополнение Здоровья Противников: 12%/24%",
+                  "en": "Good Juju reduces Enemy Health Restoration: 12%/24%",
+                  "uk": "Good Juju зменшує поповнення здоров'я ворогів: 12%/24%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_death_prophet_6",
+            "image": "images/heroes/talents/death_prophet/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Проклятие. Уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями Героя и Окружающих Противников: 20%/40% Радиус: 900",
+                  "en": "Curse. Reduces healing, health regeneration, lifesteal and ability lifesteal of the Hero and nearby Enemies: 20%/40% Radius: 900",
+                  "uk": "Прокляття. Зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями Героя та Навколишніх Противників: 20%/40% Радіус: 900"
+                },
+                "new_raw_value": {
+                  "ru": "Проклятие. Уменьшает Пополнение Здоровья Героя и Окружающих Противников: 20%/40% Радиус: 900",
+                  "en": "Curse. Reduces Health Restoration of the Hero and Nearby Enemies: 20%/40% Radius: 900",
+                  "uk": "Прокляття. Зменшує поповнення здоров'я Героя і навколишніх ворогів: 20%/40% Радіус: 900"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "old_raw_value": "1.25",
+          "new_raw_value": "0.66",
+          "note": {
+            "ru": "Status Health Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Health Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Health Regen: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dragon_knight",
+      "name": "dragon knight",
+      "image": "images/heroes/heroesPreview/dragon_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dragon_knight_15",
+            "image": "images/heroes/talents/dragon_knight/15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Этот талант не работает если вы уже изучили Fire Dragon или Corrosive Dragon. Новая Пассивная Способность: Frost Dragon Добавляет к атакам героя замедление и снижение лечения, восстановление здоровья, вампиризм и вампиризм заклинаниями, которые становятся сильнее в облике дракона. Замедление Передвижения: 5%/10%/15% Замедление Атаки: 10/20/30 Уменьшение Лечения: 5%/10%/15% Длительность: 3 сек. Бонус в Форме Дракона: 50%",
+                  "en": "This talent does not work if you have already learned Fire Dragon or Corrosive Dragon. New Passive Ability: Frost Dragon Adds slowdown and reduction of healing, health restoration, lifesteal and lifesteal spells to the hero's attacks, which become stronger in the form of a dragon. Movement Slow: 5%/10%/15% Attack Slow: 10/20/30 Healing Reduction: 5%/10%/15% Duration: 3 sec. Dragon Form Bonus: 50%",
+                  "uk": "Цей talent не працював, і ви повинні скористатися Fire Dragon або Corrosive Dragon. New Passive Ability: Frost Dragon Adds slowdown and reduction of healing, health restoration, lifesteal and lifesteal spells to hero's attacks, which become stronger in the form of a dragon. Movement Slow: 5%/10%/15% Attack Slow: 10/20/30 Healing Reduction: 5%/10%/15% Duration: 3 sec. Dragon Form Bonus: 50%"
+                },
+                "new_raw_value": {
+                  "ru": "Этот талант не работает если вы уже изучили Fire Dragon или Corrosive Dragon. Новая Пассивная Способность: Frost Dragon Добавляет к атакам героя замедление и снижение пополнения здоровья, которое становится сильнее в облике дракона. Замедление Передвижения: 5%/10%/15% Замедление Атаки: 10/20/30 Уменьшение Пополнения Здоровья: 5%/10%/15% Длительность: 3 сек. Бонус в Форме Дракона: 50%",
+                  "en": "This talent does not work if you have already learned Fire Dragon or Corrosive Dragon. New Passive Ability: Frost Dragon Adds slow and health restoration reduction to the hero's attacks, which become stronger in Dragon Form. Movement Slow: 5%/10%/15% Attack Slow: 10/20/30 Health Restoration Reduction: 5%/10%/15% Duration: 3 sec. Bonus in Dragon Form: 50%",
+                  "uk": "Цей талант не працює, якщо ви вже вивчили Fire Dragon або Corrosive Dragon. Нова Пасивна Здібність: Frost Dragon Додає до атак героя уповільнення та зменшення відновлення здоров'я, які стають сильнішими в Облику Дракона. Уповільнення Руху: 5%/10%/15% Уповільнення Атаки: 10/20/30 Зменшення Відновлення Здоров'я: 5%/10%/15% Тривалість: 3 сек. Бонус у Формі Дракона: 50%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "drow_ranger",
+      "name": "drow ranger",
+      "image": "images/heroes/heroesPreview/drow_ranger.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_drow_ranger_4",
+            "image": "images/heroes/talents/drow_ranger/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Пассивная Способность: Переохлаждение Frost Arrow накладывают стаки Переохлаждения. Каждый стак уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями на 5%. Если враг умирает под действием Переохлаждения, то он взорвётся и нанесёт Магический Урон от Frost Arrow всем вокруг за каждый стак. Максимум стаков: 6",
+                  "en": "New Passive Ability: Hypothermia Frost Arrow inflicts stacks of Hypothermia. Each stack reduces healing, health regen, lifesteal, and ability lifesteal by 5%. If an enemy dies while under the effect of Hypothermia, they will explode and deal Frost Arrow Magic Damage to everyone around them per stack. Max stacks: 6",
+                  "uk": "Нова Пасивна Здатність: Переохолодження Frost Arrow накладають стаки Переохолодження. Кожен так зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями на 5% Якщо ворог помирає під дією Переохолодження, то він вибухне і завдасть Магічну Втрату від Frost Arrow усім навколо за кожен стак. Максимум стаків: 6"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Пассивная Способность: Переохлаждение Frost Arrow накладывают стаки Переохлаждения, которые уменьшают пополнение здоровья на 5%. Если враг умирает под действием Переохлаждения, то он взорвётся и нанесёт Магический Урон от Frost Arrow всем вокруг за каждый стак. Максимум стаков: 6",
+                  "en": "New Passive Ability: Hypothermia Frost Arrows apply stacks of Hypothermia, which reduce health restoration by 5%. If an enemy dies under the effect of Hypothermia, they will explode and deal Frost Arrow Magic Damage to all nearby enemies for each stack. Max stacks: 6",
+                  "uk": "Нова Пасивна Здібність: Переохолодження Frost Arrow накладає заряди Переохолодження, які зменшують відновлення здоров'я на 5%. Якщо ворог помирає під дією Переохолодження, він вибухає і завдає Магічної Шкоди від Frost Arrow усім навколо за кожен заряд. Максимум зарядів: 6"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_jakiro_19",
+            "image": "images/heroes/talents/jakiro/19.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Длительности Льда Ice Path: 1/2/3 сек. Лёд Ice Path уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 10%/20%/30%",
+                  "en": "Increased Ice Path Duration: 1/2/3 sec. Ice Ice Path reduces healing, health regeneration, lifesteal, and lifesteal from abilities: 10%/20%/30%",
+                  "uk": "Тривалість Льоду Ice Path: 1/2/3 сек. Лід Ice Path зменшує лікування, відновлення здоров'я, вампіризм та вампіризм здібностями: 10%/20%/30%"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Длительности Льда Ice Path: 1/2/3 сек. Лёд Ice Path уменьшает Пополнение Здоровья Противников: 10%/20%/30%",
+                  "en": "Increased Ice Path Duration: 1/2/3 sec Ice Path reduces Enemy Health Restoration: 10%/20%/30%",
+                  "uk": "Збільшення Тривалості Льоду Ice Path: 1/2/3 сек Лід Ice Path зменшує поповнення здоров'я ворогів: 10%/20%/30%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_marci_21",
+            "image": "images/heroes/talents/marci/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Атаки уменьшают лечение, восстановление здоровья, вампиризм и вампиризм способностями: 60% Длительность: 3 сек",
+                  "en": "Attacks reduce healing, health regeneration, life steal, and ability life steal by: 60% Duration: 3 sec",
+                  "uk": "Атаки зменшують лікування, відновлення здоров'я, вампіризм та вампіризм здібностями: 60% Тривалість: 3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Атаки уменьшают Пополнение Здоровья Противников: 60% Длительность: 3 сек",
+                  "en": "Attacks reduce Enemy Health Restoration: 60% Duration: 3 sec",
+                  "uk": "Атаки зменшують поповнення здоров'я ворогів: 60% Тривалість: 3 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_morphling_6",
+            "image": "images/heroes/talents/morphling/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Атаки уменьшают лечение, восстановление здоровья, вампиризм и вампиризм способностями: 10%/20% Длительность: 3 сек",
+                  "en": "Attacks reduce Healing, Health Recovery, Lifesteal, and Ability Lifesteal: 10%/20% Duration: 3 seconds",
+                  "uk": "Атаки зменшують лікування, відновлення здоров'я, вампіризм i вампіризм здібностями: 10%/20% Тривалість: 3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Атаки уменьшают Пополнение Здоровья Противников: 10%/20% Длительность: 3 сек",
+                  "en": "Attacks reduce Enemy Health Restoration: 10%/20% Duration: 3 sec",
+                  "uk": "Атаки зменшують поповнення здоров'я ворогів: 10%/20% Тривалість: 3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "naga_siren",
+      "name": "naga siren",
+      "image": "images/heroes/heroesPreview/naga_siren.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_naga_siren_13",
+            "image": "images/heroes/talents/naga_siren/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Каждая Атака уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями противников: 10%/20%/30% Длительность: 3 сек",
+                  "en": "Each Attack reduces healing, health regeneration, lifesteal and spell lifesteal: 10%/20%/30% Duration: 3 sec",
+                  "uk": "Кожна Атака зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями супротивників: 10%/20%/30% Тривалість: 3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Атаки уменьшают Пополнение Здоровья Противников: 10%/20%/30% Длительность: 3 сек",
+                  "en": "Attacks reduce Enemy Health Restoration: 10%/20%/30% Duration: 3 sec",
+                  "uk": "Атаки зменшують поповнення здоров'я ворогів: 10%/20%/30% Тривалість: 3 с"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nature's_prophet",
+      "name": "nature's prophet",
+      "image": "images/heroes/heroesPreview/nature's_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_nature's_prophet_11",
+            "image": "images/heroes/talents/nature's_prophet/11.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона на 3 за каждое Дерево вокруг Героя. Радиус: 600",
+                  "en": "Increase Damage by 3 for each Tree around the Hero. Radius: 600",
+                  "uk": "Збільшення збитків на 3 за кожне дерево навколо Героя. Радіус: 600"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона на 3 за каждое Дерево вокруг Героя. Радиус: 900",
+                  "en": "Increase Damage by 3 for each Tree around the Hero. Radius: 900",
+                  "uk": "Збільшення збитків на 3 за кожне дерево навколо Героя. Радіус: 900"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_nature's_prophet_14",
+            "image": "images/heroes/talents/nature's_prophet/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Wrath of Nature также совершает 2 Атаки по задетым целям. Применение Wrath of Nature даёт Неограниченный Обзор на 6 сек. Радиус: 4000",
+                  "en": null,
+                  "uk": null
+                },
+                "new_raw_value": {
+                  "ru": "Wrath of Nature также совершает 2 Атаки по задетым целям. Применение Wrath of Nature даёт Беспрепятственный Обзор на 6 сек. Радиус: 4000",
+                  "en": null,
+                  "uk": null
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_necrophos_5",
+            "image": "images/heroes/talents/necrophos/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Heartstopper Aura уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 5%/10%/15%",
+                  "en": "Heartstopper Aura reduces healing, health regen, lifesteal, and ability lifesteal: 5%/10%/15%",
+                  "uk": "Heartstopper Aura зменшує лікування, відновлення здоров'я, вампіризм та вампіризм здібностями: 5%/10%/15%"
+                },
+                "new_raw_value": {
+                  "ru": "Heartstopper Aura уменьшает Пополнение Здоровья Противников: 5%/10%/15%",
+                  "en": "Heartstopper Aura reduces Enemy Health Restoration: 5%/10%/15%",
+                  "uk": "Аура Зупинки Серця зменшує поповнення здоров'я ворогів: 5%/10%/15%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pudge",
+      "name": "pudge",
+      "image": "images/heroes/heroesPreview/pudge.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_pudge_6",
+            "image": "images/heroes/talents/pudge/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Rot уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 8%/16%",
+                  "en": "Rot reduces healing, health regeneration, lifesteal and lifesteal with abilities: 8%/16%",
+                  "uk": "Rot зменшує лікування, відновлення здоров'я, вампіризм i вампіризм здібностями: 8%/16%"
+                },
+                "new_raw_value": {
+                  "ru": "Rot уменьшает Пополнение Здоровья Противников: 8%/16%",
+                  "en": "Rot reduces Enemy Health Restoration: 8%/16%",
+                  "uk": "Rot зменшує поповнення здоров'я ворогів: 8%/16%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "shadow_fiend_shadowraze1_custom",
+          "name": "shadowraze1",
+          "image": "abilities/nevermore_shadowraze1.webp",
+          "ability_notes": [
+            {
+              "parameter": "movement_speed_pct",
+              "old_raw_value": "-12 -13 -14 -15",
+              "new_raw_value": "0",
+              "note": {
+                "ru": "Movement Speed Pct: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Movement Speed Pct: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Movement Speed Pct: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "shadow_fiend_shadowraze2_custom",
+          "name": "shadowraze2",
+          "image": "abilities/nevermore_shadowraze2.webp",
+          "ability_notes": [
+            {
+              "parameter": "movement_speed_pct",
+              "old_raw_value": "-12 -13 -14 -15",
+              "new_raw_value": "0",
+              "note": {
+                "ru": "Movement Speed Pct: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Movement Speed Pct: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Movement Speed Pct: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "shadow_fiend_shadowraze3_custom",
+          "name": "shadowraze3",
+          "image": "abilities/nevermore_shadowraze3.webp",
+          "ability_notes": [
+            {
+              "parameter": "movement_speed_pct",
+              "old_raw_value": "-12 -13 -14 -15",
+              "new_raw_value": "0",
+              "note": {
+                "ru": "Movement Speed Pct: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Movement Speed Pct: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Movement Speed Pct: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_shadow_fiend_7",
+            "image": "images/heroes/talents/shadow_fiend/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Новая Пассивная Способность: Eye of Fiend Уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями окружающих противников на 1% за каждые 3% Недостающего Здоровья героя. Радиус: 700",
+                  "en": "New Passive Ability: Eye of Fiend Reduces healing, health recovery, lifesteal and lifesteal abilities of surrounding enemies by 1% for every 3% of the hero's Missing Health. Radius: 700",
+                  "uk": "Нова Пасивна Здатність: Eye of Fiend Зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями оточуючих супротивників на 1% за кожні 3% Здоров'я героя, що бракує. Радіус: 700"
+                },
+                "new_raw_value": {
+                  "ru": "Новая Пассивная Способность: Eye of Fiend Уменьшает пополнение здоровья противников на 1% за каждые 3% Недостающего Здоровья героя. Радиус: 700",
+                  "en": "New Passive Ability: Eye of Fiend Reduces enemy Health Restoration by 1% for every 3% of the hero's Missing Health. Radius: 700",
+                  "uk": "Нова Пасивна Здібність: Око Демона Зменшує поповнення здоров'я ворогів на 1% за кожні 3% Відсутнього Здоров'я героя. Радіус: 700"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_shadow_fiend_16",
+            "image": "images/heroes/talents/shadow_fiend/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Попадания Shadowraze: 30/60",
+                  "en": "Shadowraze Stack Damage Increase: 30/60",
+                  "uk": "Збільшення втрати Попадання Shadowraze: 30/60"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Попадания Shadowraze: 30/60 Shadowraze уменьшает Скорость Передвижения Противников: 6%/12% Длительность: 5 сек",
+                  "en": "Shadowraze Bonus Damage Increase: 30/60 Shadowraze reduces Enemy Movement Speed: 6%/12% Duration: 5 sec",
+                  "uk": "Збільшення Урону Від Удару Shadowraze: 30/60 Shadowraze знижує Швидкість Руху Ворогів: 6%/12% Тривалість: 5 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "skywrath_mage",
+      "name": "skywrath mage",
+      "image": "images/heroes/heroesPreview/skywrath_mage.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_skywrath_mage_18",
+            "image": "images/heroes/talents/skywrath_mage/18.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Ancient Seal уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 25%/50%",
+                  "en": "Ancient Seal Reduces Healing, Health Recovery, Lifesteal and Ability Lifesteal: 25%/50%",
+                  "uk": "Ancient Seal зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями: 25%/50%"
+                },
+                "new_raw_value": {
+                  "ru": "Ancient Seal уменьшает Пополнение Здоровья Противников: 25%/50%",
+                  "en": "Ancient Seal reduces Enemy Health Restoration: 25%/50%",
+                  "uk": "Ancient Seal зменшує поповнення здоров'я ворогів: 25%/50%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_slardar_18",
+            "image": "images/heroes/talents/slardar/18.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Corrosive Haze нельзя развеять. Corrosive Haze уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 10%/20%/30%",
+                  "en": "Corrosive Haze cannot be dispelled. Corrosive Haze reduces Healing, Health Recovery, Lifesteal and Ability Lifesteal: 10%/20%/30%",
+                  "uk": "Corrosive Haze не можна розвіяти. Corrosive Haze зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями: 10%/20%/30%"
+                },
+                "new_raw_value": {
+                  "ru": "Corrosive Haze нельзя развеять. Corrosive Haze уменьшает Пополнение Здоровья Противников: 10%/20%/30%",
+                  "en": "Corrosive Haze cannot be dispelled. Corrosive Haze reduces Enemy Health Restoration: 10%/20%/30%",
+                  "uk": "Corrosive Haze не можна розвіяти. Corrosive Haze зменшує поповнення здоров'я ворогів: 10%/20%/30%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spectre_20",
+            "image": "images/heroes/talents/spectre/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Теневой След уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 10%/20%",
+                  "en": "Shadow Path reduces healing, health regeneration, lifesteal and spell lifesteal: 10%/20%",
+                  "uk": "Тіньовий Слід зменшує лікування, відновлення здоров'я, вампіризм i вампіризм здібностями: 10%/20%"
+                },
+                "new_raw_value": {
+                  "ru": "Теневой След уменьшает Пополнение Здоровья Противников: 10%/20%",
+                  "en": "Shadow Path reduces Enemy Health Restoration: 10%/20%",
+                  "uk": "Тіньовий Слід зменшує поповнення здоров'я ворогів: 10%/20%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tidehunter",
+      "name": "tidehunter",
+      "image": "images/heroes/heroesPreview/tidehunter.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tidehunter_20",
+            "image": "images/heroes/talents/tidehunter/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Gush уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 15%/30%",
+                  "en": "Gush Reduces Healing, Health Recovery, Lifesteal, and Ability Lifesteal: 15%/30%",
+                  "uk": "Gush зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями: 15%/30%"
+                },
+                "new_raw_value": {
+                  "ru": "Gush уменьшает Пополнение Здоровья Противников: 15%/30%",
+                  "en": "Gush reduces Enemy Health Restoration: 15%/30%",
+                  "uk": "Gush зменшує поповнення здоров'я ворогів: 15%/30%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_undying_3",
+            "image": "images/heroes/talents/undying/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Tombstone. Новая Активная Способность: Hypnodancer Герой ускоряется и применяет Decay вокруг себя раз в 3 секунды. Вы не можете атаковать, а также получаете неограниченный обзор. Длительность: 3 сек. Скорость Передвижения: 20% Радиус: 600 Время Перезарядки: 30 сек",
+                  "en": null,
+                  "uk": null
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Tombstone. Новая Активная Способность: Hypnodancer Герой ускоряется и применяет Decay вокруг себя раз в 3 секунды. Вы не можете атаковать, а также получаете Беспрепятственный Обзор. Длительность: 3 сек. Скорость Передвижения: 20% Радиус: 600 Время Перезарядки: 30 сек",
+                  "en": null,
+                  "uk": null
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "ursa",
+      "name": "ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_ursa_6",
+            "image": "images/heroes/talents/ursa/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Атаки Уменьшают Броню: 1 Длительность: 1/2/3 сек. Каждый эффект имеет свою длительность",
+                  "en": "Attacks Reduce Armor: 1 Duration: 1/2/3 sec. Each effect has its own duration",
+                  "uk": "Атаки Зменшують Броню: 1 Тривалість: 1/2/3 сек. Кожен ефект має свою тривалість"
+                },
+                "new_raw_value": {
+                  "ru": "Fury Swipes уменьшает Броню за Эффект: 0.4/0.5/0.6",
+                  "en": "Fury Swipes reduces Armor per Stack: 0.4/0.5/0.6",
+                  "uk": "Fury Swipes зменшує Броню за Накопиченням: 0.4/0.5/0.6"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_vengeful_spirit_20",
+            "image": "images/heroes/talents/vengeful_spirit/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Wave of Terror уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями: 15%/30%",
+                  "en": "Wave of Terror reduce healing, health regeneration, lifesteal and ability lifesteal: 15%/30%",
+                  "uk": "Wave of Terror зменшує лікування, відновлення здоров'я, вампіризм i вампіризм здібностями: 15%/30%"
+                },
+                "new_raw_value": {
+                  "ru": "Wave of Terror уменьшает Пополнение Здоровья Противников: 15%/30%",
+                  "en": "Wave of Terror reduces Enemy Health Restoration: 15%/30%",
+                  "uk": "Wave of Terror зменшує поповнення здоров'я ворогів: 15%/30%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_warlock_14",
+            "image": "images/heroes/talents/warlock/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Всего Получаемого Урона у Голема Chaotic Offering: 70% Голем Chaotic Offering уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями у противников: 70% Радиус: 900",
+                  "en": "Reduce Total Damage Received by Chaotic Offering Golem: 70% Chaotic Offering Golem reduces healing, health regeneration, lifesteal and spell lifesteal of enemies: 70% Radius: 900",
+                  "uk": "Зменшення Усього Урону, що виходить, у Голема Chaotic Offering: 70% Голем Chaotic Offering зменшує лікування, відновлення здоров'я, вампіризм і вампіризм здібностями у противників: 70% Радіус: 900"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Всего Получаемого Урона у Голема Chaotic Offering: 70% Голем Chaotic Offering уменьшает Пополнение Здоровья Противников: 70% Радиус: 900",
+                  "en": "Chaotic Offering Golem Total Incoming Damage Reduction: 70% Chaotic Offering Golem reduces Enemy Health Restoration: 70% Radius: 900",
+                  "uk": "Зменшення Всього Отриманого Урону Голема Chaotic Offering: 70% Голем Chaotic Offering зменшує поповнення здоров'я ворогів: 70% Радіус: 900"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_wraith_king_20",
+            "image": "images/heroes/talents/wraith_king/20.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Vampiric Spirit уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями противников: 10%/20%/30% Радиус: 1200",
+                  "en": "Vampiric Spirit reduces enemys healing, health regeneration, lifesteal and spell lifesteal: 10%/20%/30% Radius: 1200",
+                  "uk": "Vampiric Spirit зменшує лікування, відновлення здоров'я, вампіризм та вампіризм здібностями супротивників: 10%/20%/30% Радіус: 1200"
+                },
+                "new_raw_value": {
+                  "ru": "Vampiric Spirit уменьшает Пополнение Здоровья Противников: 10%/20%/30% Радиус: 1200",
+                  "en": "Vampiric Spirit reduces Enemy Health Restoration: 10%/20%/30% Radius: 1200",
+                  "uk": "Vampiric Spirit зменшує поповнення здоров'я ворогів: 10%/20%/30% Радіус: 1200"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "zeus",
+      "name": "zeus",
+      "image": "images/heroes/heroesPreview/zeus.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_zeus_14",
+            "image": "images/heroes/talents/zeus/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает ограничение на максимальную Скорость Атаки. Скорость Атаки: 7%",
+                  "en": "Removes the cap on maximum Attack Speed. Attack Speed: 7%",
+                  "uk": "Прибирає обмеження на максимальну швидкість атаки. Швидкість Атаки: 7%"
+                },
+                "new_raw_value": {
+                  "ru": "Базовая Скорость Атаки: 1.3",
+                  "en": "Base Attack Speed: 1.3",
+                  "uk": "Базовий Час Атаки: 1.3"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

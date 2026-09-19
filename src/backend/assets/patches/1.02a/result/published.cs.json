@@ -1,0 +1,70 @@
+{
+  "patch_number": "1.02a",
+  "patch_name": "1.02a",
+  "patch_timestamp": 1788941722,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_abaddon_11",
+            "image": "abaddon_11.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Now also grants 5/10/15 health regen"
+              }
+            ],
+            "talent_text": "Spell Lifesteal: 3%/6%/9%\n\nSpell Damage: 3%/6%/9%\n\nHealth Regeneration: 5/10/15"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "axe_counter_helix_custom",
+          "name": "Counter Helix",
+          "image": "axe_counter_helix.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "note": "Now affects spell immune enemies"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

@@ -8,13 +8,6 @@
       "item_notes": []
     },
     {
-      "item_id": "item_ancient_guardian",
-      "is_new": true,
-      "is_removed": false,
-      "reason": "not-in-shops-or-neutrals",
-      "item_notes": []
-    },
-    {
       "item_id": "item_foragers_kit",
       "is_new": true,
       "is_removed": false,
@@ -50,11 +43,54 @@
       "item_notes": []
     },
     {
+      "item_id": "item_partisans_brand",
+      "is_new": true,
+      "is_removed": false,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": []
+    },
+    {
       "item_id": "item_tidehunter_fish",
       "is_new": true,
       "is_removed": false,
       "reason": "not-in-shops-or-neutrals",
       "item_notes": []
+    },
+    {
+      "item_id": "item_seeds_of_serenity_custom",
+      "is_new": false,
+      "is_removed": true,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": [
+        {
+          "old_raw_value": {
+            "BaseClass": "item_lua",
+            "ScriptFile": "items/item_seeds_of_serenity_custom",
+            "AbilityTextureName": "item_seeds_of_serenity",
+            "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
+            "ShouldBeInitiallySuggested": "1",
+            "ItemIsNeutralActiveDrop": "1",
+            "ItemPurchasable": "0",
+            "AbilityCooldown": "45",
+            "AbilityCastRange": "350",
+            "Model": "models/props_gameplay/neutral_box.vmdl",
+            "AbilityValues": {
+              "bonus_health": "200",
+              "aura_health_regen": "0.4",
+              "radius": "350",
+              "duration": "10"
+            },
+            "ItemSellable": "1",
+            "ItemCost": "350"
+          },
+          "new_raw_value": null,
+          "note": {
+            "ru": "Удалён предмет",
+            "en": "Item removed",
+            "uk": "Видалено предмет"
+          }
+        }
+      ]
     },
     {
       "item_id": "item_dagger_of_ristul_custom",
@@ -64,24 +100,18 @@
       "item_notes": [
         {
           "old_raw_value": {
-            "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
-            "AbilityCooldown": "30.0",
-            "ItemCost": "0",
-            "ItemIsNeutralActiveDrop": "1",
-            "ItemPurchasable": "0",
-            "ItemSellable": "0",
-            "Model": "models/props_gameplay/neutral_box.vmdl",
-            "AbilityValues": {
-              "aspd": "15",
-              "bonus_damage": "40",
-              "duration": "3",
-              "health_sacrifice": "100",
-              "damage_phys": "20"
-            },
             "BaseClass": "item_lua",
             "ScriptFile": "items/item_dagger_of_ristul_custom",
             "AbilityTextureName": "item_dagger_of_ristul",
-            "ShouldBeInitiallySuggested": "1"
+            "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
+            "ShouldBeInitiallySuggested": "1",
+            "ItemIsNeutralActiveDrop": "1",
+            "ItemPurchasable": "0",
+            "Model": "models/props_gameplay/neutral_box.vmdl",
+            "AbilityValues": {
+              "damage_phys": "20",
+              "duration": "3"
+            }
           },
           "new_raw_value": null,
           "note": {
@@ -100,28 +130,23 @@
       "item_notes": [
         {
           "old_raw_value": {
+            "BaseClass": "item_lua",
+            "ScriptFile": "items/item_heavy_blade_custom",
+            "AbilityTextureName": "item_heavy_blade",
             "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE",
             "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_BOTH",
             "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
             "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
-            "AbilitySound": "Brewmaster_Storm.DispelMagic",
-            "AbilityCastRange": "500 500 500 500",
             "AbilityCooldown": "40",
             "AbilityCastPoint": "0",
             "AbilityManaCost": "75",
             "ItemCost": "0",
             "ItemIsNeutralActiveDrop": "1",
             "ItemPurchasable": "0",
-            "ItemSellable": "0",
             "Model": "models/props_gameplay/neutral_box.vmdl",
             "AbilityValues": {
-              "radius": "300",
-              "damage": "4",
               "attack_speed": "30"
-            },
-            "BaseClass": "item_lua",
-            "ScriptFile": "items/item_heavy_blade_custom",
-            "AbilityTextureName": "item_heavy_blade"
+            }
           },
           "new_raw_value": null,
           "note": {
@@ -172,71 +197,6 @@
             "en": "Item removed",
             "uk": "Видалено предмет"
           }
-        },
-        {
-          "parameter": "recipe",
-          "old_raw_value": {
-            "recipe_id": "item_recipe_samurai_tabi",
-            "result_id": "item_samurai_tabi",
-            "variants": [
-              {
-                "key": "01",
-                "components": [
-                  {
-                    "id": "item_belt_of_strength",
-                    "name": "Belt of Strength",
-                    "cost": 450
-                  },
-                  {
-                    "id": "item_boots_of_elves",
-                    "name": "Band of Elvenskin",
-                    "cost": 450
-                  },
-                  {
-                    "id": "item_robe",
-                    "name": "Robe of the Magi",
-                    "cost": 450
-                  },
-                  {
-                    "id": "item_ultimate_orb",
-                    "name": "Ultimate Orb",
-                    "cost": 2800
-                  }
-                ],
-                "total_cost": 5250
-              }
-            ],
-            "components": [
-              {
-                "id": "item_belt_of_strength",
-                "name": "Belt of Strength",
-                "cost": 450
-              },
-              {
-                "id": "item_boots_of_elves",
-                "name": "Band of Elvenskin",
-                "cost": 450
-              },
-              {
-                "id": "item_robe",
-                "name": "Robe of the Magi",
-                "cost": 450
-              },
-              {
-                "id": "item_ultimate_orb",
-                "name": "Ultimate Orb",
-                "cost": 2800
-              }
-            ],
-            "recipe_cost": 1100,
-            "total_cost": 5250
-          },
-          "new_raw_value": null,
-          "note": {
-            "ru": "Рецепт удалён",
-            "en": "Recipe removed",
-            "uk": "Рецепт видалено"
-          }
         }
       ]
     },
@@ -274,51 +234,6 @@
             "en": "Item removed",
             "uk": "Видалено предмет"
           }
-        },
-        {
-          "parameter": "recipe",
-          "old_raw_value": {
-            "recipe_id": "item_recipe_hermes_sandals",
-            "result_id": "item_hermes_sandals",
-            "variants": [
-              {
-                "key": "01",
-                "components": [
-                  {
-                    "id": "item_phase_boots",
-                    "name": "Phase Boots",
-                    "cost": 1500
-                  },
-                  {
-                    "id": "item_eagle",
-                    "name": "Eaglesong",
-                    "cost": 2800
-                  }
-                ],
-                "total_cost": 4800
-              }
-            ],
-            "components": [
-              {
-                "id": "item_phase_boots",
-                "name": "Phase Boots",
-                "cost": 1500
-              },
-              {
-                "id": "item_eagle",
-                "name": "Eaglesong",
-                "cost": 2800
-              }
-            ],
-            "recipe_cost": 500,
-            "total_cost": 4800
-          },
-          "new_raw_value": null,
-          "note": {
-            "ru": "Рецепт удалён",
-            "en": "Recipe removed",
-            "uk": "Рецепт видалено"
-          }
         }
       ]
     },
@@ -353,61 +268,6 @@
             "ru": "Удалён предмет",
             "en": "Item removed",
             "uk": "Видалено предмет"
-          }
-        },
-        {
-          "parameter": "recipe",
-          "old_raw_value": {
-            "recipe_id": "item_recipe_witches_switch",
-            "result_id": "item_witches_switch",
-            "variants": [
-              {
-                "key": "01",
-                "components": [
-                  {
-                    "id": "item_buckler",
-                    "name": "Buckler",
-                    "cost": 425
-                  },
-                  {
-                    "id": "item_ring_of_basilius",
-                    "name": "Ring of Basilius",
-                    "cost": 425
-                  },
-                  {
-                    "id": "item_headdress",
-                    "name": "Headdress",
-                    "cost": 425
-                  }
-                ],
-                "total_cost": 1900
-              }
-            ],
-            "components": [
-              {
-                "id": "item_buckler",
-                "name": "Buckler",
-                "cost": 425
-              },
-              {
-                "id": "item_ring_of_basilius",
-                "name": "Ring of Basilius",
-                "cost": 425
-              },
-              {
-                "id": "item_headdress",
-                "name": "Headdress",
-                "cost": 425
-              }
-            ],
-            "recipe_cost": 625,
-            "total_cost": 1900
-          },
-          "new_raw_value": null,
-          "note": {
-            "ru": "Рецепт удалён",
-            "en": "Recipe removed",
-            "uk": "Рецепт видалено"
           }
         }
       ]
@@ -448,61 +308,6 @@
             "ru": "Удалён предмет",
             "en": "Item removed",
             "uk": "Видалено предмет"
-          }
-        },
-        {
-          "parameter": "recipe",
-          "old_raw_value": {
-            "recipe_id": "item_recipe_lunar_crest",
-            "result_id": "item_lunar_crest",
-            "variants": [
-              {
-                "key": "01",
-                "components": [
-                  {
-                    "id": "item_cloak",
-                    "name": "Cloak",
-                    "cost": 800
-                  },
-                  {
-                    "id": "item_wind_lace",
-                    "name": "Wind Lace",
-                    "cost": 225
-                  },
-                  {
-                    "id": "item_vitality_booster",
-                    "name": "Vitality Booster",
-                    "cost": 1000
-                  }
-                ],
-                "total_cost": 2275
-              }
-            ],
-            "components": [
-              {
-                "id": "item_cloak",
-                "name": "Cloak",
-                "cost": 800
-              },
-              {
-                "id": "item_wind_lace",
-                "name": "Wind Lace",
-                "cost": 225
-              },
-              {
-                "id": "item_vitality_booster",
-                "name": "Vitality Booster",
-                "cost": 1000
-              }
-            ],
-            "recipe_cost": 250,
-            "total_cost": 2275
-          },
-          "new_raw_value": null,
-          "note": {
-            "ru": "Рецепт удалён",
-            "en": "Recipe removed",
-            "uk": "Рецепт видалено"
           }
         }
       ]
@@ -554,23 +359,6 @@
             "en": "Item removed",
             "uk": "Видалено предмет"
           }
-        },
-        {
-          "parameter": "recipe",
-          "old_raw_value": {
-            "recipe_id": "item_recipe_grandmasters_glaive",
-            "result_id": "item_grandmasters_glaive",
-            "variants": [],
-            "components": [],
-            "recipe_cost": 0,
-            "total_cost": 0
-          },
-          "new_raw_value": null,
-          "note": {
-            "ru": "Рецепт удалён",
-            "en": "Recipe removed",
-            "uk": "Рецепт видалено"
-          }
         }
       ]
     },
@@ -611,10 +399,7 @@
               "stun_duration": "0.5",
               "burn_interval": "1.0",
               "land_time": ".5",
-              "impact_radius": {
-                "value": "400",
-                "affected_by_aoe_increase": "1"
-              },
+              "impact_radius": "400",
               "max_duration": "1.5",
               "impact_damage_buildings": "95",
               "impact_damage_units": "150",
@@ -978,6 +763,36 @@
               "illusion_duration": "30",
               "illusion_outgoing_damage": "100",
               "illusion_incoming_damage": "150"
+            }
+          },
+          "new_raw_value": null,
+          "note": {
+            "ru": "Удалён предмет",
+            "en": "Item removed",
+            "uk": "Видалено предмет"
+          }
+        }
+      ]
+    },
+    {
+      "item_id": "item_overflowing_elixir",
+      "is_new": false,
+      "is_removed": true,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": [
+        {
+          "old_raw_value": {
+            "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+            "ItemCost": "0",
+            "ItemIsNeutralActiveDrop": "1",
+            "ItemPurchasable": "0",
+            "ItemSellable": "0",
+            "AbilityCooldown": "45.0",
+            "Model": "models/props_gameplay/neutral_box.vmdl",
+            "AbilityValues": {
+              "health": "500",
+              "mana": "200",
+              "duration": "4"
             }
           },
           "new_raw_value": null,
@@ -1649,6 +1464,24 @@
       ]
     },
     {
+      "item_id": "item_ancient_guardian",
+      "is_new": false,
+      "is_removed": false,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": [
+        {
+          "parameter": "ItemCost",
+          "old_raw_value": "1400",
+          "new_raw_value": "0",
+          "note": {
+            "ru": "Item Cost: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Item Cost: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Item Cost: {change_label} з {old_raw_value} до {new_raw_value}"
+          }
+        }
+      ]
+    },
+    {
       "item_id": "item_refresher",
       "is_new": false,
       "is_removed": false,
@@ -1893,9 +1726,9 @@
             "total_cost": 7500
           },
           "note": {
-            "ru": "Стоимость рецепта прежняя (925 золота). Общая стоимость увеличилась с 7200 до 7500 золота",
-            "en": "Recipe cost unchanged at 925. Total cost increased from 7200g to 7500g",
-            "uk": "Вартість рецепта незмінна (925 золота). Загальну вартість збільшено з 7200 до 7500 золота"
+            "ru": "Стоимость рецепта прежняя (925 золота). Общая стоимость увеличилась с 7200 до 7500 золота (Mage Slayer подорожал с 2800 до 3100 золота)",
+            "en": "Recipe cost unchanged at 925. Total cost increased from 7200g to 7500g (Mage Slayer increased from 2800g to 3100g)",
+            "uk": "Вартість рецепта незмінна (925 золота). Загальну вартість збільшено з 7200 до 7500 золота (Mage Slayer подорожчав з 2800 до 3100 золота)"
           }
         }
       ]
@@ -2011,9 +1844,9 @@
             "total_cost": 5250
           },
           "note": {
-            "ru": "Стоимость рецепта прежняя (1550 золота). Общая стоимость увеличилась с 5150 до 5250 золота",
-            "en": "Recipe cost unchanged at 1550. Total cost increased from 5150g to 5250g",
-            "uk": "Вартість рецепта незмінна (1550 золота). Загальну вартість збільшено з 5150 до 5250 золота"
+            "ru": "Стоимость рецепта прежняя (1550 золота). Общая стоимость увеличилась с 5150 до 5250 золота (Arcane Boots подорожал с 1400 до 1500 золота)",
+            "en": "Recipe cost unchanged at 1550. Total cost increased from 5150g to 5250g (Arcane Boots increased from 1400g to 1500g)",
+            "uk": "Вартість рецепта незмінна (1550 золота). Загальну вартість збільшено з 5150 до 5250 золота (Arcane Boots подорожчав з 1400 до 1500 золота)"
           }
         }
       ]
@@ -2067,6 +1900,34 @@
       ]
     },
     {
+      "item_id": "item_boots_of_bearing",
+      "is_new": false,
+      "is_removed": false,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": [
+        {
+          "parameter": "AbilitySharedCooldown",
+          "old_raw_value": null,
+          "new_raw_value": "janggo",
+          "note": {
+            "ru": "Теперь имеет общий откат с другими способностями",
+            "en": "Now shares a cooldown with other abilities",
+            "uk": "Тепер має спільний відкат з іншими здібностями"
+          }
+        },
+        {
+          "parameter": "aura_health_regen",
+          "old_raw_value": null,
+          "new_raw_value": "2.5",
+          "note": {
+            "ru": "Aura Health Regen: {change_label}: {new_raw_value}",
+            "en": "Aura Health Regen: {change_label}: {new_raw_value}",
+            "uk": "Aura Health Regen: {change_label}: {new_raw_value}"
+          }
+        }
+      ]
+    },
+    {
       "item_id": "item_spirit_vessel",
       "is_new": false,
       "is_removed": false,
@@ -2080,6 +1941,24 @@
             "ru": "Heal Reduction Enemy: {change_label}: {old_raw_value}",
             "en": "Heal Reduction Enemy: {change_label}: {old_raw_value}",
             "uk": "Heal Reduction Enemy: {change_label}: {old_raw_value}"
+          }
+        }
+      ]
+    },
+    {
+      "item_id": "item_phylactery",
+      "is_new": false,
+      "is_removed": false,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": [
+        {
+          "parameter": "bonus_health_regen",
+          "old_raw_value": "6.5",
+          "new_raw_value": "5.5",
+          "note": {
+            "ru": "Bonus Health Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Bonus Health Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Bonus Health Regen: {change_label} з {old_raw_value} до {new_raw_value}"
           }
         }
       ]
@@ -2285,9 +2164,27 @@
             "total_cost": 4100
           },
           "note": {
-            "ru": "Общая стоимость увеличилась с 3950 до 4100 золота",
-            "en": "Total cost increased from 3950g to 4100g",
-            "uk": "Загальну вартість збільшено з 3950 до 4100 золота"
+            "ru": "Общая стоимость увеличилась с 3950 до 4100 золота (Dagon подорожал с 2800 до 3000 золота, Dagon Recipe подешевел с 1150 до 1100 золота)",
+            "en": "Total cost increased from 3950g to 4100g (Dagon increased from 2800g to 3000g, Dagon Recipe decreased from 1150g to 1100g)",
+            "uk": "Загальну вартість збільшено з 3950 до 4100 золота (Dagon подорожчав з 2800 до 3000 золота, Dagon Recipe подешевшав з 1150 до 1100 золота)"
+          }
+        },
+        {
+          "parameter": "Description",
+          "old_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу. Предмет можно улучшить. Не наносит урон первые 10 минут в режиме Overthrow. Урон: 400 500 600 700 800 Дальность применения: 700 750 800 850 900 Расход маны: 120 140 160 180 200.",
+            "en": "Active: Energy Burst. Emits a powerful burst of magical damage upon a targeted enemy unit. Upgradable. Does no damage for the first 10 minutes in Overthrow mode. Damage: 400 500 600 700 800 Range: 700 750 800 850 900 Mana Cost: 120 140 160 180 200.",
+            "uk": "Активне: Energy Burst. Випускає потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті. Предмет можна покращити. завдає шкоди перші 10 хвилин у режимі Overthrow. Втрата:400 500 600 700 800 Дальність застосування:700 750 800 850 900 Витрата мани:120 140 160 180 200."
+          },
+          "new_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и излечивающий владельца на % от нанесённого урона. Предмет можно улучшить. Урон: 400 500 600 700 800 Дальность применения: 640 Расход маны: 120 140 160 180 200 Не наносит урон первые 10 минут в режиме Overthrow.",
+            "en": "Active: Energy Burst. Releases a powerful burst of energy that deals magical damage to the targeted enemy unit and heals the owner for % of the damage dealt. This item can be upgraded. Damage: 400 500 600 700 800 Cast Range: 640 Mana Cost: 120 140 160 180 200 Does not deal damage during the first 10 minutes in Overthrow mode.",
+            "uk": "Активне: Energy Burst. Вивільняє потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті та лікує власника на % від завданої шкоди. Предмет можна покращити. Шкода: 400 500 600 700 800 Дальність застосування: 640 Витрата мани: 120 140 160 180 200 Не завдає шкоди протягом перших 10 хвилин у режимі Overthrow."
+          },
+          "note": {
+            "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
           }
         }
       ]
@@ -2493,9 +2390,27 @@
             "total_cost": 5200
           },
           "note": {
-            "ru": "Общая стоимость увеличилась с 5100 до 5200 золота",
-            "en": "Total cost increased from 5100g to 5200g",
-            "uk": "Загальну вартість збільшено з 5100 до 5200 золота"
+            "ru": "Общая стоимость увеличилась с 5100 до 5200 золота (Dagon подорожал с 3950 до 4100 золота, Dagon Recipe подешевел с 1150 до 1100 золота)",
+            "en": "Total cost increased from 5100g to 5200g (Dagon increased from 3950g to 4100g, Dagon Recipe decreased from 1150g to 1100g)",
+            "uk": "Загальну вартість збільшено з 5100 до 5200 золота (Dagon подорожчав з 3950 до 4100 золота, Dagon Recipe подешевшав з 1150 до 1100 золота)"
+          }
+        },
+        {
+          "parameter": "Description",
+          "old_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу. Предмет можно улучшить. Не наносит урон первые 10 минут в режиме Overthrow. Урон: 400 500 600 700 800 Дальность применения: 700 750 800 850 900 Расход маны: 120 140 160 180 200.",
+            "en": "Active: Energy Burst. Emits a powerful burst of magical damage upon a targeted enemy unit. Upgradable. Does no damage for the first 10 minutes in Overthrow mode. Damage: 400 500 600 700 800 Range: 700 750 800 850 900 Mana Cost: 120 140 160 180 200.",
+            "uk": "Активне: Energy Burst. Випускає потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті. Предмет можна покращити. завдає шкоди перші 10 хвилин у режимі Overthrow. Втрата:400 500 600 700 800 Дальність застосування:700 750 800 850 900 Витрата мани:120 140 160 180 200."
+          },
+          "new_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и излечивающий владельца на % от нанесённого урона. Предмет можно улучшить. Урон: 400 500 600 700 800 Дальность применения: 640 Расход маны: 120 140 160 180 200 Не наносит урон первые 10 минут в режиме Overthrow.",
+            "en": "Active: Energy Burst. Releases a powerful burst of energy that deals magical damage to the targeted enemy unit and heals the owner for % of the damage dealt. This item can be upgraded. Damage: 400 500 600 700 800 Cast Range: 640 Mana Cost: 120 140 160 180 200 Does not deal damage during the first 10 minutes in Overthrow mode.",
+            "uk": "Активне: Energy Burst. Вивільняє потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті та лікує власника на % від завданої шкоди. Предмет можна покращити. Шкода: 400 500 600 700 800 Дальність застосування: 640 Витрата мани: 120 140 160 180 200 Не завдає шкоди протягом перших 10 хвилин у режимі Overthrow."
+          },
+          "note": {
+            "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
           }
         }
       ]
@@ -2701,9 +2616,27 @@
             "total_cost": 6300
           },
           "note": {
-            "ru": "Общая стоимость увеличилась с 6250 до 6300 золота",
-            "en": "Total cost increased from 6250g to 6300g",
-            "uk": "Загальну вартість збільшено з 6250 до 6300 золота"
+            "ru": "Общая стоимость увеличилась с 6250 до 6300 золота (Dagon подорожал с 5100 до 5200 золота, Dagon Recipe подешевел с 1150 до 1100 золота)",
+            "en": "Total cost increased from 6250g to 6300g (Dagon increased from 5100g to 5200g, Dagon Recipe decreased from 1150g to 1100g)",
+            "uk": "Загальну вартість збільшено з 6250 до 6300 золота (Dagon подорожчав з 5100 до 5200 золота, Dagon Recipe подешевшав з 1150 до 1100 золота)"
+          }
+        },
+        {
+          "parameter": "Description",
+          "old_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу. Предмет можно улучшить. Не наносит урон первые 10 минут в режиме Overthrow. Урон: 400 500 600 700 800 Дальность применения: 700 750 800 850 900 Расход маны: 120 140 160 180 200.",
+            "en": "Active: Energy Burst. Emits a powerful burst of magical damage upon a targeted enemy unit. Upgradable. Does no damage for the first 10 minutes in Overthrow mode. Damage: 400 500 600 700 800 Range: 700 750 800 850 900 Mana Cost: 120 140 160 180 200.",
+            "uk": "Активне: Energy Burst. Випускає потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті. Предмет можна покращити. завдає шкоди перші 10 хвилин у режимі Overthrow. Втрата:400 500 600 700 800 Дальність застосування:700 750 800 850 900 Витрата мани:120 140 160 180 200."
+          },
+          "new_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и излечивающий владельца на % от нанесённого урона. Предмет можно улучшить. Урон: 400 500 600 700 800 Дальность применения: 640 Расход маны: 120 140 160 180 200 Не наносит урон первые 10 минут в режиме Overthrow.",
+            "en": "Active: Energy Burst. Releases a powerful burst of energy that deals magical damage to the targeted enemy unit and heals the owner for % of the damage dealt. This item can be upgraded. Damage: 400 500 600 700 800 Cast Range: 640 Mana Cost: 120 140 160 180 200 Does not deal damage during the first 10 minutes in Overthrow mode.",
+            "uk": "Активне: Energy Burst. Вивільняє потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті та лікує власника на % від завданої шкоди. Предмет можна покращити. Шкода: 400 500 600 700 800 Дальність застосування: 640 Витрата мани: 120 140 160 180 200 Не завдає шкоди протягом перших 10 хвилин у режимі Overthrow."
+          },
+          "note": {
+            "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
           }
         }
       ]
@@ -2913,6 +2846,24 @@
             "en": "Now built from Dagon (6300 gold) and Dagon Recipe (1100 gold). Total cost: 7400 gold.",
             "uk": "Тепер збирається з Dagon (6300 золота) і Dagon Recipe (1100 золота). Загальна вартість: 7400 золота."
           }
+        },
+        {
+          "parameter": "Description",
+          "old_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу. Не наносит урон первые 10 минут в режиме Overthrow. Урон: 400 500 600 700 800 Дальность применения: 700 750 800 850 900 Расход маны: 120 140 160 180 200.",
+            "en": "Active: Energy Burst. Emits a powerful burst of magical damage upon a targeted enemy unit. Does no damage for the first 10 minutes in Overthrow mode. Damage: 400 500 600 700 800 Range: 700 750 800 850 900 Mana Cost: 120 140 160 180 200.",
+            "uk": "Активне: Energy Burst. Випускає потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті. хвилин у режимі Overthrow. Втрата:400 500 600 700 800 Дальність застосування:700 750 800 850 900 Витрата мани:120 140 160 180 200."
+          },
+          "new_raw_value": {
+            "ru": "Активное: Energy Burst. Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и излечивающий владельца на % от нанесённого урона. Предмет можно улучшить. Урон: 400 500 600 700 800 Дальность применения: 640 Расход маны: 120 140 160 180 200 Не наносит урон первые 10 минут в режиме Overthrow.",
+            "en": "Active: Energy Burst. Releases a powerful burst of energy that deals magical damage to the targeted enemy unit and heals the owner for % of the damage dealt. This item can be upgraded. Damage: 400 500 600 700 800 Cast Range: 640 Mana Cost: 120 140 160 180 200 Does not deal damage during the first 10 minutes in Overthrow mode.",
+            "uk": "Активне: Energy Burst. Вивільняє потужний сплеск енергії, що завдає магічної шкоди обраній ворожій істоті та лікує власника на % від завданої шкоди. Предмет можна покращити. Шкода: 400 500 600 700 800 Дальність застосування: 640 Витрата мани: 120 140 160 180 200 Не завдає шкоди протягом перших 10 хвилин у режимі Overthrow."
+          },
+          "note": {
+            "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+          }
         }
       ]
     },
@@ -3079,19 +3030,6 @@
           }
         },
         {
-          "parameter": "duration",
-          "old_raw_value": "8",
-          "new_raw_value": {
-            "value": "8",
-            "apply_curio_bonus": "1"
-          },
-          "note": {
-            "ru": "Duration: {change_label} с {old_raw_value} до {new_raw_value}",
-            "en": "Duration: {change_label} from {old_raw_value} to {new_raw_value}",
-            "uk": "Duration: {change_label} з {old_raw_value} до {new_raw_value}"
-          }
-        },
-        {
           "parameter": "recipe",
           "old_raw_value": {
             "recipe_id": "item_recipe_medallion_of_courage",
@@ -3186,9 +3124,9 @@
             "total_cost": 975
           },
           "note": {
-            "ru": "Общая стоимость уменьшилась с 1025 до 975 золота",
-            "en": "Total cost decreased from 1025g to 975g",
-            "uk": "Загальну вартість зменшено з 1025 до 975 золота"
+            "ru": "Общая стоимость уменьшилась с 1025 до 975 золота (Chainmail подешевел с 550 до 500 золота)",
+            "en": "Total cost decreased from 1025g to 975g (Chainmail decreased from 550g to 500g)",
+            "uk": "Загальну вартість зменшено з 1025 до 975 золота (Chainmail подешевшав з 550 до 500 золота)"
           }
         }
       ]
@@ -3380,9 +3318,97 @@
             "total_cost": 2900
           },
           "note": {
-            "ru": "Общая стоимость уменьшилась с 3000 до 2900 золота",
-            "en": "Total cost decreased from 3000g to 2900g",
-            "uk": "Загальну вартість зменшено з 3000 до 2900 золота"
+            "ru": "Общая стоимость уменьшилась с 3000 до 2900 золота (Shadow Amulet подешевел с 1000 до 900 золота)",
+            "en": "Total cost decreased from 3000g to 2900g (Shadow Amulet decreased from 1000g to 900g)",
+            "uk": "Загальну вартість зменшено з 3000 до 2900 золота (Shadow Amulet подешевшав з 1000 до 900 золота)"
+          }
+        }
+      ]
+    },
+    {
+      "item_id": "item_silver_edge",
+      "is_new": false,
+      "is_removed": false,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": [
+        {
+          "parameter": "recipe",
+          "old_raw_value": {
+            "recipe_id": "item_recipe_silver_edge",
+            "result_id": "item_silver_edge",
+            "variants": [
+              {
+                "key": "01",
+                "components": [
+                  {
+                    "id": "item_invis_sword*",
+                    "name": "Shadow Blade",
+                    "cost": 3000
+                  },
+                  {
+                    "id": "item_lesser_crit",
+                    "name": "Crystalys",
+                    "cost": 2000
+                  }
+                ],
+                "total_cost": 5500
+              }
+            ],
+            "components": [
+              {
+                "id": "item_invis_sword*",
+                "name": "Shadow Blade",
+                "cost": 3000
+              },
+              {
+                "id": "item_lesser_crit",
+                "name": "Crystalys",
+                "cost": 2000
+              }
+            ],
+            "recipe_cost": 500,
+            "total_cost": 5500
+          },
+          "new_raw_value": {
+            "recipe_id": "item_recipe_silver_edge",
+            "result_id": "item_silver_edge",
+            "variants": [
+              {
+                "key": "01",
+                "components": [
+                  {
+                    "id": "item_invis_sword*",
+                    "name": "Shadow Blade",
+                    "cost": 2900
+                  },
+                  {
+                    "id": "item_lesser_crit",
+                    "name": "Crystalys",
+                    "cost": 2000
+                  }
+                ],
+                "total_cost": 5400
+              }
+            ],
+            "components": [
+              {
+                "id": "item_invis_sword*",
+                "name": "Shadow Blade",
+                "cost": 2900
+              },
+              {
+                "id": "item_lesser_crit",
+                "name": "Crystalys",
+                "cost": 2000
+              }
+            ],
+            "recipe_cost": 500,
+            "total_cost": 5400
+          },
+          "note": {
+            "ru": "Стоимость рецепта прежняя (500 золота). Общая стоимость уменьшилась с 5500 до 5400 золота (Shadow Blade подешевел с 3000 до 2900 золота)",
+            "en": "Recipe cost unchanged at 500. Total cost decreased from 5500g to 5400g (Shadow Blade decreased from 3000g to 2900g)",
+            "uk": "Вартість рецепта незмінна (500 золота). Загальну вартість зменшено з 5500 до 5400 золота (Shadow Blade подешевшав з 3000 до 2900 золота)"
           }
         }
       ]
@@ -3566,9 +3592,115 @@
             "total_cost": 5950
           },
           "note": {
-            "ru": "Стоимость рецепта прежняя (1500 золота). Общая стоимость уменьшилась с 6000 до 5950 золота",
-            "en": "Recipe cost unchanged at 1500. Total cost decreased from 6000g to 5950g",
-            "uk": "Вартість рецепта незмінна (1500 золота). Загальну вартість зменшено з 6000 до 5950 золота"
+            "ru": "Стоимость рецепта прежняя (1500 золота). Общая стоимость уменьшилась с 6000 до 5950 золота (Phase Boots подешевел с 1500 до 1450 золота)",
+            "en": "Recipe cost unchanged at 1500. Total cost decreased from 6000g to 5950g (Phase Boots decreased from 1500g to 1450g)",
+            "uk": "Вартість рецепта незмінна (1500 золота). Загальну вартість зменшено з 6000 до 5950 золота (Phase Boots подешевшав з 1500 до 1450 золота)"
+          }
+        }
+      ]
+    },
+    {
+      "item_id": "item_drum_of_hyperstone",
+      "is_new": false,
+      "is_removed": false,
+      "reason": "not-in-shops-or-neutrals",
+      "item_notes": [
+        {
+          "parameter": "recipe",
+          "old_raw_value": {
+            "recipe_id": "item_recipe_drum_of_hyperstone",
+            "result_id": "item_drum_of_hyperstone",
+            "variants": [
+              {
+                "key": "01",
+                "components": [
+                  {
+                    "id": "item_drum_of_endurance",
+                    "name": "Drum of Endurance",
+                    "cost": 1950
+                  },
+                  {
+                    "id": "item_hyperstone",
+                    "name": "Hyperstone",
+                    "cost": 2000
+                  }
+                ],
+                "total_cost": 5250
+              }
+            ],
+            "components": [
+              {
+                "id": "item_drum_of_endurance",
+                "name": "Drum of Endurance",
+                "cost": 1950
+              },
+              {
+                "id": "item_hyperstone",
+                "name": "Hyperstone",
+                "cost": 2000
+              }
+            ],
+            "recipe_cost": 1300,
+            "total_cost": 5250
+          },
+          "new_raw_value": {
+            "recipe_id": "item_recipe_drum_of_hyperstone",
+            "result_id": "item_drum_of_hyperstone",
+            "variants": [
+              {
+                "key": "01",
+                "components": [
+                  {
+                    "id": "item_drum_of_endurance",
+                    "name": "Drum of Endurance",
+                    "cost": 1625
+                  },
+                  {
+                    "id": "item_hyperstone",
+                    "name": "Hyperstone",
+                    "cost": 2000
+                  }
+                ],
+                "total_cost": 4925
+              }
+            ],
+            "components": [
+              {
+                "id": "item_drum_of_endurance",
+                "name": "Drum of Endurance",
+                "cost": 1625
+              },
+              {
+                "id": "item_hyperstone",
+                "name": "Hyperstone",
+                "cost": 2000
+              }
+            ],
+            "recipe_cost": 1300,
+            "total_cost": 4925
+          },
+          "note": {
+            "ru": "Стоимость рецепта прежняя (1300 золота). Общая стоимость уменьшилась с 5250 до 4925 золота (Drum of Endurance подешевел с 1950 до 1625 золота)",
+            "en": "Recipe cost unchanged at 1300. Total cost decreased from 5250g to 4925g (Drum of Endurance decreased from 1950g to 1625g)",
+            "uk": "Вартість рецепта незмінна (1300 золота). Загальну вартість зменшено з 5250 до 4925 золота (Drum of Endurance подешевшав з 1950 до 1625 золота)"
+          }
+        },
+        {
+          "parameter": "Description",
+          "old_raw_value": {
+            "ru": "Пассивное: Hyperstone Aura. Аура увеличивает скорость передвижения на 40 и скорость атаки союзников на 80. Радиус: 1200.",
+            "en": "Passive: Hyperstone Aura. The aura increases movement speed by 40 and attack speed of allies by 80. Radius: 1200.",
+            "uk": "Пасивне: Hyperstone Aura. Аура збільшує швидкість пересування на40 і швидкість атаки союзників на80."
+          },
+          "new_raw_value": {
+            "ru": "Пассивное: Hyperstone Aura. Аура увеличивает скорость передвижения на 40, скорость атаки союзников на 80 и восстановление здоровья на. Радиус: 1200.",
+            "en": "Passive: Hyperstone Aura. The aura increases movement speed by 40 and attack speed of allies by 80. Radius: 1200.",
+            "uk": "Пасивне: Hyperstone Aura. Аура збільшує швидкість пересування на40 і швидкість атаки союзників на80."
+          },
+          "note": {
+            "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
           }
         }
       ]

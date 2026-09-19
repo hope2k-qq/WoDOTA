@@ -1,0 +1,91 @@
+{
+  "patch_number": "1.01b",
+  "patch_name": "1.01b",
+  "patch_timestamp": 1788917268,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_lunar_orbit_custom",
+          "name": "Lunar Orbit",
+          "image": "luna_lunar_orbit.webp",
+          "ability_notes": [
+            {
+              "parameter": "rotating_glaives_collision_damage",
+              "note": "Glaive collision damage decreased from 22%/28%/34%/40% to 18%/22%/26%/30% of the owner's damage"
+            }
+          ]
+        },
+        {
+          "ability_id": "luna_moon_glaive_custom",
+          "name": "Moon Glaives",
+          "image": "luna_moon_glaive.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_reduction_percent",
+              "note": "Damage reduction per bounce increased from 50%/45%/40%/35% to 60%/55%/50%/45%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_luna_13",
+            "image": "luna_13.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«New active ability: Lunar Field. Creates a Lunar Orbit at the target point. Duration: 8s. Cast range: 800. Mana cost: 50. Cooldown: 24/12s» replaced with «Lunar Orbit applies a stacking effect to enemies that increases the damage of their next hit: 1%. Max stacks: 10/20/30. Duration: 2s»"
+              }
+            ],
+            "talent_text": "Lunar Orbit places a stacking effect on enemies that increases the damage of their next hit by: 1%\n\nMax Effects: 10/20/30\nDuration: 2 sec."
+          },
+          {
+            "talent_id": "modifier_luna_10",
+            "image": "luna_10.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Lunar Orbit applies a stacking effect to enemies that increases the damage of their next hit: 1%. Max stacks: 10/20/30. Duration: 2s» replaced with «New active ability: Lunar Field. Creates a Lunar Orbit at the target point. Duration: 8s. Cast range: 800. Mana cost: 50. Cooldown: 24/12s»"
+              }
+            ],
+            "talent_text": "New Active Ability: Lunar Field\n\nCreates a Lunar Orbit at the target location.\n\nDuration: 8 sec.\nCast Range: 800\nMana Cost: 50\nCooldown: 24/12 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_luna_17",
+            "image": "luna_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Lucent Beam damage bonus from Intelligence increased from 20%/30% to 25%/50%"
+              }
+            ],
+            "talent_text": "Lucent Beam Damage Increase: 25%/50% of Intellect"
+          }
+        ]
+      }
+    }
+  ]
+}

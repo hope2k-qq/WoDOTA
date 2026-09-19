@@ -18,6 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '..', '.env') });
 const { buildSnapshot } = require('./buildSnapshot');
 const { diffSnapshots } = require('./diffSnapshots');
 const { renderMarkdown } = require('./renderChangelog');
@@ -78,8 +79,8 @@ async function changelog(to, from) {
 }
 
 // Публичная копия changelog.json без сырых значений (?name -> patch_name).
-function publish(version, name) {
-    const result = patchesService.publishPatch(version, name);
+async function publish(version, name) {
+    const result = await patchesService.publishPatch(version, name);
     if (!result) {
         console.log(`[publish ${version}] нет changelog.json — сначала changelog ${version}`);
         return null;
@@ -91,14 +92,14 @@ function publish(version, name) {
 }
 
 // Публикует каждый патч, у кого ещё НЕТ published.json (ручные названия не затираем).
-function publishAll() {
+async function publishAll() {
     const already = new Set(patchesService.listPublishedVersions());
     for (const v of listPatchVersions()) {
         if (already.has(v)) {
             console.log(`[publish ${v}] уже опубликован — пропуск`);
             continue;
         }
-        publish(v);
+        await publish(v);
     }
 }
 
@@ -131,10 +132,10 @@ async function main() {
         case 'publish':
             if (!a) throw new Error('Укажите версию: publish <версия> [название]');
             if (!hasPatch(a)) throw new Error(`Патч ${a} не найден`);
-            publish(a, b);
+            await publish(a, b);
             break;
         case 'publish-all':
-            publishAll();
+            await publishAll();
             break;
         default:
             console.log(

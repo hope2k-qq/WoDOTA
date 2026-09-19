@@ -1,0 +1,4536 @@
+{
+  "patch_number": "1.03",
+  "patch_name": "1.03",
+  "patch_timestamp": 1788894000,
+  "general": {
+    "global_changes": [
+      {
+        "title": {
+          "ru": "Общие изменения",
+          "en": "General Changes",
+          "uk": "Загальні зміни"
+        }
+      },
+      {
+        "note": {
+          "ru": "Эффекты оцепенения, которые запрещают жертвам не только передвигаться, но и атаковать, теперь имеют отдельное название — «оковы»",
+          "en": "Effects that root and disarm are now considered Bind Effects and will have the status effect \"Bound\" overhead",
+          "uk": "Ефекти, що вкорінюють та роззброюють, тепер називаються «путами» й мають відповідний індикатор стану."
+        }
+      },
+      {
+        "note": {
+          "ru": "Изменено расположение предметов в лавке",
+          "en": "Item layout in the shop has been changed",
+          "uk": "Змінено розташування предметів у крамниці"
+        }
+      },
+      {
+        "note": {
+          "ru": "В голосование добавлены почти все герои",
+          "en": "Almost all heroes have been added to the vote",
+          "uk": "До голосування додано майже всіх героїв"
+        }
+      },
+      {
+        "title": {
+          "ru": "Таланты",
+          "en": "Talents",
+          "uk": "Таланти"
+        }
+      },
+      {
+        "subtitle": {
+          "ru": "Сила",
+          "en": "Strength",
+          "uk": "Сила"
+        }
+      },
+      {
+        "note": {
+          "ru": "Восстановление здоровья увеличено с 0,25%/0,5%/0,75% до 0,3%/0,6%/0,9%",
+          "en": "Health Regeneration increased from 0.25%/0.5%/0.75% to 0.3%/0.6%/0.9%",
+          "uk": "Відновлення здоров'я збільшено з 0,25%/0,5%/0,75% до 0,3%/0,6%/0,9%"
+        }
+      },
+      {
+        "title": {
+          "ru": "Изменения механик",
+          "en": "Mechanics Changes",
+          "uk": "Зміни механік"
+        }
+      },
+      {
+        "note": {
+          "ru": "Параметры «усиление вампиризма» и «усиление вампиризма заклинаниями» упразднены. Им на замену пришёл параметр «пополнение здоровья».",
+          "en": "Lifesteal Amplification and Spell Lifesteal Amplification have been removed and a new umbrella stat has been created in their place: Health Restoration",
+          "uk": "Вилучено посилення вампіризму та посилення вампіризму закляттями, а натомість створено новий параметр: поповнення здоров'я."
+        }
+      },
+      {
+        "note": {
+          "ru": "В процентах увеличивает здоровье, получаемое от восстановления, вампиризма и вампиризма заклинаниями",
+          "en": "Provides a percentage increase to the health gained from Lifesteal, Spell Lifesteal, and Health Regeneration",
+          "uk": "У відсотках збільшує здоров'я, отримуване від вампіризму, вампіризму закляттями та регенерації здоров'я."
+        },
+        "indent": 2
+      },
+      {
+        "note": {
+          "ru": "Эффекты, уменьшающие и увеличивающие пополнение здоровья, складываются в порядке убывающей полезности",
+          "en": "Positive and Negative sources of Health Restoration stack diminishingly with each other",
+          "uk": "Позитивні й негативні ефекти поповнення здоров'я складаються за законом спадної корисності."
+        },
+        "indent": 2
+      },
+      {
+        "note": {
+          "ru": "Пополнение здоровья не может быть меньше –100% и больше 100%.",
+          "en": "Health Restoration cannot go lower than -100% and cannot go higher than 100%",
+          "uk": "Поповнення здоров'я не може бути меншим за -100% та більшим за 100%."
+        },
+        "indent": 2
+      },
+      {
+        "note": {
+          "ru": "Теперь усиление лечения от нескольких источников складывается, а не сочетается по закону убывающей полезности",
+          "en": "Sources of Heal Amplification now stack additively with each other instead of diminishingly",
+          "uk": "Посилення лікування від кількох джерел тепер додаються, а не складаються за законом спадної корисності."
+        }
+      },
+      {
+        "note": {
+          "ru": "Увеличение лечения не может быть ниже –100% и не имеет верхнего предела",
+          "en": "Heal Amplification cannot go lower than -100% and has no upper limit",
+          "uk": "Посилення лікування не може опуститися нижче -100%, але не має верхньої межі."
+        }
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_orb_of_frost",
+        "name": "Orb of Frost",
+        "image": "images/items/orb_of_frost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "old_raw_value": "250",
+            "new_raw_value": "300",
+            "note": {
+              "ru": "Стоимость увеличена с 250 до 300 золота",
+              "en": "Cost increased from 250g to 300g",
+              "uk": "Вартість збільшено з 250 до 300 золота"
+            }
+          },
+          {
+            "parameter": "heal_reduction",
+            "old_raw_value": "13",
+            "new_raw_value": "13",
+            "note": {
+              "ru": "Frost: больше не уменьшает на 13% здоровье, получаемое от лечения, восстановления и обоих вампиризмов. Теперь уменьшает пополнение здоровья на 13%.",
+              "en": "Frost: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 13%, now reduces Health Restoration by 13%",
+              "uk": "Frost: замість зменшення на 13% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я на 13%."
+            }
+          },
+          {
+            "note": {
+              "ru": "Frost: замедление передвижения и снижение пополнения здоровья больше не складываются с такими же эффектами от Orb of Corrosion и Eye of Skadi",
+              "en": "Frost: movement slow and Health Restoration reduction no longer stack with the same effects from Orb of Corrosion and Eye of Skadi",
+              "uk": "Frost: сповільнення пересування та зменшення поповнення здоров'я більше не поєднуються з такими ж ефектами від Orb of Corrosion та Eye of Skadi"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_talisman_of_evasion",
+        "name": "Talisman of Evasion",
+        "image": "images/items/talisman_of_evasion.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "bonus_evasion",
+            "old_raw_value": "20",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Бонус к уклонению уменьшен с 20% до 15%",
+              "en": "Evasion bonus decreased from 20% to 15%",
+              "uk": "Бонус до ухилення зменшено з 20% до 15%"
+            }
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_abyssal_blade",
+        "name": "Abyssal Blade",
+        "image": "images/items/abyssal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "old_raw_value": "25",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Больше не даёт 25% к здоровью от восстановления и вампиризма. Теперь даёт 20% к пополнению здоровья.",
+              "en": "No longer grants 25% HP Regen and Lifesteal Amplification. Now grants 20% Health Restoration.",
+              "uk": "Більше не дає 25% до здоров'я від відновлення та вампіризму. Тепер дає 20% до поповнення здоров'я."
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_blade_mail",
+        "name": "Blade Mail",
+        "image": "images/items/blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "old_raw_value": "28",
+            "new_raw_value": "18",
+            "note": {
+              "ru": "Бонус к урону уменьшен с 28 до 18",
+              "en": "Damage bonus decreased from 28 to 18",
+              "uk": "Бонус до шкоди зменшено з 28 до 18"
+            }
+          },
+          {
+            "parameter": "bonus_armor",
+            "old_raw_value": "6",
+            "new_raw_value": "7",
+            "note": {
+              "ru": "Бонус к броне увеличен с 6 до 7",
+              "en": "Armor bonus increased from 6 to 7",
+              "uk": "Бонус до броні збільшено з 6 до 7"
+            }
+          },
+          {
+            "parameter": "active_reflection_pct",
+            "old_raw_value": "30",
+            "new_raw_value": "40",
+            "note": {
+              "ru": "Damage Return: возврат урона при активации увеличен с 30% до 40%",
+              "en": "Damage Return: active damage return increased from 30% to 40%",
+              "uk": "Damage Return: повернення шкоди при активації збільшено з 30% до 40%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_bloodstone",
+        "name": "Bloodstone",
+        "image": "images/items/bloodstone.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "old_raw_value": "35.0",
+            "new_raw_value": "30.0",
+            "note": {
+              "ru": "Bloodpact: перезарядка уменьшена с 35 до 30 секунд",
+              "en": "Bloodpact: cooldown decreased from 35s to 30s",
+              "uk": "Bloodpact: перезарядку зменшено з 35 до 30 секунд"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_edge_of_discord",
+        "name": "Edge of Discord",
+        "image": "images/items/edge_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "lifesteal_amplify",
+            "old_raw_value": "20",
+            "new_raw_value": "",
+            "note": {
+              "ru": "Больше не даёт 20% к усилению вампиризма заклинаниями",
+              "en": "No longer grants 20% Spell Lifesteal Amplification",
+              "uk": "Більше не дає 20% до підсилення вампіризму закляттями"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "images/items/elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_elemental_ringmaster",
+              "result_id": "item_elemental_ringmaster",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_soul_ring",
+                      "name": "Soul Ring",
+                      "cost": 805
+                    },
+                    {
+                      "id": "item_orb_of_corrosion",
+                      "name": "Orb of Corrosion",
+                      "cost": 1000
+                    },
+                    {
+                      "id": "item_falcon_blade",
+                      "name": "Falcon Blade",
+                      "cost": 1125
+                    },
+                    {
+                      "id": "item_aghanims_shard_custom",
+                      "name": "Aghanim's Shard",
+                      "cost": 1400
+                    }
+                  ],
+                  "total_cost": 4900
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_soul_ring",
+                  "name": "Soul Ring",
+                  "cost": 805
+                },
+                {
+                  "id": "item_orb_of_corrosion",
+                  "name": "Orb of Corrosion",
+                  "cost": 1000
+                },
+                {
+                  "id": "item_falcon_blade",
+                  "name": "Falcon Blade",
+                  "cost": 1125
+                },
+                {
+                  "id": "item_aghanims_shard_custom",
+                  "name": "Aghanim's Shard",
+                  "cost": 1400
+                }
+              ],
+              "recipe_cost": 570,
+              "total_cost": 4900
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_elemental_ringmaster",
+              "result_id": "item_elemental_ringmaster",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_soul_ring",
+                      "name": "Soul Ring",
+                      "cost": 805
+                    },
+                    {
+                      "id": "item_orb_of_corrosion",
+                      "name": "Orb of Corrosion",
+                      "cost": 1050
+                    },
+                    {
+                      "id": "item_falcon_blade",
+                      "name": "Falcon Blade",
+                      "cost": 1125
+                    },
+                    {
+                      "id": "item_aghanims_shard_custom",
+                      "name": "Aghanim's Shard",
+                      "cost": 1400
+                    }
+                  ],
+                  "total_cost": 4950
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_soul_ring",
+                  "name": "Soul Ring",
+                  "cost": 805
+                },
+                {
+                  "id": "item_orb_of_corrosion",
+                  "name": "Orb of Corrosion",
+                  "cost": 1050
+                },
+                {
+                  "id": "item_falcon_blade",
+                  "name": "Falcon Blade",
+                  "cost": 1125
+                },
+                {
+                  "id": "item_aghanims_shard_custom",
+                  "name": "Aghanim's Shard",
+                  "cost": 1400
+                }
+              ],
+              "recipe_cost": 570,
+              "total_cost": 4950
+            },
+            "note": {
+              "ru": "Стоимость рецепта прежняя (570 золота). Общая стоимость увеличилась с 4900 до 4950 золота (Orb of Corrosion подорожал с 1000 до 1050 золота)",
+              "en": "Recipe cost unchanged at 570. Total cost increased from 4900g to 4950g (Orb of Corrosion increased from 1000g to 1050g)",
+              "uk": "Вартість рецепта незмінна (570 золота). Загальну вартість збільшено з 4900 до 4950 золота (Orb of Corrosion подорожчав з 1000 до 1050 золота)"
+            }
+          },
+          {
+            "parameter": "debuff_increase",
+            "old_raw_value": "10",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Elementalist: увеличение длительности отрицательных эффектов от элемента Void усилено с 10% до 15%",
+              "en": "Elementalist: Void debuff duration amplification increased from 10% to 15%",
+              "uk": "Elementalist: збільшення тривалості негативних ефектів від елемента Void посилено з 10% до 15%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_gungir",
+        "name": "Gleipnir",
+        "image": "images/items/gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "old_raw_value": "100",
+            "new_raw_value": "150",
+            "note": {
+              "ru": "Eternal Chains: расход маны увеличен со 100 до 150",
+              "en": "Eternal Chains: mana cost increased from 100 to 150",
+              "uk": "Eternal Chains: витрати мани збільшено зі 100 до 150"
+            }
+          },
+          {
+            "parameter": "bonus_intellect",
+            "old_raw_value": "15",
+            "new_raw_value": "12",
+            "note": {
+              "ru": "Бонус к интеллекту уменьшен с 15 до 12",
+              "en": "Intelligence bonus decreased from 15 to 12",
+              "uk": "Бонус до інтелекту зменшено з 15 до 12"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_holy_locket",
+        "name": "Holy Locket",
+        "image": "images/items/holy_locket.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "heal_increase",
+            "old_raw_value": "25",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Holy Blessing: усиление лечения уменьшено с 25% до 15%",
+              "en": "Holy Blessing: heal amplification decreased from 25% to 15%",
+              "uk": "Holy Blessing: посилення лікування зменшено з 25% до 15%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya",
+        "name": "Kaya",
+        "image": "images/items/kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "old_raw_value": "20",
+            "new_raw_value": null,
+            "note": {
+              "ru": "Больше не даёт 20% к усилению вампиризма заклинаниями",
+              "en": "No longer grants 20% Spell Lifesteal Amplification",
+              "uk": "Більше не дає 20% до підсилення вампіризму закляттями"
+            }
+          },
+          {
+            "parameter": "mana_regen_multiplier",
+            "old_raw_value": "50",
+            "new_raw_value": "40",
+            "note": {
+              "ru": "Бонус к усилению восстановления маны уменьшен с 50% до 40%",
+              "en": "Mana Regen Amplification bonus decreased from 50% to 40%",
+              "uk": "Бонус до підсилення відновлення мани зменшено з 50% до 40%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya_and_sange",
+        "name": "Kaya and Sange",
+        "image": "images/items/kaya_and_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "old_raw_value": "25",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Больше не даёт 25% к здоровью от восстановления и вампиризма и 25% к усилению вампиризма от заклинаний. Теперь даёт 20% к пополнению здоровья.",
+              "en": "No longer grants 25% HP Regen and Lifesteal Amplification and 25% Spell Lifesteal Amplification. Now grants 20% Health Restoration.",
+              "uk": "Більше не дає 25% до здоров'я від відновлення та вампіризму і 25% до посилення вампіризму закляттями. Тепер дає 20% до поповнення здоров'я."
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_madness_blade_mail",
+        "name": "Madness Blade Mail",
+        "image": "images/items/madness_blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "old_raw_value": "50",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Berserk Return: расход маны уменьшен с 50 до 25",
+              "en": "Berserk Return: mana cost decreased from 50 to 25",
+              "uk": "Berserk Return: витрати мани зменшено з 50 до 25"
+            }
+          },
+          {
+            "parameter": "bonus_armor",
+            "old_raw_value": "6",
+            "new_raw_value": "7",
+            "note": {
+              "ru": "Бонус к броне увеличен с 6 до 7",
+              "en": "Armor bonus increased from 6 to 7",
+              "uk": "Бонус до броні збільшено з 6 до 7"
+            }
+          },
+          {
+            "parameter": "minus_armor_active",
+            "old_raw_value": "-8",
+            "new_raw_value": "-7",
+            "note": {
+              "ru": "Berserk Return: снижение собственной брони ослаблено с 8 до 7",
+              "en": "Berserk Return: self armor reduction decreased from 8 to 7",
+              "uk": "Berserk Return: зниження власної броні ослаблено з 8 до 7"
+            }
+          },
+          {
+            "parameter": "duration",
+            "old_raw_value": "6",
+            "new_raw_value": "5.5",
+            "note": {
+              "ru": "Berserk Return: длительность уменьшена с 6 до 5,5 секунды",
+              "en": "Berserk Return: duration decreased from 6s to 5.5s",
+              "uk": "Berserk Return: тривалість зменшено з 6 до 5,5 секунди"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "Meteor Hammer",
+        "image": "images/items/meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "old_raw_value": "24",
+            "new_raw_value": null,
+            "note": {
+              "ru": "Больше не даёт 24% к усилению вампиризма заклинаниями",
+              "en": "No longer grants 24% Spell Lifesteal Amplification",
+              "uk": "Більше не дає 24% до підсилення вампіризму закляттями"
+            }
+          },
+          {
+            "parameter": "mana_regen_multiplier",
+            "old_raw_value": "50",
+            "new_raw_value": "40",
+            "note": {
+              "ru": "Бонус к усилению восстановления маны уменьшен с 50% до 40%",
+              "en": "Mana Regen Amplification bonus decreased from 50% to 40%",
+              "uk": "Бонус до підсилення відновлення мани зменшено з 50% до 40%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_lens",
+        "name": "Meteor Lens",
+        "image": "images/items/meteor_lens.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_spell_lifesteal_amp",
+            "old_raw_value": "24",
+            "new_raw_value": "",
+            "note": {
+              "ru": "Больше не даёт 24% к усилению вампиризма заклинаниями",
+              "en": "No longer grants 24% Spell Lifesteal Amplification",
+              "uk": "Більше не дає 24% до підсилення вампіризму закляттями"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_kaya",
+        "name": "Moon Kaya",
+        "image": "images/items/moon_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amplify",
+            "old_raw_value": "24",
+            "new_raw_value": "",
+            "note": {
+              "ru": "Больше не даёт 24% к усилению вампиризма заклинаниями",
+              "en": "No longer grants 24% Spell Lifesteal Amplification",
+              "uk": "Більше не дає 24% до підсилення вампіризму закляттями"
+            }
+          },
+          {
+            "parameter": "spell_amplify",
+            "old_raw_value": "16",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Урон от заклинаний уменьшен с 16% до 15%",
+              "en": "Spell Damage decreased from 16% to 15%",
+              "uk": "Шкоду від заклять зменшено з 16% до 15%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_sange",
+        "name": "Moon Sange",
+        "image": "images/items/moon_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "status_resist",
+            "old_raw_value": "24",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Сопротивление эффектам увеличено с 24% до 25%",
+              "en": "Status Resistance increased from 24% to 25%",
+              "uk": "Опір ефектам збільшено з 24% до 25%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_yasha",
+        "name": "Moon Yasha",
+        "image": "images/items/moon_yasha.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_attackspeed",
+            "old_raw_value": "15",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Бонус к скорости атаки увеличен с 15 до 30",
+              "en": "Attack speed bonus increased from 15 to 30",
+              "uk": "Бонус до швидкості атаки збільшено з 15 до 30"
+            }
+          },
+          {
+            "parameter": "movespeed_bonus",
+            "old_raw_value": "16",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Бонус к скорости передвижения уменьшен с 16% до 15%",
+              "en": "Movement speed bonus decreased from 16% to 15%",
+              "uk": "Бонус до швидкості пересування зменшено з 16% до 15%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_corrosion",
+        "name": "Orb of Corrosion",
+        "image": "images/items/orb_of_corrosion.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_orb_of_corrosion",
+              "result_id": "item_orb_of_corrosion",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_orb_of_frost",
+                      "name": "Orb of Frost",
+                      "cost": 250
+                    },
+                    {
+                      "id": "item_blight_stone",
+                      "name": "Orb of Blight",
+                      "cost": 300
+                    },
+                    {
+                      "id": "item_boots_of_elves",
+                      "name": "Band of Elvenskin",
+                      "cost": 450
+                    }
+                  ],
+                  "total_cost": 1000
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_orb_of_frost",
+                  "name": "Orb of Frost",
+                  "cost": 250
+                },
+                {
+                  "id": "item_blight_stone",
+                  "name": "Orb of Blight",
+                  "cost": 300
+                },
+                {
+                  "id": "item_boots_of_elves",
+                  "name": "Band of Elvenskin",
+                  "cost": 450
+                }
+              ],
+              "recipe_cost": 0,
+              "total_cost": 1000
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_orb_of_corrosion",
+              "result_id": "item_orb_of_corrosion",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_orb_of_frost",
+                      "name": "Orb of Frost",
+                      "cost": 300
+                    },
+                    {
+                      "id": "item_blight_stone",
+                      "name": "Orb of Blight",
+                      "cost": 300
+                    },
+                    {
+                      "id": "item_boots_of_elves",
+                      "name": "Band of Elvenskin",
+                      "cost": 450
+                    }
+                  ],
+                  "total_cost": 1050
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_orb_of_frost",
+                  "name": "Orb of Frost",
+                  "cost": 300
+                },
+                {
+                  "id": "item_blight_stone",
+                  "name": "Orb of Blight",
+                  "cost": 300
+                },
+                {
+                  "id": "item_boots_of_elves",
+                  "name": "Band of Elvenskin",
+                  "cost": 450
+                }
+              ],
+              "recipe_cost": 0,
+              "total_cost": 1050
+            },
+            "note": {
+              "ru": "Общая стоимость увеличилась с 1000 до 1050 золота (Orb of Frost подорожал с 250 до 300 золота)",
+              "en": "Total cost increased from 1000g to 1050g (Orb of Frost increased from 250g to 300g)",
+              "uk": "Загальну вартість збільшено з 1000 до 1050 золота (Orb of Frost подорожчав з 250 до 300 золота)"
+            }
+          },
+          {
+            "parameter": "heal_reduction",
+            "old_raw_value": "16",
+            "new_raw_value": "16",
+            "note": {
+              "ru": "Corrosion: больше не уменьшает на 16% здоровье, получаемое от лечения, восстановления и обоих вампиризмов. Теперь уменьшает пополнение здоровья на 16%.",
+              "en": "Corrosion: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 16%, now reduces Health Restoration by 16%",
+              "uk": "Corrosion: замість зменшення на 16% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я на 16%."
+            }
+          },
+          {
+            "note": {
+              "ru": "Corrosion: замедление передвижения и снижение пополнения здоровья больше не складываются с такими же эффектами от Orb of Frost и Eye of Skadi",
+              "en": "Corrosion: movement slow and Health Restoration reduction no longer stack with the same effects from Orb of Frost and Eye of Skadi",
+              "uk": "Corrosion: сповільнення пересування та зменшення поповнення здоров'я більше не поєднуються з такими ж ефектами від Orb of Frost та Eye of Skadi"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_radiance_custom",
+        "name": "Radiance",
+        "image": "images/items/radiance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "evasion",
+            "old_raw_value": "20",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Бонус к уклонению уменьшен с 20% до 15%",
+              "en": "Evasion bonus decreased from 20% to 15%",
+              "uk": "Бонус до ухилення зменшено з 20% до 15%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_rod_of_atos",
+        "name": "Rod of Atos",
+        "image": "images/items/rod_of_atos.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "old_raw_value": "50",
+            "new_raw_value": "100",
+            "note": {
+              "ru": "Cripple: расход маны увеличен с 50 до 100",
+              "en": "Cripple: mana cost increased from 50 to 100",
+              "uk": "Cripple: витрати мани збільшено з 50 до 100"
+            }
+          },
+          {
+            "parameter": "bonus_intellect",
+            "old_raw_value": "15",
+            "new_raw_value": "12",
+            "note": {
+              "ru": "Бонус к интеллекту уменьшен с 15 до 12",
+              "en": "Intelligence bonus decreased from 15 to 12",
+              "uk": "Бонус до інтелекту зменшено з 15 до 12"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_sange",
+        "name": "Sange",
+        "image": "images/items/sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "old_raw_value": "20",
+            "new_raw_value": "16",
+            "note": {
+              "ru": "Больше не даёт 20% к здоровью от восстановления и вампиризма. Теперь даёт 16% к пополнению здоровья.",
+              "en": "No longer grants 20% HP Regen and Lifesteal Amplification. Now grants 16% Health Restoration.",
+              "uk": "Більше не дає 20% до здоров'я від відновлення та вампіризму. Тепер дає 16% до поповнення здоров'я."
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_sange_and_yasha",
+        "name": "Sange and Yasha",
+        "image": "images/items/sange_and_yasha.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "old_raw_value": "25",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Больше не даёт 25% к здоровью от восстановления и вампиризма. Теперь даёт 20% к пополнению здоровья.",
+              "en": "No longer grants 25% HP Regen and Lifesteal Amplification. Now grants 20% Health Restoration.",
+              "uk": "Більше не дає 25% до здоров'я від відновлення та вампіризму. Тепер дає 20% до поповнення здоров'я."
+            }
+          },
+          {
+            "parameter": "status_resistance",
+            "old_raw_value": "20",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Бонус к сопротивлению эффектам уменьшен с 20% до 15%",
+              "en": "Status Resistance bonus decreased from 20% to 15%",
+              "uk": "Бонус до опору ефектам зменшено з 20% до 15%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "Shiva's Guard",
+        "image": "images/items/shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "restoration_reduction_aura",
+            "old_raw_value": null,
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Freezing Aura: больше не уменьшает на 25% здоровье, получаемое от лечения, восстановления и обоих вампиризмов. Теперь уменьшает пополнение здоровья и получаемое лечение на 25%.",
+              "en": "Freezing Aura: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 25%, now reduces Health Restoration and Heal Amplification by 25%",
+              "uk": "Freezing Aura: замість зменшення на 25% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я та отримуване лікування на 25%."
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_skadi",
+        "name": "Eye of Skadi",
+        "image": "images/items/skadi.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_skadi",
+              "result_id": "item_skadi",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_ultimate_orb",
+                      "name": "Ultimate Orb",
+                      "cost": 2800
+                    },
+                    {
+                      "id": "item_point_booster",
+                      "name": "Point Booster",
+                      "cost": 1200
+                    },
+                    {
+                      "id": "item_orb_of_frost",
+                      "name": "Orb of Frost",
+                      "cost": 250
+                    }
+                  ],
+                  "total_cost": 5300
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_ultimate_orb",
+                  "name": "Ultimate Orb",
+                  "cost": 2800
+                },
+                {
+                  "id": "item_point_booster",
+                  "name": "Point Booster",
+                  "cost": 1200
+                },
+                {
+                  "id": "item_orb_of_frost",
+                  "name": "Orb of Frost",
+                  "cost": 250
+                }
+              ],
+              "recipe_cost": 1050,
+              "total_cost": 5300
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_skadi",
+              "result_id": "item_skadi",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_ultimate_orb",
+                      "name": "Ultimate Orb",
+                      "cost": 2800
+                    },
+                    {
+                      "id": "item_ultimate_orb",
+                      "name": "Ultimate Orb",
+                      "cost": 2800
+                    },
+                    {
+                      "id": "item_orb_of_frost",
+                      "name": "Orb of Frost",
+                      "cost": 300
+                    }
+                  ],
+                  "total_cost": 5900
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_ultimate_orb",
+                  "name": "Ultimate Orb",
+                  "cost": 2800
+                },
+                {
+                  "id": "item_ultimate_orb",
+                  "name": "Ultimate Orb",
+                  "cost": 2800
+                },
+                {
+                  "id": "item_orb_of_frost",
+                  "name": "Orb of Frost",
+                  "cost": 300
+                }
+              ],
+              "recipe_cost": 0,
+              "total_cost": 5900
+            },
+            "note": {
+              "ru": "Рецепт изменён",
+              "en": "Recipe changed",
+              "uk": "Рецепт змінено"
+            }
+          },
+          {
+            "parameter": "recipe",
+            "old_raw_value": null,
+            "new_raw_value": null,
+            "note": {
+              "ru": "Теперь для сборки требуется не Point Booster (1200 золота), а второй Ultimate Orb (2800 золота)",
+              "en": "Now requires a second Ultimate Orb (2800) instead of Point Booster (1200)",
+              "uk": "Тепер для збирання потрібно не Point Booster (1200 золота), а другий Ultimate Orb (2800 золота)"
+            }
+          },
+          {
+            "parameter": "recipe",
+            "old_raw_value": null,
+            "new_raw_value": null,
+            "note": {
+              "ru": "Теперь для сборки не требуется рецепт за 1050 золота (общая стоимость увеличилась с 5300 до 5900 золота)",
+              "en": "No longer requires a 1050g recipe. Total cost increased from 5300g to 5900g",
+              "uk": "Тепер для збирання не потрібен рецепт за 1050 золота (загальну вартість збільшено з 5300 до 5900 золота)"
+            }
+          },
+          {
+            "parameter": "bonus_health",
+            "old_raw_value": "250",
+            "new_raw_value": "0",
+            "note": {
+              "ru": "Больше не даёт 250 к здоровью и 250 к мане",
+              "en": "No longer grants 250 health and 250 mana",
+              "uk": "Більше не дає 250 до здоров'я та 250 до мани"
+            }
+          },
+          {
+            "parameter": "bonus_all_stats",
+            "old_raw_value": "22",
+            "new_raw_value": "35",
+            "note": {
+              "ru": "Бонус ко всем атрибутам увеличен с 22 до 35",
+              "en": "All Attributes bonus increased from 22 to 35",
+              "uk": "Бонус до всіх атрибутів збільшено з 22 до 35"
+            }
+          },
+          {
+            "parameter": "restoration_reduction",
+            "old_raw_value": null,
+            "new_raw_value": "40",
+            "note": {
+              "ru": "Cold Attack: больше не уменьшает на 40% здоровье, получаемое от лечения, восстановления и обоих вампиризмов. Теперь уменьшает пополнение здоровья и получаемое лечение на 40%.",
+              "en": "Cold Attack: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 40%, now reduces Health Restoration and Heal Amplification by 40%",
+              "uk": "Cold Attack: замість зменшення на 40% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я та отримуване лікування на 40%."
+            }
+          },
+          {
+            "note": {
+              "ru": "Cold Attack: замедление передвижения и снижение пополнения здоровья больше не складываются с такими же эффектами от Orb of Frost и Orb of Corrosion",
+              "en": "Cold Attack: movement slow and Health Restoration reduction no longer stack with the same effects from Orb of Frost and Orb of Corrosion",
+              "uk": "Cold Attack: сповільнення пересування та зменшення поповнення здоров'я більше не поєднуються з такими ж ефектами від Orb of Frost та Orb of Corrosion"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_sphere",
+        "name": "Linken's Sphere",
+        "image": "images/items/sphere.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health_regen",
+            "old_raw_value": "6",
+            "new_raw_value": "6.5",
+            "note": {
+              "ru": "Бонус к восстановлению здоровья увеличен с 6 до 6,5",
+              "en": "Health regen increased from 6 to 6.5",
+              "uk": "Бонус до відновлення здоров'я збільшено з 6 до 6,5"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_venom_song",
+        "name": "Venom Song",
+        "image": "images/items/venom_song.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_venom_song",
+              "result_id": "item_venom_song",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_orb_of_corrosion",
+                      "name": "Orb of Corrosion",
+                      "cost": 1000
+                    },
+                    {
+                      "id": "item_wraith_band_custom",
+                      "name": "Wraith Band",
+                      "cost": 505
+                    },
+                    {
+                      "id": "item_aghanims_shard_custom",
+                      "name": "Aghanim's Shard",
+                      "cost": 1400
+                    }
+                  ],
+                  "total_cost": 4000
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_orb_of_corrosion",
+                  "name": "Orb of Corrosion",
+                  "cost": 1000
+                },
+                {
+                  "id": "item_wraith_band_custom",
+                  "name": "Wraith Band",
+                  "cost": 505
+                },
+                {
+                  "id": "item_aghanims_shard_custom",
+                  "name": "Aghanim's Shard",
+                  "cost": 1400
+                }
+              ],
+              "recipe_cost": 1095,
+              "total_cost": 4000
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_venom_song",
+              "result_id": "item_venom_song",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_orb_of_corrosion",
+                      "name": "Orb of Corrosion",
+                      "cost": 1050
+                    },
+                    {
+                      "id": "item_wraith_band_custom",
+                      "name": "Wraith Band",
+                      "cost": 505
+                    },
+                    {
+                      "id": "item_aghanims_shard_custom",
+                      "name": "Aghanim's Shard",
+                      "cost": 1400
+                    }
+                  ],
+                  "total_cost": 4050
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_orb_of_corrosion",
+                  "name": "Orb of Corrosion",
+                  "cost": 1050
+                },
+                {
+                  "id": "item_wraith_band_custom",
+                  "name": "Wraith Band",
+                  "cost": 505
+                },
+                {
+                  "id": "item_aghanims_shard_custom",
+                  "name": "Aghanim's Shard",
+                  "cost": 1400
+                }
+              ],
+              "recipe_cost": 1095,
+              "total_cost": 4050
+            },
+            "note": {
+              "ru": "Стоимость рецепта прежняя (1095 золота). Общая стоимость увеличилась с 4000 до 4050 золота (Orb of Corrosion подорожал с 1000 до 1050 золота)",
+              "en": "Recipe cost unchanged at 1095. Total cost increased from 4000g to 4050g (Orb of Corrosion increased from 1000g to 1050g)",
+              "uk": "Вартість рецепта незмінна (1095 золота). Загальну вартість збільшено з 4000 до 4050 золота (Orb of Corrosion подорожчав з 1000 до 1050 золота)"
+            }
+          },
+          {
+            "parameter": "mana_regen_reduce",
+            "old_raw_value": "-20",
+            "new_raw_value": "-30",
+            "note": {
+              "ru": "Quelling Aura: снижение восстановления маны усилено с 20% до 30%",
+              "en": "Quelling Aura: mana regen reduction increased from 20% to 30%",
+              "uk": "Quelling Aura: зниження відновлення мани посилено з 20% до 30%"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_vladmir",
+        "name": "Vladmir's Offering",
+        "image": "images/items/vladmir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "armor",
+            "old_raw_value": "2",
+            "new_raw_value": "1",
+            "note": {
+              "ru": "Бонус к броне уменьшен с 2 до 1",
+              "en": "Armor bonus decreased from 2 to 1",
+              "uk": "Бонус до броні зменшено з 2 до 1"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_yasha_and_kaya",
+        "name": "Yasha and Kaya",
+        "image": "images/items/yasha_and_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "old_raw_value": "25",
+            "new_raw_value": null,
+            "note": {
+              "ru": "Больше не даёт 25% к усилению вампиризма заклинаниями",
+              "en": "No longer grants 25% Spell Lifesteal Amplification",
+              "uk": "Більше не дає 25% до підсилення вампіризму закляттями"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_divine_regalia",
+        "name": "Divine Regalia",
+        "image": "images/items/divine_regalia.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 5,
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новый артефакт 5-го разряда",
+          "en": "New tier 5 artifact",
+          "uk": "Новий артефакт 5-го розряду"
+        },
+        "description": {
+          "ru": "Пассивное: Exalted. Увеличивает весь наносимый владельцем урон на 20%. При смерти владельца этот артефакт и выбранные с ним чары пропадают.",
+          "en": "Passive: Exalted. Increases outgoing damage by 20%. Dying permanently disables this Neutral Item and the current Enchantment is lost.",
+          "uk": "Пасивне: Exalted. Збільшує всю шкоду, яку завдає власник, на 20%. У разі смерті власника цей артефакт і вибрані з ним чари зникають."
+        },
+        "description_sections": [
+          {
+            "title": {
+              "ru": "Пассивное: Exalted",
+              "en": "Passive: Exalted",
+              "uk": "Пасивне: Exalted"
+            },
+            "text": {
+              "ru": "Увеличивает весь наносимый владельцем урон на 20%. При смерти владельца этот артефакт и выбранные с ним чары пропадают",
+              "en": "Increases outgoing damage by 20%. Dying permanently disables this Neutral Item and the current Enchantment is lost",
+              "uk": "Збільшує всю шкоду, яку завдає власник, на 20%. У разі смерті власника цей артефакт і вибрані з ним чари зникають"
+            }
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "images/items/giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новый артефакт 4-го разряда",
+          "en": "New tier 4 artifact",
+          "uk": "Новий артефакт 4-го розряду"
+        },
+        "description": {
+          "ru": "Пассивное: Crushing Blow. Усиливает следующую атаку. Она нанесёт критический урон, а также временно замедлит передвижение, атаку и применение заклинаний жертвы.",
+          "en": "Passive: Crushing Blow. Empowers the next attack to be a critical hit. Hitting an enemy with an empowered attack temporarily decreases their movement speed, attack speed, and cast speed.",
+          "uk": "Пасивне: Crushing Blow. Посилює наступну атаку. Вона завдасть критичної шкоди, а також тимчасово сповільнить пересування, атаку та застосування заклять жертви."
+        },
+        "description_sections": [
+          {
+            "title": {
+              "ru": "Пассивное: Crushing Blow",
+              "en": "Passive: Crushing Blow",
+              "uk": "Пасивне: Crushing Blow"
+            },
+            "text": {
+              "ru": "Усиливает следующую атаку. Она нанесёт критический урон, а также временно замедлит передвижение, атаку и применение заклинаний жертвы",
+              "en": "Empowers the next attack to be a critical hit. Hitting an enemy with an empowered attack temporarily decreases their movement speed, attack speed, and cast speed",
+              "uk": "Посилює наступну атаку. Вона завдасть критичної шкоди, а також тимчасово сповільнить пересування, атаку та застосування заклять жертви"
+            }
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "images/items/jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 3,
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новый артефакт 3-го разряда",
+          "en": "New tier 3 artifact",
+          "uk": "Новий артефакт 3-го розряду"
+        },
+        "description": {
+          "ru": "Активное: Pollinate. Обсыпает врагов вокруг пыльцой, которая снижает их пополнение здоровья и наносит периодический урон, зависящий от их максимального здоровья.",
+          "en": "Active: Pollinate. Spreads pollen on all nearby enemy units, decreasing their health restoration and dealing damage over time based on their maximum health.",
+          "uk": "Активне: Pollinate. Обсипає ворогів навколо пилком, який знижує їхнє поповнення здоров'я та завдає періодичної шкоди, що залежить від їхнього максимального здоров'я."
+        },
+        "description_sections": [
+          {
+            "title": {
+              "ru": "Активное: Pollinate",
+              "en": "Active: Pollinate",
+              "uk": "Активне: Pollinate"
+            },
+            "text": {
+              "ru": "Обсыпает врагов вокруг пыльцой, которая снижает их пополнение здоровья и наносит периодический урон, зависящий от их максимального здоровья",
+              "en": "Spreads pollen on all nearby enemy units, decreasing their health restoration and dealing damage over time based on their maximum health",
+              "uk": "Обсипає ворогів навколо пилком, який знижує їхнє поповнення здоров'я та завдає періодичної шкоди, що залежить від їхнього максимального здоров'я"
+            }
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_kobold_cup",
+        "name": "Kobold Cup",
+        "image": "images/items/kobold_cup.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 1,
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новый артефакт 1-го разряда",
+          "en": "New tier 1 artifact",
+          "uk": "Новий артефакт 1-го розряду"
+        },
+        "description": {
+          "ru": "Активное: One for the Road. Увеличивает скорость передвижения всех союзных существ вокруг владельца.",
+          "en": "Active: One for the Road. Increases movement speed of all allied units in a radius around the caster.",
+          "uk": "Активне: One for the Road. Збільшує швидкість пересування всіх союзних істот навколо власника."
+        },
+        "description_sections": [
+          {
+            "title": {
+              "ru": "Активное: One for the Road",
+              "en": "Active: One for the Road",
+              "uk": "Активне: One for the Road"
+            },
+            "text": {
+              "ru": "Увеличивает скорость передвижения всех союзных существ вокруг владельца",
+              "en": "Increases movement speed of all allied units in a radius around the caster",
+              "uk": "Збільшує швидкість пересування всіх союзних істот навколо власника"
+            }
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_ceremonial_robe",
+        "name": "Ceremonial Robe",
+        "image": "images/items/ceremonial_robe.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "old_raw_value": 4,
+            "new_raw_value": 6,
+            "note": {
+              "ru": "Разряд артефакта изменён с 4 на 6",
+              "en": "Artifact tier changed from 4 to 6",
+              "uk": "Розряд артефакту змінено з 4 на 6"
+            }
+          },
+          {
+            "parameter": "status_resistance",
+            "old_raw_value": "10",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Ceremonial Aura: снижение сопротивления эффектам усилено с 10% до 15%",
+              "en": "Ceremonial Aura: Status Resistance reduction increased from 10% to 15%",
+              "uk": "Ceremonial Aura: зниження опору ефектам посилено з 10% до 15%"
+            }
+          },
+          {
+            "parameter": "magic_resistance",
+            "old_raw_value": "10",
+            "new_raw_value": "15",
+            "note": {
+              "ru": "Ceremonial Aura: снижение сопротивления магии усилено с 10% до 15%",
+              "en": "Ceremonial Aura: Magic Resistance reduction increased from 10% to 15%",
+              "uk": "Ceremonial Aura: зниження опору магії посилено з 10% до 15%"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_chipped_vest",
+        "name": "Chipped Vest",
+        "image": "images/items/chipped_vest.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 1,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "old_raw_value": 6,
+            "new_raw_value": 1,
+            "note": {
+              "ru": "Разряд артефакта изменён с 6 на 1",
+              "en": "Artifact tier changed from 6 to 1",
+              "uk": "Розряд артефакту змінено з 6 на 1"
+            }
+          },
+          {
+            "parameter": "damage_return_hero",
+            "old_raw_value": "200",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Chipper: возврат урона по героям уменьшен с 200 до 30",
+              "en": "Chipper: damage return against heroes decreased from 200 to 30",
+              "uk": "Chipper: повернення шкоди по героях зменшено з 200 до 30"
+            }
+          },
+          {
+            "parameter": "damage_return_creep",
+            "old_raw_value": "200",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Chipper: возврат урона по крипам уменьшен с 200 до 20",
+              "en": "Chipper: damage return against creeps decreased from 200 to 20",
+              "uk": "Chipper: повернення шкоди по кріпах зменшено з 200 до 20"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_crippling_crossbow",
+        "name": "Crippling Crossbow",
+        "image": "images/items/crippling_crossbow.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "note": {
+              "ru": "Hobble: больше не уменьшает на 40% здоровье, получаемое от лечения, восстановления и обоих вампиризмов. Теперь уменьшает пополнение здоровья на 40%.",
+              "en": "Hobble: 40% Healing, Health Regen, Lifesteal and Spell Lifesteal reductions replaced with a new 40% Health Restoration reduction stat",
+              "uk": "Hobble: замість зменшення на 40% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я на 40%."
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_fallen_sky",
+        "name": "Fallen Sky",
+        "image": "images/items/fallen_sky.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "old_raw_value": "18",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Перезарядка увеличена с 18 до 25 секунд",
+              "en": "Cooldown increased from 18s to 25s",
+              "uk": "Перезарядку збільшено з 18 до 25 секунд"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_mana_draught",
+        "name": "Mana Draught",
+        "image": "images/items/mana_draught.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "old_raw_value": 1,
+            "new_raw_value": 2,
+            "note": {
+              "ru": "Разряд артефакта изменён с 1 на 2",
+              "en": "Artifact tier changed from 1 to 2",
+              "uk": "Розряд артефакту змінено з 1 на 2"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_panic_button",
+        "name": "Magic Lamp",
+        "image": "images/items/panic_button.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "old_raw_value": 5,
+            "new_raw_value": 6,
+            "note": {
+              "ru": "Разряд артефакта изменён с 5 на 6",
+              "en": "Artifact tier changed from 5 to 6",
+              "uk": "Розряд артефакту змінено з 5 на 6"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_poor_mans_shield",
+        "name": "Poor Man's Shield",
+        "image": "images/items/poor_mans_shield.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "old_raw_value": 5,
+            "new_raw_value": 2,
+            "note": {
+              "ru": "Разряд артефакта изменён с 5 на 2",
+              "en": "Artifact tier changed from 5 to 2",
+              "uk": "Розряд артефакту змінено з 5 на 2"
+            }
+          },
+          {
+            "parameter": "damage_block_melee",
+            "old_raw_value": "75",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Damage Block: блокирование урона в ближнем бою уменьшено с 75 до 30",
+              "en": "Damage Block: damage blocked on melee heroes decreased from 75 to 30",
+              "uk": "Damage Block: блокування шкоди в ближньому бою зменшено з 75 до 30"
+            }
+          },
+          {
+            "parameter": "damage_block_ranged",
+            "old_raw_value": "75",
+            "new_raw_value": "20",
+            "note": {
+              "ru": "Damage Block: блокирование урона в дальнем бою уменьшено с 75 до 20",
+              "en": "Damage Block: damage blocked on ranged heroes decreased from 75 to 20",
+              "uk": "Damage Block: блокування шкоди в дальньому бою зменшено з 75 до 20"
+            }
+          },
+          {
+            "parameter": "block_chance",
+            "old_raw_value": "100",
+            "new_raw_value": "50",
+            "note": {
+              "ru": "Damage Block: вероятность блокирования урона от атак крипов уменьшена со 100% до 50%",
+              "en": "Damage Block: chance to block damage from creep attacks decreased from 100% to 50%",
+              "uk": "Damage Block: імовірність блокування шкоди від атак кріпів зменшено зі 100% до 50%"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_psychic_headband",
+        "name": "Psychic Headband",
+        "image": "images/items/psychic_headband.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "intelligence_pct",
+            "old_raw_value": "15",
+            "new_raw_value": "0",
+            "note": {
+              "ru": "Больше не даёт 15% к интеллекту",
+              "en": "No longer grants 15% Intelligence",
+              "uk": "Більше не дає 15% до інтелекту"
+            }
+          },
+          {
+            "parameter": "cast_range",
+            "old_raw_value": "100",
+            "new_raw_value": "0",
+            "note": {
+              "ru": "Больше не даёт 100 к дальности применения",
+              "en": "No longer grants 100 cast range",
+              "uk": "Більше не дає 100 до дальності застосування"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_tome_of_aghanim_custom",
+        "name": "Tome of Aghanim",
+        "image": "images/items/tome_of_aghanim.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "old_raw_value": 5,
+            "new_raw_value": 6,
+            "note": {
+              "ru": "Разряд артефакта изменён с 5 на 6",
+              "en": "Artifact tier changed from 5 to 6",
+              "uk": "Розряд артефакту змінено з 5 на 6"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_unrelenting_eye",
+        "name": "Unrelenting Eye",
+        "image": "images/items/unrelenting_eye.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "max_slow_res",
+            "old_raw_value": "30",
+            "new_raw_value": "40",
+            "note": {
+              "ru": "Relentless: сопротивление замедлениям увеличено с 30% до 40%",
+              "en": "Relentless: Slow Resistance increased from 30% to 40%",
+              "uk": "Relentless: опір сповільненню збільшено з 30% до 40%"
+            }
+          }
+        ]
+      }
+    ],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_alert",
+        "name": "Alert",
+        "image": "images/items/enhancement_alert.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 1/2/3/4 разряда",
+          "en": "New rank 1/2/3/4 enhancement",
+          "uk": "Нові чари 1/2/3/4-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+10/20/30/40 к скорости атаки",
+              "en": "+10/20/30/40 Attack Speed",
+              "uk": "+10/20/30/40 до швидкості атаки"
+            }
+          },
+          {
+            "note": {
+              "ru": "+125/250/375/500 к радиусу обзора ночью",
+              "en": "+125/250/375/500 Bonus Night Vision",
+              "uk": "+125/250/375/500 дод. видимості вночі"
+            }
+          },
+          {
+            "note": {
+              "ru": "+25/50/75/100 к дальности атаки (в ближнем и дальнем бою)",
+              "en": "+25/50/75/100 Attack Range (Melee & Ranged)",
+              "uk": "+25/50/75/100 до дальності атаки (ближній і дальній бій)"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_audacious",
+        "name": "Audacious",
+        "image": "images/items/enhancement_audacious.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 5/6 разряда",
+          "en": "New rank 5/6 enhancement",
+          "uk": "Нові чари 5/6-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+80/100 к скорости атаки",
+              "en": "+80/100 Attack Speed",
+              "uk": "+80/100 до швидкості атаки"
+            }
+          },
+          {
+            "note": {
+              "ru": "+50 магического урона от атак",
+              "en": "+50 Magic Attack Damage",
+              "uk": "+50 до шкоди від магічних атак"
+            }
+          },
+          {
+            "note": {
+              "ru": "+10% к получаемому урону",
+              "en": "+10% Incoming Damage",
+              "uk": "+10% до вхідної шкоди"
+            },
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_boundless",
+        "name": "Boundless",
+        "image": "images/items/enhancement_boundless.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 5/6 разряда",
+          "en": "New rank 5/6 enhancement",
+          "uk": "Нові чари 5/6-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+120/150 к дальности атаки (в ближнем и дальнем бою)",
+              "en": "+120/150 Attack Range (Melee & Ranged)",
+              "uk": "+120/150 до дальності атаки (ближній і дальній бій)"
+            }
+          },
+          {
+            "note": {
+              "ru": "+240/300 к дальности применения заклинаний",
+              "en": "+240/300 Cast Range",
+              "uk": "+240/300 до дальності застосування"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_brawny",
+        "name": "Brawny",
+        "image": "images/items/enhancement_brawny.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 1/2/3/4 разряда",
+          "en": "New rank 1/2/3/4 enhancement",
+          "uk": "Нові чари 1/2/3/4-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+125/250/375/500 к здоровью",
+              "en": "+125/250/375/500 Health",
+              "uk": "+125/250/375/500 здоров'я"
+            }
+          },
+          {
+            "note": {
+              "ru": "+3/6/9/12 к восстановлению здоровья",
+              "en": "+3/6/9/12 Health Regeneration",
+              "uk": "+3/6/9/12 до регенерації здоров'я"
+            }
+          },
+          {
+            "note": {
+              "ru": "+5%/10%/15%/20% к сопротивлению замедлениям",
+              "en": "+5%/10%/15%/20% Slow Resistance",
+              "uk": "+5%/10%/15%/20% Опір сповільненню"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_crude",
+        "name": "Crude",
+        "image": "images/items/enhancement_crude.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 4/5 разряда",
+          "en": "New rank 4/5 enhancement",
+          "uk": "Нові чари 4/5-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+20% к пополнению здоровья",
+              "en": "+20% Health Restoration",
+              "uk": "+20% до поповнення здоров'я"
+            }
+          },
+          {
+            "note": {
+              "ru": "-10%/15% базового интервала атак",
+              "en": "-10%/15% Base Attack Time",
+              "uk": "-10%/15% базового часу атаки"
+            }
+          },
+          {
+            "note": {
+              "ru": "-10% интеллекта",
+              "en": "-10% Intelligence",
+              "uk": "-10% інтелекту"
+            },
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_evolved",
+        "name": "Evolved",
+        "image": "images/items/enhancement_evolved.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 5/6 разряда",
+          "en": "New rank 5/6 enhancement",
+          "uk": "Нові чари 5/6-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+40/50 к основному атрибуту",
+              "en": "+40/50 Primary Attribute",
+              "uk": "+40/50 до головної характеристики"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_feverish",
+        "name": "Feverish",
+        "image": "images/items/enhancement_feverish.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 4/5 разряда",
+          "en": "New rank 4/5 enhancement",
+          "uk": "Нові чари 4/5-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+10%/15% к уменьшению перезарядок заклинаний",
+              "en": "+10%/15% Cooldown Reduction",
+              "uk": "+10%/15% зменшення перезарядки"
+            }
+          },
+          {
+            "note": {
+              "ru": "+20% к расходу и потере маны",
+              "en": "+20% Mana Cost/Mana Loss Increase",
+              "uk": "+20% до збільшення витрати і втрати мани"
+            },
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_fleetfooted",
+        "name": "Fleetfooted",
+        "image": "images/items/enhancement_fleetfooted.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 5/6 разряда",
+          "en": "New rank 5/6 enhancement",
+          "uk": "Нові чари 5/6-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+100/125 к скорости передвижения",
+              "en": "+100/125 Movement Speed",
+              "uk": "+100/125 до швидкості пересування"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_greedy",
+        "name": "Greedy",
+        "image": "images/items/enhancement_greedy.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 2/3 разряда",
+          "en": "New rank 2/3 enhancement",
+          "uk": "Нові чари 2/3-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+100 золота в минуту",
+              "en": "+100 Gold per Minute",
+              "uk": "+100 золота за хвилину"
+            }
+          },
+          {
+            "note": {
+              "ru": "+250/375 к мане",
+              "en": "+250/375 Mana",
+              "uk": "+250/375 мани"
+            }
+          },
+          {
+            "note": {
+              "ru": "-60/30 урона от атак",
+              "en": "-60/30 Attack Damage",
+              "uk": "-60/30 шкоди від атаки"
+            },
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_keen_eyed",
+        "name": "Keen-eyed",
+        "image": "images/items/enhancement_keen_eyed.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 2/3 разряда",
+          "en": "New rank 2/3 enhancement",
+          "uk": "Нові чари 2/3-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+200/240 к дальности применения заклинаний",
+              "en": "+200/240 Cast Range",
+              "uk": "+200/240 до дальності застосування"
+            }
+          },
+          {
+            "note": {
+              "ru": "+6/9 к восстановлению маны",
+              "en": "+6/9 Mana Regeneration",
+              "uk": "+6/9 до регенерації мани"
+            }
+          },
+          {
+            "note": {
+              "ru": "-10% максимальной маны",
+              "en": "-10% Max Mana",
+              "uk": "-10% макс. мани"
+            },
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_mystical",
+        "name": "Mystical",
+        "image": "images/items/enhancement_mystical.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 1/2/3/4 разряда",
+          "en": "New rank 1/2/3/4 enhancement",
+          "uk": "Нові чари 1/2/3/4-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+3/6/9/12 к восстановлению маны",
+              "en": "+3/6/9/12 Mana Regeneration",
+              "uk": "+3/6/9/12 до регенерації мани"
+            }
+          },
+          {
+            "note": {
+              "ru": "+5%/10%/15%/20% к сопротивлению магии",
+              "en": "+5%/10%/15%/20% Magic Resistance",
+              "uk": "+5%/10%/15%/20% до опору магії"
+            }
+          },
+          {
+            "note": {
+              "ru": "+25/50/75/100 к дальности применения заклинаний",
+              "en": "+25/50/75/100 Cast Range",
+              "uk": "+25/50/75/100 до дальності застосування"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_quickened",
+        "name": "Quickened",
+        "image": "images/items/enhancement_quickened.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 1/2/3/4 разряда",
+          "en": "New rank 1/2/3/4 enhancement",
+          "uk": "Нові чари 1/2/3/4-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+10/20/30/40 к скорости передвижения",
+              "en": "+10/20/30/40 Movement Speed",
+              "uk": "+10/20/30/40 до швидкості пересування"
+            }
+          },
+          {
+            "note": {
+              "ru": "+125/250/375/500 к мане",
+              "en": "+125/250/375/500 Mana",
+              "uk": "+125/250/375/500 мани"
+            }
+          },
+          {
+            "note": {
+              "ru": "+3%/6%/9%/12% к уклонению",
+              "en": "+3%/6%/9%/12% Evasion",
+              "uk": "+3%/6%/9%/12% до ухилення"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_timeless",
+        "name": "Timeless",
+        "image": "images/items/enhancement_timeless.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 4/5 разряда",
+          "en": "New rank 4/5 enhancement",
+          "uk": "Нові чари 4/5-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+15% к длительности отрицательных эффектов",
+              "en": "+15% Debuff Duration",
+              "uk": "+15% до тривалості негативних ефектів"
+            }
+          },
+          {
+            "note": {
+              "ru": "+10%/15% к урону от заклинаний",
+              "en": "+10%/15% Spell Damage",
+              "uk": "+10%/15% до шкоди від заклять"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_titanic",
+        "name": "Titanic",
+        "image": "images/items/enhancement_titanic.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 4/5 разряда",
+          "en": "New rank 4/5 enhancement",
+          "uk": "Нові чари 4/5-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+10%/15% к базовому урону от атак",
+              "en": "+10%/15% Base Attack Damage",
+              "uk": "+10%/15% до базової шкоди від атаки"
+            }
+          },
+          {
+            "note": {
+              "ru": "+15% к сопротивлению эффектам",
+              "en": "+15% Status Resistance",
+              "uk": "+15% до опору ефектам"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_tough",
+        "name": "Tough",
+        "image": "images/items/enhancement_tough.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 1/2/3/4 разряда",
+          "en": "New rank 1/2/3/4 enhancement",
+          "uk": "Нові чари 1/2/3/4-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+5/10/15/20 к урону",
+              "en": "+5/10/15/20 Damage",
+              "uk": "+5/10/15/20 шкоди"
+            }
+          },
+          {
+            "note": {
+              "ru": "+3/6/9/12 к броне",
+              "en": "+3/6/9/12 Armor",
+              "uk": "+3/6/9/12 броні"
+            }
+          },
+          {
+            "note": {
+              "ru": "+10%/20%/30%/40% к сопротивлению отталкиваниям",
+              "en": "+10%/20%/30%/40% Knockback Resistance",
+              "uk": "+10%/20%/30%/40% до опору відштовхуванню"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_vampiric",
+        "name": "Vampiric",
+        "image": "images/items/enhancement_vampiric.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 2/3/4 разряда",
+          "en": "New rank 2/3/4 enhancement",
+          "uk": "Нові чари 2/3/4-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+8%/10%/12% к вампиризму",
+              "en": "+8%/10%/12% Lifesteal",
+              "uk": "+8%/10%/12% до вампіризму"
+            }
+          },
+          {
+            "note": {
+              "ru": "+8%/10%/12% к вампиризму заклинаниями",
+              "en": "+8%/10%/12% Spell Lifesteal",
+              "uk": "+8%/10%/12% до вампіризму закляттями"
+            }
+          },
+          {
+            "note": {
+              "ru": "+100/150/200 к радиусу обзора ночью",
+              "en": "+100/150/200 Bonus Night Vision",
+              "uk": "+100/150/200 дод. видимості вночі"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_vast",
+        "name": "Vast",
+        "image": "images/items/enhancement_vast.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 2/3 разряда",
+          "en": "New rank 2/3 enhancement",
+          "uk": "Нові чари 2/3-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+100/120 к дальности атаки (в ближнем и дальнем бою)",
+              "en": "+100/120 Attack Range (Melee & Ranged)",
+              "uk": "+100/120 до дальності атаки (ближній і дальній бій)"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_wise",
+        "name": "Wise",
+        "image": "images/items/enhancement_wise.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": {
+          "ru": "Новые чары 2/3 разряда",
+          "en": "New rank 2/3 enhancement",
+          "uk": "Нові чари 2/3-го розряду"
+        },
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": {
+              "ru": "+240/320 опыта в минуту",
+              "en": "+240/320 Experience per Minute",
+              "uk": "+240/320 досвіду за хвилину"
+            }
+          },
+          {
+            "note": {
+              "ru": "+10% к максимальной мане",
+              "en": "+10% Max Mana Bonus",
+              "uk": "+10% до макс. додаткової мани"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "ancient_apparition",
+      "name": "ancient apparition",
+      "image": "images/heroes/heroesPreview/ancient_apparition.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "ancient_apparition_ice_vortex_custom",
+          "name": "Ice Vortex",
+          "image": "abilities/ancient_apparition_ice_vortex.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "old_raw_value": "1500 1500 1500 1500",
+              "new_raw_value": "1200",
+              "note": {
+                "ru": "Дальность применения уменьшена с 1500 до 1200",
+                "en": "Cast range decreased from 1500 to 1200",
+                "uk": "Дальність застосування зменшено з 1500 до 1200"
+              }
+            },
+            {
+              "parameter": "radius",
+              "old_raw_value": "300",
+              "new_raw_value": "275",
+              "note": {
+                "ru": "Радиус уменьшен с 300 до 275",
+                "en": "Radius decreased from 300 to 275",
+                "uk": "Радіус зменшено з 300 до 275"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_17",
+            "image": "images/heroes/talents/axe/17.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Радиуса Berserker's Call: 50/100 Увеличение Брони Berserker's Call: 10/20",
+                  "en": null,
+                  "uk": ""
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Радиуса Berserker's Call: 50/100 Увеличение Брони Berserker's Call: 5/10",
+                  "en": null,
+                  "uk": "Збільшення Радіусу Berserker's Call: 50/100 Збільшення Броні Berserker's Call: 5/10"
+                },
+                "note": {
+                  "ru": "Увеличение брони Berserker's Call ослаблено с 10/20 до 5/10",
+                  "en": "Berserker's Call armor bonus decreased from 10/20 to 5/10",
+                  "uk": "Збільшення броні Berserker's Call ослаблено з 10/20 до 5/10"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_axe_20",
+            "image": "images/heroes/talents/axe/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Battle Hunger всегда замедляет передвижение противника. Battle Hunger уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями противников: 15%/30%",
+                  "en": null,
+                  "uk": ""
+                },
+                "new_raw_value": {
+                  "ru": "Battle Hunger всегда замедляет передвижение противника. Battle Hunger уменьшает лечение, восстановление здоровья, вампиризм и вампиризм способностями противников: 10%/20%",
+                  "en": null,
+                  "uk": "Battle Hunger завжди сповільнює рух супротивника. Battle Hunger зменшує лікування, відновлення здоров'я, вампіризм і вампіризм від здібностей супротивників: 10%/20%"
+                },
+                "note": {
+                  "ru": "Battle Hunger: снижение лечения, восстановления здоровья и вампиризма ослаблено с 15%/30% до 10%/20%",
+                  "en": "Battle Hunger: heal, health regen and lifesteal reduction decreased from 15%/30% to 10%/20%",
+                  "uk": "Battle Hunger: зменшення лікування, відновлення здоров'я та вампіризму ослаблено з 15%/30% до 10%/20%"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bristleback",
+      "name": "bristleback",
+      "image": "images/heroes/heroesPreview/bristleback.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "bristleback_quill_spray_custom",
+          "name": "Quill Spray",
+          "image": "abilities/bristleback_quill_spray.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "old_raw_value": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+              "new_raw_value": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST",
+              "note": {
+                "ru": "Теперь имеет автоприменение",
+                "en": "Can now be set to autocast",
+                "uk": "Тепер має автозастосування"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dazzle_shallow_grave_custom",
+          "name": "Shallow Grave",
+          "image": "abilities/dazzle_shallow_grave.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "old_raw_value": "700 800 900 1000",
+              "new_raw_value": "900",
+              "note": {
+                "ru": "Дальность применения изменена с 700/800/900/1000 на 900",
+                "en": "Cast range changed from 700/800/900/1000 to 900",
+                "uk": "Дальність застосування змінено з 700/800/900/1000 на 900"
+              }
+            },
+            {
+              "parameter": "duration",
+              "old_raw_value": "3.5 4 4.5 5.0",
+              "new_raw_value": "4 4.5 5 5.5",
+              "note": {
+                "ru": "Длительность увеличена с 3,5/4/4,5/5 до 4/4,5/5/5,5 секунды",
+                "en": "Duration increased from 3.5/4/4.5/5s to 4/4.5/5/5.5s",
+                "uk": "Тривалість збільшено з 3,5/4/4,5/5 до 4/4,5/5/5,5 секунди"
+              }
+            },
+            {
+              "parameter": "heal_amplify",
+              "old_raw_value": "2 4 6 8",
+              "new_raw_value": "3 5 7 9",
+              "note": {
+                "ru": "Усиление лечения за каждые 10% отсутствующего здоровья усилено с 2%/4%/6%/8% до 3%/5%/7%/9%",
+                "en": "Heal amplification per 10% missing health increased from 2%/4%/6%/8% to 3%/5%/7%/9%",
+                "uk": "Підсилення лікування за кожні 10% відсутнього здоров'я посилено з 2%/4%/6%/8% до 3%/5%/7%/9%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_silence_custom",
+          "name": "Silence",
+          "image": "abilities/death_prophet_silence.webp",
+          "ability_notes": [
+            {
+              "parameter": "projectile_speed",
+              "old_raw_value": "1200",
+              "new_raw_value": "1400",
+              "note": {
+                "ru": "Скорость снаряда увеличена с 1200 до 1400",
+                "en": "Projectile speed increased from 1200 to 1400",
+                "uk": "Швидкість снаряда збільшено з 1200 до 1400"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "doom_doom_custom",
+          "name": "Doom",
+          "image": "abilities/doom_doom.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "150 225 300",
+              "new_raw_value": "150 200 250",
+              "note": {
+                "ru": "Расход маны уменьшен со 150/225/300 до 150/200/250",
+                "en": "Mana cost decreased from 150/225/300 to 150/200/250",
+                "uk": "Витрати мани зменшено з 150/225/300 до 150/200/250"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "old_raw_value": "15",
+          "new_raw_value": "19",
+          "note": {
+            "ru": "Базовый урон увеличен на 4",
+            "en": "Base damage increased by 4",
+            "uk": "Базову шкоду збільшено на 4"
+          },
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "jakiro_liquid_ice_custom",
+          "name": "Liquid Frost",
+          "image": "abilities/jakiro_liquid_ice.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_instance_damage_from_other_abilities",
+              "old_raw_value": "12 18 24 30",
+              "new_raw_value": "8 16 24 32",
+              "note": {
+                "ru": "Дополнительный урон, получаемый жертвой от других способностей героя, изменён с 12/18/24/30 на 8/16/24/32",
+                "en": "Bonus damage the target takes from Jakiro's other abilities changed from 12/18/24/30 to 8/16/24/32",
+                "uk": "Додаткову шкоду, яку жертва отримує від інших здібностей героя, змінено з 12/18/24/30 на 8/16/24/32"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "jakiro_macropyre_custom",
+          "name": "Macropyre",
+          "image": "abilities/jakiro_macropyre.webp",
+          "ability_notes": [
+            {
+              "parameter": "linger_duration",
+              "old_raw_value": "2",
+              "new_raw_value": "1",
+              "note": {
+                "ru": "Длительность действия эффекта после выхода из области уменьшена с 2 до 1 секунды",
+                "en": "Effect duration after leaving the area decreased from 2s to 1s",
+                "uk": "Тривалість дії ефекту після виходу з області зменшено з 2 до 1 секунди"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_jakiro_14",
+            "image": "images/heroes/talents/jakiro/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Урона от Атаки: -50% Герой атакует обеими головами одновременно",
+                  "en": null,
+                  "uk": "Зменшення Втрат від Атаки: -50% Герой атакує обома головами одночасно"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Урона от Атаки: -50% Герой атакует обеими головами одновременно. Убирает общую перезарядку у Liquid Fire и Liquid Frost",
+                  "en": null,
+                  "uk": "Зменшення Шкоди від Атаки: -50% Герой атакує обома головами одночасно. Скасовує загальну перезарядку у Liquid Fire та Liquid Frost"
+                },
+                "note": {
+                  "ru": "Теперь также убирает общую перезарядку у Liquid Fire и Liquid Frost",
+                  "en": "Now also removes the shared cooldown of Liquid Fire and Liquid Frost",
+                  "uk": "Тепер також скасовує загальну перезарядку у Liquid Fire та Liquid Frost"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_jakiro_20",
+            "image": "images/heroes/talents/jakiro/20.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона и Дальности Dual Breath: 60/120",
+                  "en": null,
+                  "uk": "Збільшення втрат і дальності Dual Breath: 60/120"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона и Дальности Dual Breath: 50/100",
+                  "en": null,
+                  "uk": "Збільшення втрат і дальності Dual Breath: 50/100"
+                },
+                "note": {
+                  "ru": "Увеличение урона и дальности Dual Breath ослаблено с 60/120 до 50/100",
+                  "en": "Dual Breath damage and range bonus decreased from 60/120 to 50/100",
+                  "uk": "Збільшення шкоди та дальності Dual Breath ослаблено з 60/120 до 50/100"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "juggernaut_blade_fury_custom",
+          "name": "Blade Fury",
+          "image": "abilities/juggernaut_blade_fury.webp",
+          "ability_notes": [
+            {
+              "parameter": "blade_fury_damage",
+              "old_raw_value": "45 50 55 60",
+              "new_raw_value": "80 110 140 170",
+              "note": {
+                "ru": "Урон изменён с 45/50/55/60 за удар с интервалом, зависящим от скорости атаки, на 80/110/140/170 в секунду",
+                "en": "Damage changed from 45/50/55/60 per hit at an interval based on attack speed to 80/110/140/170 per second",
+                "uk": "Шкоду змінено з 45/50/55/60 за удар з інтервалом, що залежить від швидкості атаки, на 80/110/140/170 за секунду"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_juggernaut_18",
+            "image": "images/heroes/talents/juggernaut/18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Blade Fury: 6%/9%/12% от Интеллекта",
+                  "en": null,
+                  "uk": "Збільшення втрати Blade Fury: 6%/9%/12% від Інтелекту"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Blade Fury: 15%/30%/45% от Интеллекта",
+                  "en": null,
+                  "uk": "Збільшення втрати Blade Fury: 15%/30%/45% від Інтелекту"
+                },
+                "note": {
+                  "ru": "Увеличение урона Blade Fury усилено с 6%/9%/12% до 15%/30%/45% от интеллекта",
+                  "en": "Blade Fury damage increase raised from 6%/9%/12% to 15%/30%/45% of Intelligence",
+                  "uk": "Збільшення шкоди Blade Fury посилено з 6%/9%/12% до 15%/30%/45% від інтелекту"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "old_raw_value": "100",
+          "new_raw_value": "110",
+          "note": {
+            "ru": "Базовая скорость атаки увеличена со 100 до 110",
+            "en": "Base attack speed increased from 100 to 110",
+            "uk": "Базову швидкість атаки збільшено з 100 до 110"
+          },
+          "icon": "/icon_base_attack_speed.png"
+        },
+        {
+          "parameter": "StatusHealthRegen",
+          "old_raw_value": "1.0",
+          "new_raw_value": "1.5",
+          "note": {
+            "ru": "Базовое восстановление здоровья увеличено на 0,5",
+            "en": "Base health regen increased by 0.5",
+            "uk": "Базове відновлення здоров'я збільшено на 0,5"
+          },
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "kez_echo_slash_custom",
+          "name": "Echo Slash",
+          "image": "abilities/kez_echo_slash.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "20 18 16 14",
+              "new_raw_value": "21 18 15 12",
+              "note": {
+                "ru": "Перезарядка изменена с 20/18/16/14 на 21/18/15/12 секунд",
+                "en": "Cooldown changed from 20/18/16/14s to 21/18/15/12s",
+                "uk": "Перезарядку змінено з 20/18/16/14 на 21/18/15/12 секунд"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_grappling_claw_custom",
+          "name": "Grappling Claw",
+          "image": "abilities/kez_grappling_claw.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "50",
+              "new_raw_value": "40",
+              "note": {
+                "ru": "Расход маны уменьшен с 50 до 40",
+                "en": "Mana cost decreased from 50 to 40",
+                "uk": "Витрати мани зменшено з 50 до 40"
+              }
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "16 14 12 10",
+              "new_raw_value": "13 11 9 7",
+              "note": {
+                "ru": "Перезарядка уменьшена с 16/14/12/10 до 13/11/9/7 секунд",
+                "en": "Cooldown decreased from 16/14/12/10s to 13/11/9/7s",
+                "uk": "Перезарядку зменшено з 16/14/12/10 до 13/11/9/7 секунд"
+              }
+            },
+            {
+              "parameter": "debuff_duration",
+              "old_raw_value": null,
+              "new_raw_value": "0.7 0.8 0.9 1.0",
+              "note": {
+                "ru": "Длительность замедления теперь составляет 0,7/0,8/0,9/1 секунды",
+                "en": "Slow duration is now 0.7/0.8/0.9/1s",
+                "uk": "Тривалість сповільнення тепер становить 0,7/0,8/0,9/1 секунди"
+              }
+            },
+            {
+              "parameter": "bonus_flat_lifesteal",
+              "old_raw_value": "30 60 90 120",
+              "new_raw_value": "1 1 1 1",
+              "note": {
+                "ru": "Атака после притягивания больше не восстанавливает здоровье",
+                "en": "The attack after pulling in no longer heals",
+                "uk": "Атака після притягування більше не відновлює здоров'я"
+              }
+            },
+            {
+              "parameter": "katana_ms_slow_pct",
+              "old_raw_value": "-80",
+              "new_raw_value": "-70 -80 -90 -100",
+              "note": {
+                "ru": "Замедление изменено с 80% на 70%/80%/90%/100%",
+                "en": "Slow changed from 80% to 70%/80%/90%/100%",
+                "uk": "Сповільнення змінено з 80% на 70%/80%/90%/100%"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_kazurai_katana_custom",
+          "name": "Kazurai Katana",
+          "image": "abilities/kez_kazurai_katana.webp",
+          "ability_notes": [
+            {
+              "parameter": "katana_bleed_duration",
+              "old_raw_value": "4 5 6 7",
+              "new_raw_value": "7",
+              "note": {
+                "ru": "Длительность эффекта увеличена с 4/5/6/7 до 7 секунд",
+                "en": "Effect duration increased from 4/5/6/7s to 7s",
+                "uk": "Тривалість ефекту збільшено з 4/5/6/7 до 7 секунд"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_raptor_dance_custom",
+          "name": "Raptor Dance",
+          "image": "abilities/kez_raptor_dance.webp",
+          "ability_notes": [
+            {
+              "parameter": "strikes",
+              "old_raw_value": "2 3 4",
+              "new_raw_value": "4",
+              "note": {
+                "ru": "Число ударов увеличено с 2/3/4 до 4",
+                "en": "Number of strikes increased from 2/3/4 to 4",
+                "uk": "Кількість ударів збільшено з 2/3/4 до 4"
+              }
+            },
+            {
+              "parameter": "base_damage",
+              "old_raw_value": "75",
+              "new_raw_value": "30 60 90",
+              "note": {
+                "ru": "Базовый урон изменён с 75 на 30/60/90",
+                "en": "Base damage changed from 75 to 30/60/90",
+                "uk": "Базову шкоду змінено з 75 на 30/60/90"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_falcon_rush_custom",
+          "name": "Falcon Rush",
+          "image": "abilities/kez_falcon_rush.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "20 18 16 14",
+              "new_raw_value": "21 18 15 12",
+              "note": {
+                "ru": "Перезарядка изменена с 20/18/16/14 на 21/18/15/12 секунд",
+                "en": "Cooldown changed from 20/18/16/14s to 21/18/15/12s",
+                "uk": "Перезарядку змінено з 20/18/16/14 на 21/18/15/12 секунд"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_talon_toss_custom",
+          "name": "Talon Toss",
+          "image": "abilities/kez_talon_toss.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "old_raw_value": {
+                "ru": "Герой бросает в жертву свой сай, который наносит урон и накладывает безмолвие на цель и всех врагов вокруг неё.",
+                "en": "Kez throws a Sai at the target unit. The Sai detonates when it hits, dealing damage and applying silence to all enemies in the area.",
+                "uk": "Кидок пазура Боривітер кидає сай у цільову істоту. Сай вибухає під час влучання, завдаючи шкоди всім ворогам в області й накладаючи на них знемовлення."
+              },
+              "new_raw_value": {
+                "ru": "Герой бросает свой сай в выбранное существо, чтобы обезмолвить его и нанести ему фиксированный урон, считающийся атакой.",
+                "en": "Kez throws a Sai at the target unit, applying a fixed damage attack and silence.",
+                "uk": "Герой кидає свій сай у вибрану ціль, змушуючи її замовкнути та завдаючи фіксованої шкоди, що вважається атакою."
+              },
+              "note": {
+                "ru": "Теперь способность считается атакой с игнорированием уклонения и фиксированным уроном, а не просто наносит магический урон",
+                "en": "Now inflicts an attack with True Strike and fixed damage instead of simply dealing magical damage",
+                "uk": "Тепер застосовує атаку з істинним ударом та фіксованою шкодою замість простого завдавання магічної шкоди"
+              }
+            },
+            {
+              "parameter": "AbilityBehavior",
+              "old_raw_value": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new_raw_value": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "note": {
+                "ru": "Урон и безмолвие теперь действуют только на выбранную цель, а не на всех врагов вокруг неё",
+                "en": "Damage and silence now only affect the target unit instead of all enemies around it",
+                "uk": "Шкода та безмовність тепер діють лише на вибрану ціль, а не на всіх ворогів навколо неї"
+              }
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "16 14 12 10",
+              "new_raw_value": "13 11 9 7",
+              "note": {
+                "ru": "Перезарядка уменьшена с 16/14/12/10 до 13/11/9/7 секунд",
+                "en": "Cooldown decreased from 16/14/12/10s to 13/11/9/7s",
+                "uk": "Перезарядку зменшено з 16/14/12/10 до 13/11/9/7 секунд"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_kez_19",
+            "image": "images/heroes/talents/kez/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Grappling Claw всегда лечит. Grappling Claw накладывает оцепенение на противников. Длительность: 1/2 сек. Здоровье: 200/400",
+                  "en": null,
+                  "uk": "Grappling Claw завжди лікує. Grappling Claw накладає заціпеніння на супротивників. Тривалість: 1/2 сек. Здоров'я: 200/400"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Длительности Замедления Grappling Claw: 1/2 сек. Здоровье: 200/400",
+                  "en": null,
+                  "uk": "Збільшення Тривалості Уповільнення Grappling Claw: 1/2 сек. Здоров’я: 200/400"
+                },
+                "note": {
+                  "ru": "«Grappling Claw всегда лечит и накладывает оцепенение на 1/2 сек» заменено на «Увеличение длительности замедления Grappling Claw: 1/2 сек»",
+                  "en": "«Grappling Claw always heals and applies a 1/2s daze» replaced with «Grappling Claw slow duration increased by 1/2s»",
+                  "uk": "«Grappling Claw завжди лікує та накладає заціпеніння на 1/2 сек» замінено на «Збільшення тривалості сповільнення Grappling Claw: 1/2 сек»"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kunkka_x_marks_the_spot_custom",
+          "name": "X Marks the Spot",
+          "image": "abilities/kunkka_x_marks_the_spot.webp",
+          "ability_notes": [
+            {
+              "parameter": "duration",
+              "old_raw_value": "4.0",
+              "new_raw_value": "3.0",
+              "note": {
+                "ru": "Задержка для врагов уменьшена с 4 до 3 секунд",
+                "en": "Enemy delay decreased from 4s to 3s",
+                "uk": "Затримку для ворогів зменшено з 4 до 3 секунд"
+              }
+            },
+            {
+              "parameter": "allied_duration",
+              "old_raw_value": "8.0",
+              "new_raw_value": "6.0",
+              "note": {
+                "ru": "Задержка для союзников уменьшена с 8 до 6 секунд",
+                "en": "Allied delay decreased from 8s to 6s",
+                "uk": "Затримку для союзників зменшено з 8 до 6 секунд"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lich",
+      "name": "lich",
+      "image": "images/heroes/heroesPreview/lich.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "lich_sinister_gaze_custom",
+          "name": "Sinister Gaze",
+          "image": "abilities/lich_sinister_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "mana_drain",
+              "old_raw_value": "10",
+              "new_raw_value": "20",
+              "note": {
+                "ru": "Кража маны в секунду увеличена с 10% до 20%",
+                "en": "Mana drain per second increased from 10% to 20%",
+                "uk": "Висмоктування мани за секунду збільшено з 10% до 20%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "marci_grapple_custom",
+          "name": "Dispose",
+          "image": "abilities/marci_grapple.webp",
+          "ability_notes": [
+            {
+              "parameter": "impact_damage",
+              "old_raw_value": "75 150 225 300",
+              "new_raw_value": "60 150 240 320",
+              "note": {
+                "ru": "Урон изменён с 75/150/225/300 на 60/150/240/320",
+                "en": "Damage changed from 75/150/225/300 to 60/150/240/320",
+                "uk": "Шкоду змінено з 75/150/225/300 на 60/150/240/320"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "medusa_mystic_snake_custom",
+          "name": "Mystic Snake",
+          "image": "abilities/medusa_mystic_snake.webp",
+          "ability_notes": [
+            {
+              "parameter": "snake_damage",
+              "old_raw_value": "85 130 175 220",
+              "new_raw_value": "90 140 190 240",
+              "note": {
+                "ru": "Базовый урон увеличен с 85/130/175/220 до 90/140/190/240",
+                "en": "Base damage increased from 85/130/175/220 to 90/140/190/240",
+                "uk": "Базову шкоду збільшено з 85/130/175/220 до 90/140/190/240"
+              }
+            },
+            {
+              "parameter": "snake_mana_steal",
+              "old_raw_value": "14 15 16 17",
+              "new_raw_value": "15",
+              "note": {
+                "ru": "Получение маны изменено с 14%/15%/16%/17% на 15%",
+                "en": "Mana gain changed from 14%/15%/16%/17% to 15%",
+                "uk": "Отримання мани змінено з 14%/15%/16%/17% на 15%"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "medusa_gorgon_grasp",
+          "name": "Gorgon's Grasp",
+          "image": "abilities/medusa_gorgon_grasp.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "40 60 80 100",
+              "new_raw_value": "65 85 105 125",
+              "note": {
+                "ru": "Расход маны увеличен с 40/60/80/100 до 65/85/105/125",
+                "en": "Mana cost increased from 40/60/80/100 to 65/85/105/125",
+                "uk": "Витрати мани збільшено з 40/60/80/100 до 65/85/105/125"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "medusa_stone_gaze_custom",
+          "name": "Stone Gaze",
+          "image": "abilities/medusa_stone_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "150",
+              "new_raw_value": "250",
+              "note": {
+                "ru": "Расход маны увеличен со 150 до 250",
+                "en": "Mana cost increased from 150 to 250",
+                "uk": "Витрати мани збільшено з 150 до 250"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "old_raw_value": "0.5",
+          "new_raw_value": "0.0",
+          "note": {
+            "ru": "Базовое восстановление маны уменьшено на 0,5",
+            "en": "Base mana regen decreased by 0.5",
+            "uk": "Базове відновлення мани зменшено на 0,5"
+          },
+          "icon": "/mana_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nature's_prophet",
+      "name": "nature's prophet",
+      "image": "images/heroes/heroesPreview/nature's_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "old_raw_value": "620",
+          "new_raw_value": "600",
+          "note": {
+            "ru": "Дальность атаки уменьшена с 620 до 600",
+            "en": "Attack range decreased from 620 to 600",
+            "uk": "Дальність атаки зменшено з 620 до 600"
+          },
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "nature's_prophet_sprout_custom",
+          "name": "Sprout",
+          "image": "abilities/nature's_prophet_sprout.webp",
+          "ability_notes": [
+            {
+              "parameter": "sprout_damage",
+              "old_raw_value": "70 140 210 280",
+              "new_raw_value": "70 135 200 265",
+              "note": {
+                "ru": "Урон уменьшен с 70/140/210/280 до 70/135/200/265",
+                "en": "Damage decreased from 70/140/210/280 to 70/135/200/265",
+                "uk": "Шкоду зменшено з 70/140/210/280 до 70/135/200/265"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "nature's_prophet_teleportation_custom",
+          "name": "Teleportation",
+          "image": "abilities/nature's_prophet_teleportation.webp",
+          "ability_notes": [
+            {
+              "parameter": "barrier",
+              "old_raw_value": "100 150 200 250",
+              "new_raw_value": "70 130 190 250",
+              "note": {
+                "ru": "Здоровье барьера уменьшено со 100/150/200/250 до 70/130/190/250",
+                "en": "Barrier decreased from 100/150/200/250 to 70/130/190/250",
+                "uk": "Бар'єр зменшено з 100/150/200/250 до 70/130/190/250"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "necrophos_death_pulse_custom",
+          "name": "Death Pulse",
+          "image": "abilities/necrophos_death_pulse.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal",
+              "old_raw_value": "55 80 105 130",
+              "new_raw_value": "70 90 110 130",
+              "note": {
+                "ru": "Лечение увеличено с 55/80/105/130 до 70/90/110/130",
+                "en": "Heal increased from 55/80/105/130 to 70/90/110/130",
+                "uk": "Лікування збільшено з 55/80/105/130 до 70/90/110/130"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "nyx_assassin_spiked_carapace_custom",
+          "name": "Spiked Carapace",
+          "image": "abilities/nyx_assassin_spiked_carapace.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "23 20 17 14",
+              "new_raw_value": "20 16 12 8",
+              "note": {
+                "ru": "Перезарядка уменьшена с 23/20/17/14 до 20/16/12/8 секунд",
+                "en": "Cooldown decreased from 23/20/17/14s to 20/16/12/8s",
+                "uk": "Перезарядку зменшено з 23/20/17/14 до 20/16/12/8 секунд"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_hammer_of_purity_custom",
+          "name": "Hammer of Purity",
+          "image": "abilities/omniknight_hammer_of_purity.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "old_raw_value": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+              "new_raw_value": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK",
+              "note": {
+                "ru": "Теперь является модификатором атаки с автоприменением",
+                "en": "Is now an autocast attack modifier",
+                "uk": "Тепер є модифікатором атаки з автозастосуванням"
+              }
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "16 14 12 10",
+              "new_raw_value": "16 12 8 4",
+              "note": {
+                "ru": "Перезарядка уменьшена с 16/14/12/10 до 16/12/8/4 секунд",
+                "en": "Cooldown decreased from 16/14/12/10s to 16/12/8/4s",
+                "uk": "Перезарядку зменшено з 16/14/12/10 до 16/12/8/4 секунд"
+              }
+            },
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "40 45 50 55",
+              "new_raw_value": "0",
+              "note": {
+                "ru": "Больше не расходует 40/45/50/55 маны",
+                "en": "No longer costs 40/45/50/55 mana",
+                "uk": "Більше не витрачає 40/45/50/55 мани"
+              }
+            },
+            {
+              "parameter": "attack_range_bonus",
+              "old_raw_value": null,
+              "new_raw_value": "75",
+              "note": {
+                "ru": "Дополнительная дальность атаки теперь составляет 75",
+                "en": "Attack range bonus is now 75",
+                "uk": "Додаткова дальність атаки тепер становить 75"
+              }
+            },
+            {
+              "parameter": "movement_slow",
+              "old_raw_value": "0",
+              "new_raw_value": "-75",
+              "note": {
+                "ru": "Теперь замедляет цель на 75% на 0,2 секунды",
+                "en": "Now slows the target by 75% for 0.2 seconds",
+                "uk": "Тепер сповільнює ціль на 75% на 0,2 секунди"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_omniknight_11",
+            "image": "images/heroes/talents/omniknight/11.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Hammer of Purity снижает Броню: 3/6/9 Длительность: 5 сек",
+                  "en": null,
+                  "uk": "Hammer of Purity знижує Броню: 3/6/9 Тривалість: 5 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Hammer of Purity снижает Броню: 2/4/6 Длительность: 5 сек",
+                  "en": null,
+                  "uk": "Hammer of Purity знижує Броню: 2/4/6 Тривалість: 5 сек"
+                },
+                "note": {
+                  "ru": "Снижение брони Hammer of Purity ослаблено с 3/6/9 до 2/4/6",
+                  "en": "Hammer of Purity armor reduction decreased from 3/6/9 to 2/4/6",
+                  "uk": "Зниження броні Hammer of Purity ослаблено з 3/6/9 до 2/4/6"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_omniknight_10",
+            "image": "images/heroes/talents/omniknight/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Hammer of Purity замедляет Скорость Передвижения противников: 40%/80% Длительность: 5 сек",
+                  "en": null,
+                  "uk": "Hammer of Purity уповільнює Швидкість Пересування супротивників: 40%/80% Тривалість: 5 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Длительности Замедления Hammer of Purity: 0.7/1.4 сек",
+                  "en": null,
+                  "uk": "Збільшення Тривалості Сповільнення Hammer of Purity: 0.7/1.4 сек"
+                },
+                "note": {
+                  "ru": "«Hammer of Purity замедляет противников на 40%/80% на 5 сек» заменено на «Увеличение длительности замедления Hammer of Purity: 0,7/1,4 сек»",
+                  "en": "«Hammer of Purity slows enemies by 40%/80% for 5s» replaced with «Hammer of Purity slow duration increased by 0.7/1.4s»",
+                  "uk": "«Hammer of Purity уповільнює ворогів на 40%/80% на 5 сек» замінено на «Збільшення тривалості сповільнення Hammer of Purity: 0,7/1,4 сек»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_omniknight_13",
+            "image": "images/heroes/talents/omniknight/13.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "В месте применения Hammer of Purity остаётся область внутри которой вы исцеляетесь от Всего Нанесённого Урона на 60%. Длительность: 3/6/9 сек",
+                  "en": null,
+                  "uk": "У місці застосування Hammer of Purity залишається область всередині якої ви зцілюєтеся від Усього Нанесеної Втрати на 60%. Тривалість: 3/6/9 сек"
+                },
+                "new_raw_value": {
+                  "ru": "В месте применения Hammer of Purity остаётся область внутри которой вы исцеляетесь от Всего Нанесённого Урона: 20%/40%/60% Длительность: 4 сек",
+                  "en": null,
+                  "uk": "У місці застосування Hammer of Purity залишається область, у якій ви зцілюєтеся від Усієї Завданої Шкоди: 20%/40%/60% Тривалість: 4 сек"
+                },
+                "note": {
+                  "ru": "Доля лечения от нанесённого урона уменьшена с 60% до 20%/40%/60%",
+                  "en": "Heal from damage dealt decreased from 60% to 20%/40%/60%",
+                  "uk": "Частку лікування від завданої шкоди зменшено з 60% до 20%/40%/60%"
+                }
+              },
+              {
+                "old_raw_value": {
+                  "ru": "В месте применения Hammer of Purity остаётся область внутри которой вы исцеляетесь от Всего Нанесённого Урона на 60%. Длительность: 3/6/9 сек",
+                  "en": null,
+                  "uk": "У місці застосування Hammer of Purity залишається область всередині якої ви зцілюєтеся від Усього Нанесеної Втрати на 60%. Тривалість: 3/6/9 сек"
+                },
+                "new_raw_value": {
+                  "ru": "В месте применения Hammer of Purity остаётся область внутри которой вы исцеляетесь от Всего Нанесённого Урона: 20%/40%/60% Длительность: 4 сек",
+                  "en": null,
+                  "uk": "У місці застосування Hammer of Purity залишається область, у якій ви зцілюєтеся від Усієї Завданої Шкоди: 20%/40%/60% Тривалість: 4 сек"
+                },
+                "note": {
+                  "ru": "Длительность области изменена с 3/6/9 на 4 секунды",
+                  "en": "Area duration changed from 3/6/9s to 4s",
+                  "uk": "Тривалість області змінено з 3/6/9 на 4 секунди"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_omniknight_9",
+            "image": "images/heroes/talents/omniknight/9.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Hammer of Purity не требует маны. Увеличение Дальности Применения Hammer of Purity: 200",
+                  "en": null,
+                  "uk": "Hammer of Purity не вимагає мани. Збільшення Дальності Застосування Hammer of Purity: 200"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Дальности Атаки Hammer of Purity: 200",
+                  "en": null,
+                  "uk": "Збільшення Дальності Атаки Hammer of Purity: 200"
+                },
+                "note": {
+                  "ru": "«Hammer of Purity не требует маны. Увеличение дальности применения Hammer of Purity: 200» заменено на «Увеличение дальности атаки Hammer of Purity: 200»",
+                  "en": "«Hammer of Purity costs no mana. Hammer of Purity cast range increased by 200» replaced with «Hammer of Purity attack range increased by 200»",
+                  "uk": "«Hammer of Purity не вимагає мани. Збільшення дальності застосування Hammer of Purity: 200» замінено на «Збільшення дальності атаки Hammer of Purity: 200»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_omniknight_14",
+            "image": "images/heroes/talents/omniknight/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Hammer of Purity получает 2 заряд, может быть применён на область, а также телепортирует вас в точку применения. Радиус: 300",
+                  "en": null,
+                  "uk": "Hammer of Purity отримує 2 заряд, може бути застосований на область, а також телепортує вас у точку застосування. Радіус: 300"
+                },
+                "new_raw_value": {
+                  "ru": "Hammer of Purity срабатывает на всех противников в радиусе 300. Уменьшение Времени Перезарядки Hammer of Purity: 1 сек. Hammer of Purity работает сквозь невосприимчивость к Магии",
+                  "en": null,
+                  "uk": "Hammer of Purity вражає всіх ворогів у радіусі 300. Зменшення Перезарядки Hammer of Purity: 1 сек. Hammer of Purity ігнорує Магічну Імунність"
+                },
+                "note": {
+                  "ru": "«Hammer of Purity получает 2 заряда, может быть применён на область, а также телепортирует вас в точку применения. Радиус: 300» заменено на «Hammer of Purity срабатывает на всех противников в радиусе 300. Уменьшение перезарядки Hammer of Purity: 1 сек. Hammer of Purity проходит сквозь невосприимчивость к магии»",
+                  "en": "«Hammer of Purity gains 2 charges, can be cast on an area and teleports you to the cast location. Radius: 300» replaced with «Hammer of Purity triggers on all enemies within a 300 radius. Hammer of Purity cooldown decreased by 1s. Hammer of Purity pierces spell immunity»",
+                  "uk": "«Hammer of Purity отримує 2 заряди, може бути застосований на область, а також телепортує вас у точку застосування. Радіус: 300» замінено на «Hammer of Purity вражає всіх ворогів у радіусі 300. Зменшення перезарядки Hammer of Purity: 1 сек. Hammer of Purity пробиває імунітет до магії»"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "oracle",
+      "name": "oracle",
+      "image": "images/heroes/heroesPreview/oracle.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "old_raw_value": "620",
+          "new_raw_value": "625",
+          "note": {
+            "ru": "Дальность атаки увеличена с 620 до 625",
+            "en": "Attack range increased from 620 to 625",
+            "uk": "Дальність атаки збільшено з 620 до 625"
+          },
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "oracle_fates_edict_custom",
+          "name": "Fate's Edict",
+          "image": "abilities/oracle_fates_edict.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "old_raw_value": "500 600 700 800",
+              "new_raw_value": "700",
+              "note": {
+                "ru": "Дальность применения изменена с 500/600/700/800 на 700",
+                "en": "Cast range changed from 500/600/700/800 to 700",
+                "uk": "Дальність застосування змінено з 500/600/700/800 на 700"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "phantom_assassin_blur_custom",
+          "name": "Blur",
+          "image": "abilities/phantom_assassin_blur.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "old_raw_value": null,
+              "new_raw_value": "1",
+              "note": {
+                "ru": "Теперь является врождённой способностью",
+                "en": "Is now an innate ability",
+                "uk": "Тепер є вродженою здібністю"
+              }
+            },
+            {
+              "parameter": "DependentOnAbility",
+              "old_raw_value": null,
+              "new_raw_value": "phantom_assassin_coup_de_grace_custom",
+              "note": {
+                "ru": "Теперь улучшается вместе с Coup de Grace",
+                "en": "Now upgrades with Coup de Grace",
+                "uk": "Тепер покращується разом із Coup de Grace"
+              }
+            },
+            {
+              "parameter": "AbilityCastRange",
+              "old_raw_value": "800",
+              "new_raw_value": "625 550 475 400",
+              "note": {
+                "ru": "Дальность применения уменьшена с 800 до 625/550/475/400",
+                "en": "Cast range decreased from 800 to 625/550/475/400",
+                "uk": "Дальність застосування зменшено з 800 до 625/550/475/400"
+              }
+            },
+            {
+              "parameter": "bonus_movement_speed",
+              "old_raw_value": null,
+              "new_raw_value": "3 6 9 12",
+              "note": {
+                "ru": "Бонус к скорости передвижения теперь составляет 3%/6%/9%/12%",
+                "en": "Movement speed bonus is now 3%/6%/9%/12%",
+                "uk": "Бонус до швидкості пересування тепер становить 3%/6%/9%/12%"
+              }
+            },
+            {
+              "parameter": "bonus_evasion",
+              "old_raw_value": "15 20 25 30",
+              "new_raw_value": null,
+              "note": {
+                "ru": "Больше не даёт 15%/20%/25%/30% уклонения",
+                "en": "No longer grants 15%/20%/25%/30% evasion",
+                "uk": "Більше не дає 15%/20%/25%/30% ухилення"
+              }
+            },
+            {
+              "note": {
+                "ru": "Теперь сбивает с цели летящие в героя снаряды",
+                "en": "Now disjoints projectiles flying at the hero",
+                "uk": "Тепер збиває з цілі снаряди, що летять у героя"
+              }
+            },
+            {
+              "parameter": "duration",
+              "old_raw_value": "25",
+              "new_raw_value": "30",
+              "note": {
+                "ru": "Длительность увеличена с 25 до 30 секунд",
+                "en": "Duration increased from 25s to 30s",
+                "uk": "Тривалість збільшено з 25 до 30 секунд"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "phantom_assassin_immaterial",
+          "name": "Immaterial",
+          "image": "abilities/phantom_assassin_immaterial.webp",
+          "description": [
+            {
+              "ru": "Герой сосредотачивается на себе, что позволяет ему уклоняться от атак. Шанс уклонения растёт с уровнем владельца. Сочетается с другими источниками уклонения по закону убывающей полезности. Дополнительное уклонение: 15% / 20% / 25% / 30%.",
+              "en": "Phantom Assassin focuses inward, increasing her ability to evade enemy attacks. Evasion improves with Phantom Assassin's levels. Stacks diminishingly with other sources of Evasion. Bonus evasion: 15% / 20% / 25% / 30%.",
+              "uk": "Phantom Assassin зосереджується на своїх рефлексах, що дозволяє їй ухилятися від ворожих атак. Ухилення покращується з її рівнем. Ухилення частково посилюється від кількох джерел. Дод. ухилення: 15% / 20% / 25% / 30%."
+            }
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "old_raw_value": null,
+              "new_raw_value": null,
+              "note": {
+                "ru": "Новая базовая способность. Пассивная.",
+                "en": "New basic ability. Passive.",
+                "uk": "Нова базова здібність. Пасивна."
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "phantom_assassin_coup_de_grace_custom",
+          "name": "Coup de Grace",
+          "image": "abilities/phantom_assassin_coup_de_grace.webp",
+          "ability_notes": [
+            {
+              "parameter": "duration",
+              "old_raw_value": "6",
+              "new_raw_value": "6 8 10",
+              "note": {
+                "ru": "Длительность фокуса увеличена с 6 до 6/8/10 секунд",
+                "en": "Deadly Focus duration increased from 6s to 6/8/10s",
+                "uk": "Тривалість фокусу збільшено з 6 до 6/8/10 секунд"
+              }
+            },
+            {
+              "parameter": "dagger_crit_chance",
+              "old_raw_value": "40",
+              "new_raw_value": "30",
+              "note": {
+                "ru": "Шанс фокуса от кинжала уменьшен с 40% до 30%",
+                "en": "Deadly Focus chance from the dagger decreased from 40% to 30%",
+                "uk": "Шанс фокусу від кинджала зменшено з 40% до 30%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_6",
+            "image": "images/heroes/talents/phantom_assassin/6.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Blur. Сила: 12/24",
+                  "en": null,
+                  "uk": "Прибирає Blur. Сила: 12/24"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Immaterial. Сила: 12/24",
+                  "en": null,
+                  "uk": "Прибирає Immaterial. Сила: 12/24"
+                },
+                "note": {
+                  "ru": "Теперь убирает Immaterial, а не Blur",
+                  "en": "Now removes Immaterial instead of Blur",
+                  "uk": "Тепер прибирає Immaterial, а не Blur"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_4",
+            "image": "images/heroes/talents/phantom_assassin/4.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Phantom Strike. Сила: 12/24",
+                  "en": null,
+                  "uk": "Прибирає Phantom Strike. Сила: 12/24"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Blur. Сила: 12/24",
+                  "en": null,
+                  "uk": "Прибирає Blur. Сила: 12/24"
+                },
+                "note": {
+                  "ru": "Теперь убирает Blur, а не Phantom Strike",
+                  "en": "Now removes Blur instead of Phantom Strike",
+                  "uk": "Тепер прибирає Blur, а не Phantom Strike"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_phantom_assassin_12",
+            "image": "images/heroes/talents/phantom_assassin/12.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Уклонения Blur: 10%/20%",
+                  "en": null,
+                  "uk": "Збільшення Ухилення Blur: 10%/20%"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Уклонения Immaterial: 10%/20%",
+                  "en": null,
+                  "uk": "Збільшення Ухилення Immaterial: 10%/20%"
+                },
+                "note": {
+                  "ru": "Теперь увеличивает уклонение Immaterial, а не Blur",
+                  "en": "Now increases Immaterial evasion instead of Blur",
+                  "uk": "Тепер збільшує ухилення Immaterial, а не Blur"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "rubick_telekinesis_custom",
+          "name": "Telekinesis",
+          "image": "abilities/rubick_telekinesis.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "24 21 18 15",
+              "new_raw_value": "23 20 17 14",
+              "note": {
+                "ru": "Перезарядка уменьшена с 24/21/18/15 до 23/20/17/14 секунд",
+                "en": "Cooldown decreased from 24/21/18/15s to 23/20/17/14s",
+                "uk": "Перезарядку зменшено з 24/21/18/15 до 23/20/17/14 секунд"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "shadow_fiend_frenzy_custom",
+          "name": "Feast of Souls",
+          "image": "abilities/shadow_fiend_frenzy.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "16.0",
+              "new_raw_value": "21",
+              "note": {
+                "ru": "Перезарядка увеличена с 16 до 21 секунды",
+                "en": "Cooldown increased from 16s to 21s",
+                "uk": "Перезарядку збільшено з 16 до 21 секунди"
+              }
+            },
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "75",
+              "new_raw_value": "60 65 70 75",
+              "note": {
+                "ru": "Расход маны уменьшен с 75 до 60/65/70/75",
+                "en": "Mana cost decreased from 75 to 60/65/70/75",
+                "uk": "Витрати мани зменшено з 75 до 60/65/70/75"
+              }
+            },
+            {
+              "parameter": "bonus_move_speed",
+              "old_raw_value": null,
+              "new_raw_value": "5 7 9 11",
+              "note": {
+                "ru": "Теперь также ускоряет передвижение на 5%/7%/9%/11%",
+                "en": "Now also increases movement speed by 5%/7%/9%/11%",
+                "uk": "Тепер також прискорює пересування на 5%/7%/9%/11%"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "shadow_fiend_necromastery_custom",
+          "name": "Necromastery",
+          "image": "abilities/shadow_fiend_necromastery.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "old_raw_value": null,
+              "new_raw_value": "1",
+              "note": {
+                "ru": "Теперь улучшается вместе с Requiem of Souls",
+                "en": "Now upgrades along with Requiem of Souls",
+                "uk": "Тепер покращується разом з Requiem of Souls"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "old_raw_value": "3",
+          "new_raw_value": "2",
+          "note": {
+            "ru": "Базовая броня уменьшена на 1",
+            "en": "Base armor decreased by 1",
+            "uk": "Базову броню зменшено на 1"
+          },
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "spectre_haunt_custom",
+          "name": "Haunt",
+          "image": "abilities/spectre_haunt.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "100 90 80",
+              "new_raw_value": "70 65 60",
+              "note": {
+                "ru": "Перезарядка уменьшена со 100/90/80 до 70/65/60 секунд",
+                "en": "Cooldown decreased from 100/90/80s to 70/65/60s",
+                "uk": "Перезарядку зменшено з 100/90/80 до 70/65/60 секунд"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_spectre_11",
+            "image": "images/heroes/talents/spectre/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Haunt: 3/6/9 сек",
+                  "en": null,
+                  "uk": "Зменшення Часу Перезаряджання Haunt: 3/6/9 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Haunt: 5/10/15 сек",
+                  "en": null,
+                  "uk": "Зменшення Часу Перезаряджання Haunt: 5/10/15 сек"
+                },
+                "note": {
+                  "ru": "Уменьшение перезарядки Haunt усилено с 3/6/9 до 5/10/15 секунд",
+                  "en": "Haunt cooldown reduction increased from 3/6/9s to 5/10/15s",
+                  "uk": "Зменшення перезарядки Haunt посилено з 3/6/9 до 5/10/15 секунд"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "old_raw_value": "300",
+          "new_raw_value": "310",
+          "note": {
+            "ru": "Скорость передвижения увеличена с 300 до 310",
+            "en": "Movement speed increased from 300 to 310",
+            "uk": "Швидкість пересування збільшено з 300 до 310"
+          },
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_techies_21",
+            "image": "images/heroes/talents/techies/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Minefield Sign: 30 сек. Когда в радиусе 200 от таблички Minefield Sign проходит вражеский герой, область радиусом 1000 вокруг неё на 15 сек. становится минным полем, которое наносит Магический Урон движущимся врагам. По окончании эффекта табличка пропадает. Урон: 600 Расстояние для срабатывания: 200",
+                  "en": null,
+                  "uk": null
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Minefield Sign: 30 сек. Когда в радиусе 200 от таблички Minefield Sign проходит вражеское существо, область радиусом 1000 вокруг неё на 15 сек. становится минным полем, которое наносит Магический Урон движущимся врагам. По окончании эффекта табличка пропадает. Урон: 600 Расстояние для срабатывания: 200",
+                  "en": null,
+                  "uk": null
+                },
+                "note": {
+                  "ru": "Минное поле теперь срабатывает на любое вражеское существо, а не только на героя",
+                  "en": "The minefield now triggers on any enemy unit, not only heroes",
+                  "uk": "Мінне поле тепер спрацьовує на будь-яку ворожу істоту, а не лише на героя"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "terrorblade",
+      "name": "terrorblade",
+      "image": "images/heroes/heroesPreview/terrorblade.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "old_raw_value": "1.5",
+          "new_raw_value": "0.5",
+          "note": {
+            "ru": "Базовое восстановление здоровья уменьшено на 1",
+            "en": "Base health regen decreased by 1",
+            "uk": "Базове відновлення здоров'я зменшено на 1"
+          },
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "terrorblade_reflection_custom",
+          "name": "Reflection",
+          "image": "abilities/terrorblade_reflection.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "old_raw_value": "35 40 45 50",
+              "new_raw_value": "60 65 70 75",
+              "note": {
+                "ru": "Расход маны увеличен с 35/40/45/50 до 60/65/70/75",
+                "en": "Mana cost increased from 35/40/45/50 to 60/65/70/75",
+                "uk": "Витрати мани збільшено з 35/40/45/50 до 60/65/70/75"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "terrorblade_metamorphosis_custom",
+          "name": "Metamorphosis",
+          "image": "abilities/terrorblade_metamorphosis.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_damage",
+              "old_raw_value": "30 40 50 60",
+              "new_raw_value": "20 40 60 80",
+              "note": {
+                "ru": "Бонус к урону изменён с 30/40/50/60 на 20/40/60/80",
+                "en": "Damage bonus changed from 30/40/50/60 to 20/40/60/80",
+                "uk": "Бонус до шкоди змінено з 30/40/50/60 на 20/40/60/80"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "tiny_avalanche_custom",
+          "name": "Avalanche",
+          "image": "abilities/tiny_avalanche.webp",
+          "ability_notes": [
+            {
+              "parameter": "avalanche_damage",
+              "old_raw_value": "100 200 300 400",
+              "new_raw_value": "100 190 280 370",
+              "note": {
+                "ru": "Общий урон уменьшен со 100/200/300/400 до 100/190/280/370",
+                "en": "Total damage decreased from 100/200/300/400 to 100/190/280/370",
+                "uk": "Загальну шкоду зменшено з 100/200/300/400 до 100/190/280/370"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_tree_grab_custom",
+          "name": "Tree Grab",
+          "image": "abilities/tiny_tree_grab.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_range",
+              "old_raw_value": "350",
+              "new_raw_value": "300",
+              "note": {
+                "ru": "Дальность атаки уменьшена с 350 до 300",
+                "en": "Attack range decreased from 350 to 300",
+                "uk": "Дальність атаки зменшено з 350 до 300"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_grow_custom",
+          "name": "Grow",
+          "image": "abilities/tiny_grow.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_speed_reduction",
+              "old_raw_value": "-30",
+              "new_raw_value": "-35",
+              "note": {
+                "ru": "Замедление атаки усилено с 30% до 35%",
+                "en": "Attack speed reduction increased from 30% to 35%",
+                "uk": "Зменшення швидкості атаки посилено з 30% до 35%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "old_raw_value": "31",
+          "new_raw_value": "33",
+          "note": {
+            "ru": "Базовый урон увеличен на 2",
+            "en": "Base damage increased by 2",
+            "uk": "Базову шкоду збільшено на 2"
+          },
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "undying_soul_rip_custom",
+          "name": "Soul Rip",
+          "image": "abilities/undying_soul_rip.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_unit",
+              "old_raw_value": "15 25 35 45",
+              "new_raw_value": "14 26 38 50",
+              "note": {
+                "ru": "Урон/лечение за существо изменены с 15/25/35/45 на 14/26/38/50",
+                "en": "Damage/heal per unit changed from 15/25/35/45 to 14/26/38/50",
+                "uk": "Шкоду/лікування за істоту змінено з 15/25/35/45 на 14/26/38/50"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "warlock_shadow_word_custom",
+          "name": "Shadow Word",
+          "image": "abilities/warlock_shadow_word.webp",
+          "ability_notes": [
+            {
+              "parameter": "spell_aoe",
+              "old_raw_value": "300",
+              "new_raw_value": "225",
+              "note": {
+                "ru": "Радиус действия уменьшен с 300 до 225",
+                "en": "Effect radius decreased from 300 to 225",
+                "uk": "Радіус ефекту зменшено з 300 до 225"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "windranger_focusfire_custom",
+          "name": "Focus Fire",
+          "image": "abilities/windranger_focusfire.webp",
+          "ability_notes": [
+            {
+              "parameter": "focusfire_damage_reduction",
+              "old_raw_value": "-40",
+              "new_raw_value": "-30",
+              "note": {
+                "ru": "Снижение урона ослаблено с 40% до 30%",
+                "en": "Damage reduction decreased from 40% to 30%",
+                "uk": "Зменшення шкоди ослаблено з 40% до 30%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_paralyzing_cask_custom",
+          "name": "Paralyzing Cask",
+          "image": "abilities/witch_doctor_paralyzing_cask.webp",
+          "ability_notes": [
+            {
+              "parameter": "bounce_bonus_damage",
+              "old_raw_value": null,
+              "new_raw_value": "20",
+              "note": {
+                "ru": "Теперь урон увеличивается на 20 с каждым отскоком",
+                "en": "Damage now increases by 20 with each bounce",
+                "uk": "Шкода тепер збільшується на 20 з кожним відскоком"
+              }
+            },
+            {
+              "parameter": "base_damage",
+              "old_raw_value": "90 130 170 210",
+              "new_raw_value": "55 70 85 100",
+              "note": {
+                "ru": "Базовый урон уменьшен с 90/130/170/210 до 55/70/85/100",
+                "en": "Base damage decreased from 90/130/170/210 to 55/70/85/100",
+                "uk": "Базову шкоду зменшено з 90/130/170/210 до 55/70/85/100"
+              }
+            },
+            {
+              "parameter": "bounces",
+              "old_raw_value": "2 4 6 8",
+              "new_raw_value": "3 4 5 6",
+              "note": {
+                "ru": "Количество отскоков изменено с 2/4/6/8 на 3/4/5/6",
+                "en": "Bounce count changed from 2/4/6/8 to 3/4/5/6",
+                "uk": "Кількість відскоків змінено з 2/4/6/8 на 3/4/5/6"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "old_raw_value": "315",
+          "new_raw_value": "310",
+          "note": {
+            "ru": "Скорость передвижения уменьшена с 315 до 310",
+            "en": "Movement speed decreased from 315 to 310",
+            "uk": "Швидкість пересування зменшено з 315 до 310"
+          },
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

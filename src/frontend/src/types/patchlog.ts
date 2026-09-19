@@ -6,12 +6,15 @@ export interface PatchNote {
     parameter?: string;
     note: Localized;
     icon?: string | null;
+    indent?: number;
+    tooltip?: Localized;
 }
 
 export interface PatchTalentEntry {
     talent_id?: string;
     image?: string;
     title?: Localized | null;
+    talent_text?: Localized;
     talent_notes: PatchNote[];
 }
 
@@ -108,8 +111,18 @@ export interface PatchHero {
     talents: PatchTalents;
 }
 
+export interface PatchGlobalTitle {
+    title: Localized;
+}
+
+export interface PatchGlobalSubtitle {
+    subtitle: Localized;
+}
+
+export type PatchGlobalEntry = Localized | PatchNote | PatchGlobalTitle | PatchGlobalSubtitle;
+
 export interface PatchGeneral {
-    global_changes: Localized[];
+    global_changes: PatchGlobalEntry[];
 }
 
 export interface PatchLog {

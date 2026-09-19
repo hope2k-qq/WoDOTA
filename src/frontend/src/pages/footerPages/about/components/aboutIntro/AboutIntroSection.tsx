@@ -34,7 +34,7 @@ export const AboutIntroSection = ({ lang }: AboutIntroSectionProps) => {
                         <p className={styles.about_text}>{t("about_intro_text")}</p>
                         <div className={styles.about_badges}>
                             <Link to={`/${lang}/heroes`}>{t("about_badge_heroes")}</Link>
-                            <Link to={`/${lang}/tournament`}>{t("about_badge_tournaments")}</Link>
+                            <Link to={`/${lang}/tournaments`}>{t("about_badge_tournaments")}</Link>
                             <Link to={`/${lang}/votes`}>{t("about_badge_votes")}</Link>
                         </div>
                     </div>

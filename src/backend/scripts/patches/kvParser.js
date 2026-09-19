@@ -25,7 +25,7 @@ function tokenize(text) {
         if (c === '"') {
             i++;
             let s = '';
-            while (i < n && text[i] !== '"') {
+            while (i < n && text[i] !== '"' && text[i] !== '\n') {
                 if (text[i] === '\\' && i + 1 < n) {
                     // escape-последовательности Valve KV: \n и \t -> пробел
                     // (сплошной текст без переносов), для остальных (\", \\ и пр.)
@@ -37,6 +37,7 @@ function tokenize(text) {
                 }
                 s += text[i++];
             }
+            if (i < n && text[i] === '\n') continue;
             i++;
             tokens.push({ t: 'str', v: s });
             continue;

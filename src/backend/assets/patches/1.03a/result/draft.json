@@ -1,0 +1,429 @@
+{
+  "patch_number": "1.03a",
+  "patch_name": "1.03a",
+  "patch_timestamp": 1789149477,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_desolator_2",
+        "name": "desolator 2",
+        "image": "images/items/desolator_2.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "corruption_armor",
+            "old_raw_value": "13",
+            "new_raw_value": "-13",
+            "note": {
+              "ru": "Corruption Armor: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Corruption Armor: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Corruption Armor: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "giant maul",
+        "image": "images/items/giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "debuff_duration",
+            "old_raw_value": "4",
+            "new_raw_value": "3",
+            "note": {
+              "ru": "Debuff Duration: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Debuff Duration: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Debuff Duration: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "jidi pollen bag",
+        "image": "images/items/jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "health_regen_loss",
+            "old_raw_value": "20",
+            "new_raw_value": "30",
+            "note": {
+              "ru": "Health Regen Loss: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Health Regen Loss: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Health Regen Loss: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_talon_toss_custom",
+          "name": "talon toss",
+          "image": "abilities/kez_talon_toss.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitDamageType",
+              "old_raw_value": "DAMAGE_TYPE_MAGICAL",
+              "new_raw_value": "DAMAGE_TYPE_PHYSICAL",
+              "note": {
+                "ru": "Теперь способность наносит физический урон",
+                "en": "The ability now deals physical damage",
+                "uk": "Тепер здібність завдає фізичної шкоди"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_nyx_assassin_7",
+            "image": "images/heroes/talents/nyx_assassin/7.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Spiked Carapace не Оглушает Противников. Spiked Carapace возвращает урон неограниченное количество раз» заменено на «Новая Активная Способность: Burrow. Герой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка. Уменьшение Скорости Передвижения в Burrow: 300. Уменьшение Всего Получаемого Урона в Burrow: 3%. Восстановление Здоровья и Маны в Burrow: 0.5%. Уменьшение Времени Перезарядки в Burrow: 10%. Дополнительная Дальность Заклинаний: 100»",
+                  "en": "«Spiked Carapace does not Stun Enemies. Spiked Carapace returns damage an unlimited number of times» replaced with «New Active Ability: Burrow. The hero quickly burrows into the ground. There, he receives reduced damage and increases his abilities: Spiked Carapace affects all surrounding enemies in a 400 radius, Mind Flare and Impale receive increased cast range, and their cooldown is also reduced. Reduce Movement Speed ​​in Burrow: 300. Reduce Total Damage Received in Burrow: 3%. Restore Health and Mana in Burrow: 0.5%. Cooldown Reduction in Burrow: 10%. Additional Spell Range: 100»",
+                  "uk": "«Spiked Carapace не Приголомшує Противників. Spiked Carapace повертає шкоду необмежену кількість разів» замінено на «Нова Активна Здатність: Burrow. Герой квапливо закопується у землю. Там він отримує зменшену шкоду і посилює свої здібності: Spiked Carapace діє на всіх навколишніх ворогів у Радіусі 400, Mind Flare та Impale отримують збільшену дальність застосування, а також зменшується перезаряджання. Зменшення Швидкості Пересування в Burrow: 300. Зменшення Усього Отримуваної Втрати в Burrow: 3%. Відновлення Здоров'я та Мани в Burrow: 0.5%. Зменшення часу Перезаряджання в Burrow: 10%. Додаткова Дальність Заклинань: 100»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_nyx_assassin_6",
+            "image": "images/heroes/talents/nyx_assassin/6.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Новая Активная Способность: Burrow. Герой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка. Уменьшение Скорости Передвижения в Burrow: 300. Уменьшение Всего Получаемого Урона в Burrow: 3%. Восстановление Здоровья и Маны в Burrow: 0.5%. Уменьшение Времени Перезарядки в Burrow: 10%. Дополнительная Дальность Заклинаний: 100» заменено на «Spiked Carapace не Оглушает Противников. Spiked Carapace возвращает урон неограниченное количество раз»",
+                  "en": "«New Active Ability: Burrow. The hero quickly burrows into the ground. There, he receives reduced damage and increases his abilities: Spiked Carapace affects all surrounding enemies in a 400 radius, Mind Flare and Impale receive increased cast range, and their cooldown is also reduced. Reduce Movement Speed ​​in Burrow: 300. Reduce Total Damage Received in Burrow: 3%. Restore Health and Mana in Burrow: 0.5%. Cooldown Reduction in Burrow: 10%. Additional Spell Range: 100» replaced with «Spiked Carapace does not Stun Enemies. Spiked Carapace returns damage an unlimited number of times»",
+                  "uk": "«Нова Активна Здатність: Burrow. Герой квапливо закопується у землю. Там він отримує зменшену шкоду і посилює свої здібності: Spiked Carapace діє на всіх навколишніх ворогів у Радіусі 400, Mind Flare та Impale отримують збільшену дальність застосування, а також зменшується перезаряджання. Зменшення Швидкості Пересування в Burrow: 300. Зменшення Усього Отримуваної Втрати в Burrow: 3%. Відновлення Здоров'я та Мани в Burrow: 0.5%. Зменшення часу Перезаряджання в Burrow: 10%. Додаткова Дальність Заклинань: 100» замінено на «Spiked Carapace не Приголомшує Противників. Spiked Carapace повертає шкоду необмежену кількість разів»"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_nyx_assassin_13",
+            "image": "images/heroes/talents/nyx_assassin/13.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Spiked Carapace: 3/6 сек",
+                  "en": "Spiked Carapace Cooldown Reduction: 3/6 sec",
+                  "uk": "Зменшення Часу Перезаряджання Spiked Carapace: 3/6 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Spiked Carapace: 1.5/3 сек",
+                  "en": "Spiked Carapace Cooldown Reduction: 1.5/3 sec",
+                  "uk": "Зменшення Часу Перезаряджання Spiked Carapace: 1.5/3 сек"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_omniknight_12",
+            "image": "images/heroes/talents/omniknight/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Базового Урона Hammer of Purity: 70%",
+                  "en": "Hammer of Purity Base Damage Increase: 70%",
+                  "uk": "Збільшення Базової шкоди Hammer of Purity: 70%"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Базового Урона Hammer of Purity: 30%",
+                  "en": "Hammer of Purity Base Damage Increase: 30%",
+                  "uk": "Збільшення Базової шкоди Hammer of Purity: 30%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_omniknight_9",
+            "image": "images/heroes/talents/omniknight/9.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Дальности Атаки Hammer of Purity: 200",
+                  "en": "Hammer of Purity Attack Range Increase: 200",
+                  "uk": "Збільшення Дальності Атаки Hammer of Purity: 200"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Дальности Атаки Hammer of Purity: 200 Точность Атаки Hammer of Purity: 100%",
+                  "en": "Hammer of Purity Attack Range Increase: 200 Hammer of Purity Attack Accuracy: 100%",
+                  "uk": "Збільшення Дальності Атаки Hammer of Purity: 200 Точність Атаки Молота Чистоти: 100%"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_6",
+            "image": "images/heroes/talents/phantom_assassin/6.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Immaterial. Сила: 12/24",
+                  "en": "Removes Immaterial. Strength: 12/24",
+                  "uk": "Прибирає Immaterial. Сила: 12/24"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Immaterial. Сила: 10/20",
+                  "en": "Removes Immaterial. Strength: 10/20",
+                  "uk": "Прибирає Immaterial. Сила: 10/20"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_2",
+            "image": "images/heroes/talents/phantom_assassin/2.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Stifling Dagger. Сила: 12/24",
+                  "en": "Removes Stifling Dagger. Strength: 12/24",
+                  "uk": "Прибирає Stifling Dagger. Сила: 12/24"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Stifling Dagger. Сила: 10/20",
+                  "en": "Removes Stifling Dagger. Strength: 10/20",
+                  "uk": "Прибирає Stifling Dagger. Сила: 10/20"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_4",
+            "image": "images/heroes/talents/phantom_assassin/4.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Blur. Сила: 12/24",
+                  "en": "Removes Blur. Strength: 12/24",
+                  "uk": "Прибирає Blur. Сила: 12/24"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Blur. Сила: 10/20",
+                  "en": "Removes Blur. Strength: 10/20",
+                  "uk": "Прибирає Blur. Сила: 10/20"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_witch_doctor_15",
+            "image": "images/heroes/talents/witch_doctor/15.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Отскоков Paralyzing Cask: 1/2",
+                  "en": "Paralyzing Cask Bounce Increase: 1/2",
+                  "uk": "Збільшення Відскоків Paralyzing Cask: 1/2"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Отскоков Paralyzing Cask: 2/3",
+                  "en": "Paralyzing Cask Bounce Increase: 2/3",
+                  "uk": "Збільшення Відскоків Paralyzing Cask: 2/3"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_witch_doctor_19",
+            "image": "images/heroes/talents/witch_doctor/19.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Если Paralyzing Cask перестал отскакивать раньше времени, то последняя цель получит 6%/9%/12% остаточного Урона и будет оглушена 1 дополнительный раз",
+                  "en": "If Paralyzing Cask stops bouncing early, the last target will take 6%/9%/12% residual Damage and be stunned 1 additional time",
+                  "uk": "Якщо Paralyzing Cask перестав відскакувати раніше часу, то остання мета отримає 6%/9%/12% залишкової шкоди і оглушиться 1 додатковий раз"
+                },
+                "new_raw_value": {
+                  "ru": "Если Paralyzing Cask перестал отскакивать раньше времени, то последняя цель получит 8%/12%/16% остаточного Урона и будет оглушена 1 дополнительный раз",
+                  "en": "If Paralyzing Cask stops bouncing early, the last target will take 8%/12%/16% residual Damage and be stunned 1 additional time",
+                  "uk": "Якщо Paralyzing Cask перестав відскакувати раніше часу, то остання мета отримає 8%/12%/16% залишкової шкоди і оглушиться 1 додатковий раз"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

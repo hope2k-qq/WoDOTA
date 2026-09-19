@@ -1,0 +1,448 @@
+{
+  "patch_number": "1.10a",
+  "patch_name": "1.10a",
+  "patch_timestamp": 1788995995,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "abaddon_frostmourne_custom",
+          "name": "Curse of Avernus",
+          "image": "abaddon_frostmourne.webp",
+          "ability_notes": [
+            {
+              "parameter": "curse_dps",
+              "note": "Шкоду за секунду збільшено з 10/20/30/40 до 15/25/35/45"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_abaddon_3",
+            "image": "abaddon_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Curse of Avernus посилено з 10/20/30 до 20/40/60"
+              }
+            ],
+            "talent_text": "Збільшення збитків Curse of Avernus: 20/40/60"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "axe_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Culling Blade ослаблено з 300%/400%/500% до 200%/300%/400% від броні"
+              }
+            ],
+            "talent_text": "Збільшує Урон Culling Blade: 200%/300%/400% від Броні"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "axe_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Battle Hunger ослаблено зі 100%/200%/300% до 100%/150%/200% від броні"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди Battle Hunger: 100%/150%/200% від Броні"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "chaos_knight",
+      "name": "chaos knight",
+      "image": "images/heroes/heroesPreview/chaos_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "chaos_knight_chaos_strike_custom",
+          "name": "Chaos Strike",
+          "image": "chaos_knight_chaos_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "crit_max",
+              "note": "Максимальну критичну шкоду зменшено зі 140%/180%/220%/260% до 140%/160%/180%/200%"
+            },
+            {
+              "parameter": "lifesteal",
+              "note": "Вампіризм при спрацюванні зменшено з 24%/36%/48%/60% до 20%/30%/40%/50%"
+            }
+          ]
+        },
+        {
+          "ability_id": "chaos_knight_phantasm_custom",
+          "name": "Phantasm",
+          "image": "chaos_knight_phantasm.webp",
+          "ability_notes": [
+            {
+              "parameter": "outgoing_damage_tooltip",
+              "note": "Шкоду ілюзій зменшено зі 100% до 60%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_chaos_knight_1",
+            "image": "chaos_knight_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Фізичну шкоду атакуючому зменшено з 12% до 8% від шкоди атаки"
+              }
+            ],
+            "talent_text": "Кожна Атака по герою завдає Фізичний Шкоди Атакуючому: 8% від Шкоди Атаки"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_3",
+            "image": "chaos_knight_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус до сили зменшено з 4/8/12 до 3/6/9"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальність. </font></b>\n\nСила: 3/6/9\n\nReality Rift накладає Виснаження на ворогів.\n\nТривалість: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_4",
+            "image": "chaos_knight_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Бонус до шкоди зменшено з 25/50 до 20/40"
+              }
+            ],
+            "talent_text": "Шкода: 20/40"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_5",
+            "image": "chaos_knight_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення мінімальної та максимальної шкоди Chaos Strike ослаблено з 20%/40% до 10%/20%"
+              }
+            ],
+            "talent_text": "Збільшення Мінімальної та Максимальної Шкоди Chaos Strike: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_7",
+            "image": "chaos_knight_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Шкоду за секунду Chaos Walk збільшено зі 100% до 110% від шкоди атаки"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Phantasm. </font></b>\n\nНова Пасивна Здібність: Chaos Walk\n\nДозволяє ходити крізь істот та дерева. Герой залишає за собою пекельний слід, який щосекунди завдає фізичної шкоди від його Шкоди Атаки.\n\nЗбільшення Розміру Моделі: 40%\nШкода за секунду: 110% від Шкоди Атаки\nРадіус Сліду: 200\nТривалість Сліду: 3 сек."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_chaos_knight_9",
+            "image": "chaos_knight_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Зменшення шкоди ілюзії від Chaos Bolt посилено з 25% до 50%"
+              },
+              {
+                "note": "Тривалість ілюзії змінено з 3/6 на 3/6/9 секунд"
+              }
+            ],
+            "talent_text": "Chaos Bolt створює поруч із жертвою ілюзію від здібності Phantasm, яка атакує ціль і завдає на 50% менше шкоди.\n\nТривалість ілюзії: 3/6/9 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_10",
+            "image": "chaos_knight_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Більше не дає 4/8/12 до спритності"
+              },
+              {
+                "note": "Тривалість безмовності від Reality Rift змінено з 1/2/3 на 1/2 секунди"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальність. </font></b>\n\nReality Rift накладає мовчання на ворогів.\n\nТривалість: 1/2 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_11",
+            "image": "chaos_knight_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Зменшення шкоди по ілюзіях Phantasm ослаблено з 75%/125%/175% до 50%/100%/150%"
+              }
+            ],
+            "talent_text": "Зменшення Шкоди по Ілюзіям Phantasm: 50%/100%/150%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_14",
+            "image": "chaos_knight_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Радіус створення ілюзій інших героїв зменшено з 1800 до 1200"
+              }
+            ],
+            "talent_text": "Phantasm крім своїх ілюзій створює ілюзію кожного союзного або ворожого героя у радіусі 1200, включаючи власника. Ці ілюзії з’являються поруч з оригінальними героями."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_chaos_knight_16",
+            "image": "chaos_knight_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Збільшення мінімальної та максимальної шкоди Chaos Bolt посилено з 200%/300%/400% до 300%/450%/600% від відновлення мани"
+              }
+            ],
+            "talent_text": "Збільшення Мінімальної та Максимальної Шкоди Chaos Bolt: 300%/450%/600% від Відновлення Мани"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_17",
+            "image": "chaos_knight_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус до інтелекту збільшено з 4/8/12 до 6/12/18"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальність. </font></b>\n\nІнтелект: 6/12/18\n\nReality Rift накладає Безсилля на ворогів.\n\nТривалість: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_19",
+            "image": "chaos_knight_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Відновлення здоров'я від Chaos King Bar посилено зі 150% до 180% від відновлення мани"
+              },
+              {
+                "note": "Перезарядку Chaos King Bar зменшено з 90 до 60 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Chaos Strike. </font></b>\n\nНова Активна Здібність: Chaos King Bar\n\nЗастосовує на власника нормальне розсіювання. Дає 50% до магічного опору та захищає від негативних ефектів. Збільшує відновлення здоров’я.\n\nТривалість: 2/3 сек.\nВідновлення Здоров’я: 180% від Відновлення Мани\nЧас Перезарядки: 60 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_20",
+            "image": "chaos_knight_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Тепер також дає 100 до дальності застосування заклять"
+              }
+            ],
+            "talent_text": "Зменшення Часу Перезарядки Chaos Bolt: 1.5 сек.\n\nДодаткова Дальність Заклинань: 100"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dawnbreaker_luminosity_custom",
+          "name": "Luminosity",
+          "image": "dawnbreaker_luminosity.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal_pct",
+              "note": "Лікування від атаки по герою зменшено з 35%/40%/45%/50% до 25%/30%/35%/40%"
+            },
+            {
+              "parameter": "bonus_damage",
+              "note": "Критичну шкоду зменшено зі 125%/150%/175%/200% до 120%/140%/160%/180%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_5",
+            "image": "dawnbreaker_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення критичної шкоди Luminosity ослаблено з 25%/50% до 15%/30%"
+              }
+            ],
+            "talent_text": "Збільшення Критичної Шкоди Luminosity: 15%/30%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_dawnbreaker_10",
+            "image": "dawnbreaker_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди за пульсацію Solar Guardian ослаблено з 80%/120% до 45%/90% від спритності"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди за Пульсацію Solar Guardian: 45%/90% від Ловкості"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_11",
+            "image": "dawnbreaker_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Збільшення лікування за пульсацію Solar Guardian ослаблено з 80%/120% до 45%/90% від спритності"
+              }
+            ],
+            "talent_text": "Збільшення Лікування за Пульсацію Solar Guardian: 45%/90% від Ловкості"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_13",
+            "image": "dawnbreaker_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Зменшення перезарядки Solar Guardian ослаблено з 30/60 до 20/40 секунд"
+              }
+            ],
+            "talent_text": "Зменшення Часу Перезарядки Solar Guardian: 20/40 сек."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dawnbreaker_16",
+            "image": "dawnbreaker_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди вогняного сліду Celestial Hammer ослаблено з 50%/75%/100% до 30%/45%/60% від інтелекту"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди Вогняного Сліду Celestial Hammer: 30%/45%/60% від Інтелекту"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_19",
+            "image": "dawnbreaker_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Тривалість оглушення Celestial Hammer зменшено з 1/2 до 1/1,5 секунди"
+              }
+            ],
+            "talent_text": "Celestial Hammer оглушає уражених противників.\n\nТривалість: 1/1.5 сек."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_20",
+            "image": "dawnbreaker_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Збільшення дальності та швидкості польоту Celestial Hammer ослаблено з 20%/40% до 15%/30%"
+              },
+              {
+                "note": "Бонус до броні зменшено з 4/8 до 3/6"
+              }
+            ],
+            "talent_text": "Збільшення Дальності та Швидкості Полоту Celestial Hammer: 15%/30%\n\nБроня: 3/6"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_21",
+            "image": "dawnbreaker_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди дотику Celestial Hammer ослаблено з 200 до 60"
+              }
+            ],
+            "talent_text": "Celestial Hammer завдає Чисту Шкоду, а не Магічну.\n\nЗбільшення Шкоди Дотику Celestial Hammer: 60\n\nCelestial Hammer працює крізь Невразливість до Магії."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_undying_20",
+            "image": "undying_20.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Збільшення Максимуму Цілей Soul Rip: 1 за 15/10 Відновлення Мани» замінено на «Flesh Golem Збільшує Відновлення Мани: 0,5%/1%/1,5%»"
+              }
+            ],
+            "talent_text": "Flesh Golem Збільшує Відновлення Мани: 0.5%/1%/1.5%"
+          },
+          {
+            "talent_id": "modifier_undying_19",
+            "image": "undying_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Flesh Golem Збільшує Відновлення Мани: 0,5%/1%/1,5%» замінено на «Збільшення Максимуму Цілей Soul Rip: 1 за кожні 20/15 Відновлення Мани»"
+              }
+            ],
+            "talent_text": "Збільшення Максимуму Цілей Soul Rip: 1 за кожні 20/15 Відновлення Мани"
+          }
+        ]
+      }
+    }
+  ]
+}

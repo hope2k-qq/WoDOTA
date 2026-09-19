@@ -1,0 +1,322 @@
+{
+  "patch_number": "1.05b",
+  "patch_name": "1.05b",
+  "patch_timestamp": 1788985665,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_khanda_custom",
+        "name": "Khanda",
+        "image": "angels_demise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Empower Spell: cooldown decreased from 12s to 9s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_phylactery_custom",
+        "name": "Phylactery",
+        "image": "phylactery.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Empower Spell: cooldown decreased from 12s to 9s"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Shuriken Toss does not slow down, but stuns: 0.4/0.8/1.2 seconds. Base Damage: 8/16/24» replaced with «Jinada grants Gold for Creeps. Bonus Jinada Gold: 6/12. Movement Speed: 20/40»"
+              }
+            ],
+            "talent_text": "Jinada grants Gold for Creeps.\n\nBonus Jinada Gold: 6/12\n\nMovement Speed: 20/40"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Shuriken Toss applies the effect of Jinada. Strength: 7/14/21» replaced with «Increased Bonus Gold to Allies from Track: 60. Increased Damage from Track: 8%/16%»"
+              }
+            ],
+            "talent_text": "Increased Bonus Gold to Allies from Track: 60\n\nIncreased Damage from Track: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "bounty_hunter_6.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Track enemy health regen reduction decreased from 25%/50% to 20%/40%"
+              },
+              {
+                "note": "Now also increases the hero's health regen by 0.4%/0.8%"
+              }
+            ],
+            "talent_text": "Track reduces enemy Health Regeneration: 20%/40%\n\nTrack increases hero's Health Regeneration: 0.4%/0.8%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Track gives Unobstructed View: 1400. Track cannot be dispelled» replaced with «Shuriken Toss performs an Attack on the primary target. Increased Slow Duration of Shuriken Toss: 0/1/2 sec. Strength: 7/14/21»"
+              }
+            ],
+            "talent_text": "Shuriken Toss performs an Attack on the primary target.\n\nIncreased Slow Duration of Shuriken Toss: 0/1/2 sec.\n\nPower: 7/14/21"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_5",
+            "image": "bounty_hunter_5.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "The Gold Bag is now created by Jinada instead of Shuriken Toss"
+              },
+              {
+                "note": "Shuriken Toss can no longer be cast on an area"
+              },
+              {
+                "note": "The Gold Bag no longer has the Track ability and can no longer be attacked or targeted by abilities"
+              },
+              {
+                "note": "The Gold Bag now grants 1000 vision radius"
+              },
+              {
+                "note": "Gold Bag duration decreased from 20s to 12s"
+              },
+              {
+                "note": "Track can no longer be dispelled"
+              }
+            ],
+            "talent_text": "Track cannot be dispelled.\n\nJinada creates an immortal Gold Pouch that increases the hero's damage and grants vision around itself.\n\nBonus Damage per Pouch: 100\nVision Radius: 1000\nDuration: 12 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_4",
+            "image": "bounty_hunter_4.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100/200/300 mana"
+              }
+            ],
+            "talent_text": "Bonus Gold from Creep kills: 2/4/6\n\nHealth: 100/200/300\n\nMana: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_20",
+            "image": "bounty_hunter_20.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Shuriken Toss maximum damage bonus changed from 100/200/unlimited to 100/unlimited"
+              }
+            ],
+            "talent_text": "Increased Shuriken Toss Damage: 1% of Total Cost\n\n<b><font color='#ff0000'> Max Damage Increase: 100/None </font></b>"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_3",
+            "image": "bounty_hunter_3.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Jinada grants Gold for Creeps. Jinada Bonus Gold: 6/12. Movement Speed: 20/40. Spell Damage: 4%/8%» replaced with «Track grants unobstructed Vision: 500/1000/1500. Bonus Cast Range: 50/100/150. Ability Cast Delay Reduction: 10%/20%/30%»"
+              }
+            ],
+            "talent_text": "Track grants unobstructed Vision: 500/1000/1500\n\nBonus Cast Range: 50/100/150\n\nAbility Cast Delay Reduction: 10%/20%/30%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_21",
+            "image": "bounty_hunter_21.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Casting Track also triggers Shuriken Toss on the Target. Increase Shuriken Toss Slow Duration: 0/1/2 seconds» replaced with «Spells deal 120% Critical Damage to Track targets»"
+              }
+            ],
+            "talent_text": "Spells deal 120% Critical Damage to Track targets."
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_19",
+            "image": "bounty_hunter_19.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Increased Bonus Gold to Allies from Track: 60. Increased Damage from Track: 8%» replaced with «Shuriken Toss no longer slows. Shuriken Toss stuns enemies: 0.4/0.8/1.2 sec. Intelligence: 7/14/21»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Shuriken Toss no longer slows. </font></b>\n\nShuriken Toss stuns enemies: 0.4/0.8/1.2 sec.\n\nIntelligence: 7/14/21"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_18",
+            "image": "bounty_hunter_18.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«Abilities deal 150% Critical Damage to Track targets» replaced with «Casting Track also launches Shuriken Toss at the Target»"
+              }
+            ],
+            "talent_text": "Casting Track also launches Shuriken Toss at the Target."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_juggernaut_2",
+            "image": "juggernaut_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Fire Ward damage per second increased from 50 + 15%/30% to 80 + 40%/60%/80% of Strength"
+              },
+              {
+                "note": "Fire Ward destruction damage changed from 150 + 150%/300% to 160 + 160%/240%/320% of Strength"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Totem.\n\nRemoves Blade Fury.</font></b>\n\nNew Active Ability: Fire Ward\n\nSummons a totem that deals magical damage to nearby enemies and moves at a speed of 325. Explodes upon destruction. Lasts 25 sec.\n\nDamage per Second: 80 + 40%/60%/80% of Strength\nExplosion Damage: 160 + 160%/240%/320% of Strength\nRadius: 400\nHits to Destroy: 1"
+          },
+          {
+            "talent_id": "modifier_juggernaut_3",
+            "image": "juggernaut_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "All bonuses now take one talent point instead of two: totems move at the hero speed right away"
+              }
+            ],
+            "talent_text": "Mana Cost Reduction for Totem Creation: 100%\n\nTotem Movement Speed equals Hero's Movement Speed."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Base armor decreased by 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "sniper_assassinate_custom",
+          "name": "Assassinate",
+          "image": "sniper_assassinate.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_range",
+              "note": "Now grants 50/100/150 attack range"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 3",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

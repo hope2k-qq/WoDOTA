@@ -47,6 +47,90 @@ _G.basictalents =
 	"modifier_woda_talent_int6"
 }
 
+_G.LockedTalents =
+{
+    ["npc_dota_hero_chen"] =
+    {
+        ["modifier_chen_1"] =
+        {
+            "modifier_chen_8",
+            "modifier_chen_15",
+        },
+        ["modifier_chen_8"] =
+        {
+            "modifier_chen_1",
+            "modifier_chen_15",
+        },
+        ["modifier_chen_15"] =
+        {
+            "modifier_chen_1",
+            "modifier_chen_8",
+        },
+    },
+    ["npc_dota_hero_dragon_knight"] =
+    {
+        ["modifier_dragon_knight_1"] =
+        {
+            "modifier_dragon_knight_8",
+            "modifier_dragon_knight_15",
+        },
+        ["modifier_dragon_knight_8"] =
+        {
+            "modifier_dragon_knight_1",
+            "modifier_dragon_knight_15",
+        },
+        ["modifier_dragon_knight_15"] =
+        {
+            "modifier_dragon_knight_1",
+            "modifier_dragon_knight_8",
+        },
+    },
+    ["npc_dota_hero_lone_druid"] =
+    {
+        ["modifier_lone_druid_1"] =
+        {
+            "modifier_lone_druid_17",
+        },
+        ["modifier_lone_druid_17"] =
+        {
+            "modifier_lone_druid_1",
+        },
+    },
+    ["npc_dota_hero_windrunner"] =
+    {
+        ["modifier_windrunner_7"] =
+        {
+            "modifier_windrunner_19",
+        },
+        ["modifier_windrunner_19"] =
+        {
+            "modifier_windrunner_7",
+        },
+    },
+    ["npc_dota_hero_kez"] =
+    {
+        ["modifier_kez_1"] =
+        {
+            "modifier_kez_8",
+        },
+        ["modifier_kez_8"] =
+        {
+            "modifier_kez_1",
+        },
+    },
+    ["npc_dota_hero_zuus"] =
+    {
+        ["modifier_zuus_1"] =
+        {
+            "modifier_zuus_19",
+        },
+        ["modifier_zuus_19"] =
+        {
+            "modifier_zuus_1",
+        },
+    },
+}
+
 local herotalents = 
 {
 	["npc_dota_hero_crystal_maiden"] = {

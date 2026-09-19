@@ -1,0 +1,848 @@
+{
+  "patch_number": "2.00a",
+  "patch_name": "2.00a",
+  "patch_timestamp": 1788999535,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [
+    {
+      "neutral_creep_id": "npc_woda_creep81",
+      "name": "Отрутий Павук",
+      "image": "pages/patches/standard_creep.webp",
+      "neutral_creep_notes": [
+        {
+          "parameter": "StatusHealth",
+          "note": "Максимум здоров'я зменшено з 300 до 275"
+        }
+      ],
+      "abilities": []
+    }
+  ],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_blade_mail",
+        "name": "Blade Mail",
+        "image": "blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "active_reflection_pct",
+            "note": "Damage Return: повернення шкоди при активації зменшено з 65% до 55%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_madness_blade_mail",
+        "name": "Madness Blade Mail",
+        "image": "madness_blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "damage_return_active",
+            "note": "Berserk Return: повернення шкоди при активації зменшено з 85% до 75%"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [
+    {
+      "boss_id": "boss_tiny_boss",
+      "name": "boss tiny boss",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "abilities": [
+        {
+          "ability_id": "tiny_boss_toss",
+          "name": "tiny boss toss",
+          "image": "woda_tiny_boss_2.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядка тепер становить 15 секунд"
+            },
+            {
+              "parameter": "first_use_hp",
+              "note": "Перше застосування більше не потребує порогу здоров'я у 66%"
+            },
+            {
+              "parameter": "second_use_hp",
+              "note": "Друге застосування більше не потребує порогу здоров'я у 33%"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базову швидкість атаки збільшено з 95 до 100",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "name": "aghanim",
+      "image": "images/heroes/heroesPreview/aghanim.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_aghanim_1",
+            "image": "aghanim_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "«Здоров'я: 50/100/150. Базова шкода: 5/10/15» замінено на «Герой отримує ауру, яка зменшує броню ворогів на 2/3/4. Радіус: 900»"
+              }
+            ],
+            "talent_text": "Герой отримує ауру, яка зменшує броню ворогів на 2/3/4\n\nРадіус: 900"
+          },
+          {
+            "talent_id": "modifier_aghanim_3",
+            "image": "aghanim_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Тепер також зменшує витрати мани Shard Blast на 50%"
+              }
+            ],
+            "talent_text": "Shard Blast завдає фізичної шкоди замість магічної.\n\nЗменшення витрат мани Shard Blast: 50%\n\nЗбільшення зарядів Shard Blast: 1"
+          },
+          {
+            "talent_id": "modifier_aghanim_5",
+            "image": "aghanim_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Тепер також збільшує шкоду Shard Blast на 2%/4%/6% від максимального здоров'я"
+              }
+            ],
+            "talent_text": "Збільшення шкоди Shard Blast: 2%/4%/6% від максимального здоров'я\n\nShard Blast вимикає пасивні здібності цілі на: 0.5/1/1.5 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Базове відновлення здоров'я зменшено на 0,5",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_2",
+            "image": "dawnbreaker_2.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Зменшення витрат мани Starbreaker посилено з 30%/60% до 40%/80%"
+              },
+              {
+                "note": "Відновлення мани збільшено з 2/4 до 3/6"
+              }
+            ],
+            "talent_text": "Зменшення витрат мани Starbreaker: 40%/80%\n\nВідновлення мани: 3/6"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_4",
+            "image": "dawnbreaker_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Перезарядка Starbreaker тепер зменшується на 1 секунду за кожні 55/45 сили замість 65/50"
+              }
+            ],
+            "talent_text": "Час перезарядки Starbreaker зменшується на 1 сек. за кожні 55/45 сили.\n\nЧас перезарядки Starbreaker не може бути меншим за 3 секунди."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "disruptor",
+      "name": "disruptor",
+      "image": "images/heroes/heroesPreview/disruptor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Швидкість пересування збільшено з 295 до 300",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": "Базове відновлення мани збільшено на 0,25",
+          "icon": "/mana_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lion",
+      "name": "lion",
+      "image": "images/heroes/heroesPreview/lion.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_lion_13",
+            "image": "lion_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Збільшення тривалості Hex ослаблено з 0,3/0,6 до 0,2/0,4 секунди"
+              }
+            ],
+            "talent_text": "Збільшення тривалості Hex: 0.2/0.4 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_luna_8",
+            "image": "luna_8.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Зменшення перезарядки Lunar Orbit ослаблено з 2/4/6 до 2/3/4 секунд"
+              }
+            ],
+            "talent_text": "Lunar Orbit завдає додаткової фізичної шкоди при влучанні: 10/15/20\n\nЗменшення часу перезарядки Lunar Orbit: 2/3/4 сек."
+          },
+          {
+            "talent_id": "modifier_luna_12",
+            "image": "luna_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Lunar Orbit тепер отримує 1 додаткову глефу за кожні 150 сили замість 100"
+              }
+            ],
+            "talent_text": "Lunar Orbit отримує 1 додаткову глефу за кожні 150 сили."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "marci_special_delivery_custom",
+          "name": "Special Delivery",
+          "image": "marci_special_delivery.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastPoint",
+              "note": "Затримку перед застосуванням зменшено з 1 до 0,3 секунди"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_marci_1",
+            "image": "marci_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Dispose посилено з 50/100 до 70/140"
+              }
+            ],
+            "talent_text": "Збільшення шкоди Dispose: 70/140"
+          },
+          {
+            "talent_id": "modifier_marci_4",
+            "image": "marci_4.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "«Швидкість Пересування: 15/30. Опір Ефектам: 5%/10%» замінено на «Bodyguard працює лише на героїв. Збільшення відновлення здоров'я бар'єра: 10%/20%. Збільшення загального здоров'я бар'єра: 100/200»"
+              }
+            ],
+            "talent_text": "Bodyguard працює лише на героїв.\n\nЗбільшення відновлення здоров’я бар’єра: 10%/20%\n\nЗбільшення загального здоров’я бар’єра: 100/200"
+          },
+          {
+            "talent_id": "modifier_marci_3",
+            "image": "marci_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Збільшення тривалості Unleash посилено з 3/6 до 4/8 секунд"
+              }
+            ],
+            "talent_text": "Збільшення тривалості Unleash: 4/8 сек.\n\nВідновлення мани: 3/6"
+          },
+          {
+            "talent_id": "modifier_marci_2",
+            "image": "marci_2.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Bodyguard працює лише на героїв. Збільшення відновлення здоров'я бар'єра: 10%/20%. Збільшення загального здоров'я бар'єра: 100/200» замінено на «Швидкість Пересування: 15/30. Опір Ефектам: 5%/10%»"
+              }
+            ],
+            "talent_text": "Швидкість Пересування: 15/30\n\nОпір Ефектам: 5%/10%"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_marci_15",
+            "image": "marci_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Тепер також дає 100/150/200 до здоров'я"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Unleash. </font></b>\n\nЗдоров'я: 100/150/200\n\nНова активна здібність: Beautiful Illusion\n\nКраси багато не буває! Створює ілюзію героя.\n\nМаксимум ілюзій: 1\nШкода ілюзії: 50%/75%/100%\nШкода по ілюзії: 100%\nТривалість: 20 сек.\nЧас перезарядки: 10 сек.\nВитрати мани: 50"
+          },
+          {
+            "talent_id": "modifier_marci_20",
+            "image": "marci_20.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Зменшення збитків з Ілюзії Beautiful Illusion: 35%/70%» замінено на «Збільшення збитків Dispose: 10%/15%/20% від Максимальної Мани»"
+              }
+            ],
+            "talent_text": "Збільшення збитків Dispose: 10%/15%/20% від Максимальної Мани"
+          },
+          {
+            "talent_id": "modifier_marci_19",
+            "image": "marci_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Додаткову ману збільшено з 300 до 450"
+              }
+            ],
+            "talent_text": "Bodyguard можна застосовувати на союзні ілюзії або кріпів.\n\nМана: 450"
+          },
+          {
+            "talent_id": "modifier_marci_18",
+            "image": "marci_18.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Збільшення збитків Dispose: 10%/15%/20% від Максимальної Мани» замінено на «Зменшення збитків з Ілюзії Beautiful Illusion: 35%/70%»"
+              }
+            ],
+            "talent_text": "Зменшення збитків з Ілюзії Beautiful Illusion: 35%/70%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "medusa_mana_shield",
+          "name": "Mana Shield",
+          "image": "medusa_mana_shield.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "damage_per_mana",
+              "note": "Поглинання шкоди за одиницю мани зменшено з 2 + 0,04 за рівень до 1,9 + 0,03 за рівень"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_medusa_16",
+            "image": "medusa_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Максимальний бонус тепер досягається при 500 відновлення мани"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Split Shot. </font></b>\n\nШкода: 80% від Відновлення Мани\n\n<b><font color='#ff0000'> Максимальний бонус досягається при 500 Відновлення Мани.</font></b>"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "nyx_assassin_mana_burn_custom",
+          "name": "Mana Burn",
+          "image": "nyx_assassin_mana_burn.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "mana_burn_pct",
+              "note": "Спалювану ману зменшено з 12% до 10% від завданої шкоди"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_nyx_assassin_19",
+            "image": "nyx_assassin_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення спалюваної мани Mana Burn ослаблено з 3%/6% до 2%/4%"
+              }
+            ],
+            "talent_text": "Збільшення спалюваної мани Mana Burn: 2%/4%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_martyr_custom",
+          "name": "Repel",
+          "image": "omniknight_martyr.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellDispellableType",
+              "note": "Більше не можна розвіяти"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "name": "pangolier",
+      "image": "images/heroes/heroesPreview/pangolier.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Базову броню зменшено на 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "pangolier_lucky_shot_custom",
+          "name": "Lucky Shot",
+          "image": "pangolier_lucky_shot.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_slow",
+              "note": "Сповільнення атаки ослаблено з 35/70/105/140 до 25/50/75/100"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_pangolier_18",
+            "image": "pangolier_18.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Зменшення перезарядки Rolling Thunder ослаблено з 20/30/40 до 15/25/35 секунд"
+              }
+            ],
+            "talent_text": "Rolling Thunder завжди починається з Shield Crash.\n\nЗменшення часу перезарядки Rolling Thunder: 15/25/35 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базову швидкість атаки збільшено зі 100 до 110",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_spectre_11",
+            "image": "spectre_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Тепер Haunt також спрацьовує на 1 найближчого кріпа"
+              }
+            ],
+            "talent_text": "Зменшення часу перезарядки Haunt: 30/60/90 сек.\n\nHaunt також спрацьовує на 1 найближчого кріпа."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spectre_19",
+            "image": "spectre_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Тепер Shadow Step також можна використовувати на кріпів"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Haunt. </font></b>\n\nShadow Step можна використовувати на кріпів.\n\nВикористання Reality запускає Spectral Dagger у ціль.\n\nМана: 300/600/900"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tinker",
+      "name": "tinker",
+      "image": "images/heroes/heroesPreview/tinker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tinker_9",
+            "image": "tinker_9.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Зменшення витрат мани Deploy Turrets ослаблено з 30%/60%/90% до 20%/40%/60%"
+              }
+            ],
+            "talent_text": "Збільшення швидкості снарядів: 300/600/900\n\nЗменшення витрат мани Deploy Turrets: 20%/40%/60%"
+          },
+          {
+            "talent_id": "modifier_tinker_21",
+            "image": "tinker_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Тепер ракети Deploy Turrets накладають ефекти атаки"
+              }
+            ],
+            "talent_text": "Ракети Deploy Turrets накладають ефекти атаки.\n\nЗбільшення шкоди від ракет Deploy Turrets: 40% від шкоди атаки героя"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tinker_18",
+            "image": "tinker_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Здоров'я бар'єра Defense Matrix збільшено зі 100/200/300 до 200/300/400"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Deploy Turrets. </font></b>\n\nНова активна здібність: Defense Matrix\n\nСтворює навколо союзної істоти бар’єр, який поглинає всі типи шкоди та надає опір ефектам.\n\nМіцність бар’єра: 200/300/400\nОпір ефектам: 10%/20%/30%\nТривалість бар’єра: 15 сек.\nВитрати мани: 120\nДальність застосування: 700\nЧас перезарядки: 20 сек."
+          },
+          {
+            "talent_id": "modifier_tinker_17",
+            "image": "tinker_17.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Збільшення бар'єра Defense Matrix посилено зі 125%/250% до 150%/300% від інтелекту"
+              }
+            ],
+            "talent_text": "Збільшення бар’єра Defense Matrix: 150%/300% від інтелекту"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": "Базове відновлення мани збільшено на 0,25",
+          "icon": "/mana_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Базове відновлення здоров'я збільшено на 0,5",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_winter_wyvern_6",
+            "image": "winter_wyvern_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Зменшення перезарядки Cold Embrace ослаблено з 2/4 до 0/2 секунд"
+              }
+            ],
+            "talent_text": "Під час Cold Embrace герой може повертатися, атакувати, використовувати здібності та предмети.\n\nЗменшення часу перезарядки Cold Embrace: 0/2 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_witch_doctor_15",
+            "image": "witch_doctor_15.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Збільшення відскоків Paralyzing Cask посилено з 1/2/3 до 2/3/4"
+              }
+            ],
+            "talent_text": "Збільшення кількості відскоків Paralyzing Cask: 2/3/4"
+          },
+          {
+            "talent_id": "modifier_witch_doctor_19",
+            "image": "witch_doctor_19.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "«Зменшення часу перезарядки Paralyzing Cask: 3 сек» замінено на «Якщо Paralyzing Cask припинив відскакувати раніше часу, остання ціль отримає 10%/15%/20% залишкової шкоди та буде оглушена 1 додатковий раз»"
+              }
+            ],
+            "talent_text": "Якщо Paralyzing Cask припинив відскакувати раніше часу, остання ціль отримає 10%/15%/20% залишкової шкоди та буде оглушена 1 додатковий раз."
+          },
+          {
+            "talent_id": "modifier_witch_doctor_16",
+            "image": "witch_doctor_16.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Якщо Paralyzing Cask перестав відскакувати раніше часу, то остання мета отримає 8%/12%/16% залишкової шкоди і оглушиться 1 додатковий раз» замінено на «Зменшення часу перезарядки Paralyzing Cask: 3 сек»"
+              }
+            ],
+            "talent_text": "Зменшення часу перезарядки Paralyzing Cask: 3 сек."
+          },
+          {
+            "talent_id": "modifier_witch_doctor_17",
+            "image": "witch_doctor_17.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Якщо Paralyzing Cask перестав відскакувати раніше часу, то зменшує час перезарядки Paralyzing Cask: 2/4 сек» замінено на «Збільшення періодичної шкоди Maledict: 30/60»"
+              }
+            ],
+            "talent_text": "Збільшення періодичної шкоди Maledict: 30/60"
+          },
+          {
+            "talent_id": "modifier_witch_doctor_20",
+            "image": "witch_doctor_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Збільшення періодичної шкоди Maledict: 30/60» замінено на «Якщо Paralyzing Cask перестав відскакувати раніше часу, то зменшує час перезарядки Paralyzing Cask: 2/4 сек»"
+              }
+            ],
+            "talent_text": "Якщо Paralyzing Cask перестав відскакувати раніше часу, то зменшує час перезарядки Paralyzing Cask: 2/4 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_wraith_king_21",
+            "image": "wraith_king_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Бонус до мани зменшено з 750 до 500"
+              }
+            ],
+            "talent_text": "Точність атак підконтрольних істот: 100%\n\nМана: 500"
+          }
+        ]
+      }
+    }
+  ]
+}

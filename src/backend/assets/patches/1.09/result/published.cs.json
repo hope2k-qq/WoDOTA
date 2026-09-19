@@ -1,0 +1,2763 @@
+{
+  "patch_number": "1.09",
+  "patch_name": "1.09",
+  "patch_timestamp": 1788989167,
+  "general": {
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "A new season has begun"
+      },
+      {
+        "note": "Largo has been added to the vote"
+      },
+      {
+        "note": "Added a new peaceful arena"
+      },
+      {
+        "note": "Minor interface changes"
+      },
+      {
+        "note": "The profile background is now shown during hero selection"
+      },
+      {
+        "title": "Cosmetic Items"
+      },
+      {
+        "note": "Added new teleport effects and profile backgrounds"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_branches",
+        "name": "Iron Branch",
+        "image": "branches.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost increased from 50g to 55g"
+          }
+        ]
+      },
+      {
+        "item_id": "item_clarity",
+        "name": "Clarity",
+        "image": "clarity.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost increased from 50g to 60g"
+          },
+          {
+            "parameter": "ItemStockMax",
+            "note": "Maximum stock increased from 4 to 5"
+          },
+          {
+            "parameter": "ItemStockInitial",
+            "note": "Initial stock increased from 4 to 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_dust_custom",
+        "name": "Dust of Appearance",
+        "image": "dust.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCanBeUsedWithoutInventory",
+            "note": "Can now be used from the backpack"
+          }
+        ]
+      },
+      {
+        "item_id": "item_flask",
+        "name": "Healing Salve",
+        "image": "flask.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemStockMax",
+            "note": "Maximum stock increased from 4 to 5"
+          },
+          {
+            "parameter": "ItemStockInitial",
+            "note": "Initial stock increased from 4 to 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ghost",
+        "name": "Ghost Scepter",
+        "image": "ghost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "extra_spell_damage_percent",
+            "note": "Ghost Form: bonus magic damage taken decreased from 40% to 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ring_of_tarrasque",
+        "name": "Ring of Tarrasque",
+        "image": "ring_of_tarrasque.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost decreased from 1800g to 1700g"
+          }
+        ]
+      },
+      {
+        "item_id": "item_smoke_of_deceit",
+        "name": "Smoke of Deceit",
+        "image": "smoke_of_deceit.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCanBeUsedWithoutInventory",
+            "note": "Can now be used from the backpack"
+          }
+        ]
+      },
+      {
+        "item_id": "item_tango",
+        "name": "Tango",
+        "image": "tango.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemStockMax",
+            "note": "Maximum stock increased from 8 to 10"
+          },
+          {
+            "parameter": "ItemStockInitial",
+            "note": "Initial stock increased from 8 to 10"
+          }
+        ]
+      },
+      {
+        "item_id": "item_tiara_of_selemene",
+        "name": "Tiara of Selemene",
+        "image": "tiara_of_selemene.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost decreased from 1800g to 1700g"
+          }
+        ]
+      },
+      {
+        "item_id": "item_voodoo_mask",
+        "name": "Voodoo Mask",
+        "image": "voodoo_mask.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost decreased from 700g to 650g"
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_aeon_boots",
+        "name": "Aeon Boots",
+        "image": "aeon_boots.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Item removed from the game"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ancient_guardian_custom",
+        "name": "Ancient Guardian",
+        "image": "ancient_guardian.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires Diadem (1000) instead of Soul Booster (3000)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires a 1000g recipe. Total cost decreased from 5400g to 4400g"
+          },
+          {
+            "parameter": "bonus_health",
+            "note": "Health bonus decreased from 625 to 200"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Mana bonus decreased from 625 to 200"
+          },
+          {
+            "parameter": "bonus_all_stats",
+            "note": "All Attributes bonus increased from 7 to 14"
+          }
+        ]
+      },
+      {
+        "item_id": "item_blade_mail",
+        "name": "Blade Mail",
+        "image": "blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "Damage bonus decreased from 18 to 15"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus decreased from 7 to 6"
+          },
+          {
+            "parameter": "passive_reflection_constant",
+            "note": "Damage Return: passive damage return decreased from 20 + 20% to 10 + 15%"
+          },
+          {
+            "parameter": "active_reflection_pct",
+            "note": "Damage Return: active damage return increased from 40% to 65%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_bloodstone",
+        "name": "Bloodstone",
+        "image": "bloodstone.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Total cost decreased from 4400g to 4350g (Voodoo Mask decreased from 700g to 650g)"
+          },
+          {
+            "parameter": "lifesteal_multiplier",
+            "note": "Bloodpact: spell lifesteal multiplier decreased from 4 to 3"
+          }
+        ]
+      },
+      {
+        "item_id": "item_boots_of_bearing_custom",
+        "name": "Boots of Bearing",
+        "image": "boots_of_bearing.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires Ring of Tarrasque (1700)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "No longer requires a 1500g recipe. Total cost increased from 4350g to 4550g"
+          },
+          {
+            "parameter": "health_regen",
+            "note": "Health regen bonus increased from 15 to 18"
+          }
+        ]
+      },
+      {
+        "item_id": "item_crimson_guard",
+        "name": "Crimson Guard",
+        "image": "crimson_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "note": "Guard: the buff can no longer be dispelled"
+          }
+        ]
+      },
+      {
+        "item_id": "item_dagon",
+        "name": "Dagon",
+        "image": "dagon.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost unchanged at 1150. Total cost decreased from 2850g to 2800g (Voodoo Mask decreased from 700g to 650g)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_diffusal_blade_2_custom",
+        "name": "Diffusal Blade 2",
+        "image": "diffusal_blade_2_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Item removed from the game"
+          }
+        ]
+      },
+      {
+        "item_id": "item_disperser",
+        "name": "Disperser",
+        "image": "disperser.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Suppress: now applies a basic dispel to any target, not only allies"
+          },
+          {
+            "parameter": "feedback_mana_burn_illusion_melee",
+            "note": "Manabreak: illusions no longer burn 8 mana per attack"
+          }
+        ]
+      },
+      {
+        "item_id": "item_edge_of_discord",
+        "name": "Edge of Discord",
+        "image": "edge_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "health_regen",
+            "note": "Health regen bonus increased from 4 to 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 570 to 0. Total cost decreased from 4950g to 4380g"
+          },
+          {
+            "parameter": "all_stats",
+            "note": "All Attributes bonus decreased from 15 to 14"
+          },
+          {
+            "parameter": "mana_regen",
+            "note": "Mana regen bonus decreased from 3 to 2"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ethereal_blade",
+        "name": "Ethereal Blade",
+        "image": "ethereal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires Ultimate Orb (2800) instead of Aether Lens (2275)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 1600 to 900. Total cost decreased from 5375g to 5200g"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "No longer grants 300 mana"
+          },
+          {
+            "parameter": "bonus_cast_range",
+            "note": "No longer grants 250 cast range"
+          },
+          {
+            "parameter": "bonus_mana_regen",
+            "note": "No longer grants 3 mana regen"
+          },
+          {
+            "parameter": "blast_stat_multiplier",
+            "note": "Ether Blast: damage now equals your total attributes instead of 1.5 times the primary attribute"
+          },
+          {
+            "parameter": "bonus_agility",
+            "note": "All Attributes bonus increased from 8 to 24"
+          },
+          {
+            "parameter": "ethereal_damage_bonus",
+            "note": "Ether Blast: bonus magic damage taken decreased from 40% to 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_eul_storm",
+        "name": "Atos's Storm",
+        "image": "eul_storm.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Storm: cooldown increased from 18s to 19s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_glimmer_cape_custom",
+        "name": "Glimmer Cape",
+        "image": "glimmer_cape.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Glimmer: cooldown decreased from 25s to 15s"
+          },
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Glimmer: mana cost increased from 90 to 125"
+          },
+          {
+            "parameter": "duration",
+            "note": "Glimmer: duration decreased from 14s to 5s"
+          },
+          {
+            "parameter": "active_magical_armor",
+            "note": "Glimmer: the 12% magic resistance has been replaced with a barrier that absorbs 375 magic damage"
+          }
+        ]
+      },
+      {
+        "item_id": "item_glimmer_shield",
+        "name": "Glimmer Shield",
+        "image": "pages/patches/standard_item.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "note": "Item removed from the game"
+          }
+        ]
+      },
+      {
+        "item_id": "item_glimmer_boots",
+        "name": "Glimmer Boots",
+        "image": "glimmer_shield.webp",
+        "is_new": true,
+        "is_upgrade": true,
+        "caption": "New item in category «Magic»",
+        "item_notes": [
+          {
+            "note": "Built from Phase Boots (1500 gold), Glimmer Cape (2700 gold), Gem of True Sight (900 gold) and a recipe (300 gold). Total cost: 5400 gold"
+          },
+          {
+            "note": "Gives 50 Movement Speed, 18 Damage, 4 Armor, 20% Magic Resistance and 5% Cooldown Reduction"
+          },
+          {
+            "note": "Active: Glimmer Boots. Increases movement speed by 20% and grants unobstructed vision in a 600 radius, also allowing the wearer to move through units and turn faster. Applies a barrier that absorbs up to 100 magical damage. Lasts 3 sec. Movement speed bonuses from multiple pairs of boots do not stack"
+          },
+          {
+            "note": "Shares a cooldown with Phase Boots"
+          }
+        ]
+      },
+      {
+        "item_id": "item_guardian_greaves_custom",
+        "name": "Guardian Greaves",
+        "image": "guardian_greaves.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "No longer requires Buckler"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 1550 to 1125. Total cost decreased from 5150g to 4300g"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Mend: cooldown increased from 40s to 45s"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus decreased from 7 to 5"
+          },
+          {
+            "parameter": "aura_bonus_threshold",
+            "note": "Aura boost health threshold increased from 20% to 25%"
+          },
+          {
+            "parameter": "replenish_health",
+            "note": "Mend: health restored decreased from 20% to 15%"
+          },
+          {
+            "parameter": "replenish_mana",
+            "note": "Mend: mana restored decreased from 20% to 15%"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "The 250 mana bonus has been replaced with 1.5 mana regen"
+          },
+          {
+            "parameter": "bonus_hp_regen_threshold",
+            "note": "Guardian Aura: no longer restores 20 health per second to wounded allies"
+          },
+          {
+            "parameter": "bonus_armor_threshold",
+            "note": "Guardian Aura: no longer grants 10 armor to wounded allies"
+          },
+          {
+            "parameter": "aura_health_regen",
+            "note": "Guardian Aura: the aura now grants all allies 2.5 health regeneration"
+          },
+          {
+            "parameter": "aura_mana_regen",
+            "note": "Guardian Aura: the aura now grants all allies 1.5 mana regeneration"
+          },
+          {
+            "parameter": "aura_health_regen_bonus",
+            "note": "Guardian Aura: when the owner falls below 25% health, their health regeneration bonus increases to 14.5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_hand_of_midas_custom",
+        "name": "Hand of Midas",
+        "image": "hand_of_midas.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Transmute: cooldown decreased from 110s to 90s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heart_custom",
+        "name": "Heart of Tarrasque",
+        "image": "heart.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost decreased from 5200g to 5100g"
+          },
+          {
+            "parameter": "hp_regen",
+            "note": "Max health regen decreased from 1.4% to 1%"
+          },
+          {
+            "parameter": "missing_health_regen",
+            "note": "Behemoth's Blood: now also increases health regen by 1.5% of missing health"
+          },
+          {
+            "note": "Multiple instances of Behemoth's Blood do not stack"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heaven_shield",
+        "name": "Heaven's Shield",
+        "image": "heaven_shield.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "note": "Disarm: can no longer be dispelled"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Disarm: cooldown increased from 18s to 20s"
+          },
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Disarm: mana cost decreased from 100 to 25"
+          },
+          {
+            "parameter": "disarm_range",
+            "note": "Disarm: no longer has separate durations for melee and ranged targets. Duration is always 3s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "Heaven's Halberd",
+        "image": "heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "note": "Disarm: can now be removed by a strong dispel"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Disarm: cooldown increased from 18s to 20s"
+          },
+          {
+            "parameter": "disarm_range",
+            "note": "Disarm: no longer has separate durations for melee and ranged targets. Duration is always 3s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_holy_locket",
+        "name": "Holy Locket",
+        "image": "holy_locket.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires Crown (450) instead of Diadem (1000)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost increased from 800 to 1340. Total cost unchanged at 2250g"
+          },
+          {
+            "parameter": "AbilityCastRange",
+            "note": "Energy Charge: cast range increased from 500 to 600"
+          },
+          {
+            "parameter": "AbilityCharges",
+            "note": "Maximum charges increased from 20 to 25"
+          },
+          {
+            "parameter": "AbilityChargeRestoreTime",
+            "note": "Charge restore time increased from 8s to 10s"
+          },
+          {
+            "parameter": "mana_restore_per_charge",
+            "note": "Energy Charge: now also restores 15 mana per charge"
+          },
+          {
+            "parameter": "incoming_heal_increase_active",
+            "note": "Energy Charge: now also increases the target's incoming healing by 10%"
+          },
+          {
+            "parameter": "active_buff_duration",
+            "note": "Energy Charge: effect duration is now 4s"
+          },
+          {
+            "parameter": "bonus_all_stats",
+            "note": "All Attributes bonus decreased from 9 to 7"
+          }
+        ]
+      },
+      {
+        "item_id": "item_ironwood_staff",
+        "name": "Ironwood Staff",
+        "image": "ironwood_staff.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost unchanged at 1250. Total cost increased from 4600g to 4610g (Iron Branch increased from 50g to 55g)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_khanda_custom",
+        "name": "Khanda",
+        "image": "angels_demise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires Soul Booster (3000) instead of Tiara of Selemene (1800)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "No longer requires a 1500g recipe. Total cost decreased from 5700g to 5400g"
+          },
+          {
+            "parameter": "bonus_health_regen",
+            "note": "Now also grants 7 health regen"
+          },
+          {
+            "parameter": "bonus_mana_regen",
+            "note": "Mana regen bonus decreased from 8 to 3"
+          },
+          {
+            "parameter": "bonus_health",
+            "note": "Health bonus increased from 200 to 450"
+          },
+          {
+            "parameter": "bonus_mana",
+            "note": "Mana bonus increased from 200 to 450"
+          }
+        ]
+      },
+      {
+        "item_id": "item_madness_blade_mail",
+        "name": "Madness Blade Mail",
+        "image": "madness_blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 1000 to 700. Total cost decreased from 5200g to 4900g"
+          },
+          {
+            "parameter": "bonus_damage",
+            "note": "Damage bonus decreased from 48 to 38"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus decreased from 7 to 6"
+          },
+          {
+            "parameter": "damage_return_passive",
+            "note": "Damage Return: passive damage return decreased from 20 + 20% to 10 + 15%"
+          },
+          {
+            "parameter": "attack_speed_active",
+            "note": "Berserk Return: attack speed bonus decreased from 110 to 100"
+          },
+          {
+            "parameter": "movespeed_active",
+            "note": "Berserk Return: movement speed bonus decreased from 30 to 25"
+          },
+          {
+            "parameter": "damage_return_active",
+            "note": "Berserk Return: active damage return increased from 50% to 85%"
+          },
+          {
+            "parameter": "minus_armor_active",
+            "note": "Berserk Return: self armor reduction decreased from 7 to 6"
+          }
+        ]
+      },
+      {
+        "item_id": "item_magic_wand",
+        "name": "Magic Wand",
+        "image": "magic_wand.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost unchanged at 150. Total cost increased from 450g to 460g (Iron Branch increased from 50g to 55g)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_mekansm",
+        "name": "Mekansm",
+        "image": "mekansm.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus increased from 4 to 5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "Meteor Hammer",
+        "image": "meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "stun_duration",
+            "note": "Meteor Hammer: stun duration increased from 0.5s to 0.75s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_octarine_core",
+        "name": "Octarine Core",
+        "image": "octarine_core.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost increased from 0 to 200. Total cost increased from 4800g to 4900g (Tiara of Selemene decreased from 1800g to 1700g)"
+          },
+          {
+            "parameter": "ItemDisassembleRule",
+            "note": "Can no longer be disassembled"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pavise",
+        "name": "Pavise",
+        "image": "pavise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus increased from 2 to 3"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pers",
+        "name": "Perseverance",
+        "image": "pers.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "ItemDisassembleRule",
+            "note": "Can now be disassembled"
+          }
+        ]
+      },
+      {
+        "item_id": "item_phase_boots",
+        "name": "Phase Boots",
+        "image": "phase_boots.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilitySharedCooldown",
+            "note": "Now shares a cooldown with Glimmer Boots"
+          }
+        ]
+      },
+      {
+        "item_id": "item_pipe",
+        "name": "Pipe of Insight",
+        "image": "pipe.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost increased from 700 to 800. Total cost unchanged at 3725g (Ring of Tarrasque decreased from 1800g to 1700g)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_radiance_custom",
+        "name": "Radiance",
+        "image": "radiance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "evasion",
+            "note": "Evasion bonus increased from 15% to 25%"
+          },
+          {
+            "parameter": "blind_pct",
+            "note": "Burn: no longer causes enemies to miss 15% of their attacks"
+          },
+          {
+            "parameter": "base_damage",
+            "note": "Burn: base damage per second decreased from 50 to 35"
+          }
+        ]
+      },
+      {
+        "item_id": "item_refresher_custom",
+        "name": "Refresher Orb",
+        "image": "refresher.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires Ring of Tarrasque (1700) and Tiara of Selemene (1700) instead of 2 Cornucopia (1200 each)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 2600 to 1600. Total cost unchanged at 5000g"
+          },
+          {
+            "parameter": "damage",
+            "note": "No longer grants 20 damage"
+          },
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Reset: cooldown increased from 180s to 210s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_revenants_brooch",
+        "name": "Revenant's Brooch",
+        "image": "revenants_brooch.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost increased from 600 to 650. Total cost unchanged at 3300g (Voodoo Mask decreased from 700g to 650g)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_sheepstick",
+        "name": "Scythe of Vyse",
+        "image": "sheepstick.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost increased from 600 to 700. Total cost unchanged at 5200g (Tiara of Selemene decreased from 1800g to 1700g)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "Shiva's Guard",
+        "image": "shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "illusion_multiplier_pct",
+            "note": "Arctic Blast: damage to illusions decreased from 150% to 100%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_spirit_vessel_custom",
+        "name": "Spirit Vessel",
+        "image": "spirit_vessel_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost unchanged at 1800. Total cost decreased from 4080g to 4030g (Voodoo Mask decreased from 700g to 650g)"
+          }
+        ]
+      },
+      {
+        "item_id": "item_veil_of_discord",
+        "name": "Veil of Discord",
+        "image": "veil_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires Ring of Health (700), Chainmail (550) and Circlet (155) instead of Helm of Iron Will (975) and Crown (450)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost increased from 300 to 320. Total cost unchanged at 1725g"
+          },
+          {
+            "parameter": "bonus_hp_regen",
+            "note": "Health regen bonus increased from 4 to 4.5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_wind_waker",
+        "name": "Wind Waker",
+        "image": "wind_waker.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Cyclone: cooldown decreased from 20s to 19s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_wraith_band",
+        "name": "Wraith Band",
+        "image": "wraith_band.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_attack_speed",
+            "note": "Attack speed bonus increased from 5 to 6"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_ash_legion_shield",
+        "name": "Ash Legion Shield",
+        "image": "ash_legion_shield.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 1,
+        "neutral_item_notes": [],
+        "caption": "New tier 1 artifact",
+        "description": "Active: Shield Wall. Reduce your own movement speed by 12 to provide a 140 physical damage barrier to all friendly player-controlled units in a 800 unit radius. Lasts for 6 seconds.",
+        "description_sections": [
+          {
+            "title": "Active: Shield Wall",
+            "text": "Reduce your own movement speed by 12 to provide a 140 physical damage barrier to all friendly player-controlled units in a 800 unit radius. Lasts for 6 seconds"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_dezun_bloodrite",
+        "name": "Dezun Bloodrite",
+        "image": "dezun_bloodrite.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 5,
+        "neutral_item_notes": [],
+        "caption": "New tier 5 artifact",
+        "description": "Passive: Blood Invocation. Spells have a 16% larger Area of Effect, but now additionally cost health equal to 35% of their mana cost.",
+        "description_sections": [
+          {
+            "title": "Passive: Blood Invocation",
+            "text": "Spells have a 16% larger Area of Effect, but now additionally cost health equal to 35% of their mana cost"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_flayers_bota",
+        "name": "Flayer's Bota",
+        "image": "flayers_bota.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "New tier 4 artifact",
+        "description": "Active: Bloodthirst. Gain 15% base damage and 30 attack speed for 6 seconds. Passive: Bloodrush. Enemy heroes dying within 1200 units reset the cooldown of Bloodthirst.",
+        "description_sections": [
+          {
+            "title": "Active: Bloodthirst",
+            "text": "Gain 15% base damage and 30 attack speed for 6 seconds"
+          },
+          {
+            "title": "Passive: Bloodrush",
+            "text": "Enemy heroes dying within 1200 units reset the cooldown of Bloodthirst"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_idol_of_screeauk",
+        "name": "Idol of Scree'Auk",
+        "image": "idol_of_screeauk.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "New tier 4 artifact",
+        "description": "Active: False Flight. Gain 50% slow resistance, phased movement, and 25% evasion for 5 seconds.",
+        "description_sections": [
+          {
+            "title": "Active: False Flight",
+            "text": "Gain 50% slow resistance, phased movement, and 25% evasion for 5 seconds"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_metamorphic_mandible",
+        "name": "Metamorphic Mandible",
+        "image": "metamorphic_mandible.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "New tier 4 artifact",
+        "description": "Active: Pupate. Enter into an insect form for 4 seconds, increasing magic resistance by 35% and movement speed by 15%. While an insect, your size is decreased and your armor is reduced by 45%.",
+        "description_sections": [
+          {
+            "title": "Active: Pupate",
+            "text": "Enter into an insect form for 4 seconds, increasing magic resistance by 35% and movement speed by 15%. While an insect, your size is decreased and your armor is reduced by 45%"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_riftshadow_prism",
+        "name": "Riftshadow Prism",
+        "image": "riftshadow_prism.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 5,
+        "neutral_item_notes": [],
+        "caption": "New tier 5 artifact",
+        "description": "Active: Refract. Spend 10% of your current health to create a full health illusion that lasts for 20 seconds. The illusion has 50% outgoing damage and takes 240% of incoming damage.",
+        "description_sections": [
+          {
+            "title": "Active: Refract",
+            "text": "Spend 10% of your current health to create a full health illusion that lasts for 20 seconds. The illusion has 50% outgoing damage and takes 240% of incoming damage"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_weighted_dice",
+        "name": "Weighted Dice",
+        "image": "weighted_dice.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 1,
+        "neutral_item_notes": [],
+        "caption": "New tier 1 artifact",
+        "description": "Passive: Loaded. When calculating your base damage or creep bounty from last hits, the value is computed 2 times and the highest value is taken.",
+        "description_sections": [
+          {
+            "title": "Passive: Loaded",
+            "text": "When calculating your base damage or creep bounty from last hits, the value is computed 2 times and the highest value is taken"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_arcane_ring_custom",
+        "name": "Arcane Ring",
+        "image": "arcane_ring.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 2 to 6"
+          },
+          {
+            "parameter": "mana_restore",
+            "note": "Replenish Mana: mana restored increased from 30% to 35%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_book_of_shadows_custom",
+        "name": "Book of Shadows",
+        "image": "book_of_shadows.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Shadows: cooldown increased from 24s to 25s"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_ceremonial_robe",
+        "name": "Ceremonial Robe",
+        "image": "ceremonial_robe.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 6 to 3"
+          },
+          {
+            "parameter": "status_resistance",
+            "note": "Ceremonial Aura: Status Resistance reduction decreased from 15% to 8%"
+          },
+          {
+            "parameter": "magic_resistance",
+            "note": "Ceremonial Aura: Magic Resistance reduction decreased from 15% to 8%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_cloak_of_flames",
+        "name": "Cloak of Flames",
+        "image": "cloak_of_flames.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 3 to 4"
+          },
+          {
+            "parameter": "damage",
+            "note": "Immolate: damage per second increased from 45 to 60"
+          },
+          {
+            "parameter": "radius",
+            "note": "Immolate: radius increased from 375 to 450"
+          },
+          {
+            "parameter": "damage_illusions",
+            "note": "Immolate: illusion damage per second increased from 30 to 60"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_defiant_shell",
+        "name": "Defiant Shell",
+        "image": "defiant_shell.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 3 to 2"
+          },
+          {
+            "parameter": "counter_damage",
+            "note": "Reciprocity: the counter-attack now deals 80% of regular attack damage"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_duelist_gloves",
+        "name": "Duelist Gloves",
+        "image": "duelist_gloves.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 1,
+        "neutral_item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "No longer grants 12 damage"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_force_boots_custom",
+        "name": "Force Boots",
+        "image": "force_boots.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 5 to 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "crit_multiplier",
+            "note": "Crushing Blow: crit damage decreased from 150% to 140%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giants_ring",
+        "name": "Giant's Ring",
+        "image": "giants_ring.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 5 to 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Pollinate: cooldown decreased from 45s to 25s"
+          },
+          {
+            "parameter": "hp_damage",
+            "note": "Pollinate: total damage based on max health decreased from 12% to 9%"
+          },
+          {
+            "parameter": "debuff_duration",
+            "note": "Pollinate: duration decreased from 12s to 9s"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_rattlecage",
+        "name": "Rattlecage",
+        "image": "rattlecage.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "projectile_damage",
+            "note": "Reverberate: projectile damage decreased from 125 to 110"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_searing_signet",
+        "name": "Searing Signet",
+        "image": "searing_signet.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "creep_penalty",
+            "note": "Burn Through: now deals 50% less damage to non-hero units"
+          },
+          {
+            "parameter": "burn_damage",
+            "note": "Burn Through: burn damage increased from 72 to 90"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_spell_prism",
+        "name": "Spell Prism",
+        "image": "spell_prism.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "bonus_cooldown",
+            "note": "Cooldown Reduction: cooldown reduction decreased from 10% to 8%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_spider_legs",
+        "name": "Spider Legs",
+        "image": "spider_legs.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 4 to 5"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_tome_of_aghanim_custom",
+        "name": "Tome of Aghanim",
+        "image": "tome_of_aghanim.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 6 to 4"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_unrelenting_eye",
+        "name": "Unrelenting Eye",
+        "image": "unrelenting_eye.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 5 to 3"
+          },
+          {
+            "parameter": "hero_check_radius",
+            "note": "Relentless: the bonus is now reduced per enemy hero within the wearer's attack range instead of a fixed 600 radius"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "keeper_of_the_light",
+      "name": "keeper of the light",
+      "image": "images/heroes/heroesPreview/keeper_of_the_light.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "keeper_of_the_light_illuminate_custom",
+          "name": "Illuminate",
+          "image": "keeper_of_the_light_illuminate.webp",
+          "description": [
+            "CHANNELED — Creates a wave of radiant energy in front of the caster that gradually grows in power. When released, the wave deals damage and briefly reveals the fog of war. The longer the channel, the more damage it deals. Max damage: 185 / 290 / 395 / 500. Max channel time: 3. Width: 400. Distance: 1550. Cooldown: 13. Cast range: 1800. Mana cost: 100 / 125 / 150 / 175."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "keeper_of_the_light_blinding_light_custom",
+          "name": "Blinding Light",
+          "image": "keeper_of_the_light_blinding_light.webp",
+          "description": [
+            "Creates a flash of blinding light at the target location, knocking back and blinding all enemies, causing their attacks to miss. Enemies are knocked back 400 units over 0.6 seconds. Miss chance: 45%. Duration: 4. Radius: 425 / 450 / 475 / 500. Damage: 90 / 140 / 190 / 240. Cooldown: 24 / 21 / 18 / 15. Cast range: 400 / 500 / 600 / 700. Mana cost: 120 / 130 / 140 / 150."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "keeper_of_the_light_chakra_magic_custom",
+          "name": "Chakra Magic",
+          "image": "keeper_of_the_light_chakra_magic.webp",
+          "description": [
+            "Restores mana and reduces the cooldowns of all basic abilities currently on cooldown. Has 30% increased effect when cast on self. Mana restored: 90 / 160 / 230 / 300. Cooldown reduction: 3 / 4 / 5 / 6. Cooldown: 18 / 16 / 14 / 12. Cast range: 900."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "keeper_of_the_light_spirit_form_custom",
+          "name": "Spirit Form",
+          "image": "keeper_of_the_light_spirit_form.webp",
+          "description": [
+            "Transforms the hero's body into pure light, granting increased movement speed and cast range. While in this form, Illuminate is cast by a separate spirit and heals allied units. Duration: 40 / 45 / 50. Bonus movement speed: 10% / 15% / 20%. Bonus cast range: 100 / 200 / 300. Illuminate heal: 70%. Cooldown: 85 / 80 / 75. Mana cost: 75 / 125 / 175."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_1",
+            "image": "keeper_of_the_light_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Increased Damage of Blinding Light and Blinding Dark: 120%/180% of Strength"
+              }
+            ],
+            "talent_text": "Increased Damage of Blinding Light and Blinding Dark: 120%/180% of Strength"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_2",
+            "image": "keeper_of_the_light_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Spirit Form.</font> New Passive Ability: Dark Form. All abilities and items consume health instead of mana. Nearby enemies are slowed, and their spell range is reduced. Radius: 900. Movement Slow: 10%/15%/20%. Spell Range Reduction: 100/200/300"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Spirit Form. </font></b>\n\nNew Passive Ability: Dark Form\n\nAll abilities and items consume health instead of mana. Nearby enemies are slowed, and their spell range is reduced.\n\nRadius: 900\nMovement Slow: 10%/15%/20%\nSpell Range Reduction: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_3",
+            "image": "keeper_of_the_light_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Chakra Magic.</font> New Active Ability: Dark Magic. Drains mana and increases cooldowns of all main enemy abilities. Mana Drain: 100/200. Cooldown Increase: 2/3 sec. Ability Cooldown: 15 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Chakra Magic. </font></b>\n\nNew Active Ability: Dark Magic\n\nDrains mana and increases cooldowns of all main enemy abilities.\n\nMana Drain: 100/200\nCooldown Increase: 2/3 sec\nAbility Cooldown: 15 sec"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_4",
+            "image": "keeper_of_the_light_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Strength: 9/18"
+              }
+            ],
+            "talent_text": "Strength: 9/18"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_5",
+            "image": "keeper_of_the_light_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Dark Magic deals Pure Damage: 200 + 120%/240% of Strength"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Dark Magic deals Pure Damage: 200 + 120%/240% of Strength"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_6",
+            "image": "keeper_of_the_light_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Blinding Light.</font> New Active Ability: Blinding Dark. Creates a dark flash in the target area, stunning all enemies. Radius: 500. Stun Duration: 1.3/2.6 sec. Mana Cost: 150. Cooldown: 15 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Blinding Light. </font></b>\n\nNew Active Ability: Blinding Dark\n\nCreates a dark flash in the target area, stunning all enemies.\n\nRadius: 500\nStun Duration: 1.3/2.6 sec\nMana Cost: 150\nCooldown: 15 sec"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_7",
+            "image": "keeper_of_the_light_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Illuminate.</font> New Active Ability: Obscure. Creates a wave of dark energy behind the hero, gradually increasing in power. The released wave deals pure damage and temporarily reveals the fog of war. The longer the wave charges, the more damage it deals. Moves the hero along with the wave. Max Damage: 800. Max Duration: 2 sec. Width: 400. Distance: 1550. Mana Cost: 150. Cooldown: 8 sec"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Cannot be learned if «Talent 1» from the Agility branch is already learned"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Illuminate. </font></b>\n\nNew Active Ability: Obscure\n\nCreates a wave of dark energy behind the hero, gradually increasing in power. The released wave deals pure damage and temporarily reveals the fog of war. The longer the wave charges, the more damage it deals. Moves the hero along with the wave.\n\nMax Damage: 800\nMax Duration: 2 sec\nWidth: 400\nDistance: 1550\nMana Cost: 150\nCooldown: 8 sec"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_8",
+            "image": "keeper_of_the_light_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Illuminate and Obscure.</font> New Active Ability: Light Illusion. Summons an invulnerable illusion that performs Hero Attacks with the same attack range. The hero cannot attack while the spirit is alive. Prioritizes attacking heroes. Illusion Duration: 15 sec. Mana Cost: 50. Cooldown: 12 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Illuminate and Obscure. </font></b>\n\nNew Active Ability: Light Illusion\n\nSummons an invulnerable illusion that performs Hero Attacks with the same attack range. The hero cannot attack while the spirit is alive. Prioritizes attacking heroes.\n\nIllusion Duration: 15 sec.\nMana Cost: 50\nCooldown: 12 sec."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_9",
+            "image": "keeper_of_the_light_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Light Illusion can be cast again. The spirit dashes to the target point, explodes, and deals Magical Damage: 150%/250%/350% of Agility. Cast Range: 1200. Explosion Radius: 300"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "Light Illusion can be cast again.\n\nThe spirit dashes to the target point, explodes, and deals Magical Damage: 150%/250%/350% of Agility\n\nCast Range: 1200\nExplosion Radius: 300"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_10",
+            "image": "keeper_of_the_light_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Light Illusion Cooldown Reduction: 1 sec. for every 10% Evasion. Evasion: 7%/14%/21%. Health: 100/200/300"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Light Illusion Cooldown Reduction: 1 sec. for every 10% Evasion\n\nEvasion: 7%/14%/21%\n\nHealth: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_11",
+            "image": "keeper_of_the_light_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Will-O-Wisp. Summons a will-o'-the-wisp at the target area that flickers at set intervals. While active, it hypnotizes all nearby enemies and forces them to move toward it. Radius: 725. Attacks to Destroy: 7. Magical Damage: 85. Mana Cost: 150. Cooldown: 60 sec"
+              }
+            ],
+            "talent_text": "New Active Ability: Will-O-Wisp\n\nSummons a will-o'-the-wisp at the target area that flickers at set intervals. While active, it hypnotizes all nearby enemies and forces them to move toward it.\n\nRadius: 725\nAttacks to Destroy: 7\nMagical Damage: 85\nMana Cost: 150\nCooldown: 60 sec."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_12",
+            "image": "keeper_of_the_light_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Will-O-Wisp performs 1/2 attacks on all affected targets"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Will-O-Wisp performs 1/2 attacks on all affected targets."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_13",
+            "image": "keeper_of_the_light_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Increased Will-O-Wisp Attacks to Destroy: 1/2/3. Will-O-Wisp Cooldown Reduction: 10/20/30 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
+              }
+            ],
+            "talent_text": "Increased Will-O-Wisp Attacks to Destroy: 1/2/3\n\nWill-O-Wisp Cooldown Reduction: 10/20/30 sec."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_14",
+            "image": "keeper_of_the_light_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Spirit Form Duration Reduction: 25 sec.</font> Spirit Form grants Unobstructed Vision within a 1800 radius. Bonus Attack Range and Projectile Speed during Spirit Form: 250"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Spirit Form Duration Reduction: 25 sec. </font></b>\n\nSpirit Form grants Unobstructed Vision within a 1800 radius.\n\nBonus Attack Range and Projectile Speed during Spirit Form: 250"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_15",
+            "image": "keeper_of_the_light_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Illuminate Damage Increase: 5%/10%/15% of Maximum Mana"
+              }
+            ],
+            "talent_text": "Illuminate Damage Increase: 5%/10%/15% of Maximum Mana"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_16",
+            "image": "keeper_of_the_light_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Solar Bind. Reduces the target enemy's magic resistance and slows them more the faster they move. Duration: 6 sec. Slow per 100 units: 10%. Magic Resistance Reduction: 10%/20%/30%. Mana Cost: 150. Cooldown: 20 sec"
+              }
+            ],
+            "talent_text": "New Active Ability: Solar Bind\n\nReduces the target enemy's magic resistance and slows them more the faster they move.\n\nDuration: 6 sec.\nSlow per 100 units: 10%\nMagic Resistance Reduction: 10%/20%/30%\nMana Cost: 150\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_17",
+            "image": "keeper_of_the_light_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Hero's mana cannot drop below 75. Mana: 100/300/500"
+              }
+            ],
+            "talent_text": "Hero's mana cannot drop below 75.\n\nMana: 100/300/500"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_18",
+            "image": "keeper_of_the_light_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Blinding Light Miss Chance Increase: 25%/50%. Blinding Light Damage Increase: 90/180"
+              }
+            ],
+            "talent_text": "Blinding Light Miss Chance Increase: 25%/50%\n\nBlinding Light Damage Increase: 90/180"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_20",
+            "image": "keeper_of_the_light_20.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Spirit Form becomes a Passive Ability. Movement Speed: 10%"
+              }
+            ],
+            "talent_text": "Spirit Form becomes a Passive Ability.\n\nMovement Speed: 10%"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_19",
+            "image": "keeper_of_the_light_19.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Illuminate Healing Increase: 30%"
+              }
+            ],
+            "talent_text": "Illuminate Healing Increase: 30%"
+          },
+          {
+            "talent_id": "modifier_keeper_of_the_light_21",
+            "image": "keeper_of_the_light_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Illuminate charges twice as fast"
+              }
+            ],
+            "talent_text": "Illuminate charges twice as fast."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tinker",
+      "name": "tinker",
+      "image": "images/heroes/heroesPreview/tinker.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "tinker_laser_custom",
+          "name": "Laser",
+          "image": "tinker_laser.webp",
+          "description": [
+            "Fires a concentrated energy beam that damages the target and blinds it, causing its attacks to miss. Miss chance: 100%. Blind duration: 3 / 3.5 / 4 / 4.5. Damage: 75 / 150 / 225 / 300. Cooldown: 19 / 18 / 17 / 16. Cast range: 600. Mana cost: 95 / 105 / 115 / 125."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "tinker_march_of_the_machines_custom",
+          "name": "March of the Machines",
+          "image": "tinker_march_of_the_machines.webp",
+          "description": [
+            "Summons an army of mechanical servants that attack enemies in an area around the hero. Radius: 900. Duration: 6. Damage: 13 / 22 / 31 / 40. Cooldown: 35 / 33 / 31 / 29. Cast range: 300. Mana cost: 100 / 120 / 140 / 160."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "tinker_defense_matrix_custom",
+          "name": "Defense Matrix",
+          "image": "tinker_defense_matrix.webp",
+          "description": [
+            "Creates a barrier around an allied unit that absorbs damage of all types and grants status resistance. Barrier health: 80 / 160 / 240 / 320. Status resistance: 15% / 20% / 25% / 30%. Duration: 15. Cooldown: 20. Cast range: 700. Mana cost: 90 / 105 / 120 / 135."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "tinker_rearm_custom",
+          "name": "Rearm",
+          "image": "tinker_rearm.webp",
+          "description": [
+            "CHANNELED — Resets the cooldowns of the hero's abilities. Cooldown: 7 / 6 / 5. Mana cost: 100 / 150 / 200."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tinker_1",
+            "image": "tinker_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Rearm.</font> All abilities and items consume health instead of mana. Item Cooldown Reduction: 1% per 10 Strength. Maximum bonus is reached at 600 Strength"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Rearm. </font></b>\n\nAll abilities and items consume health instead of mana.\n\nItem Cooldown Reduction: 1% per 10 Strength\n\nMaximum bonus is reached at 600 Strength."
+          },
+          {
+            "talent_id": "modifier_tinker_2",
+            "image": "tinker_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "March of the Machines Cooldown Reduction: 9/14/19 sec. March of the Machines Duration Increase: 1/2/3 sec"
+              }
+            ],
+            "talent_text": "March of the Machines Cooldown Reduction: 9/14/19 sec.\n\nMarch of the Machines Duration Increase: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_tinker_3",
+            "image": "tinker_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "March of the Machines Damage Increase: 10%/20%/30% of Strength"
+              }
+            ],
+            "talent_text": "March of the Machines Damage Increase: 10%/20%/30% of Strength"
+          },
+          {
+            "talent_id": "modifier_tinker_4",
+            "image": "tinker_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "March of the Machines merge into mega-mechs. Their number is reduced, while their size and damage are increased by 5 times"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "March of the Machines merge into mega-mechs. Their number is reduced, while their size and damage are increased by 5 times."
+          },
+          {
+            "talent_id": "modifier_tinker_5",
+            "image": "tinker_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Spell Lifesteal: 6%/12%/18%"
+              }
+            ],
+            "talent_text": "Spell Lifesteal: 6%/12%/18%"
+          },
+          {
+            "talent_id": "modifier_tinker_6",
+            "image": "tinker_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Strength: 0/12. 1% Spell Damage per 12 Strength. <font color='#e03e2e'>Maximum bonus is reached at 600 Strength</font>"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Strength: 0/12\n\n1% Spell Damage per 12 Strength\n\n<b><font color='#ff0000'> Maximum bonus is reached at 600 Strength. </font></b>"
+          },
+          {
+            "talent_id": "modifier_tinker_7",
+            "image": "tinker_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Rearm.</font> New Active Ability: Keen Conveyance. Reduces item cooldowns by 1 second. Teleports the hero up to 600 units in the chosen direction. Mana Cost: 250. Cooldown: 15 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Rearm. </font></b>\n\nNew Active Ability: Keen Conveyance\n\nReduces item cooldowns by 1 second. Teleports the hero up to 600 units in the chosen direction.\n\nMana Cost: 250\nCooldown: 15 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_tinker_8",
+            "image": "tinker_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Defense Matrix Increases Base Damage: 20/40/60. The effect persists for 8 sec. after the barrier ends"
+              }
+            ],
+            "talent_text": "Defense Matrix Increases Base Damage: 20/40/60\n\nThe effect persists for 8 sec. after the barrier ends."
+          },
+          {
+            "talent_id": "modifier_tinker_11",
+            "image": "tinker_11.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "When Defense Matrix ends, the hero performs an Attack on all targets within attack range"
+              }
+            ],
+            "talent_text": "When Defense Matrix ends, the hero performs an Attack on all targets within attack range."
+          },
+          {
+            "talent_id": "modifier_tinker_10",
+            "image": "tinker_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Defense Matrix Barrier Increase: 150%/250%/350% of Agility"
+              }
+            ],
+            "talent_text": "Defense Matrix Barrier Increase: 150%/250%/350% of Agility"
+          },
+          {
+            "talent_id": "modifier_tinker_9",
+            "image": "tinker_9.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Projectile Speed Increase: 300/600/900. Mana Cost and Mana Loss Reduction: 15%/30%/45%"
+              }
+            ],
+            "talent_text": "Projectile Speed Increase: 300/600/900\n\nMana Cost and Mana Loss Reduction: 15%/30%/45%"
+          },
+          {
+            "talent_id": "modifier_tinker_12",
+            "image": "tinker_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "When the barrier from the Defense Matrix ability is fully depleted on its owner, they instantly dash forward in a random direction in front of them for a distance of 350. Ability cast point reduction: 50%"
+              }
+            ],
+            "talent_text": "When the barrier from the Defense Matrix ability is fully depleted on its owner, they instantly dash forward in a random direction in front of them for a distance of 350.\n\nAbility cast point reduction: 50%"
+          },
+          {
+            "talent_id": "modifier_tinker_13",
+            "image": "tinker_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Adds an alternative use of Defense Matrix. When the barrier from the Defense Matrix ability is fully depleted on its owner, they instantly dash in a random direction behind them for a distance of 350. Agility: 15/30"
+              }
+            ],
+            "talent_text": "Adds an alternative use of Defense Matrix.\n\nWhen the barrier from the Defense Matrix ability is fully depleted on its owner, they instantly dash in a random direction behind them for a distance of 350.\n\nAgility: 15/30"
+          },
+          {
+            "talent_id": "modifier_tinker_21",
+            "image": "tinker_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Rearm Cooldown Reduction: 2 sec. Rearm Cast Time Reduction: 0.75 sec"
+              }
+            ],
+            "talent_text": "Rearm Cooldown Reduction: 2 sec.\n\nRearm Cast Time Reduction: 0.75 sec."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_tinker_15",
+            "image": "tinker_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes March of the Machines.</font> New Active Ability: Heat-Seeking Missile. Launches two missiles at the nearest visible enemies, dealing magical damage. Prioritizes heroes. Search Radius: 1500. Number of Targets: 2. Missile Damage: 100/200/300. Mana Cost: 125. Cooldown: 15 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes March of the Machines. </font></b>\n\nNew Active Ability: Heat-Seeking Missile\n\nLaunches two missiles at the nearest visible enemies, dealing magical damage. Prioritizes heroes.\n\nSearch Radius: 1500\nNumber of Targets: 2\nMissile Damage: 100/200/300\nMana Cost: 125\nCooldown: 15 sec."
+          },
+          {
+            "talent_id": "modifier_tinker_16",
+            "image": "tinker_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Heat-Seeking Missile Stuns Enemies: 0.5 sec. Heat-Seeking Missile Damage Increase: 70% of Intelligence"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "Heat-Seeking Missile Stuns Enemies: 0.5 sec.\n\nHeat-Seeking Missile Damage Increase: 70% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_tinker_19",
+            "image": "tinker_19.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Laser triggers on all enemies within a radius of: 300"
+              }
+            ],
+            "talent_text": "Laser triggers on all enemies within a radius of: 300"
+          },
+          {
+            "talent_id": "modifier_tinker_18",
+            "image": "tinker_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Heat-Seeking Missile Target Count Increase: 2. Spell Damage: 5%/15%/25%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Heat-Seeking Missile Target Count Increase: 2\n\nSpell Damage: 5%/15%/25%"
+          },
+          {
+            "talent_id": "modifier_tinker_20",
+            "image": "tinker_20.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Laser reduces the size, as well as the current and maximum health of the primary target: 3%/6%/9%. Effects from multiple applications stack"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Laser reduces the size, as well as the current and maximum health of the primary target: 3%/6%/9%\n\nEffects from multiple applications stack."
+          },
+          {
+            "talent_id": "modifier_tinker_17",
+            "image": "tinker_17.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Defense Matrix.</font> Laser Damage Increase: 175/350"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Defense Matrix. </font></b>\n\nLaser Damage Increase: 175/350"
+          },
+          {
+            "talent_id": "modifier_tinker_14",
+            "image": "tinker_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Warp Flare. The hero launches a projectile at an enemy that deals magical damage, pushes the target away from the caster, applies a stun, and reduces the target's attack and cast range. Duration: 2 sec. Damage: 300. Attack and Cast Range Reduction: 40%. Mana Cost: 80. Cooldown: 15 sec"
+              }
+            ],
+            "talent_text": "New Active Ability: Warp Flare\n\nThe hero launches a projectile at an enemy that deals magical damage, pushes the target away from the caster, applies a stun, and reduces the target’s attack and cast range.\n\nDuration: 2 sec.\nDamage: 300\nAttack and Cast Range Reduction: 40%\nMana Cost: 80\nCooldown: 15 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Jinada bonus gold decreased from 6/12 to 3/6"
+              },
+              {
+                "note": "Jinada bonus damage decreased from 75/150 to 50/100"
+              }
+            ],
+            "talent_text": "Jinada grants Gold for Creeps.\n\nJinada Gold Increase: 3/6\n\nJinada Bonus Damage Increase: 50/100"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "bounty_hunter_6.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Track hero health regen bonus decreased from 0.4%/0.8% to 0.3%/0.6%"
+              }
+            ],
+            "talent_text": "Track reduces enemy Health Regeneration: 20%/40%\n\nTrack increases hero's Health Regeneration: 0.3%/0.6%\n\nHealth Regeneration: 0.2%/0.4%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Track bonus gold to allies decreased from 60/120 to 30/60"
+              },
+              {
+                "note": "Track damage increase decreased from 8%/16% to 4%/8%"
+              }
+            ],
+            "talent_text": "Track Ally Bonus Gold Increase: 30/60\n\nTrack Damage Increase: 4%/8%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Strength bonus decreased from 10/20/30 to 0/8/16"
+              }
+            ],
+            "talent_text": "Shuriken Toss performs an Attack on the primary target.\n\nIncreased Slow Duration of Shuriken Toss: 0/1/2 sec.\n\nStrength: 0/8/16"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_8",
+            "image": "creep_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "parameter": "cleave",
+                "note": "Path of Anti-Creep cleave damage decreased from 30% to 25%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>This talent chain does not work if you have already learned Path of Mega Creep or Path of Ranged Creep. </font></b>\n\nNew Passive Ability: Path of Anti-Creep\n\nRelatives inspire and motivate you, attacks hit multiple targets at once.\n\nCleave Damage: 25%\n\n\nNew Passive Ability: Mana Break\n\nEach attack burns the target's mana and deals damage equal to a fraction of the mana burned.\n\nMana Burn Damage: 50%\nMana Burn per Attack: 20/40/60"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "crystal_maiden",
+      "name": "crystal maiden",
+      "image": "images/heroes/heroesPreview/crystal_maiden.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "drow_ranger",
+      "name": "drow ranger",
+      "image": "images/heroes/heroesPreview/drow_ranger.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "drow_ranger_marksmanship_custom",
+          "name": "Marksmanship",
+          "image": "drow_ranger_marksmanship.webp",
+          "ability_notes": [
+            {
+              "parameter": "chance",
+              "note": "Proc chance decreased from 20% to 15%"
+            },
+            {
+              "parameter": "bonus_damage",
+              "note": "Bonus damage on proc increased from 25/35/45 to 50/70/90"
+            },
+            {
+              "parameter": "agility_multiplier",
+              "note": "Agility bonus decreased from 17%/20%/23% to 8%/12%/16%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "faceless_void",
+      "name": "faceless void",
+      "image": "images/heroes/heroesPreview/faceless_void.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 3",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_shodo_sai_custom",
+          "name": "Shodo Sai",
+          "image": "kez_shodo_sai.webp",
+          "ability_notes": [
+            {
+              "parameter": "base_crit_pct",
+              "note": "Base mark critical damage decreased from 120%/130%/140%/150% to 110%/120%/130%/140%"
+            },
+            {
+              "parameter": "parry_bonus_crit",
+              "note": "Bonus critical damage after a parry decreased from 15%/30%/45%/60% to 10%/20%/30%/40%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 4",
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "MovementSpeed",
+          "note": "Movement speed decreased from 325 to 300",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lone_druid_3",
+            "image": "lone_druid_3.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Spirit Bear attack speed bonus decreased from 20/40 to 15/30"
+              }
+            ],
+            "talent_text": "Spirit Bear Attack Speed: 15/30\n\nSpirit Bear Attack Accuracy: 100%"
+          },
+          {
+            "talent_id": "modifier_lone_druid_2",
+            "image": "lone_druid_2.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Spirit Bear damage bonus decreased from 30/60/90 to 20/40/60"
+              },
+              {
+                "note": "Spirit Bear movement speed bonus decreased from 30/60/90 to 20/40/60"
+              }
+            ],
+            "talent_text": "Spirit Bear Damage: 20/40/60\n\nSpirit Bear Movement Speed: 20/40/60"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_lunar_orbit_custom",
+          "name": "Lunar Orbit",
+          "image": "luna_lunar_orbit.webp",
+          "ability_notes": [
+            {
+              "parameter": "rotating_glaives_collision_damage",
+              "note": "Glaive collision damage increased from 18%/22%/26%/30% to 28%/32%/36%/40% of the owner's damage"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "monkey_king",
+      "name": "monkey king",
+      "image": "images/heroes/heroesPreview/monkey_king.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base attack speed decreased from 100 to 95",
+          "icon": "/icon_base_attack_speed.png"
+        },
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Base armor decreased by 1",
+          "icon": "/icon_armor.png"
+        },
+        {
+          "parameter": "AttackRate",
+          "note": "Base attack time decreased from 1.7 to 1.6",
+          "icon": "/icon_attack_time.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Base armor increased by 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Base armor increased by 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "name": "pangolier",
+      "image": "images/heroes/heroesPreview/pangolier.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Movement speed increased from 295 to 300",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_7",
+            "image": "phantom_assassin_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Coup De Grace critical strike chance bonus changed from 3% per 30 Strength to 1% per 10 Strength"
+              }
+            ],
+            "talent_text": "Increases Coup de Grace critical strike chance by 1% for every 10 Strength."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_phoenix_8",
+            "image": "phoenix_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Icarus Dive cooldown reduction increased from 8/12s to 8/13s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Sun Ray. </font></b>\n\nIcarus Dive does not consume Health.\n\nIcarus Dive Cooldown Reduction: 8/13 sec.\n\nReduces Icarus Dive Cooldown by 5 sec if the hero has more than 300 Agility."
+          },
+          {
+            "talent_id": "modifier_phoenix_9",
+            "image": "phoenix_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also increases attack range by 150/225/300 during Icarus Dive"
+              }
+            ],
+            "talent_text": "Attack Range and Attack Speed Increase during Icarus Dive: 150/225/300"
+          },
+          {
+            "talent_id": "modifier_phoenix_13",
+            "image": "phoenix_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Icarus Dive and Fire Spirits damage bonus increased from 20%/40% to 40%/60% of Agility"
+              }
+            ],
+            "talent_text": "Increases damage of Icarus Dive and Fire Spirits: 40%/60% of Agility"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base attack speed increased from 100 to 110",
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 1",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slardar_21",
+            "image": "slardar_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Corrosive Haze spell damage amplification decreased from 65% to 50%"
+              }
+            ],
+            "talent_text": "Corrosive Haze Increases All Spell Damage Taken: 50%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "slark",
+      "name": "slark",
+      "image": "images/heroes/heroesPreview/slark.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "slark_saltwater_shiv",
+          "name": "Saltwater Shiv",
+          "image": "slark_saltwater_shiv.webp",
+          "description": [
+            "Slark slices the target with his salty shiv, stealing a portion of the target's movement speed, Health Regen and Health Restoration. This effect stacks. Duration: 4 / 6 / 8 / 10. Stack restoration steal: 0.5% / 1% / 1.5% / 2%. Stack regen steal: 2. Stack speed steal: 2. Cooldown: 10 / 8 / 6 / 4. Cast range: 150. Mana cost: 20."
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "New basic ability. Active."
+            }
+          ]
+        },
+        {
+          "ability_id": "slark_essence_shift_custom",
+          "name": "Essence Shift",
+          "image": "slark_essence_shift.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Essence Shift is now an innate ability that upgrades with Shadow Dance"
+            },
+            {
+              "parameter": "duration",
+              "note": "Duration decreased from 4/6/8/10s to 3/5/7/9s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Is now an Agility Hero",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Base Strength decreased from 22 to 20",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Strength gain decreased from 2.2 to 2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Base Agility increased from 22 to 25",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Agility gain increased from 2.2 to 2.5",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Base Intelligence decreased from 22 to 20",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Intelligence gain decreased from 2.2 to 2",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 2",
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base attack speed increased from 90 to 110",
+          "icon": "/icon_base_attack_speed.png"
+        },
+        {
+          "parameter": "AttackRate",
+          "note": "Base attack time increased from 1.7 to 1.8",
+          "icon": "/icon_attack_time.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_spectre_6",
+            "image": "spectre_6.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Attack speed bonus decreased from 20/40 to 15/30"
+              }
+            ],
+            "talent_text": "Attack Speed: 15/30\n\nSpectre deals 2x damage with Desolate. Spectre's illusions no longer have Desolate."
+          },
+          {
+            "talent_id": "modifier_spectre_5",
+            "image": "spectre_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Spectre Weakness spell damage amplification decreased from 10%/15%/20% to 5%/10%/15%"
+              }
+            ],
+            "talent_text": "New Passive Ability: Spectre Weakness\n\nWeakens enemies in an area with a radius of 600, causing them to take increased spell damage.\n\nAbility Damage Amplification: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_spectre_7",
+            "image": "spectre_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Dispersion reflected damage bonus decreased from 7% to 5%"
+              }
+            ],
+            "talent_text": "Dispersion Reflected Damage Increase: 5%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tiny_3",
+            "image": "tiny_3.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Total damage taken increase decreased from 4%/8%/12% to 2%/4%/6%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Total Damage Taken Increase: 2%/4%/6% </font></b>\n\nTotal Damage Dealt Increase: 4%/8%/12%"
+          },
+          {
+            "talent_id": "modifier_tiny_7",
+            "image": "tiny_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Strength bonus increased from 20 to 30"
+              }
+            ],
+            "talent_text": "New Active Ability: Tree Volley\n\nThe hero rips random trees out of the ground nearby and throws them into the specified area. Each thrown tree deals damage to enemies from the hero's attack. The ability works even if there are no trees nearby.\n\nArea Radius: 400\nThrow Interval: 0.5 sec.\nMaximum Duration: 2.5 sec.\nCooldown: 12 sec.\n\n\nStrength: 30"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 1",
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "AttackRange",
+          "note": "Attack range increased from 425 to 450",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

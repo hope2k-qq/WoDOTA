@@ -1,0 +1,2737 @@
+{
+  "patch_number": "1.00",
+  "patch_name": "1.00",
+  "patch_timestamp": 1788913980,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "jakiro_dual_breath_custom",
+          "name": "Dual Breath",
+          "image": "jakiro_dual_breath.webp",
+          "description": [
+            "An icy blast followed by a wave of fire launches out in a path in front of Jakiro. The ice slows enemies, while the fire delivers damage over time. Duration: 5. Start radius: 150. End radius: 275. Burn damage: 20 / 40 / 60 / 80. Move slow: -25% / -30% / -35% / -40%. Attack slow: -25 / -30 / -35 / -40. Cooldown: 10. Cast range: 850. Mana cost: 125 / 140 / 155 / 170."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "jakiro_ice_path_custom",
+          "name": "Ice Path",
+          "image": "jakiro_ice_path.webp",
+          "description": [
+            "Creates a path of ice that stuns and damages enemies that touch it. Formation delay: 0.2. Max stun duration: 1.25 / 1.5 / 1.75 / 2. Path duration: 3 / 3.5 / 4 / 4.5. Radius: 150. Damage: 50. Cooldown: 18 / 15 / 12 / 9. Cast range: 1100. Mana cost: 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "jakiro_macropyre_custom",
+          "name": "Macropyre",
+          "image": "jakiro_macropyre.webp",
+          "description": [
+            "Jakiro exhales a wide line of lasting flames, which deals damage per second to any enemy units caught in the fire. Damage per second: 100 / 150 / 200. Flame width: 500. Duration: 10. Cooldown: 90 / 80 / 70. Cast range: 1400. Mana cost: 300 / 400 / 500."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_jakiro_1",
+            "image": "jakiro_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Strength, Intelligence: 4/8"
+              }
+            ],
+            "talent_text": "Strength, Intellect: 4/8"
+          },
+          {
+            "talent_id": "modifier_jakiro_2",
+            "image": "jakiro_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Ice Path.</font> New Active Ability: Fire Gush. Summons a stream of fire that deals magic damage to enemies and reduces their magic resistance. Affects all enemies in its path. Wave Radius: 260. Wave Distance: 1200. Damage: 100 + 100%/200% of Strength. Magic Resistance Reduction: 15%. Effect Duration: 4s. Mana Cost: 50. Cooldown: 12s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Ice Path. </font></b>\n\nNew Active Ability: Fire Gush\n\nSummons a fiery stream that deals magic damage to enemies and reduces their magic resistance. Affects all enemies in its path.\n\nWave Radius: 260\nWave Range: 1200\nDamage: 100 + 100%/200% of Strength\nMagic Resistance Reduction: 15%\nEffect Duration: 4 sec.\nMana Cost: 50\nCooldown: 12 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_4",
+            "image": "jakiro_4.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Dual Breath no longer costs mana. Fire Dual Breath knocks enemies back: 400"
+              }
+            ],
+            "talent_text": "Dual Breath does not require Mana.\n\nFire Dual Breath knocks back enemies: 400"
+          },
+          {
+            "talent_id": "modifier_jakiro_5",
+            "image": "jakiro_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Macropyre Cooldown Reduction: 19/38/57s"
+              }
+            ],
+            "talent_text": "Macropyre Cooldown Decreases: 19/38/57 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_3",
+            "image": "jakiro_3.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Dual Breath Cooldown Reduction: 1/2/3s"
+              }
+            ],
+            "talent_text": "Dual Breath Cooldown Reduction: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_6",
+            "image": "jakiro_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Grants Unobstructed Vision: 400/800. Allows walking through trees and increases Movement Speed: 7%/14%"
+              }
+            ],
+            "talent_text": "Grants Unobstructed Vision: 400/800\n\nAllows walking through trees and Increases Movement Speed: 7%/14%"
+          },
+          {
+            "talent_id": "modifier_jakiro_7",
+            "image": "jakiro_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Lava walls form on the sides of Macropyre's line of fire, blocking movement. Macropyre deals Pure Damage. Spell Damage: 12%"
+              }
+            ],
+            "talent_text": "Lava walls appear on the sides of Macropyre's line of fire, blocking movement.\n\nMacropyre deals Pure Damage.\n\nSpell Damage: 12%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_jakiro_8",
+            "image": "jakiro_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Liquid Fire. The hero imbues his attack with liquid flame, igniting the target and all enemies around it. Victims take periodic damage and attack slower. Attack Slow: 25/50. Fire Damage: 25/50. Radius: 300. Duration: 4s. Cooldown: 12s"
+              }
+            ],
+            "talent_text": "New Active Ability: Liquid Fire\n\nThe hero fills his attack with liquid flame, setting the target and all enemies around it on fire. Victims take periodic damage and attack slower.\n\nAttack Slow: 25/50\nFire Damage: 25/50\nRadius: 300\nDuration: 4 sec.\nCooldown: 12 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_9",
+            "image": "jakiro_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Liquid Fire Cooldown Reduction: 4/8s. Damage: 10/20"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "Liquid Fire Cooldown Reduction: 4/8 sec.\n\nDamage: 10/20"
+          },
+          {
+            "talent_id": "modifier_jakiro_10",
+            "image": "jakiro_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Every 10th attack creates a Macropyre effect around the target. Radius: 250. Duration: 1/2/3s"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Every 10th attack creates a Macropyre effect around the target.\n\nRadius: 250\nDuration: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_11",
+            "image": "jakiro_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Liquid Frost. The hero imbues his attack with liquid frost, slowing the victim's movement for 4s and increasing the damage it takes from this hero's attacks and other abilities. Movement Slow: 15%/30%. Damage Increase: 15/30. Duration: 4s. Cooldown: 12"
+              }
+            ],
+            "talent_text": "New Active Ability: Liquid Frost\n\nThe hero fills his attack with liquid frost, which slows the victim's movement for 4 sec. and increases the damage they receive from attacks and other abilities of this hero.\n\nMovement Slow: 15%/30%\nDamage Increase: 15/30\nDuration: 4 sec.\nCooldown: 12"
+          },
+          {
+            "talent_id": "modifier_jakiro_12",
+            "image": "jakiro_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Liquid Frost Cooldown Reduction: 4/8s. Health: 250/500"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Liquid Frost Cooldown Reduction: 4/8 sec.\n\nHealth: 250/500"
+          },
+          {
+            "talent_id": "modifier_jakiro_13",
+            "image": "jakiro_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Every 11th attack creates an Ice Path effect around the target. Radius: 150. Stun Duration: 0.5/1s"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
+              }
+            ],
+            "talent_text": "Every 11th attack creates an Ice Path effect around the target.\n\nRadius: 150\nStun Duration: 0.5/1 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_14",
+            "image": "jakiro_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Attack Damage Reduction: -50%.</font> The hero attacks with both heads at once"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Attack Damage Reduction: -50% </font></b>\n\nThe hero attacks with both heads at once."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_jakiro_15",
+            "image": "jakiro_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Ice Path Damage Increase: 150% of Intelligence"
+              }
+            ],
+            "talent_text": "Ice Path Damage Increase: 150% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_jakiro_16",
+            "image": "jakiro_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Macropyre.</font> New Active Ability: Ice Embrace. Encases himself in an icy cocoon, restoring a percentage of maximum health and mana each second. The cocoon fully blocks all physical damage. Duration: 4s. Restore from Max Health: 2%/3%. Restore from Max Mana: 2%/3%. Cooldown: 15s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Macropyre. </font></b>\n\nNew Active Ability: Ice Embrace\n\nEncases himself in an icy cocoon, regenerating a percentage of his maximum health and mana every second. The cocoon completely blocks all physical damage.\n\nDuration: 4 sec.\nMax Health Regeneration: 2%/3%\nMax Mana Reneration: 2%/3%\nCooldown: 15 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_17",
+            "image": "jakiro_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "During Ice Embrace the hero can turn and use Abilities and Items. Spell Damage Increase during Ice Embrace: 0%/10%/20%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Ice Embrace allows you to turn, use Abilities, and use Items.\n\nIncreased Spell Damage during Ice Embrace: 0%/10%/20%"
+          },
+          {
+            "talent_id": "modifier_jakiro_18",
+            "image": "jakiro_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Dual Breath is cast instantly. Ice Dual Breath applies a stun: 1/2s"
+              }
+            ],
+            "talent_text": "Dual Breath is cast instantly.\n\nIce Dual Breath applies numbness: 1/2 sec."
+          },
+          {
+            "talent_id": "modifier_jakiro_20",
+            "image": "jakiro_20.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Dual Breath Damage and Range Increase: 60/120"
+              }
+            ],
+            "talent_text": "Increased Dual Breath Damage and Range: 60/120"
+          },
+          {
+            "talent_id": "modifier_jakiro_19",
+            "image": "jakiro_19.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Ice Path ice duration increase: 1/2/3s. Ice Path ice reduces healing, health regen, lifesteal and spell lifesteal: 10%/20%/30%"
+              }
+            ],
+            "talent_text": "Increased Ice Path Duration: 1/2/3 sec.\n\nIce Ice Path reduces healing, health regeneration, lifesteal, and lifesteal from abilities: 10%/20%/30%"
+          },
+          {
+            "talent_id": "modifier_jakiro_21",
+            "image": "jakiro_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Ice Path Cooldown Increase: 1s.</font> Ice Path is cast instantly. Ice Path moves the hero to the target point and grants spell immunity during the flight"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Ice Path Cooldown Increase: 1 sec. </font></b>\n\nIce Path is cast instantly.\n\nIce Path moves the hero to the point of application, during the flight it gives immunity to magic."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_echo_slash_custom",
+          "name": "Echo Slash",
+          "image": "kez_echo_slash.webp",
+          "description": [
+            "Kez slashes forward in a line with his Katana, dealing a percentage of his attack damage and a brief slow to targets in the area. After a short delay, the area is attacked again. Heroes take bonus damage. Attack damage: 60% / 70% / 80% / 90%. Bonus hero damage: 15 / 30 / 45 / 60. Attacks: 2. Echo delay: 1.2. Slash radius: 200. Distance: 800. Move slow: -100%. Slow duration: 0.25. Cooldown: 20 / 18 / 16 / 14. Cast range: 800. Mana cost: 85 / 100 / 115 / 130."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_grappling_claw_custom",
+          "name": "Grappling Claw",
+          "image": "kez_grappling_claw.webp",
+          "description": [
+            "Kez swings on a grappling hook towards the target unit or tree. When the grappling hook collides with the target, that unit has slowed movement speed until Kez arrives. Upon landing, he attacks with 100% lifesteal plus a flat bonus if the target is a Hero. Hero bonus lifesteal: 30 / 60 / 90 / 120. Lifesteal: 100%. Move slow: -80%. Cooldown: 16 / 14 / 12 / 10. Cast range: 700 / 800 / 900 / 1000. Mana cost: 50."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_kazurai_katana_custom",
+          "name": "Kazurai Katana",
+          "image": "kez_kazurai_katana.webp",
+          "description": [
+            "Katana attacks and abilities apply a stacking damage over time to enemies that deals a percentage of the original attack's damage as additional damage over time. Affected enemies have non-stacking reduced health regeneration. Duration: 4 / 5 / 6 / 7. Damage per second: 3% / 4% / 5% / 6%. Regen reduction: -10% / -15% / -20% / -25%."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_switch_weapons_custom",
+          "name": "Switch Discipline",
+          "image": "kez_switch_weapons_sai.webp",
+          "description": [
+            "Kez switches between his Kazurai Katana and Shodo Sai. He gains different attack capabilities and abilities based on the weapon equipped. The abilities level up together, and when an ability is used, the associated alternate weapon ability also goes on cooldown. Switch Discipline cooldown decreases by 0.2s per Hero level. Katana attack range: 225. Katana base attack time: 2. Katana bonus damage: 20%. Sai attack range: 150. Sai base attack time: 1.5. Cooldown: 8."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_raptor_dance_custom",
+          "name": "Raptor Dance",
+          "image": "kez_raptor_dance.webp",
+          "description": [
+            "Kez enters into an uncontrollable channel for 1 second, gaining debuff immunity and 100% magic resistance. If the channel completes successfully, Kez performs a series of deadly radial slashes around him that deal damage based on the max health of the target and heal Kez for a percentage of all damage dealt. Kez receives a strong dispel upon completion. Deals 25% damage to bosses. Strikes: 2 / 3 / 4. Radius: 450. Base damage: 75. Max health as damage: 3%. Slash lifesteal: 100%. Cooldown: 40 / 35 / 30. Mana cost: 100 / 125 / 150."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_falcon_rush",
+          "name": "Falcon Rush",
+          "image": "kez_falcon_rush.webp",
+          "description": [
+            "Kez gains the ability to rush towards enemy targets to deliver echoing secondary attacks. While in this state, Kez has phased collision and an attack rate that is less affected by attack speed."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_talon_toss",
+          "name": "Talon Toss",
+          "image": "kez_talon_toss.webp",
+          "description": [
+            "Kez throws a Sai at the target unit. The Sai detonates when it hits, dealing damage and applying silence to all enemies in the area."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_shodo_sai",
+          "name": "Shodo Sai",
+          "image": "kez_shodo_sai.webp",
+          "description": [
+            "Kez's attacks and abilities with the Sai have a chance to Mark enemies. The next attack or ability damage from Kez gains True Strike and will stun the enemy and deal a critical strike, consuming the buff. Kez may activate the ability to disarm himself, lock his facing, and parry attacks and attack effects from the targeted direction for %parry_duration% seconds. If an attack is parried from an enemy Hero in this way, that Hero is stunned and Marked, taking additional critical strike and stun when the debuff is triggered. The sub-ability may be used to cancel the blocking early."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "kez_ravens_veil",
+          "name": "Raven's Veil",
+          "image": "kez_ravens_veil.webp",
+          "description": [
+            "Kez releases a wave of smoke that applies his Mark to nearby enemies, briefly reducing their vision. Kez receives a basic dispel and gains bonus movement speed and invisibility until he attacks or casts a spell."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_kez_1",
+            "image": "kez_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>This talent does not work if you have already learned the Sai.</font> Switch Discipline becomes a Passive Ability, the hero always uses the Katana. Echo Slash Lunge Count Increase: 1"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Cannot be learned together with «Talent 1» from the Agility branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>This talent does not work if you have already learned Sai.</font></b>\n\nSwitch Discipline becomes a Passive Ability, the hero always uses Katana.\n\nIncrease Number of Echo Slash Lunges: 1"
+          },
+          {
+            "talent_id": "modifier_kez_2",
+            "image": "kez_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Echo Slash Delay Reduction: 0.2/0.4s. Echo Slash Mana Cost Reduction: 20%/40%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "Decrease Echo Slash Delay: 0.2/0.4 sec.\n\nDecrease Echo Slash Mana Cost: 20%/40%"
+          },
+          {
+            "talent_id": "modifier_kez_3",
+            "image": "kez_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "The hero lunges the full distance of Echo Slash. Echo Slash Attack Damage Increase: 7%/14%/21%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "The hero lunges the full distance of Echo Slash.\n\nIncrease Echo Slash Attack Damage: 7%/14%/21%"
+          },
+          {
+            "talent_id": "modifier_kez_4",
+            "image": "kez_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Echo Slash Cooldown Reduction of 1s per 70 Strength. Echo Slash cooldown cannot be lower than 7 seconds"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Decrease Echo Slash Cooldown by 1 sec for every 70 Strength.\n\nEcho Slash Cooldown cannot be less than 7 seconds."
+          },
+          {
+            "talent_id": "modifier_kez_5",
+            "image": "kez_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Kazurai Katana Damage Increase: 1%/2%/3%"
+              }
+            ],
+            "talent_text": "Kazurai Katana Damage Increase: 1%/2%/3%"
+          },
+          {
+            "talent_id": "modifier_kez_6",
+            "image": "kez_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Echo Slash can be used during Raptor Dance. Raptor Dance Strike Count Increase: 0/1/2"
+              }
+            ],
+            "talent_text": "Echo Slash can be used during Raptor Dance.\n\nRaptor Dance Hits Increase: 0/1/2"
+          },
+          {
+            "talent_id": "modifier_kez_7",
+            "image": "kez_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Kazurai Katana can be activated. The hero pierces an enemy with the katana, briefly stunning it and himself, then removes all of this ability's effects from the victim, instantly dealing all remaining damage. Stun Duration: 0.6s. Damage from Effects: 100%. Mana Cost: 50. Cooldown: 7s"
+              }
+            ],
+            "talent_text": "Kazurai Katana can be activated.\n\nThe hero stabs the enemy with the katana, briefly stunning them and himself, after which all effects from this ability are removed from the victim, instantly dealing all remaining damage.\n\nStun Duration: 0.6 sec.\nEffect Damage: 100%\nMana Cost: 50\nCooldown: 7 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_kez_8",
+            "image": "kez_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>This talent does not work if you have already learned the Katana.</font> Switch Discipline becomes a Passive Ability, the hero always uses the Sai. Shodo Sai Mark Chance Increase: 3%"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Cannot be learned together with «Talent 1» from the Strength branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>This talent does not work if you have already learned Katana.</font></b>\n\nSwitch Discipline becomes Passive Ability, the hero always uses Sai.\n\nShodo Sai Mark Chance Increase: 3%"
+          },
+          {
+            "talent_id": "modifier_kez_9",
+            "image": "kez_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Falcon Rush cannot be dispelled. Each Attack restores Health: 10/20"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "Falcon Rush cannot be dispelled.\n\nEach Attack restores Health: 10/20"
+          },
+          {
+            "talent_id": "modifier_kez_10",
+            "image": "kez_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Falcon Rush Max Throw Range Increase: 100/200/300. Casting Falcon Rush grants a barrier that absorbs Magic Damage: 100/200/300. Barrier Duration: 7s"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Falcon Rush Max Throw Range Increase: 100/200/300\n\nCasting Falcon Rush grants a barrier that absorbs Magic Damage: 100/200/300\n\nBarrier duration: 7 sec."
+          },
+          {
+            "talent_id": "modifier_kez_11",
+            "image": "kez_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Falcon Rush Cooldown Reduction of 1s per 70 Agility. Falcon Rush cooldown cannot be lower than 7 seconds"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Falcon Rush Cooldown is reduced by 1 sec for every 70 Agility.\n\nFalcon Rush Cooldown cannot be less than 7 seconds."
+          },
+          {
+            "talent_id": "modifier_kez_12",
+            "image": "kez_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Shodo Sai Mark Critical Damage Increase: 8%/16%/24%"
+              }
+            ],
+            "talent_text": "Shodo Sai Mark Critical Damage Increase: 8%/16%/24%"
+          },
+          {
+            "talent_id": "modifier_kez_13",
+            "image": "kez_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Casting Raven's Veil grants Spell Immunity: 0.8/1.6/2.4s"
+              }
+            ],
+            "talent_text": "Raven's Veil grants Magic Immunity: 0.8/1.6/2.4 sec."
+          },
+          {
+            "talent_id": "modifier_kez_14",
+            "image": "kez_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Shodo Sai Cooldown Increase: 2s.</font> The hero is not slowed and can attack during Shodo Sai"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Shodo Sai Cooldown Increase: 2 sec. </font></b>\n\nThe hero is not slowed down and can attack during Shodo Sai."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_kez_15",
+            "image": "kez_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Talon Toss Damage Increase: 50%/100% of Intelligence"
+              }
+            ],
+            "talent_text": "Talon Toss Damage Increase: 50%/100% of Intellect"
+          },
+          {
+            "talent_id": "modifier_kez_16",
+            "image": "kez_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Falcon Rush does not change attack speed and does not make an extra strike.</font> Health and Mana restore during Falcon Rush: 25/50/75. Status Resistance Increase during Falcon Rush: 5%/10%/15%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Falcon Rush does not change attack speed or perform an extra hit. </font></b>\n\nHealth and Mana Regeneration during Falcon Rush: 25/50/75\n\nStatus Resistance Increase during Falcon Rush: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_kez_17",
+            "image": "kez_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Echo Slash deals Magic Damage instead of Physical. Echo Slash bounces instead of lunging. Intelligence: 15"
+              }
+            ],
+            "talent_text": "Echo Slash deals Magic Damage instead of Physical Damage.\n\nEcho Slash bounces instead of lunges.\n\nIntellect: 15"
+          },
+          {
+            "talent_id": "modifier_kez_18",
+            "image": "kez_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Kazurai Katana deals Magic Damage instead of Physical. Spell Damage: 8%/16%"
+              }
+            ],
+            "talent_text": "Kazurai Katana deals Magic Damage instead of Physical Damage.\n\nSpell Damage: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_kez_19",
+            "image": "kez_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Grappling Claw always heals. Grappling Claw applies a stun to enemies. Duration: 1/2s. Health: 200/400"
+              }
+            ],
+            "talent_text": "Grappling Claw always heals.\n\nGrappling Claw roots enemies.\n\nDuration: 1/2 sec.\n\nHealth: 200/400"
+          },
+          {
+            "talent_id": "modifier_kez_20",
+            "image": "kez_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Total Damage Taken Reduction during Raven's Veil: 4%/8%/12%. Raptor Dance and Raven's Veil Cooldown Reduction: 1/2/3s"
+              }
+            ],
+            "talent_text": "All Damage Taken Reduction during Raven's Veil: 4%/8%/12%\n\nRaptor Dance and Raven's Veil Cooldown Reduction: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_kez_21",
+            "image": "kez_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Switch Discipline instantly recharges when casting other abilities of the selected combat style. The first ability cast within 3s after switching combat style will not start the cooldown of its alternate version in the other style"
+              }
+            ],
+            "talent_text": "Switch Discipline is instantly recharged when using other abilities in the selected fighting style.\n\nThe first ability used within 3 sec. after switching fighting styles will not start the cooldown of its alternate version in the other style."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "pangolier",
+      "name": "pangolier",
+      "image": "images/heroes/heroesPreview/pangolier.webp",
+      "is_new": true,
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "pangolier_swashbuckle_custom",
+          "name": "Swashbuckle",
+          "image": "pangolier_swashbuckle.webp",
+          "description": [
+            "Pangolier dashes along the target line, then slashes all enemies in the drawn direction with several quick swipes. Lucky Shot has a chance to activate from this damage. Dash range: 400 / 500 / 600 / 700. Slash range: 700. Damage per strike: 30 / 60 / 90 / 120. Slash width: 155. Strikes: 3. Cooldown: 21 / 18 / 15 / 12. Cast range: 400 / 500 / 600 / 700. Mana cost: 75 / 80 / 85 / 90."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "pangolier_shield_crash_custom",
+          "name": "Shield Crash",
+          "image": "pangolier_shield_crash.webp",
+          "description": [
+            "Pangolier jumps in the air and slams back to the ground in front of his current position, damaging and slowing all enemies in a radius. For each enemy hero hit, he gains an all damage shield for a short time. Forward movement is maintained if Shield Crash is used while Rolling Thunder is active, and allows Rolling Thunder to clear walls or cliffs. Shield Crash cooldown during Rolling Thunder is decreased. Damage: 70 / 130 / 190 / 250. Barrier per hero: 50 / 100 / 150 / 200. Barrier duration: 10. Radius: 500. Slow: -20% / -25% / -30% / -35%. Slow duration: 3. Cooldown: 18 / 16 / 14 / 12. Mana cost: 70 / 80 / 90 / 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "pangolier_lucky_shot_custom",
+          "name": "Lucky Shot",
+          "image": "pangolier_lucky_shot.webp",
+          "description": [
+            "Pangolier rolls the dice and lets fate decide the outcome for his enemies. Grants a chance to drastically slow their attack speed and reduce armor on any damage dealt by Pangolier's attacks or abilities. Chance: 17%. Duration: 3.5 / 4 / 4.5 / 5. Attack speed reduction: -25 / -50 / -75 / -100. Armor reduction: -3 / -4 / -5 / -6."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "pangolier_gyroshell_custom",
+          "name": "Rolling Thunder",
+          "image": "pangolier_gyroshell.webp",
+          "description": [
+            "Pangolier curls into a debuff immune ball with 60% additional magic resistance and rolls out. When rolling, he moves at an increased speed and can move through trees, but has a decreased ability to turn. Striking enemies knocks them back, inflicting damage proportional to his attack damage and stunning them when they land. Colliding with walls or cliffs will cause a temporary pause while Pangolier reverses in direction. During Rolling Thunder, Shield Crash cooldown is reduced. DISPEL TYPE: Basic Dispel. Total attack damage as damage: 100%. Transform time: 1.2. Roll speed: 550. Radius: 150. Stun duration: 0.8 / 1 / 1.2. Knockback distance: 150. Duration: 10. Shield crash cooldown: 9 / 6 / 3. Damage: 75 / 150 / 225. Cooldown: 90 / 85 / 80. Mana cost: 100 / 125 / 150."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_pangolier_1",
+            "image": "pangolier_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Strength: 6/12"
+              }
+            ],
+            "talent_text": "Strength: 6/12"
+          },
+          {
+            "talent_id": "modifier_pangolier_2",
+            "image": "pangolier_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Lucky Shot can be activated. The next attack becomes a cleaving attack. All enemies hit are affected by Lucky Shot. Cleave Damage: 50%/100%. Radius: 350. Cooldown: 7s"
+              }
+            ],
+            "talent_text": "Lucky Shot can be activated.\n\nThe next attack will be a cleave. All enemies hit will receive Lucky Shot.\n\nCleave Damage: 50%/100%\nRadius: 350\nCooldown: 7 sec."
+          },
+          {
+            "talent_id": "modifier_pangolier_3",
+            "image": "pangolier_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Swashbuckle and Shield Crash no longer cost mana"
+              }
+            ],
+            "talent_text": "Swashbuckle and Shield Crash do not require Mana."
+          },
+          {
+            "talent_id": "modifier_pangolier_4",
+            "image": "pangolier_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Rolling Thunder.</font> Casting Shield Crash grants Spell Immunity: 1/2s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Rolling Thunder. </font></b>\n\nUsing Shield Crash grants Magic Immunity: 1/2 sec."
+          },
+          {
+            "talent_id": "modifier_pangolier_5",
+            "image": "pangolier_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Total Damage Taken Reduction: 2%/4%/6%. Movement Speed: 15/30/45"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Total Damage Reduction: 2%/4%/6%\n\nMovement Speed: 15/30/45"
+          },
+          {
+            "talent_id": "modifier_pangolier_6",
+            "image": "pangolier_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Lucky Shot Armor Reduction Increase: 1/2/3. Lucky Shot Attack Slow Increase: 20/40/60"
+              }
+            ],
+            "talent_text": "Lucky Shot Armor Reduction Increase: 1/2/3\n\nLucky Shot Attack Slow Increase: 20/40/60"
+          },
+          {
+            "talent_id": "modifier_pangolier_7",
+            "image": "pangolier_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Lucky Shot deals Pure Damage per Second: 60% of Strength"
+              }
+            ],
+            "talent_text": "Lucky Shot deals True Damage per Second: 60% of Strength"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_pangolier_8",
+            "image": "pangolier_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Swashbuckle Cooldown Reduction: 1/2/3s"
+              }
+            ],
+            "talent_text": "Swashbuckle Cooldown Decreased: 1/2/3 sec"
+          },
+          {
+            "talent_id": "modifier_pangolier_9",
+            "image": "pangolier_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Swashbuckle Strike Range Increase: 150/300. Agility: 6/12"
+              }
+            ],
+            "talent_text": "Swashbuckle Strike Range Increase: 150/300\n\nAgility: 6/12"
+          },
+          {
+            "talent_id": "modifier_pangolier_10",
+            "image": "pangolier_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Swashbuckle Damage Increase: 20/40"
+              }
+            ],
+            "talent_text": "Swashbuckle Damage Increase: 20/40"
+          },
+          {
+            "talent_id": "modifier_pangolier_11",
+            "image": "pangolier_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Swashbuckle will not require a cooldown if cast from Rolling Thunder or Roll Up. Lifesteal: 7%"
+              }
+            ],
+            "talent_text": "Swashbuckle does not require Cooldown if used from Rolling Thunder or Roll Up.\n\nVampirism: 7%"
+          },
+          {
+            "talent_id": "modifier_pangolier_13",
+            "image": "pangolier_13.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Casting Shield Crash creates 1/2 Swashbuckle attacks in four directions"
+              }
+            ],
+            "talent_text": "Using Shield Crash creates 1/2 of Swashbuckle's attack in 4 directions."
+          },
+          {
+            "talent_id": "modifier_pangolier_12",
+            "image": "pangolier_12.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Swashbuckle Damage Increase: 8%/16%/24% of Attack Damage"
+              }
+            ],
+            "talent_text": "Swashbuckle Damage Increase: 8%/16%/24% of Attack Damage"
+          },
+          {
+            "talent_id": "modifier_pangolier_14",
+            "image": "pangolier_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Bonus Attack Range: 150. Every 4th attack deals no damage but applies a Swashbuckle effect on the target"
+              }
+            ],
+            "talent_text": "Additional Attack Range: 150\n\nEvery 4th attack deals no damage, but applies Swashbuckle to the target."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_pangolier_15",
+            "image": "pangolier_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Spell Damage Increase of 1% per 5 Mana Regen. Mana Regen: 5"
+              }
+            ],
+            "talent_text": "Increases Spell Damage by 1% for every 5 Mana Regen\n\nMana Regen: 5"
+          },
+          {
+            "talent_id": "modifier_pangolier_19",
+            "image": "pangolier_19.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Shield Crash Radius and Damage Increase: 30/60/90"
+              }
+            ],
+            "talent_text": "Shield Crash Radius and Damage Increase: 30/60/90"
+          },
+          {
+            "talent_id": "modifier_pangolier_18",
+            "image": "pangolier_18.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Rolling Thunder always begins with Shield Crash. Rolling Thunder Cooldown Reduction: 19/38/57s"
+              }
+            ],
+            "talent_text": "Rolling Thunder always starts with Shield Crash.\n\nRolling Thunder Cooldown Reduction: 19/38/57 sec."
+          },
+          {
+            "talent_id": "modifier_pangolier_20",
+            "image": "pangolier_20.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Rolling Thunder Turn Rate Increase. Rolling Thunder Movement Speed Increase: 50/100"
+              }
+            ],
+            "talent_text": "Rolling Thunder Turn Speed ​​Increase.\n\nRolling Thunder Movement Speed ​​Increase: 50/100"
+          },
+          {
+            "talent_id": "modifier_pangolier_16",
+            "image": "pangolier_16.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "The hero can perform a double jump with Shield Crash, increasing the damage and the barrier gained. Damage and Barrier Increase: 20%/40%/60%"
+              }
+            ],
+            "talent_text": "The hero can double jump with Shield Crash, increasing damage and barrier received.\n\nIncreased Damage and Barrier: 20%/40%/60%"
+          },
+          {
+            "talent_id": "modifier_pangolier_17",
+            "image": "pangolier_17.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Roll Up. The hero curls into a stationary defensive ball, gaining status immunity and 60% magic resistance while still being able to turn. This ability can be cast during Rolling Thunder to brake for a time. During Roll Up both Rolling Thunder and Shield Crash can be cast. If the balled-up hero is attacked, he rolls away from the attackers with the same damage and stun as Rolling Thunder. Duration: 2.75s. Roll Duration from Attack: 0.75s"
+              }
+            ],
+            "talent_text": "New Active Ability: Roll Up\n\nThe hero rolls up into a motionless protective ball, gaining immunity to effects and +60% magic resistance, but does not lose the ability to turn. This ability can be used during Rolling Thunder to temporarily slow down. Both Rolling Thunder and Shield Crash can be used during Roll Up. Attacking a hero while he's curled up will cause him to roll away from attackers, dealing the same damage and stun as Rolling Thunder.\n\nDuration: 2.75 sec.\nRoll Duration from Attack: 0.75 sec."
+          },
+          {
+            "talent_id": "modifier_pangolier_21",
+            "image": "pangolier_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Health Regen: 100% of Mana Regen"
+              }
+            ],
+            "talent_text": "Health Regeneration: 100% of Mana Regeneration"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "zeus",
+      "name": "zeus",
+      "image": "images/heroes/heroesPreview/zeus.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "zeus_arc_lightning_custom",
+          "name": "Arc Lightning",
+          "image": "zeus_arc_lightning.webp",
+          "description": [
+            "Hurls a bolt of lightning that leaps through nearby enemy units that deal damage. Base damage: 75 / 100 / 125 / 150. Jump radius: 500. Jumps: 5 / 7 / 9 / 15. Cooldown: 1.6. Cast range: 800. Mana cost: 75 / 80 / 85 / 90."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "zeus_lightning_bolt_custom",
+          "name": "Lightning Bolt",
+          "image": "zeus_lightning_bolt.webp",
+          "description": [
+            "Calls down a bolt of lightning to strike an enemy unit, causing damage and a mini-stun. When cast, Lightning Bolt briefly provides unobstructed vision and True Sight around the target in a 750 radius. Can be cast on the ground, affecting the closest enemy hero in 325 range. Sight radius: 750. Sight duration: 5. Ministun duration: 0.35. Damage: 140 / 220 / 300 / 380. Cooldown: 6. Cast range: 700 / 750 / 800 / 850. Mana cost: 120 / 125 / 130 / 135."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "zeus_heavenly_jump_custom",
+          "name": "Heavenly Jump",
+          "image": "zeus_heavenly_jump.webp",
+          "description": [
+            "Zeus performs a Heavenly Jump, leaping forward and shocking the closest visible nearby enemy (prioritizing heroes), dealing damage as well as reducing their movement and attack speed. Zeus gets 900 unobstructed vision around him for 3 seconds. Damage: 25 / 50 / 75 / 100. Distance: 500. Range: 700 / 800 / 900 / 1000. Duration: 1.6. Move speed slow: -80%. Attack speed slow: -100. Targets: 1. Cooldown: 26 / 22 / 18 / 14. Mana cost: 50 / 60 / 70 / 80."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "zeus_thundergods_wrath_custom",
+          "name": "Thundergod's Wrath",
+          "image": "zeus_thundergods_wrath.webp",
+          "description": [
+            "Strikes all enemy heroes with a bolt of lightning, dealing damage, no matter where they may be. Thundergod's Wrath also provides True Sight around each hero struck. If an enemy hero is invisible, it takes no damage, but the True Sight is still created at that hero's location. True sight radius: 500. Duration: 3. Damage: 300 / 475 / 650. Max radius: 1800. Cooldown: 100. Mana cost: 250 / 375 / 500."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_zeus_1",
+            "image": "zeus_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Lightning Bolt.</font> Heavenly Jump Cooldown Reduction: 2/4s. The hero can perform a double jump with Heavenly Jump. Heavenly Jump Target Count Increase: 1/2"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Cannot be learned together with «Talent 5» from the Intelligence branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Lightning Bolt. </font></b>\n\nHeavenly Jump Cooldown Reduction: 2/4 sec.\n\nCan double jump with Heavenly Jump.\n\nIncreases Heavenly Jump Target Capacity: 1/2"
+          },
+          {
+            "talent_id": "modifier_zeus_2",
+            "image": "zeus_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Arc Lightning.</font> Heavenly Jump's landing performs 1/2 attacks on all enemies hit. Radius: 350. Attack Speed: 20/40"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Arc Lightning. </font></b>\n\nLanding Heavenly Jump deals 1/2 attacks to all targets hit.\n\nRadius: 350\n\nAttack Speed: 20/40"
+          },
+          {
+            "talent_id": "modifier_zeus_3",
+            "image": "zeus_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Heavenly Jump's landing stuns enemies. Pierces spell immunity. Stun Duration: 0.8/1.6s. Base Damage: 20/40"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Landing Heavenly Jump stuns enemies. Pierces Magic Immunity.\n\nStun Duration: 0.8/1.6 sec.\n\nBase Damage: 20/40"
+          },
+          {
+            "talent_id": "modifier_zeus_4",
+            "image": "zeus_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Heavenly Jump no longer costs mana. Heavenly Jump becomes a point-target ability. Killing a Creep or Illusion reduces Heavenly Jump's cooldown: 1s. Killing a Champion Creep reduces Heavenly Jump's cooldown: 5s. Killing a Hero reduces Heavenly Jump's cooldown: 10s"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Heavenly Jump does not cost Mana.\n\nHeavenly Jump becomes a point-based ability.\n\nKilling a Creep or Illusion reduces the cooldown of Heavenly Jump by 1 sec.\n\nKilling a Champion Creep reduces the cooldown of Heavenly Jump: 5 sec.\n\nKilling a Hero reduces the cooldown of Heavenly Jump: 10 sec."
+          },
+          {
+            "talent_id": "modifier_zeus_5",
+            "image": "zeus_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Thundergod's Wrath Cooldown Reduction: 20/40/60s. Thundergod's Wrath performs 1 attack on all enemies hit"
+              }
+            ],
+            "talent_text": "Reduces the Cooldown of Thundergod's Wrath: 20/40/60 sec.\n\nThundergod's Wrath deals 1 attack to all targets hit."
+          },
+          {
+            "talent_id": "modifier_zeus_6",
+            "image": "zeus_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Heavenly Jump can be used during Stasis. Spell Immunity during Heavenly Jump. Strength: 0/10/20"
+              }
+            ],
+            "talent_text": "Heavenly Jump can be used while Rooted.\n\nImmune to Magic during Heavenly Jump.\n\nStrength: 0/10/20"
+          },
+          {
+            "talent_id": "modifier_zeus_7",
+            "image": "zeus_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Casting Thundergod's Wrath temporarily increases Base Damage: 80%. Duration: 30s"
+              }
+            ],
+            "talent_text": "Casting Thundergod's Wrath temporarily increases Base Damage: 80%\n\nDuration: 30 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_zeus_8",
+            "image": "zeus_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Attack Speed: 10/20/30. Movement Speed: 10/20/30"
+              }
+            ],
+            "talent_text": "Attack Speed: 10/20/30\n\nMovement Speed: 10/20/30"
+          },
+          {
+            "talent_id": "modifier_zeus_9",
+            "image": "zeus_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "New Passive Ability: Lightning Hands. Attacks create Arc Lightning bolts that deal a portion of the normal damage. Damage: 10%/20%/30% of Arc Lightning"
+              }
+            ],
+            "talent_text": "New Passive Ability: Lightning Hands\n\nAttacks create lightning from Arc Lightning, dealing a fraction of normal damage.\n\nDamage: 10%/20%/30% of Arc Lightning"
+          },
+          {
+            "talent_id": "modifier_zeus_10",
+            "image": "zeus_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Arc Lightning is cast instantly. Arc Lightning and Heavenly Jump Damage Increase: 12% of Attack Speed"
+              }
+            ],
+            "talent_text": "Arc Lightning is cast instantly.\n\nIncreased Arc Lightning and Heavenly Jump Damage: 12% of Attack Speed"
+          },
+          {
+            "talent_id": "modifier_zeus_11",
+            "image": "zeus_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Each Attack restores Mana: 15/30. Health: 150/300"
+              }
+            ],
+            "talent_text": "Each Attack restores Mana: 15/30\n\nHealth: 150/300"
+          },
+          {
+            "talent_id": "modifier_zeus_12",
+            "image": "zeus_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Bonus Attack Range: 70/140. Spell Lifesteal: 7%/14%"
+              }
+            ],
+            "talent_text": "Additional Attack Range: 70/140\n\nSpell Lifesteal: 7%/14%"
+          },
+          {
+            "talent_id": "modifier_zeus_13",
+            "image": "zeus_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Casting Thundergod's Wrath grants Spell Immunity: 2/4s"
+              }
+            ],
+            "talent_text": "Casting Thundergod's Wrath grants Magic Immunity: 2/4 sec."
+          },
+          {
+            "talent_id": "modifier_zeus_14",
+            "image": "zeus_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Removes the maximum Attack Speed cap. Attack Speed: 7%"
+              }
+            ],
+            "talent_text": "Removes the cap on maximum Attack Speed.\n\nAttack Speed: 7%"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_zeus_15",
+            "image": "zeus_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Strength, Intelligence: 3/6/9"
+              }
+            ],
+            "talent_text": "Strength, Intelligence: 3/6/9"
+          },
+          {
+            "talent_id": "modifier_zeus_16",
+            "image": "zeus_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Lightning Bolt Damage Increase: 15%/30% of Intelligence"
+              }
+            ],
+            "talent_text": "Lightning Bolt Damage Increase: 15%/30% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_zeus_18",
+            "image": "zeus_18.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Thundergod's Wrath will strike the nearest Creeps: 2/4/6. Hero kills with Thundergod's Wrath permanently increase the ability's damage: 20/40/60. Kills before learning the talent also count"
+              }
+            ],
+            "talent_text": "Thundergod's Wrath will proc on nearby Creeps: 2/4/6\n\nHero kills with Thundergod's Wrath permanently increase the ability's damage: 20/40/60\n\nKills before learning the talent also count."
+          },
+          {
+            "talent_id": "modifier_zeus_17",
+            "image": "zeus_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Lightning Bolt can be cast on an area. Radius: 325"
+              }
+            ],
+            "talent_text": "Lightning Bolt can be cast on an area.\n\nRadius: 325"
+          },
+          {
+            "talent_id": "modifier_zeus_19",
+            "image": "zeus_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>You cannot attack.</font> New Passive Ability: Self Nimbus. Creates a storm cloud above the hero that automatically strikes nearby enemies with Lightning Bolt lightning. Base Lightning Interval: 3.5s. Radius: 450"
+              },
+              {
+                "parameter": "LockedTalents",
+                "note": "Cannot be learned together with «Talent 1» from the Strength branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> You cannot attack. </font></b>\n\nNew Passive Ability: Self Nimbus\n\nCreates a thundercloud above the hero that automatically strikes nearby enemies with lightning from the Lightning Bolt ability.\n\nBase Lightning Interval: 3.5 sec.\nRadius: 450"
+          },
+          {
+            "talent_id": "modifier_zeus_20",
+            "image": "zeus_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Nimbus. Creates an additional storm cloud anywhere on the map. Such a cloud can be destroyed by attacks. Duration: 15s. Cooldown: 60/45/30s. Attacks to Destroy: 6. Base Lightning Interval: 3.5s. Radius: 450"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
+              }
+            ],
+            "talent_text": "New Active Ability: Nimbus\n\nCreates an additional thundercloud anywhere on the map. This cloud can be destroyed by attacks.\n\nDuration: 15 sec.\nCooldown: 60/45/30 sec.\nAttacks to Destroy: 6\nBase Lightning Interval: 3.5 sec.\nRadius: 450"
+          },
+          {
+            "talent_id": "modifier_zeus_21",
+            "image": "zeus_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "All enemies affected by the hero's abilities take additional magic damage based on their current health. Damage from Current Health: 2%"
+              }
+            ],
+            "talent_text": "All enemies affected by the hero's abilities receive additional magic damage based on their current health.\n\nDamage from Current Health: 2%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 13",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_abaddon_2",
+            "image": "abaddon_2.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Mist Coil cooldown increase decreased from 8s to 7s"
+              },
+              {
+                "note": "Mist Coil taunt duration decreased from 2s to 1.5s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Increase Mist Coil Cooldown: 7 sec. </font></b>\n\nMist Coil taunts the enemy.\n\nDuration: 1.5 sec.\n\nIncreases the Movement Speed of enemies affected by Mist Coil to 550."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "name": "aghanim",
+      "image": "images/heroes/heroesPreview/aghanim.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_aghanim_6",
+            "image": "aghanim_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Aghanim's Ray is now disabled by Break"
+              }
+            ],
+            "talent_text": "Aghanim's Ray becomes a Passive Ability. Disabled by break.\n\nAghanim's Ray deals Physical Damage, not Magic."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_19",
+            "image": "bounty_hunter_19.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 8/16/24 base damage"
+              }
+            ],
+            "talent_text": "Shuriken Toss does not slow down, but stuns: 0.4/0.8/1.2 seconds\n\nBase Damage: 8/16/24"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_7",
+            "image": "bounty_hunter_7.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Jinada bonus damage increased from 75/150 to 100/200"
+              }
+            ],
+            "talent_text": "Jinada Extra Damage Increase: 100/200"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "bristleback",
+      "name": "bristleback",
+      "image": "images/heroes/heroesPreview/bristleback.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "bristleback_bristleback_custom",
+          "name": "Bristleback",
+          "image": "bristleback_bristleback.webp",
+          "ability_notes": [
+            {
+              "parameter": "quill_release_threshold",
+              "note": "Quill Spray release damage threshold changed from 225 to 275/250/225/200"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bristleback_20",
+            "image": "bristleback_20.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Warpath spell damage per stack decreased from 2%/4% to 2%/3%"
+              }
+            ],
+            "talent_text": "Warpath Increase Spell Damage per Effect: 2%/3%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "crystal_maiden",
+      "name": "crystal maiden",
+      "image": "images/heroes/heroesPreview/crystal_maiden.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_crystal_maiden_19",
+            "image": "crystal_maiden_19.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Maximum barrier increased from 700 to 800"
+              },
+              {
+                "note": "Barrier restore rate increased from 10%/15%/20% to 20 + 10%/15%/20% of mana regen"
+              }
+            ],
+            "talent_text": "Permanently grants a barrier that absorbs any damage.\n\nMax Barrier Durability: 800\n\nBarrier Recovery Rate: 20 + 10%/15%/20% of Mana Regeneration"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 9",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "dazzle_shallow_grave_custom",
+          "name": "Shallow Grave",
+          "image": "dazzle_shallow_grave.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "note": "Cooldown is now increased by 50% in Arena mode"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Is now a Universal Hero",
+          "icon": "/uni.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Base Strength increased from 20 to 22",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Strength gain increased from 2 to 2.2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Base Agility increased from 20 to 22",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Agility gain increased from 2 to 2.2",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Base Intelligence decreased from 25 to 22",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Intelligence gain decreased from 2.5 to 2.2",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 3",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "disruptor",
+      "name": "disruptor",
+      "image": "images/heroes/heroesPreview/disruptor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_disruptor_19",
+            "image": "disruptor_19.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Static Storm pull radius decreased from 1000/2000 to 700/1400"
+              }
+            ],
+            "talent_text": "Static Storm pulls all enemy heroes that you can see with Glimpse to the cast point.\n\nRadius: 700/1400"
+          },
+          {
+            "talent_id": "modifier_disruptor_17",
+            "image": "disruptor_17.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Glimpse can now also be cast on an ally"
+              }
+            ],
+            "talent_text": "Glimpse can be cast on an ally.\n\nGlimpse when cast on an ally does not deal damage, but Restores Health: 300% of Glimpse Damage"
+          },
+          {
+            "talent_id": "modifier_disruptor_20",
+            "image": "disruptor_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Glimpse no longer pierces spell immunity"
+              }
+            ],
+            "talent_text": "Intellect: 7%/14%/21%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_earthshaker_4",
+            "image": "earthshaker_4.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Enchant Totem damage bonus changed from 45%/90% to 2%/3% per hero level"
+              }
+            ],
+            "talent_text": "Increases Enchant Totem Damage by 2%/3% for every 1 Hero Level."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Is now an Intelligence Hero",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Base Strength decreased from 22 to 20",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Strength gain decreased from 2.2 to 2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Base Agility decreased from 22 to 20",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Agility gain decreased from 2.2 to 2",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Base Intelligence increased from 22 to 25",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Intelligence gain increased from 2.2 to 2.5",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased from 8-16 to 15-21",
+          "icon": "/icon_damage.png"
+        },
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Base health regen decreased by 0.25",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_invoker_9",
+            "image": "invoker_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Base damage increased from 8/16 to 12/24"
+              }
+            ],
+            "talent_text": "Deafening Blast does not require Mana.\n\nDeafening Blast Cooldown Reduction: 8/16 seconds\n\nBase Damage: 12/24"
+          },
+          {
+            "talent_id": "modifier_invoker_12",
+            "image": "invoker_12.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "E.M.P. delay reduction changed from 0.8/1.6s to 1s"
+              },
+              {
+                "note": "E.M.P. mana burn increased from 100/200 to 150/300"
+              }
+            ],
+            "talent_text": "E.M.P. Delay Reduction: 1/1 sec.\n\nIncrease Mana Burnt E.M.P.: 150/300\n\nE.M.P. pulls enemies towards you at speed: 160"
+          },
+          {
+            "talent_id": "modifier_invoker_11",
+            "image": "invoker_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Agility increased from 8/16 to 12/24"
+              }
+            ],
+            "talent_text": "Deafening Blast Disarm Duration Increase: 0.5/1 seconds\n\nAgility: 12/24"
+          },
+          {
+            "talent_id": "modifier_invoker_13",
+            "image": "invoker_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "E.M.P. cooldown reduction now per 21/14 Agility instead of 24/16"
+              }
+            ],
+            "talent_text": "Reducing E.M.P. Cooldown for 1 sec. for every 21/14 Agility.\n\nCooldown E.M.P. cannot be less than 4 seconds."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "legion_commander",
+      "name": "legion commander",
+      "image": "images/heroes/heroesPreview/legion_commander.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_legion_commander_16",
+            "image": "legion_commander_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 15 base damage"
+              }
+            ],
+            "talent_text": "Press The Attack does not require Mana.\n\nBase Damage: 15"
+          },
+          {
+            "talent_id": "modifier_legion_commander_19",
+            "image": "legion_commander_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Attack speed per 10 Intelligence increased from 2/4 to 4/8"
+              }
+            ],
+            "talent_text": "Attack Speed: 4/8 per 10 Intellect"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Is now an Agility Hero",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Base Strength decreased from 22 to 20",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Strength gain decreased from 2.2 to 2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Base Agility increased from 22 to 25",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Agility gain increased from 2.2 to 2.5",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Base Intelligence decreased from 22 to 20",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Intelligence gain decreased from 2.2 to 2",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 10",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased from 14-20 to 29-33",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_marci_3",
+            "image": "marci_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now also grants 3/6 mana regen"
+              }
+            ],
+            "talent_text": "Unleash Duration Increase: 3/6 sec.\n\nMana Regeneration: 3/6"
+          },
+          {
+            "talent_id": "modifier_marci_7",
+            "image": "marci_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also grants 20 Strength"
+              }
+            ],
+            "talent_text": "During Unleash, using other abilities creates a Pulse.\n\nUnleash Pulses silence enemies for 1 sec.\n\nWorks through Magic Immunity.\n\nStrength: 20"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_marci_16",
+            "image": "marci_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Dispose radius increased from 500 + 10% to 500 + 15% of max mana"
+              }
+            ],
+            "talent_text": "Casting Dispose on an ally throws them at the nearest enemy. Prioritizes heroes.\n\nRadius: 500 + 15% of Max Mana"
+          },
+          {
+            "talent_id": "modifier_marci_21",
+            "image": "marci_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Attacks' reduction of healing, health regen, lifesteal and spell lifesteal increased from 40% to 60%"
+              }
+            ],
+            "talent_text": "Attacks reduce healing, health regeneration, life steal, and ability life steal by: 60%\n\nDuration: 3 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_medusa_4",
+            "image": "medusa_4.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 10/20/30 base damage"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Remove Mana Shield. </font></b>\n\nAdditional Split Shots will fire on the primary target with a chance of: 10%/15%/20%\n\nBase Damage: 10/20/30"
+          },
+          {
+            "talent_id": "modifier_medusa_2",
+            "image": "medusa_2.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now also grants 4%/8%/12% attack speed"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Agility Gain Reduction per Level: 1/2/3 </font></b>\n\nStrength Gain per Level: 1/2/3\n\nAttack Speed: 4%/8%/12%"
+          },
+          {
+            "talent_id": "modifier_medusa_7",
+            "image": "medusa_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Bonus pure damage per attack decreased from 2% to 0.5% of max health"
+              }
+            ],
+            "talent_text": "Each Attack deals additional Pure Damage: 0.5% of Max Health"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_medusa_9",
+            "image": "medusa_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100/200/300 health"
+              }
+            ],
+            "talent_text": "Mystic Snake Damage Increase: 50% of Opponent's Strength\n\nMystic Snake Damage Increase: 50% of Opponent's Agility\n\nMystic Snake Damage Increase: 50% of Opponent's Intellect\n\nOn creeps works based on your characteristics.\n\nHealth: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_medusa_12",
+            "image": "medusa_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Stone cooldown decreased from 40s to 20s"
+              }
+            ],
+            "talent_text": "New Active Ability: Stone\n\nInstantly turns the hero into stone, completely blocking any damage received. Can be used while stunned.\n\nDuration: 2 sec.\nCooldown: 20 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nature's_prophet",
+      "name": "nature's prophet",
+      "image": "images/heroes/heroesPreview/nature's_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Is now a Universal Hero",
+          "icon": "/uni.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Base Strength increased from 20 to 22",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Strength gain increased from 2 to 2.2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Base Intelligence decreased from 25 to 22",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Intelligence gain decreased from 2.5 to 2.2",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Base Agility increased from 20 to 22",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Agility gain increased from 2 to 2.2",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_necrophos_11",
+            "image": "necrophos_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Now also grants 20 Agility"
+              }
+            ],
+            "talent_text": "Death Seeker can be cast on an area.\n\nAgility: 20"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "night_stalker",
+      "name": "night stalker",
+      "image": "images/heroes/heroesPreview/night_stalker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_night_stalker_7",
+            "image": "night_stalker_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Critical strike chance increased from 20% to 30%"
+              },
+              {
+                "note": "Critical strike damage increased from 200% to 225%"
+              }
+            ],
+            "talent_text": "The hero always receives bonuses from the Night.\n\nEach attack has a 30% chance of dealing Critical Damage: 225%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_night_stalker_10",
+            "image": "night_stalker_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now also grants 6/12/18 Agility"
+              }
+            ],
+            "talent_text": "Revelation creates a zone of light around the hero for 5 seconds, in which all the owner's abilities act as day.\n\nEnemies in the Revelation area deal 0%/20%/40% less spell damage.\n\nRadius: 450\n\nAgility: 6/ 12/18"
+          },
+          {
+            "talent_id": "modifier_night_stalker_13",
+            "image": "night_stalker_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now also grants 15/30/45 base damage"
+              }
+            ],
+            "talent_text": "Day Walker Cooldown Reduction: 15/30/45 sec.\n\nCasting Day Walker highlights the nearest Creep Champion, Ice Frog or Golden Pig for 15 sec.\n\nBase Damage: 15/30/45"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 10",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_nyx_assassin_14",
+            "image": "nyx_assassin_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Controlled units' damage dealt increased from 10% to 15%"
+              },
+              {
+                "note": "Controlled units' damage taken reduction increased from 10% to 15%"
+              }
+            ],
+            "talent_text": "Spiked Carapace triggers on Illusions.\n\nIncrease Total Damage Dealt of all Controlled Creatures: 15%\n\nReduce Total Damage Received of all Controlled Creatures: 15%"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_phantom_assassin_12",
+            "image": "phantom_assassin_12.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Stifling Dagger attack damage bonus: 15%/30%» replaced with «Blur evasion bonus: 10%/20%»"
+              }
+            ],
+            "talent_text": "Increase Blur Evasion: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_18",
+            "image": "phantom_assassin_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Blur evasion bonus: 10%/20%» replaced with «Bonus spell range: 100/200. Agility: 5/10»"
+              }
+            ],
+            "talent_text": "Additional Spell Range: 100/200\n\nAgility: 5/10"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_phantom_assassin_9",
+            "image": "phantom_assassin_9.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Bonus spell range: 100/200» replaced with «Stifling Dagger attack damage bonus: 25%/50%»"
+              }
+            ],
+            "talent_text": "Increase Stifling Dagger Attack Damage: 25%/50%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 10",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_roshan_2",
+            "image": "roshan_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Bash damage increased from 100%/150% to 150%/200% of Strength"
+              }
+            ],
+            "talent_text": "Bash Damage Increase: 150%/200% of Strength"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_roshan_21",
+            "image": "roshan_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also grants 7% Intelligence"
+              }
+            ],
+            "talent_text": "New Active Item: Cheese\n\nInstantly restores health and mana. The next Slam will deal 3 times more damage. The item can be sold for 500 gold.\n\nRestores Health: 1000\nRestores Mana: 1000\nCooldown: 25 sec.\n\nIntellect: 7%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_slardar_7",
+            "image": "slardar_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also grants 80 damage"
+              }
+            ],
+            "talent_text": "Damage: 80\n\nHero gains Additional Bonuses in Water:\n\nHealth Regeneration: 40\nStatus Resistance: 20%\nArmor: 10"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_slardar_11",
+            "image": "slardar_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Slithereen Crush attack speed duration increased from 3s to 4s"
+              }
+            ],
+            "talent_text": "Slithereen Crush does not require Mana.\n\nSlithereen Crush Increases Attack Speed: 50/100/150\n\nDuration: 4 seconds"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Is now a Universal Hero",
+          "icon": "/uni.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Base Strength increased from 20 to 22",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Strength gain increased from 2 to 2.2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Base Agility decreased from 25 to 22",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Agility gain decreased from 2.5 to 2.2",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Base Intelligence increased from 20 to 22",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Intelligence gain increased from 2 to 2.2",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage decreased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 8",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_2",
+            "image": "techies_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Barrier restore rate increased from 0.6%/0.9%/1.2% to 0.9%/1.1%/1.3% of max health"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Current Health cannot be higher than 30%. </font></b>\n\nPermanently grants a barrier that absorbs all damage.\n\nMaximum Barrier Durability: 40% of Maximum Health\n\nBarrier Recovery Speed: 0.9%/1.1%/1.3% of Maximum Health"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_techies_9",
+            "image": "techies_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Remote Mines are no longer invulnerable"
+              },
+              {
+                "note": "Remote Mines can now be destroyed by 6 attacks"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Proximity Mines.</font></b>\n\nNew Active Ability: Remote Mines\n\nPlaces mine that explodes only when manually activated. Deals pure damage.\n\nDamage: 150% of Attack Speed ​​\nExplosion Radius: 425\nVision Radius: 600\nExplosion Delay: 0.1 sec.\nAttacks to Destroy: 6\nDuration: 60 sec.\nMana Cost: 50\nCooldown: 20 sec."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_techies_17",
+            "image": "techies_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Proximity Mines damage from Intelligence increased from 100%/200%/300% to 180%/270%/360%"
+              }
+            ],
+            "talent_text": "Increase Proximity Mines Damage: 180%/270%/360% of Intellect"
+          },
+          {
+            "talent_id": "modifier_techies_21",
+            "image": "techies_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Minefield Sign damage increased from 500 to 600"
+              }
+            ],
+            "talent_text": "When an enemy hero passes within 200 radius of Minefield Sign, a 1000 radius area around it becomes a minefield for 15 seconds, dealing Magic Damage to moving enemies. When the effect ends, the sign disappears.\n\nDamage: 600\nTrigger Range: 200"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "terrorblade",
+      "name": "terrorblade",
+      "image": "images/heroes/heroesPreview/terrorblade.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_terrorblade_6",
+            "image": "terrorblade_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "No longer increases Demon Zeal duration by 2/4/6s"
+              },
+              {
+                "note": "Now grants 0%/8%/16% status resistance during Demon Zeal"
+              }
+            ],
+            "talent_text": "Demon Zeal applies Normal Dispel.\n\nIncreased Status Resistance during Demon Zeal: 0%/8%/16%"
+          },
+          {
+            "talent_id": "modifier_terrorblade_7",
+            "image": "terrorblade_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Inrage damage bonus increased from 5% to 7%"
+              }
+            ],
+            "talent_text": "When Damage Received reaches a limit of 10% of your Max Health, the Hero gains Inrage.\n\nInrage increases all Damage Dealt by 7%.\n\nEffect Duration: 7 seconds"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "ursa",
+      "name": "ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_ursa_3",
+            "image": "ursa_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Lifesteal decreased from 7%/14% to 6%/12%"
+              }
+            ],
+            "talent_text": "Vampirism: 6%/12%"
+          },
+          {
+            "talent_id": "modifier_ursa_6",
+            "image": "ursa_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Attack armor reduction duration decreased from 1.5/3/4.5s to 1/2/3s"
+              }
+            ],
+            "talent_text": "Attacks Reduce Armor: 1\n\nDuration: 1/2/3 sec.\n\nEach effect has its own duration."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_ursa_14",
+            "image": "ursa_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Enrage duration from Earthshock decreased from 1s to 0.8s"
+              }
+            ],
+            "talent_text": "Using Earthshock applies the effect of the Enrage ability to the hero: 0.8 sec."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_ursa_16",
+            "image": "ursa_16.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«Removes Fury Swipes. Intelligence: 10/20/30. Attack Speed: 10/20/30» replaced with «Overpower no longer increases Attack Speed. Overpower creates a magic burst on the nearest enemy that took any damage from the hero, but no more than once every 0.5s. Damage: 40%/60%/80% of Intelligence. Radius: 300»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Overpower does not increase Attack Speed. </font></b>\n\nOverpower will create a magical explosion on the nearest enemy that has received any damage from the hero, but no more often than once every 0.5 sec.\n\nDamage: 40%/60%/80% of Intellect\nRadius: 300"
+          },
+          {
+            "talent_id": "modifier_ursa_15",
+            "image": "ursa_15.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Overpower no longer increases Attack Speed. Overpower creates a magic burst on the nearest enemy that took any damage from the hero, but no more than once every 0.5s. Damage: 50%/75%/100% of Intelligence. Radius: 300» replaced with «Removes Fury Swipes. Intelligence: 10/20/30. Attack Speed: 10/20/30»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Fury Swipes.</font></b>\n\nIntellect: 10/20/30\n\nAttack Speed: 10/20/30"
+          },
+          {
+            "talent_id": "modifier_ursa_17",
+            "image": "ursa_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Earthshock jump range decreased from 250/500 to 200/400"
+              }
+            ],
+            "talent_text": "Earthshock can be cast on an area.\n\nEarthshock Jump Range Increase: 200/400"
+          },
+          {
+            "talent_id": "modifier_ursa_19",
+            "image": "ursa_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Earthshock damage decreased from 100/200 to 75/150"
+              }
+            ],
+            "talent_text": "Earthshock Damage Increase: 75/150"
+          },
+          {
+            "talent_id": "modifier_ursa_21",
+            "image": "ursa_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Enrage pure damage decreased from 500 to 350"
+              }
+            ],
+            "talent_text": "Casting Enrage deals 350 Pure Damage to enemies around it, and also prohibits the Use of Items: 1.6 sec.\n\nRadius: 900"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "vengeful_spirit",
+      "name": "vengeful spirit",
+      "image": "images/heroes/heroesPreview/vengeful_spirit.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttributePrimary",
+          "note": "Is now an Agility Hero",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeBaseStrength",
+          "note": "Base Strength decreased from 22 to 20",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeStrengthGain",
+          "note": "Strength gain decreased from 2.2 to 2",
+          "icon": "/str.png"
+        },
+        {
+          "parameter": "AttributeBaseIntelligence",
+          "note": "Base Intelligence decreased from 22 to 20",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeIntelligenceGain",
+          "note": "Intelligence gain decreased from 2.2 to 2",
+          "icon": "/int.png"
+        },
+        {
+          "parameter": "AttributeBaseAgility",
+          "note": "Base Agility increased from 22 to 25",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttributeAgilityGain",
+          "note": "Agility gain increased from 2.2 to 2.5",
+          "icon": "/agi.png"
+        },
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 10",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_vengeful_spirit_18",
+            "image": "vengeful_spirit_18.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Magic Missile and Wave of Terror bonus damage decreased from 7%/14% to 6%/12% of current mana"
+              }
+            ],
+            "talent_text": "Magic Missile and Wave of Terror deal Increased Damage: 6%/12% of Current Mana"
+          },
+          {
+            "talent_id": "modifier_vengeful_spirit_17",
+            "image": "vengeful_spirit_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Mana gained per hero kill decreased from 20/40 to 15/30"
+              }
+            ],
+            "talent_text": "Killing Heroes with Magic Missile and Magic Meteor permanently increases Mana: 15/30\n\nKills before learning the talent also count."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 3",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_warlock_1",
+            "image": "warlock_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Fatal Bonds physical damage increased from 10% to 15% of attack damage"
+              }
+            ],
+            "talent_text": "Fatal Bonds deals Physical Damage to enemies every second: 15% of Attack Damage"
+          },
+          {
+            "talent_id": "modifier_warlock_4",
+            "image": "warlock_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Damage increased from 5%/10%/15% to 8%/16%/24%"
+              }
+            ],
+            "talent_text": "Base Damage: 8%/16%/24%"
+          },
+          {
+            "talent_id": "modifier_warlock_5",
+            "image": "warlock_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Shadow Word heal and damage increased from 4%/8%/12% to 10%/20%/30% of attack damage"
+              }
+            ],
+            "talent_text": "Shadow Word Healing and Damage Increase: 10%/20%/30% of Attack Damage"
+          },
+          {
+            "talent_id": "modifier_warlock_7",
+            "image": "warlock_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Damage bonus per Fatal Bonds target increased from 50 to 100"
+              }
+            ],
+            "talent_text": "Damage Increase by 100 for each Fatal Bonds target."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_warlock_12",
+            "image": "warlock_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Units affected by the movement speed aura can now walk through units"
+              }
+            ],
+            "talent_text": "Hero gains a Movement Speed ​​Aura: 30/60\n\nRadius: 1200\n\nThis Aura allows you to walk through creatures."
+          },
+          {
+            "talent_id": "modifier_warlock_13",
+            "image": "warlock_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Chaotic Offering now triggers instantly"
+              }
+            ],
+            "talent_text": "Chaotic Offering works instantly.\n\nCooldown Reduction of Chaotic Offering: 20/40/60 sec.\n\nChaotic Offering will create an additional golem if the hero has more than 300 Agility."
+          },
+          {
+            "talent_id": "modifier_warlock_14",
+            "image": "warlock_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Chaotic Offering golems' armor and magic resistance increased from 20% to 30% of the hero's"
+              }
+            ],
+            "talent_text": "Increase Golem Armor and Magic Resistance Chaotic Offering: 30% of Hero's Armor and Magic Resistance\n\nIncrease Golem Attack Speed ​​Chaotic Offering: 20% of Hero's Attack Speed"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_warlock_18",
+            "image": "warlock_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Upheaval damage increased from 20%/40%/60% to 50%/75%/100% of health and mana regen"
+              }
+            ],
+            "talent_text": "Upheaval Damage Increase: 50%/75%/100% of Health and Mana Regeneration"
+          },
+          {
+            "talent_id": "modifier_warlock_21",
+            "image": "warlock_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Chaotic Offering golem summon and death magic damage increased from 500 to 700"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Chaotic Offering Golem Lifespan: 7 sec.</font></b>\n\nChaotic Offering Golems are always Invulnerable.\n\nChaotic Offering Golem Summoning and Death Deals Magic Damage: 700"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased from 12-18 to 21-33",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_windranger_12",
+            "image": "windranger_12.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Now allows walking through units"
+              }
+            ],
+            "talent_text": "The hero's movement speed cannot fall below 240, and its maximum increases to 600.\n\nAllows you to walk through creatures."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_wraith_king_21",
+            "image": "wraith_king_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Mana bonus increased from 500 to 750"
+              }
+            ],
+            "talent_text": "Attack Accuracy of Controlled Creatures: 100%\n\nMana: 750"
+          }
+        ]
+      }
+    }
+  ]
+}

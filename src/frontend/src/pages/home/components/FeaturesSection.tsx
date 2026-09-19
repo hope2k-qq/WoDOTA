@@ -68,7 +68,7 @@ export const FeaturesSection: React.FC = () => {
                         <div className={styles.textBlockSolo}>
                             <h3 className={styles.modeTitle} style={{marginTop: 0}}>{t('test_strength_tournaments')}</h3>
                             <p className={styles.modeDescription}>{t('strength_tournaments_description')}</p>
-                            <button className={styles.btn} onClick={() => navigate(`/${lang}/tournament`)}>
+                            <button className={styles.btn} onClick={() => navigate(`/${lang}/tournaments`)}>
                                 {t('to_tournaments')}
                             </button>
                         </div>

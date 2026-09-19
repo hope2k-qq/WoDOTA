@@ -1,9 +1,28 @@
 {
-  "patch_number": "2,01",
-  "patch_name": "2,01",
+  "patch_number": "2.01",
+  "patch_name": "2.01",
   "patch_timestamp": 1788823633,
   "general": {
-    "global_changes": []
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "Rating300 and RatingDuo300 modes now grant 2 more coins"
+      },
+      {
+        "note": "The comeback system has been weakened by 10%"
+      },
+      {
+        "title": "Talents"
+      },
+      {
+        "subtitle": "Strength"
+      },
+      {
+        "note": "Damage reduction from attacks decreased from 5%/10% to 4%/8%"
+      }
+    ]
   },
   "neutral_creeps": [
     {
@@ -17,7 +36,7 @@
           "name": "Walrus Kick",
           "image": "pages/patches/standard_ability.webp",
           "description": [
-            "Kicks the nearest enemy in the target direction, slowing their movement. Kick distance: 1000. Movement slow: -40%. Slow duration: 2. Cooldown: 40."
+            "Kicks the nearest enemy in the target direction, slowing their movement. Kick distance: 1000. Movement slow: -40%. Slow duration: 2. Cooldown: 40. Cast range: 150."
           ],
           "ability_notes": [
             {
@@ -179,7 +198,7 @@
           "ability_notes": [
             {
               "parameter": "AbilityCastRange",
-              "note": "Radius decreased from 1200 to 900"
+              "note": "Cast range decreased from 1200 to 900"
             }
           ]
         }
@@ -191,26 +210,30 @@
     "upgrade": [
       {
         "item_id": "item_aghanims_treads",
-        "name": "aghanims treads",
+        "name": "Aghanim's Treads",
         "image": "aghanims_treads.webp",
         "is_new": false,
         "is_upgrade": true,
         "item_notes": [
           {
             "parameter": "recipe",
-            "note": "Recipe cost decreased from 900 to 300. Total cost decreased from 4700g to 4500g. Now requires a second Aghanim's Shard instead of Blitz Knuckles"
+            "note": "Recipe changed"
           },
           {
-            "parameter": "AbilityCooldown",
-            "note": "Active ability removed"
+            "parameter": "recipe",
+            "note": "Now requires a second Aghanim's Shard (1400) instead of Blitz Knuckles (1000)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 900 to 300. Total cost decreased from 4700g to 4500g"
           },
           {
             "parameter": "AbilityBehavior",
-            "note": "Now passive (was active)"
+            "note": "No longer has the Switch Attribute active"
           },
           {
             "parameter": "bonus_choose_stat",
-            "note": "Chosen attribute bonus decreased from 30 to 15"
+            "note": "Now grants 15 to all attributes instead of 30 to the chosen one"
           },
           {
             "parameter": "bonus_attackspeed",
@@ -220,28 +243,24 @@
       },
       {
         "item_id": "item_blade_mail",
-        "name": "blade mail",
+        "name": "Blade Mail",
         "image": "blade_mail.webp",
         "is_new": false,
         "is_upgrade": true,
         "item_notes": [
           {
             "parameter": "active_reflection_pct",
-            "note": "Active damage reflection decreased from 55% to 50%"
+            "note": "Damage Return: active damage return decreased from 55% to 50%"
           }
         ]
       },
       {
         "item_id": "item_elemental_ringmaster",
-        "name": "elemental ringmaster",
+        "name": "Elemental Master",
         "image": "elemental_ringmaster_1.webp",
         "is_new": false,
         "is_upgrade": true,
         "item_notes": [
-          {
-            "parameter": "buff_duration",
-            "note": "Buff duration removed"
-          },
           {
             "parameter": "swap_interval",
             "note": "Swap interval increased from 5 to 6 seconds"
@@ -250,7 +269,7 @@
       },
       {
         "item_id": "item_eternal_ghost",
-        "name": "eternal ghost",
+        "name": "Eternal Ghost",
         "image": "eternal_ghost.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -263,67 +282,55 @@
       },
       {
         "item_id": "item_evasion_cape",
-        "name": "evasion cape",
+        "name": "Evasion Cape",
         "image": "evasion_cape.webp",
         "is_new": false,
         "is_upgrade": true,
         "item_notes": [
           {
             "parameter": "recipe",
-            "note": "Now built from Consecrated Wraps (2600 gold) and Talisman of Evasion (1300 gold) + recipe (1000 gold). Total cost increased from 4525g to 4900g"
+            "note": "Recipe changed"
           },
           {
-            "parameter": "bonus_spell_resist",
-            "note": "Now grants +20% Magic Resistance"
+            "parameter": "recipe",
+            "note": "Now requires Consecrated Wraps (2600) instead of Glimmer Cape (2150) and Wind Lace (225)"
           },
           {
-            "parameter": "bonus_all_stats",
-            "note": "Now grants +5 to all attributes"
+            "parameter": "recipe",
+            "note": "Recipe cost decreased from 1050 to 1000. Total cost increased from 4725g to 4900g"
           },
           {
-            "parameter": "bonus_health",
-            "note": "Now grants +250 Health"
+            "parameter": "stats_removed",
+            "note": "No longer grants 60 movement speed or an active effect"
           },
           {
-            "parameter": "movement_speed_pct_on_stack_gain",
-            "note": "Now grants +15% movement speed on stack gain"
-          },
-          {
-            "parameter": "barrier_per_stack",
-            "note": "Now grants a barrier: 120 per stack (up to 360)"
-          },
-          {
-            "parameter": "bonus_magical_armor",
-            "note": "No longer grants +30% Magic Resistance"
-          },
-          {
-            "parameter": "bonus_movespeed",
-            "note": "No longer grants +60 movement speed"
-          },
-          {
-            "parameter": "magical_resist_active",
-            "note": "Active ability removed"
+            "parameter": "Hallowed",
+            "note": "New passive: Hallowed. Every 4 seconds the owner gains a charge (15% movement speed for 5 seconds, up to 3 charges). When taking damage from a player-controlled unit or Roshan, all charges are consumed, granting a barrier against all damage types: 120 health per charge (up to 360) for 5 seconds"
           },
           {
             "parameter": "bonus_evasion",
             "note": "Evasion bonus decreased from 30% to 25%"
           },
           {
-            "parameter": "duration",
-            "note": "Duration decreased from 14 to 5 seconds"
+            "parameter": "bonus_magical_resistance",
+            "note": "Magic Resistance decreased from 30% to 20%"
+          },
+          {
+            "parameter": "stats_added",
+            "note": "Now also grants 5 to all attributes and 250 Health"
           }
         ]
       },
       {
         "item_id": "item_madness_blade_mail",
-        "name": "madness blade mail",
+        "name": "Madness Blade Mail",
         "image": "madness_blade_mail.webp",
         "is_new": false,
         "is_upgrade": true,
         "item_notes": [
           {
             "parameter": "damage_return_active",
-            "note": "Active damage return decreased from 75 to 70"
+            "note": "Berserk Return: active damage return decreased from 75% to 70%"
           }
         ]
       }
@@ -345,7 +352,7 @@
       "abilities": [
         {
           "ability_id": "ogre_magi_dumb_luck_custom",
-          "name": "dumb luck",
+          "name": "Dumb Luck",
           "image": "ogre_magi_dumb_luck.webp",
           "innate": true,
           "description": [
@@ -355,34 +362,34 @@
         },
         {
           "ability_id": "ogre_magi_fireblast_custom",
-          "name": "fireblast",
+          "name": "Fireblast",
           "image": "ogre_magi_fireblast.webp",
           "description": [
-            "Blasts an enemy unit with a wave of fire, dealing damage and stunning the target. Stun duration: 1.2. Damage: 70 / 130 / 190 / 250. Mana cost: 70 / 85 / 100 / 115."
+            "Blasts an enemy unit with a wave of fire, dealing damage and stunning the target. Stun duration: 1.2. Damage: 70 / 130 / 190 / 250. Cooldown: 11 / 10 / 9 / 8. Cast range: 525. Mana cost: 70 / 85 / 100 / 115."
           ],
           "ability_notes": []
         },
         {
           "ability_id": "ogre_magi_ignite_custom",
-          "name": "ignite",
+          "name": "Ignite",
           "image": "ogre_magi_ignite.webp",
           "description": [
-            "Drenches the target and another random unit in volatile chemicals, causing it to burst into flames. The target is in immense pain, taking damage and moving more slowly. Duration: 5 / 6 / 7 / 8. Damage per second: 20 / 30 / 40 / 50. Movement slow: -25%. Cooldown: 17. Mana cost: 80 / 90 / 100 / 110."
+            "Drenches the target and another random unit in volatile chemicals, causing it to burst into flames. The target is in immense pain, taking damage and moving more slowly. Duration: 5 / 6 / 7 / 8. Damage per second: 20 / 30 / 40 / 50. Movement slow: -25%. Cooldown: 17. Cast range: 700 / 800 / 900 / 1000. Mana cost: 80 / 90 / 100 / 110."
           ],
           "ability_notes": []
         },
         {
           "ability_id": "ogre_magi_bloodlust_custom",
-          "name": "bloodlust",
+          "name": "Bloodlust",
           "image": "ogre_magi_bloodlust.webp",
           "description": [
-            "Incites a frenzy in a friendly unit, increasing its movement speed and attack speed. Gives bonus attack speed if cast on Ogre himself. Can be cast on towers. Bonus movement speed: 6% / 8% / 10% / 12%. Bonus attack speed: 35 / 50 / 65 / 80. Self bonus attack speed: 40 / 60 / 80 / 100. Duration: 30. Cooldown: 20 / 18 / 16 / 14. Mana cost: 40 / 50 / 60 / 70."
+            "Incites a frenzy in a friendly unit, increasing its movement speed and attack speed. Gives bonus attack speed if cast on Ogre himself. Can be cast on towers. Bonus movement speed: 6% / 8% / 10% / 12%. Bonus attack speed: 35 / 50 / 65 / 80. Self bonus attack speed: 40 / 60 / 80 / 100. Duration: 30. Cooldown: 20 / 18 / 16 / 14. Cast range: 650. Mana cost: 40 / 50 / 60 / 70."
           ],
           "ability_notes": []
         },
         {
           "ability_id": "ogre_magi_multicast_custom",
-          "name": "multicast",
+          "name": "Multicast",
           "image": "ogre_magi_multicast.webp",
           "description": [
             "Enables Ogre Magi to cast his abilities and items multiple times with each use. Each point of Strength adds to Multicast chance. Every 16 Strength adds 1%. 2x multicast chance: 75%. 3x multicast chance: 30%. 4x multicast chance: 15%."
@@ -398,9 +405,10 @@
             "title": "Talent 1",
             "talent_notes": [
               {
-                "note": "Increase Ignite Projectile Count: 1/2 Ignite Cooldown Reduction: 2/4 sec"
+                "note": "Increase Ignite Projectile Count: 1/2. Ignite Cooldown Reduction: 2/4 sec"
               }
-            ]
+            ],
+            "talent_text": "Increase Ignite Projectile Count: 1/2\n\nIgnite Cooldown Reduction: 2/4 sec."
           },
           {
             "talent_id": "modifier_ogre_magi_2",
@@ -408,9 +416,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "New Active Ability: Fire Shield Creates a shield around an allied unit or building that absorbs part of the damage from the next 3 hero attacks. Fireballs are launched at the attacker, dealing magical damage. Fireball Damage: 70 + 100% of Strength Shield Duration: 25 sec. Damage Absorption: 45% Mana Cost: 50 Cast Range: 600 Cooldown: 15 sec"
+                "note": "New Active Ability: Fire Shield. Creates a shield around an allied unit or building that absorbs part of the damage from the next 3 hero attacks. Fireballs are launched at the attacker, dealing magical damage. Fireball Damage: 70 + 100% of Strength. Shield Duration: 25 sec. Damage Absorption: 45%. Mana Cost: 50. Cast Range: 600. Cooldown: 15 sec"
               }
-            ]
+            ],
+            "talent_text": "New Active Ability: Fire Shield\n\nCreates a shield around an allied unit or building that absorbs part of the damage from the next 3 hero attacks. Fireballs are launched at the attacker, dealing magical damage.\n\nFireball Damage: 70 + 100% of Strength\nShield Duration: 25 sec.\nDamage Absorption: 45%\nMana Cost: 50\nCast Range: 600\nCooldown: 15 sec."
           },
           {
             "talent_id": "modifier_ogre_magi_3",
@@ -418,9 +427,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Great Mind. Removes Fireblast. Cooldown Reduction: 7% If you learn 3 Great Minds: A third Ogre Head floats around the hero! Multicast triggers with a 0.3 second delay, works with non-targeted items, and can repeatedly select the primary target"
+                "note": "<font color='#e03e2e'>Great Mind.</font> <font color='#e03e2e'>Removes Fireblast.</font> Cooldown Reduction: 7%. If you learn 3 Great Minds:. A third Ogre Head floats around the hero! Multicast triggers with a 0.3 second delay, works with non-targeted items, and can repeatedly select the primary target"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Great Mind. </font></b>\n\n<b><font color='#ff0000'> Removes Fireblast. </font></b>\n\nCooldown Reduction: 7%\n\nIf you learn 3 Great Minds:\n\nA third Ogre Head floats around the hero! Multicast triggers with a 0.3 second delay, works with non-targeted items, and can repeatedly select the primary target."
           },
           {
             "talent_id": "modifier_ogre_magi_4",
@@ -428,9 +438,14 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Ignite costs no Mana. When Fire Shield expires, it applies Ignite to all enemies within a 450 radius and deals Magic Damage: 100% of Strength Ignite Duration: 3/6/9 sec"
+                "note": "Ignite costs no Mana. When Fire Shield expires, it applies Ignite to all enemies within a 450 radius and deals Magic Damage: 100% of Strength. Ignite Duration: 3/6/9 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
               }
-            ]
+            ],
+            "talent_text": "Ignite costs no Mana.\n\nWhen Fire Shield expires, it applies Ignite to all enemies within a 450 radius and deals Magic Damage: 100% of Strength\n\nIgnite Duration: 3/6/9 sec."
           },
           {
             "talent_id": "modifier_ogre_magi_5",
@@ -439,8 +454,13 @@
             "talent_notes": [
               {
                 "note": "Fire Shield is cast instantly. Fire Shield Cooldown Reduction: 2/4/6 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
               }
-            ]
+            ],
+            "talent_text": "Fire Shield is cast instantly.\n\nFire Shield Cooldown Reduction: 2/4/6 sec."
           },
           {
             "talent_id": "modifier_ogre_magi_6",
@@ -448,9 +468,10 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "Increase Dumb Luck Mana per Strength: 1/2/3 Increase Dumb Luck Mana Regeneration per Strength: 0.02/0.04/0.06 Strength: 6/12/18"
+                "note": "Increase Dumb Luck Mana per Strength: 1/2/3. Increase Dumb Luck Mana Regeneration per Strength: 0.02/0.04/0.06. Strength: 6/12/18"
               }
-            ]
+            ],
+            "talent_text": "Increase Dumb Luck Mana per Strength: 1/2/3\n\nIncrease Dumb Luck Mana Regeneration per Strength: 0.02/0.04/0.06\n\nStrength: 6/12/18"
           },
           {
             "talent_id": "modifier_ogre_magi_7",
@@ -458,9 +479,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Increase Ignite Damage by 7 for every 1 second it remains active on an enemy. Maximum bonus is reached after 150 seconds"
+                "note": "Increase Ignite Damage by 7 for every 1 second it remains active on an enemy. <font color='#e03e2e'>Maximum bonus is reached after 150 seconds</font>"
               }
-            ]
+            ],
+            "talent_text": "Increase Ignite Damage by 7 for every 1 second it remains active on an enemy.\n\n<b><font color='#ff0000'> Maximum bonus is reached after 150 seconds. </font></b>"
           }
         ],
         "agility": [
@@ -470,9 +492,10 @@
             "title": "Talent 1",
             "talent_notes": [
               {
-                "note": "Strength Gain per Level Reduced: 1/2 Agility Gain per Level: 1/2 Attack Speed: 10/20"
+                "note": "<font color='#e03e2e'>Strength Gain per Level Reduced: 1/2.</font> Agility Gain per Level: 1/2. Attack Speed: 10/20"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Strength Gain per Level Reduced: 1/2 </font></b>\n\nAgility Gain per Level: 1/2\n\nAttack Speed: 10/20"
           },
           {
             "talent_id": "modifier_ogre_magi_9",
@@ -482,7 +505,8 @@
               {
                 "note": "Bloodlust grants Agility: 5/10/15"
               }
-            ]
+            ],
+            "talent_text": "Bloodlust grants Agility: 5/10/15"
           },
           {
             "talent_id": "modifier_ogre_magi_10",
@@ -490,9 +514,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Great Mind. Removes Ignite. Multicast multi-cast chance is increased by 1% per 30/20 Agility"
+                "note": "<font color='#e03e2e'>Great Mind.</font> <font color='#e03e2e'>Removes Ignite.</font> Multicast multi-cast chance is increased by 1% per 30/20 Agility"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Great Mind. </font></b>\n\n<b><font color='#ff0000'> Removes Ignite. </font></b>\n\nMulticast multi-cast chance is increased by 1% per 30/20 Agility."
           },
           {
             "talent_id": "modifier_ogre_magi_11",
@@ -502,7 +527,8 @@
               {
                 "note": "Each hero attack increases Lifesteal and Spell Lifesteal by 3%. Effect Duration: 1/2/3 sec"
               }
-            ]
+            ],
+            "talent_text": "Each hero attack increases Lifesteal and Spell Lifesteal by 3%.\n\nEffect Duration: 1/2/3 sec."
           },
           {
             "talent_id": "modifier_ogre_magi_12",
@@ -512,7 +538,8 @@
               {
                 "note": "Increase Base Damage by 1/2 for every 1% Quadruple Multicast Chance"
               }
-            ]
+            ],
+            "talent_text": "Increase Base Damage by 1/2 for every 1% Quadruple Multicast Chance."
           },
           {
             "talent_id": "modifier_ogre_magi_13",
@@ -520,9 +547,10 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "Increase Bloodlust Bonus Movement Speed: 4% Bloodlust becomes a passive aura around the hero. Radius: 900"
+                "note": "Increase Bloodlust Bonus Movement Speed: 4%. Bloodlust becomes a passive aura around the hero. Radius: 900"
               }
-            ]
+            ],
+            "talent_text": "Increase Bloodlust Bonus Movement Speed: 4%\n\nBloodlust becomes a passive aura around the hero.\n\nRadius: 900"
           },
           {
             "talent_id": "modifier_ogre_magi_14",
@@ -532,7 +560,8 @@
               {
                 "note": "Chance to cast Fireblast on Attack: 14%"
               }
-            ]
+            ],
+            "talent_text": "Chance to cast Fireblast on Attack: 14%"
           }
         ],
         "intelligence": [
@@ -542,9 +571,10 @@
             "title": "Talent 1",
             "talent_notes": [
               {
-                "note": "Removes Dumb Luck. Intelligence: 10/20 Fireblast deals damage in a 175 radius"
+                "note": "<font color='#e03e2e'>Removes Dumb Luck.</font> Intelligence: 10/20. Fireblast deals damage in a 175 radius"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Dumb Luck. </font></b>\n\nIntelligence: 10/20\n\nFireblast deals damage in a 175 radius."
           },
           {
             "talent_id": "modifier_ogre_magi_16",
@@ -552,9 +582,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Strength Gain Reduction per Level: 2 Intelligence Gain per Level: 2 Fireblast Damage Increase: 20%/40% of Intelligence"
+                "note": "<font color='#e03e2e'>Strength Gain Reduction per Level: 2.</font> Intelligence Gain per Level: 2. Fireblast Damage Increase: 20%/40% of Intelligence"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Strength Gain Reduction per Level: 2 </font></b>\n\nIntelligence Gain per Level: 2\n\nFireblast Damage Increase: 20%/40% of Intelligence"
           },
           {
             "talent_id": "modifier_ogre_magi_17",
@@ -562,9 +593,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Great Mind. Removes Bloodlust. Multicast multi-cast chance is increased by 1% per 30/20 Intelligence"
+                "note": "<font color='#e03e2e'>Great Mind.</font> <font color='#e03e2e'>Removes Bloodlust.</font> Multicast multi-cast chance is increased by 1% per 30/20 Intelligence"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Great Mind. </font></b>\n\n<b><font color='#ff0000'> Removes Bloodlust. </font></b>\n\nMulticast multi-cast chance is increased by 1% per 30/20 Intelligence."
           },
           {
             "talent_id": "modifier_ogre_magi_18",
@@ -572,9 +604,10 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Bonus Cast Range: 50/100/150 Movement Speed: 10/20/30"
+                "note": "Bonus Cast Range: 50/100/150. Movement Speed: 10/20/30"
               }
-            ]
+            ],
+            "talent_text": "Bonus Cast Range: 50/100/150\n\nMovement Speed: 10/20/30"
           },
           {
             "talent_id": "modifier_ogre_magi_19",
@@ -582,9 +615,10 @@
             "title": "Talent 5",
             "talent_notes": [
               {
-                "note": "New Active Ability: Lightning Shield Creates a shield of lightning around an allied unit, dealing damage to nearby enemies. Damage from multiple shields stacks. Damage per Second: 50/100 Radius: 200 Duration: 40 sec. Mana Cost: 120 Cast Range: 600 Cooldown: 40 sec"
+                "note": "New Active Ability: Lightning Shield. Creates a shield of lightning around an allied unit, dealing damage to nearby enemies. Damage from multiple shields stacks. Damage per Second: 50/100. Radius: 200. Duration: 40 sec. Mana Cost: 120. Cast Range: 600. Cooldown: 40 sec"
               }
-            ]
+            ],
+            "talent_text": "New Active Ability: Lightning Shield\n\nCreates a shield of lightning around an allied unit, dealing damage to nearby enemies. Damage from multiple shields stacks.\n\nDamage per Second: 50/100\nRadius: 200\nDuration: 40 sec.\nMana Cost: 120\nCast Range: 600\nCooldown: 40 sec."
           },
           {
             "talent_id": "modifier_ogre_magi_20",
@@ -592,9 +626,14 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "While under the effects of Lightning Shield, part of the mana spent on abilities is converted into Spell Damage: 2% for every 100 Mana Effect Duration: 4/6 sec"
+                "note": "While under the effects of Lightning Shield, part of the mana spent on abilities is converted into Spell Damage: 2% for every 100 Mana. Effect Duration: 4/6 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
               }
-            ]
+            ],
+            "talent_text": "While under the effects of Lightning Shield, part of the mana spent on abilities is converted into Spell Damage: 2% for every 100 Mana\n\nEffect Duration: 4/6 sec."
           },
           {
             "talent_id": "modifier_ogre_magi_21",
@@ -602,9 +641,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "New Active Ability: Unrefined Fireblast Blasts an enemy with a wave of fire, stunning the target and dealing magical damage. Casting this ability consumes a percentage of the caster's current mana. Damage: 200 + 40% of Intelligence Mana Cost: 35% Cast Range: 525 Cooldown: 16 sec"
+                "note": "New Active Ability: Unrefined Fireblast. Blasts an enemy with a wave of fire, stunning the target and dealing magical damage. Casting this ability consumes a percentage of the caster's current mana. Damage: 200 + 40% of Intelligence. Mana Cost: 35%. Cast Range: 525. Cooldown: 16 sec"
               }
-            ]
+            ],
+            "talent_text": "New Active Ability: Unrefined Fireblast\n\nBlasts an enemy with a wave of fire, stunning the target and dealing magical damage. Casting this ability consumes a percentage of the caster's current mana.\n\nDamage: 200 + 40% of Intelligence\nMana Cost: 35%\nCast Range: 525\nCooldown: 16 sec."
           }
         ]
       }
@@ -619,7 +659,7 @@
       "abilities": [
         {
           "ability_id": "visage_silent_as_the_grave_custom",
-          "name": "silent as the grave",
+          "name": "Silent as the Grave",
           "image": "visage_silent_as_the_grave.webp",
           "innate": true,
           "description": [
@@ -629,25 +669,25 @@
         },
         {
           "ability_id": "visage_grave_chill_custom",
-          "name": "grave chill",
+          "name": "Grave Chill",
           "image": "visage_grave_chill.webp",
           "description": [
-            "Visage drains the movement and attack speed of the targeted unit, gaining the drained speed for itself and nearby Familiars. Duration: 5. Movement speed steal: 12% / 18% / 24% / 30%. Attack speed steal: 35 / 45 / 55 / 65. Mana cost: 75."
+            "Visage drains the movement and attack speed of the targeted unit, gaining the drained speed for itself and nearby Familiars. Duration: 5. Movement speed steal: 12% / 18% / 24% / 30%. Attack speed steal: 35 / 45 / 55 / 65. Cooldown: 17 / 15 / 13 / 11. Cast range: 625. Mana cost: 75."
           ],
           "ability_notes": []
         },
         {
           "ability_id": "visage_soul_assumption_custom",
-          "name": "soul assumption",
+          "name": "Soul Assumption",
           "image": "visage_soul_assumption.webp",
           "description": [
-            "Visage gathers charges of soul essence each time nearby heroes take more than 100 damage. When the essence is released, it deals base damage as well as damage for each gathered soul charge. Base damage: 20. Damage per charge: 70. Max charges: 3 / 4 / 5 / 6. Charge duration: 6. Damage required for a charge: 100. Charge collection radius: 1800. Mana cost: 110."
+            "Visage gathers charges of soul essence each time nearby heroes take more than 100 damage. When the essence is released, it deals base damage as well as damage for each gathered soul charge. Base damage: 20. Damage per charge: 70. Max charges: 3 / 4 / 5 / 6. Charge duration: 6. Damage required for a charge: 100. Charge collection radius: 1800. Cooldown: 4. Cast range: 1000. Mana cost: 110."
           ],
           "ability_notes": []
         },
         {
           "ability_id": "visage_gravekeepers_cloak_custom",
-          "name": "gravekeepers cloak",
+          "name": "Gravekeeper's Cloak",
           "image": "visage_gravekeepers_cloak.webp",
           "description": [
             "Visage generates a layered barrier that protects him from damage. If he receives damage from a player, one layer is removed, and takes time to recover. Visage's Familiars are protected by his cloak when within 900 range of him, based on the number of layers Visage has. Max layers: 4. Damage reduction per layer: 8% / 12% / 16% / 20%. Layer recovery time: 7 / 6 / 5 / 4. Minimum damage: 40. Maximum damage reduction: 32% / 48% / 64% / 80%."
@@ -656,7 +696,7 @@
         },
         {
           "ability_id": "visage_summon_familiars_custom",
-          "name": "summon familiars",
+          "name": "Summon Familiars",
           "image": "visage_summon_familiars.webp",
           "description": [
             "Conjures 2 blind Familiars to fight for Visage. Familiars possess the Stone Form ability, that allows them to turn into stone, stunning enemies upon landing. While in Stone Form, Familiars are invulnerable, and rapidly regenerate their health. Familiars grant high bounty when killed. The ability can be cast in the alt-cast state to recall Visages familiars after 4s, during which they cannot attack or act. Familiar health: 450 / 600 / 750. Familiar armor: 2 / 3 / 4. Familiar attack range: 180. Familiar movement speed: 430. Familiar bounty: 100. Familiar damage: 25 / 50 / 75. Cooldown: 120 / 110 / 100. Mana cost: 150."
@@ -674,7 +714,8 @@
               {
                 "note": "Hero deals Physical Damage every second to all enemies within a 600 radius around them: 5/10 for each Gravekeeper's Cloak Layer"
               }
-            ]
+            ],
+            "talent_text": "Hero deals Physical Damage every second to all enemies within a 600 radius around them: 5/10 for each Gravekeeper's Cloak Layer"
           },
           {
             "talent_id": "modifier_visage_2",
@@ -684,7 +725,8 @@
               {
                 "note": "Upon gaining a Gravekeeper's Cloak Layer, the Hero deals Physical Damage equal to 1%/1.5%/2% of Max Health to all enemies within a 600 radius. Triggers 1 time even at the maximum number of Layers"
               }
-            ]
+            ],
+            "talent_text": "Upon gaining a Gravekeeper's Cloak Layer, the Hero deals Physical Damage equal to 1%/1.5%/2% of Max Health to all enemies within a 600 radius.\n\nTriggers 1 time even at the maximum number of Layers."
           },
           {
             "talent_id": "modifier_visage_3",
@@ -692,9 +734,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Stone Hearts. Summon Familiars Gargoyle Health Increase: 100%/200% of Strength"
+                "note": "<font color='#e03e2e'>Stone Hearts.</font> Summon Familiars Gargoyle Health Increase: 100%/200% of Strength"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Stone Hearts. </font></b>\n\nSummon Familiars Gargoyle Health Increase: 100%/200% of Strength"
           },
           {
             "talent_id": "modifier_visage_4",
@@ -702,9 +745,10 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Removes Soul Assumption. Gravekeeper's Cloak Layer Recovery Time Reduction: 1/1.5 sec"
+                "note": "<font color='#e03e2e'>Removes Soul Assumption.</font> Gravekeeper's Cloak Layer Recovery Time Reduction: 1/1.5 sec"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Soul Assumption. </font></b>\n\nGravekeeper's Cloak Layer Recovery Time Reduction: 1/1.5 sec."
           },
           {
             "talent_id": "modifier_visage_5",
@@ -712,9 +756,10 @@
             "title": "Talent 5",
             "talent_notes": [
               {
-                "note": "Summon Familiars Gargoyle Count Reduction: 1 Hero Health Increase: 80% of Summon Familiars Gargoyle Health Stone Form Cooldown Reduction: 5 sec"
+                "note": "<font color='#e03e2e'>Summon Familiars Gargoyle Count Reduction: 1.</font> Hero Health Increase: 80% of Summon Familiars Gargoyle Health. Stone Form Cooldown Reduction: 5 sec"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Summon Familiars Gargoyle Count Reduction: 1 </font></b>\n\nHero Health Increase: 80% of Summon Familiars Gargoyle Health\n\nStone Form Cooldown Reduction: 5 sec."
           },
           {
             "talent_id": "modifier_visage_6",
@@ -722,9 +767,14 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "Increased Stone Form Radius: 75/150/225 Increased Stone Form Damage: 40%/80%/120% of the Summon Familiars Gargoyle's Maximum Health"
+                "note": "Increased Stone Form Radius: 75/150/225. Increased Stone Form Damage: 40%/80%/120% of the Summon Familiars Gargoyle's Maximum Health"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
               }
-            ]
+            ],
+            "talent_text": "Increased Stone Form Radius: 75/150/225\n\nIncreased Stone Form Damage: 40%/80%/120% of the Summon Familiars Gargoyle's Maximum Health"
           },
           {
             "talent_id": "modifier_visage_7",
@@ -732,9 +782,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Gravekeeper's Cloak can be activated for the hero to turn into stone and land, stunning nearby enemies, dealing magical damage to them, and becoming invulnerable. Restores 15% health and all Layers. Damage: 15% of Max Health Radius: 375 Stun Duration: 2 sec. Invulnerability Duration: 2 sec. Cooldown: 40 sec"
+                "note": "Gravekeeper's Cloak can be activated for the hero to turn into stone and land, stunning nearby enemies, dealing magical damage to them, and becoming invulnerable. Restores 15% health and all Layers. Damage: 15% of Max Health. Radius: 375. Stun Duration: 2 sec. Invulnerability Duration: 2 sec. Cooldown: 40 sec"
               }
-            ]
+            ],
+            "talent_text": "Gravekeeper's Cloak can be activated for the hero to turn into stone and land, stunning nearby enemies, dealing magical damage to them, and becoming invulnerable. Restores 15% health and all Layers.\n\nDamage: 15% of Max Health\nRadius: 375\nStun Duration: 2 sec.\nInvulnerability Duration: 2 sec.\nCooldown: 40 sec."
           }
         ],
         "agility": [
@@ -746,7 +797,8 @@
               {
                 "note": "Summon Familiars Cooldown Reduction: 25/50 sec. Agility: 5/10"
               }
-            ]
+            ],
+            "talent_text": "Summon Familiars Cooldown Reduction: 25/50 sec.\n\nAgility: 5/10"
           },
           {
             "talent_id": "modifier_visage_8",
@@ -756,7 +808,8 @@
               {
                 "note": "Grave Chill Duration Increase: 1/2 sec"
               }
-            ]
+            ],
+            "talent_text": "Grave Chill Duration Increase: 1/2 sec."
           },
           {
             "talent_id": "modifier_visage_10",
@@ -764,9 +817,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Stone Hearts. Summon Familiars Gargoyle Attack Range Increase: 75%/150% of Agility If you learn 3 Stone Hearts: Hero kills permanently increase Strength, Agility, and Intelligence by 1 Kills before learning the talent also count"
+                "note": "<font color='#e03e2e'>Stone Hearts.</font> Summon Familiars Gargoyle Attack Range Increase: 75%/150% of Agility. If you learn 3 Stone Hearts:. Hero kills permanently increase Strength, Agility, and Intelligence by 1. Kills before learning the talent also count"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Stone Hearts. </font></b>\n\nSummon Familiars Gargoyle Attack Range Increase: 75%/150% of Agility\n\nIf you learn 3 Stone Hearts:\n\nHero kills permanently increase Strength, Agility, and Intelligence by 1\n\nKills before learning the talent also count."
           },
           {
             "talent_id": "modifier_visage_11",
@@ -776,7 +830,8 @@
               {
                 "note": "Hero and Summon Familiars Gargoyles Base Damage Increase: 15/30"
               }
-            ]
+            ],
+            "talent_text": "Hero and Summon Familiars Gargoyles Base Damage Increase: 15/30"
           },
           {
             "talent_id": "modifier_visage_12",
@@ -786,7 +841,8 @@
               {
                 "note": "Grave Chill cannot be dispelled. Grave Chill steals Heal Restoration: 5%/15%/25%"
               }
-            ]
+            ],
+            "talent_text": "Grave Chill cannot be dispelled.\n\nGrave Chill steals Heal Restoration: 5%/15%/25%"
           },
           {
             "talent_id": "modifier_visage_13",
@@ -794,9 +850,10 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "Summon Familiars Gargoyle attacks reduce Armor: 0.5 Effect Duration: 1.5/3 sec"
+                "note": "Summon Familiars Gargoyle attacks reduce Armor: 0.5. Effect Duration: 1.5/3 sec"
               }
-            ]
+            ],
+            "talent_text": "Summon Familiars Gargoyle attacks reduce Armor: 0.5\n\nEffect Duration: 1.5/3 sec."
           },
           {
             "talent_id": "modifier_visage_14",
@@ -804,9 +861,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Total Damage Increase: 12% Stone Form does not prevent Summon Familiars Gargoyles from attacking. Summon Familiars Gargoyle Attack Range Increase: 150"
+                "note": "Total Damage Increase: 12%. Stone Form does not prevent Summon Familiars Gargoyles from attacking. Summon Familiars Gargoyle Attack Range Increase: 150"
               }
-            ]
+            ],
+            "talent_text": "Total Damage Increase: 12%\n\nStone Form <b>does not prevent</b> Summon Familiars Gargoyles from attacking.\n\nSummon Familiars Gargoyle Attack Range Increase: 150"
           }
         ],
         "intelligence": [
@@ -816,9 +874,10 @@
             "title": "Talent 1",
             "talent_notes": [
               {
-                "note": "Soul Assumption gains charges from Creeps. Soul Assumption gains Minimum Charges: 1/2/3 Intelligence: 5/10/15"
+                "note": "Soul Assumption gains charges from Creeps. Soul Assumption gains Minimum Charges: 1/2/3. Intelligence: 5/10/15"
               }
-            ]
+            ],
+            "talent_text": "Soul Assumption gains charges from Creeps.\n\nSoul Assumption gains Minimum Charges: 1/2/3\n\nIntelligence: 5/10/15"
           },
           {
             "talent_id": "modifier_visage_15",
@@ -826,9 +885,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Soul Assumption Target Count Increase: 1/2 Mana Cost and Mana Loss Reduction: 10%/20%"
+                "note": "Soul Assumption Target Count Increase: 1/2. Mana Cost and Mana Loss Reduction: 10%/20%"
               }
-            ]
+            ],
+            "talent_text": "Soul Assumption Target Count Increase: 1/2\n\nMana Cost and Mana Loss Reduction: 10%/20%"
           },
           {
             "talent_id": "modifier_visage_17",
@@ -836,9 +896,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Stone Hearts. Summon Familiars Gargoyle Damage Increase: 20%/40% of Intelligence"
+                "note": "<font color='#e03e2e'>Stone Hearts.</font> Summon Familiars Gargoyle Damage Increase: 20%/40% of Intelligence"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Stone Hearts. </font></b>\n\nSummon Familiars Gargoyle Damage Increase: 20%/40% of Intelligence"
           },
           {
             "talent_id": "modifier_visage_20",
@@ -848,7 +909,8 @@
               {
                 "note": "The unobstructed movement and increased movement speed from Silent as the Grave are not lost immediately, but together with the bonus damage. Silent as the Grave increases Health Regeneration: 20/40"
               }
-            ]
+            ],
+            "talent_text": "The unobstructed movement and increased movement speed from Silent as the Grave are not lost immediately, but together with the bonus damage.\n\nSilent as the Grave increases Health Regeneration: 20/40"
           },
           {
             "talent_id": "modifier_visage_18",
@@ -856,9 +918,10 @@
             "title": "Talent 5",
             "talent_notes": [
               {
-                "note": "Soul Assumption reduces Magic Resistance before dealing damage for each Charge: 3%/5% Duration: 7 sec"
+                "note": "Soul Assumption reduces Magic Resistance before dealing damage for each Charge: 3%/5%. Duration: 7 sec"
               }
-            ]
+            ],
+            "talent_text": "Soul Assumption reduces Magic Resistance before dealing damage for each Charge: 3%/5%\n\nDuration: 7 sec."
           },
           {
             "talent_id": "modifier_visage_19",
@@ -868,7 +931,8 @@
               {
                 "note": "Silent as the Grave Bonus Damage Duration Increase: 1/2 sec. Silent as the Grave Bonus Damage Increase: 5%/10%"
               }
-            ]
+            ],
+            "talent_text": "Silent as the Grave Bonus Damage Duration Increase: 1/2 sec.\n\nSilent as the Grave Bonus Damage Increase: 5%/10%"
           },
           {
             "talent_id": "modifier_visage_21",
@@ -878,7 +942,8 @@
               {
                 "note": "Soul Assumption Max Charges Increase: 3"
               }
-            ]
+            ],
+            "talent_text": "Soul Assumption Max Charges Increase: 3"
           }
         ]
       }
@@ -900,7 +965,8 @@
               {
                 "note": "Culling Blade damage increase raised from 200%/300%/400% to 200%/350%/500% of Armor"
               }
-            ]
+            ],
+            "talent_text": "Culling Blade Damage Increase: 200%/350%/500% of Armor"
           },
           {
             "talent_id": "modifier_axe_7",
@@ -910,7 +976,8 @@
               {
                 "note": "Armor increased from 9 to 15"
               }
-            ]
+            ],
+            "talent_text": "Counter Helix now also counts the owner's attacks when tracking attacks for activation.\n\nArmor: 15"
           }
         ],
         "agility": [],
@@ -934,9 +1001,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Now reduces Shuriken Toss cooldown by 1/2 sec instead of +5%/10% Spell Damage"
+                "note": "Now reduces Shuriken Toss cooldown by 1/2s instead of 5%/10% Spell Damage"
               }
-            ]
+            ],
+            "talent_text": "Shuriken Toss Cooldown Reduction: 1/2 sec.\n\nShuriken Toss Damage Increase: 1% of Total Net Worth\n\n<b><font color='#ff0000'> Maximum Damage Increase: 100/Unlimited </font></b>"
           }
         ]
       }
@@ -947,19 +1015,7 @@
       "image": "images/heroes/heroesPreview/bristleback.webp",
       "primary_attribute": "strength",
       "hero_notes": [],
-      "abilities": [
-        {
-          "ability_id": "bristleback_bristleback_custom",
-          "name": "bristleback",
-          "image": "bristleback_bristleback.webp",
-          "ability_notes": [
-            {
-              "parameter": "activation_cooldown",
-              "note": "Activation cooldown decreased from 30 to 15 seconds"
-            }
-          ]
-        }
-      ],
+      "abilities": [],
       "talents": {
         "strength": [],
         "agility": [],
@@ -972,7 +1028,8 @@
               {
                 "note": "Cooldown decreased from 30 to 15 seconds"
               }
-            ]
+            ],
+            "talent_text": "Bristleback becomes an active ability.\n\nAllows casting this ability on a target point. The hero turns their back to it and after 0.5 seconds releases 5 waves of Quill Spray in a cone. While active, the hero is slowed by 40% and cannot turn or attack, but can cast spells in any direction.\n\nWave Interval: 0.4 sec.\nMana Cost: 100\nCooldown: 15 sec."
           }
         ]
       }
@@ -994,9 +1051,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Now also grants Chaos Bolt base damage: 10/20/30"
+                "note": "Now also grants 10/20/30 base damage"
               }
-            ]
+            ],
+            "talent_text": "Base Damage: 10/20/30\n\nChaos Bolt Minimum and Maximum Damage Increase: 300%/450%/600% of Mana Regeneration"
           },
           {
             "talent_id": "modifier_chaos_knight_18",
@@ -1004,9 +1062,10 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Now also grants +2/4 Armor"
+                "note": "Now also grants 2/4 Armor"
               }
-            ]
+            ],
+            "talent_text": "Armor: 2/4\n\nAbility Cast Point Reduction: 30%/60%\n\nChaos Bolt Projectile Speed Increase: 30%/60%"
           },
           {
             "talent_id": "modifier_chaos_knight_19",
@@ -1016,7 +1075,8 @@
               {
                 "note": "Duration increased from 2/3 to 2/4 seconds"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Chaos Strike. </font></b>\n\nNew Active Ability: Chaos King Bar\n\nApplies a basic dispel to the owner. Grants 60% magic resistance and protects from negative effects. Increases health regeneration.\n\nDuration: 2/4 sec.\nHealth Regeneration: 200% of Mana Regeneration\nCooldown: 60 sec."
           }
         ]
       }
@@ -1040,7 +1100,8 @@
               {
                 "note": "Health restore increased from 5%/10% to 15%/30% of Mana Regen"
               }
-            ]
+            ],
+            "talent_text": "Arcane Aura Mana Regeneration Increase: 10%/20%\n\nHealth Regeneration: 15%/30% of Mana Regeneration"
           }
         ]
       }
@@ -1064,7 +1125,8 @@
               {
                 "note": "Shadow Wave heal and damage increase raised from 8%/12%/16% to 10%/15%/20% of Max Mana"
               }
-            ]
+            ],
+            "talent_text": "Shadow Wave can be cast on enemies.\n\nShadow Wave can bounce to enemies.\n\nShadow Wave Healing and Damage Increase: 10%/15%/20% of Max Mana"
           }
         ]
       }
@@ -1077,7 +1139,30 @@
       "hero_notes": [],
       "abilities": [],
       "talents": {
-        "strength": [],
+        "strength": [
+          {
+            "talent_id": "modifier_death_prophet_5",
+            "image": "death_prophet_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Curse. Reduces Magic Resistance of the Hero and nearby Enemies: 20%/40%. Radius: 900» replaced with «Curse. Reduces Attack Speed of the Hero and nearby Enemies: 75/150. Radius: 900»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Curse.</font></b>\n\nReduces Attack Speed of the Hero and nearby Enemies: 75/150\n\nRadius: 900"
+          },
+          {
+            "talent_id": "modifier_death_prophet_4",
+            "image": "death_prophet_4.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Curse. Reduces Attack Speed of the Hero and nearby Enemies: 75/150. Radius: 900» replaced with «Curse. Reduces Magic Resistance of the Hero and nearby Enemies: 20%/40%. Radius: 900»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Curse.</font></b>\n\nReduces Magic Resistance of the Hero and nearby Enemies: 20%/40%\n\nRadius: 900"
+          }
+        ],
         "agility": [],
         "intelligence": [
           {
@@ -1086,9 +1171,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Crypt Swarm cooldown reduction decreased from 1/2 to 0.75/1.5 sec"
+                "note": "Crypt Swarm cooldown reduction decreased from 1/2s to 0.75/1.5s"
               }
-            ]
+            ],
+            "talent_text": "Crypt Swarm Cooldown Reduction: 0.75/1.5 sec."
           },
           {
             "talent_id": "modifier_death_prophet_20",
@@ -1096,9 +1182,10 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Crypt Swarm returns after 4.5/3 sec instead of 2/1"
+                "note": "Crypt Swarm returns after 4.5/3s instead of 2/1"
               }
-            ]
+            ],
+            "talent_text": "Crypt Swarm returns to the hero after 4.5/3 sec."
           }
         ]
       }
@@ -1119,9 +1206,10 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "Kinetic Field cooldown reduction increased from 3/6 to 4/8 sec"
+                "note": "Kinetic Field cooldown reduction increased from 3/6s to 4/8s"
               }
-            ]
+            ],
+            "talent_text": "Kinetic Field Cooldown Reduction: 4/8 sec."
           }
         ],
         "intelligence": []
@@ -1148,7 +1236,8 @@
               {
                 "note": "Fueling Hell cooldown decreased from 20 to 15 seconds"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes DOOM, but does not prevent applying it via Infernal Blade. </font></b>\n\nNew Active Ability: Fueling Hell\n\nReleases a circular wave that applies Infernal Blade to affected targets. The ability has 2 charges.\n\nRadius: 1200\nCooldown: 15 sec."
           }
         ],
         "intelligence": []
@@ -1171,9 +1260,21 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Now also grants +1/2/3 Armor"
+                "note": "«Gust teleports the hero to the point of application. The maximum teleportation range is equal to the range of Gust. Teleport Delay: 0.5 seconds» replaced with «Armor: 1/2/3. Gust increases Movement Speed by: 12%/24%/36%»"
               }
-            ]
+            ],
+            "talent_text": "Armor: 1/2/3\n\nGust increases Movement Speed by: 12%/24%/36%"
+          },
+          {
+            "talent_id": "modifier_drow_ranger_19",
+            "image": "drow_ranger_19.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Gust Movement Speed Increase: 12%/24%/36%» replaced with «Gust teleports the hero to the point of application. The maximum teleportation range is equal to the range of Gust. Teleport Delay: 0.5 seconds»"
+              }
+            ],
+            "talent_text": "Gust teleports the hero to the point of application. The maximum teleportation range is equal to the range of Gust.\n\nTeleport Delay: 0.5 seconds"
           },
           {
             "talent_id": "modifier_drow_ranger_22",
@@ -1181,9 +1282,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Mana cost increased from 10% to 15%"
+                "note": "Mana bonus increased from 10% to 15%"
               }
-            ]
+            ],
+            "talent_text": "Gust works in all directions around the hero.\n\nMana: 15%"
           }
         ]
       }
@@ -1206,7 +1308,8 @@
               {
                 "note": "Aftershock damage increase raised from 40%/60% to 50%/75% of Agility"
               }
-            ]
+            ],
+            "talent_text": "Aftershock Damage Increase: 50%/75% of Agility"
           },
           {
             "talent_id": "modifier_earthshaker_9",
@@ -1216,7 +1319,8 @@
               {
                 "note": "Fissure range increase raised from 100/200 to 150/300"
               }
-            ]
+            ],
+            "talent_text": "Fissure Range Increase: 150/300"
           }
         ],
         "intelligence": [
@@ -1228,7 +1332,8 @@
               {
                 "note": "Spell Damage increased from 5%/10% to 10%/20%"
               }
-            ]
+            ],
+            "talent_text": "Mana Regeneration: 0.5%/1%\n\nSpell Damage: 10%/20%"
           },
           {
             "talent_id": "modifier_earthshaker_21",
@@ -1241,7 +1346,8 @@
               {
                 "note": "Echo Slam echo damage increase raised from 4% to 5% of Max Mana"
               }
-            ]
+            ],
+            "talent_text": "Echo Slam Base Damage Increase: 25% of Max Mana\n\nEcho Slam Echo Damage Increase: 5% of Max Mana"
           }
         ]
       }
@@ -1263,7 +1369,8 @@
               {
                 "note": "Time Dilation bonus magic damage per second increased from 10/20 to 12/24/36"
               }
-            ]
+            ],
+            "talent_text": "Time Dilation deals additional Magical Damage per Second: 12/24/36"
           },
           {
             "talent_id": "modifier_faceless_void_2",
@@ -1273,7 +1380,8 @@
               {
                 "note": "Time Dilation damage per second changed from 0.3%/0.4%/0.5% to 0.3%/0.6% of Max Health"
               }
-            ]
+            ],
+            "talent_text": "Time Dilation Damage per Second Increase: 0.3%/0.6% of Max Health"
           }
         ],
         "agility": [
@@ -1285,7 +1393,8 @@
               {
                 "note": "Time Walk's silence can no longer be dispelled"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Time Walk no longer restores health. </font></b>\n\nHealth Regeneration during Silence: 15\n\nTime Walk applies Silence to the hero and nearby enemies. Cannot be dispelled.\n\nRadius: 400\nSilence Duration: 2/3 sec."
           }
         ],
         "intelligence": [
@@ -1295,9 +1404,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Now also grants +150/300 Health"
+                "note": "Now also grants 150/300 Health"
               }
-            ]
+            ],
+            "talent_text": "Health: 150/300\n\nNew Active Ability: Face Ward\n\nPlaces an invisible observer ward that grants ground vision.\n\nDuration: 120 sec.\nCast Range: 500\nVision Radius: 1400\nHero Attacks to Destroy: 2\nCooldown: 240/160 sec."
           }
         ]
       }
@@ -1321,7 +1431,8 @@
               {
                 "note": "Now also increases Burning Spear max stacks to 7"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Maximum Burning Spear Stacks: 7 </font></b>\n\nBurning Spear additionally ignites a random enemy within 300 radius of the target.\n\nBurning Spear Burn Damage Increase: 5/10/15"
           },
           {
             "talent_id": "modifier_huskar_18",
@@ -1330,8 +1441,13 @@
             "talent_notes": [
               {
                 "note": "No longer increases Burning Spear max stacks to 7"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 3»"
               }
-            ]
+            ],
+            "talent_text": "Burning Spear stacks refresh each other's duration."
           },
           {
             "talent_id": "modifier_huskar_19",
@@ -1341,7 +1457,8 @@
               {
                 "note": "Burning Spear magic resistance reduction decreased from 1%/2%/3% to 1%/1.5%/2%"
               }
-            ]
+            ],
+            "talent_text": "Each Burning Spear stack reduces enemies' Magic Resistance by: 1%/1.5%/2%"
           }
         ]
       }
@@ -1361,9 +1478,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Tether health restore decreased from 8/16 to 5/10"
+                "note": "Health regen decreased from 8/16 to 5/10"
               }
-            ]
+            ],
+            "talent_text": "Tether connection works on all affected enemies.\n\nHealth Regeneration: 5/10"
           },
           {
             "talent_id": "modifier_io_4",
@@ -1373,7 +1491,8 @@
               {
                 "note": "Health restoration decreased from 6%/12%/18% to 5%/10%/15%"
               }
-            ]
+            ],
+            "talent_text": "Health Restoration: 5%/10%/15%"
           }
         ],
         "agility": [
@@ -1385,7 +1504,8 @@
               {
                 "note": "Proc chance decreased from 20%/40% to 15%/30%"
               }
-            ]
+            ],
+            "talent_text": "Attacks by the Hero and their Controlled Units have a 15%/30% chance to create an explosion that deals 50 Magical Damage.\n\nRadius: 250"
           }
         ],
         "intelligence": [
@@ -1397,7 +1517,8 @@
               {
                 "note": "Spirit area duration decreased from 12 to 9 seconds"
               }
-            ]
+            ],
+            "talent_text": "Relocate creates a Spirit Zone at the destination point. Enemies entering it are silenced.\n\nSilence Duration: 3 sec.\nRadius: 650\nZone Duration: 9 sec.\n\nCooldown per target: 6 sec."
           },
           {
             "talent_id": "modifier_io_19",
@@ -1407,7 +1528,8 @@
               {
                 "note": "Total damage amplification decreased from 10%/20%/30% to 8%/16%/24%"
               }
-            ]
+            ],
+            "talent_text": "Total Damage dealt by the hero and allied heroes in the Spirit Zone is increased by: 8%/16%/24%"
           }
         ]
       }
@@ -1427,9 +1549,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Dark Magic cooldown increase raised from 2/3 to 2/4 sec"
+                "note": "Dark Magic cooldown increase raised from 2/3s to 2/4s"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Chakra Magic. </font></b>\n\nNew Active Ability: Dark Magic\n\nDrains mana and increases cooldowns of all main enemy abilities.\n\nMana Drain: 100/200\nCooldown Increase: 2/4 sec\nAbility Cooldown: 15 sec"
           }
         ],
         "agility": [],
@@ -1440,9 +1563,10 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "Now also grants +300 Health"
+                "note": "Now also grants 300 Health"
               }
-            ]
+            ],
+            "talent_text": "Illuminate Healing Increase: 30%\n\nHealth: 300"
           }
         ]
       }
@@ -1464,7 +1588,8 @@
               {
                 "note": "Raptor Dance now activates the bonus Katana damage"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'>This talent does not work if you have already learned Sai.</font></b>\n\nSwitch Discipline becomes a Passive Ability, and the hero always uses the <b>Katana</b>.\n\nKatana Base Attack Time: 1.7\n\nBonus Damage scales with <b>Strength</b> instead of Agility.\n\nCasting Raptor Dance activates the Katana's bonus damage."
           }
         ],
         "agility": [
@@ -1476,7 +1601,8 @@
               {
                 "note": "Raven's Veil now activates the bonus Sai movement speed"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'>This talent does not work if you have already learned Katana.</font></b>\n\nSwitch Discipline becomes a Passive Ability, and the hero always uses the <b>Sai</b>.\n\nIncreased Shodo Sai Critical Strike Chance: 5%\n\nCasting Raven's Veil activates the Sai's bonus movement speed."
           }
         ],
         "intelligence": [
@@ -1488,7 +1614,8 @@
               {
                 "note": "Talon Toss now deals damage in a 175 radius"
               }
-            ]
+            ],
+            "talent_text": "Increased Talon Toss Damage: 50%/100% of Intelligence\n\nTalon Toss deals damage in a 175 radius"
           },
           {
             "talent_id": "modifier_kez_21",
@@ -1496,9 +1623,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Reworked: abilities in different Switch Discipline stances now recharge separately"
+                "note": "«Switch Discipline is instantly recharged when using other abilities in the selected fighting style. The first ability used within 3 sec. after switching fighting styles will not start the cooldown of its alternate version in the other style» replaced with «Abilities in different Switch Discipline stances have separate cooldowns»"
               }
-            ]
+            ],
+            "talent_text": "Abilities in different Switch Discipline stances have separate cooldowns."
           }
         ]
       }
@@ -1523,7 +1651,8 @@
               {
                 "note": "Strength bonus decreased from 5/10/15 to 5/10"
               }
-            ]
+            ],
+            "talent_text": "Increased Duel Victory Damage: 3/6\n\nKills before learning this talent are also counted.\n\nStrength: 5/10"
           },
           {
             "talent_id": "modifier_legion_commander_7",
@@ -1531,9 +1660,10 @@
             "title": "Talent 5",
             "talent_notes": [
               {
-                "note": "Bonus attack range changed from 250 to 75/150"
+                "note": "Bonus attack range decreased from 250 to 75/150"
               }
-            ]
+            ],
+            "talent_text": "Bonus Attack Range: 75/150"
           }
         ],
         "agility": [],
@@ -1557,7 +1687,8 @@
               {
                 "note": "Brand of Fire damage increased from 80/160/240 to 100/200/300"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Light Strike Array.</font></b>\n\nNew Active Ability: Brand of Fire\n\nPlaces a fiery mark at the target location. When an enemy enters the mark, it explodes after 0.5 sec., stunning and dealing Magic Damage.\n\nDamage: 100/200/300\nStun Duration: 2 sec.\nMark Duration: 10 sec.\nRadius: 250\nMana Cost: 100\nCooldown: 10 sec."
           },
           {
             "talent_id": "modifier_lina_3",
@@ -1567,7 +1698,8 @@
               {
                 "note": "Brand of Fire brand damage increase raised from 100%/200%/300% to 150%/250%/350% of Strength"
               }
-            ]
+            ],
+            "talent_text": "Brand of Fire Mark Damage Increase: 150%/250%/350% of Strength"
           }
         ],
         "agility": [
@@ -1579,7 +1711,8 @@
               {
                 "note": "Explosion damage increased from 25 + 60% to 25 + 80% of Agility"
               }
-            ]
+            ],
+            "talent_text": "Every 6/5/4 Hero Attack creates an explosion that deals 25 + 80% of Agility as Magical Damage.\n\nRadius: 250"
           },
           {
             "talent_id": "modifier_lina_13",
@@ -1589,7 +1722,8 @@
               {
                 "note": "Health restore increased from 5%/15% to 10%/20% of Max Health"
               }
-            ]
+            ],
+            "talent_text": "Flame Cloak applies a Basic Dispel and restores a portion of maximum health.\n\nHealth Restoration: 10%/20%"
           }
         ],
         "intelligence": [
@@ -1601,7 +1735,8 @@
               {
                 "note": "Slow Burn damage increase raised from 18% to 38%"
               }
-            ]
+            ],
+            "talent_text": "Slow Burn Burn Rate Increase: 50%\n\nSlow Burn Damage Increase: 38%"
           }
         ]
       }
@@ -1627,7 +1762,8 @@
               {
                 "note": "Duration decreased from 2 to 1 second"
               }
-            ]
+            ],
+            "talent_text": "When taking lethal damage, transforms you into a Frog, makes you <b>Invulnerable</b>, and grants 550 Movement Speed. At the end of the effect, restores health equal to 10% of your Maximum Health.\n\nDuration: 1 sec.\nCooldown: 120 sec."
           },
           {
             "talent_id": "modifier_lion_12",
@@ -1637,7 +1773,8 @@
               {
                 "note": "Damage amplification on Hexed target decreased from 10%/20%/30% to 8%/16%/24%"
               }
-            ]
+            ],
+            "talent_text": "Increase to All Damage Dealt to Hexed Target: 8%/16%/24%"
           }
         ],
         "intelligence": []
@@ -1660,9 +1797,16 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Now also: True Form is instant, +10 sec duration, +20 sec cooldown"
+                "note": "True Form is now cast instantly"
+              },
+              {
+                "note": "Now also increases True Form duration by 10s"
+              },
+              {
+                "note": "Now also increases True Form cooldown by 20s"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> True Form Cooldown Increase: 20 sec. </font></b>\n\nTrue Form is cast instantly.\n\nTrue Form Duration Increase: 10 sec.\n\nMoonlight Cooldown is reduced by 2x during True Form."
           }
         ]
       }
@@ -1684,7 +1828,8 @@
               {
                 "note": "Max stacks decreased from 10/20/30 to 7/14/21"
               }
-            ]
+            ],
+            "talent_text": "Lunar Orbit applies a stacking effect to enemies, increasing the damage of the next hit by: 1%\n\nMaximum Stacks: 7/14/21\nDuration: 2 sec."
           }
         ],
         "agility": [],
@@ -1710,9 +1855,10 @@
                 "note": "Evasion decreased from 8%/16% to 7%/14%"
               },
               {
-                "note": "Now also grants +5%/10% Magic Resistance"
+                "note": "Now also grants 5%/10% Magic Resistance"
               }
-            ]
+            ],
+            "talent_text": "Evasion: 7%/14%\n\nMagic Resistance: 5%/10%"
           },
           {
             "talent_id": "modifier_marci_12",
@@ -1720,9 +1866,21 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Attack speed changed from +1 per 2%/1% Evasion to +3 per 3%/2%"
+                "note": "«Rebound Cooldown Reduction: 30%/60% of Evasion» replaced with «Attack Speed is increased by 3 for every 3%/2% Evasion»"
               }
-            ]
+            ],
+            "talent_text": "Attack Speed is increased by 3 for every 3%/2% Evasion."
+          },
+          {
+            "talent_id": "modifier_marci_11",
+            "image": "marci_11.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Increase Attack Speed by 1 for every 2%/1% Evasion» replaced with «Rebound Cooldown Reduction: 30%/60% of Evasion»"
+              }
+            ],
+            "talent_text": "Rebound Cooldown Reduction: 30%/60% of Evasion"
           }
         ],
         "intelligence": [
@@ -1732,9 +1890,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Now also grants +15/30/45 Attack Speed"
+                "note": "Now also grants 15/30/45 Attack Speed"
               }
-            ]
+            ],
+            "talent_text": "Attack Speed: 15/30/45\n\nThe Hero's Illusions deal Magic Damage upon death: 10%/15%/20% of Max Mana\n\nRadius: 400"
           }
         ]
       }
@@ -1755,9 +1914,21 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Now also grants +5/10 Agility"
+                "note": "«Increases Boundless Strike Critical Damage: 25%/50%» replaced with «Agility: 5/10. Boundless Strike Cast Point Reduction: 25%/50%. Boundless Strike Mana Cost Reduction: 25%/50%»"
               }
-            ]
+            ],
+            "talent_text": "Agility: 5/10\n\nBoundless Strike Cast Point Reduction: 25%/50%\n\nBoundless Strike Mana Cost Reduction: 25%/50%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_9",
+            "image": "monkey_king_9.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Reduces Boundless Strike Cast Point: 25%/50%. Reduced Mana Cost for Boundless Strike: 25%/50%» replaced with «Increases Boundless Strike Critical Damage: 25%/50%»"
+              }
+            ],
+            "talent_text": "Increases Boundless Strike Critical Damage: 25%/50%"
           }
         ],
         "intelligence": []
@@ -1782,7 +1953,8 @@
               {
                 "note": "Waterraze max stacks decreased from 15 to 9"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Waveform, Adaptive Strike, and Attribute Shift.</font></b>\n\n3 New Active Abilities: Waterraze\n\nThe hero creates a geyser directly in front of themselves, damaging all enemies in the area. Applies a stacking effect that increases this ability's damage with each hit while also reducing movement speed and turn rate. Maximum Stacks: 9\n\nBase Damage: 80/160/240\nBonus Damage per Hit: 2% of Current Mana\nMovement Slow: 12%\nTurn Rate Slow: 30%\nEffect Duration: 8 sec.\nCooldown: 13 sec."
           },
           {
             "talent_id": "modifier_morphling_18",
@@ -1792,7 +1964,8 @@
               {
                 "note": "Cooldown decreased from 5 to 3 seconds"
               }
-            ]
+            ],
+            "talent_text": "Each enemy ability cast during Morph creates a weakened Waterraze on the nearest target, prioritizing Heroes. Goes on a 3 sec. cooldown after triggering three times.\n\nDamage: 50% of Waterraze Damage\nRadius: 900"
           },
           {
             "talent_id": "modifier_morphling_20",
@@ -1800,9 +1973,10 @@
             "title": "Talent 6",
             "talent_notes": [
               {
-                "note": "Now also grants +5%/10%/15% Spell Damage"
+                "note": "Now also grants 5%/10%/15% Spell Damage"
               }
-            ]
+            ],
+            "talent_text": "Spell Damage: 5%/10%/15%\n\nCasting Waterraze increases Max Mana: 3%/4.5%/6%\n\nEffect Duration: 15 sec."
           }
         ]
       }
@@ -1825,9 +1999,10 @@
                 "note": "Rip Tide armor reduction decreased from 4/8 to 2/4"
               },
               {
-                "note": "Now also adds Rip Tide damage: 20/40"
+                "note": "Now also grants 20/40 damage"
               }
-            ]
+            ],
+            "talent_text": "Rip Tide Armor Reduction Increase: 2/4\n\nDamage: 20/40"
           }
         ],
         "agility": [],
@@ -1840,7 +2015,8 @@
               {
                 "note": "1% Spell Damage is now per 12 Intelligence instead of 9"
               }
-            ]
+            ],
+            "talent_text": "1% Spell Damage for every 12 Intelligence\n\n<b><font color='#ff0000'>Maximum bonus is reached at 600 Intelligence.</font></b>"
           }
         ]
       }
@@ -1862,7 +2038,8 @@
               {
                 "note": "Nature's Call treant explosion damage increased from 18%/36% to 30%/50% of treant Max Health"
               }
-            ]
+            ],
+            "talent_text": "Nature's Call Treants explode on death, dealing Magic Damage: 30%/50% of the Treant's Max Health\n\nRadius: 300"
           }
         ],
         "agility": [],
@@ -1873,9 +2050,10 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Now also grants +100/200/300 Health"
+                "note": "Now also grants 100/200/300 Health"
               }
-            ]
+            ],
+            "talent_text": "Health: 100/200/300\n\nHealth and Mana Regeneration Increase for allies inside Sprout: 15/30/45"
           }
         ]
       }
@@ -1896,15 +2074,16 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Heal changed from 200/400 to 400"
+                "note": "Heal increased from 200/400 to 400"
               },
               {
-                "note": "Cooldown changed from 10/8 to 12/8 seconds"
+                "note": "Cooldown increased from 10/8 to 12/8 seconds"
               },
               {
                 "note": "Mana cost decreased from 105 to 55"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Void.</font></b>\n\nNew Active Ability: Revelation\n\nCreates a radiant light that heals the Hero and increases Movement Speed. During the day, it also removes all slows, and the ability lasts longer.\n\nHealing: 400\nNight Duration: 2 sec.\nDay Duration: 3 sec.\nMovement Speed: 20%\nAttack Speed: 50\nCooldown: 12/8 sec.\nMana Cost: 55"
           },
           {
             "talent_id": "modifier_night_stalker_14",
@@ -1912,9 +2091,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Now also grants +20 Agility"
+                "note": "Now also grants 20 Agility"
               }
-            ]
+            ],
+            "talent_text": "Agility: 20\n\nThe Hero always receives Daytime bonuses.\n\nAll of the owner's healing spells restore 50% more Health."
           }
         ],
         "intelligence": []
@@ -1929,7 +2109,7 @@
       "abilities": [
         {
           "ability_id": "nyx_assassin_jolt_custom",
-          "name": "jolt",
+          "name": "Mind Flare",
           "image": "nyx_assassin_jolt.webp",
           "ability_notes": [
             {
@@ -1964,7 +2144,8 @@
               {
                 "note": "Mana cost decreased from 16% to 14% of Max Mana per second"
               }
-            ]
+            ],
+            "talent_text": "Degen Aura becomes a toggle ability.\n\nWhile active, Degen Aura deals 3 times more damage, but consumes 14% of Max Mana every second."
           }
         ]
       }
@@ -1979,24 +2160,50 @@
       "talents": {
         "strength": [
           {
+            "talent_id": "modifier_pudge_2",
+            "image": "pudge_2.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«Rot reduces the Target's Magic Resistance: 4%/8%/12%» replaced with «Increase Rot Radius: 50/100»"
+              }
+            ],
+            "talent_text": "Increase Rot Radius: 50/100"
+          },
+          {
+            "talent_id": "modifier_pudge_4",
+            "image": "pudge_4.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Increase Rot Radius: 50/100» replaced with «Increase Rot Damage: 0.25%/0.5%/0.75% from Max Health»"
+              }
+            ],
+            "talent_text": "Increase Rot Damage: 0.25%/0.5%/0.75% from Max Health"
+          },
+          {
             "talent_id": "modifier_pudge_1",
             "image": "pudge_1.webp",
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Rot magic resistance reduction increased from 4%/8%/12% to 5%/10%/15%"
+                "note": "«Increase Rot Damage: 0.25%/0.5%/0.75% from Max Health» replaced with «Rot reduces the target's Magic Resistance: 5%/10%/15%»"
               }
-            ]
+            ],
+            "talent_text": "Rot reduces the target's Magic Resistance: 5%/10%/15%"
           },
           {
-            "talent_id": "modifier_pudge_3",
-            "image": "pudge_3.webp",
-            "title": "Talent 5",
+            "talent_id": "modifier_pudge_5",
+            "image": "pudge_5.webp",
+            "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Rot Bomb now has 750 cast range"
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 2»",
+                "tooltip": "Previously required upgrading «Talent 3»"
               }
-            ]
+            ],
+            "talent_text": "If the Target has been under Rot for more than 5 seconds, then it becomes infected and begins to use Rot itself for the following: 2.5/5 seconds"
           }
         ],
         "agility": [],
@@ -2007,9 +2214,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Meat Hook missed cooldown reduction decreased from 3/6 to 2.5/5 sec"
+                "note": "Meat Hook missed cooldown reduction decreased from 3/6s to 2.5/5s"
               }
-            ]
+            ],
+            "talent_text": "If Meat Hook does not hit an enemy, Meat Hook Cooldown is reduced by 2.5/5 sec."
           },
           {
             "talent_id": "modifier_pudge_16",
@@ -2017,9 +2225,10 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Rot damage increase changed from 10%/30% to 10%/20% of Intelligence"
+                "note": "Rot damage increase decreased from 10%/30% to 10%/20% of Intelligence"
               }
-            ]
+            ],
+            "talent_text": "Rot no longer damages its owner.\n\nIncreased Rot Damage: 10%/20% of Intelligence"
           }
         ]
       }
@@ -2044,7 +2253,8 @@
               {
                 "note": "Side damage block decreased from 4%/6%/8% to 3%/5%/7%"
               }
-            ]
+            ],
+            "talent_text": "The hero blocks a portion of incoming damage from the front and sides with Storm Surge. Disabled by Break.\n\nFront Damage Reduction: 6%/10%/14%\nSide Damage Reduction: 3%/5%/7%"
           },
           {
             "talent_id": "modifier_razor_5",
@@ -2054,7 +2264,8 @@
               {
                 "note": "Storm Surge damage decreased from 30%/45%/60% to 10%/20%/30% of attack damage"
               }
-            ]
+            ],
+            "talent_text": "Storm Surge Damage Increase: 10%/20%/30% of Attack Damage"
           }
         ],
         "agility": [
@@ -2064,9 +2275,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Now grants +4% attack speed and all damage per link stack (instead of movement speed)"
+                "note": "Now grants 4% total damage per link effect instead of 4% movement speed"
               }
-            ]
+            ],
+            "talent_text": "Attack Speed and Total Damage increase by 4% for each unique Link effect on the Hero.\n\nLinks are created instantly."
           }
         ],
         "intelligence": []
@@ -2081,13 +2293,13 @@
       "abilities": [
         {
           "ability_id": "riki_backstab_custom",
-          "name": "backstab",
+          "name": "Backstab",
           "image": "riki_backstab.webp",
           "innate": true,
           "ability_notes": [
             {
               "parameter": "damage_multiplier",
-              "note": "Backstab damage multiplier increased from 0.5 to 0.55"
+              "note": "Damage per Agility increased from 0.5 to 0.55"
             }
           ]
         }
@@ -2101,9 +2313,21 @@
             "title": "Talent 1",
             "talent_notes": [
               {
-                "note": "Tricks of the Trade attack damage increase raised from 15/30/45 to 25/50/75"
+                "note": "Tricks of the Trade attack damage bonus increased from 15/30/45 to 25/50/75"
               }
-            ]
+            ],
+            "talent_text": "Increases Tricks of the Trade Attack Damage: 25/50/75\n\nIncreases Tricks of the Trade Cast Range: 50/100/150"
+          },
+          {
+            "talent_id": "modifier_riki_12",
+            "image": "riki_12.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Allies inside Smoke Screen gain a Chance to Evade Any Damage: 7%/14%» replaced with «Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility»"
+              }
+            ],
+            "talent_text": "Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility"
           },
           {
             "talent_id": "modifier_riki_11",
@@ -2111,9 +2335,10 @@
             "title": "Talent 5",
             "talent_notes": [
               {
-                "note": "Evasion from any damage increased from 7%/14% to 8%/16%"
+                "note": "«Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility» replaced with «Allies inside Smoke Screen gain a Chance to Evade Any Damage: 8%/16%»"
               }
-            ]
+            ],
+            "talent_text": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 8%/16%"
           }
         ],
         "intelligence": []
@@ -2138,7 +2363,8 @@
               {
                 "note": "Necromastery max souls is now per 30 Intelligence instead of 20"
               }
-            ]
+            ],
+            "talent_text": "Necromastery Maximum Souls Increase by 1 for every 30 Intelligence.\n\n<b><font color='#ff0000'> Maximum bonus is reached at 600 Intelligence. </font></b>"
           },
           {
             "talent_id": "modifier_shadow_fiend_12",
@@ -2146,9 +2372,13 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Now removes the Requiem of Souls max souls limit, but returning waves deal 50% damage (was 100%)"
+                "note": "Now also removes the maximum soul limit for Requiem of Souls"
+              },
+              {
+                "note": "Returning Requiem of Souls souls damage decreased from 100% to 50%"
               }
-            ]
+            ],
+            "talent_text": "Removes the maximum Soul limit for Requiem of Souls.\n\nRequiem of Souls' Souls return, dealing 50% of their Damage.\n\nThe Hero does not lose Necromastery Souls upon death."
           }
         ]
       }
@@ -2169,9 +2399,10 @@
             "title": "Talent 5",
             "talent_notes": [
               {
-                "note": "Concussive Shot cooldown reduction decreased from 4/8 to 3/6 sec"
+                "note": "Concussive Shot cooldown reduction decreased from 4/8s to 3/6s"
               }
-            ]
+            ],
+            "talent_text": "Concussive Shot Cooldown Reduction: 3/6 sec."
           },
           {
             "talent_id": "modifier_skywrath_mage_15",
@@ -2181,7 +2412,8 @@
               {
                 "note": "No longer increases Shield of the Scion barrier health by 3"
               }
-            ]
+            ],
+            "talent_text": "Shield of the Scion absorbs all damage.\n\nMystic Flare Mana Cost Reduction: 90%"
           }
         ],
         "intelligence": [
@@ -2193,7 +2425,8 @@
               {
                 "note": "Bonus spell cast range decreased from 250 to 150"
               }
-            ]
+            ],
+            "talent_text": "Bonus Cast Range: 150"
           }
         ]
       }
@@ -2214,9 +2447,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Base attack time changed from 1.85/1.8/1.75 to 1.8/1.75/1.7"
+                "note": "Base attack time decreased from 1.85/1.8/1.75 to 1.8/1.75/1.7"
               }
-            ]
+            ],
+            "talent_text": "Base Attack Time: 1.8/1.75/1.7\n\nGreater Bash Stun Duration Increase: 0.1/0.2/0.3 sec."
           },
           {
             "talent_id": "modifier_spirit_breaker_12",
@@ -2224,12 +2458,13 @@
             "title": "Talent 3",
             "talent_notes": [
               {
-                "note": "Charge accumulation interval decreased from 0.5 to 0.3 sec"
+                "note": "Charge accumulation interval decreased from 0.5s to 0.3s"
               },
               {
                 "note": "Movement speed per stack increased from 12 to 15"
               }
-            ]
+            ],
+            "talent_text": "While standing still, the hero gains charges every 0.3 sec. that increase Movement Speed: 15\n\nThe hero gradually loses charges while moving.\n\nMaximum charges: 10/20"
           }
         ],
         "intelligence": []
@@ -2244,7 +2479,7 @@
       "abilities": [
         {
           "ability_id": "techies_mutually_assured_destruction_custom",
-          "name": "mutually assured destruction",
+          "name": "M.A.D.",
           "image": "techies_mutually_assured_destruction.webp",
           "innate": true,
           "ability_notes": [
@@ -2266,7 +2501,8 @@
               {
                 "note": "Proximity Mines damage increase raised from 80%/160%/240% to 90%/180%/270% of Agility"
               }
-            ]
+            ],
+            "talent_text": "Proximity Mines Damage Increase: 90%/180%/270% of Agility"
           }
         ],
         "intelligence": []
@@ -2289,7 +2525,8 @@
               {
                 "note": "Demon Zeal cooldown decreased from 22 to 16 seconds"
               }
-            ]
+            ],
+            "talent_text": "New Active Ability: Demon Zeal\n\nThe hero sacrifices a portion of their current health to gain bonus attack speed and health regeneration.\n\nHealth Cost: 20%\nAttack Speed: 50\nHealth Regeneration: 10\nCooldown: 16 sec.\nDuration: 11 sec."
           }
         ],
         "agility": [],
@@ -2305,7 +2542,7 @@
       "abilities": [
         {
           "ability_id": "tiny_insurmountable",
-          "name": "insurmountable",
+          "name": "Insurmountable",
           "image": "tiny_insurmountable.webp",
           "innate": true,
           "ability_notes": [
@@ -2326,7 +2563,8 @@
               {
                 "note": "Strength bonus decreased from 30 to 15"
               }
-            ]
+            ],
+            "talent_text": "Strength: 15\n\nNew Active Ability: Tree Volley\n\nThe hero uproots random nearby trees and hurls them at the target area. Each thrown tree deals the hero's attack damage to enemies. This ability works even if there are no nearby trees.\n\nArea Radius: 400\nThrow Interval: 0.5 sec.\nMaximum Duration: 2.5 sec.\nCooldown: 12 sec."
           }
         ],
         "agility": [],
@@ -2352,7 +2590,8 @@
               {
                 "note": "No longer increases Soul Rip cooldown by 3 seconds"
               }
-            ]
+            ],
+            "talent_text": "Soul Rip always triggers as if the maximum number of targets were affected."
           }
         ]
       }
@@ -2374,7 +2613,8 @@
               {
                 "note": "Voodoo Restoration heal and damage increase raised from 9%/18%/27% to 12%/24%/36% of Strength"
               }
-            ]
+            ],
+            "talent_text": "Voodoo Restoration Healing and Damage per Second Increase: 12%/24%/36% of Strength"
           }
         ],
         "agility": [],
@@ -2387,7 +2627,8 @@
               {
                 "note": "Paralyzing Cask residual damage increased from 10%/15%/20% to 10%/20%/30%"
               }
-            ]
+            ],
+            "talent_text": "If Paralyzing Cask stops bouncing prematurely, the last target takes 10%/20%/30% of the remaining Damage and is stunned 1 additional time."
           }
         ]
       }
@@ -2404,6 +2645,28 @@
         "agility": [],
         "intelligence": [
           {
+            "talent_id": "modifier_wraith_king_16",
+            "image": "wraith_king_16.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«Vampiric Spirit no longer summons Skeletons. Vampiric Spirit summons Spirits with a ranged attack type and Magic Damage. Spirit Attack Range: 300/400/500. Add. Spirit Health: 100/150/200» replaced with «The hero gains an Aura for Attack Speed and Movement Speed: 10/20. Radius: 1200»"
+              }
+            ],
+            "talent_text": "The hero gains an Aura for Attack Speed and Movement Speed: 10/20\n\nRadius: 1200"
+          },
+          {
+            "talent_id": "modifier_wraith_king_15",
+            "image": "wraith_king_15.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«The hero gains an Aura for Attack Speed and Movement Speed: 10/20. Radius: 1200» replaced with «Vampiric Spirit no longer summons Skeletons. Vampiric Spirit summons Spirits with a ranged attack type and Magic Damage. Spirit Attack Range: 300/400/500. Add. Spirit Health: 100/150/200»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Vampiric Spirit no longer summons Skeletons.</font></b>\n\nVampiric Spirit summons Spirits with a ranged attack type and Magic Damage.\n\nSpirit Attack Range: 300/400/500\n\nAdd. Spirit Health: 100/150/200"
+          },
+          {
             "talent_id": "modifier_wraith_king_17",
             "image": "wraith_king_17.webp",
             "title": "Talent 3",
@@ -2411,7 +2674,8 @@
               {
                 "note": "Controlled units' damage reduction is now per 55 Max Mana instead of 50"
               }
-            ]
+            ],
+            "talent_text": "Reduce Damage Taken of all Controlled Creatures: 1% per 55 Maximum Mana"
           }
         ]
       }

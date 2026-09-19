@@ -4783,12 +4783,12 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_damage"              "50"
+            "bonus_damage"              "55"
             "corruption_armor"          "-6"
             "corruption_duration"       "7.0"
             "bonus_damage_per_kill"     "2"
             "bonus_damage_per_assist"   "0"
-            "max_damage"                "50"
+            "max_damage"                "30"
         }
     }
 
@@ -5928,7 +5928,6 @@
         "ItemQuality"                   "rare"
         "ItemAliases"                   "eternal ghost"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ItemAlertable"                 "1"
         "ShouldBeSuggested"             "1"
         "AbilitySharedCooldown"         "ethereal"
 
@@ -6039,7 +6038,6 @@
         "ItemQuality"                   "rare"
         "ItemAliases"                   "falcon claymore"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ItemAlertable"                 "1"
         "ShouldBeSuggested"             "1"
 
         // Special  
@@ -6092,7 +6090,6 @@
         "ItemQuality"                   "rare"
         "ItemAliases"                   "venom song"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ItemAlertable"                 "1"
         "ShouldBeSuggested"             "1"
 
         // Special  
@@ -6678,6 +6675,8 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
         "ItemCost"                      "1950"
         "ItemShopTags"                  ""
         "ItemQuality"                   "rare"
@@ -6758,9 +6757,27 @@
         }
     }
 
-
-
-
+    "item_gungir"
+	{
+		"AbilityValues"
+		{
+			"bonus_aoe"					"0"			// If changing this, change radius_tooltip
+			"bonus_hp"					"450"
+			"bonus_intellect"			"12"
+			"bonus_mana"				"200"
+			"radius"
+			{
+				"value"						"275"		// NOTE: effective radius is 400 because the bonus_aoe applies to itself. If changing this, change radius_tooltip
+				"affected_by_aoe_increase"	"1"
+			}
+			"radius_tooltip"
+			{
+				"value"						"275"		// NOTE: radius_tooltip = ( radius + bonus_aoe )
+				"affected_by_aoe_increase"	"1"
+			}
+			"duration"				"2.0"
+		}
+	}
 
     "item_recipe_boots_of_bearing_custom"
     {
@@ -8285,7 +8302,7 @@
 		"ScriptFile"					"items/item_phylactery_custom"
 		"AbilityTextureName"			"item_phylactery"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"			   "12"
+		"AbilityCooldown"			   "9"
 		"ItemCost"					  "2400"
 		"ItemShopTags"				  "hard_to_tag"
 		"ItemQuality"				   "common"
@@ -8330,7 +8347,7 @@
 		"ScriptFile"					"items/item_khanda_custom"
 		"AbilityTextureName"			"item_angels_demise"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"				"12.0"
+		"AbilityCooldown"				"9"
 		"AbilitySharedCooldown"			"phylactery"
 		"ItemCost"						"5900"
 		"ItemShopTags"					"hard_to_tag"
@@ -8625,8 +8642,8 @@
         "ItemCost"                      "2100"
         "AbilityValues"
         {
-            "debuff_self"          "10"
-            "debuff_enemy"         "15"
+            "debuff_self"          "8"
+            "debuff_enemy"         "16"
         }  
     }      
     "item_vindicators_axe"      
@@ -8872,7 +8889,7 @@
         "ItemCost"                      "1750"
         "AbilityValues"
         {
-            "corruption_armor"              "-13"
+            "corruption_armor"              "-10"
         }
     }
     "item_seer_stone"        

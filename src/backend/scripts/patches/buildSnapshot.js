@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { parseKV } = require('./kvParser');
 const { extractLuaTable } = require('./luaTable');
+const { ARTIFACT_COST_TIER, KNOWN_ARTIFACTS, ENHANCEMENT_TIERS, ENHANCEMENTS_SINCE } = require('./legacyNeutrals');
 
 const LOCALES = [
     ['ru', 'addon_russian.txt'],
@@ -15,17 +16,55 @@ const BASE_LOCALES = [
     ['uk', 'abilities_ukrainian.txt'],
 ];
 
+function decodeText(buf) {
+    if (buf.length >= 2 && buf[0] === 0xff && buf[1] === 0xfe) return buf.toString('utf16le', 2);
+    if (buf.length >= 2 && buf[0] === 0xfe && buf[1] === 0xff) {
+        return Buffer.from(buf.subarray(2)).swap16().toString('utf16le');
+    }
+    return buf.toString('utf-8');
+}
+
 function readIfExists(dir, file) {
     const full = path.join(dir, file);
     if (!fs.existsSync(full)) return null;
-    return fs.readFileSync(full, 'utf-8');
+    return decodeText(fs.readFileSync(full));
+}
+
+function mergeDuplicateBlocks(value) {
+    if (!Array.isArray(value)) return value;
+    const blocks = value.filter((v) => v && typeof v === 'object' && !Array.isArray(v));
+    if (!blocks.length) return value[value.length - 1];
+    return blocks.reduce((acc, kv) => ({
+        ...acc,
+        ...kv,
+        ...((acc.AbilityValues || kv.AbilityValues) && {
+            AbilityValues: { ...(acc.AbilityValues || {}), ...(kv.AbilityValues || {}) },
+        }),
+    }), {});
+}
+
+function unwrapValueBlocks(kv) {
+    const values = kv && kv.AbilityValues;
+    if (!values || typeof values !== 'object') return kv;
+    const flat = {};
+    for (const [key, raw] of Object.entries(values)) {
+        flat[key] = (raw && typeof raw === 'object' && !Array.isArray(raw) && 'value' in raw)
+            ? raw.value
+            : raw;
+    }
+    return { ...kv, AbilityValues: flat };
 }
 
 function parseKVSection(dir, file, rootKey) {
     const raw = readIfExists(dir, file);
     if (!raw) return {};
     const parsed = parseKV(raw);
-    return (rootKey ? parsed[rootKey] : parsed) || {};
+    const section = (rootKey ? parsed[rootKey] : parsed) || {};
+    const out = {};
+    for (const [key, value] of Object.entries(section)) {
+        out[key] = unwrapValueBlocks(mergeDuplicateBlocks(value));
+    }
+    return out;
 }
 
 function parseTokens(dir, file) {
@@ -48,21 +87,54 @@ function buildAbilities(patchDir) {
     } catch {
         heroFiles = [];
     }
-    for (const file of heroFiles) {
-        const perHero = parseKVSection(patchDir, file, 'DOTAAbilities');
-        for (const [id, kv] of Object.entries(perHero)) {
-            if (id === 'Version') continue;
+    const take = (source) => {
+        for (const [id, kv] of Object.entries(source || {})) {
+            if (id === 'Version' || !kv || typeof kv !== 'object') continue;
             if (known.has(stripCustom(id))) continue;
             abilities[id] = kv;
             known.add(stripCustom(id));
+        }
+    };
+    for (const file of heroFiles) {
+        take(parseKVSection(patchDir, file, 'DOTAAbilities'));
+        for (const heroKv of Object.values(parseKVSection(patchDir, file, 'DOTAHeroes'))) {
+            if (!heroKv || typeof heroKv !== 'object') continue;
+            const defs = heroKv.AbilityDefinitions;
+            if (!defs || typeof defs !== 'object') continue;
+            const unwrapped = {};
+            for (const [id, kv] of Object.entries(defs)) {
+                unwrapped[id] = unwrapValueBlocks(mergeDuplicateBlocks(kv));
+            }
+            take(unwrapped);
         }
     }
     return abilities;
 }
 
+function buildHeroBase(patchDir) {
+    const base = { ...parseKVSection(patchDir, 'npc_heroes.txt', 'DOTAHeroes') };
+    let heroFiles = [];
+    try {
+        heroFiles = fs
+            .readdirSync(patchDir)
+            .filter((name) => /^npc_dota_hero_.+\.txt$/.test(name));
+    } catch {
+        heroFiles = [];
+    }
+    for (const file of heroFiles) {
+        const perHero = parseKVSection(patchDir, file, 'DOTAHeroes');
+        for (const [id, kv] of Object.entries(perHero)) {
+            if (id === 'Version' || !kv || typeof kv !== 'object') continue;
+            const known = base[id];
+            base[id] = known && typeof known === 'object' ? { ...known, ...kv } : kv;
+        }
+    }
+    return base;
+}
+
 function buildHeroes(patchDir, activelist) {
     const custom = parseKVSection(patchDir, 'npc_heroes_custom.txt', 'DOTAHeroes');
-    const base = parseKVSection(patchDir, 'npc_heroes.txt', 'DOTAHeroes');
+    const base = buildHeroBase(patchDir);
     const roster = new Set([...Object.keys(custom), ...Object.keys(activelist)]);
     const heroes = {};
     for (const hero of roster) {
@@ -80,22 +152,15 @@ function buildHeroes(patchDir, activelist) {
     return heroes;
 }
 
-function buildItems(patchDir, separateIds = new Set()) {
+function buildItems(patchDir) {
     const base = parseKVSection(patchDir, 'items.txt', 'DOTAAbilities');
     const custom = parseKVSection(patchDir, 'npc_items_custom.txt', 'DOTAAbilities');
-    
-    const baseByCanon = {};
-    for (const [id, kv] of Object.entries(base)) {
-        if (id !== 'Version' && kv && typeof kv === 'object') baseByCanon[stripCustom(id)] = kv;
-    }
+
     const items = {};
-    const known = new Set();
+    const taken = new Set();
     for (const [id, kv] of Object.entries(custom)) {
         if (id === 'Version' || !kv || typeof kv !== 'object' || Array.isArray(kv)) continue;
-        const canon = stripCustom(id);
-
-        const separate = id.endsWith('_custom') && separateIds.has(canon);
-        const baseKv = separate ? undefined : baseByCanon[canon];
+        const baseKv = base[id] && typeof base[id] === 'object' ? base[id] : undefined;
         items[id] = baseKv
             ? {
                 ...baseKv,
@@ -105,13 +170,11 @@ function buildItems(patchDir, separateIds = new Set()) {
                 }),
             }
             : kv;
-        if (!separate) known.add(canon);
+        taken.add(id);
     }
     for (const [id, kv] of Object.entries(base)) {
-        if (id === 'Version') continue;
-        if (known.has(stripCustom(id))) continue; 
+        if (id === 'Version' || taken.has(id)) continue;
         items[id] = kv;
-        known.add(stripCustom(id));
     }
     return items;
 }
@@ -127,7 +190,34 @@ function buildShops(patchDir) {
     return shops;
 }
 
-function buildNeutrals(patchDir) {
+function legacyNeutrals(items, version) {
+    const map = {};
+    for (const [id, kv] of Object.entries(items || {})) {
+        const canonical = KNOWN_ARTIFACTS.has(id)
+            ? id
+            : (KNOWN_ARTIFACTS.has(stripCustom(id)) ? stripCustom(id) : null);
+        if (!canonical) continue;
+        const tier = ARTIFACT_COST_TIER[Number(kv && kv.ItemCost)];
+        if (!tier) continue;
+        if (map[canonical] && canonical !== id) continue;
+        map[canonical] = { kind: 'artifact', tiers: [tier] };
+    }
+    if (version && String(version) >= String(ENHANCEMENTS_SINCE)) {
+        for (const [id, tiers] of Object.entries(ENHANCEMENT_TIERS)) {
+            if (!(id in (items || {}))) continue;
+            map[id] = {
+                kind: 'enhancement',
+                tiers: [...tiers],
+                ranks: tiers.map((tier, i) => ({ tier, level: i + 1, category: 'global' })),
+            };
+        }
+    }
+    return map;
+}
+
+function buildNeutrals(patchDir, items, version) {
+    const raw = readIfExists(patchDir, 'npc_neutral_items_custom.txt');
+    if (!raw) return legacyNeutrals(items, version);
     const tiers = parseKVSection(patchDir, 'npc_neutral_items_custom.txt', 'neutral_items').neutral_tiers || {};
     const map = {};
     const ensureEntry = (id, kind) => {
@@ -210,25 +300,69 @@ function buildHeroAbilities(patchDir) {
     return { heroAbilityMap, innateAbilities };
 }
 
+const TALENT_BRANCHES = { 1: 'strength', 2: 'agility', 3: 'intelligence' };
+
+function buildBasicTalents(rawLua, heroTalents, localization) {
+    const names = extractLuaTable(rawLua, 'basictalents');
+    const list = Array.isArray(names) ? names : [];
+    if (!list.length) return {};
+    const known = new Set(list.map((n) => String(n).replace(/^modifier_woda_talent_/, '')));
+    const seen = {};
+    for (const hero of Object.values(heroTalents || {})) {
+        if (!hero || typeof hero !== 'object') continue;
+        for (const [branch, rows] of Object.entries(hero)) {
+            if (!rows || typeof rows !== 'object') continue;
+            for (const [row, cells] of Object.entries(rows)) {
+                const cellList = Array.isArray(cells) ? cells : Object.values(cells || {});
+                for (const cell of cellList) {
+                    if (!Array.isArray(cell) || typeof cell[0] !== 'string') continue;
+                    if (!cell[0].startsWith('modifier_woda_talent_')) continue;
+                    const name = cell[0].replace('modifier_woda_talent_', '');
+                    if (!known.has(name)) continue;
+                    const requires = Array.isArray(cell[4]) && cell[4].length
+                        ? `${String(cell[4][0]).replace('modifier_woda_talent_', '')}:${cell[4][1]}`
+                        : '';
+                    const key = `${TALENT_BRANCHES[branch] || branch}|${row}|${cell[2]}|${requires}`;
+                    const bucket = seen[name] || (seen[name] = {});
+                    bucket[key] = (bucket[key] || 0) + 1;
+                }
+            }
+        }
+    }
+    const token = (lng, name) => {
+        const tokens = (localization && localization[lng]) || {};
+        const wanted = `woda_talent_${name}_0`.toLowerCase();
+        for (const [k, v] of Object.entries(tokens)) if (k.toLowerCase() === wanted) return String(v);
+        return null;
+    };
+    const out = {};
+    for (const name of known) {
+        const bucket = seen[name];
+        if (!bucket) continue;
+        const [key, heroes] = Object.entries(bucket).sort((a, b) => b[1] - a[1])[0];
+        const [branch, row, max, requires] = key.split('|');
+        out[name] = {
+            branch,
+            level: row,
+            max_rank: max,
+            requires,
+            heroes: String(heroes),
+            text_ru: token('ru', name),
+            text_en: token('en', name),
+            text_uk: token('uk', name),
+        };
+    }
+    return out;
+}
+
 function buildSnapshot(patchDir, version) {
     const activelist = parseKVSection(patchDir, 'activelist.txt', 'Whitelist');
     const abilities = buildAbilities(patchDir);
     const shops = buildShops(patchDir);
 
-    const shopItemIds = new Set();
-    for (const ids of Object.values(shops)) for (const id of ids) shopItemIds.add(id);
-    const separateItemIds = new Set();
-    for (const id of shopItemIds) {
-        if (id.endsWith('_custom') && shopItemIds.has(stripCustom(id))) {
-            const canon = stripCustom(id);
-            separateItemIds.add(canon);
-            // у base и custom версии — разные рецепты, их тоже нельзя склеивать
-            separateItemIds.add(canon.replace(/^item_/, 'item_recipe_'));
-        }
-    }
-    const items = buildItems(patchDir, separateItemIds);
+    const items = buildItems(patchDir);
     const heroes = buildHeroes(patchDir, activelist);
-    const neutrals = buildNeutrals(patchDir);
+    const neutrals = buildNeutrals(patchDir, items, version);
     const { units, creepAbilityMap } = buildUnits(patchDir);
     const { heroAbilityMap, innateAbilities } = buildHeroAbilities(patchDir);
 
@@ -243,12 +377,24 @@ function buildSnapshot(patchDir, version) {
     }
 
     let talents = {};
+    let basicTalents = {};
+    let lockedTalents = {};
     const talentsRaw = readIfExists(patchDir, 'talents_list.lua');
     if (talentsRaw) {
         try {
             talents = extractLuaTable(talentsRaw, 'herotalents') || {};
         } catch (err) {
             talents = { _error: `Не удалось разобрать talents_list.lua: ${err.message}` };
+        }
+        try {
+            lockedTalents = extractLuaTable(talentsRaw, 'LockedTalents') || {};
+        } catch (err) {
+            lockedTalents = { _error: `Не удалось разобрать LockedTalents: ${err.message}` };
+        }
+        try {
+            basicTalents = buildBasicTalents(talentsRaw, talents, localization);
+        } catch (err) {
+            basicTalents = { _error: `Не удалось разобрать basictalents: ${err.message}` };
         }
     }
     
@@ -286,6 +432,8 @@ function buildSnapshot(patchDir, version) {
         localization,
         baseLocalization,
         talents,
+        basicTalents,
+        lockedTalents,
     };
 }
 

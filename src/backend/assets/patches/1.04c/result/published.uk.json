@@ -1,0 +1,220 @@
+{
+  "patch_number": "1.04c",
+  "patch_name": "1.04c",
+  "patch_timestamp": 1788983474,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "all_stats",
+            "note": "Бонус до всіх атрибутів збільшено з 10 до 15"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_vast",
+        "name": "Vast",
+        "image": "enhancement_vast.webp",
+        "neutral_type": "enhancement",
+        "is_new": false,
+        "tier": null,
+        "neutral_item_notes": [
+          {
+            "parameter": "attack_range",
+            "note": "Бонус до дальності атаки збільшено зі 100/120 до 160/200"
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "io_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Здоров'я, що відбирається у пов'язаного ворога щосекунди, збільшено з 30 до 30 + 2 за рівень героя"
+              },
+              {
+                "note": "Частку відновлення здоров'я та отриманого лікування, що відбирається у пов'язаного ворога, зменшено з 45% до 40%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Прибирає Spirits. </font></b>\n\n<b><font color='#ff0000'> Tether не можна використовувати на союзників. </font></b>\n\nTether можна використовувати на ворогів. Не збільшує та не копіює їхню швидкість пересування. Віднімає у ворога здоров'я щосекунди: 30 + 2 за Рівень Героя\n\nВідновлення Здоров'я та все отримане Лікування забирають здоров'я у зв'язаного ворога: 40%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_io_12",
+            "image": "io_12.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Тепер також дає 7/14 до сили"
+              }
+            ],
+            "talent_text": "Зменшення Загальної Отриманої Шкоди всіма Підконтрольними Істотами: 20%/40%\n\nСила: 7/14"
+          },
+          {
+            "talent_id": "modifier_io_14",
+            "image": "io_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Шкоду спільних атак із союзною ціллю Tether зменшено з 30% до 20% від шкоди атаки"
+              }
+            ],
+            "talent_text": "Атаки разом із союзною ціллю Tether: 20% від Шкоди Атаки"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "phoenix_icarus_dive_custom",
+          "name": "Icarus Dive",
+          "image": "phoenix_icarus_dive.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_second",
+              "note": "Шкоду за секунду зменшено з 20/40/60/80 до 15/30/45/60"
+            }
+          ]
+        },
+        {
+          "ability_id": "phoenix_fire_spirits_custom",
+          "name": "Fire Spirits",
+          "image": "phoenix_fire_spirits.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_second",
+              "note": "Шкоду за секунду зменшено з 20/40/60/80 до 15/30/45/60"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_razor_5",
+            "image": "razor_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Storm Surge ослаблено з 30%/60%/90% до 30%/45%/60% від шкоди атаки"
+              }
+            ],
+            "talent_text": "Збільшення Шкоди Storm Surge: 30%/45%/60% від Шкоди Атаки"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "void_spirit",
+      "name": "void spirit",
+      "image": "images/heroes/heroesPreview/void_spirit.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_void_spirit_5",
+            "image": "void_spirit_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Бонус до сили збільшено з 0/8/16 до 0/10/20"
+              }
+            ],
+            "talent_text": "Aether Remnant створює додаткову лінію огляду, яка обертається навколо копії.\n\nСила: 0/10/20"
+          },
+          {
+            "talent_id": "modifier_void_spirit_6",
+            "image": "void_spirit_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Тривалість копій від Aether Remnant збільшено з 4 до 6 секунд"
+              }
+            ],
+            "talent_text": "Коли герой виходить з будь-якого порталу Dissimilate, крім центрального, у 1/3 найбільш далеких від нього порталах створюються його копії від Aether Remnant.\n\nТривалість: 6 сек."
+          },
+          {
+            "talent_id": "modifier_void_spirit_7",
+            "image": "void_spirit_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Тривалість Aether Remnant від Astral Step збільшено з 4 до 6 секунд"
+              }
+            ],
+            "talent_text": "Astral Step створює Aether Remnant у напрямку застосування.\n\nТривалість: 6 сек."
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_void_spirit_21",
+            "image": "void_spirit_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Перезарядку Dissimilate Burst збільшено з 26 до 30 секунд"
+              }
+            ],
+            "talent_text": "Нова Активна Здібність: Dissimilate Burst\n\nПісля невеликої затримки завдає вибух від здібності Dissimilate у вказаній точці.\n\nШкода: 150% від Шкоди Dissimilate\nЧас Перезарядки: 30 сек.\nДальність Використання: 700\nВитрати Мани: 120"
+          }
+        ]
+      }
+    }
+  ]
+}

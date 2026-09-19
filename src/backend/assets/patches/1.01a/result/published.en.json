@@ -1,0 +1,445 @@
+{
+  "patch_number": "1.01a",
+  "patch_name": "1.01a",
+  "patch_timestamp": 1788917318,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_invoker_21",
+            "image": "invoker_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Ice Wall thickness and length bonus decreased from 160 to 80"
+              }
+            ],
+            "talent_text": "Increased Ice Wall thickness and length: 80\n\nIce Wall freezes enemy heroes that stand in it for 3 seconds, causing them to take 300 magic damage and 1.5 seconds of roots."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_lunar_orbit_custom",
+          "name": "Lunar Orbit",
+          "image": "luna_lunar_orbit.webp",
+          "ability_notes": [
+            {
+              "parameter": "rotating_glaives_collision_damage",
+              "note": "Glaive collision damage increased from 15%/20%/25%/30% to 22%/28%/34%/40% of the owner's damage"
+            }
+          ]
+        },
+        {
+          "ability_id": "luna_moon_glaive_custom",
+          "name": "Moon Glaives",
+          "image": "luna_moon_glaive.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_reduction_percent",
+              "note": "Damage reduction per bounce decreased from 60%/55%/50%/45% to 50%/45%/40%/35%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_luna_8",
+            "image": "luna_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«Night damage bonus: 16/32» replaced with «Lunar Orbit hit damage bonus: 10/15/20. Lunar Orbit cooldown reduction: 2/4/6s»"
+              }
+            ],
+            "talent_text": "Lunar Orbit Hit Damage Increase: 10/15/20\n\nLunar Orbit Cooldown Decreased: 2/4/6 sec."
+          },
+          {
+            "talent_id": "modifier_luna_9",
+            "image": "luna_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Lucent Beam hits increase attack damage: 4/8/12. Effect duration: 15s. Lucent Beam mana cost reduction: 15%/30%/45%» replaced with «New passive ability: Lunar Blessing. Increases the attack damage of nearby allies by 1 per owner level, and affects the owner twice as strongly. At night it works across the whole map and increases the owner's vision by 250 + 25 per level. Radius: 1200»"
+              }
+            ],
+            "talent_text": "New Passive Ability: Lunar Blessing\n\nIncreases damage from nearby allies' attacks by 1 for each owner's level, and affects them twice as much. At night, works across the entire map and increases the owner's vision by 250 + 25 per owner's level.\n\nRadius: 1200"
+          },
+          {
+            "talent_id": "modifier_luna_10",
+            "image": "luna_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Reduces Moon Glaives damage reduction per bounce: 5%/10%» replaced with «New active ability: Lunar Field. Creates a Lunar Orbit at the target point. Duration: 8s. Cast range: 800. Mana cost: 50. Cooldown: 24/12s»"
+              }
+            ],
+            "talent_text": "New Active Ability: Lunar Field\n\nCreates a Lunar Orbit at the target location.\n\nDuration: 8 sec.\nCast Range: 800\nMana Cost: 50\nCooldown: 24/12 sec."
+          },
+          {
+            "talent_id": "modifier_luna_11",
+            "image": "luna_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Moon Glaives bounces slow enemy movement speed: 20%/40%/60%. Duration: 1s» replaced with «Strength, Agility: 6/12/18»"
+              }
+            ],
+            "talent_text": "Strength, Agility: 6/12/18"
+          },
+          {
+            "talent_id": "modifier_luna_12",
+            "image": "luna_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Lucent Beam performs an attack on the struck target» replaced with «Increases Lunar Orbit glaives by 1 for every 100 Strength»"
+              }
+            ],
+            "talent_text": "Increase Lunar Orbit Glaives by 1 for every 100 Strength."
+          },
+          {
+            "talent_id": "modifier_luna_13",
+            "image": "luna_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Lucent Beam stun duration bonus: 0.3/0.6s» replaced with «Lunar Orbit applies a stacking effect to enemies that increases the damage of their next hit: 1%. Max stacks: 10/20/30. Duration: 2s»"
+              }
+            ],
+            "talent_text": "Lunar Orbit places a stacking effect on enemies that increases the damage of their next hit by: 1%\n\nMax Effects: 10/20/30\nDuration: 2 sec."
+          },
+          {
+            "talent_id": "modifier_luna_14",
+            "image": "luna_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«Moon Glaives can bounce off the hero without dealing damage or slowing. Moon Glaives bounce radius bonus: 150» replaced with «Lunar Orbit becomes a passive ability. Toggled off by break»"
+              }
+            ],
+            "talent_text": "Lunar Orbit becomes a Passive Ability. Disabled by break."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_luna_1",
+            "image": "luna_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«Lunar Orbit hit damage bonus: 10/15/20. Lunar Orbit cooldown reduction: 2/4/6s» replaced with «Damage: 8/16. Night damage bonus: 8/16»"
+              }
+            ],
+            "talent_text": "Damage: 8/16\n\nDamage Increase at Night: 8/16"
+          },
+          {
+            "talent_id": "modifier_luna_2",
+            "image": "luna_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«New passive ability: Lunar Blessing. Increases the attack damage of nearby allies by 1 per owner level, and affects the owner twice as strongly. At night it works across the whole map and increases the owner's vision by 250 + 25 per level. Radius: 1200» replaced with «Lucent Beam hits increase attack damage: 4/8/12. Effect duration: 15s. Lucent Beam mana cost reduction: 15%/30%/45%»"
+              }
+            ],
+            "talent_text": "Lucent Beam hits increase Attack Damage: 4/8/12\n\nEffect Duration: 15 sec.\n\nLucent Beam Mana Cost Reduction: 15%/30%/45%"
+          },
+          {
+            "talent_id": "modifier_luna_3",
+            "image": "luna_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Removes Eclipse. New active ability: Lunar Field. Creates a Lunar Orbit at the target point. Duration: 8s. Cast range: 800. Mana cost: 150. Cooldown: 24/16s» replaced with «Reduces Moon Glaives damage reduction per bounce: 5%/10%»"
+              }
+            ],
+            "talent_text": "Moon Glaives Damage Reduction per Bounce: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_luna_5",
+            "image": "luna_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Strength, Agility: 6/12/18» replaced with «Lucent Beam performs an attack on the struck target»"
+              }
+            ],
+            "talent_text": "Lucent Beam makes an Attack on the hit target."
+          },
+          {
+            "talent_id": "modifier_luna_4",
+            "image": "luna_4.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Increases Lunar Orbit glaives by 1 for every 150 Agility. Increases Lunar Orbit rotation radius by 1 for every 2 Agility» replaced with «Moon Glaives bounces slow enemy movement speed: 20%/40%/60%. Duration: 1s»"
+              }
+            ],
+            "talent_text": "Moon Glaives bounces slow enemy Movement Speed: 20%/40%/60%\n\nDuration: 1 sec."
+          },
+          {
+            "talent_id": "modifier_luna_6",
+            "image": "luna_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Lunar Orbit applies a stacking effect to enemies that increases the damage of their next hit: 1%. Max stacks: 10/20/30. Duration: 1s» replaced with «Lucent Beam stun duration bonus: 0.3/0.6s»"
+              }
+            ],
+            "talent_text": "Lucent Beam Stun Duration Increase: 0.3/0.6 sec."
+          },
+          {
+            "talent_id": "modifier_luna_7",
+            "image": "luna_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«Lunar Orbit becomes a passive ability. Toggled off by break» replaced with «Moon Glaives can bounce off the hero without dealing damage or slowing. Moon Glaives bounce radius bonus: 150»"
+              }
+            ],
+            "talent_text": "Moon Glaives can bounce off the Hero without damaging or slowing them.\n\nMoon Glaives Bounce Radius Increase: 150"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_luna_15",
+            "image": "luna_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "No longer removes Moon Glaives"
+              }
+            ],
+            "talent_text": "Lucent Beam triggers on random enemies around the target: 1 + 1 for every 150 Intellect\n\nRadius: 500"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_marci_18",
+            "image": "marci_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Beautiful Illusion damage taken reduction decreased from 50%/100% to 35%/70%"
+              }
+            ],
+            "talent_text": "Beautiful Illusion Damage Taken Reduction: 35%/70%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_rubick_21",
+            "image": "rubick_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Spell damage decreased from 50% to 30%"
+              }
+            ],
+            "talent_text": "Spell Steal Total Damage Increase: 50%\n\nSpell Damage: 30%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "ursa",
+      "name": "ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_ursa_7",
+            "image": "ursa_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Enrage duration bonus increased from 1s to 2s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Enrage does not Reduce All Damage Taken.</font></b>\n\nEnrage Increases All Damage Dealt.\n\nEnrage Duration Increase: 2 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "winter_wyvern",
+      "name": "winter wyvern",
+      "image": "images/heroes/heroesPreview/winter_wyvern.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_winter_wyvern_1",
+            "image": "winter_wyvern_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Cleave damage increased from 15%/30% to 20%/40%"
+              }
+            ],
+            "talent_text": "Hero's attacks deal area damage.\n\nCleave Damage: 20%/40%\nRadius: 250"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_5",
+            "image": "winter_wyvern_5.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Winter's Curse cooldown reduction: 20/40s» replaced with «Cold Embrace increases damage return from all sources: 40%/60%/80%»"
+              }
+            ],
+            "talent_text": "Cold Embrace increases damage return from all sources: 40%/60%/80%"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_4",
+            "image": "winter_wyvern_4.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Cold Embrace increases damage return from all sources: 40%/60%/80%» replaced with «Winter's Curse cooldown reduction: 20/40s. Spell damage: 10%/20%»"
+              }
+            ],
+            "talent_text": "Winter's Curse Cooldown Reduction: 20/40 sec.\n\nSpell Damage: 10%/20%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_winter_wyvern_9",
+            "image": "winter_wyvern_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Mana regen increased from 10%/20%/30% to 12%/24%/36% of Agility"
+              },
+              {
+                "note": "Agility bonus increased from 5/10/15 to 6/12/18"
+              }
+            ],
+            "talent_text": "Mana Regeneration: 12%/24%/36% of Agility\n\nAgility: 6/12/18"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_10",
+            "image": "winter_wyvern_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100/200/300 health"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Remove Cold Embrace. </font></b>\n\nHero Attack Damage Reduction: 10%/15%/20%\n\nHealth: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_11",
+            "image": "winter_wyvern_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Frozen Staff cooldown decreased from 24s to 16s"
+              }
+            ],
+            "talent_text": "New Active Ability: Frozen Staff\n\nPushes the target unit in the direction it is facing.\n\nPush Range: 600\nPush Duration: 0.5 sec.\nMana Cost: 150\nCooldown: 16 sec."
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_12",
+            "image": "winter_wyvern_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Attack speed bonus increased from 20/40 to 30/60"
+              }
+            ],
+            "talent_text": "Grants Unobstructed Vision to Arctic Burn targets in Radius: 200/400\n\nAttack Speed: 30/60"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_winter_wyvern_16",
+            "image": "winter_wyvern_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Splinter Blast damage bonus from Magic Resistance decreased from 200%/300%/400% to 100%/200%/300%"
+              }
+            ],
+            "talent_text": "Splinter Blast Damage Increase: 100%/200%/300% of Magic Resistance"
+          },
+          {
+            "talent_id": "modifier_winter_wyvern_21",
+            "image": "winter_wyvern_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Frozen Cemetery damage per second decreased from 1000% to 600% of Magic Resistance"
+              },
+              {
+                "note": "Frozen Cemetery cooldown increased from 20s to 30s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Winter's Curse. </font></b>\n\nNew Active Ability: Frozen Cemetery\n\nCreates an icy cemetery at the target location. Enemies caught in it take magic damage every second, and their movement speed is always 100 and cannot be changed. The slow works through magic immunity.\n\nDamage per Second: 600% of Magic Resistance\nRadius: 525\nDuration: 10 sec.\nMana Cost: 250\nCooldown: 30 sec."
+          }
+        ]
+      }
+    }
+  ]
+}

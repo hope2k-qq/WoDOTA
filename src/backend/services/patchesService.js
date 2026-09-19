@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { buildSnapshot } = require('../scripts/patches/buildSnapshot');
 const { diffSnapshots } = require('../scripts/patches/diffSnapshots');
-const { buildChangelogData } = require('../scripts/patches/renderChangelog');
+const { buildChangelogData, talentTooltipText } = require('../scripts/patches/renderChangelog');
 const assetIndex = require('../scripts/patches/assetIndex');
 const {
     sourceDir,
@@ -97,6 +97,7 @@ function buildChangelogBetween(from, to, assetKeys = null) {
     const data = buildChangelogData(diff, {
         assetKeys,
         heroList,
+        oldHeroes: oldSnap.heroes,
         newHeroes: newSnap.heroes,
         oldTalents: oldSnap.talents,
         newTalents: newSnap.talents,
@@ -111,6 +112,10 @@ function buildChangelogBetween(from, to, assetKeys = null) {
         oldLocalization: oldSnap.localization,
         newLocalization: newSnap.localization,
         newBaseLocalization: newSnap.baseLocalization,
+        oldLockedTalents: oldSnap.lockedTalents,
+        newLockedTalents: newSnap.lockedTalents,
+        oldBasicTalents: oldSnap.basicTalents,
+        newBasicTalents: newSnap.basicTalents,
         oldActivelist: oldSnap.activelist,
         newActivelist: newSnap.activelist,
         oldHeroAbilityMap: oldSnap.heroAbilityMap,
@@ -273,11 +278,29 @@ function trimCopiedImages(node, destMap, copied) {
     }
 }
 
+function attachTalentTexts(data, localization) {
+    for (const hero of data.heroes || []) {
+        for (const cards of Object.values(hero.talents || {})) {
+            for (const card of cards || []) {
+                const text = talentTooltipText(localization, card.talent_id);
+                if (text) card.talent_text = text;
+                else delete card.talent_text;
+            }
+        }
+    }
+    return data;
+}
+
 async function publishPatch(version, name) {
     const changelog = readPatch(version);
     if (!changelog) return null;
 
     const data = stripRawValues(JSON.parse(JSON.stringify(changelog)));
+    try {
+        attachTalentTexts(data, getSnapshot(version).localization);
+    } finally {
+        clearSnapshotCache();
+    }
     stripCs(data); // на всякий случай: в публичной копии чешского быть не должно
     hoistNoteIcons(data); // icon из старых данных поднимаем на уровень заметки
     if (name) {

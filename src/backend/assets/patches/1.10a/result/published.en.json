@@ -1,0 +1,448 @@
+{
+  "patch_number": "1.10a",
+  "patch_name": "1.10a",
+  "patch_timestamp": 1788995995,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "abaddon_frostmourne_custom",
+          "name": "Curse of Avernus",
+          "image": "abaddon_frostmourne.webp",
+          "ability_notes": [
+            {
+              "parameter": "curse_dps",
+              "note": "Damage per second increased from 10/20/30/40 to 15/25/35/45"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_abaddon_3",
+            "image": "abaddon_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Curse of Avernus damage bonus increased from 10/20/30 to 20/40/60"
+              }
+            ],
+            "talent_text": "Increase Curse of Avernus Damage: 20/40/60"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "axe_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Culling Blade damage bonus decreased from 300%/400%/500% to 200%/300%/400% of Armor"
+              }
+            ],
+            "talent_text": "Increases Culling Blade Damage: 200%/300%/400% of Armor"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "axe_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Battle Hunger damage bonus decreased from 100%/200%/300% to 100%/150%/200% of Armor"
+              }
+            ],
+            "talent_text": "Increased Battle Hunger Damage: 100%/150%/200% of Armor"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "chaos_knight",
+      "name": "chaos knight",
+      "image": "images/heroes/heroesPreview/chaos_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "chaos_knight_chaos_strike_custom",
+          "name": "Chaos Strike",
+          "image": "chaos_knight_chaos_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "crit_max",
+              "note": "Maximum critical damage decreased from 140%/180%/220%/260% to 140%/160%/180%/200%"
+            },
+            {
+              "parameter": "lifesteal",
+              "note": "Lifesteal on proc decreased from 24%/36%/48%/60% to 20%/30%/40%/50%"
+            }
+          ]
+        },
+        {
+          "ability_id": "chaos_knight_phantasm_custom",
+          "name": "Phantasm",
+          "image": "chaos_knight_phantasm.webp",
+          "ability_notes": [
+            {
+              "parameter": "outgoing_damage_tooltip",
+              "note": "Illusion damage decreased from 100% to 60%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_chaos_knight_1",
+            "image": "chaos_knight_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Physical damage dealt to the attacker decreased from 12% to 8% of attack damage"
+              }
+            ],
+            "talent_text": "Each Attack on a hero deals Physical Damage to the attacker: 8% of Attack Damage"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_3",
+            "image": "chaos_knight_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Strength bonus decreased from 4/8/12 to 3/6/9"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reality. </font></b>\n\nStrength: 3/6/9\n\nReality Rift applies Exhaustion to enemies.\n\nDuration: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_4",
+            "image": "chaos_knight_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Damage bonus decreased from 25/50 to 20/40"
+              }
+            ],
+            "talent_text": "Damage: 20/40"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_5",
+            "image": "chaos_knight_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Chaos Strike min and max damage bonus decreased from 20%/40% to 10%/20%"
+              }
+            ],
+            "talent_text": "Increases Minimum and Maximum Chaos Strike Damage: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_7",
+            "image": "chaos_knight_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Chaos Walk damage per second increased from 100% to 110% of attack damage"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Phantasm. </font></b>\n\nNew Passive Ability: Chaos Walk\n\nAllows walking through units and trees. The hero leaves an infernal trail that deals physical damage every second based on their Attack Damage.\n\nModel Size Increase: 40%\nDamage per Second: 110% of Attack Damage\nTrail Radius: 200\nTrail Duration: 3 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_chaos_knight_9",
+            "image": "chaos_knight_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Chaos Bolt illusion damage reduction increased from 25% to 50%"
+              },
+              {
+                "note": "Illusion duration changed from 3/6s to 3/6/9s"
+              }
+            ],
+            "talent_text": "Chaos Bolt creates a Phantasm illusion next to the victim that attacks the target and deals 50% less damage.\n\nIllusion Duration: 3/6/9 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_10",
+            "image": "chaos_knight_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "No longer grants 4/8/12 Agility"
+              },
+              {
+                "note": "Reality Rift silence duration changed from 1/2/3s to 1/2s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reality. </font></b>\n\nReality Rift applies Silence to enemies.\n\nDuration: 1/2 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_11",
+            "image": "chaos_knight_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Phantasm illusion damage taken reduction decreased from 75%/125%/175% to 50%/100%/150%"
+              }
+            ],
+            "talent_text": "Reduced Damage Taken by Phantasm Illusions: 50%/100%/150%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_14",
+            "image": "chaos_knight_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "The radius for creating illusions of other heroes decreased from 1800 to 1200"
+              }
+            ],
+            "talent_text": "In addition to its own illusions, Phantasm creates an illusion of every allied or enemy hero within a 1200 radius, including the owner. These illusions spawn near the original heroes."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_chaos_knight_16",
+            "image": "chaos_knight_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Chaos Bolt min and max damage bonus increased from 200%/300%/400% to 300%/450%/600% of mana regen"
+              }
+            ],
+            "talent_text": "Increases Minimum and Maximum Chaos Bolt Damage: 300%/450%/600% of Mana Regeneration"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_17",
+            "image": "chaos_knight_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Intelligence bonus increased from 4/8/12 to 6/12/18"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reality. </font></b>\n\nIntelligence: 6/12/18\n\nReality Rift applies Break to enemies.\n\nDuration: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_19",
+            "image": "chaos_knight_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Chaos King Bar health regen increased from 150% to 180% of mana regen"
+              },
+              {
+                "note": "Chaos King Bar cooldown decreased from 90s to 60s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Chaos Strike. </font></b>\n\nNew Active Ability: Chaos King Bar\n\nApplies a basic dispel to the owner. Grants 50% magic resistance and protects from negative effects. Increases health regeneration.\n\nDuration: 2/3 sec.\nHealth Regeneration: 180% of Mana Regeneration\nCooldown: 60 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_20",
+            "image": "chaos_knight_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now also grants 100 cast range"
+              }
+            ],
+            "talent_text": "Chaos Bolt Cooldown Reduction: 1.5 sec.\n\nBonus Cast Range: 100"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dawnbreaker_luminosity_custom",
+          "name": "Luminosity",
+          "image": "dawnbreaker_luminosity.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal_pct",
+              "note": "Healing from attacking a hero decreased from 35%/40%/45%/50% to 25%/30%/35%/40%"
+            },
+            {
+              "parameter": "bonus_damage",
+              "note": "Critical damage decreased from 125%/150%/175%/200% to 120%/140%/160%/180%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_5",
+            "image": "dawnbreaker_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Luminosity critical damage bonus decreased from 25%/50% to 15%/30%"
+              }
+            ],
+            "talent_text": "Increases Luminosity Critical Damage: 15%/30%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_dawnbreaker_10",
+            "image": "dawnbreaker_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Solar Guardian damage per pulse bonus decreased from 80%/120% to 45%/90% of Agility"
+              }
+            ],
+            "talent_text": "Increases Damage per Solar Guardian Pulse: 45%/90% of Agility"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_11",
+            "image": "dawnbreaker_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Solar Guardian healing per pulse bonus decreased from 80%/120% to 45%/90% of Agility"
+              }
+            ],
+            "talent_text": "Increases Healing per Solar Guardian Pulse: 45%/90% of Agility"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_13",
+            "image": "dawnbreaker_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Solar Guardian cooldown reduction decreased from 30/60s to 20/40s"
+              }
+            ],
+            "talent_text": "Reduces Solar Guardian Cooldown: 20/40 sec."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dawnbreaker_16",
+            "image": "dawnbreaker_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer fire trail damage bonus decreased from 50%/75%/100% to 30%/45%/60% of Intelligence"
+              }
+            ],
+            "talent_text": "Increases Celestial Hammer Fire Trail Damage: 30%/45%/60% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_19",
+            "image": "dawnbreaker_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer stun duration decreased from 1/2s to 1/1.5s"
+              }
+            ],
+            "talent_text": "Celestial Hammer stuns affected enemies.\n\nDuration: 1/1.5 sec."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_20",
+            "image": "dawnbreaker_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer range and travel speed bonus decreased from 20%/40% to 15%/30%"
+              },
+              {
+                "note": "Armor bonus decreased from 4/8 to 3/6"
+              }
+            ],
+            "talent_text": "Increases Celestial Hammer Travel Range and Speed: 15%/30%\n\nArmor: 3/6"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_21",
+            "image": "dawnbreaker_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer impact damage bonus decreased from 200 to 60"
+              }
+            ],
+            "talent_text": "Celestial Hammer deals Pure Damage instead of Magical.\n\nIncreases Celestial Hammer Impact Damage: 60\n\nCelestial Hammer works through Magic Immunity."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_undying_20",
+            "image": "undying_20.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Increase Soul Rip Max Target: 1 per 15/10 Mana Regeneration» replaced with «Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%»"
+              }
+            ],
+            "talent_text": "Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%"
+          },
+          {
+            "talent_id": "modifier_undying_19",
+            "image": "undying_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Flesh Golem Increases Mana Regeneration: 0.5%/1%/1.5%» replaced with «Increase Soul Rip Maximum Targets: 1 per 20/15 Mana Regeneration»"
+              }
+            ],
+            "talent_text": "Increase Soul Rip Maximum Targets: 1 per 20/15 Mana Regeneration"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "patch_number": "1.03a",
+  "patch_name": "1.03a",
+  "patch_timestamp": 1788965218,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_dezun_bloodrite",
+        "name": "Dezun Bloodrite",
+        "image": "dezun_bloodrite.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "aoe_pct",
+            "note": {
+              "ru": "Blood Invocation: бонус к радиусу заклинаний уменьшен с 15% до 12%",
+              "en": "Blood Invocation: area of effect bonus decreased from 15% to 12%",
+              "uk": "Blood Invocation: додаткову область дії зменшено з 15% до 12%"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "debuff_duration",
+            "note": {
+              "ru": "Длительность эффекта уменьшена с 4 до 3 секунд",
+              "en": "Debuff duration decreased from 4s to 3s",
+              "uk": "Тривалість ефекту зменшено з 4 до 3 секунд"
+            }
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "health_regen_loss",
+            "note": {
+              "ru": "Снижение пополнения здоровья усилено с 20% до 30%",
+              "en": "Health Restoration loss increased from 20% to 30%",
+              "uk": "Зниження поповнення здоров'я посилено з 20% до 30%"
+            }
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_talon_toss_custom",
+          "name": "Talon Toss",
+          "image": "kez_talon_toss.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitDamageType",
+              "note": {
+                "ru": "Тип урона изменён с магического на физический",
+                "en": "Damage type changed from Magical to Physical",
+                "uk": "Тип шкоди змінено з магічної на фізичну"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_nyx_assassin_7",
+            "image": "nyx_assassin_7.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Spiked Carapace не Оглушает Противников. Spiked Carapace возвращает урон неограниченное количество раз» заменено на «Новая Активная Способность: Burrow. Герой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка. Уменьшение Скорости Передвижения в Burrow: 300. Уменьшение Всего Получаемого Урона в Burrow: 3%. Восстановление Здоровья и Маны в Burrow: 0,5%. Уменьшение Времени Перезарядки в Burrow: 10%. Дополнительная Дальность Заклинаний: 100»",
+                  "en": "«Spiked Carapace does not Stun enemies. Spiked Carapace returns damage an unlimited number of times» replaced with «New Active Ability: Burrow. The hero hastily burrows into the ground. While burrowed, he takes reduced damage and empowers his abilities: Spiked Carapace affects all enemies within a 400 radius, Mind Flare and Impale gain increased cast range and reduced cooldown. Movement Speed reduction in Burrow: 300. Total damage reduction in Burrow: 3%. Health and Mana regeneration in Burrow: 0.5%. Cooldown reduction in Burrow: 10%. Bonus Spell Range: 100»",
+                  "uk": "«Spiked Carapace не Приголомшує Противників. Spiked Carapace повертає шкоду необмежену кількість разів» замінено на «Нова Активна Здатність: Burrow. Герой квапливо закопується у землю. Там він отримує зменшену шкоду і посилює свої здібності: Spiked Carapace діє на всіх навколишніх ворогів у Радіусі 400, Mind Flare та Impale отримують збільшену дальність застосування, а також зменшується перезарядка. Зменшення Швидкості Пересування в Burrow: 300. Зменшення Усього Отримуваної Втрати в Burrow: 3%. Відновлення Здоров'я та Мани в Burrow: 0,5%. Зменшення часу Перезарядка в Burrow: 10%. Додаткова Дальність Заклинань: 100»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Новая Активная Способность: Burrow\n\nГерой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка.\n\nУменьшение Скорости Передвижения в Burrow: 300\nУменьшение Всего Получаемого Урона в Burrow: 3%\nВосстановление Здоровья и Маны в Burrow: 0.5%\nУменьшение Времени Перезарядки в Burrow: 10%\nДополнительная Дальность Заклинаний: 100",
+              "en": "New Active Ability: Burrow\n\nThe hero quickly burrows into the ground. There, he receives reduced damage and increases his abilities: Spiked Carapace affects all surrounding enemies in a 400 radius, Mind Flare and Impale receive increased cast range, and their cooldown is also reduced.\n\nReduce Movement Speed ​​in Burrow: 300\nReduce Total Damage Received in Burrow: 3%\nRestore Health and Mana in Burrow: 0.5%\nCooldown Reduction in Burrow: 10%\nAdditional Spell Range: 100",
+              "uk": "Нова Активна Здатність: Burrow\n\nГерой квапливо закопується у землю. Там він отримує зменшену шкоду і посилює свої здібності: Spiked Carapace діє на всіх навколишніх ворогів у Радіусі 400, Mind Flare та Impale отримують збільшену дальність застосування, а також зменшується перезаряджання.\n\nЗменшення Швидкості Пересування в Burrow: 300\nЗменшення Усього Отримуваної Втрати в Burrow: 3%\nВідновлення Здоров'я та Мани в Burrow: 0.5%\nЗменшення часу Перезаряджання в Burrow: 10%\nДодаткова Дальність Заклинань: 100"
+            }
+          },
+          {
+            "talent_id": "modifier_nyx_assassin_6",
+            "image": "nyx_assassin_6.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Новая Активная Способность: Burrow. Герой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка. Уменьшение Скорости Передвижения в Burrow: 300. Уменьшение Всего Получаемого Урона в Burrow: 3%. Восстановление Здоровья и Маны в Burrow: 0,5%. Уменьшение Времени Перезарядки в Burrow: 10%. Дополнительная Дальность Заклинаний: 100» заменено на «Spiked Carapace не Оглушает Противников. Spiked Carapace возвращает урон неограниченное количество раз»",
+                  "en": "«New Active Ability: Burrow. The hero hastily burrows into the ground. While burrowed, he takes reduced damage and empowers his abilities: Spiked Carapace affects all enemies within a 400 radius, Mind Flare and Impale gain increased cast range and reduced cooldown. Movement Speed reduction in Burrow: 300. Total damage reduction in Burrow: 3%. Health and Mana regeneration in Burrow: 0.5%. Cooldown reduction in Burrow: 10%. Bonus Spell Range: 100» replaced with «Spiked Carapace does not Stun enemies. Spiked Carapace returns damage an unlimited number of times»",
+                  "uk": "«Нова Активна Здатність: Burrow. Герой квапливо закопується у землю. Там він отримує зменшену шкоду і посилює свої здібності: Spiked Carapace діє на всіх навколишніх ворогів у Радіусі 400, Mind Flare та Impale отримують збільшену дальність застосування, а також зменшується перезарядка. Зменшення Швидкості Пересування в Burrow: 300. Зменшення Усього Отримуваної Втрати в Burrow: 3%. Відновлення Здоров'я та Мани в Burrow: 0,5%. Зменшення часу Перезарядка в Burrow: 10%. Додаткова Дальність Заклинань: 100» замінено на «Spiked Carapace не Приголомшує Противників. Spiked Carapace повертає шкоду необмежену кількість разів»"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Spiked Carapace не Оглушает Противников.</font></b>\n\nSpiked Carapace возвращает урон неограниченное количество раз.",
+              "en": "<b><font color='#ff0000'>Spiked Carapace does not Stun Enemies.</font></b>\n\nSpiked Carapace returns damage an unlimited number of times.",
+              "uk": "<b><font color='#ff0000'>Spiked Carapace не Приголомшує Противників.</font></b>\n\nSpiked Carapace повертає шкоду необмежену кількість разів."
+            }
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_nyx_assassin_13",
+            "image": "nyx_assassin_13.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Уменьшение перезарядки Spiked Carapace ослаблено с 3/6 до 1,5/3 секунд",
+                  "en": "Spiked Carapace cooldown reduction decreased from 3/6s to 1.5/3s",
+                  "uk": "Зменшення перезарядки Spiked Carapace ослаблено з 3/6 до 1,5/3 секунд"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Времени Перезарядки Spiked Carapace: 1.5/3 сек.",
+              "en": "Spiked Carapace Cooldown Reduction: 1.5/3 sec.",
+              "uk": "Зменшення Часу Перезаряджання Spiked Carapace: 1.5/3 сек."
+            }
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_omniknight_12",
+            "image": "omniknight_12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение базового урона Hammer of Purity ослаблено с 70% до 30%",
+                  "en": "Hammer of Purity base damage bonus decreased from 70% to 30%",
+                  "uk": "Збільшення базової шкоди Hammer of Purity ослаблено з 70% до 30%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Базового Урона Hammer of Purity: 30%",
+              "en": "Hammer of Purity Base Damage Increase: 30%",
+              "uk": "Збільшення Базової шкоди Hammer of Purity: 30%"
+            }
+          },
+          {
+            "talent_id": "modifier_omniknight_9",
+            "image": "omniknight_9.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Теперь также даёт 100% точности атакам Hammer of Purity",
+                  "en": "Now also grants 100% accuracy to Hammer of Purity attacks",
+                  "uk": "Тепер також дає 100% точності атакам Hammer of Purity"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Дальности Атаки Hammer of Purity: 200\n\nТочность Атаки Hammer of Purity: 100%",
+              "en": "Hammer of Purity Attack Range Increase: 200\n\nHammer of Purity Attack Accuracy: 100%",
+              "uk": "Збільшення Дальності Атаки Hammer of Purity: 200\n\nТочність Атаки Молота Чистоти: 100%"
+            }
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_6",
+            "image": "phantom_assassin_6.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к силе уменьшен с 12/24 до 10/20",
+                  "en": "Strength bonus decreased from 12/24 to 10/20",
+                  "uk": "Бонус до сили зменшено з 12/24 до 10/20"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Убирает Immaterial.</font></b>\n\nСила: 10/20",
+              "en": "<b><font color='#ff0000'>Removes Immaterial.</font></b>\n\nStrength: 10/20",
+              "uk": "<b><font color='#ff0000'>Прибирає Immaterial.</font></b>\n\nСила: 10/20"
+            }
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_2",
+            "image": "phantom_assassin_2.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к силе уменьшен с 12/24 до 10/20",
+                  "en": "Strength bonus decreased from 12/24 to 10/20",
+                  "uk": "Бонус до сили зменшено з 12/24 до 10/20"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Убирает Stifling Dagger.</font></b>\n\nСила: 10/20",
+              "en": "<b><font color='#ff0000'>Removes Stifling Dagger.</font></b>\n\nStrength: 10/20",
+              "uk": "<b><font color='#ff0000'>Прибирає Stifling Dagger.</font></b>\n\nСила: 10/20"
+            }
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_4",
+            "image": "phantom_assassin_4.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Бонус к силе уменьшен с 12/24 до 10/20",
+                  "en": "Strength bonus decreased from 12/24 to 10/20",
+                  "uk": "Бонус до сили зменшено з 12/24 до 10/20"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Убирает Blur.</font></b>\n\nСила: 10/20",
+              "en": "<b><font color='#ff0000'>Removes Blur.</font></b>\n\nStrength: 10/20",
+              "uk": "<b><font color='#ff0000'>Прибирає Blur.</font></b>\n\nСила: 10/20"
+            }
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_witch_doctor_15",
+            "image": "witch_doctor_15.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Увеличение отскоков Paralyzing Cask усилено с 1/2 до 2/3",
+                  "en": "Paralyzing Cask bonus bounces increased from 1/2 to 2/3",
+                  "uk": "Збільшення відскоків Paralyzing Cask посилено з 1/2 до 2/3"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Увеличение Отскоков Paralyzing Cask: 2/3",
+              "en": "Paralyzing Cask Bounce Increase: 2/3",
+              "uk": "Збільшення Відскоків Paralyzing Cask: 2/3"
+            }
+          },
+          {
+            "talent_id": "modifier_witch_doctor_19",
+            "image": "witch_doctor_19.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "Остаточный урон последней цели увеличен с 6%/9%/12% до 8%/12%/16%",
+                  "en": "Residual damage to the last target increased from 6%/9%/12% to 8%/12%/16%",
+                  "uk": "Залишкову шкоду останній цілі збільшено з 6%/9%/12% до 8%/12%/16%"
+                }
+              }
+            ],
+            "talent_text": {
+              "ru": "Если Paralyzing Cask перестал отскакивать раньше времени, то последняя цель получит 8%/12%/16% остаточного Урона и будет оглушена 1 дополнительный раз.",
+              "en": "If Paralyzing Cask stops bouncing early, the last target will take 8%/12%/16% residual Damage and be stunned 1 additional time.",
+              "uk": "Якщо Paralyzing Cask перестав відскакувати раніше часу, то остання мета отримає 8%/12%/16% залишкової шкоди і оглушиться 1 додатковий раз."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

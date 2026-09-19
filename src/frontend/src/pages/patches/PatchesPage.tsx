@@ -2,10 +2,11 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import type { PatchLog } from '../../types/patchlog';
+import type { PatchLog, PatchGlobalEntry, PatchGlobalTitle, PatchGlobalSubtitle } from '../../types/patchlog';
 import { copy } from './patches.constants';
-import { getLang } from './patches.utils';
+import { getLang, noteText } from './patches.utils';
 import { SectionTitle } from './components/sectionTitle/SectionTitle';
+import { CategoryTitle } from './components/categoryTitle/CategoryTitle';
 import { Notes } from './components/notes/Notes';
 import { EntityBlock } from './components/entityBlock/EntityBlock';
 import { RegularItems, NeutralItems } from './components/items/Items';
@@ -60,13 +61,13 @@ export const PatchesPage = () => {
     useEffect(() => {
         if (!versions.length) return;
         const matched = versionParam
-            ? versions.find((v) => v.replace(',', '.') === versionParam)
+            ? versions.find((v) => v === versionParam)
             : undefined;
         if (matched) {
             setSelected(matched);
         } else {
             const latest = versions[versions.length - 1];
-            navigate(`/${langPrefix}/patches/${latest.replace(',', '.')}`, { replace: true });
+            navigate(`/${langPrefix}/patches/${latest}`, { replace: true });
         }
     }, [versions, versionParam, langPrefix, navigate]);
 
@@ -83,12 +84,34 @@ export const PatchesPage = () => {
     }, [selected, lang]);
 
     const versionLabel = useMemo(
-        () => (data?.patch_number || selected || '').replace(',', '.'),
+        () => data?.patch_number || selected || '',
         [data, selected]
     );
 
-    const globalChanges = data?.general?.global_changes || [];
+    const globalChanges = useMemo(() => data?.general?.global_changes || [], [data]);
     const hasGeneral = globalChanges.length > 0;
+    const isTitle = (e: PatchGlobalEntry): e is PatchGlobalTitle =>
+        !!e && typeof e === 'object' && 'title' in e;
+    const isSubtitle = (e: PatchGlobalEntry): e is PatchGlobalSubtitle =>
+        !!e && typeof e === 'object' && 'subtitle' in e;
+    type PlainNote = Exclude<PatchGlobalEntry, PatchGlobalTitle | PatchGlobalSubtitle>;
+    const globalGroups = useMemo(() => {
+        const groups: { title: string | null; blocks: { subtitle: string | null; notes: PlainNote[] }[] }[] = [];
+        const lastGroup = () => {
+            if (!groups.length) groups.push({ title: null, blocks: [] });
+            return groups[groups.length - 1];
+        };
+        const lastBlock = (g: (typeof groups)[number]) => {
+            if (!g.blocks.length) g.blocks.push({ subtitle: null, notes: [] });
+            return g.blocks[g.blocks.length - 1];
+        };
+        for (const entry of globalChanges) {
+            if (isTitle(entry)) { groups.push({ title: noteText(entry.title), blocks: [] }); continue; }
+            if (isSubtitle(entry)) { lastGroup().blocks.push({ subtitle: noteText(entry.subtitle), notes: [] }); continue; }
+            lastBlock(lastGroup()).notes.push(entry as PlainNote);
+        }
+        return groups.filter((g) => g.title || g.blocks.length);
+    }, [globalChanges]);
     const neutralArtifacts = data?.neutral_items?.artifacts || [];
     const neutralEnhancements = data?.neutral_items?.enhancements || [];
     const neutralItems = [...neutralArtifacts, ...neutralEnhancements];
@@ -122,7 +145,7 @@ export const PatchesPage = () => {
                                 aria-expanded={isVersionSelectOpen}
                                 onClick={() => setIsVersionSelectOpen((isOpen) => !isOpen)}
                             >
-                                <span>{selected.replace(',', '.')}</span>
+                                <span>{selected}</span>
                                 <ArrowDescIcon
                                     className={`${styles.select_arrow} ${isVersionSelectOpen ? styles.select_arrow_open : ''}`}
                                     aria-hidden="true"
@@ -138,11 +161,11 @@ export const PatchesPage = () => {
                                             aria-selected={version === selected}
                                             key={version}
                                             onClick={() => {
-                                                navigate(`/${langPrefix}/patches/${version.replace(',', '.')}`);
+                                                navigate(`/${langPrefix}/patches/${version}`);
                                                 setIsVersionSelectOpen(false);
                                             }}
                                         >
-                                            {version.replace(',', '.')}
+                                            {version}
                                         </button>
                                     ))}
                                 </div>
@@ -168,8 +191,26 @@ export const PatchesPage = () => {
                         <div>
                             <SectionTitle text={t.general} />
                             <div className={styles.panel}>
-                                <div className={styles.subTitle}>{t.global}</div>
-                                <Notes notes={globalChanges} />
+                                {globalGroups.map((group, i) => (
+                                    <div className={styles.general_card} key={group.title || `group-${i}`}>
+                                        {group.title && (
+                                            <div className={styles.general_heading}>
+                                                <CategoryTitle text={group.title} />
+                                            </div>
+                                        )}
+                                        {group.blocks.map((block, j) => (
+                                            <div
+                                                key={block.subtitle || `block-${j}`}
+                                                className={j === 0 && !block.subtitle ? styles.group_first : undefined}
+                                            >
+                                                {block.subtitle && (
+                                                    <div className={styles.group_subtitle}>{block.subtitle}</div>
+                                                )}
+                                                <Notes notes={block.notes} />
+                                            </div>
+                                        ))}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     )}

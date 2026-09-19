@@ -1,16 +1,31 @@
 {
-  "patch_number": "2,01b",
-  "patch_name": "2,01b",
+  "patch_number": "2.01b",
+  "patch_name": "2.01b",
   "patch_timestamp": 1788741500,
   "general": {
-    "global_changes": []
+    "global_changes": [
+      {
+        "title": {
+          "ru": "Парные порталы",
+          "en": "Twin Gates",
+          "uk": "Подвійні портали"
+        }
+      },
+      {
+        "note": {
+          "ru": "Теперь подготовку телепортации через Парный портал можно прервать оцепенением",
+          "en": "Channeling the Twin Gate can now be interrupted by root",
+          "uk": "Тепер телепортацію через Подвійний портал можна перервати вкоріненням"
+        }
+      }
+    ]
   },
   "neutral_creeps": [],
   "items": {
     "base": [
       {
         "item_id": "item_chasm_stone",
-        "name": "chasm stone",
+        "name": "Chasm Stone",
         "image": "chasm_stone.webp",
         "is_new": false,
         "is_upgrade": false,
@@ -27,7 +42,7 @@
       },
       {
         "item_id": "item_orb_of_frost",
-        "name": "orb of frost",
+        "name": "Orb of Frost",
         "image": "orb_of_frost.webp",
         "is_new": false,
         "is_upgrade": false,
@@ -44,7 +59,7 @@
       },
       {
         "item_id": "item_orb_of_venom",
-        "name": "orb of venom",
+        "name": "Orb of Venom",
         "image": "orb_of_venom.webp",
         "is_new": false,
         "is_upgrade": false,
@@ -63,7 +78,7 @@
     "upgrade": [
       {
         "item_id": "item_abyssal_blade",
-        "name": "abyssal blade",
+        "name": "Abyssal Blade",
         "image": "abyssal_blade.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -80,7 +95,7 @@
       },
       {
         "item_id": "item_butterfly",
-        "name": "butterfly",
+        "name": "Butterfly",
         "image": "butterfly.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -105,7 +120,7 @@
       },
       {
         "item_id": "item_crellas_crozier",
-        "name": "crellas crozier",
+        "name": "Crella's Crozier",
         "image": "crellas_crozier.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -122,7 +137,7 @@
       },
       {
         "item_id": "item_gungir",
-        "name": "gungir",
+        "name": "Gleipnir",
         "image": "gungir.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -130,16 +145,16 @@
           {
             "parameter": "recipe",
             "note": {
-              "ru": "Стоимость рецепта уменьшена с 400 до 300 золота (общая стоимость прежняя — 4650 золота)",
-              "en": "Recipe cost decreased from 400 to 300. Total cost unchanged at 4650g",
-              "uk": "Вартість рецепта зменшено з 400 до 300 золота (загальна вартість незмінна — 4650 золота)"
+              "ru": "Стоимость рецепта уменьшена с 400 до 300 золота (общая стоимость прежняя — 4650 золота, Chasm Stone подорожал с 800 до 900 золота)",
+              "en": "Recipe cost decreased from 400 to 300. Total cost unchanged at 4650g (Chasm Stone increased from 800g to 900g)",
+              "uk": "Вартість рецепта зменшено з 400 до 300 золота (загальна вартість незмінна — 4650 золота, Chasm Stone подорожчав з 800 до 900 золота)"
             }
           }
         ]
       },
       {
         "item_id": "item_heavens_halberd",
-        "name": "heavens halberd",
+        "name": "Heaven's Halberd",
         "image": "heavens_halberd.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -156,7 +171,7 @@
       },
       {
         "item_id": "item_hurricane_pike",
-        "name": "hurricane pike",
+        "name": "Hurricane Pike",
         "image": "hurricane_pike.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -173,7 +188,7 @@
       },
       {
         "item_id": "item_kaya",
-        "name": "kaya",
+        "name": "Kaya",
         "image": "kaya.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -190,7 +205,7 @@
       },
       {
         "item_id": "item_kaya_and_sange",
-        "name": "kaya and sange",
+        "name": "Kaya and Sange",
         "image": "kaya_and_sange.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -207,7 +222,7 @@
       },
       {
         "item_id": "item_mask_of_madness",
-        "name": "mask of madness",
+        "name": "Mask of Madness",
         "image": "mask_of_madness.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -225,14 +240,14 @@
             "note": {
               "ru": "Berserk: бонус к сопротивлению замедлениям для героев дальнего боя уменьшен с 30% до 15% (в ближнем бою бонус прежний — 30%)",
               "en": "Berserk now provides 15% slow resistance for ranged heroes and 30% for melee heroes, instead of 30% for any hero",
-              "uk": "Berserk: бонус до опору уповільненням для героїв дальнього бою зменшено з 30% до 15% (у ближньому бою бонус незмінний — 30%)"
+              "uk": "Berserk: бонус до опору сповільненню для героїв дальнього бою зменшено з 30% до 15% (у ближньому бою бонус незмінний — 30%)"
             }
           }
         ]
       },
       {
         "item_id": "item_meteor_hammer",
-        "name": "meteor hammer",
+        "name": "Meteor Hammer",
         "image": "meteor_hammer.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -249,7 +264,7 @@
       },
       {
         "item_id": "item_orb_of_corrosion",
-        "name": "orb of corrosion",
+        "name": "Orb of Corrosion",
         "image": "orb_of_corrosion.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -266,7 +281,7 @@
       },
       {
         "item_id": "item_satanic",
-        "name": "satanic",
+        "name": "Satanic",
         "image": "satanic.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -283,7 +298,7 @@
       },
       {
         "item_id": "item_shivas_guard",
-        "name": "shivas guard",
+        "name": "Shiva's Guard",
         "image": "shivas_guard.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -291,16 +306,16 @@
           {
             "parameter": "recipe",
             "note": {
-              "ru": "Стоимость рецепта уменьшена с 1350 до 1250 золота (общая стоимость прежняя — 4500 золота)",
-              "en": "Recipe cost decreased from 1350 to 1250. Total cost unchanged at 4500g",
-              "uk": "Вартість рецепта зменшено з 1350 до 1250 золота (загальна вартість незмінна — 4500 золота)"
+              "ru": "Стоимость рецепта уменьшена с 1350 до 1250 золота (общая стоимость прежняя — 4500 золота, Chasm Stone подорожал с 800 до 900 золота)",
+              "en": "Recipe cost decreased from 1350 to 1250. Total cost unchanged at 4500g (Chasm Stone increased from 800g to 900g)",
+              "uk": "Вартість рецепта зменшено з 1350 до 1250 золота (загальна вартість незмінна — 4500 золота, Chasm Stone подорожчав з 800 до 900 золота)"
             }
           }
         ]
       },
       {
         "item_id": "item_skadi",
-        "name": "skadi",
+        "name": "Eye of Skadi",
         "image": "skadi.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -308,16 +323,16 @@
           {
             "parameter": "cold_attack_slow_melee",
             "note": {
-              "ru": "Cold Attack: замедление атаки увеличено с 20% до 25%",
-              "en": "Cold Attack attack speed slow increased from 20% to 25%",
-              "uk": "Cold Attack: уповільнення атаки збільшено з 20% до 25%"
+              "ru": "Cold Attack: замедление скорости атаки в ближнем бою усилено с 20% до 25%",
+              "en": "Cold Attack: attack speed slow against melee increased from 20% to 25%",
+              "uk": "Cold Attack: сповільнення швидкості атаки в ближньому бою посилено з 20% до 25%"
             }
           }
         ]
       },
       {
         "item_id": "item_veil_of_discord",
-        "name": "veil of discord",
+        "name": "Veil of Discord",
         "image": "veil_of_discord.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -327,14 +342,14 @@
             "note": {
               "ru": "Spell Weakness: расход маны уменьшен с 50 до 25",
               "en": "Spell Weakness mana cost decreased from 50 to 25",
-              "uk": "Spell Weakness: витрату мани зменшено з 50 до 25"
+              "uk": "Spell Weakness: витрати мани зменшено з 50 до 25"
             }
           }
         ]
       },
       {
         "item_id": "item_yasha_and_kaya",
-        "name": "yasha and kaya",
+        "name": "Yasha and Kaya",
         "image": "yasha_and_kaya.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -354,30 +369,12 @@
   "neutral_items": {
     "artifacts": [
       {
-        "neutral_item_id": "item_enchanters_bauble",
-        "name": "enchanters bauble",
-        "image": "enchanters_bauble.webp",
-        "neutral_type": "artifact",
-        "is_new": false,
-        "tier": null,
-        "neutral_item_notes": [
-          {
-            "parameter": "enchantment_bonus_growth",
-            "note": {
-              "ru": "Enchant: увеличение бонусов чар при повторном создании артефакта ослаблено с 40% до 35%",
-              "en": "Enchant recraft bonus decreased from 40% to 35%",
-              "uk": "Enchant: збільшення бонусів чар при повторному створенні артефакту послаблено з 40% до 35%"
-            }
-          }
-        ]
-      },
-      {
         "neutral_item_id": "item_heavy_blade",
-        "name": "heavy blade",
+        "name": "Witchbane",
         "image": "heavy_blade.webp",
         "neutral_type": "artifact",
         "is_new": false,
-        "tier": null,
+        "tier": 5,
         "neutral_item_notes": [
           {
             "parameter": "AbilityCooldown",
@@ -393,7 +390,7 @@
     "enhancements": [
       {
         "neutral_item_id": "item_enhancement_feverish",
-        "name": "feverish",
+        "name": "Feverish",
         "image": "enhancement_feverish.webp",
         "neutral_type": "enhancement",
         "is_new": false,
@@ -422,7 +419,7 @@
       "abilities": [
         {
           "ability_id": "death_prophet_witchcraft_custom",
-          "name": "witchcraft",
+          "name": "Witchcraft",
           "image": "death_prophet_witchcraft.webp",
           "innate": true,
           "ability_notes": [
@@ -431,7 +428,7 @@
               "note": {
                 "ru": "Дополнительная скорость передвижения за уровень уменьшена с 0,33% до 0,25%",
                 "en": "Movement Speed per level decreased from 0.33% to 0.25%",
-                "uk": "Додаткова швидкість пересування за рівень зменшена з 0,33% до 0,25%"
+                "uk": "Додаткову швидкість пересування за рівень зменшено з 0,33% до 0,25%"
               }
             },
             {
@@ -439,7 +436,7 @@
               "note": {
                 "ru": "Уменьшение перезарядок за уровень ослаблено с 0,33% до 0,25%",
                 "en": "Spell Cooldown Reduction per level decreased from 0.33% to 0.25%",
-                "uk": "Зменшення перезарядок за рівень послаблено з 0,33% до 0,25%"
+                "uk": "Зменшення перезарядок за рівень ослаблено з 0,33% до 0,25%"
               }
             }
           ]
@@ -506,7 +503,7 @@
       "abilities": [
         {
           "ability_id": "necrophos_sadist",
-          "name": "sadist",
+          "name": "Sadist",
           "image": "necrophos_sadist.webp",
           "innate": true,
           "ability_notes": [
@@ -549,12 +546,17 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "Увеличение урона от атаки Stifling Dagger уменьшено с 25%/50% до 15%/30%",
+                  "ru": "Увеличение урона от атаки Stifling Dagger ослаблено с 25%/50% до 15%/30%",
                   "en": "Stifling Dagger attack damage increase decreased from 25%/50% to 15%/30%",
-                  "uk": "Збільшення шкоди від атаки Stifling Dagger зменшено з 25%/50% до 15%/30%"
+                  "uk": "Збільшення шкоди від атаки Stifling Dagger ослаблено з 25%/50% до 15%/30%"
                 }
               }
-            ]
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона от Атаки Stifling Dagger: 15%/30%",
+              "en": "Increase Stifling Dagger Attack Damage: 15%/30%",
+              "uk": "Збільшення збитків від атаки Stifling Dagger: 15%/30%"
+            }
           }
         ]
       }
@@ -631,7 +633,12 @@
                   "uk": "Максимальний бонус зменшення перезарядки Astral Step тепер досягається при 300 спритності замість 600"
                 }
               }
-            ]
+            ],
+            "talent_text": {
+              "ru": "Уменьшение Времени Перезарядки Astral Step на 1 секунду за каждые 75 Ловкости\n\n<b><font color='#ff0000'> Максимальный бонус достигается при 300 Ловкости. </font></b>",
+              "en": "Reduces Astral Step cooldown by 1 second for every 75 Agility\n\n<b><font color='#ff0000'> Maximum bonus at 300 Agility. </font></b>",
+              "uk": "Зменшення часу перезарядки Astral Step на 1 секунду за кожні 75 Ловкості\n\n<b><font color='#ff0000'> Максимальний бонус досягається при 300 Ловкості. </font></b>"
+            }
           }
         ],
         "intelligence": []
@@ -667,10 +674,15 @@
                 "note": {
                   "ru": "Сопротивление замедлениям уменьшено с 60% до 40%",
                   "en": "Slow Resistance decreased from 60% to 40%",
-                  "uk": "Опір уповільненням зменшено з 60% до 40%"
+                  "uk": "Опір сповільненню зменшено з 60% до 40%"
                 }
               }
-            ]
+            ],
+            "talent_text": {
+              "ru": "<b><font color='#ff0000'>Убирает Fatal Bonds, Shadow Word, Upheaval. </font></b>\n\nНовая Пассивная Способность: Self Immolation\n\nИзменяет облик. Изменяет тип атаки героя на ближний, увеличивает характеристики.\n\nЗдоровье: 15%\nУрон: 30\nБазовая Скорость Атаки: 1.6\nСопротивление Замедлениям: 40%\nВосстановление Здоровья: 1%",
+              "en": "<b><font color='#ff0000'>Removes Fatal Bonds, Shadow Word, Upheaval. </font></b>\n\nNew Passive Ability: Self Immolation\n\nChanges appearance. Changes the hero's attack type to melee, increases stats.\n\nHealth: 15%\nDamage: 30\nBase Attack Speed: 1.6\nSlow Resistance: 40%\nHealth Regeneration: 1%",
+              "uk": "<b><font color='#ff0000'>Прибирає Fatal Bonds, Shadow Word, Upheaval. </font></b>\n\nНова Пасивна Здатність: Self Immolation\n\nЗмінює вигляд. Змінює тип атаки героя на ближній, збільшує характеристики.\n\nЗдоров'я: 15%\nВтрата: 30\nБазова Швидкість Атаки: 1.6\nОпір Уповільненням: 40%\nВідновлення Здоров'я: 1%"
+            }
           }
         ],
         "intelligence": []
@@ -702,7 +714,12 @@
                   "uk": "Шкоду Tornado зменшено з 100 до 75"
                 }
               }
-            ]
+            ],
+            "talent_text": {
+              "ru": "В начале действия Windrun создаётся Tornado.\n\nTornado наносит противникам физический урон каждую секунду.\n\nУрон: 75\nРадиус: 400\nДлительность: 4 сек.",
+              "en": "At the start of Windrun, a Tornado is created.\n\nTornado deals physical damage to enemies every second.\n\nDamage: 75\nRadius: 400\nDuration: 4 sec.",
+              "uk": "На початку дії Windrun створюється Tornado.\n\nTornado завдає противникам фізичну шкоду кожну секунду.\n\nВтрата: 75\nРадіус: 400\nТривалість: 4 сек."
+            }
           }
         ],
         "intelligence": []
@@ -729,12 +746,17 @@
             "talent_notes": [
               {
                 "note": {
-                  "ru": "Увеличение урона Arctic Burn уменьшено с 40/80 до 25/50",
+                  "ru": "Увеличение урона Arctic Burn ослаблено с 40/80 до 25/50",
                   "en": "Arctic Burn damage increase decreased from 40/80 to 25/50",
-                  "uk": "Збільшення шкоди Arctic Burn зменшено з 40/80 до 25/50"
+                  "uk": "Збільшення шкоди Arctic Burn ослаблено з 40/80 до 25/50"
                 }
               }
-            ]
+            ],
+            "talent_text": {
+              "ru": "Увеличение Урона Arctic Burn: 25/50",
+              "en": "Arctic Burn Damage Increase: 25/50",
+              "uk": "Збільшення Шкоди Arctic Burn: 25/50"
+            }
           },
           {
             "talent_id": "modifier_winter_wyvern_14",
@@ -749,7 +771,7 @@
                 "note": {
                   "ru": "Расход маны в секунду уменьшен с 200 до 160",
                   "en": "Mana cost per second decreased from 200 to 160",
-                  "uk": "Витрату мани за секунду зменшено з 200 до 160"
+                  "uk": "Витрати мани за секунду зменшено з 200 до 160"
                 }
               },
               {
@@ -759,7 +781,12 @@
                   "uk": "Більше не знімає обмеження на кількість атак по одній цілі"
                 }
               }
-            ]
+            ],
+            "talent_text": {
+              "ru": "Arctic Burn становится переключаемой способностью и ежесекундно расходует ману.\n\nРасход Маны в Секунду: 160",
+              "en": "Arctic Burn becomes a toggle ability and consumes mana every second.\n\nMana Cost per Second: 160",
+              "uk": "Arctic Burn стає перемикальною здібністю та щосекунди витрачає ману.\n\nВитрата Мани за Секунду: 160"
+            }
           }
         ],
         "intelligence": []

@@ -1,0 +1,117 @@
+{
+  "patch_number": "1.01b",
+  "patch_name": "1.01b",
+  "patch_timestamp": 1789149378,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_moon_glaive_custom",
+          "name": "moon glaive",
+          "image": "abilities/luna_moon_glaive.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_reduction_percent",
+              "old_raw_value": "50 45 40 35",
+              "new_raw_value": "60 55 50 45",
+              "note": {
+                "ru": "Damage Reduction Percent: {change_label} с {old_raw_value}% до {new_raw_value}%",
+                "en": "Damage Reduction Percent: {change_label} from {old_raw_value}% to {new_raw_value}%",
+                "uk": "Damage Reduction Percent: {change_label} з {old_raw_value}% до {new_raw_value}%"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_luna_13",
+            "image": "images/heroes/talents/luna/13.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Новая Активная Способность: Lunar Field. Создаёт Lunar Orbit в указанной точке. Длительность: 8 сек. Дальность Применения: 800. Затраты Маны: 50. Время Перезарядки: 24/12 сек» заменено на «Lunar Orbit накладывает на противников складывающийся эффект, увеличивающий урон от следующего попадания: 1%. Максимум Эффектов: 10/20/30. Длительность: 2 сек»",
+                  "en": "«New Active Ability: Lunar Field. Creates a Lunar Orbit at the target location. Duration: 8 sec. Cast Range: 800. Mana Cost: 50. Cooldown: 24/12 sec» replaced with «Lunar Orbit places a stacking effect on enemies that increases the damage of their next hit by: 1%. Max Effects: 10/20/30. Duration: 2 sec»",
+                  "uk": "«Нова Активна Здатність: Lunar Field. Створює Lunar Orbit у вказаній точці. Витрати Мани: 50. Час Перезарядки: 24/12 сек» замінено на «Lunar Orbit накладає на противників ефект, що складається, що збільшує шкоду від наступного влучення: 1%. Максимум Ефектів: 10/20/30. Тривалість: 2 сек»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_luna_10",
+            "image": "images/heroes/talents/luna/10.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Lunar Orbit накладывает на противников складывающийся эффект, увеличивающий урон от следующего попадания: 1%. Максимум Эффектов: 10/20/30. Длительность: 2 сек» заменено на «Новая Активная Способность: Lunar Field. Создаёт Lunar Orbit в указанной точке. Длительность: 8 сек. Дальность Применения: 800. Затраты Маны: 50. Время Перезарядки: 24/12 сек»",
+                  "en": "«Lunar Orbit places a stacking effect on enemies that increases the damage of their next hit by: 1%. Max Effects: 10/20/30. Duration: 2 sec» replaced with «New Active Ability: Lunar Field. Creates a Lunar Orbit at the target location. Duration: 8 sec. Cast Range: 800. Mana Cost: 50. Cooldown: 24/12 sec»",
+                  "uk": "«Lunar Orbit накладає на противників ефект, що складається, що збільшує шкоду від наступного влучення: 1%. Максимум Ефектів: 10/20/30. Тривалість: 2 сек» замінено на «Нова Активна Здатність: Lunar Field. Створює Lunar Orbit у вказаній точці. Витрати Мани: 50. Час Перезарядки: 24/12 сек»"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_luna_17",
+            "image": "images/heroes/talents/luna/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Lucent Beam: 20%/30% от Интеллекта",
+                  "en": "Lucent Beam Damage Increase: 20%/30% of Intellect",
+                  "uk": "Збільшення втрати Lucent Beam: 20%/30% від Інтелекту"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Lucent Beam: 25%/50% от Интеллекта",
+                  "en": "Lucent Beam Damage Increase: 25%/50% of Intellect",
+                  "uk": "Збільшення втрати Lucent Beam: 25%/50% від Інтелекту"
+                },
+                "note": {
+                  "ru": "{change_label} с {old_raw_value} до {new_raw_value}",
+                  "en": "{change_label} from {old_raw_value} to {new_raw_value}",
+                  "uk": "{change_label} з {old_raw_value} до {new_raw_value}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

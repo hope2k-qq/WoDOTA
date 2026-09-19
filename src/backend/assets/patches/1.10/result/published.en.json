@@ -1,0 +1,1142 @@
+{
+  "patch_number": "1.10",
+  "patch_name": "1.10",
+  "patch_timestamp": 1788989171,
+  "general": {
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "Added a new peaceful arena"
+      },
+      {
+        "note": "Major interface changes"
+      },
+      {
+        "title": "Invulnerability Targeting"
+      },
+      {
+        "note": "Invulnerability targeting rules of certain items and abilities have been updated"
+      },
+      {
+        "note": "Most items and abilities that previously could target and/or affect invulnerable units no longer do so"
+      },
+      {
+        "title": "Cosmetic Items"
+      },
+      {
+        "note": "Added a preview for effects, profile backgrounds, teleport effects and high fives"
+      },
+      {
+        "note": "Added new cosmetic items"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_nullifier",
+        "name": "Nullifier",
+        "image": "nullifier.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mute_duration",
+            "note": "Nullify: duration increased from 3s to 4s"
+          },
+          {
+            "parameter": "slow_pct",
+            "note": "Nullify: movement slow decreased from 80% to 10%"
+          },
+          {
+            "parameter": "AbilityUnitTargetFlags",
+            "note": "Nullify: can no longer be cast on invulnerable units"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_spell_prism",
+        "name": "Spell Prism",
+        "image": "spell_prism.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 6 to 2"
+          },
+          {
+            "parameter": "bonus_cooldown",
+            "note": "Cooldown Reduction: cooldown reduction decreased from 8% to 7%"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "chaos_knight",
+      "name": "chaos knight",
+      "image": "images/heroes/heroesPreview/chaos_knight.webp",
+      "is_new": true,
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "chaos_knight_chaos_bolt_custom",
+          "name": "Chaos Bolt",
+          "image": "chaos_knight_chaos_bolt.webp",
+          "description": [
+            "Fires a mysterious bolt of energy at the target enemy, stunning them for a random duration and dealing random damage. Minimum stun duration: 1.25 / 1.5 / 1.75 / 2. Maximum stun duration: 1.75 / 2.25 / 2.75 / 3.25. Minimum damage: 90 / 120 / 150 / 180. Maximum damage: 155 / 240 / 325 / 410. Cooldown: 13 / 12 / 11 / 10. Cast range: 600. Mana cost: 110."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "chaos_knight_reality_rift_custom",
+          "name": "Reality Rift",
+          "image": "chaos_knight_reality_rift.webp",
+          "description": [
+            "Teleports the hero, all their illusions, and the targeted enemy to a point between the caster and the target. Reduces the target's armor for 6 sec. Pull distance: 300 / 350 / 400 / 450. Armor reduction: -4 / -5 / -6 / -7. Cooldown: 18 / 15 / 12 / 9. Cast range: 600 / 650 / 700 / 750. Mana cost: 50."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "chaos_knight_chaos_strike_custom",
+          "name": "Chaos Strike",
+          "image": "chaos_knight_chaos_strike.webp",
+          "description": [
+            "The hero and their illusions have a chance to perform a critical attack of random strength and restore health based on a portion of the damage dealt. Lifesteal from creeps is reduced. Chance: 33.33%. Minimum critical damage: 120%. Maximum critical damage: 140% / 180% / 220% / 260%. Lifesteal on trigger: 24% / 36% / 48% / 60%."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "chaos_knight_phantasm_custom",
+          "name": "Phantasm",
+          "image": "chaos_knight_phantasm.webp",
+          "description": [
+            "Summons several copies of the hero from parallel dimensions. The copies are illusions, deal 100% damage, and take 350% damage. DISPEL TYPE: basic. Number of illusions: 1 / 2 / 3. Illusion duration: 30. Illusion damage: 100%. Damage taken by illusions: 350%. Cooldown: 75. Mana cost: 100 / 200 / 300."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_chaos_knight_1",
+            "image": "chaos_knight_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Each Attack on a hero deals Physical Damage to the attacker: 12% of Attack Damage"
+              }
+            ],
+            "talent_text": "Each Attack on a hero deals Physical Damage to the attacker: 12% of Attack Damage"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_2",
+            "image": "chaos_knight_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Armor: 2/4. Health Regeneration: 4/8"
+              }
+            ],
+            "talent_text": "Armor: 2/4\n\nHealth Regeneration: 4/8"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_3",
+            "image": "chaos_knight_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Reality.</font> Strength: 4/8/12. Reality Rift applies Exhaustion to enemies. Duration: 1/2/3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reality. </font></b>\n\nStrength: 4/8/12\n\nReality Rift applies Exhaustion to enemies.\n\nDuration: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_4",
+            "image": "chaos_knight_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Damage: 25/50"
+              }
+            ],
+            "talent_text": "Damage: 25/50"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_5",
+            "image": "chaos_knight_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Increases Minimum and Maximum Chaos Strike Damage: 20%/40%"
+              }
+            ],
+            "talent_text": "Increases Minimum and Maximum Chaos Strike Damage: 20%/40%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_6",
+            "image": "chaos_knight_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "If Current Health is below 20%, then:. Chaos Strike Chance Increase: 11.11%/22.22%/33.33%"
+              }
+            ],
+            "talent_text": "If Current Health is below 20%, then:\n\nChaos Strike Chance Increase: 11.11%/22.22%/33.33%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_7",
+            "image": "chaos_knight_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Phantasm.</font> New Passive Ability: Chaos Walk. Allows walking through units and trees. The hero leaves an infernal trail that deals physical damage every second based on their Attack Damage. Model Size Increase: 40%. Damage per Second: 100% of Attack Damage. Trail Radius: 200. Trail Duration: 3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Phantasm. </font></b>\n\nNew Passive Ability: Chaos Walk\n\nAllows walking through units and trees. The hero leaves an infernal trail that deals physical damage every second based on their Attack Damage.\n\nModel Size Increase: 40%\nDamage per Second: 100% of Attack Damage\nTrail Radius: 200\nTrail Duration: 3 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_chaos_knight_8",
+            "image": "chaos_knight_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Reality.</font> Negative effects from Reality Rift also affect all enemies within a 450 radius around the target or cast point. If 4 Realities are learned, then:. Reality Rift can be cast on the ground. Teleports the hero and all of their illusions to the target point"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reality. </font></b>\n\nNegative effects from Reality Rift also affect all enemies within a 450 radius around the target or cast point.\n\nIf 4 Realities are learned, then:\n\nReality Rift can be cast on the ground. Teleports the hero and all of their illusions to the target point."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_9",
+            "image": "chaos_knight_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Chaos Bolt creates a Phantasm illusion near the victim that attacks the target and deals 25% less damage. Illusion Duration: 3/6 sec"
+              }
+            ],
+            "talent_text": "Chaos Bolt creates a Phantasm illusion near the victim that attacks the target and deals 25% less damage.\n\nIllusion Duration: 3/6 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_10",
+            "image": "chaos_knight_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Reality.</font> Agility: 4/8/12. Reality Rift applies Silence to enemies. Duration: 1/2/3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reality. </font></b>\n\nAgility: 4/8/12\n\nReality Rift applies Silence to enemies.\n\nDuration: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_11",
+            "image": "chaos_knight_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Reduced Damage Taken by Phantasm Illusions: 75%/125%/175%"
+              }
+            ],
+            "talent_text": "Reduced Damage Taken by Phantasm Illusions: 75%/125%/175%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_12",
+            "image": "chaos_knight_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "The hero's illusions always spawn with full Health"
+              }
+            ],
+            "talent_text": "The hero's illusions always spawn with full Health."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_13",
+            "image": "chaos_knight_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Each time an illusion of this hero is created, there is a 20%/40%/60% chance to create 1 additional illusion"
+              }
+            ],
+            "talent_text": "Each time an illusion of this hero is created, there is a 20%/40%/60% chance to create 1 additional illusion."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_14",
+            "image": "chaos_knight_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "In addition to its own illusions, Phantasm creates an illusion of every allied or enemy hero within a 1800 radius, including the owner. These illusions spawn near the original heroes"
+              }
+            ],
+            "talent_text": "In addition to its own illusions, Phantasm creates an illusion of every allied or enemy hero within a 1800 radius, including the owner. These illusions spawn near the original heroes."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_chaos_knight_15",
+            "image": "chaos_knight_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Chaos Bolt bounces 1/2 additional times within the ability's cast radius. Mana Regeneration: 5/10"
+              }
+            ],
+            "talent_text": "Chaos Bolt bounces 1/2 additional times within the ability's cast radius.\n\nMana Regeneration: 5/10"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_16",
+            "image": "chaos_knight_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increases Minimum and Maximum Chaos Bolt Damage: 200%/300%/400% of Mana Regeneration"
+              }
+            ],
+            "talent_text": "Increases Minimum and Maximum Chaos Bolt Damage: 200%/300%/400% of Mana Regeneration"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_17",
+            "image": "chaos_knight_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Reality.</font> Intelligence: 4/8/12. Reality Rift applies Break to enemies. Duration: 1/2/3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reality. </font></b>\n\nIntelligence: 4/8/12\n\nReality Rift applies Break to enemies.\n\nDuration: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_18",
+            "image": "chaos_knight_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Reduces ability cast point: 30%/60%. Increases Chaos Bolt projectile speed: 30%/60%"
+              }
+            ],
+            "talent_text": "Reduces ability cast point: 30%/60%\n\nIncreases Chaos Bolt projectile speed: 30%/60%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_19",
+            "image": "chaos_knight_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Chaos Strike.</font> New Active Ability: Chaos King Bar. Applies a basic dispel to the owner. Grants 50% magic resistance and protects from negative effects. Increases health regeneration. Duration: 2/3 sec. Health Regeneration: 150% of Mana Regeneration. Cooldown: 90 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Chaos Strike. </font></b>\n\nNew Active Ability: Chaos King Bar\n\nApplies a basic dispel to the owner. Grants 50% magic resistance and protects from negative effects. Increases health regeneration.\n\nDuration: 2/3 sec.\nHealth Regeneration: 150% of Mana Regeneration\nCooldown: 90 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_20",
+            "image": "chaos_knight_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Reduces Chaos Bolt Cooldown: 1.5 sec"
+              }
+            ],
+            "talent_text": "Reduces Chaos Bolt Cooldown: 1.5 sec."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_21",
+            "image": "chaos_knight_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Phantasm.</font> New Active Ability: Berserk Eclipse. The eclipse summons infernal demons around the hero that directly reduce enemies' magic resistance. Works through magic immunity. Magic Resistance Reduction: 66%. Radius: 666. Duration: 6 sec. Cooldown: 30 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Phantasm. </font></b>\n\nNew Active Ability: Berserk Eclipse\n\nThe eclipse summons infernal demons around the hero that directly reduce enemies' magic resistance. Works through magic immunity.\n\nMagic Resistance Reduction: 66%\nRadius: 666\nDuration: 6 sec.\nCooldown: 30 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "is_new": true,
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dawnbreaker_fire_wreath_custom",
+          "name": "Starbreaker",
+          "image": "dawnbreaker_fire_wreath.webp",
+          "description": [
+            "The hero swings the hammer around three times, dealing bonus attack damage to enemies. On the final swing, the hero smashes the hammer into the ground, stunning enemies in front and dealing damage. Duration: 1.1. Swing and smash radius: 300. Bonus damage from swings and smash: 25 / 40 / 55 / 70. Stun duration: 0.6 / 0.8 / 1 / 1.2. Cooldown: 17 / 15 / 13 / 11. Mana cost: 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "dawnbreaker_celestial_hammer_custom",
+          "name": "Celestial Hammer",
+          "image": "dawnbreaker_celestial_hammer.webp",
+          "description": [
+            "The hero throws their hammer at a target, damaging all enemies along its path. The hammer pauses for 2 sec., then returns, leaving a slowing fire trail behind. The hero can call the hammer early to fly toward it and meet it in the middle. Hammer damage: 50 / 80 / 110 / 140. Fire trail duration: 2.5 / 3 / 3.5 / 4. Fire trail radius: 200. Movement slow from fire trail: 24% / 28% / 32% / 36%. Fire trail damage per second: 20 / 30 / 40 / 50. Cast range: 700 / 900 / 1100 / 1300. Cooldown: 18 / 16 / 14 / 12. Mana cost: 100 / 110 / 120 / 130."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "dawnbreaker_luminosity_custom",
+          "name": "Luminosity",
+          "image": "dawnbreaker_luminosity.webp",
+          "description": [
+            "After several attacks, the hero becomes empowered, causing the next attack to deal critical damage and heal all allied heroes within 650 for 50% of the damage. Healing from attacks on creeps or neutrals is reduced. Attacks to trigger: 3. Healing from attack on hero: 35% / 40% / 45% / 50%. Reduced healing when attacking creeps: 40%. Critical damage: 125% / 150% / 175% / 200%."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "dawnbreaker_solar_guardian_custom",
+          "name": "Solar Guardian",
+          "image": "dawnbreaker_solar_guardian.webp",
+          "description": [
+            "INTERRUPTIBLE — the hero creates a pulsing effect within 350 of any allied hero. Each pulse damages enemies and heals allies. After a brief preparation, the hero flies to the target area, dealing additional damage and stunning enemies upon landing. Once this ability begins, it cannot be interrupted. Heal per pulse: 45 / 70 / 95. Landing radius: 500. Damage per pulse: 30 / 50 / 70. Landing damage: 130 / 160 / 190. Stun duration: 1.4 / 1.6 / 1.8. Flight duration: 0.8. Cooldown: 120 / 105 / 90. Mana cost: 150 / 200 / 250."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_1",
+            "image": "dawnbreaker_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Increases bonus damage from Swings and Starbreaker Strike: 15/30/45"
+              }
+            ],
+            "talent_text": "Increases bonus damage from Swings and Starbreaker Strike: 15/30/45"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_2",
+            "image": "dawnbreaker_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Reduces Starbreaker Mana Cost: 30%/60%. Mana Regeneration: 2/4"
+              }
+            ],
+            "talent_text": "Reduces Starbreaker Mana Cost: 30%/60%\n\nMana Regeneration: 2/4"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_3",
+            "image": "dawnbreaker_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Increases the Radius of Swings and Starbreaker Strike: 40/80. Hero Kills permanently increase the Radius of Swings and Starbreaker Strike: 4. Kills before learning the talent are also counted"
+              }
+            ],
+            "talent_text": "Increases the Radius of Swings and Starbreaker Strike: 40/80\n\nHero Kills permanently increase the Radius of Swings and Starbreaker Strike: 4\n\nKills before learning the talent are also counted."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_4",
+            "image": "dawnbreaker_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Reduces Starbreaker Cooldown by 1 sec. for every 60/45 Strength. Starbreaker Cooldown cannot be reduced below 2 seconds"
+              }
+            ],
+            "talent_text": "Reduces Starbreaker Cooldown by 1 sec. for every 60/45 Strength.\n\nStarbreaker Cooldown cannot be reduced below 2 seconds."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_5",
+            "image": "dawnbreaker_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Increases Luminosity Critical Damage: 25%/50%"
+              }
+            ],
+            "talent_text": "Increases Luminosity Critical Damage: 25%/50%"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_6",
+            "image": "dawnbreaker_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Starbreaker grants debuff immunity and 30%/60% magic resistance during the cast. Allows movement while casting Starbreaker, but slows the owner by 35%. Movement speed cannot drop below 215"
+              }
+            ],
+            "talent_text": "Starbreaker grants debuff immunity and 30%/60% magic resistance during the cast.\n\nAllows movement while casting Starbreaker, but slows the owner by 35%. Movement speed cannot drop below 215."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_7",
+            "image": "dawnbreaker_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "The final strike of Starbreaker triggers the landing effect of Solar Guardian"
+              }
+            ],
+            "talent_text": "The final strike of Starbreaker triggers the landing effect of Solar Guardian."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_dawnbreaker_8",
+            "image": "dawnbreaker_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Increases the cast radius around an allied Solar Guardian: 200/400. Agility: 5/10"
+              }
+            ],
+            "talent_text": "Increases the cast radius around an allied Solar Guardian: 200/400\n\nAgility: 5/10"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_9",
+            "image": "dawnbreaker_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Every 3/2 Luminosity proc triggers a Solar Guardian Pulse"
+              }
+            ],
+            "talent_text": "Every 3/2 Luminosity proc triggers a Solar Guardian Pulse."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_10",
+            "image": "dawnbreaker_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Increases Damage per Solar Guardian Pulse: 80%/120% of Agility"
+              }
+            ],
+            "talent_text": "Increases Damage per Solar Guardian Pulse: 80%/120% of Agility"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_11",
+            "image": "dawnbreaker_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Increases Healing per Solar Guardian Pulse: 80%/120% of Agility"
+              }
+            ],
+            "talent_text": "Increases Healing per Solar Guardian Pulse: 80%/120% of Agility"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_12",
+            "image": "dawnbreaker_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Removes the preparation time from Solar Guardian. Solar Guardian Aura persists for 1/2/3 sec. after landing and follows the owner"
+              }
+            ],
+            "talent_text": "Removes the preparation time from Solar Guardian.\n\nSolar Guardian Aura persists for 1/2/3 sec. after landing and follows the owner."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_13",
+            "image": "dawnbreaker_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Reduces Solar Guardian Cooldown: 30/60 sec"
+              }
+            ],
+            "talent_text": "Reduces Solar Guardian Cooldown: 30/60 sec."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_14",
+            "image": "dawnbreaker_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Solar Guardian no longer depends on the presence of other heroes and has unlimited cast range. Grants vision at the target location. Solar Guardian requires no mana"
+              }
+            ],
+            "talent_text": "Solar Guardian no longer depends on the presence of other heroes and has unlimited cast range. Grants vision at the target location.\n\nSolar Guardian requires no mana."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dawnbreaker_15",
+            "image": "dawnbreaker_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Reduces Celestial Hammer Cooldown: 1/2 sec"
+              }
+            ],
+            "talent_text": "Reduces Celestial Hammer Cooldown: 1/2 sec."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_16",
+            "image": "dawnbreaker_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increases Celestial Hammer Fire Trail Damage: 50%/75%/100% of Intelligence"
+              }
+            ],
+            "talent_text": "Increases Celestial Hammer Fire Trail Damage: 50%/75%/100% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_17",
+            "image": "dawnbreaker_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Starbreaker.</font> Recasting Celestial Hammer moves the hero to the hammer instead of the midpoint. Celestial Hammer performs an Attack on all affected targets"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Starbreaker.</font></b>\n\nRecasting Celestial Hammer moves the hero to the hammer instead of the midpoint.\n\nCelestial Hammer performs an Attack on all affected targets."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_18",
+            "image": "dawnbreaker_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Increases Celestial Hammer Fire Trail Duration: 2/3/4 sec"
+              }
+            ],
+            "talent_text": "Increases Celestial Hammer Fire Trail Duration: 2/3/4 sec."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_19",
+            "image": "dawnbreaker_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer stuns affected enemies. Duration: 1/2 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Celestial Hammer stuns affected enemies.\n\nDuration: 1/2 sec."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_20",
+            "image": "dawnbreaker_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Increases Celestial Hammer Travel Range and Speed: 20%/40%. Armor: 4/8"
+              }
+            ],
+            "talent_text": "Increases Celestial Hammer Travel Range and Speed: 20%/40%\n\nArmor: 4/8"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_21",
+            "image": "dawnbreaker_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Celestial Hammer deals Pure Damage instead of Magical. Increases Celestial Hammer Impact Damage: 200. Celestial Hammer works through Magic Immunity"
+              }
+            ],
+            "talent_text": "Celestial Hammer deals Pure Damage instead of Magical.\n\nIncreases Celestial Hammer Impact Damage: 200\n\nCelestial Hammer works through Magic Immunity."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "axe_battle_hunger_custom",
+          "name": "Battle Hunger",
+          "image": "axe_battle_hunger.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitDamageType",
+              "note": "Damage type changed from Physical to Pure"
+            },
+            {
+              "parameter": "armor_multiplier",
+              "note": "No longer scales its damage with the caster's armor"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_16",
+            "image": "axe_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "No longer grants 5%/10%/15% spell damage"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Counter Helix. </font></b>\n\nKills do not dispel Battle Hunger.\n\nArmor: 3/6/9"
+          },
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "axe_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Battle Hunger Armor Multiplier Increase: 1/2/3» replaced with «Battle Hunger Damage Increase: 100%/200%/300% of Armor»"
+              }
+            ],
+            "talent_text": "Increased Battle Hunger Damage: 100%/200%/300% of Armor"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_11",
+            "image": "creep_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Manta Style now applies a basic dispel"
+              }
+            ],
+            "talent_text": "New Active Ability: Manta Style\n\nCreates 2 illusions of your hero. Applies a Basic Dispel.\n\nIllusion Damage: 40%\nIllusion Incoming Damage: 200%\nDuration: 20 sec.\nMana Cost: 125\nCooldown: 45 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "invoker_ice_wall_custom",
+          "name": "Ice Wall",
+          "image": "invoker_ice_wall.webp",
+          "ability_notes": [
+            {
+              "parameter": "wall_place_distance",
+              "note": "The distance at which the wall is created in front of the hero decreased from 200 to 15"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_io_17",
+            "image": "io_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Barrier replenish rate decreased from 100% to 70% of mana regen"
+              }
+            ],
+            "talent_text": "Permanently grants a barrier that absorbs any damage. The barrier regenerates at the rate of Mana Regeneration and only when the hero's mana is full.\n\nBarrier Regeneration Rate: 70% of Mana Regeneration\nMaximum Barrier Strength: 7%/14% of Maximum Mana"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "keeper_of_the_light",
+      "name": "keeper of the light",
+      "image": "images/heroes/heroesPreview/keeper_of_the_light.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_keeper_of_the_light_8",
+            "image": "keeper_of_the_light_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Light Illusion duration decreased from 15s to 10s"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Illuminate and Obscure. </font></b>\n\nNew Active Ability: Light Illusion\n\nSummons an invulnerable illusion that performs Hero Attacks with the same attack range. The hero cannot attack while the spirit is alive. Prioritizes attacking heroes.\n\nIllusion Duration: 10 sec.\nMana Cost: 50\nCooldown: 12 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_switch_weapons_custom",
+          "name": "Switch Discipline",
+          "image": "kez_switch_weapons_sai.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Can now be used while silenced"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lone_druid",
+      "name": "lone druid",
+      "image": "images/heroes/heroesPreview/lone_druid.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lone_druid_6",
+            "image": "lone_druid_6.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "«Spirit Bear Attack Speed: 0.5/1/1.5 per 1 Hero Strength» replaced with «Spirit Bear Damage: 0.5/1 per 1 Strength»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "Spirit Bear Damage: 0.5/1 per 1 Strength"
+          },
+          {
+            "talent_id": "modifier_lone_druid_7",
+            "image": "lone_druid_7.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Spirit Bear Health: 5/10 per 1 Hero Strength» replaced with «Spirit Bear Attack Speed: 0.5/1/1.5 per 1 Strength»"
+              }
+            ],
+            "talent_text": "Spirit Bear Attack Speed: 0.5/1/1.5 per 1 Strength"
+          },
+          {
+            "talent_id": "modifier_lone_druid_5",
+            "image": "lone_druid_5.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Allows you to summon 2 Spirit Bears at once. New Active Ability: Unity with Nature. You team up with the Spirit Bear» replaced with «Spirit Bear Health: 5/10 per 1 Strength»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "Spirit Bear Health: 5/10 per 1 Strength"
+          },
+          {
+            "talent_id": "modifier_lone_druid_4",
+            "image": "lone_druid_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Spirit Bear Damage: 0.5/1 per 1 Hero Strength» replaced with «Allows you to summon 2 Spirit Bears at once. New Active Ability: Unity with Nature. You merge with the Spirit Bear. The hero can use items without leaving the Spirit Bear. The hero's health always matches the Spirit Bear's health percentage. Cast Range: 150. Mana Cost: 200. Cooldown: 60 sec»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "Allows you to summon 2 Spirit Bears at once.\n\n\nNew Active Ability: Unity with Nature\n\nYou merge with the Spirit Bear. The hero can use items without leaving the Spirit Bear. The hero's health always matches the Spirit Bear's health percentage.\n\nCast Range: 150\nMana Cost: 200\nCooldown: 60 sec."
+          },
+          {
+            "talent_id": "modifier_lone_druid_3",
+            "image": "lone_druid_3.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "Spirit Bear Attack Speed: 15/30\n\nSpirit Bear Attack Accuracy: 100%"
+          },
+          {
+            "talent_id": "modifier_lone_druid_2",
+            "image": "lone_druid_2.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "parameter": "talent_requires",
+                "note": "No longer requires upgrading other talents"
+              }
+            ],
+            "talent_text": "Spirit Bear Damage: 20/40/60\n\nSpirit Bear Movement Speed: 20/40/60"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_lone_druid_9",
+            "image": "lone_druid_9.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": "Can no longer be learned together with «Talent 2» from the Strength branch",
+                "tooltip": "Previously could not be learned together with «Talent 1» from the Strength branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Summon Spirit Bear.</font></b>\n\nHero's attacks have a 30% chance to place roots on the enemy.\n\nDamage per Second: 30/60\nDuration: 1.4/2.2 seconds\nCooldown: 5 seconds"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lone_druid_17",
+            "image": "lone_druid_17.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "parameter": "LockedTalents",
+                "note": "Can no longer be learned together with «Talent 2» from the Strength branch",
+                "tooltip": "Previously could not be learned together with «Talent 1» from the Strength branch"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Summon Spirit Bear. </font></b>\n\nNew Active Ability: Moonlight\n\nA beam of moonlight scorches an enemy, dealing magical damage. If there are creeps within a 300 radius of the target, Moonlight will trigger on them two additional times. The ability has 4 upgrade levels.\n\nDamage: 150\nCast Range: 650\nMana Cost: 100\nCooldown: 8 sec."
+          },
+          {
+            "talent_id": "modifier_lone_druid_20",
+            "image": "lone_druid_20.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Entangling Roots mana cost decreased from 150 to 50"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Spirit Link. </font></b>\n\nNew Active Ability: Entangling Roots\n\nRoots the enemy, preventing them from moving and attacking. As soon as you land an attack on the enemy, the effect is broken.\n\nDuration: 3/6/9 sec.\nCast Range: 650\nMana Cost: 50\nCooldown: 30 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_omniknight_7",
+            "image": "omniknight_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Rain of Purification radius decreased from 1100 to 900"
+              },
+              {
+                "note": "Rain of Purification mana cost decreased from 450 to 400"
+              },
+              {
+                "note": "Rain of Purification cooldown decreased from 50s to 45s"
+              }
+            ],
+            "talent_text": "New Active Ability: Rain of Purification\n\nCreates multiple weakened Purification effects in a random area around the owner.\n\nPurification Interval: 0.25 sec.\nPurification Damage: 50%\nDuration: 5 sec.\nRadius: 900\nMana Cost: 400\nCooldown: 45 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_techies_4",
+            "image": "techies_4.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Burn Out trail width increased from 100 to 150"
+              }
+            ],
+            "talent_text": "New Active Ability: Burn Out\n\nThe hero accelerates, leaving a trail of fire behind him. The fire deals Magic Damage to enemies every second and destroys trees.\n\nMovement Speed: 30%\nDamage: 3% of Max Health\nTrail Width: 150\nDuration: 8 sec.\nCooldown: 15 sec.\nHealth Cost: 20% of Current Health"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tidehunter",
+      "name": "tidehunter",
+      "image": "images/heroes/heroesPreview/tidehunter.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tidehunter_9",
+            "image": "tidehunter_9.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "parameter": "AbilityDamage",
+                "note": "Dead in the Water no longer deals 100 damage"
+              }
+            ],
+            "talent_text": "New Active Ability: Dead in the Water\n\nTidehunter attaches a heavy anchor to an enemy hero. The hero is leashed while attached to the anchor. Attempting to move more than 350 units away from the anchor forces the hero to 100 move speed, dragging the anchor behind them. The anchor can be destroyed with 5 hero attacks and deal 200 magic damage.\n\nCast Range: 350\nDuration: 10 seconds\nMana Cost: 80\nCooldown: 25 seconds"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tinker",
+      "name": "tinker",
+      "image": "images/heroes/heroesPreview/tinker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_tinker_4",
+            "image": "tinker_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Now also reduces the March of the Machines spawn width by 30%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reduced spawn width of March of the Machines: 30% </font></b>\n\nMarch of the Machines merge into mega-mechs. Their number is reduced, while their size and damage are increased 5 times."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "tiny_avalanche_custom",
+          "name": "Avalanche",
+          "image": "tiny_avalanche.webp",
+          "ability_notes": [
+            {
+              "parameter": "total_duration",
+              "note": "Total duration increased from 1.4s to 1.5s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_voodoo_restoration_custom",
+          "name": "Voodoo Restoration",
+          "image": "witch_doctor_voodoo_restoration.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "note": "Voodoo Restoration no longer damages enemies"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_witch_doctor_1",
+            "image": "witch_doctor_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Voodoo Restoration now deals magic damage to enemies equal to 100% of the healing"
+              }
+            ],
+            "talent_text": "Voodoo Restoration deals Magic Damage to enemies: 100% of Healing\n\nVoodoo Restoration Mana Cost Reduction: 15%/30%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

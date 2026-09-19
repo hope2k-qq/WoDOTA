@@ -1,0 +1,93 @@
+{
+  "patch_number": "1.02a",
+  "patch_name": "1.02a",
+  "patch_timestamp": 1788941722,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_abaddon_11",
+            "image": "images/heroes/talents/abaddon/11.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Вампиризм Заклинаниями: 3%/6%/9% Урон от Заклинаний: 3%/6%/9%",
+                  "en": null,
+                  "uk": "Вампіризм Заклинаннями: 3%/6%/9% Втрата від Заклинань: 3%/6%/9%"
+                },
+                "new_raw_value": {
+                  "ru": "Вампиризм Заклинаниями: 3%/6%/9% Урон от Заклинаний: 3%/6%/9% Восстановление Здоровья: 5/10/15",
+                  "en": null,
+                  "uk": "Вампіризм Заклинаннями: 3%/6%/9% Втрата від Заклинань: 3%/6%/9% Відновлення Здоров’я: 5/10/15"
+                },
+                "note": {
+                  "ru": "Теперь также даёт 5/10/15 к восстановлению здоровья",
+                  "en": "Now also grants 5/10/15 health regen",
+                  "uk": "Тепер також дає 5/10/15 до відновлення здоров'я"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "axe_counter_helix_custom",
+          "name": "Counter Helix",
+          "image": "abilities/axe_counter_helix.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "old_raw_value": null,
+              "new_raw_value": "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES",
+              "note": {
+                "ru": "Теперь действует на существ с невосприимчивостью к эффектам",
+                "en": "Now affects spell immune enemies",
+                "uk": "Тепер діє на істот з імунітетом до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

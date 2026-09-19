@@ -1,0 +1,448 @@
+{
+  "patch_number": "1.10a",
+  "patch_name": "1.10a",
+  "patch_timestamp": 1788995995,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "abaddon_frostmourne_custom",
+          "name": "Curse of Avernus",
+          "image": "abaddon_frostmourne.webp",
+          "ability_notes": [
+            {
+              "parameter": "curse_dps",
+              "note": "Урон в секунду увеличен с 10/20/30/40 до 15/25/35/45"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_abaddon_3",
+            "image": "abaddon_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Curse of Avernus усилено с 10/20/30 до 20/40/60"
+              }
+            ],
+            "talent_text": "Увеличение Урона Curse of Avernus: 20/40/60"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "axe_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Culling Blade ослаблено с 300%/400%/500% до 200%/300%/400% от брони"
+              }
+            ],
+            "talent_text": "Увеличение Урона Culling Blade: 200%/300%/400% от Брони"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_19",
+            "image": "axe_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона Battle Hunger ослаблено со 100%/200%/300% до 100%/150%/200% от брони"
+              }
+            ],
+            "talent_text": "Увеличение Урона Battle Hunger: 100%/150%/200% от Брони"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "chaos_knight",
+      "name": "chaos knight",
+      "image": "images/heroes/heroesPreview/chaos_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "chaos_knight_chaos_strike_custom",
+          "name": "Chaos Strike",
+          "image": "chaos_knight_chaos_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "crit_max",
+              "note": "Максимальный критический урон уменьшен со 140%/180%/220%/260% до 140%/160%/180%/200%"
+            },
+            {
+              "parameter": "lifesteal",
+              "note": "Вампиризм при срабатывании уменьшен с 24%/36%/48%/60% до 20%/30%/40%/50%"
+            }
+          ]
+        },
+        {
+          "ability_id": "chaos_knight_phantasm_custom",
+          "name": "Phantasm",
+          "image": "chaos_knight_phantasm.webp",
+          "ability_notes": [
+            {
+              "parameter": "outgoing_damage_tooltip",
+              "note": "Урон иллюзий уменьшен со 100% до 60%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_chaos_knight_1",
+            "image": "chaos_knight_1.webp",
+            "title": "Талант 1",
+            "talent_notes": [
+              {
+                "note": "Физический урон атакующему уменьшен с 12% до 8% от урона атаки"
+              }
+            ],
+            "talent_text": "Каждая Атака по герою наносит Физический Урон Атакующему: 8% от Урона Атаки"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_3",
+            "image": "chaos_knight_3.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус к силе уменьшен с 4/8/12 до 3/6/9"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальность. </font></b>\n\nСила: 3/6/9\n\nReality Rift накладывает Истощение на противников.\n\nДлительность: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_4",
+            "image": "chaos_knight_4.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Бонус к урону уменьшен с 25/50 до 20/40"
+              }
+            ],
+            "talent_text": "Урон: 20/40"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_5",
+            "image": "chaos_knight_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение минимального и максимального урона Chaos Strike ослаблено с 20%/40% до 10%/20%"
+              }
+            ],
+            "talent_text": "Увеличение Минимального и Максимального Урона Chaos Strike: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_7",
+            "image": "chaos_knight_7.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Урон в секунду Chaos Walk увеличен со 100% до 110% от урона атаки"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Phantasm. </font></b>\n\nНовая Пассивная Способность: Chaos Walk\n\nПозволяет ходить сквозь существ и деревья. Герой оставляет за собой адский след который каждую секунду наносит физический урон от его Урона Атаки.\n\nУвеличение Размера Модели: 40%\nУрон в Секунду: 110% от Урона Атаки\nРадиус Следа: 200\nДлительность Следа: 3 сек."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_chaos_knight_9",
+            "image": "chaos_knight_9.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Уменьшение урона иллюзии от Chaos Bolt усилено с 25% до 50%"
+              },
+              {
+                "note": "Длительность иллюзии изменена с 3/6 на 3/6/9 секунд"
+              }
+            ],
+            "talent_text": "Chaos Bolt создаёт рядом с жертвой иллюзию от способности Phantasm, которая атакует цель и наносит на 50% меньше урона.\n\nДлительность Иллюзии: 3/6/9 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_10",
+            "image": "chaos_knight_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Больше не даёт 4/8/12 к ловкости"
+              },
+              {
+                "note": "Длительность безмолвия от Reality Rift изменена с 1/2/3 на 1/2 секунды"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальность. </font></b>\n\nReality Rift накладывает Безмолвие на противников.\n\nДлительность: 1/2 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_11",
+            "image": "chaos_knight_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Уменьшение урона по иллюзиям Phantasm ослаблено с 75%/125%/175% до 50%/100%/150%"
+              }
+            ],
+            "talent_text": "Уменьшение Урона по Иллюзиям Phantasm: 50%/100%/150%"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_14",
+            "image": "chaos_knight_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Радиус создания иллюзий других героев уменьшен с 1800 до 1200"
+              }
+            ],
+            "talent_text": "Phantasm помимо своих иллюзий создаёт иллюзию каждого союзного или вражеского героя в радиусе 1200, включая владельца. Эти иллюзии появляются рядом с оригинальными героями."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_chaos_knight_16",
+            "image": "chaos_knight_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение минимального и максимального урона Chaos Bolt усилено с 200%/300%/400% до 300%/450%/600% от восстановления маны"
+              }
+            ],
+            "talent_text": "Увеличение Минимального и Максимального Урона Chaos Bolt: 300%/450%/600% от Восстановления Маны"
+          },
+          {
+            "talent_id": "modifier_chaos_knight_17",
+            "image": "chaos_knight_17.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Бонус к интеллекту увеличен с 4/8/12 до 6/12/18"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Реальность. </font></b>\n\nИнтеллект: 6/12/18\n\nReality Rift накладывает Бессилие на противников.\n\nДлительность: 1/2/3 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_19",
+            "image": "chaos_knight_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Восстановление здоровья от Chaos King Bar усилено со 150% до 180% от восстановления маны"
+              },
+              {
+                "note": "Перезарядка Chaos King Bar уменьшена с 90 до 60 секунд"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Убирает Chaos Strike. </font></b>\n\nНовая Активная Способность: Chaos King Bar\n\nПрименяет на владельца нормальное развеивание. Даёт 50% к сопротивлению магии и защищает от действия отрицательных эффектов. Увеличивает восстановление здоровья.\n\nДлительность: 2/3 сек.\nВосстановление Здоровья: 180% от Восстановления Маны\nВремя Перезарядки: 60 сек."
+          },
+          {
+            "talent_id": "modifier_chaos_knight_20",
+            "image": "chaos_knight_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 100 к дальности применения заклинаний"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Chaos Bolt: 1.5 сек.\n\nДополнительная Дальность Заклинаний: 100"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "name": "dawnbreaker",
+      "image": "images/heroes/heroesPreview/dawnbreaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dawnbreaker_luminosity_custom",
+          "name": "Luminosity",
+          "image": "dawnbreaker_luminosity.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal_pct",
+              "note": "Лечение от атаки по герою уменьшено с 35%/40%/45%/50% до 25%/30%/35%/40%"
+            },
+            {
+              "parameter": "bonus_damage",
+              "note": "Критический урон уменьшен со 125%/150%/175%/200% до 120%/140%/160%/180%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_dawnbreaker_5",
+            "image": "dawnbreaker_5.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение критического урона Luminosity ослаблено с 25%/50% до 15%/30%"
+              }
+            ],
+            "talent_text": "Увеличение Критического Урона Luminosity: 15%/30%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_dawnbreaker_10",
+            "image": "dawnbreaker_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона за пульсацию Solar Guardian ослаблено с 80%/120% до 45%/90% от ловкости"
+              }
+            ],
+            "talent_text": "Увеличение Урона за Пульсацию Solar Guardian: 45%/90% от Ловкости"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_11",
+            "image": "dawnbreaker_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Увеличение лечения за пульсацию Solar Guardian ослаблено с 80%/120% до 45%/90% от ловкости"
+              }
+            ],
+            "talent_text": "Увеличение Лечения за Пульсацию Solar Guardian: 45%/90% от Ловкости"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_13",
+            "image": "dawnbreaker_13.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Уменьшение перезарядки Solar Guardian ослаблено с 30/60 до 20/40 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Solar Guardian: 20/40 сек."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dawnbreaker_16",
+            "image": "dawnbreaker_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона огненного следа Celestial Hammer ослаблено с 50%/75%/100% до 30%/45%/60% от интеллекта"
+              }
+            ],
+            "talent_text": "Увеличение Урона Огненного Следа Celestial Hammer: 30%/45%/60% от Интеллекта"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_19",
+            "image": "dawnbreaker_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Длительность оглушения Celestial Hammer уменьшена с 1/2 до 1/1,5 секунды"
+              }
+            ],
+            "talent_text": "Celestial Hammer оглушает задетых противников.\n\nДлительность: 1/1.5 сек."
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_20",
+            "image": "dawnbreaker_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Увеличение дальности и скорости полёта Celestial Hammer ослаблено с 20%/40% до 15%/30%"
+              },
+              {
+                "note": "Бонус к броне уменьшен с 4/8 до 3/6"
+              }
+            ],
+            "talent_text": "Увеличение Дальности и Скорости Полёта Celestial Hammer: 15%/30%\n\nБроня: 3/6"
+          },
+          {
+            "talent_id": "modifier_dawnbreaker_21",
+            "image": "dawnbreaker_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Увеличение урона касания Celestial Hammer ослаблено с 200 до 60"
+              }
+            ],
+            "talent_text": "Celestial Hammer наносит Чистый Урон, а не Магический.\n\nУвеличение Урона Касания Celestial Hammer: 60\n\nCelestial Hammer работает сквозь Невосприимчивость к Магии."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_undying_20",
+            "image": "undying_20.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "«Увеличение Максимума Целей Soul Rip: 1 за 15/10 Восстановления Маны» заменено на «Flesh Golem Увеличивает Восстановление Маны: 0,5%/1%/1,5%»"
+              }
+            ],
+            "talent_text": "Flesh Golem Увеличивает Восстановление Маны: 0.5%/1%/1.5%"
+          },
+          {
+            "talent_id": "modifier_undying_19",
+            "image": "undying_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Flesh Golem Увеличивает Восстановление Маны: 0,5%/1%/1,5%» заменено на «Увеличение Максимума Целей Soul Rip: 1 за 20/15 Восстановления Маны»"
+              }
+            ],
+            "talent_text": "Увеличение Максимума Целей Soul Rip: 1 за 20/15 Восстановления Маны"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,2604 @@
+{
+  "patch_number": "1.03",
+  "patch_name": "1.03",
+  "patch_timestamp": 1788894000,
+  "general": {
+    "global_changes": [
+      {
+        "title": "Загальні зміни"
+      },
+      {
+        "note": "Ефекти, що вкорінюють та роззброюють, тепер називаються «путами» й мають відповідний індикатор стану."
+      },
+      {
+        "note": "Змінено розташування предметів у крамниці"
+      },
+      {
+        "note": "До голосування додано майже всіх героїв"
+      },
+      {
+        "title": "Таланти"
+      },
+      {
+        "subtitle": "Сила"
+      },
+      {
+        "note": "Відновлення здоров'я збільшено з 0,25%/0,5%/0,75% до 0,3%/0,6%/0,9%"
+      },
+      {
+        "title": "Зміни механік"
+      },
+      {
+        "note": "Вилучено посилення вампіризму та посилення вампіризму закляттями, а натомість створено новий параметр: поповнення здоров'я."
+      },
+      {
+        "note": "У відсотках збільшує здоров'я, отримуване від вампіризму, вампіризму закляттями та регенерації здоров'я.",
+        "indent": 2
+      },
+      {
+        "note": "Позитивні й негативні ефекти поповнення здоров'я складаються за законом спадної корисності.",
+        "indent": 2
+      },
+      {
+        "note": "Поповнення здоров'я не може бути меншим за -100% та більшим за 100%.",
+        "indent": 2
+      },
+      {
+        "note": "Посилення лікування від кількох джерел тепер додаються, а не складаються за законом спадної корисності."
+      },
+      {
+        "note": "Посилення лікування не може опуститися нижче -100%, але не має верхньої межі."
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_orb_of_frost",
+        "name": "Orb of Frost",
+        "image": "orb_of_frost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Вартість збільшено з 250 до 300 золота"
+          },
+          {
+            "parameter": "heal_reduction",
+            "note": "Frost: замість зменшення на 13% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я на 13%."
+          },
+          {
+            "note": "Frost: сповільнення пересування та зменшення поповнення здоров'я більше не поєднуються з такими ж ефектами від Orb of Corrosion та Eye of Skadi"
+          }
+        ]
+      },
+      {
+        "item_id": "item_talisman_of_evasion",
+        "name": "Talisman of Evasion",
+        "image": "talisman_of_evasion.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "bonus_evasion",
+            "note": "Бонус до ухилення зменшено з 20% до 15%"
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_abyssal_blade",
+        "name": "Abyssal Blade",
+        "image": "abyssal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "Більше не дає 25% до здоров'я від відновлення та вампіризму. Тепер дає 20% до поповнення здоров'я."
+          }
+        ]
+      },
+      {
+        "item_id": "item_blade_mail",
+        "name": "Blade Mail",
+        "image": "blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "Бонус до шкоди зменшено з 28 до 18"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус до броні збільшено з 6 до 7"
+          },
+          {
+            "parameter": "active_reflection_pct",
+            "note": "Damage Return: повернення шкоди при активації збільшено з 30% до 40%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_bloodstone",
+        "name": "Bloodstone",
+        "image": "bloodstone.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Bloodpact: перезарядку зменшено з 35 до 30 секунд"
+          }
+        ]
+      },
+      {
+        "item_id": "item_edge_of_discord",
+        "name": "Edge of Discord",
+        "image": "edge_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "lifesteal_amplify",
+            "note": "Більше не дає 20% до підсилення вампіризму закляттями"
+          }
+        ]
+      },
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта незмінна (570 золота). Загальну вартість збільшено з 4900 до 4950 золота (Orb of Corrosion подорожчав з 1000 до 1050 золота)"
+          },
+          {
+            "parameter": "debuff_increase",
+            "note": "Elementalist: збільшення тривалості негативних ефектів від елемента Void посилено з 10% до 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_gungir",
+        "name": "Gleipnir",
+        "image": "gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Eternal Chains: витрати мани збільшено зі 100 до 150"
+          },
+          {
+            "parameter": "bonus_intellect",
+            "note": "Бонус до інтелекту зменшено з 15 до 12"
+          }
+        ]
+      },
+      {
+        "item_id": "item_holy_locket",
+        "name": "Holy Locket",
+        "image": "holy_locket.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "heal_increase",
+            "note": "Holy Blessing: посилення лікування зменшено з 25% до 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya",
+        "name": "Kaya",
+        "image": "kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "note": "Більше не дає 20% до підсилення вампіризму закляттями"
+          },
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Бонус до підсилення відновлення мани зменшено з 50% до 40%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya_and_sange",
+        "name": "Kaya and Sange",
+        "image": "kaya_and_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "Більше не дає 25% до здоров'я від відновлення та вампіризму і 25% до посилення вампіризму закляттями. Тепер дає 20% до поповнення здоров'я."
+          }
+        ]
+      },
+      {
+        "item_id": "item_madness_blade_mail",
+        "name": "Madness Blade Mail",
+        "image": "madness_blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Berserk Return: витрати мани зменшено з 50 до 25"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Бонус до броні збільшено з 6 до 7"
+          },
+          {
+            "parameter": "minus_armor_active",
+            "note": "Berserk Return: зниження власної броні ослаблено з 8 до 7"
+          },
+          {
+            "parameter": "duration",
+            "note": "Berserk Return: тривалість зменшено з 6 до 5,5 секунди"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "Meteor Hammer",
+        "image": "meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "note": "Більше не дає 24% до підсилення вампіризму закляттями"
+          },
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Бонус до підсилення відновлення мани зменшено з 50% до 40%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_lens",
+        "name": "Meteor Lens",
+        "image": "meteor_lens.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_spell_lifesteal_amp",
+            "note": "Більше не дає 24% до підсилення вампіризму закляттями"
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_kaya",
+        "name": "Moon Kaya",
+        "image": "moon_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amplify",
+            "note": "Більше не дає 24% до підсилення вампіризму закляттями"
+          },
+          {
+            "parameter": "spell_amplify",
+            "note": "Шкоду від заклять зменшено з 16% до 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_sange",
+        "name": "Moon Sange",
+        "image": "moon_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "status_resist",
+            "note": "Опір ефектам збільшено з 24% до 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_yasha",
+        "name": "Moon Yasha",
+        "image": "moon_yasha.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_attackspeed",
+            "note": "Бонус до швидкості атаки збільшено з 15 до 30"
+          },
+          {
+            "parameter": "movespeed_bonus",
+            "note": "Бонус до швидкості пересування зменшено з 16% до 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_corrosion",
+        "name": "Orb of Corrosion",
+        "image": "orb_of_corrosion.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Загальну вартість збільшено з 1000 до 1050 золота (Orb of Frost подорожчав з 250 до 300 золота)"
+          },
+          {
+            "parameter": "heal_reduction",
+            "note": "Corrosion: замість зменшення на 16% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я на 16%."
+          },
+          {
+            "note": "Corrosion: сповільнення пересування та зменшення поповнення здоров'я більше не поєднуються з такими ж ефектами від Orb of Frost та Eye of Skadi"
+          }
+        ]
+      },
+      {
+        "item_id": "item_radiance_custom",
+        "name": "Radiance",
+        "image": "radiance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "evasion",
+            "note": "Бонус до ухилення зменшено з 20% до 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_rod_of_atos",
+        "name": "Rod of Atos",
+        "image": "rod_of_atos.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Cripple: витрати мани збільшено з 50 до 100"
+          },
+          {
+            "parameter": "bonus_intellect",
+            "note": "Бонус до інтелекту зменшено з 15 до 12"
+          }
+        ]
+      },
+      {
+        "item_id": "item_sange",
+        "name": "Sange",
+        "image": "sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "Більше не дає 20% до здоров'я від відновлення та вампіризму. Тепер дає 16% до поповнення здоров'я."
+          }
+        ]
+      },
+      {
+        "item_id": "item_sange_and_yasha",
+        "name": "Sange and Yasha",
+        "image": "sange_and_yasha.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "Більше не дає 25% до здоров'я від відновлення та вампіризму. Тепер дає 20% до поповнення здоров'я."
+          },
+          {
+            "parameter": "status_resistance",
+            "note": "Бонус до опору ефектам зменшено з 20% до 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "Shiva's Guard",
+        "image": "shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "restoration_reduction_aura",
+            "note": "Freezing Aura: замість зменшення на 25% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я та отримуване лікування на 25%."
+          }
+        ]
+      },
+      {
+        "item_id": "item_skadi",
+        "name": "Eye of Skadi",
+        "image": "skadi.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Рецепт змінено"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання потрібно не Point Booster (1200 золота), а другий Ultimate Orb (2800 золота)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Тепер для збирання не потрібен рецепт за 1050 золота (загальну вартість збільшено з 5300 до 5900 золота)"
+          },
+          {
+            "parameter": "bonus_health",
+            "note": "Більше не дає 250 до здоров'я та 250 до мани"
+          },
+          {
+            "parameter": "bonus_all_stats",
+            "note": "Бонус до всіх атрибутів збільшено з 22 до 35"
+          },
+          {
+            "parameter": "restoration_reduction",
+            "note": "Cold Attack: замість зменшення на 40% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я та отримуване лікування на 40%."
+          },
+          {
+            "note": "Cold Attack: сповільнення пересування та зменшення поповнення здоров'я більше не поєднуються з такими ж ефектами від Orb of Frost та Orb of Corrosion"
+          }
+        ]
+      },
+      {
+        "item_id": "item_sphere",
+        "name": "Linken's Sphere",
+        "image": "sphere.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health_regen",
+            "note": "Бонус до відновлення здоров'я збільшено з 6 до 6,5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_venom_song",
+        "name": "Venom Song",
+        "image": "venom_song.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Вартість рецепта незмінна (1095 золота). Загальну вартість збільшено з 4000 до 4050 золота (Orb of Corrosion подорожчав з 1000 до 1050 золота)"
+          },
+          {
+            "parameter": "mana_regen_reduce",
+            "note": "Quelling Aura: зниження відновлення мани посилено з 20% до 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_vladmir",
+        "name": "Vladmir's Offering",
+        "image": "vladmir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "armor",
+            "note": "Бонус до броні зменшено з 2 до 1"
+          }
+        ]
+      },
+      {
+        "item_id": "item_yasha_and_kaya",
+        "name": "Yasha and Kaya",
+        "image": "yasha_and_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "note": "Більше не дає 25% до підсилення вампіризму закляттями"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_divine_regalia",
+        "name": "Divine Regalia",
+        "image": "divine_regalia.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 5,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 5-го розряду",
+        "description": "Пасивне: Exalted. Збільшує всю шкоду, яку завдає власник, на 20%. У разі смерті власника цей артефакт і вибрані з ним чари зникають.",
+        "description_sections": [
+          {
+            "title": "Пасивне: Exalted",
+            "text": "Збільшує всю шкоду, яку завдає власник, на 20%. У разі смерті власника цей артефакт і вибрані з ним чари зникають"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 4-го розряду",
+        "description": "Пасивне: Crushing Blow. Посилює наступну атаку. Вона завдасть критичної шкоди, а також тимчасово сповільнить пересування, атаку та застосування заклять жертви.",
+        "description_sections": [
+          {
+            "title": "Пасивне: Crushing Blow",
+            "text": "Посилює наступну атаку. Вона завдасть критичної шкоди, а також тимчасово сповільнить пересування, атаку та застосування заклять жертви"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 3,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 3-го розряду",
+        "description": "Активне: Pollinate. Обсипає ворогів навколо пилком, який знижує їхнє поповнення здоров'я та завдає періодичної шкоди, що залежить від їхнього максимального здоров'я.",
+        "description_sections": [
+          {
+            "title": "Активне: Pollinate",
+            "text": "Обсипає ворогів навколо пилком, який знижує їхнє поповнення здоров'я та завдає періодичної шкоди, що залежить від їхнього максимального здоров'я"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_kobold_cup",
+        "name": "Kobold Cup",
+        "image": "kobold_cup.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 1,
+        "neutral_item_notes": [],
+        "caption": "Новий артефакт 1-го розряду",
+        "description": "Активне: One for the Road. Збільшує швидкість пересування всіх союзних істот навколо власника.",
+        "description_sections": [
+          {
+            "title": "Активне: One for the Road",
+            "text": "Збільшує швидкість пересування всіх союзних істот навколо власника"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_ceremonial_robe",
+        "name": "Ceremonial Robe",
+        "image": "ceremonial_robe.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 4 на 6"
+          },
+          {
+            "parameter": "status_resistance",
+            "note": "Ceremonial Aura: зниження опору ефектам посилено з 10% до 15%"
+          },
+          {
+            "parameter": "magic_resistance",
+            "note": "Ceremonial Aura: зниження опору магії посилено з 10% до 15%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_chipped_vest",
+        "name": "Chipped Vest",
+        "image": "chipped_vest.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 1,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 6 на 1"
+          },
+          {
+            "parameter": "damage_return_hero",
+            "note": "Chipper: повернення шкоди по героях зменшено з 200 до 30"
+          },
+          {
+            "parameter": "damage_return_creep",
+            "note": "Chipper: повернення шкоди по кріпах зменшено з 200 до 20"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_crippling_crossbow",
+        "name": "Crippling Crossbow",
+        "image": "crippling_crossbow.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "note": "Hobble: замість зменшення на 40% лікування, регенерації здоров'я, вампіризму та вампіризму закляттями тепер зменшує поповнення здоров'я на 40%."
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_fallen_sky",
+        "name": "Fallen Sky",
+        "image": "fallen_sky.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Перезарядку збільшено з 18 до 25 секунд"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_mana_draught",
+        "name": "Mana Draught",
+        "image": "mana_draught.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 1 на 2"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_panic_button",
+        "name": "Magic Lamp",
+        "image": "panic_button.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 5 на 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_poor_mans_shield",
+        "name": "Poor Man's Shield",
+        "image": "poor_mans_shield.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 5 на 2"
+          },
+          {
+            "parameter": "damage_block_melee",
+            "note": "Damage Block: блокування шкоди в ближньому бою зменшено з 75 до 30"
+          },
+          {
+            "parameter": "damage_block_ranged",
+            "note": "Damage Block: блокування шкоди в дальньому бою зменшено з 75 до 20"
+          },
+          {
+            "parameter": "block_chance",
+            "note": "Damage Block: імовірність блокування шкоди від атак кріпів зменшено зі 100% до 50%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_psychic_headband",
+        "name": "Psychic Headband",
+        "image": "psychic_headband.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "intelligence_pct",
+            "note": "Більше не дає 15% до інтелекту"
+          },
+          {
+            "parameter": "cast_range",
+            "note": "Більше не дає 100 до дальності застосування"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_tome_of_aghanim_custom",
+        "name": "Tome of Aghanim",
+        "image": "tome_of_aghanim.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Розряд артефакту змінено з 5 на 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_unrelenting_eye",
+        "name": "Unrelenting Eye",
+        "image": "unrelenting_eye.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "max_slow_res",
+            "note": "Relentless: опір сповільненню збільшено з 30% до 40%"
+          }
+        ]
+      }
+    ],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_alert",
+        "name": "Alert",
+        "image": "enhancement_alert.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 1/2/3/4-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10/20/30/40 до швидкості атаки"
+          },
+          {
+            "note": "+125/250/375/500 дод. видимості вночі"
+          },
+          {
+            "note": "+25/50/75/100 до дальності атаки (ближній і дальній бій)"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_audacious",
+        "name": "Audacious",
+        "image": "enhancement_audacious.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 5/6-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+80/100 до швидкості атаки"
+          },
+          {
+            "note": "+50 до шкоди від магічних атак"
+          },
+          {
+            "note": "+10% до вхідної шкоди",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_boundless",
+        "name": "Boundless",
+        "image": "enhancement_boundless.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 5/6-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+120/150 до дальності атаки (ближній і дальній бій)"
+          },
+          {
+            "note": "+240/300 до дальності застосування"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_brawny",
+        "name": "Brawny",
+        "image": "enhancement_brawny.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 1/2/3/4-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+125/250/375/500 здоров'я"
+          },
+          {
+            "note": "+3/6/9/12 до регенерації здоров'я"
+          },
+          {
+            "note": "+5%/10%/15%/20% Опір сповільненню"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_crude",
+        "name": "Crude",
+        "image": "enhancement_crude.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 4/5-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+20% до поповнення здоров'я"
+          },
+          {
+            "note": "-10%/15% базового часу атаки"
+          },
+          {
+            "note": "-10% інтелекту",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_evolved",
+        "name": "Evolved",
+        "image": "enhancement_evolved.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 5/6-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+40/50 до головної характеристики"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_feverish",
+        "name": "Feverish",
+        "image": "enhancement_feverish.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 4/5-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10%/15% зменшення перезарядки"
+          },
+          {
+            "note": "+20% до збільшення витрати і втрати мани",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_fleetfooted",
+        "name": "Fleetfooted",
+        "image": "enhancement_fleetfooted.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 5/6-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+100/125 до швидкості пересування"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_greedy",
+        "name": "Greedy",
+        "image": "enhancement_greedy.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 2/3-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+100 золота за хвилину"
+          },
+          {
+            "note": "+250/375 мани"
+          },
+          {
+            "note": "-60/30 шкоди від атаки",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_keen_eyed",
+        "name": "Keen-eyed",
+        "image": "enhancement_keen_eyed.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 2/3-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+200/240 до дальності застосування"
+          },
+          {
+            "note": "+6/9 до регенерації мани"
+          },
+          {
+            "note": "-10% макс. мани",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_mystical",
+        "name": "Mystical",
+        "image": "enhancement_mystical.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 1/2/3/4-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+3/6/9/12 до регенерації мани"
+          },
+          {
+            "note": "+5%/10%/15%/20% до опору магії"
+          },
+          {
+            "note": "+25/50/75/100 до дальності застосування"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_quickened",
+        "name": "Quickened",
+        "image": "enhancement_quickened.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 1/2/3/4-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10/20/30/40 до швидкості пересування"
+          },
+          {
+            "note": "+125/250/375/500 мани"
+          },
+          {
+            "note": "+3%/6%/9%/12% до ухилення"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_timeless",
+        "name": "Timeless",
+        "image": "enhancement_timeless.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 4/5-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+15% до тривалості негативних ефектів"
+          },
+          {
+            "note": "+10%/15% до шкоди від заклять"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_titanic",
+        "name": "Titanic",
+        "image": "enhancement_titanic.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 4/5-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10%/15% до базової шкоди від атаки"
+          },
+          {
+            "note": "+15% до опору ефектам"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_tough",
+        "name": "Tough",
+        "image": "enhancement_tough.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 1/2/3/4-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+5/10/15/20 шкоди"
+          },
+          {
+            "note": "+3/6/9/12 броні"
+          },
+          {
+            "note": "+10%/20%/30%/40% до опору відштовхуванню"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_vampiric",
+        "name": "Vampiric",
+        "image": "enhancement_vampiric.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 2/3/4-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+8%/10%/12% до вампіризму"
+          },
+          {
+            "note": "+8%/10%/12% до вампіризму закляттями"
+          },
+          {
+            "note": "+100/150/200 дод. видимості вночі"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_vast",
+        "name": "Vast",
+        "image": "enhancement_vast.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 2/3-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+100/120 до дальності атаки (ближній і дальній бій)"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_wise",
+        "name": "Wise",
+        "image": "enhancement_wise.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "Нові чари 2/3-го розряду",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+240/320 досвіду за хвилину"
+          },
+          {
+            "note": "+10% до макс. додаткової мани"
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "ancient_apparition",
+      "name": "ancient apparition",
+      "image": "images/heroes/heroesPreview/ancient_apparition.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "ancient_apparition_ice_vortex_custom",
+          "name": "Ice Vortex",
+          "image": "ancient_apparition_ice_vortex.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Дальність застосування зменшено з 1500 до 1200"
+            },
+            {
+              "parameter": "radius",
+              "note": "Радіус зменшено з 300 до 275"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_17",
+            "image": "axe_17.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Збільшення броні Berserker's Call ослаблено з 10/20 до 5/10"
+              }
+            ],
+            "talent_text": "Збільшення Радіусу Berserker's Call: 50/100\n\nЗбільшення Броні Berserker's Call: 5/10"
+          },
+          {
+            "talent_id": "modifier_axe_20",
+            "image": "axe_20.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Battle Hunger: зменшення лікування, відновлення здоров'я та вампіризму ослаблено з 15%/30% до 10%/20%"
+              }
+            ],
+            "talent_text": "Battle Hunger завжди сповільнює рух супротивника.\n\nBattle Hunger зменшує лікування, відновлення здоров'я, вампіризм і вампіризм від здібностей супротивників: 10%/20%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bristleback",
+      "name": "bristleback",
+      "image": "images/heroes/heroesPreview/bristleback.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "bristleback_quill_spray_custom",
+          "name": "Quill Spray",
+          "image": "bristleback_quill_spray.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Тепер має автозастосування"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dazzle_shallow_grave_custom",
+          "name": "Shallow Grave",
+          "image": "dazzle_shallow_grave.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Дальність застосування змінено з 700/800/900/1000 на 900"
+            },
+            {
+              "parameter": "duration",
+              "note": "Тривалість збільшено з 3,5/4/4,5/5 до 4/4,5/5/5,5 секунди"
+            },
+            {
+              "parameter": "heal_amplify",
+              "note": "Підсилення лікування за кожні 10% відсутнього здоров'я посилено з 2%/4%/6%/8% до 3%/5%/7%/9%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_silence_custom",
+          "name": "Silence",
+          "image": "death_prophet_silence.webp",
+          "ability_notes": [
+            {
+              "parameter": "projectile_speed",
+              "note": "Швидкість снаряда збільшено з 1200 до 1400"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "doom_doom_custom",
+          "name": "Doom",
+          "image": "doom_doom.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Витрати мани зменшено з 150/225/300 до 150/200/250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 4",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "jakiro_liquid_ice_custom",
+          "name": "Liquid Frost",
+          "image": "jakiro_liquid_ice.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_instance_damage_from_other_abilities",
+              "note": "Додаткову шкоду, яку жертва отримує від інших здібностей героя, змінено з 12/18/24/30 на 8/16/24/32"
+            }
+          ]
+        },
+        {
+          "ability_id": "jakiro_macropyre_custom",
+          "name": "Macropyre",
+          "image": "jakiro_macropyre.webp",
+          "ability_notes": [
+            {
+              "parameter": "linger_duration",
+              "note": "Тривалість дії ефекту після виходу з області зменшено з 2 до 1 секунди"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_jakiro_14",
+            "image": "jakiro_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Тепер також скасовує загальну перезарядку у Liquid Fire та Liquid Frost"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Зменшення Шкоди від Атаки: -50% </font></b>\n\nГерой атакує обома головами одночасно.\n\nСкасовує загальну перезарядку у Liquid Fire та Liquid Frost."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_jakiro_20",
+            "image": "jakiro_20.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди та дальності Dual Breath ослаблено з 60/120 до 50/100"
+              }
+            ],
+            "talent_text": "Збільшення втрат і дальності Dual Breath: 50/100"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "juggernaut_blade_fury_custom",
+          "name": "Blade Fury",
+          "image": "juggernaut_blade_fury.webp",
+          "ability_notes": [
+            {
+              "parameter": "blade_fury_damage",
+              "note": "Шкоду змінено з 45/50/55/60 за удар з інтервалом, що залежить від швидкості атаки, на 80/110/140/170 за секунду"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_juggernaut_18",
+            "image": "juggernaut_18.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Збільшення шкоди Blade Fury посилено з 6%/9%/12% до 15%/30%/45% від інтелекту"
+              }
+            ],
+            "talent_text": "Збільшення втрати Blade Fury: 15%/30%/45% від Інтелекту"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Базову швидкість атаки збільшено з 100 до 110",
+          "icon": "/icon_base_attack_speed.png"
+        },
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Базове відновлення здоров'я збільшено на 0,5",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "kez_echo_slash_custom",
+          "name": "Echo Slash",
+          "image": "kez_echo_slash.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку змінено з 20/18/16/14 на 21/18/15/12 секунд"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_grappling_claw_custom",
+          "name": "Grappling Claw",
+          "image": "kez_grappling_claw.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Витрати мани зменшено з 50 до 40"
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку зменшено з 16/14/12/10 до 13/11/9/7 секунд"
+            },
+            {
+              "parameter": "debuff_duration",
+              "note": "Тривалість сповільнення тепер становить 0,7/0,8/0,9/1 секунди"
+            },
+            {
+              "parameter": "bonus_flat_lifesteal",
+              "note": "Атака після притягування більше не відновлює здоров'я"
+            },
+            {
+              "parameter": "katana_ms_slow_pct",
+              "note": "Сповільнення змінено з 80% на 70%/80%/90%/100%"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_kazurai_katana_custom",
+          "name": "Kazurai Katana",
+          "image": "kez_kazurai_katana.webp",
+          "ability_notes": [
+            {
+              "parameter": "katana_bleed_duration",
+              "note": "Тривалість ефекту збільшено з 4/5/6/7 до 7 секунд"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_raptor_dance_custom",
+          "name": "Raptor Dance",
+          "image": "kez_raptor_dance.webp",
+          "ability_notes": [
+            {
+              "parameter": "strikes",
+              "note": "Кількість ударів збільшено з 2/3/4 до 4"
+            },
+            {
+              "parameter": "base_damage",
+              "note": "Базову шкоду змінено з 75 на 30/60/90"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_falcon_rush_custom",
+          "name": "Falcon Rush",
+          "image": "kez_falcon_rush.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку змінено з 20/18/16/14 на 21/18/15/12 секунд"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_talon_toss_custom",
+          "name": "Talon Toss",
+          "image": "kez_talon_toss.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "note": "Тепер застосовує атаку з істинним ударом та фіксованою шкодою замість простого завдавання магічної шкоди"
+            },
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Шкода та безмовність тепер діють лише на вибрану ціль, а не на всіх ворогів навколо неї"
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку зменшено з 16/14/12/10 до 13/11/9/7 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_kez_19",
+            "image": "kez_19.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "«Grappling Claw завжди лікує та накладає заціпеніння на 1/2 сек» замінено на «Збільшення тривалості сповільнення Grappling Claw: 1/2 сек»"
+              }
+            ],
+            "talent_text": "Збільшення Тривалості Уповільнення Grappling Claw: 1/2 сек.\n\nЗдоров’я: 200/400"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kunkka_x_marks_the_spot_custom",
+          "name": "X Marks the Spot",
+          "image": "kunkka_x_marks_the_spot.webp",
+          "ability_notes": [
+            {
+              "parameter": "duration",
+              "note": "Затримку для ворогів зменшено з 4 до 3 секунд"
+            },
+            {
+              "parameter": "allied_duration",
+              "note": "Затримку для союзників зменшено з 8 до 6 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lich",
+      "name": "lich",
+      "image": "images/heroes/heroesPreview/lich.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "lich_sinister_gaze_custom",
+          "name": "Sinister Gaze",
+          "image": "lich_sinister_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "mana_drain",
+              "note": "Висмоктування мани за секунду збільшено з 10% до 20%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "marci_grapple_custom",
+          "name": "Dispose",
+          "image": "marci_grapple.webp",
+          "ability_notes": [
+            {
+              "parameter": "impact_damage",
+              "note": "Шкоду змінено з 75/150/225/300 на 60/150/240/320"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "medusa_mystic_snake_custom",
+          "name": "Mystic Snake",
+          "image": "medusa_mystic_snake.webp",
+          "ability_notes": [
+            {
+              "parameter": "snake_damage",
+              "note": "Базову шкоду збільшено з 85/130/175/220 до 90/140/190/240"
+            },
+            {
+              "parameter": "snake_mana_steal",
+              "note": "Отримання мани змінено з 14%/15%/16%/17% на 15%"
+            }
+          ]
+        },
+        {
+          "ability_id": "medusa_gorgon_grasp",
+          "name": "Gorgon's Grasp",
+          "image": "medusa_gorgon_grasp.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Витрати мани збільшено з 40/60/80/100 до 65/85/105/125"
+            }
+          ]
+        },
+        {
+          "ability_id": "medusa_stone_gaze_custom",
+          "name": "Stone Gaze",
+          "image": "medusa_stone_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Витрати мани збільшено з 150 до 250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": "Базове відновлення мани зменшено на 0,5",
+          "icon": "/mana_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nature's_prophet",
+      "name": "nature's prophet",
+      "image": "images/heroes/heroesPreview/nature's_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "note": "Дальність атаки зменшено з 620 до 600",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "nature's_prophet_sprout_custom",
+          "name": "Sprout",
+          "image": "nature's_prophet_sprout.webp",
+          "ability_notes": [
+            {
+              "parameter": "sprout_damage",
+              "note": "Шкоду зменшено з 70/140/210/280 до 70/135/200/265"
+            }
+          ]
+        },
+        {
+          "ability_id": "nature's_prophet_teleportation_custom",
+          "name": "Teleportation",
+          "image": "nature's_prophet_teleportation.webp",
+          "ability_notes": [
+            {
+              "parameter": "barrier",
+              "note": "Бар'єр зменшено з 100/150/200/250 до 70/130/190/250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "necrophos_death_pulse_custom",
+          "name": "Death Pulse",
+          "image": "necrophos_death_pulse.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal",
+              "note": "Лікування збільшено з 55/80/105/130 до 70/90/110/130"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "nyx_assassin_spiked_carapace_custom",
+          "name": "Spiked Carapace",
+          "image": "nyx_assassin_spiked_carapace.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку зменшено з 23/20/17/14 до 20/16/12/8 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_hammer_of_purity_custom",
+          "name": "Hammer of Purity",
+          "image": "omniknight_hammer_of_purity.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Тепер є модифікатором атаки з автозастосуванням"
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку зменшено з 16/14/12/10 до 16/12/8/4 секунд"
+            },
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Більше не витрачає 40/45/50/55 мани"
+            },
+            {
+              "parameter": "attack_range_bonus",
+              "note": "Додаткова дальність атаки тепер становить 75"
+            },
+            {
+              "parameter": "movement_slow",
+              "note": "Тепер сповільнює ціль на 75% на 0,2 секунди"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_omniknight_11",
+            "image": "omniknight_11.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Зниження броні Hammer of Purity ослаблено з 3/6/9 до 2/4/6"
+              }
+            ],
+            "talent_text": "Hammer of Purity знижує Броню: 2/4/6\n\nТривалість: 5 сек."
+          },
+          {
+            "talent_id": "modifier_omniknight_10",
+            "image": "omniknight_10.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "«Hammer of Purity уповільнює ворогів на 40%/80% на 5 сек» замінено на «Збільшення тривалості сповільнення Hammer of Purity: 0,7/1,4 сек»"
+              }
+            ],
+            "talent_text": "Збільшення Тривалості Сповільнення Hammer of Purity: 0.7/1.4 сек."
+          },
+          {
+            "talent_id": "modifier_omniknight_13",
+            "image": "omniknight_13.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Частку лікування від завданої шкоди зменшено з 60% до 20%/40%/60%"
+              },
+              {
+                "note": "Тривалість області змінено з 3/6/9 на 4 секунди"
+              }
+            ],
+            "talent_text": "У місці застосування Hammer of Purity залишається область, у якій ви зцілюєтеся від Усієї Завданої Шкоди: 20%/40%/60%\n\nТривалість: 4 сек."
+          },
+          {
+            "talent_id": "modifier_omniknight_9",
+            "image": "omniknight_9.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Hammer of Purity не вимагає мани. Збільшення дальності застосування Hammer of Purity: 200» замінено на «Збільшення дальності атаки Hammer of Purity: 200»"
+              }
+            ],
+            "talent_text": "Збільшення Дальності Атаки Hammer of Purity: 200"
+          },
+          {
+            "talent_id": "modifier_omniknight_14",
+            "image": "omniknight_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "«Hammer of Purity отримує 2 заряди, може бути застосований на область, а також телепортує вас у точку застосування. Радіус: 300» замінено на «Hammer of Purity вражає всіх ворогів у радіусі 300. Зменшення перезарядки Hammer of Purity: 1 сек. Hammer of Purity пробиває імунітет до магії»"
+              }
+            ],
+            "talent_text": "Hammer of Purity вражає всіх ворогів у радіусі 300.\n\nЗменшення Перезарядки Hammer of Purity: 1 сек.\n\nHammer of Purity ігнорує Магічну Імунність."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "oracle",
+      "name": "oracle",
+      "image": "images/heroes/heroesPreview/oracle.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "note": "Дальність атаки збільшено з 620 до 625",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "oracle_fates_edict_custom",
+          "name": "Fate's Edict",
+          "image": "oracle_fates_edict.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Дальність застосування змінено з 500/600/700/800 на 700"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "phantom_assassin_blur_custom",
+          "name": "Blur",
+          "image": "phantom_assassin_blur.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Тепер є вродженою здібністю"
+            },
+            {
+              "parameter": "DependentOnAbility",
+              "note": "Тепер покращується разом із Coup de Grace"
+            },
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Дальність застосування зменшено з 800 до 625/550/475/400"
+            },
+            {
+              "parameter": "bonus_movement_speed",
+              "note": "Бонус до швидкості пересування тепер становить 3%/6%/9%/12%"
+            },
+            {
+              "parameter": "bonus_evasion",
+              "note": "Більше не дає 15%/20%/25%/30% ухилення"
+            },
+            {
+              "note": "Тепер збиває з цілі снаряди, що летять у героя"
+            },
+            {
+              "parameter": "duration",
+              "note": "Тривалість збільшено з 25 до 30 секунд"
+            }
+          ]
+        },
+        {
+          "ability_id": "phantom_assassin_immaterial",
+          "name": "Immaterial",
+          "image": "phantom_assassin_immaterial.webp",
+          "description": [
+            "Phantom Assassin зосереджується на своїх рефлексах, що дозволяє їй ухилятися від ворожих атак. Ухилення покращується з її рівнем. Ухилення частково посилюється від кількох джерел. Дод. ухилення: 15% / 20% / 25% / 30%."
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Нова базова здібність. Пасивна."
+            }
+          ]
+        },
+        {
+          "ability_id": "phantom_assassin_coup_de_grace_custom",
+          "name": "Coup de Grace",
+          "image": "phantom_assassin_coup_de_grace.webp",
+          "ability_notes": [
+            {
+              "parameter": "duration",
+              "note": "Тривалість фокусу збільшено з 6 до 6/8/10 секунд"
+            },
+            {
+              "parameter": "dagger_crit_chance",
+              "note": "Шанс фокусу від кинджала зменшено з 40% до 30%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_6",
+            "image": "phantom_assassin_6.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Тепер прибирає Immaterial, а не Blur"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Прибирає Immaterial.</font></b>\n\nСила: 12/24"
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_4",
+            "image": "phantom_assassin_4.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Тепер прибирає Blur, а не Phantom Strike"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Прибирає Blur.</font></b>\n\nСила: 12/24"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_phantom_assassin_12",
+            "image": "phantom_assassin_12.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Тепер збільшує ухилення Immaterial, а не Blur"
+              }
+            ],
+            "talent_text": "Збільшення Ухилення Immaterial: 10%/20%"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "rubick_telekinesis_custom",
+          "name": "Telekinesis",
+          "image": "rubick_telekinesis.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку зменшено з 24/21/18/15 до 23/20/17/14 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "shadow_fiend_frenzy_custom",
+          "name": "Feast of Souls",
+          "image": "shadow_fiend_frenzy.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку збільшено з 16 до 21 секунди"
+            },
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Витрати мани зменшено з 75 до 60/65/70/75"
+            },
+            {
+              "parameter": "bonus_move_speed",
+              "note": "Тепер також прискорює пересування на 5%/7%/9%/11%"
+            }
+          ]
+        },
+        {
+          "ability_id": "shadow_fiend_necromastery_custom",
+          "name": "Necromastery",
+          "image": "shadow_fiend_necromastery.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Тепер покращується разом з Requiem of Souls"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Базову броню зменшено на 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "spectre_haunt_custom",
+          "name": "Haunt",
+          "image": "spectre_haunt.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Перезарядку зменшено з 100/90/80 до 70/65/60 секунд"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_spectre_11",
+            "image": "spectre_11.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Зменшення перезарядки Haunt посилено з 3/6/9 до 5/10/15 секунд"
+              }
+            ],
+            "talent_text": "Зменшення Часу Перезаряджання Haunt: 5/10/15 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Швидкість пересування збільшено з 300 до 310",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_techies_21",
+            "image": "techies_21.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "Мінне поле тепер спрацьовує на будь-яку ворожу істоту, а не лише на героя"
+              }
+            ],
+            "talent_text": "Зменшення Часу Перезарядження Minefield Sign: 30 сек.\n\nКоли в радіусі 200 від таблички Minefield Sign проходить ворожий герой, область радіусом 1000 навколо неї на 15 сек. стає мінним полем, яке завдає Магічна Втрата ворогам, що рухаються. По закінченні ефекту табличка пропадає\n600\nВідстань для спрацьовування: 200"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "terrorblade",
+      "name": "terrorblade",
+      "image": "images/heroes/heroesPreview/terrorblade.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Базове відновлення здоров'я зменшено на 1",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "terrorblade_reflection_custom",
+          "name": "Reflection",
+          "image": "terrorblade_reflection.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Витрати мани збільшено з 35/40/45/50 до 60/65/70/75"
+            }
+          ]
+        },
+        {
+          "ability_id": "terrorblade_metamorphosis_custom",
+          "name": "Metamorphosis",
+          "image": "terrorblade_metamorphosis.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_damage",
+              "note": "Бонус до шкоди змінено з 30/40/50/60 на 20/40/60/80"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "tiny_avalanche_custom",
+          "name": "Avalanche",
+          "image": "tiny_avalanche.webp",
+          "ability_notes": [
+            {
+              "parameter": "avalanche_damage",
+              "note": "Загальну шкоду зменшено з 100/200/300/400 до 100/190/280/370"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_tree_grab_custom",
+          "name": "Tree Grab",
+          "image": "tiny_tree_grab.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_range",
+              "note": "Дальність атаки зменшено з 350 до 300"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_grow_custom",
+          "name": "Grow",
+          "image": "tiny_grow.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_speed_reduction",
+              "note": "Зменшення швидкості атаки посилено з 30% до 35%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Базову шкоду збільшено на 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "undying_soul_rip_custom",
+          "name": "Soul Rip",
+          "image": "undying_soul_rip.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_unit",
+              "note": "Шкоду/лікування за істоту змінено з 15/25/35/45 на 14/26/38/50"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "warlock_shadow_word_custom",
+          "name": "Shadow Word",
+          "image": "warlock_shadow_word.webp",
+          "ability_notes": [
+            {
+              "parameter": "spell_aoe",
+              "note": "Радіус ефекту зменшено з 300 до 225"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "windranger_focusfire_custom",
+          "name": "Focus Fire",
+          "image": "windranger_focusfire.webp",
+          "ability_notes": [
+            {
+              "parameter": "focusfire_damage_reduction",
+              "note": "Зменшення шкоди ослаблено з 40% до 30%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_paralyzing_cask_custom",
+          "name": "Paralyzing Cask",
+          "image": "witch_doctor_paralyzing_cask.webp",
+          "ability_notes": [
+            {
+              "parameter": "bounce_bonus_damage",
+              "note": "Шкода тепер збільшується на 20 з кожним відскоком"
+            },
+            {
+              "parameter": "base_damage",
+              "note": "Базову шкоду зменшено з 90/130/170/210 до 55/70/85/100"
+            },
+            {
+              "parameter": "bounces",
+              "note": "Кількість відскоків змінено з 2/4/6/8 на 3/4/5/6"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Швидкість пересування зменшено з 315 до 310",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

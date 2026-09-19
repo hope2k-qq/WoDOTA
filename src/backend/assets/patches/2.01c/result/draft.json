@@ -1,0 +1,1054 @@
+{
+  "patch_number": "2.01c",
+  "patch_name": "2.01c",
+  "patch_timestamp": 1789841919,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_dragon_lance",
+        "name": "Dragon Lance",
+        "image": "images/items/dragon_lance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_dragon_lance",
+              "result_id": "item_dragon_lance",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_blade_of_alacrity",
+                      "name": "Blade of Alacrity",
+                      "cost": 1000
+                    },
+                    {
+                      "id": "item_belt_of_strength",
+                      "name": "Belt of Strength",
+                      "cost": 450
+                    }
+                  ],
+                  "total_cost": 1900
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_blade_of_alacrity",
+                  "name": "Blade of Alacrity",
+                  "cost": 1000
+                },
+                {
+                  "id": "item_belt_of_strength",
+                  "name": "Belt of Strength",
+                  "cost": 450
+                }
+              ],
+              "recipe_cost": 450,
+              "total_cost": 1900
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_dragon_lance",
+              "result_id": "item_dragon_lance",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_blade_of_alacrity",
+                      "name": "Blade of Alacrity",
+                      "cost": 1000
+                    },
+                    {
+                      "id": "item_belt_of_strength",
+                      "name": "Belt of Strength",
+                      "cost": 450
+                    }
+                  ],
+                  "total_cost": 2000
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_blade_of_alacrity",
+                  "name": "Blade of Alacrity",
+                  "cost": 1000
+                },
+                {
+                  "id": "item_belt_of_strength",
+                  "name": "Belt of Strength",
+                  "cost": 450
+                }
+              ],
+              "recipe_cost": 550,
+              "total_cost": 2000
+            },
+            "note": {
+              "ru": "Стоимость рецепта увеличена с 450 до 550 золота (общая стоимость увеличилась с 1900 до 2000 золота)",
+              "en": "Recipe cost increased from 450 to 550. Total cost increased from 1900g to 2000g",
+              "uk": "Вартість рецепта збільшено з 450 до 550 золота (загальну вартість збільшено з 1900 до 2000 золота)"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_essence_distiller",
+        "name": "Essence Distiller",
+        "image": "images/items/essence_distiller.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "mana_regen",
+            "old_raw_value": "1.75",
+            "new_raw_value": "1.5",
+            "note": {
+              "ru": "Mana Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Mana Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Mana Regen: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_greater_crit",
+        "name": "Daedalus",
+        "image": "images/items/greater_crit.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_greater_crit",
+              "result_id": "item_greater_crit",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_lesser_crit",
+                      "name": "Crystalys",
+                      "cost": 2000
+                    },
+                    {
+                      "id": "item_demon_edge",
+                      "name": "Demon Edge",
+                      "cost": 2200
+                    }
+                  ],
+                  "total_cost": 5100
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_lesser_crit",
+                  "name": "Crystalys",
+                  "cost": 2000
+                },
+                {
+                  "id": "item_demon_edge",
+                  "name": "Demon Edge",
+                  "cost": 2200
+                }
+              ],
+              "recipe_cost": 900,
+              "total_cost": 5100
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_greater_crit",
+              "result_id": "item_greater_crit",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_lesser_crit",
+                      "name": "Crystalys",
+                      "cost": 2000
+                    },
+                    {
+                      "id": "item_demon_edge",
+                      "name": "Demon Edge",
+                      "cost": 2200
+                    }
+                  ],
+                  "total_cost": 5200
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_lesser_crit",
+                  "name": "Crystalys",
+                  "cost": 2000
+                },
+                {
+                  "id": "item_demon_edge",
+                  "name": "Demon Edge",
+                  "cost": 2200
+                }
+              ],
+              "recipe_cost": 1000,
+              "total_cost": 5200
+            },
+            "note": {
+              "ru": "Стоимость рецепта увеличена с 900 до 1000 золота (общая стоимость увеличилась с 5100 до 5200 золота)",
+              "en": "Recipe cost increased from 900 to 1000. Total cost increased from 5100g to 5200g",
+              "uk": "Вартість рецепта збільшено з 900 до 1000 золота (загальну вартість збільшено з 5100 до 5200 золота)"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_heaven_shield",
+        "name": "Heaven's Shield",
+        "image": "images/items/heaven_shield.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_heaven_shield",
+              "result_id": "item_heaven_shield",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_heavens_halberd",
+                      "name": "Heaven's Halberd",
+                      "cost": 3400
+                    },
+                    {
+                      "id": "item_vanguard",
+                      "name": "Vanguard",
+                      "cost": 1700
+                    }
+                  ],
+                  "total_cost": 5800
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_heavens_halberd",
+                  "name": "Heaven's Halberd",
+                  "cost": 3400
+                },
+                {
+                  "id": "item_vanguard",
+                  "name": "Vanguard",
+                  "cost": 1700
+                }
+              ],
+              "recipe_cost": 700,
+              "total_cost": 5800
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_heaven_shield",
+              "result_id": "item_heaven_shield",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_heavens_halberd",
+                      "name": "Heaven's Halberd",
+                      "cost": 3300
+                    },
+                    {
+                      "id": "item_vanguard",
+                      "name": "Vanguard",
+                      "cost": 1700
+                    }
+                  ],
+                  "total_cost": 5700
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_heavens_halberd",
+                  "name": "Heaven's Halberd",
+                  "cost": 3300
+                },
+                {
+                  "id": "item_vanguard",
+                  "name": "Vanguard",
+                  "cost": 1700
+                }
+              ],
+              "recipe_cost": 700,
+              "total_cost": 5700
+            },
+            "note": {
+              "ru": "Стоимость рецепта прежняя (700 золота). Общая стоимость уменьшилась с 5800 до 5700 золота (Heaven's Halberd подешевел с 3400 до 3300 золота)",
+              "en": "Recipe cost unchanged at 700. Total cost decreased from 5800g to 5700g (Heaven's Halberd decreased from 3400g to 3300g)",
+              "uk": "Вартість рецепта незмінна (700 золота). Загальну вартість зменшено з 5800 до 5700 золота (Heaven's Halberd подешевшав з 3400 до 3300 золота)"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_heavens_halberd",
+        "name": "Heaven's Halberd",
+        "image": "images/items/heavens_halberd.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_heavens_halberd",
+              "result_id": "item_heavens_halberd",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_talisman_of_evasion",
+                      "name": "Talisman of Evasion",
+                      "cost": 1300
+                    },
+                    {
+                      "id": "item_splintmail",
+                      "name": "Splintmail",
+                      "cost": 950
+                    },
+                    {
+                      "id": "item_ring_of_health",
+                      "name": "Ring of Health",
+                      "cost": 700
+                    }
+                  ],
+                  "total_cost": 3400
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_talisman_of_evasion",
+                  "name": "Talisman of Evasion",
+                  "cost": 1300
+                },
+                {
+                  "id": "item_splintmail",
+                  "name": "Splintmail",
+                  "cost": 950
+                },
+                {
+                  "id": "item_ring_of_health",
+                  "name": "Ring of Health",
+                  "cost": 700
+                }
+              ],
+              "recipe_cost": 450,
+              "total_cost": 3400
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_heavens_halberd",
+              "result_id": "item_heavens_halberd",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_talisman_of_evasion",
+                      "name": "Talisman of Evasion",
+                      "cost": 1300
+                    },
+                    {
+                      "id": "item_splintmail",
+                      "name": "Splintmail",
+                      "cost": 950
+                    },
+                    {
+                      "id": "item_ring_of_health",
+                      "name": "Ring of Health",
+                      "cost": 700
+                    }
+                  ],
+                  "total_cost": 3300
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_talisman_of_evasion",
+                  "name": "Talisman of Evasion",
+                  "cost": 1300
+                },
+                {
+                  "id": "item_splintmail",
+                  "name": "Splintmail",
+                  "cost": 950
+                },
+                {
+                  "id": "item_ring_of_health",
+                  "name": "Ring of Health",
+                  "cost": 700
+                }
+              ],
+              "recipe_cost": 350,
+              "total_cost": 3300
+            },
+            "note": {
+              "ru": "Стоимость рецепта уменьшена с 450 до 350 золота (общая стоимость уменьшилась с 3400 до 3300 золота)",
+              "en": "Recipe cost decreased from 450 to 350. Total cost decreased from 3400g to 3300g",
+              "uk": "Вартість рецепта зменшено з 450 до 350 золота (загальну вартість зменшено з 3400 до 3300 золота)"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_hurricane_pike",
+        "name": "Hurricane Pike",
+        "image": "images/items/hurricane_pike.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_hurricane_pike",
+              "result_id": "item_hurricane_pike",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_force_staff*",
+                      "name": "Force Staff",
+                      "cost": 2200
+                    },
+                    {
+                      "id": "item_dragon_lance",
+                      "name": "Dragon Lance",
+                      "cost": 1900
+                    }
+                  ],
+                  "total_cost": 4450
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_force_staff*",
+                  "name": "Force Staff",
+                  "cost": 2200
+                },
+                {
+                  "id": "item_dragon_lance",
+                  "name": "Dragon Lance",
+                  "cost": 1900
+                }
+              ],
+              "recipe_cost": 350,
+              "total_cost": 4450
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_hurricane_pike",
+              "result_id": "item_hurricane_pike",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_force_staff*",
+                      "name": "Force Staff",
+                      "cost": 2200
+                    },
+                    {
+                      "id": "item_dragon_lance",
+                      "name": "Dragon Lance",
+                      "cost": 2000
+                    }
+                  ],
+                  "total_cost": 4550
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_force_staff*",
+                  "name": "Force Staff",
+                  "cost": 2200
+                },
+                {
+                  "id": "item_dragon_lance",
+                  "name": "Dragon Lance",
+                  "cost": 2000
+                }
+              ],
+              "recipe_cost": 350,
+              "total_cost": 4550
+            },
+            "note": {
+              "ru": "Стоимость рецепта прежняя (350 золота). Общая стоимость увеличилась с 4450 до 4550 золота (Dragon Lance подорожал с 1900 до 2000 золота)",
+              "en": "Recipe cost unchanged at 350. Total cost increased from 4450g to 4550g (Dragon Lance increased from 1900g to 2000g)",
+              "uk": "Вартість рецепта незмінна (350 золота). Загальну вартість збільшено з 4450 до 4550 золота (Dragon Lance подорожчав з 1900 до 2000 золота)"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_hydras_breath",
+        "name": "Hydra's Breath",
+        "image": "images/items/hydras_breath.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_hydras_breath",
+              "result_id": "item_hydras_breath",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_specialists_array",
+                      "name": "Specialist's Array",
+                      "cost": 2550
+                    },
+                    {
+                      "id": "item_dragon_lance",
+                      "name": "Dragon Lance",
+                      "cost": 1900
+                    },
+                    {
+                      "id": "item_orb_of_venom",
+                      "name": "Orb of Venom",
+                      "cost": 350
+                    }
+                  ],
+                  "total_cost": 5900
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_specialists_array",
+                  "name": "Specialist's Array",
+                  "cost": 2550
+                },
+                {
+                  "id": "item_dragon_lance",
+                  "name": "Dragon Lance",
+                  "cost": 1900
+                },
+                {
+                  "id": "item_orb_of_venom",
+                  "name": "Orb of Venom",
+                  "cost": 350
+                }
+              ],
+              "recipe_cost": 1100,
+              "total_cost": 5900
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_hydras_breath",
+              "result_id": "item_hydras_breath",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_specialists_array",
+                      "name": "Specialist's Array",
+                      "cost": 2550
+                    },
+                    {
+                      "id": "item_dragon_lance",
+                      "name": "Dragon Lance",
+                      "cost": 2000
+                    },
+                    {
+                      "id": "item_orb_of_venom",
+                      "name": "Orb of Venom",
+                      "cost": 350
+                    }
+                  ],
+                  "total_cost": 5900
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_specialists_array",
+                  "name": "Specialist's Array",
+                  "cost": 2550
+                },
+                {
+                  "id": "item_dragon_lance",
+                  "name": "Dragon Lance",
+                  "cost": 2000
+                },
+                {
+                  "id": "item_orb_of_venom",
+                  "name": "Orb of Venom",
+                  "cost": 350
+                }
+              ],
+              "recipe_cost": 1000,
+              "total_cost": 5900
+            },
+            "note": {
+              "ru": "Стоимость рецепта уменьшена с 1100 до 1000 золота (общая стоимость прежняя — 5900 золота, Dragon Lance подорожал с 1900 до 2000 золота)",
+              "en": "Recipe cost decreased from 1100 to 1000. Total cost unchanged at 5900g (Dragon Lance increased from 1900g to 2000g)",
+              "uk": "Вартість рецепта зменшено з 1100 до 1000 золота (загальна вартість незмінна — 5900 золота, Dragon Lance подорожчав з 1900 до 2000 золота)"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_manta",
+        "name": "Manta Style",
+        "image": "images/items/manta.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "images_do_damage_percent_ranged",
+            "old_raw_value": "-72",
+            "new_raw_value": "-75",
+            "note": {
+              "ru": "Images Do Damage Percent Ranged: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Images Do Damage Percent Ranged: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Images Do Damage Percent Ranged: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          },
+          {
+            "parameter": "tooltip_damage_outgoing_ranged",
+            "old_raw_value": "28",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Tooltip Damage Outgoing Ranged: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Tooltip Damage Outgoing Ranged: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Tooltip Damage Outgoing Ranged: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_mask_of_madness",
+        "name": "Mask of Madness",
+        "image": "images/items/mask_of_madness.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "lifesteal_percent",
+            "old_raw_value": "24",
+            "new_raw_value": "22",
+            "note": {
+              "ru": "Lifesteal Percent: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Lifesteal Percent: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Lifesteal Percent: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_mjollnir",
+        "name": "Mjollnir",
+        "image": "images/items/mjollnir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "static_duration",
+            "old_raw_value": "15.0",
+            "new_raw_value": "12.0",
+            "note": {
+              "ru": "Static Duration: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Static Duration: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Static Duration: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_octarine_core",
+        "name": "Octarine Core",
+        "image": "images/items/octarine_core.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_octarine_core",
+              "result_id": "item_octarine_core",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_soul_booster",
+                      "name": "Soul Booster",
+                      "cost": 3000
+                    },
+                    {
+                      "id": "item_tiara_of_selemene",
+                      "name": "Tiara of Selemene",
+                      "cost": 1700
+                    }
+                  ],
+                  "total_cost": 4900
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_soul_booster",
+                  "name": "Soul Booster",
+                  "cost": 3000
+                },
+                {
+                  "id": "item_tiara_of_selemene",
+                  "name": "Tiara of Selemene",
+                  "cost": 1700
+                }
+              ],
+              "recipe_cost": 200,
+              "total_cost": 4900
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_octarine_core",
+              "result_id": "item_octarine_core",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_soul_booster",
+                      "name": "Soul Booster",
+                      "cost": 3000
+                    },
+                    {
+                      "id": "item_tiara_of_selemene",
+                      "name": "Tiara of Selemene",
+                      "cost": 1700
+                    }
+                  ],
+                  "total_cost": 5100
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_soul_booster",
+                  "name": "Soul Booster",
+                  "cost": 3000
+                },
+                {
+                  "id": "item_tiara_of_selemene",
+                  "name": "Tiara of Selemene",
+                  "cost": 1700
+                }
+              ],
+              "recipe_cost": 400,
+              "total_cost": 5100
+            },
+            "note": {
+              "ru": "Стоимость рецепта увеличена с 200 до 400 золота (общая стоимость увеличилась с 4900 до 5100 золота)",
+              "en": "Recipe cost increased from 200 to 400. Total cost increased from 4900g to 5100g",
+              "uk": "Вартість рецепта збільшено з 200 до 400 золота (загальну вартість збільшено з 4900 до 5100 золота)"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_satanic",
+        "name": "Satanic",
+        "image": "images/items/satanic.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "lifesteal_percent",
+            "old_raw_value": "30",
+            "new_raw_value": "25",
+            "note": {
+              "ru": "Lifesteal Percent: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Lifesteal Percent: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Lifesteal Percent: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "Shiva's Guard",
+        "image": "images/items/shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "blast_damage",
+            "old_raw_value": "260",
+            "new_raw_value": "225",
+            "note": {
+              "ru": "Blast Damage: {change_label} с {old_raw_value} до {new_raw_value}",
+              "en": "Blast Damage: {change_label} from {old_raw_value} to {new_raw_value}",
+              "uk": "Blast Damage: {change_label} з {old_raw_value} до {new_raw_value}"
+            }
+          }
+        ]
+      },
+      {
+        "item_id": "item_veil_desolator_custom",
+        "name": "Magic Arrows",
+        "image": "images/items/veil_desolator_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "old_raw_value": {
+              "recipe_id": "item_recipe_veil_desolator_custom",
+              "result_id": "item_veil_desolator_custom",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_oblivion_staff",
+                      "name": "Oblivion Staff",
+                      "cost": 1625
+                    },
+                    {
+                      "id": "item_dragon_lance",
+                      "name": "Dragon Lance",
+                      "cost": 1900
+                    }
+                  ],
+                  "total_cost": 4400
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_oblivion_staff",
+                  "name": "Oblivion Staff",
+                  "cost": 1625
+                },
+                {
+                  "id": "item_dragon_lance",
+                  "name": "Dragon Lance",
+                  "cost": 1900
+                }
+              ],
+              "recipe_cost": 875,
+              "total_cost": 4400
+            },
+            "new_raw_value": {
+              "recipe_id": "item_recipe_veil_desolator_custom",
+              "result_id": "item_veil_desolator_custom",
+              "variants": [
+                {
+                  "key": "01",
+                  "components": [
+                    {
+                      "id": "item_oblivion_staff",
+                      "name": "Oblivion Staff",
+                      "cost": 1625
+                    },
+                    {
+                      "id": "item_dragon_lance",
+                      "name": "Dragon Lance",
+                      "cost": 2000
+                    }
+                  ],
+                  "total_cost": 4500
+                }
+              ],
+              "components": [
+                {
+                  "id": "item_oblivion_staff",
+                  "name": "Oblivion Staff",
+                  "cost": 1625
+                },
+                {
+                  "id": "item_dragon_lance",
+                  "name": "Dragon Lance",
+                  "cost": 2000
+                }
+              ],
+              "recipe_cost": 875,
+              "total_cost": 4500
+            },
+            "note": {
+              "ru": "Стоимость рецепта прежняя (875 золота). Общая стоимость увеличилась с 4400 до 4500 золота (Dragon Lance подорожал с 1900 до 2000 золота)",
+              "en": "Recipe cost unchanged at 875. Total cost increased from 4400g to 4500g (Dragon Lance increased from 1900g to 2000g)",
+              "uk": "Вартість рецепта незмінна (875 золота). Загальну вартість збільшено з 4400 до 4500 золота (Dragon Lance подорожчав з 1900 до 2000 золота)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "keeper_of_the_light",
+      "name": "keeper of the light",
+      "image": "images/heroes/heroesPreview/keeper_of_the_light.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "old_raw_value": "100",
+          "new_raw_value": "90",
+          "note": {
+            "ru": "Base Attack Speed: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Base Attack Speed: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Base Attack Speed: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "old_raw_value": "23",
+          "new_raw_value": "22",
+          "note": {
+            "ru": "Базовый урон уменьшен на 1",
+            "en": "Base damage decreased by 1",
+            "uk": "Базову шкоду зменшено на 1"
+          },
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "necrophos_sadist",
+          "name": "Sadist",
+          "image": "abilities/necrophos_sadist.webp",
+          "innate": true,
+          "ability_notes": [
+            {
+              "parameter": "hero_multiplier",
+              "old_raw_value": "6",
+              "new_raw_value": "4",
+              "note": {
+                "ru": "Hero Multiplier: {change_label} с {old_raw_value} до {new_raw_value}",
+                "en": "Hero Multiplier: {change_label} from {old_raw_value} to {new_raw_value}",
+                "uk": "Hero Multiplier: {change_label} з {old_raw_value} до {new_raw_value}"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "old_raw_value": "0.5",
+          "new_raw_value": "0.25",
+          "note": {
+            "ru": "Status Health Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Health Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Health Regen: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "old_raw_value": "-0.25",
+          "new_raw_value": "-0.5",
+          "note": {
+            "ru": "Status Health Regen: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Status Health Regen: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Status Health Regen: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "old_raw_value": "90",
+          "new_raw_value": "95",
+          "note": {
+            "ru": "Base Attack Speed: {change_label} с {old_raw_value} до {new_raw_value}",
+            "en": "Base Attack Speed: {change_label} from {old_raw_value} to {new_raw_value}",
+            "uk": "Base Attack Speed: {change_label} з {old_raw_value} до {new_raw_value}"
+          },
+          "icon": "/icon_base_attack_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

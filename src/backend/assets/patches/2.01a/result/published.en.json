@@ -1,6 +1,6 @@
 {
-  "patch_number": "2,01a",
-  "patch_name": "2,01a",
+  "patch_number": "2.01a",
+  "patch_name": "2.01a",
   "patch_timestamp": 1788784572,
   "general": {
     "global_changes": []
@@ -19,7 +19,7 @@
           "ability_notes": [
             {
               "parameter": "damage",
-              "note": "Damage increased from 10 to 25"
+              "note": "Damage based on max health increased from 10% to 25%"
             }
           ]
         }
@@ -31,7 +31,7 @@
     "upgrade": [
       {
         "item_id": "item_soul_reaver",
-        "name": "soul reaver",
+        "name": "Soul Reaver",
         "image": "soul_reaver.webp",
         "is_new": false,
         "is_upgrade": true,
@@ -69,7 +69,8 @@
               {
                 "note": "Spell Damage decreased from 10%/20% to 6%/12%"
               }
-            ]
+            ],
+            "talent_text": "Mana Regeneration: 0.5%/1%\n\nSpell Damage: 6%/12%"
           }
         ]
       }
@@ -91,31 +92,8 @@
               {
                 "note": "Forge Spirit invulnerability now only works within 600 radius around the hero"
               }
-            ]
-          }
-        ],
-        "agility": [],
-        "intelligence": []
-      }
-    },
-    {
-      "hero_id": "legion_commander",
-      "name": "legion commander",
-      "image": "images/heroes/heroesPreview/legion_commander.webp",
-      "primary_attribute": "strength",
-      "hero_notes": [],
-      "abilities": [],
-      "talents": {
-        "strength": [
-          {
-            "talent_id": "modifier_legion_commander_5",
-            "image": "legion_commander_5.webp",
-            "title": "Talent 7",
-            "talent_notes": [
-              {
-                "note": "Owner's attacks now also count toward Moment of Courage's proc"
-              }
-            ]
+            ],
+            "talent_text": "Forge Spirits are always Invulnerable within a 600 radius around the hero."
           }
         ],
         "agility": [],
@@ -146,7 +124,7 @@
               "note": "Can now be autocast"
             }
           ],
-          "name": "bloodlust"
+          "name": "Bloodlust"
         }
       ],
       "talents": {
@@ -159,7 +137,8 @@
               {
                 "note": "Cooldown Reduction increased from 7% to 13%"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Great Mind. </font></b>\n\n<b><font color='#ff0000'> Removes Fireblast. </font></b>\n\nCooldown Reduction: 13%\n\nIf you learn 3 Great Minds:\n\nA third Ogre Head floats around the hero! Multicast triggers with a 0.3 second delay, works with non-targeted items, and can repeatedly select the primary target."
           },
           {
             "talent_id": "modifier_ogre_magi_4",
@@ -167,9 +146,10 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Fire Shield's Ignite magic damage increased from 100% to 200% of Strength"
+                "note": "Fire Shield end-of-effect magic damage increased from 100% to 200% of Strength"
               }
-            ]
+            ],
+            "talent_text": "Ignite costs no Mana.\n\nWhen Fire Shield expires, it applies Ignite to all enemies within a 450 radius and deals Magic Damage: 200% of Strength\n\nIgnite Duration from Fire Shield: 3/6/9 sec."
           }
         ],
         "agility": [
@@ -181,7 +161,8 @@
               {
                 "note": "Chance to cast Fireblast on attack decreased from 14% to 10%"
               }
-            ]
+            ],
+            "talent_text": "Chance to cast Fireblast on Attack: 10%"
           }
         ],
         "intelligence": [
@@ -191,9 +172,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Unrefined Fireblast damage increased from 200 to 250"
+                "note": "Unrefined Fireblast damage increased from 150 to 250"
               }
-            ]
+            ],
+            "talent_text": "New Active Ability: Unrefined Fireblast\n\nBlasts an enemy with a wave of fire, stunning the target and dealing magical damage. Casting this ability consumes a percentage of the caster's current mana.\n\nDamage: 250 + 40% of Intelligence\nMana Cost: 35%\nCast Range: 525\nCooldown: 16 sec."
           }
         ]
       }
@@ -217,7 +199,8 @@
               {
                 "note": "Spell Damage increased from 30% to 50%"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Grenade.\n\nRemoves Headshot. </font></b>\n\nNew Active Ability: Flashbang Grenade\n\nThe hero throws a grenade into the target area, reducing enemy vision and stunning them.\n\nRadius: 375\nVision Reduction: 75%\nStun Duration: 1.5s\nMana Cost: 50\nCooldown: 20s\n\n\nIf you learn 4 grenades:\n\nUsing Grenades reduces the Cooldown of other Grenades by 2s.\n\nSpell Damage: 50%"
           }
         ]
       }
@@ -238,9 +221,10 @@
             "title": "Talent 2",
             "talent_notes": [
               {
-                "note": "Now also grants +5/10 Strength"
+                "note": "Now also grants 5/10 Strength"
               }
-            ]
+            ],
+            "talent_text": "Grave Chill Duration Increase: 1/2 sec.\n\nStrength: 5/10"
           },
           {
             "talent_id": "modifier_visage_10",
@@ -250,7 +234,8 @@
               {
                 "note": "Strength, Agility, and Intelligence gained per hero kill increased from 1 to 2"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Stone Hearts. </font></b>\n\nSummon Familiars Gargoyle Attack Range Increase: 75%/150% of Agility\n\nIf you learn 3 Stone Hearts:\n\nHero kills permanently increase Strength, Agility, and Intelligence by 2\n\nKills before learning the talent also count."
           },
           {
             "talent_id": "modifier_visage_12",
@@ -260,7 +245,8 @@
               {
                 "note": "Grave Chill health restoration steal increased from 5%/15%/25% to 10%/20%/30%"
               }
-            ]
+            ],
+            "talent_text": "Grave Chill cannot be dispelled.\n\nGrave Chill steals Heal Restoration: 10%/20%/30%"
           },
           {
             "talent_id": "modifier_visage_13",
@@ -270,7 +256,8 @@
               {
                 "note": "Familiars' armor reduction duration increased from 1.5/3 to 3/6 seconds"
               }
-            ]
+            ],
+            "talent_text": "Summon Familiars Gargoyle attacks reduce Armor: 0.5\n\nEffect Duration: 3/6 sec."
           },
           {
             "talent_id": "modifier_visage_14",
@@ -283,7 +270,8 @@
               {
                 "note": "Familiars' attack range bonus increased from 150 to 200"
               }
-            ]
+            ],
+            "talent_text": "Total Damage Increase: 15%\n\nStone Form <b>does not prevent</b> Summon Familiars Gargoyles from attacking.\n\nSummon Familiars Gargoyle Attack Range Increase: 200"
           }
         ],
         "intelligence": [
@@ -293,9 +281,10 @@
             "title": "Talent 4",
             "talent_notes": [
               {
-                "note": "Now also increases Silent as the Grave bonus damage duration by 1/2 sec"
+                "note": "Now also increases Silent as the Grave bonus damage duration by 1/2s"
               }
-            ]
+            ],
+            "talent_text": "The unobstructed movement and increased movement speed from Silent as the Grave are not lost immediately, but together with the bonus damage.\n\nSilent as the Grave Bonus Damage Duration Increase: 1/2 sec.\n\nSilent as the Grave increases Health Regeneration: 20/40"
           },
           {
             "talent_id": "modifier_visage_19",
@@ -305,7 +294,8 @@
               {
                 "note": "«Silent as the Grave Bonus Damage Duration Increase: 1/2 sec. Silent as the Grave Bonus Damage Increase: 5%/10%» replaced with «Summon Familiars no longer summons Gargoyles and becomes a passive ability. Stone Form can be activated without Summon Familiars Gargoyles to instantly deal damage and stun enemies in the target area. When the effect ends, the Gargoyles disappear. Cast Radius: 900 Stone Form Damage Increase: 100%/200% of Summon Familiars Gargoyle Attack Damage»"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Summon Familiars no longer summons Gargoyles and becomes a passive ability. </font></b>\n\nStone Form can be activated without Summon Familiars Gargoyles to instantly deal damage and stun enemies in the target area. When the effect ends, the Gargoyles disappear. Cast Radius: 900\n\nStone Form Damage Increase: 100%/200% of Summon Familiars Gargoyle Attack Damage"
           },
           {
             "talent_id": "modifier_visage_21",
@@ -313,9 +303,10 @@
             "title": "Talent 7",
             "talent_notes": [
               {
-                "note": "Now also grants +500 Health"
+                "note": "Now also grants 500 Health"
               }
-            ]
+            ],
+            "talent_text": "Soul Assumption Max Charges Increase: 3\n\nHealth: 500"
           }
         ]
       }
@@ -329,12 +320,12 @@
       "abilities": [
         {
           "ability_id": "void_spirit_resonant_pulse_custom",
-          "name": "resonant pulse",
+          "name": "Resonant Pulse",
           "image": "void_spirit_resonant_pulse.webp",
           "ability_notes": [
             {
               "parameter": "absorb_per_hero_hit",
-              "note": "Absorb per hero hit increased from 50/70/90/100 to 50/70/90/110"
+              "note": "Bonus damage absorbed per hero increased from 50/70/90/100 to 50/70/90/110"
             }
           ]
         }
@@ -349,7 +340,8 @@
               {
                 "note": "Aether Remnant copies duration from Dissimilate decreased from 6 to 4 seconds"
               }
-            ]
+            ],
+            "talent_text": "When the hero exits any Dissimilate portal except the central one, Aether Remnant copies of the hero are created at the 1/3 farthest portals from the exit point.\n\nDuration: 4 sec."
           },
           {
             "talent_id": "modifier_void_spirit_7",
@@ -359,7 +351,8 @@
               {
                 "note": "Astral Step's Aether Remnant duration decreased from 6 to 4 seconds"
               }
-            ]
+            ],
+            "talent_text": "Astral Step creates an Aether Remnant in the cast direction.\n\nDuration: 4 sec."
           }
         ],
         "agility": [
@@ -371,7 +364,8 @@
               {
                 "note": "Resonant Pulse barrier increase decreased from 100%/200% to 75%/150% of Agility"
               }
-            ]
+            ],
+            "talent_text": "The Resonant Pulse barrier cannot be dispelled and absorbs all damage.\n\nResonant Pulse Barrier Increase: 75%/150% of Agility"
           },
           {
             "talent_id": "modifier_void_spirit_13",
@@ -381,7 +375,8 @@
               {
                 "note": "Chance for Astral Step to not go on cooldown decreased from 10%/20%/30% to 8%/16%/24%"
               }
-            ]
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Dissimilate. </font></b>\n\nAstral Step has a chance to have no Cooldown: 8%/16%/24%\n\nMana Regeneration: 5/10/15"
           },
           {
             "talent_id": "modifier_void_spirit_14",
@@ -391,7 +386,8 @@
               {
                 "note": "Astral Step cooldown reduction is now per 75 Agility instead of 50"
               }
-            ]
+            ],
+            "talent_text": "Reduces Astral Step cooldown by 1 second for every 75 Agility\n\n<b><font color='#ff0000'> Maximum bonus at 600 Agility. </font></b>"
           }
         ],
         "intelligence": []
@@ -415,7 +411,8 @@
               {
                 "note": "Flaming Fists damage bonus from Agility decreased from 10% to 5%"
               }
-            ]
+            ],
+            "talent_text": "New Passive Ability: Flaming Fists\n\nDeals additional pure damage to enemies around the attack target.\n\nDamage: 10/20/30 + 5% of Agility\nRadius: 300"
           },
           {
             "talent_id": "modifier_warlock_19",
@@ -425,7 +422,8 @@
               {
                 "note": "Chaotic Offering stun duration bonus decreased from 1.2 to 1 second"
               }
-            ]
+            ],
+            "talent_text": "Chaotic Offering summon stun duration increase: 1 sec."
           },
           {
             "talent_id": "modifier_warlock_13",
@@ -435,7 +433,8 @@
               {
                 "note": "Chaotic Offering cooldown reduction decreased from 115/135/155 to 100/125/150 seconds"
               }
-            ]
+            ],
+            "talent_text": "Chaotic Offering activates instantly.\n\nChaotic Offering Cooldown Reduction: 100/125/150 sec.\n\nChaotic Offering summons an additional Golem if the hero has more than 300 Agility."
           }
         ],
         "intelligence": []

@@ -1,0 +1,1153 @@
+{
+  "patch_number": "1.06",
+  "patch_name": "1.06",
+  "patch_timestamp": 1788986257,
+  "general": {
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "Minor improvements to Arena mode"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_gungir",
+        "name": "Gleipnir",
+        "image": "gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_aoe",
+            "note": "No longer grants 75 ability AoE"
+          },
+          {
+            "parameter": "radius_tooltip",
+            "note": "Eternal Chains: radius decreased from 350 to 275"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [
+    {
+      "boss_id": "boss_keeper_boss",
+      "name": "boss keeper boss",
+      "image": "pages/patches/standard_hero.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_keeper_mana",
+          "name": "boss keeper mana",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "No longer pierces spell immunity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_medusa",
+      "name": "boss medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_medusa_stone",
+          "name": "stone",
+          "image": "medusa_stone_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Now pierces spell immunity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_phoenix_boss",
+      "name": "boss phoenix boss",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "abilities": [
+        {
+          "ability_id": "phoenix_boss_wave",
+          "name": "phoenix boss wave",
+          "image": "phoenix_icarus_dive.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "No longer pierces spell immunity"
+            }
+          ]
+        },
+        {
+          "ability_id": "phoenix_boss_beam",
+          "name": "phoenix boss beam",
+          "image": "phoenix_sun_ray.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "No longer pierces spell immunity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_sand_king",
+      "name": "boss sand king",
+      "image": "images/heroes/heroesPreview/sand_king.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_sand_king_burrowstrike",
+          "name": "burrowstrike",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "No longer pierces spell immunity"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_sand_king_burrow",
+          "name": "burrow",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "note": "Now affects spell immune enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_shadow_fiend",
+      "name": "boss shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_shadow_fiend_passive_shadowraze",
+          "name": "passive shadowraze",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Now blocked by spell immunity"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_shadow_fiend_passive_ultimate",
+          "name": "passive ultimate",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Now blocked by spell immunity"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_shadow_fiend_passive_dark_cyclone",
+          "name": "passive dark cyclone",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "Now blocked by spell immunity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_tiny_boss",
+      "name": "boss tiny boss",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "abilities": [
+        {
+          "ability_id": "tiny_boss_avalanche",
+          "name": "tiny boss avalanche",
+          "image": "woda_tiny_boss_1.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "No longer pierces spell immunity"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_boss_stone_throw",
+          "name": "tiny boss stone throw",
+          "image": "woda_tiny_boss_3.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "No longer pierces spell immunity"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_boss_toss",
+          "name": "tiny boss toss",
+          "image": "woda_tiny_boss_2.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "note": "Now affects spell immune enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_ursa",
+      "name": "boss ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_ursa_jump",
+          "name": "jump",
+          "image": "ursa_earthshock.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "note": "No longer pierces spell immunity"
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_ursa_fury_swipes",
+          "name": "fury swipes",
+          "image": "ursa_fury_swipes.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "note": "Now affects spell immune enemies"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "hero_id": "monkey_king",
+      "name": "monkey king",
+      "image": "images/heroes/heroesPreview/monkey_king.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "monkey_king_boundless_strike_custom",
+          "name": "Boundless Strike",
+          "image": "monkey_king_boundless_strike.webp",
+          "description": [
+            "The hero extends his staff and smashes the ground, stunning all enemies hit. This strike cannot miss, and it deals both base damage and critical attack damage. Stun duration: 0.7 / 0.9 / 1.1 / 1.3. Critical damage: 120% / 140% / 160% / 180%. Base damage: 20 / 40 / 60 / 80. Cast range: 1100. Cooldown: 24 / 21 / 18 / 15. Cast range: 1100. Mana cost: 85 / 90 / 95 / 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_tree_dance_custom",
+          "name": "Tree Dance",
+          "image": "monkey_king_tree_dance.webp",
+          "description": [
+            "The hero leaps onto the top of a chosen tree. There he gains the interruptible ability Primal Spring — a directed leaping attack. If the tree is destroyed, the hero will fall and be stunned for 4 sec. If he takes damage on the ground, the ability goes on cooldown. Distance: 800. Cooldown on taking damage: 3. Cooldown: 2 / 1.8 / 1.6 / 1.4. Cast range: 800."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_primal_spring_custom",
+          "name": "Primal Spring",
+          "image": "monkey_king_primal_spring.webp",
+          "description": [
+            "CHANNELING — the hero leaps from the tree, dealing damage to enemies in the targeted area and slowing them. Damage and slow increase with channeling time. Damage: 110 / 200 / 290 / 380. Movement slow: 35% / 50% / 65% / 80%. Max slow duration: 4. Cooldown: 18 / 16 / 14 / 12. Cast range: 800. Mana cost: 100."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_jingu_mastery_custom",
+          "name": "Jingu Mastery",
+          "image": "monkey_king_jingu_mastery.webp",
+          "description": [
+            "The hero's strikes awaken the power of Jingu Bang. Every fourth attack on an enemy hero grants 4 empowered attacks with bonus damage and lifesteal. Hits to activate: 4. Effect duration on enemies: 5.5 / 7 / 8.5 / 10. Bonus damage: 30 / 50 / 70 / 90. Bonus lifesteal: 20% / 25% / 30% / 35%. Buff duration: 20."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_mischief_custom",
+          "name": "Mischief",
+          "image": "monkey_king_mischief.webp",
+          "description": [
+            "Changes the hero's appearance to deceive enemies. The disguise depends on the environment and breaks when taking damage, attempting to attack, or using items or abilities. Grants damage immunity for 0.1 sec. Bonus move speed: 8%. Cooldown: 24 / 20 / 16 / 12."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_wukongs_command_custom",
+          "name": "Wukong's Command",
+          "image": "monkey_king_wukongs_command.webp",
+          "description": [
+            "The hero summons a circular formation of soldiers spreading out from his position. If the hero leaves the ability's area, the soldiers vanish. Their attacks mimic the hero's attack and target only enemy heroes. During the ability, the hero gains bonus armor. Bonus armor: 15 / 20 / 25. Soldier attack interval: 1.1. Duration: 13. Cooldown: 100 / 90 / 80. Mana cost: 100."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_monkey_king_1",
+            "image": "monkey_king_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Every 4th attack on an enemy creep grants 1 empowered Jingu Mastery attack. Strength: 5"
+              }
+            ],
+            "talent_text": "Every 4th attack on an enemy creep grants 1 empowered Jingu Mastery attack.\n\nStrength: 5"
+          },
+          {
+            "talent_id": "modifier_monkey_king_2",
+            "image": "monkey_king_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Tree Dance, Primal Spring.</font> Increased Lifesteal from Jingu Mastery: 5%/10%. Increased Damage from Jingu Mastery: 20/40. Increased Spell Lifesteal from Jingu Magic: 5%/10%. Increased Spell Damage from Jingu Magic: 5%/10%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Tree Dance, Primal Spring. </font></b>\n\nIncreased Lifesteal from Jingu Mastery: 5%/10%\n\nIncreased Damage from Jingu Mastery: 20/40\n\nIncreased Spell Lifesteal from Jingu Magic: 5%/10%\n\nIncreased Spell Damage from Jingu Magic: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_3",
+            "image": "monkey_king_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Creates a Wukong's Command soldier nearby every few seconds. Each soldier has its own Jingu Mastery charge counter. Soldier Interval: 6 sec. Soldier Duration: 1/2/3 + 2 sec. for every 50 Strength"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Creates a Wukong's Command soldier nearby every few seconds. Each soldier has its own Jingu Mastery charge counter.\n\nSoldier Interval: 6 sec.\nSoldier Duration: 1/2/3 + 2 sec. for every 50 Strength"
+          },
+          {
+            "talent_id": "modifier_monkey_king_4",
+            "image": "monkey_king_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Bonus Attack Range: 75"
+              }
+            ],
+            "talent_text": "Bonus Attack Range: 75"
+          },
+          {
+            "talent_id": "modifier_monkey_king_5",
+            "image": "monkey_king_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Reduces Wukong's Command soldiers' attack interval: 0.1/0.2/0.3 sec"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Reduces Wukong's Command soldiers' attack interval: 0.1/0.2/0.3 sec."
+          },
+          {
+            "talent_id": "modifier_monkey_king_6",
+            "image": "monkey_king_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Reduces Wukong's Command cooldown: 13/26/39 sec"
+              }
+            ],
+            "talent_text": "Reduces Wukong's Command cooldown: 13/26/39 sec."
+          },
+          {
+            "talent_id": "modifier_monkey_king_7",
+            "image": "monkey_king_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Changing of the Guard. The hero can swap places with one of the soldiers from Wukong's Command and turn into an indistinguishable copy of it for 1.8 sec. In the soldier form, the hero is invulnerable but cannot attack or cast spells. Cast Range: 1200. Cooldown: 18 sec"
+              }
+            ],
+            "talent_text": "New Active Ability: Changing of the Guard\n\nThe hero can swap places with one of the soldiers from Wukong's Command and turn into an indistinguishable copy of it for 1.8 sec. In the soldier form, the hero is invulnerable but cannot attack or cast spells.\n\nCast Range: 1200\nCooldown: 18 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_monkey_king_8",
+            "image": "monkey_king_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Health Regeneration: 4/8. Mana Regeneration: 4/8"
+              }
+            ],
+            "talent_text": "Health Regeneration: 4/8\n\nMana Regeneration: 4/8"
+          },
+          {
+            "talent_id": "modifier_monkey_king_9",
+            "image": "monkey_king_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increases Boundless Strike Critical Damage: 15%/30%"
+              }
+            ],
+            "talent_text": "Increases Boundless Strike Critical Damage: 15%/30%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_10",
+            "image": "monkey_king_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Each attack reduces Boundless Strike cooldown: 0.1/0.2/0.3 sec"
+              }
+            ],
+            "talent_text": "Each attack reduces Boundless Strike cooldown: 0.1/0.2/0.3 sec."
+          },
+          {
+            "talent_id": "modifier_monkey_king_11",
+            "image": "monkey_king_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Boundless Strike becomes a toggleable ability. When this ability is active, the hero jumps to the end of his staff as soon as it hits the ground"
+              }
+            ],
+            "talent_text": "Boundless Strike becomes a toggleable ability.\n\nWhen this ability is active, the hero jumps to the end of his staff as soon as it hits the ground."
+          },
+          {
+            "talent_id": "modifier_monkey_king_12",
+            "image": "monkey_king_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Reduces Boundless Strike Cast Point: 25%/50%. Reduced Mana Cost for Boundless Strike: 25%/50%"
+              }
+            ],
+            "talent_text": "Reduces Boundless Strike Cast Point: 25%/50%\n\nReduced Mana Cost for Boundless Strike: 25%/50%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_13",
+            "image": "monkey_king_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Increased Mischief Cooldown: 8 sec.</font> Mischief always turns into a Rune. When the disguise ends, the hero gains a short-term bonus of the corresponding Rune: Amplify Damage, Arcane, Haste, Illusions, Regeneration, Shield. Rune Effect Duration: 1/1.5/2 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Increased Mischief Cooldown: 8 sec. </font></b>\n\nMischief always turns into a Rune. When the disguise ends, the hero gains a short-term bonus of the corresponding Rune: Amplify Damage, Arcane, Haste, Illusions, Regeneration, Shield.\n\nRune Effect Duration: 1/1.5/2 sec."
+          },
+          {
+            "talent_id": "modifier_monkey_king_14",
+            "image": "monkey_king_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Each attack has an 80% chance to pierce evasion and deal 70 bonus magic damage"
+              }
+            ],
+            "talent_text": "Each attack has an 80% chance to pierce evasion and deal 70 bonus magic damage."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_monkey_king_15",
+            "image": "monkey_king_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Increases Primal Spring Damage: 80%/120%/160% of Intelligence"
+              }
+            ],
+            "talent_text": "Increases Primal Spring Damage: 80%/120%/160% of Intellect"
+          },
+          {
+            "talent_id": "modifier_monkey_king_16",
+            "image": "monkey_king_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Primal Spring Cooldown Reduction: 1/2 sec. Intelligence: 5/10"
+              }
+            ],
+            "talent_text": "Primal Spring Cooldown Reduction: 1/2 sec.\n\nIntellect: 5/10"
+          },
+          {
+            "talent_id": "modifier_monkey_king_19",
+            "image": "monkey_king_19.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Primal Spring immediately works at full strength. Stun Duration Reduction from Tree Dance when falling from a Tree: 1.5/3 sec. Tree Dance Cooldown Reduction: 0.2/0.4 sec"
+              }
+            ],
+            "talent_text": "Primal Spring immediately works at full strength.\n\nStun Duration Reduction from Tree Dance when falling from a Tree: 1.5/3 sec.\n\nTree Dance Cooldown Reduction: 0.2/0.4 sec."
+          },
+          {
+            "talent_id": "modifier_monkey_king_18",
+            "image": "monkey_king_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Jingu Mastery.</font> New Passive Ability: Jingu Magic. Using items or abilities awakens the power of the Jingu Bang. Every 4th item or ability activation grants bonus spell damage and spell lifesteal. Buff Duration: 4 sec. Spell Damage: 5%/10%/15%. Spell Lifesteal: 5%/10%/15%"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Jingu Mastery. </font></b>\n\nNew Passive Ability: Jingu Magic\n\nUsing items or abilities awakens the power of the Jingu Bang. Every 4th item or ability activation grants bonus spell damage and spell lifesteal.\n\nBuff Duration: 4 sec.\nSpell Damage: 5%/10%/15%\nSpell Lifesteal: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_monkey_king_17",
+            "image": "monkey_king_17.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Using Mischief grants a Barrier that absorbs Any Damage: 200/400. Effect Duration: 24 sec"
+              }
+            ],
+            "talent_text": "Using Mischief grants a Barrier that absorbs Any Damage: 200/400\n\nEffect Duration: 24 sec."
+          },
+          {
+            "talent_id": "modifier_monkey_king_20",
+            "image": "monkey_king_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Applies the effect of Primal Spring, charged at 100%, to enemies hit by Boundless Strike or near its endpoint"
+              }
+            ],
+            "talent_text": "Applies the effect of Primal Spring, charged at 100%, to enemies hit by Boundless Strike or near its endpoint."
+          },
+          {
+            "talent_id": "modifier_monkey_king_21",
+            "image": "monkey_king_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Mischief always transforms into a Courier. Using items or abilities does not end Mischief. Mischief applies a Normal Dispel. Increased Mischief Damage Protection Duration: 0.4 sec"
+              }
+            ],
+            "talent_text": "Mischief always transforms into a Courier.\n\nUsing items or abilities does not end Mischief.\n\nMischief applies a Normal Dispel.\n\nIncreased Mischief Damage Protection Duration: 0.4 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "riki",
+      "name": "riki",
+      "image": "images/heroes/heroesPreview/riki.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "riki_smoke_screen_custom",
+          "name": "Smoke Screen",
+          "image": "riki_smoke_screen.webp",
+          "description": [
+            "Throws down a smoke bomb, silencing enemies and causing them to miss attacks. Duration: 6. Radius: 425. Miss chance: 30% / 45% / 60% / 75%. Cooldown: 17 / 16 / 15 / 14. Cast range: 550. Mana cost: 65 / 70 / 75 / 80."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_blink_strike_custom",
+          "name": "Blink Strike",
+          "image": "riki_blink_strike.webp",
+          "description": [
+            "Teleports behind the target unit, momentarily slowing them and striking for bonus damage if it is an enemy. Bonus damage: 40 / 55 / 70 / 85. Slow duration: 0.4. Cooldown: 0.1. Charge restore time: 25 / 22 / 19 / 16. Cast range: 600 / 700 / 800 / 900. Mana cost: 50 / 55 / 60 / 65."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_tricks_of_the_trade_custom",
+          "name": "Tricks of the Trade",
+          "image": "riki_tricks_of_the_trade.webp",
+          "description": [
+            "CHANNELED - Riki phases out of the world while striking random enemy units from behind in an area around him. While phased out his attack damage is reduced, but his Agility greatly increases. Radius: 450. Number of attacks: 4. Attack damage: 40%. Bonus agility: 55 / 70 / 85 / 100. Cooldown: 20 / 18 / 16 / 14. Cast range: 400. Mana cost: 45 / 55 / 65 / 75."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_permanent_invisibility_custom",
+          "name": "Cloak and Dagger",
+          "image": "riki_permanent_invisibility.webp",
+          "description": [
+            "The hero blurs his outline, becoming barely visible. Invisibility breaks if he approaches an enemy hero or attacks. Fade delay: 4 / 3 / 2. Radius: 1000."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_backstab_custom",
+          "name": "Backstab",
+          "image": "riki_backstab.webp",
+          "description": [
+            "Every time Riki strikes his enemy from behind, he deals bonus damage based on his Agility. Damage per agility: 0.3 / 0.4 / 0.5 / 0.6."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_riki_1",
+            "image": "riki_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Blink Strike deals damage to all enemies within a 300 radius around the target"
+              }
+            ],
+            "talent_text": "Blink Strike deals damage to all enemies within a 300 radius around the target."
+          },
+          {
+            "talent_id": "modifier_riki_2",
+            "image": "riki_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Increased Blink Strike Damage: 50% of Strength. Increased Blink Strike Damage: 50% of Agility. Increased Blink Strike Damage: 50% of Intelligence"
+              }
+            ],
+            "talent_text": "Increased Blink Strike Damage: 50% of Strength\n\nIncreased Blink Strike Damage: 50% of Agility\n\nIncreased Blink Strike Damage: 50% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_riki_3",
+            "image": "riki_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Tricks of the Trade.</font> New Passive Ability: Frontstab. Attacking from the front deals bonus physical damage based on Strength. Damage per Strength: 0.6/0.9"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Tricks of the Trade. </font></b>\n\nNew Passive Ability: Frontstab\n\nAttacking from the front deals bonus physical damage based on Strength.\n\nDamage per Strength: 0.6/0.9"
+          },
+          {
+            "talent_id": "modifier_riki_4",
+            "image": "riki_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Backstab.</font> Blink Strike teleports to the front of the enemy. Blink Strike Cooldown Reduction: 1/2/3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Backstab. </font></b>\n\nBlink Strike teleports to the front of the enemy.\n\nBlink Strike Cooldown Reduction: 1/2/3 sec."
+          },
+          {
+            "talent_id": "modifier_riki_5",
+            "image": "riki_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Ability Cast Point Reduction: 20%/40%/60%. Blink Strike Mana Cost Reduction: 20%/40%/60%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Ability Cast Point Reduction: 20%/40%/60%\n\nBlink Strike Mana Cost Reduction: 20%/40%/60%"
+          },
+          {
+            "talent_id": "modifier_riki_6",
+            "image": "riki_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Reduction of Blink Strike Cast Range: 300.</font> Blink Strike can be cast on an area. Increase of Blink Strike Charges: 1"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Reduction of Blink Strike Cast Range: 300 </font></b>\n\nBlink Strike can be cast on an area.\n\nIncrease of Blink Strike Charges: 1"
+          },
+          {
+            "talent_id": "modifier_riki_7",
+            "image": "riki_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Revealing Cloak and Dagger temporarily grants unobstructed vision and Strength. Radius: 1200. Bonus Strength: 50. Duration: 5 sec. Cooldown: 5 sec"
+              }
+            ],
+            "talent_text": "Revealing Cloak and Dagger temporarily grants unobstructed vision and Strength.\n\nRadius: 1200\nBonus Strength: 50\nDuration: 5 sec.\nCooldown: 5 sec."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_riki_8",
+            "image": "riki_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Increased Bonus Agility from Tricks of the Trade: 10/20/30. Increased Cast Range of Tricks of the Trade: 50/100/150"
+              }
+            ],
+            "talent_text": "Increased Bonus Agility from Tricks of the Trade: 10/20/30\n\nIncreased Cast Range of Tricks of the Trade: 50/100/150"
+          },
+          {
+            "talent_id": "modifier_riki_10",
+            "image": "riki_10.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Smoke Screen reduces enemy Armor: 3/6"
+              }
+            ],
+            "talent_text": "Smoke Screen reduces enemy Armor: 3/6"
+          },
+          {
+            "talent_id": "modifier_riki_9",
+            "image": "riki_9.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Tricks of the Trade allows hiding inside an allied hero for its duration and adds 1 victim per attack"
+              }
+            ],
+            "talent_text": "Tricks of the Trade allows hiding inside an allied hero for its duration and adds 1 victim per attack."
+          },
+          {
+            "talent_id": "modifier_riki_11",
+            "image": "riki_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 6%/12%"
+              }
+            ],
+            "talent_text": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 6%/12%"
+          },
+          {
+            "talent_id": "modifier_riki_12",
+            "image": "riki_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility"
+              }
+            ],
+            "talent_text": "Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility"
+          },
+          {
+            "talent_id": "modifier_riki_13",
+            "image": "riki_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Increase Backstab Damage per Agility: 0.1/0.2/0.3"
+              }
+            ],
+            "talent_text": "Increase Backstab Damage per Agility: 0.1/0.2/0.3"
+          },
+          {
+            "talent_id": "modifier_riki_14",
+            "image": "riki_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Cloak and Dagger becomes an active ability. Creates an Illusion near the Hero. As long as this Illusion is alive, Cloak and Dagger does not end. The Illusion will disappear if it moves more than 600 units away from the hero. Illusion Health: 300. Illusion Damage: 100%. Illusion Incoming Damage: 100%. Duration: 25s. Cooldown: 25s"
+              }
+            ],
+            "talent_text": "Cloak and Dagger becomes an active ability.\n\nCreates an Illusion near the Hero. As long as this Illusion is alive, Cloak and Dagger does not end. The Illusion will disappear if it moves more than 600 units away from the hero.\n\nIllusion Health: 300\nIllusion Damage: 100%\nIllusion Incoming Damage: 100%\nDuration: 25s\nCooldown: 25s"
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_riki_15",
+            "image": "riki_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Smoke Screen deals Magic Damage per Second: 40. Smoke Screen Mana Cost Reduction: 20%"
+              }
+            ],
+            "talent_text": "Smoke Screen deals Magic Damage per Second: 40\n\nSmoke Screen Mana Cost Reduction: 20%"
+          },
+          {
+            "talent_id": "modifier_riki_16",
+            "image": "riki_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Sleeping Dart. The hero shoots a dart at a chosen enemy. The enemy will wake up after 4 seconds or after taking 200 damage. Upon waking, the target takes magic damage and is slowed. Damage: 150/300. Movement Slow: 30%. Slow Duration: 3s. Cast Range: 600. Mana Cost: 75. Cooldown: 24s"
+              }
+            ],
+            "talent_text": "New Active Ability: Sleeping Dart\n\nThe hero shoots a dart at a chosen enemy. The enemy will wake up after 4 seconds or after taking 200 damage. Upon waking, the target takes magic damage and is slowed.\n\nDamage: 150/300\nMovement Slow: 30%\nSlow Duration: 3s\nCast Range: 600\nMana Cost: 75\nCooldown: 24s"
+          },
+          {
+            "talent_id": "modifier_riki_17",
+            "image": "riki_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Increase Smoke Screen Damage: 50%/75%/100% of Intelligence. Increase Smoke Screen Radius: 20/40/60"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "Increase Smoke Screen Damage: 50%/75%/100% of Intelligence\n\nIncrease Smoke Screen Radius: 20/40/60"
+          },
+          {
+            "talent_id": "modifier_riki_18",
+            "image": "riki_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Cloak and Dagger Invisibility increases Movement Speed: 10%/20%"
+              }
+            ],
+            "talent_text": "Cloak and Dagger Invisibility increases Movement Speed: 10%/20%"
+          },
+          {
+            "talent_id": "modifier_riki_19",
+            "image": "riki_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Smoke Screen reduces Enemy Magic Resistance: 5%/10%/15%. Smoke Screen debuff lingers after leaving the cloud: 0.5/1/1.5 s"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 3»"
+              }
+            ],
+            "talent_text": "Smoke Screen reduces Enemy Magic Resistance: 5%/10%/15%\n\nSmoke Screen debuff lingers after leaving the cloud: 0.5/1/1.5 s"
+          },
+          {
+            "talent_id": "modifier_riki_20",
+            "image": "riki_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Upon taking Fatal Damage, Cloak and Dagger grants full Invisibility and Invulnerability for 1/2 seconds. After the effect ends, restores 10%/20% of Maximum Health. Cooldown: 120s"
+              }
+            ],
+            "talent_text": "Upon taking Fatal Damage, Cloak and Dagger grants full Invisibility and Invulnerability for 1/2 seconds. After the effect ends, restores 10%/20% of Maximum Health.\n\nCooldown: 120s"
+          },
+          {
+            "talent_id": "modifier_riki_21",
+            "image": "riki_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Reduce Cloak and Dagger Detection Radius: 100. Reduce Cloak and Dagger Fade Delay: 1s"
+              }
+            ],
+            "talent_text": "Reduce Cloak and Dagger Detection Radius: 100\n\nReduce Cloak and Dagger Fade Delay: 1s"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "bounty_hunter_17.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "No longer grants 20/40 movement speed"
+              },
+              {
+                "note": "Now also increases Jinada bonus damage by 75/150"
+              }
+            ],
+            "talent_text": "Jinada grants Gold for Creeps.\n\nJinada Gold Bonus: 6/12\n\nJinada Bonus Damage Increase: 75/150"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_7",
+            "image": "bounty_hunter_7.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Jinada Bonus Damage Increase: 150/300» replaced with «Attacks reduce Armor: 3/6. Duration: 4 sec»"
+              }
+            ],
+            "talent_text": "Attacks Reduce Armor: 3/6\n\nDuration: 4 sec."
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "bounty_hunter_6.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Increased Bonus Gold to Allies from Track: 60. Increased Damage from Track: 8%/16%» replaced with «Track reduces enemy Health Regeneration: 20%/40%. Track increases hero's Health Regeneration: 0.4%/0.8%. Health Regeneration: 0.2%/0.4%»"
+              }
+            ],
+            "talent_text": "Track reduces enemy Health Regeneration: 20%/40%\n\nTrack increases hero's Health Regeneration: 0.4%/0.8%\n\nHealth Regeneration: 0.2%/0.4%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "bounty_hunter_16.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Track reduces enemy Health Regeneration: 20%/40%. Track increases hero's Health Regeneration: 0.4%/0.8%» replaced with «Increased Bonus Gold to Allies from Track: 60/120. Increased Damage from Track: 8%/16%»"
+              }
+            ],
+            "talent_text": "Increased Bonus Gold to Allies from Track: 60/120\n\nIncreased Damage from Track: 8%/16%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "bounty_hunter_2.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Strength bonus increased from 7/14/21 to 10/20/30"
+              }
+            ],
+            "talent_text": "Shuriken Toss performs an Attack on the primary target.\n\nIncreased Slow Duration of Shuriken Toss: 0/1/2 sec.\n\nStrength: 10/20/30"
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_20",
+            "image": "bounty_hunter_20.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now also grants 5%/10% spell damage"
+              }
+            ],
+            "talent_text": "Increased Shuriken Toss Damage: 1% of Net Worth\n\n<b><font color='#ff0000'> Max Damage Increase: 100/None </font></b>\n\nSpell Damage: 5%/10%"
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_21",
+            "image": "bounty_hunter_21.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Track can now be cast on creeps, but without the bonus gold"
+              }
+            ],
+            "talent_text": "Track can be used on Creeps, but without bonus gold.\n\nSpells deal 120% Critical Damage to Track targets."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "io_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "The tethered enemy is now slowed by the same amount as the hero is hastened"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Spirits. </font></b>\n\n<b><font color='#ff0000'> Tether cannot be used on allies. </font></b>\n\nTether can be used on enemies. Does not increase or copy their movement speed. The slow on the tethered enemy equals the hero's bonus speed. Drains enemy health per second: 30 + 2 per Hero Level\n\nHealth Regeneration and all received Healing drain the tethered enemy's health: 40%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_eclipse_custom",
+          "name": "Eclipse",
+          "image": "luna_eclipse.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 110s to 105s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_roshan_10",
+            "image": "roshan_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Using Items applies Bash to a random enemy within Radius: 900. Proc Chance: 100%. Prioritizes heroes» replaced with «New Active Ability: Roshpit. After a short preparation, the hero summons a stone lair that blocks enemy movement and limits their vision. Increases the hero's movement speed inside the lair. Movement Speed: 30%. Duration: 6 sec. Cast Range: 400. Radius: 550. Cooldown: 30 sec»"
+              }
+            ],
+            "talent_text": "New Active Ability: Roshpit\n\nAfter a short preparation, the hero summons a stone lair that blocks enemy movement and limits their vision. Increases the hero's movement speed inside the lair.\n\nMovement Speed: 30%\nDuration: 6 sec.\nCast Range: 400\nRadius: 550\nCooldown: 30 sec."
+          },
+          {
+            "talent_id": "modifier_roshan_11",
+            "image": "roshan_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«New Active Ability: Roshpit. After a short preparation, the hero summons a stone lair that blocks enemy movement and limits their vision. Increases the hero's movement speed inside the lair. Movement Speed: 30%. Duration: 6 sec. Cast Range: 400. Radius: 550. Cooldown: 30 sec» replaced with «Enemies near the walls inside the lair are Stunned: 1/2/3 sec. Spell Damage: 5%/10%/15%»"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 3»",
+                "tooltip": "Previously required upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Enemies near the walls inside the lair are Stunned: 1/2/3 sec.\n\nSpell Damage: 5%/10%/15%"
+          },
+          {
+            "talent_id": "modifier_roshan_12",
+            "image": "roshan_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Reduced Item Cooldown: 10%/15%/20%» replaced with «Using Items applies Bash to a random enemy within Radius: 900. Proc Chance: 100%. Prioritizes heroes»"
+              }
+            ],
+            "talent_text": "Using Items applies Bash to a random enemy within Radius: 900\n\nProc Chance: 100%\n\nPrioritizes heroes."
+          },
+          {
+            "talent_id": "modifier_roshan_13",
+            "image": "roshan_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Enemies near the walls inside the lair receive Stun: 1/2/3 sec» replaced with «Reduced Item Cooldown: 10%/15%/20%»"
+              }
+            ],
+            "talent_text": "Reduced Item Cooldown: 10%/15%/20%"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_rubick_6",
+            "image": "rubick_6.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now reduces Fade Lightning strike interval instead of its cooldown"
+              }
+            ],
+            "talent_text": "Fade Lightning Strike Interval Reduction: 1/2/3 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slark",
+      "name": "slark",
+      "image": "images/heroes/heroesPreview/slark.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slark_21",
+            "image": "slark_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "No longer removes Dark Pact's dispel"
+              }
+            ],
+            "talent_text": "Dark Pact becomes a Passive Ability.\n\nDark Pact triggers on a target each time you hit it with a Targeted Ability or Item."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_17",
+            "image": "sniper_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now also grants 30% spell damage"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Grenade.\n\nRemoves Headshot. </font></b>\n\nNew Active Ability: Flashbang Grenade\n\nThe hero throws a grenade into the target area, reducing enemy vision and stunning them.\n\nRadius: 375\nVision Reduction: 75%\nStun Duration: 1.5s\nMana Cost: 50\nCooldown: 20s\n\n\nIf you learn 4 grenades:\n\nUsing Grenades reduces the Cooldown of other Grenades by 2s.\n\nSpell Damage: 30%"
+          }
+        ]
+      }
+    }
+  ]
+}

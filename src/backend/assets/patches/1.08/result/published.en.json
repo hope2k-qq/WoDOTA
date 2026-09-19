@@ -1,0 +1,1337 @@
+{
+  "patch_number": "1.08",
+  "patch_name": "1.08",
+  "patch_timestamp": 1788988135,
+  "general": {
+    "global_changes": [
+      {
+        "title": "Cosmetic Items"
+      },
+      {
+        "note": "Added the Lina set"
+      },
+      {
+        "note": "Added 30 new profile backgrounds"
+      },
+      {
+        "note": "Added 2 new effects"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_ancient_guardian_custom",
+        "name": "Ancient Guardian",
+        "image": "ancient_guardian.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_spell_damage",
+            "note": "Ancient Empower Spell: bonus pure damage increased from 1.5% to 3% of the target's max health"
+          }
+        ]
+      },
+      {
+        "item_id": "item_guardian_greaves_custom",
+        "name": "Guardian Greaves",
+        "image": "guardian_greaves.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "replenish_health",
+            "note": "Mend: health restored decreased from 25% to 20%"
+          },
+          {
+            "parameter": "replenish_mana",
+            "note": "Mend: mana restored decreased from 25% to 20%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_refresher_custom",
+        "name": "Refresher Orb",
+        "image": "refresher.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Reset: mana cost increased from 350 to 400"
+          }
+        ]
+      },
+      {
+        "item_id": "item_crimson_guard",
+        "name": "Crimson Guard",
+        "image": "crimson_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "SpellDispellableType",
+            "note": "Guard: can now be dispelled"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_greater_faerie_fire_custom",
+        "name": "Greater Faerie Fire",
+        "image": "greater_faerie_fire.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "heal",
+            "note": "Heal decreased from 30% to 25%"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "lina",
+      "name": "lina",
+      "image": "images/heroes/heroesPreview/lina.webp",
+      "is_new": true,
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "lina_dragon_slave_custom",
+          "name": "Dragon Slave",
+          "image": "lina_dragon_slave.webp",
+          "description": [
+            "Lina channels the breath of a dragon, sending out a wave of fire that scorches every enemy in its path. Damage: 85 / 165 / 245 / 325. Cooldown: 11 / 10 / 9 / 8. Cast range: 1075. Mana cost: 100 / 110 / 120 / 130."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "lina_light_strike_array_custom",
+          "name": "Light Strike Array",
+          "image": "lina_light_strike_array.webp",
+          "description": [
+            "Summons a column of flames that damages and stuns enemies. Radius: 250. Delay: 0.5. Stun duration: 1 / 1.4 / 1.8 / 2.2. Damage: 110 / 160 / 210 / 260. Cooldown: 13 / 11 / 9 / 7. Cast range: 700. Mana cost: 100 / 110 / 120 / 130."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "lina_fiery_soul_custom",
+          "name": "Fiery Soul",
+          "image": "lina_fiery_soul.webp",
+          "description": [
+            "Grants bonus attack and movement speed each time Lina hits an enemy with a spell. Stacks with itself. Lasts 18 seconds. Bonus attack speed: 7 / 14 / 21 / 28. Bonus movement speed: 0.5% / 1% / 1.5% / 2%. Max stacks: 7. Duration: 18."
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "lina_laguna_blade_custom",
+          "name": "Laguna Blade",
+          "image": "lina_laguna_blade.webp",
+          "description": [
+            "Fires off a bolt of lightning at a single enemy unit, dealing massive damage. Damage: 400 / 650 / 900. Cooldown: 70 / 60 / 50. Cast range: 600. Mana cost: 150 / 300 / 450."
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_lina_1",
+            "image": "lina_1.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Light Strike Array.</font> New Active Ability: Brand of Fire. Places a fiery brand at the targeted location. When an enemy enters the brand, it explodes after 0.5 sec., stunning and dealing magic damage. Damage: 100/200/300. Stun Duration: 2 sec. Brand Duration: 10 sec. Radius: 250. Mana Cost: 100. Cooldown: 10 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Light Strike Array. </font></b>\n\nNew Active Ability: Brand of Fire\n\nPlaces a fiery brand at the targeted location. When an enemy enters the brand, it explodes after 0.5 sec., stunning and dealing magic damage.\n\nDamage: 100/200/300\nStun Duration: 2 sec.\nBrand Duration: 10 sec.\nRadius: 250\nMana Cost: 100\nCooldown: 10 sec."
+          },
+          {
+            "talent_id": "modifier_lina_2",
+            "image": "lina_2.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Removes Dragon Slave.</font> Brand of Fire Cooldown Reduction: 1.5/3 sec. Increases Brand of Fire Duration: 5/10 sec. Increases Brand of Fire Radius: 50/100"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 1»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Dragon Slave. </font></b>\n\nBrand of Fire Cooldown Reduction: 1.5/3 sec.\n\nIncreases Brand of Fire Duration: 5/10 sec.\n\nIncreases Brand of Fire Radius: 50/100"
+          },
+          {
+            "talent_id": "modifier_lina_3",
+            "image": "lina_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Increases Brand of Fire Damage: 200%/300%/400% of Strength"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 2»"
+              }
+            ],
+            "talent_text": "Increases Brand of Fire Damage: 200%/300%/400% of Strength"
+          },
+          {
+            "talent_id": "modifier_lina_6",
+            "image": "lina_6.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Reduces Laguna Blade Cooldown Time: 15/30 sec. Mana Restoration: 5/10"
+              }
+            ],
+            "talent_text": "Reduces Laguna Blade Cooldown Time: 15/30 sec.\n\nMana Restoration: 5/10"
+          },
+          {
+            "talent_id": "modifier_lina_5",
+            "image": "lina_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Laguna Blade can be used on an area. Laguna Blade affects all enemies in its path"
+              }
+            ],
+            "talent_text": "Laguna Blade can be used on an area.\n\nLaguna Blade affects all enemies in its path."
+          },
+          {
+            "talent_id": "modifier_lina_4",
+            "image": "lina_4.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Casting Laguna Blade grants a barrier that absorbs Any Damage: 50%/75% of Dealt Damage. Barrier Duration: 7 sec"
+              }
+            ],
+            "talent_text": "Casting Laguna Blade grants a barrier that absorbs Any Damage: 50%/75% of Dealt Damage\n\nBarrier Duration: 7 sec."
+          },
+          {
+            "talent_id": "modifier_lina_7",
+            "image": "lina_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "The hero begins charging Laguna Blade. The longer the ability is charged, the more damage it deals. Maximum effect is reached after 5 sec., but if not used within 5.5 seconds, it goes on cooldown. Max Damage Boost: 250%"
+              }
+            ],
+            "talent_text": "The hero begins charging Laguna Blade. The longer the ability is charged, the more damage it deals. Maximum effect is reached after 5 sec., but if not used within 5.5 seconds, it goes on cooldown.\n\nMax Damage Boost: 250%"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_lina_8",
+            "image": "lina_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Every 6/5/4th attack of the hero creates an explosion dealing Magic Damage: 25 + 60% of Agility. Radius: 250"
+              }
+            ],
+            "talent_text": "Every 6/5/4th attack of the hero creates an explosion dealing Magic Damage: 25 + 60% of Agility\n\nRadius: 250"
+          },
+          {
+            "talent_id": "modifier_lina_9",
+            "image": "lina_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Health: 150/300"
+              }
+            ],
+            "talent_text": "Health: 150/300"
+          },
+          {
+            "talent_id": "modifier_lina_10",
+            "image": "lina_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Increases Fiery Soul Attack Speed: 4/8. Increases Fiery Soul Movement Speed: 0.25%/0.5%"
+              }
+            ],
+            "talent_text": "Increases Fiery Soul Attack Speed: 4/8\n\nIncreases Fiery Soul Movement Speed: 0.25%/0.5%"
+          },
+          {
+            "talent_id": "modifier_lina_11",
+            "image": "lina_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Using Laguna Blade empowers the owner, granting them the effects of Fiery Soul. Empower Duration: 5 sec. Number of Empower Effects: 8/10/12"
+              }
+            ],
+            "talent_text": "Using Laguna Blade empowers the owner, granting them the effects of Fiery Soul.\n\nEmpower Duration: 5 sec.\nNumber of Empower Effects: 8/10/12"
+          },
+          {
+            "talent_id": "modifier_lina_12",
+            "image": "lina_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "New Active Ability: Flame Cloak. Grants the hero unobstructed movement. Increases their spell damage and magic resistance. Using it grants the owner max stacks of Fiery Soul. Duration: 7 sec. Magic Resistance: 35%. Bonus Spell Damage: 35%. Mana Cost: 50. Cooldown: 25 sec"
+              }
+            ],
+            "talent_text": "New Active Ability: Flame Cloak\n\nGrants the hero unobstructed movement. Increases their spell damage and magic resistance. Using it grants the owner max stacks of Fiery Soul.\n\nDuration: 7 sec.\nMagic Resistance: 35%\nBonus Spell Damage: 35%\nMana Cost: 50\nCooldown: 25 sec."
+          },
+          {
+            "talent_id": "modifier_lina_13",
+            "image": "lina_13.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Flame Cloak applies a Basic Dispel and restores a portion of maximum health. Health Restoration: 5%/15%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Requires upgrading «Talent 5»"
+              }
+            ],
+            "talent_text": "Flame Cloak applies a Basic Dispel and restores a portion of maximum health.\n\nHealth Restoration: 5%/15%"
+          },
+          {
+            "talent_id": "modifier_lina_14",
+            "image": "lina_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "New Passive Ability: Thermal Runaway. Casting any spell grants a buff that gives attacks Critical Damage: 150%. Buff Duration: 3 sec"
+              }
+            ],
+            "talent_text": "New Passive Ability: Thermal Runaway\n\nCasting any spell grants a buff that gives attacks Critical Damage: 150%\n\nBuff Duration: 3 sec."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_lina_15",
+            "image": "lina_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Ignite.</font> Dragon Slave deals bonus Magic Damage per second: 20/40. Ignite Duration: 3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Ignite.</font></b>\n\nDragon Slave deals bonus Magic Damage per second: 20/40\n\nIgnite Duration: 3 sec."
+          },
+          {
+            "talent_id": "modifier_lina_16",
+            "image": "lina_16.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Ignite.</font> Light Strike Array deals bonus Magic Damage per second: 20/40. Ignite Duration: 3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Ignite.</font></b>\n\nLight Strike Array deals bonus Magic Damage per second: 20/40\n\nIgnite Duration: 3 sec."
+          },
+          {
+            "talent_id": "modifier_lina_17",
+            "image": "lina_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Ability cast delay reduction: 15%/30%. Dragon Slave shoots from behind the hero at a distance: 300. Increased Dragon Slave Range: 300/450. Increased Dragon Slave Width: 100"
+              }
+            ],
+            "talent_text": "Ability cast delay reduction: 15%/30%\n\nDragon Slave shoots from behind the hero at a distance: 300\n\nIncreased Dragon Slave Range: 300/450\n\nIncreased Dragon Slave Width: 100"
+          },
+          {
+            "talent_id": "modifier_lina_19",
+            "image": "lina_19.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Ignition.</font> Fiery Soul ignites enemies around the hero in a 375 radius, dealing additional Magic Damage per second: 20/40. Ignition Duration: 3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Ignition. </font></b>\n\nFiery Soul ignites enemies around the hero in a 375 radius, dealing additional Magic Damage per second: 20/40\n\nIgnition Duration: 3 sec."
+          },
+          {
+            "talent_id": "modifier_lina_18",
+            "image": "lina_18.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "<font color='#e03e2e'>Ignite.</font> Laguna Blade deals bonus Magic Damage per second: 80/160. Ignite Duration: 3 sec"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Ignite.</font></b>\n\nLaguna Blade deals bonus Magic Damage per second: 80/160\n\nIgnite Duration: 3 sec."
+          },
+          {
+            "talent_id": "modifier_lina_20",
+            "image": "lina_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Fiery Soul can be activated. The hero blasts all units in the target area with fire, pushing them away. Radius: 400. Cast Range: 700. Cooldown: 30 sec. Fiery Soul increases Health Regeneration per stack: 4/8/12"
+              }
+            ],
+            "talent_text": "Fiery Soul can be activated.\n\nThe hero blasts all units in the target area with fire, pushing them away.\n\nRadius: 400\nCast Range: 700\nCooldown: 30 sec.\n\nFiery Soul increases Health Regeneration per stack: 4/8/12"
+          },
+          {
+            "talent_id": "modifier_lina_21",
+            "image": "lina_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Increased Ignite Damage: 25% of Intellect. Increased Ignite Duration: 2 sec"
+              }
+            ],
+            "talent_text": "Increased Ignite Damage: 25% of Intellect\n\nIncreased Ignite Duration: 2 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "abaddon",
+      "name": "abaddon",
+      "image": "images/heroes/heroesPreview/abaddon.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "abaddon_borrowed_time_custom",
+          "name": "Borrowed Time",
+          "image": "abaddon_borrowed_time.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 80/70/60s to 90/85/80s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "aghanim",
+      "name": "aghanim",
+      "image": "images/heroes/heroesPreview/aghanim.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_aghanim_21",
+            "image": "aghanim_21.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Channeling Aghanim's Ray now grants 4% spell damage every 0.5s instead of 8% every second"
+              }
+            ],
+            "talent_text": "Using Items and other Abilities does not interrupt Aghanim's Ray.\n\nChanneling Aghanim's Ray grants an effect that increases Spell Damage every 0.5 seconds: 4%\n\nThe effect lasts 0/3 seconds after Aghanim's Ray ends.\n\nMaximum Effects: 12"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_axe_3",
+            "image": "axe_3.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Activated Counter Helix cooldown increased from 15s to 18s"
+              }
+            ],
+            "talent_text": "Counter Helix can be activated.\n\nPerforms 1/2/3 spins around himself with an axe.\n\nInterval: 0.3 sec.\nCooldown: 18 sec."
+          },
+          {
+            "talent_id": "modifier_axe_4",
+            "image": "axe_4.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Culling Blade cooldown reduction decreased from 15/30/45s to 12/24/36s"
+              }
+            ],
+            "talent_text": "Culling Blade Cooldown Reduction: 12/24/36 sec.\n\nIf Culling Blade kills a creep, its cooldown is reset."
+          },
+          {
+            "talent_id": "modifier_axe_5",
+            "image": "axe_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Culling Blade damage bonus decreased from 300%/450%/600% to 300%/400%/500% of Armor"
+              }
+            ],
+            "talent_text": "Increases Culling Blade Damage: 300%/400%/500% of Armor"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_axe_9",
+            "image": "axe_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Counter Helix trigger interval increased from 650/600/550 to 850/750/650 units travelled"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>You cannot attack.</font></b>\n\nRemoves the cooldown of Counter Helix.\n\nTriggers Counter Helix every 850/750/650 distance traveled.\n\nAdds 1 level to Counter Helix."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "creep",
+      "name": "creep",
+      "image": "images/heroes/heroesPreview/creep.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_creep_10",
+            "image": "creep_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Counterspell cooldown increased from 12s to 14s"
+              }
+            ],
+            "talent_text": "New Active Ability: Counterspell\n\nPassively increases magic resistance. Can be activated to create an anti-magic shield around yourself that completely blocks and reflects all targeted spells back to the enemy.\n\nMagic Resistance: 15%/20%/25%\nDuration: 2 sec\nCooldown: 14 sec\nMana Cost: 50\n\n\nHealth: 100/200/300"
+          },
+          {
+            "talent_id": "modifier_creep_11",
+            "image": "creep_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Manta Style cooldown increased from 30s to 45s"
+              }
+            ],
+            "talent_text": "New Active Ability: Manta Style\n\nCreates 2 illusions of your hero.\n\nIllusion Damage: 40%\nIllusion Damage Received: 200%\nDuration: 20 sec.\nMana Cost: 125\nCooldown: 45 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "disruptor",
+      "name": "disruptor",
+      "image": "images/heroes/heroesPreview/disruptor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "disruptor_static_storm_custom",
+          "name": "Static Storm",
+          "image": "disruptor_static_storm.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 90/80/70s to 100/85/70s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dragon_knight",
+      "name": "dragon knight",
+      "image": "images/heroes/heroesPreview/dragon_knight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_dragon_knight_17",
+            "image": "dragon_knight_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Iceball now costs 120 mana"
+              }
+            ],
+            "talent_text": "New Active Ability: Iceball\n\nThe hero chills an area, causing enemies inside it to take magical damage each second and be slowed. The chilling effect lasts 2 more seconds after the enemy leaves the area.\n\nDamage per Second: 25 + 50% of Intelligence\nAttack Speed Slow: 40\nMovement Speed Slow: 20%\nDuration: 8 sec.\nCooldown: 20 sec.\nMana Cost: 120"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "earthshaker",
+      "name": "earthshaker",
+      "image": "images/heroes/heroesPreview/earthshaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "earthshaker_aftershock_custom",
+          "name": "Aftershock",
+          "image": "earthshaker_aftershock.webp",
+          "ability_notes": [
+            {
+              "parameter": "aftershock_damage",
+              "note": "Damage decreased from 70/100/130/160 to 65/90/115/140"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "juggernaut_omni_slash_custom",
+          "name": "Omnislash",
+          "image": "juggernaut_omni_slash.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 100s to 120/110/100s"
+            },
+            {
+              "parameter": "duration",
+              "note": "Duration decreased from 2.5/2.75/3s to 2.5s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_juggernaut_21",
+            "image": "juggernaut_21.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Blade Fury shield strength decreased from 9% to 8% of max mana"
+              }
+            ],
+            "talent_text": "Using Blade Fury grants the hero a Barrier that absorbs all damage.\n\nBarrier Strength: 8% of Maximum Mana\n\nWhile under Blade Fury, the hero performs an attack on the nearest target every 1 sec."
+          },
+          {
+            "talent_id": "modifier_juggernaut_18",
+            "image": "juggernaut_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Blade Fury damage bonus decreased from 15%/30%/45% to 10%/20%/30% of Intelligence"
+              }
+            ],
+            "talent_text": "Increase Blade Fury Damage: 10%/20%/30% of Intellect"
+          },
+          {
+            "talent_id": "modifier_juggernaut_16",
+            "image": "juggernaut_16.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Blade Fury movement speed bonus decreased from 30/60/90 to 25/50/75"
+              }
+            ],
+            "talent_text": "Blade Fury Increases Movement Speed: 25/50/75\n\nBlade Fury Slows Enemies: 5%/10%/15%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": "Base mana regen increased by 0.25",
+          "icon": "/mana_regen.png"
+        },
+        {
+          "parameter": "AttackRate",
+          "note": "Base attack time decreased from 2 to 1.9",
+          "icon": "/icon_attack_time.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "kez_raptor_dance_custom",
+          "name": "Raptor Dance",
+          "image": "kez_raptor_dance.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityChannelTime",
+              "note": "No longer channeled: the 1s channel has been replaced with a 1s cast point"
+            },
+            {
+              "parameter": "invuln_period",
+              "note": "Casting the ability now grants 0.2s of invulnerability"
+            },
+            {
+              "parameter": "max_health_damage_pct",
+              "note": "Max health as damage decreased from 3% to 2.5%"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_falcon_rush_custom",
+          "name": "Falcon Rush",
+          "image": "kez_falcon_rush.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_speed_factor",
+              "note": "Attack speed factor increased from 6%/7%/8%/9% to 9%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_kunkka_4",
+            "image": "kunkka_4.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Increase Torrent Damage: 80%/120%/160% of Health Regeneration» replaced with «Increases Tidebringer Damage: 120%/180%/240% of Health Regeneration»"
+              }
+            ],
+            "talent_text": "Increases Tidebringer Damage: 120%/180%/240% of Health Regeneration"
+          },
+          {
+            "talent_id": "modifier_kunkka_2",
+            "image": "kunkka_2.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Increase Tidebringer Damage: 80%/120%/160% of Health Regeneration» replaced with «Increase Torrent Damage: 80%/120%/160% of Health Regeneration»"
+              }
+            ],
+            "talent_text": "Increase Torrent Damage: 80%/120%/160% of Health Regeneration"
+          },
+          {
+            "talent_id": "modifier_kunkka_5",
+            "image": "kunkka_5.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Torrent Storm mana cost decreased from 250 to 100"
+              },
+              {
+                "note": "Torrent Storm cooldown decreased from 70s to 60s"
+              }
+            ],
+            "talent_text": "New Active Ability: Torrent Storm\n\nCasts Torrent in a random area around the owner every 0.3s.\n\nRadius: 1100\nDuration: 5s\nMana Cost: 100\nCooldown: 60s"
+          },
+          {
+            "talent_id": "modifier_kunkka_7",
+            "image": "kunkka_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Health regen amplification in the Torrent puddle increased from 70% to 80%"
+              }
+            ],
+            "talent_text": "Increases Torrent Radius: 80\n\nTorrent leaves a small puddle on the ground where allied units gain Increased Health Regeneration: 80%\n\nPuddle Duration: 5 sec."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_nyx_assassin_6",
+            "image": "nyx_assassin_6.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Spiked Carapace no longer disables enemy lifesteal either"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Spiked Carapace does not Stun Enemies and does not disable their Lifesteal.</font></b>\n\nSpiked Carapace reflects damage an unlimited number of times."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_purification_custom",
+          "name": "Purification",
+          "image": "omniknight_purification.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Cast range increased from 550 to 700"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phoenix",
+      "name": "phoenix",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_phoenix_20",
+            "image": "phoenix_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Stun threshold decreased from 11 to 9 freeze stacks"
+              }
+            ],
+            "talent_text": "The hero's Ice Abilities apply freezing effects to enemies. Frost Ray applies 3 freezing effects at once. Effects refresh each other's duration. Upon reaching 9 effects, it stuns. Works through Magic Immunity.\n\nEffect Duration: 5 sec.\nStun Duration: 1.6/2/2.4 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "razor",
+      "name": "razor",
+      "image": "images/heroes/heroesPreview/razor.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "razor_static_link_custom",
+          "name": "Static Link",
+          "image": "razor_static_link.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 50/40/30/20s to 44/36/28/20s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "riki",
+      "name": "riki",
+      "image": "images/heroes/heroesPreview/riki.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "riki_blink_strike_custom",
+          "name": "Blink Strike",
+          "image": "riki_blink_strike.webp",
+          "ability_notes": [
+            {
+              "parameter": "slow",
+              "note": "Slow duration increased from 0.4s to 0.5s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_riki_3",
+            "image": "riki_3.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "«Increased Blink Strike Damage: 100% of Strength. Increased Blink Strike Damage: 50% of Agility. Increased Blink Strike Damage: 50% of Intelligence» replaced with «Removes Tricks of the Trade. New Passive Ability: Frontstab. Attacking from the front deals bonus physical damage based on Strength. Damage per Strength: 0.7/1»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Tricks of the Trade. </font></b>\n\nNew Passive Ability: Frontstab\n\nAttacking from the front deals bonus physical damage based on Strength.\n\nDamage per Strength: 0.7/1"
+          },
+          {
+            "talent_id": "modifier_riki_4",
+            "image": "riki_4.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Removes Tricks of the Trade. New Passive Ability: Frontstab. Attacking from the front deals bonus physical damage based on Strength. Damage per Strength: 0.7/1» replaced with «Removes Backstab. Blink Strike teleports to the front of the enemy. Blink Strike Cooldown Reduction: 4/6/8 sec»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Backstab. </font></b>\n\nBlink Strike teleports to the front of the enemy.\n\nBlink Strike Cooldown Reduction: 4/6/8 sec."
+          },
+          {
+            "talent_id": "modifier_riki_2",
+            "image": "riki_2.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Removes Backstab. Blink Strike teleports to the front of the enemy. Blink Strike Cooldown Reduction: 4/6/8 sec» replaced with «Blink Strike Damage Increase: 150% of Strength. Blink Strike Damage Increase: 75% of Agility. Blink Strike Damage Increase: 75% of Intelligence»"
+              }
+            ],
+            "talent_text": "Blink Strike Damage Increase: 150% of Strength\n\nBlink Strike Damage Increase: 75% of Agility\n\nBlink Strike Damage Increase: 75% of Intelligence"
+          },
+          {
+            "talent_id": "modifier_riki_5",
+            "image": "riki_5.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Ability cast point reduction increased from 20%/40%/60% to 25%/50%/75%"
+              },
+              {
+                "note": "Blink Strike mana cost reduction increased from 20%/40%/60% to 25%/50%/75%"
+              },
+              {
+                "parameter": "talent_requires",
+                "note": "Now requires upgrading «Talent 3»",
+                "tooltip": "Previously required upgrading «Talent 4»"
+              }
+            ],
+            "talent_text": "Ability Cast Point Reduction: 25%/50%/75%\n\nBlink Strike Mana Cost Reduction: 25%/50%/75%"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "skywrath_mage",
+      "name": "skywrath mage",
+      "image": "images/heroes/heroesPreview/skywrath_mage.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_skywrath_mage_4",
+            "image": "skywrath_mage_4.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Health Regeneration increases Mana Regeneration: 10%/20%/30%. Spell Lifesteal: 3%/6%/9%» replaced with «Arcane Bolt deals damage based on Strength instead of Intelligence. Arcane Bolt consumes Health instead of Mana»"
+              }
+            ],
+            "talent_text": "Arcane Bolt deals damage based on Strength instead of Intelligence.\n\nArcane Bolt consumes Health instead of Mana."
+          },
+          {
+            "talent_id": "modifier_skywrath_mage_3",
+            "image": "skywrath_mage_3.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«Arcane Bolt deals Strength damage, not Intellect damage» replaced with «Health Regeneration increases Mana Regeneration: 10%/20%/30%. Spell Lifesteal: 4%/8%/12%»"
+              }
+            ],
+            "talent_text": "Health Regeneration increases Mana Regeneration: 10%/20%/30%\n\nSpell Lifesteal: 4%/8%/12%"
+          },
+          {
+            "talent_id": "modifier_skywrath_mage_8",
+            "image": "skywrath_mage_8.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "No longer makes Arcane Bolt consume health instead of mana"
+              }
+            ],
+            "talent_text": "Arcane Bolt Cooldown Reduction: 0.5 sec.\n\nArcane Bolt Flight Speed increased by 2x."
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slardar_19",
+            "image": "slardar_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Slithereen Crush cooldown increase decreased from 3s to 2s"
+              }
+            ],
+            "talent_text": "Increases Slithereen Crush Charges: 1\n\n<b><font color='#ff0000'>Increases Slithereen Crush Cooldown: 2 sec.</font></b>"
+          },
+          {
+            "talent_id": "modifier_slardar_21",
+            "image": "slardar_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Corrosive Haze spell damage amplification increased from 50% to 65%"
+              }
+            ],
+            "talent_text": "Corrosive Haze Increases All Spell Damage Taken: 65%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spectre_17",
+            "image": "spectre_17.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Shadow Trail duration increased from 2/3/4s to 2/4/6s"
+              }
+            ],
+            "talent_text": "After using Spectral Dagger, the hero leaves a Shadow Trail.\n\nDuration: 2/4/6 sec.\n\nStrength, Intelligence: 3/6/9"
+          },
+          {
+            "talent_id": "modifier_spectre_18",
+            "image": "spectre_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Movement speed bonus increased from 20 to 30"
+              }
+            ],
+            "talent_text": "Hero Reveal Radius on Shadow Trail: 1200\n\nMovement Speed: 30"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "spirit_breaker",
+      "name": "spirit breaker",
+      "image": "images/heroes/heroesPreview/spirit_breaker.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_spirit_breaker_21",
+            "image": "spirit_breaker_21.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Time Aura damage amplification decreased from 25% to 15%"
+              }
+            ],
+            "talent_text": "Time Aura increases all damage dealt to enemies by 15%, but the farther the enemy, the weaker the effect.\n\nRadius: 1200"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_7",
+            "image": "spirit_breaker_7.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "No longer grants 0.5% health regen"
+              }
+            ],
+            "talent_text": "Bulldoze cannot be dispelled."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_spirit_breaker_14",
+            "image": "spirit_breaker_14.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 5/10/15 Agility"
+              }
+            ],
+            "talent_text": "Greater Bash does not knock enemies back.\n\nGreater Bash will trigger guaranteed after 9/8/7 unsuccessful attacks.\n\nAgility: 5/10/15"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_12",
+            "image": "spirit_breaker_12.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Removes Nether Strike. Greater Bash can be activated. Creates a Time Beacon that the hero can attack with 350 Attack Speed. Each attack on the beacon restores 3% of Max Health and increases Attack Speed by 4/6. Bonus Attack Speed Duration: 10 sec. Beacon Duration: 20 sec. Cooldown: 20 sec» replaced with «While standing still, the hero gains charges every 0.5 sec. that increase Movement Speed: 12. The hero gradually loses charges while moving. Maximum charges: 10/20»"
+              }
+            ],
+            "talent_text": "While standing still, the hero gains charges every 0.5 sec. that increase Movement Speed: 12\n\nThe hero gradually loses charges while moving.\n\nMaximum charges: 10/20"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_9",
+            "image": "spirit_breaker_9.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "«While standing still, the hero accumulates charges every 0.5 sec. that increase Movement Speed: 10. The hero gradually loses charges while moving. Maximum charges: 10/20» replaced with «Base Attack Time: 1.85/1.8/1.75. Increase in Greater Bash Stun Duration: 0.1/0.2/0.3 sec»"
+              }
+            ],
+            "talent_text": "Base Attack Time: 1.85/1.8/1.75\n\nIncrease in Greater Bash Stun Duration: 0.1/0.2/0.3 sec."
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_13",
+            "image": "spirit_breaker_13.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Base Attack Time: 1.85/1.8/1.75» replaced with «Removes Nether Strike. Greater Bash can be activated. Creates a Time Beacon that the hero can attack with 350 Attack Speed. Each attack on the beacon restores 3% of Max Health and increases Attack Speed by 4/6. Bonus Attack Speed Duration: 10 sec. Beacon Duration: 20 sec. Cooldown: 20 sec»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'> Removes Nether Strike. </font></b>\n\nGreater Bash can be activated.\n\nCreates a Time Beacon that the hero can attack with +350 Attack Speed. Each attack on the beacon restores 3% of Max Health and increases Attack Speed by 4/6.\n\nBonus Attack Speed Duration: 10 sec.\nBeacon Duration: 20 sec.\nCooldown: 20 sec."
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_20",
+            "image": "spirit_breaker_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now also grants 300 health"
+              }
+            ],
+            "talent_text": "Protects the owner from negative effects while charging with Charge of Darkness.\n\nHealth: 300"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_11",
+            "image": "spirit_breaker_11.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Charge of Darkness haste duration after the charge increased from 2.5s to 3s"
+              }
+            ],
+            "talent_text": "The boost from Charge of Darkness lasts for 3 seconds after the end of the run."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_spirit_breaker_15",
+            "image": "spirit_breaker_15.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Charge of Darkness and Astral Charge damage decreased from 50 + 10%/15%/20% to 50 + 8%/12%/16% of current mana"
+              }
+            ],
+            "talent_text": "Charge of Darkness and Astral Charge deal Magical Damage to all enemies in their path: 50 + 8%/12%/16% of Current Mana"
+          },
+          {
+            "talent_id": "modifier_spirit_breaker_10",
+            "image": "spirit_breaker_10.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Astral Charge cooldown increased from 20s to 24s"
+              }
+            ],
+            "talent_text": "New Active Ability: Astral Charge\n\nSends an astral copy at the enemy, ignoring obstacles in its path. Greater Bash will trigger on the target and any enemies it hits along the way. If the target dies before the copy reaches it, the nearest enemy will become the new target.\n\nBonus Speed during Charge: 400\nStun Duration: 1.8 sec.\nCooldown: 24 sec."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_tiny_9",
+            "image": "tiny_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Tiny's Ring now grants both unit and tree walking instead of tree walking only"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Grow.</font></b>\n\nNew Passive Ability: Tiny's Ring\n\nAllows the hero to walk through units and trees. Enemies beneath the hero take damage every second based on his Agility.\n\nModel Size Reduction: 10%\nRadius: 100\nDamage per Second: 110% of Agility"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_maledict_custom",
+          "name": "Maledict",
+          "image": "witch_doctor_maledict.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellDispellableType",
+              "note": "Can now be dispelled"
+            }
+          ]
+        },
+        {
+          "ability_id": "witch_doctor_death_ward_custom",
+          "name": "Death Ward",
+          "image": "witch_doctor_death_ward.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 60s to 100/90/80s"
+            },
+            {
+              "parameter": "damage",
+              "note": "Damage decreased from 90/150/210 to 60/95/130"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_witch_doctor_8",
+            "image": "witch_doctor_8.webp",
+            "title": "Talent 1",
+            "talent_notes": [
+              {
+                "note": "Auto Voodoo damage type without Death Ward learned changed from Physical to Pure"
+              },
+              {
+                "note": "Auto Voodoo damage without Death Ward learned decreased from 60 to 45"
+              }
+            ],
+            "talent_text": "New Passive Ability: Auto Voodoo\n\nA skull from Death Ward orbits the hero and shoots at a random nearby enemy. It chooses the farthest target within range. Attack range equals your own attack range. If Death Ward is not learned, the attack deals 45 pure damage.\n\nCooldown: 6/3 sec."
+          },
+          {
+            "talent_id": "modifier_witch_doctor_9",
+            "image": "witch_doctor_9.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now also grants 50/100/150 health"
+              }
+            ],
+            "talent_text": "Death Ward attacks bounce to the nearest target 1/2/3 times.\n\nHealth: 50/100/150"
+          },
+          {
+            "talent_id": "modifier_witch_doctor_10",
+            "image": "witch_doctor_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Death Ward duration increased from 1/2/3s to 2/3/4s"
+              }
+            ],
+            "talent_text": "Death Ward no longer requires channeling.\n\nDeath Ward Duration: 2/3/4 sec."
+          },
+          {
+            "talent_id": "modifier_witch_doctor_12",
+            "image": "witch_doctor_12.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Death Ward cooldown reduction increased from 10/20/30s to 20/40/60s"
+              }
+            ],
+            "talent_text": "Death Ward Cooldown Reduction: 20/40/60 sec."
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}

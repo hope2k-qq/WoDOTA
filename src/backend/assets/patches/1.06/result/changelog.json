@@ -1,0 +1,1940 @@
+{
+  "patch_number": "1.06",
+  "patch_name": "1.06",
+  "patch_timestamp": 1788986257,
+  "general": {
+    "global_changes": [
+      {
+        "title": {
+          "ru": "Общие изменения",
+          "en": "General Changes",
+          "uk": "Загальні зміни"
+        }
+      },
+      {
+        "note": {
+          "ru": "Небольшие улучшения режима Arena",
+          "en": "Minor improvements to Arena mode",
+          "uk": "Невеликі покращення режиму Arena"
+        }
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_gungir",
+        "name": "Gleipnir",
+        "image": "images/items/gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_aoe",
+            "old_raw_value": "75",
+            "new_raw_value": "0",
+            "note": {
+              "ru": "Больше не даёт 75 к радиусу действия способностей",
+              "en": "No longer grants 75 ability AoE",
+              "uk": "Більше не дає 75 до радіуса дії здібностей"
+            }
+          },
+          {
+            "parameter": "radius_tooltip",
+            "old_raw_value": "350",
+            "new_raw_value": "275",
+            "note": {
+              "ru": "Eternal Chains: радиус уменьшен с 350 до 275",
+              "en": "Eternal Chains: radius decreased from 350 to 275",
+              "uk": "Eternal Chains: радіус зменшено з 350 до 275"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [
+    {
+      "boss_id": "boss_keeper_boss",
+      "name": "boss keeper boss",
+      "image": "pages/patches/standard_hero.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_keeper_mana",
+          "name": "boss keeper mana",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Больше не проходит сквозь невосприимчивость к эффектам",
+                "en": "No longer pierces spell immunity",
+                "uk": "Більше не пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_medusa",
+      "name": "boss medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_medusa_stone",
+          "name": "stone",
+          "image": "abilities/medusa_stone_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": null,
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "note": {
+                "ru": "Теперь проходит сквозь невосприимчивость к эффектам",
+                "en": "Now pierces spell immunity",
+                "uk": "Тепер пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_phoenix_boss",
+      "name": "boss phoenix boss",
+      "image": "images/heroes/heroesPreview/phoenix.webp",
+      "abilities": [
+        {
+          "ability_id": "phoenix_boss_wave",
+          "name": "phoenix boss wave",
+          "image": "abilities/phoenix_icarus_dive.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Больше не проходит сквозь невосприимчивость к эффектам",
+                "en": "No longer pierces spell immunity",
+                "uk": "Більше не пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "phoenix_boss_beam",
+          "name": "phoenix boss beam",
+          "image": "abilities/phoenix_sun_ray.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Больше не проходит сквозь невосприимчивость к эффектам",
+                "en": "No longer pierces spell immunity",
+                "uk": "Більше не пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_sand_king",
+      "name": "boss sand king",
+      "image": "images/heroes/heroesPreview/sand_king.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_sand_king_burrowstrike",
+          "name": "burrowstrike",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Больше не проходит сквозь невосприимчивость к эффектам",
+                "en": "No longer pierces spell immunity",
+                "uk": "Більше не пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_sand_king_burrow",
+          "name": "burrow",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "old_raw_value": null,
+              "new_raw_value": "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES",
+              "note": {
+                "ru": "Теперь действует на существ с невосприимчивостью к эффектам",
+                "en": "Now affects spell immune enemies",
+                "uk": "Тепер діє на істот з імунітетом до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_shadow_fiend",
+      "name": "boss shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_shadow_fiend_passive_shadowraze",
+          "name": "passive shadowraze",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": null,
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Теперь блокируется невосприимчивостью к эффектам",
+                "en": "Now blocked by spell immunity",
+                "uk": "Тепер блокується імунітетом до негативних ефектів"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_shadow_fiend_passive_ultimate",
+          "name": "passive ultimate",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": null,
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Теперь блокируется невосприимчивостью к эффектам",
+                "en": "Now blocked by spell immunity",
+                "uk": "Тепер блокується імунітетом до негативних ефектів"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_shadow_fiend_passive_dark_cyclone",
+          "name": "passive dark cyclone",
+          "image": "pages/patches/standard_ability.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": null,
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Теперь блокируется невосприимчивостью к эффектам",
+                "en": "Now blocked by spell immunity",
+                "uk": "Тепер блокується імунітетом до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_tiny_boss",
+      "name": "boss tiny boss",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "abilities": [
+        {
+          "ability_id": "tiny_boss_avalanche",
+          "name": "tiny boss avalanche",
+          "image": "abilities/woda_tiny_boss_1.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Больше не проходит сквозь невосприимчивость к эффектам",
+                "en": "No longer pierces spell immunity",
+                "uk": "Більше не пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_boss_stone_throw",
+          "name": "tiny boss stone throw",
+          "image": "abilities/woda_tiny_boss_3.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Больше не проходит сквозь невосприимчивость к эффектам",
+                "en": "No longer pierces spell immunity",
+                "uk": "Більше не пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_boss_toss",
+          "name": "tiny boss toss",
+          "image": "abilities/woda_tiny_boss_2.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "old_raw_value": null,
+              "new_raw_value": "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES",
+              "note": {
+                "ru": "Теперь действует на существ с невосприимчивостью к эффектам",
+                "en": "Now affects spell immune enemies",
+                "uk": "Тепер діє на істот з імунітетом до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boss_id": "boss_ursa",
+      "name": "boss ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "abilities": [
+        {
+          "ability_id": "boss_ursa_jump",
+          "name": "jump",
+          "image": "abilities/ursa_earthshock.webp",
+          "ability_notes": [
+            {
+              "parameter": "SpellImmunityType",
+              "old_raw_value": "SPELL_IMMUNITY_ENEMIES_YES",
+              "new_raw_value": "SPELL_IMMUNITY_ENEMIES_NO",
+              "note": {
+                "ru": "Больше не проходит сквозь невосприимчивость к эффектам",
+                "en": "No longer pierces spell immunity",
+                "uk": "Більше не пробиває імунітет до негативних ефектів"
+              }
+            }
+          ]
+        },
+        {
+          "ability_id": "boss_ursa_fury_swipes",
+          "name": "fury swipes",
+          "image": "abilities/ursa_fury_swipes.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitTargetFlags",
+              "old_raw_value": null,
+              "new_raw_value": "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES",
+              "note": {
+                "ru": "Теперь действует на существ с невосприимчивостью к эффектам",
+                "en": "Now affects spell immune enemies",
+                "uk": "Тепер діє на істот з імунітетом до негативних ефектів"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "hero_id": "monkey_king",
+      "name": "monkey king",
+      "image": "images/heroes/heroesPreview/monkey_king.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "monkey_king_boundless_strike_custom",
+          "name": "Boundless Strike",
+          "image": "abilities/monkey_king_boundless_strike.webp",
+          "description": [
+            {
+              "ru": "Герой увеличивает свой посох и бьёт им по земле, оглушая всех задетых врагов. Этим ударом нельзя промахнуться, и он наносит как базовый урон, так и критический урон от атаки. Длительность оглушения: 0,7 / 0,9 / 1,1 / 1,3. Критический урон: 120% / 140% / 160% / 180%. Базовый урон: 20 / 40 / 60 / 80. Дальность: 1100. Перезарядка: 24 / 21 / 18 / 15. Дальность применения: 1100. Расход маны: 85 / 90 / 95 / 100.",
+              "en": "The hero extends his staff and smashes the ground, stunning all enemies hit. This strike cannot miss, and it deals both base damage and critical attack damage. Stun duration: 0.7 / 0.9 / 1.1 / 1.3. Critical damage: 120% / 140% / 160% / 180%. Base damage: 20 / 40 / 60 / 80. Cast range: 1100. Cooldown: 24 / 21 / 18 / 15. Cast range: 1100. Mana cost: 85 / 90 / 95 / 100.",
+              "uk": "Герой збільшує свій посох і вдаряє ним об землю, оглушуючи всіх ворогів у зоні. Цим ударом неможливо промахнутися, і він завдає як базової шкоди, так і критичної від атаки. Тривалість оглушення: 0,7 / 0,9 / 1,1 / 1,3. Критична шкода: 120% / 140% / 160% / 180%. Базова шкода: 20 / 40 / 60 / 80. Дальність: 1100. Перезарядка: 24 / 21 / 18 / 15. Дальність застосування: 1100. Витрати мани: 85 / 90 / 95 / 100."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_tree_dance_custom",
+          "name": "Tree Dance",
+          "image": "abilities/monkey_king_tree_dance.webp",
+          "description": [
+            {
+              "ru": "Герой запрыгивает на верхушку выбранного дерева. Там он получает прерываемую способность Primal Spring — направленную атаку в прыжке. Если разрушить дерево, герой упадёт и будет оглушён на 4 сек. Если получить урон на земле, способность уходит на перезарядку. Расстояние: 800. Перезарядка при получении урона: 3. Перезарядка: 2 / 1,8 / 1,6 / 1,4. Дальность применения: 800.",
+              "en": "The hero leaps onto the top of a chosen tree. There he gains the interruptible ability Primal Spring — a directed leaping attack. If the tree is destroyed, the hero will fall and be stunned for 4 sec. If he takes damage on the ground, the ability goes on cooldown. Distance: 800. Cooldown on taking damage: 3. Cooldown: 2 / 1.8 / 1.6 / 1.4. Cast range: 800.",
+              "uk": "Герой застрибує на верхівку обраного дерева. Там він отримує переривану здатність Primal Spring — спрямовану атаку у стрибку. Якщо зруйнувати дерево, герой впаде й буде оглушений на 4 сек. Якщо отримати шкоду на землі, здатність переходить у перезарядку. Відстань: 800. Перезарядка при отриманні шкоди: 3. Перезарядка: 2 / 1,8 / 1,6 / 1,4. Дальність застосування: 800."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_primal_spring_custom",
+          "name": "Primal Spring",
+          "image": "abilities/monkey_king_primal_spring.webp",
+          "description": [
+            {
+              "ru": "ПРЕРЫВАЕМАЯ — герой спрыгивает с дерева, нанося урон врагам в указанной области и замедляя их. Урон и замедление усиливаются в зависимости от времени подготовки способности. Урон: 110 / 200 / 290 / 380. Замедление передвижения: 35% / 50% / 65% / 80%. Макс. длительность замедления: 4. Перезарядка: 18 / 16 / 14 / 12. Дальность применения: 800. Расход маны: 100.",
+              "en": "CHANNELING — the hero leaps from the tree, dealing damage to enemies in the targeted area and slowing them. Damage and slow increase with channeling time. Damage: 110 / 200 / 290 / 380. Movement slow: 35% / 50% / 65% / 80%. Max slow duration: 4. Cooldown: 18 / 16 / 14 / 12. Cast range: 800. Mana cost: 100.",
+              "uk": "ПЕРЕРИВАНА — герой зістрибує з дерева, завдаючи шкоди ворогам у вказаній області та сповільнюючи їх. Шкода й сповільнення посилюються залежно від часу підготовки здатності. Шкода: 110 / 200 / 290 / 380. Сповільнення руху: 35% / 50% / 65% / 80%. Макс. тривалість сповільнення: 4. Перезарядка: 18 / 16 / 14 / 12. Дальність застосування: 800. Витрати мани: 100."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_jingu_mastery_custom",
+          "name": "Jingu Mastery",
+          "image": "abilities/monkey_king_jingu_mastery.webp",
+          "description": [
+            {
+              "ru": "Удары героя пробуждают мощь Цзиньгубана. Каждая четвёртая атака по вражескому герою дарует 4 усиленные атаки с дополнительным уроном и вампиризмом. Число атак для активации: 4. Длительность эффектов на врагах: 5,5 / 7 / 8,5 / 10. Дополнительный урон: 30 / 50 / 70 / 90. Доп. вампиризм: 20% / 25% / 30% / 35%. Длительность усиления: 20.",
+              "en": "The hero's strikes awaken the power of Jingu Bang. Every fourth attack on an enemy hero grants 4 empowered attacks with bonus damage and lifesteal. Hits to activate: 4. Effect duration on enemies: 5.5 / 7 / 8.5 / 10. Bonus damage: 30 / 50 / 70 / 90. Bonus lifesteal: 20% / 25% / 30% / 35%. Buff duration: 20.",
+              "uk": "Удари героя пробуджують силу Цзіньгубана. Кожна четверта атака по ворожому герою дарує 4 посилені атаки з додатковою шкодою та вампіризмом. Кількість атак для активації: 4. Тривалість ефектів на ворогах: 5,5 / 7 / 8,5 / 10. Додаткова шкода: 30 / 50 / 70 / 90. Дод. вампіризм: 20% / 25% / 30% / 35%. Тривалість посилення: 20."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_mischief_custom",
+          "name": "Mischief",
+          "image": "abilities/monkey_king_mischief.webp",
+          "description": [
+            {
+              "ru": "Изменяет облик героя, чтобы обхитрить противников. Маскировка зависит от окружения и спадает при получении урона, попытке атаковать и применении предметов или способностей. Защищает героя от урона на 0,1 сек. Доп. скорость передвижения: 8%. Перезарядка: 24 / 20 / 16 / 12.",
+              "en": "Changes the hero's appearance to deceive enemies. The disguise depends on the environment and breaks when taking damage, attempting to attack, or using items or abilities. Grants damage immunity for 0.1 sec. Bonus move speed: 8%. Cooldown: 24 / 20 / 16 / 12.",
+              "uk": "Змінює вигляд героя, щоб перехитрити ворогів. Маскування залежить від оточення й спадає при отриманні шкоди, спробі атакувати та застосуванні предметів чи здібностей. Захищає героя від шкоди на 0,1 сек. Дод. швидкість руху: 8%. Перезарядка: 24 / 20 / 16 / 12."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "monkey_king_wukongs_command_custom",
+          "name": "Wukong's Command",
+          "image": "abilities/monkey_king_wukongs_command.webp",
+          "description": [
+            {
+              "ru": "Герой создаёт круговую формацию солдат, которые расходятся из его местоположения. Если герой покинет область действия способности, его солдаты исчезнут. Их атака идентична атаке владельца способности, а своей целью они выбирают только вражеских героев. На время действия способности герой получает дополнительную броню. Дополнительная броня: 15 / 20 / 25. Интервал атаки солдат: 1,1. Длительность: 13. Перезарядка: 100 / 90 / 80. Расход маны: 100.",
+              "en": "The hero summons a circular formation of soldiers spreading out from his position. If the hero leaves the ability's area, the soldiers vanish. Their attacks mimic the hero's attack and target only enemy heroes. During the ability, the hero gains bonus armor. Bonus armor: 15 / 20 / 25. Soldier attack interval: 1.1. Duration: 13. Cooldown: 100 / 90 / 80. Mana cost: 100.",
+              "uk": "Герой створює колову формацію солдатів, які розходяться від його позиції. Якщо герой залишає область дії здатності, його солдати зникають. Їхня атака ідентична атаці власника здатності, а ціллю вони обирають лише ворожих героїв. На час дії здатності герой отримує додаткову броню. Додаткова броня: 15 / 20 / 25. Інтервал атаки солдат: 1,1. Тривалість: 13. Перезарядка: 100 / 90 / 80. Витрати мани: 100."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_monkey_king_1",
+            "image": "images/heroes/talents/monkey_king/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Каждая 4 атака по вражескому крипу дарует 1 усиленную атаку Jingu Mastery. Сила: 5",
+                  "en": "Every 4th attack on an enemy creep grants 1 empowered Jingu Mastery attack. Strength: 5",
+                  "uk": "Кожна 4 атака по ворожому крипу дарує 1 посилену атаку Jingu Mastery. Сила: 5"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_2",
+            "image": "images/heroes/talents/monkey_king/2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Убирает Tree Dance, Primal Spring.</font> Увеличение Вампиризма Jingu Mastery: 5%/10%. Увеличение Урона Jingu Mastery: 20/40. Увеличение Вампиризма Заклинаниями Jingu Magic: 5%/10%. Увеличение Урона от Заклинаний Jingu Magic: 5%/10%",
+                  "en": "<font color='#e03e2e'>Removes Tree Dance, Primal Spring.</font> Increased Lifesteal from Jingu Mastery: 5%/10%. Increased Damage from Jingu Mastery: 20/40. Increased Spell Lifesteal from Jingu Magic: 5%/10%. Increased Spell Damage from Jingu Magic: 5%/10%",
+                  "uk": "<font color='#e03e2e'>Прибирає Tree Dance, Primal Spring.</font> Збільшення Вампіризму Jingu Mastery: 5%/10%. Збільшення Шкоди Jingu Mastery: 20/40. Збільшення Вампіризму від Заклять Jingu Magic: 5%/10%. Збільшення Шкоди від Заклять Jingu Magic: 5%/10%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_3",
+            "image": "images/heroes/talents/monkey_king/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Раз в несколько секунд создаёт неподалёку солдата Wukong's Command. Каждый солдат имеет свой счётчик зарядов способности Jingu Mastery. Интервал Солдат: 6 сек. Длительность Солдат: 1/2/3 + 2 сек. за каждые 50 Силы",
+                  "en": "Creates a Wukong's Command soldier nearby every few seconds. Each soldier has its own Jingu Mastery charge counter. Soldier Interval: 6 sec. Soldier Duration: 1/2/3 + 2 sec. for every 50 Strength",
+                  "uk": "Раз на кілька секунд створює поблизу солдата Wukong's Command. Кожен солдат має свій лічильник зарядів здібності Jingu Mastery. Інтервал Солдат: 6 сек. Тривалість Солдат: 1/2/3 + 2 сек. за кожні 50 Сили"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 2",
+                "note": {
+                  "ru": "Требует прокачки «Талант 2»",
+                  "en": "Requires upgrading «Talent 2»",
+                  "uk": "Потребує прокачування «Талант 2»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_4",
+            "image": "images/heroes/talents/monkey_king/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Дополнительная Дальность Атаки: 75",
+                  "en": "Bonus Attack Range: 75",
+                  "uk": "Додаткова Дальність Атаки: 75"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_5",
+            "image": "images/heroes/talents/monkey_king/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Интервала Атак солдат Wukong's Command: 0,1/0,2/0,3 сек",
+                  "en": "Reduces Wukong's Command soldiers' attack interval: 0.1/0.2/0.3 sec",
+                  "uk": "Зменшення Інтервалу Атак солдатів Wukong's Command: 0,1/0,2/0,3 сек"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 3",
+                "note": {
+                  "ru": "Требует прокачки «Талант 3»",
+                  "en": "Requires upgrading «Talent 3»",
+                  "uk": "Потребує прокачування «Талант 3»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_6",
+            "image": "images/heroes/talents/monkey_king/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Времени Перезарядки Wukong's Command: 13/26/39 сек",
+                  "en": "Reduces Wukong's Command cooldown: 13/26/39 sec",
+                  "uk": "Зменшення Часу Перезарядки Wukong's Command: 13/26/39 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_7",
+            "image": "images/heroes/talents/monkey_king/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Новая Активная Способность: Changing of the Guard. Герой может поменяться местами с одним из солдат от способности Wukong's Command и превратиться в его неотличимую копию на 1,8 сек. В образе солдата герой неуязвим, но не может атаковать или применять заклинания. Дальность Применения: 1200. Время Перезарядки: 18 сек",
+                  "en": "New Active Ability: Changing of the Guard. The hero can swap places with one of the soldiers from Wukong's Command and turn into an indistinguishable copy of it for 1.8 sec. In the soldier form, the hero is invulnerable but cannot attack or cast spells. Cast Range: 1200. Cooldown: 18 sec",
+                  "uk": "Нова Активна Здібність: Changing of the Guard. Герой може помінятися місцями з одним із солдатів від здібності Wukong's Command та перетворитися на його невідмінну копію на 1,8 сек. В образі солдата герой невразливий, але не може атакувати чи використовувати заклинання. Дальність Застосування: 1200. Час Перезарядки: 18 сек"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_monkey_king_8",
+            "image": "images/heroes/talents/monkey_king/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Восстановление Здоровья: 4/8. Восстановление Маны: 4/8",
+                  "en": "Health Regeneration: 4/8. Mana Regeneration: 4/8",
+                  "uk": "Відновлення Здоров'я: 4/8. Відновлення Мани: 4/8"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_9",
+            "image": "images/heroes/talents/monkey_king/9.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Критического Урона Boundless Strike: 15%/30%",
+                  "en": "Increases Boundless Strike Critical Damage: 15%/30%",
+                  "uk": "Збільшення Критичної Шкоди Boundless Strike: 15%/30%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_10",
+            "image": "images/heroes/talents/monkey_king/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Каждая Атака уменьшает Время Перезарядки Boundless Strike: 0,1/0,2/0,3 сек",
+                  "en": "Each attack reduces Boundless Strike cooldown: 0.1/0.2/0.3 sec",
+                  "uk": "Кожна Атака зменшує Час Перезарядки Boundless Strike: 0,1/0,2/0,3 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_11",
+            "image": "images/heroes/talents/monkey_king/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Boundless Strike становится переключаемой способностью. Когда эта способность активирована, герой прыгает к концу своего посоха, как только тот ударит землю",
+                  "en": "Boundless Strike becomes a toggleable ability. When this ability is active, the hero jumps to the end of his staff as soon as it hits the ground",
+                  "uk": "Boundless Strike стає перемикальною здібністю. Коли ця здібність активована, герой стрибає до кінця свого посоха, щойно той вдарить землю"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_12",
+            "image": "images/heroes/talents/monkey_king/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Задержки перед применением Boundless Strike: 25%/50%. Уменьшение Затрат Маны Boundless Strike: 25%/50%",
+                  "en": "Reduces Boundless Strike Cast Point: 25%/50%. Reduced Mana Cost for Boundless Strike: 25%/50%",
+                  "uk": "Зменшення затримки перед застосуванням Boundless Strike: 25%/50%. Зменшення витрат мани на Boundless Strike: 25%/50%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_13",
+            "image": "images/heroes/talents/monkey_king/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Увеличение Времени Перезарядки Mischief: 8 сек.</font> Mischief всегда превращает в Руну. Когда маскировка спадает, герой получает кратковременный бонус соответствующей Руны: Усиление Урона, Волшебство, Ускорение, Иллюзии, Регенерация, Щит. Длительность Эффекта Руны: 1/1,5/2 сек",
+                  "en": "<font color='#e03e2e'>Increased Mischief Cooldown: 8 sec.</font> Mischief always turns into a Rune. When the disguise ends, the hero gains a short-term bonus of the corresponding Rune: Amplify Damage, Arcane, Haste, Illusions, Regeneration, Shield. Rune Effect Duration: 1/1.5/2 sec",
+                  "uk": "<font color='#e03e2e'>Збільшення часу перезарядки Mischief: 8 сек.</font> Mischief завжди перетворюється на Руну. Коли маскування закінчується, герой отримує короткочасний бонус відповідної Руни: Збільшення шкоди, Магія, Прискорення, Ілюзії, Відновлення, Щит. Тривалість ефекту Руни: 1/1,5/2 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_14",
+            "image": "images/heroes/talents/monkey_king/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Каждая атака может с вероятностью в 80% пройти сквозь уклонение и нанести 70 дополнительного магического урона",
+                  "en": "Each attack has an 80% chance to pierce evasion and deal 70 bonus magic damage",
+                  "uk": "Кожна атака з імовірністю 80% може ігнорувати ухилення та завдати 70 додаткової магічної шкоди"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_monkey_king_15",
+            "image": "images/heroes/talents/monkey_king/15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона Primal Spring: 80%/120%/160% от Интеллекта",
+                  "en": "Increases Primal Spring Damage: 80%/120%/160% of Intelligence",
+                  "uk": "Збільшення Шкоди Primal Spring: 80%/120%/160% від Інтелекту"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_16",
+            "image": "images/heroes/talents/monkey_king/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Времени Перезарядки Primal Spring: 1/2 сек. Интеллект: 5/10",
+                  "en": "Primal Spring Cooldown Reduction: 1/2 sec. Intelligence: 5/10",
+                  "uk": "Зменшення Часу Перезарядки Primal Spring: 1/2 сек. Інтелект: 5/10"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_19",
+            "image": "images/heroes/talents/monkey_king/19.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Primal Spring сразу работает с максимальной силой. Уменьшение Длительности Оглушения Tree Dance при падении с Дерева: 1,5/3 сек. Уменьшение Времени Перезарядки Tree Dance: 0,2/0,4 сек",
+                  "en": "Primal Spring immediately works at full strength. Stun Duration Reduction from Tree Dance when falling from a Tree: 1.5/3 sec. Tree Dance Cooldown Reduction: 0.2/0.4 sec",
+                  "uk": "Primal Spring одразу працює з максимальною силою. Зменшення Тривалості Оглушення Tree Dance при падінні з Дерева: 1,5/3 сек. Зменшення Часу Перезарядки Tree Dance: 0,2/0,4 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_18",
+            "image": "images/heroes/talents/monkey_king/18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Убирает Jingu Mastery.</font> Новая Пассивная Способность: Jingu Magic. Применение предметов или способностей пробуждают мощь Цзиньгубана. Каждая 4 активация предмета или способности дарует усиление урона от заклинаний и вампиризм заклинаниями. Длительность Усиления: 4 сек. Урон от Заклинаний: 5%/10%/15%. Вампиризм Заклинаниями: 5%/10%/15%",
+                  "en": "<font color='#e03e2e'>Removes Jingu Mastery.</font> New Passive Ability: Jingu Magic. Using items or abilities awakens the power of the Jingu Bang. Every 4th item or ability activation grants bonus spell damage and spell lifesteal. Buff Duration: 4 sec. Spell Damage: 5%/10%/15%. Spell Lifesteal: 5%/10%/15%",
+                  "uk": "<font color='#e03e2e'>Видаляє Jingu Mastery.</font> Нова Пасивна Здібність: Jingu Magic. Використання предметів або здібностей пробуджує міць Цзіньгубана. Кожна 4 активація предмета або здібності надає посилення шкоди від заклять та вампіризм закляттями. Тривалість Посилення: 4 сек. Шкода від Заклять: 5%/10%/15%. Вампіризм Закляттями: 5%/10%/15%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_17",
+            "image": "images/heroes/talents/monkey_king/17.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Применение Mischief дарует Барьер, поглощающий Любой Урон: 200/400. Длительность Эффекта: 24 сек",
+                  "en": "Using Mischief grants a Barrier that absorbs Any Damage: 200/400. Effect Duration: 24 sec",
+                  "uk": "Застосування Mischief надає Бар'єр, що поглинає Будь-яку Шкоду: 200/400. Тривалість Ефекту: 24 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_20",
+            "image": "images/heroes/talents/monkey_king/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Накладывает на врагов, задетых Boundless Strike или находящихся вокруг его конца, эффект способности Primal Spring, подготовленной на 100%",
+                  "en": "Applies the effect of Primal Spring, charged at 100%, to enemies hit by Boundless Strike or near its endpoint",
+                  "uk": "Накладає на ворогів, уражених Boundless Strike або тих, що перебувають біля його кінця, ефект здібності Primal Spring, підготовленої на 100%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_monkey_king_21",
+            "image": "images/heroes/talents/monkey_king/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Mischief всегда превращает в Курьера. Применение предметов или способностей не завершает Mischief. Mischief применяет Нормальное Развеивание. Увеличение Длительности Защиты от Урона Mischief: 0,4 сек",
+                  "en": "Mischief always transforms into a Courier. Using items or abilities does not end Mischief. Mischief applies a Normal Dispel. Increased Mischief Damage Protection Duration: 0.4 sec",
+                  "uk": "Mischief завжди перетворює на Кур'єра. Використання предметів чи здібностей не завершує Mischief. Mischief застосовує Нормальне Розвіювання. Збільшення Тривалості Захисту від Шкоди Mischief: 0,4 сек"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "riki",
+      "name": "riki",
+      "image": "images/heroes/heroesPreview/riki.webp",
+      "is_new": true,
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "riki_smoke_screen_custom",
+          "name": "Smoke Screen",
+          "image": "abilities/riki_smoke_screen.webp",
+          "description": [
+            {
+              "ru": "Герой бросает дымовую бомбу, которая не позволяет врагам применять способности и заставляет их промахиваться атаками. Длительность: 6. Радиус: 425. Шанс промаха: 30% / 45% / 60% / 75%. Перезарядка: 17 / 16 / 15 / 14. Дальность применения: 550. Расход маны: 65 / 70 / 75 / 80.",
+              "en": "Throws down a smoke bomb, silencing enemies and causing them to miss attacks. Duration: 6. Radius: 425. Miss chance: 30% / 45% / 60% / 75%. Cooldown: 17 / 16 / 15 / 14. Cast range: 550. Mana cost: 65 / 70 / 75 / 80.",
+              "uk": "Герой кидає димову бомбу, яка забороняє ворогам використовувати здібності та змушує їх промахуватися атаками. Тривалість: 6. Радіус: 425. Шанс промаху: 30% / 45% / 60% / 75%. Перезарядка: 17 / 16 / 15 / 14. Дальність застосування: 550. Витрати мани: 65 / 70 / 75 / 80."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_blink_strike_custom",
+          "name": "Blink Strike",
+          "image": "abilities/riki_blink_strike.webp",
+          "description": [
+            {
+              "ru": "Герой перемещается за спину выбранного существа и, если это враг, замедляет и атакует его, нанося увеличенный урон. Доп. урон: 40 / 55 / 70 / 85. Длительность замедления: 0,4. Перезарядка: 0,1. Восстановление заряда: 25 / 22 / 19 / 16. Дальность применения: 600 / 700 / 800 / 900. Расход маны: 50 / 55 / 60 / 65.",
+              "en": "Teleports behind the target unit, momentarily slowing them and striking for bonus damage if it is an enemy. Bonus damage: 40 / 55 / 70 / 85. Slow duration: 0.4. Cooldown: 0.1. Charge restore time: 25 / 22 / 19 / 16. Cast range: 600 / 700 / 800 / 900. Mana cost: 50 / 55 / 60 / 65.",
+              "uk": "Герой переміщується за спину обраної істоти і, якщо це ворог, сповільнює та атакує його, завдаючи збільшеної шкоди. Дод. шкода: 40 / 55 / 70 / 85. Тривалість сповільнення: 0,4. Перезарядка: 0,1. Відновлення заряду: 25 / 22 / 19 / 16. Дальність застосування: 600 / 700 / 800 / 900. Витрати мани: 50 / 55 / 60 / 65."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_tricks_of_the_trade_custom",
+          "name": "Tricks of the Trade",
+          "image": "abilities/riki_tricks_of_the_trade.webp",
+          "description": [
+            {
+              "ru": "ПРЕРЫВАЕМАЯ — герой пропадает из нашего мира и периодически атакует в спину случайного врага в области действия. На время действия уменьшает урон от атак, но значительно увеличивает ловкость. Радиус: 450. Число атак: 4. Урон от атаки: 40%. Доп. ловкость: 55 / 70 / 85 / 100. Перезарядка: 20 / 18 / 16 / 14. Дальность применения: 400. Расход маны: 45 / 55 / 65 / 75.",
+              "en": "CHANNELED - Riki phases out of the world while striking random enemy units from behind in an area around him. While phased out his attack damage is reduced, but his Agility greatly increases. Radius: 450. Number of attacks: 4. Attack damage: 40%. Bonus agility: 55 / 70 / 85 / 100. Cooldown: 20 / 18 / 16 / 14. Cast range: 400. Mana cost: 45 / 55 / 65 / 75.",
+              "uk": "ПЕРЕРИВНА — герой зникає з нашого світу та періодично атакує зі спини випадкового ворога в області дії. Під час дії зменшує шкоду від атак, але значно збільшує спритність. Радіус: 450. Кількість атак: 4. Шкода від атаки: 40%. Дод. спритність: 55 / 70 / 85 / 100. Перезарядка: 20 / 18 / 16 / 14. Дальність застосування: 400. Витрати мани: 45 / 55 / 65 / 75."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_permanent_invisibility_custom",
+          "name": "Cloak and Dagger",
+          "image": "abilities/riki_permanent_invisibility.webp",
+          "description": [
+            {
+              "ru": "Герой размывает свои очертания, становясь едва заметным. Если приблизится к вражескому герою или атаковать врага, невидимость пропадёт. Задержка до невидимости: 4 / 3 / 2. Радиус: 1000.",
+              "en": "The hero blurs his outline, becoming barely visible. Invisibility breaks if he approaches an enemy hero or attacks. Fade delay: 4 / 3 / 2. Radius: 1000.",
+              "uk": "Герой розмиває свої обриси, стаючи майже непомітним. Якщо наблизитися до ворожого героя чи атакувати ворога, невидимість зникне. Затримка до невидимості: 4 / 3 / 2. Радіус: 1000."
+            }
+          ],
+          "ability_notes": []
+        },
+        {
+          "ability_id": "riki_backstab_custom",
+          "name": "Backstab",
+          "image": "abilities/riki_backstab.webp",
+          "description": [
+            {
+              "ru": "Атакуя со спины, герой наносит дополнительный урон, который зависит от ловкости. Урон за единицу ловкости: 0,3 / 0,4 / 0,5 / 0,6.",
+              "en": "Every time Riki strikes his enemy from behind, he deals bonus damage based on his Agility. Damage per agility: 0.3 / 0.4 / 0.5 / 0.6.",
+              "uk": "Атакуючи зі спини, герой завдає додаткової шкоди, що залежить від спритності. Шкода за одиницю спритності: 0,3 / 0,4 / 0,5 / 0,6."
+            }
+          ],
+          "ability_notes": []
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_riki_1",
+            "image": "images/heroes/talents/riki/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Blink Strike наносит урон всем противникам в радиусе 300 вокруг цели",
+                  "en": "Blink Strike deals damage to all enemies within a 300 radius around the target",
+                  "uk": "Blink Strike завдає шкоди всім противникам у радіусі 300 навколо цілі"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_2",
+            "image": "images/heroes/talents/riki/2.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона Blink Strike: 50% от Силы. Увеличение Урона Blink Strike: 50% от Ловкости. Увеличение Урона Blink Strike: 50% от Интеллекта",
+                  "en": "Increased Blink Strike Damage: 50% of Strength. Increased Blink Strike Damage: 50% of Agility. Increased Blink Strike Damage: 50% of Intelligence",
+                  "uk": "Збільшення Шкоди Blink Strike: 50% від Сили. Збільшення Шкоди Blink Strike: 50% від Спритності. Збільшення Шкоди Blink Strike: 50% від Інтелекту"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_3",
+            "image": "images/heroes/talents/riki/3.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Убирает Tricks of the Trade.</font> Новая Пассивная Способность: Frontstab. Атакуя в лицо, герой наносит дополнительный физический урон, который зависит от силы. Урон за Единицу Силы: 0,6/0,9",
+                  "en": "<font color='#e03e2e'>Removes Tricks of the Trade.</font> New Passive Ability: Frontstab. Attacking from the front deals bonus physical damage based on Strength. Damage per Strength: 0.6/0.9",
+                  "uk": "<font color='#e03e2e'>Прибирає Tricks of the Trade.</font> Нова Пасивна Здібність: Frontstab. Атакуючи в обличчя, герой завдає додаткової фізичної шкоди, що залежить від сили. Шкода за Одиницю Сили: 0,6/0,9"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_4",
+            "image": "images/heroes/talents/riki/4.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Убирает Backstab.</font> Blink Strike перемещает к передней части противника. Уменьшение Времени Перезарядки Blink Strike: 1/2/3 сек",
+                  "en": "<font color='#e03e2e'>Removes Backstab.</font> Blink Strike teleports to the front of the enemy. Blink Strike Cooldown Reduction: 1/2/3 sec",
+                  "uk": "<font color='#e03e2e'>Прибирає Backstab.</font> Blink Strike переміщує до передньої частини противника. Зменшення Часу Перезарядки Blink Strike: 1/2/3 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_5",
+            "image": "images/heroes/talents/riki/5.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение задержки перед применением способностей: 20%/40%/60%. Уменьшение Расхода Маны Blink Strike: 20%/40%/60%",
+                  "en": "Ability Cast Point Reduction: 20%/40%/60%. Blink Strike Mana Cost Reduction: 20%/40%/60%",
+                  "uk": "Зменшення затримки перед застосуванням здібностей: 20%/40%/60%. Зменшення Витрати Мани Blink Strike: 20%/40%/60%"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 4",
+                "note": {
+                  "ru": "Требует прокачки «Талант 4»",
+                  "en": "Requires upgrading «Talent 4»",
+                  "uk": "Потребує прокачування «Талант 4»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_6",
+            "image": "images/heroes/talents/riki/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "<font color='#e03e2e'>Уменьшение Дальности Применения Blink Strike: 300.</font> Blink Strike можно применять на область. Увеличение Зарядов Blink Strike: 1",
+                  "en": "<font color='#e03e2e'>Reduction of Blink Strike Cast Range: 300.</font> Blink Strike can be cast on an area. Increase of Blink Strike Charges: 1",
+                  "uk": "<font color='#e03e2e'>Зменшення Дальності Застосування Blink Strike: 300.</font> Blink Strike можна застосовувати на область. Збільшення Зарядів Blink Strike: 1"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 5",
+                "note": {
+                  "ru": "Требует прокачки «Талант 5»",
+                  "en": "Requires upgrading «Talent 5»",
+                  "uk": "Потребує прокачування «Талант 5»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_7",
+            "image": "images/heroes/talents/riki/7.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Раскрытие Cloak and Dagger временно дарует Беспрепятственный Обзор и Силу. Радиус: 1200. Доп. Сила: 50. Длительность: 5 сек. Время Перезарядки: 5 сек",
+                  "en": "Revealing Cloak and Dagger temporarily grants unobstructed vision and Strength. Radius: 1200. Bonus Strength: 50. Duration: 5 sec. Cooldown: 5 sec",
+                  "uk": "Розкриття Cloak and Dagger тимчасово надає безперешкодний огляд і Силу. Радіус: 1200. Додаткова Сила: 50. Тривалість: 5 сек. Перезарядка: 5 сек"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_riki_8",
+            "image": "images/heroes/talents/riki/8.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Доп. Ловкости Tricks of the Trade: 10/20/30. Увеличение Дальности Применения Tricks of the Trade: 50/100/150",
+                  "en": "Increased Bonus Agility from Tricks of the Trade: 10/20/30. Increased Cast Range of Tricks of the Trade: 50/100/150",
+                  "uk": "Збільшення Дод. Спритності Tricks of the Trade: 10/20/30. Збільшення Дальності Застосування Tricks of the Trade: 50/100/150"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_10",
+            "image": "images/heroes/talents/riki/10.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Smoke Screen уменьшает Броню противников: 3/6",
+                  "en": "Smoke Screen reduces enemy Armor: 3/6",
+                  "uk": "Smoke Screen зменшує Броню противників: 3/6"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_9",
+            "image": "images/heroes/talents/riki/9.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Tricks of the Trade позволяет спрятаться в союзного героя на время действия и добавляет 1 жертву для каждой атаки",
+                  "en": "Tricks of the Trade allows hiding inside an allied hero for its duration and adds 1 victim per attack",
+                  "uk": "Tricks of the Trade дозволяє сховатися в союзного героя на час дії та додає 1 жертву для кожної атаки"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_11",
+            "image": "images/heroes/talents/riki/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Союзники внутри Smoke Screen получают Шанс Уклониться от Любого Урона: 6%/12%",
+                  "en": "Allies inside Smoke Screen gain a Chance to Evade Any Damage: 6%/12%",
+                  "uk": "Союзники всередині Smoke Screen отримують Шанс Ухилитися від Будь-якої Шкоди: 6%/12%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_12",
+            "image": "images/heroes/talents/riki/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Количества Атак Tricks of the Trade: 1 + 1 за каждые 300/200 Ловкости",
+                  "en": "Increased Number of Attacks from Tricks of the Trade: 1 + 1 per 300/200 Agility",
+                  "uk": "Збільшення Кількості Атак Tricks of the Trade: 1 + 1 за кожні 300/200 Спритності"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_13",
+            "image": "images/heroes/talents/riki/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона за Единицу Ловкости Backstab: 0,1/0,2/0,3",
+                  "en": "Increase Backstab Damage per Agility: 0.1/0.2/0.3",
+                  "uk": "Збільшення Шкоди за Одиницю Спритності Backstab: 0,1/0,2/0,3"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_14",
+            "image": "images/heroes/talents/riki/14.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Cloak and Dagger становится активной способностью. Создаёт Иллюзию рядом с Героем. Пока эта Иллюзия жива Cloak and Dagger не пропадает. Иллюзия исчезнет если отдалится от героя на 600 единиц. Здоровье Иллюзии: 300. Урон Иллюзии: 100%. Получаемый Урон Иллюзии: 100%. Длительность: 25 сек. Время Перезарядки: 25 сек",
+                  "en": "Cloak and Dagger becomes an active ability. Creates an Illusion near the Hero. As long as this Illusion is alive, Cloak and Dagger does not end. The Illusion will disappear if it moves more than 600 units away from the hero. Illusion Health: 300. Illusion Damage: 100%. Illusion Incoming Damage: 100%. Duration: 25s. Cooldown: 25s",
+                  "uk": "Cloak and Dagger стає активною здібністю. Створює Ілюзію поруч із Героєм. Поки ця Ілюзія жива, Cloak and Dagger не зникає. Ілюзія зникне, якщо віддалиться від героя на 600 одиниць. Здоров'я Ілюзії: 300. Шкода Ілюзії: 100%. Отримувана Шкода Ілюзії: 100%. Тривалість: 25 сек. Перезарядка: 25 сек"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_riki_15",
+            "image": "images/heroes/talents/riki/15.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Smoke Screen наносит Магический Урон в Секунду: 40. Уменьшение Затрат Маны Smoke Screen: 20%",
+                  "en": "Smoke Screen deals Magic Damage per Second: 40. Smoke Screen Mana Cost Reduction: 20%",
+                  "uk": "Smoke Screen завдає Магічної Шкоди за Секунду: 40. Зменшення Витрат Мани Smoke Screen: 20%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_16",
+            "image": "images/heroes/talents/riki/16.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Новая Активная Способность: Sleeping Dart. Герой стреляет дротиком в выбранного врага. Враг проснётся через 4 секунды или получив 200 урона. Проснувшись, цель получает магический урон и замедляется. Урон: 150/300. Замедление Передвижения: 30%. Длительность Замедления: 3 сек. Дальность Применения: 600. Затраты Маны: 75. Время Перезарядки: 24 сек",
+                  "en": "New Active Ability: Sleeping Dart. The hero shoots a dart at a chosen enemy. The enemy will wake up after 4 seconds or after taking 200 damage. Upon waking, the target takes magic damage and is slowed. Damage: 150/300. Movement Slow: 30%. Slow Duration: 3s. Cast Range: 600. Mana Cost: 75. Cooldown: 24s",
+                  "uk": "Нова Активна Здібність: Sleeping Dart. Герой стріляє дротиком у вибраного ворога. Ворог прокинеться через 4 секунди або отримавши 200 шкоди. Прокинувшись, ціль отримує магічну шкоду та сповільнюється. Шкода: 150/300. Сповільнення Пересування: 30%. Тривалість Сповільнення: 3 сек. Дальність Застосування: 600. Витрати Мани: 75. Перезарядка: 24 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_17",
+            "image": "images/heroes/talents/riki/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Увеличение Урона Smoke Screen: 50%/75%/100% от Интеллекта. Увеличение Радиуса Smoke Screen: 20/40/60",
+                  "en": "Increase Smoke Screen Damage: 50%/75%/100% of Intelligence. Increase Smoke Screen Radius: 20/40/60",
+                  "uk": "Збільшення Шкоди Smoke Screen: 50%/75%/100% від Інтелекту. Збільшення Радіуса Smoke Screen: 20/40/60"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 1",
+                "note": {
+                  "ru": "Требует прокачки «Талант 1»",
+                  "en": "Requires upgrading «Talent 1»",
+                  "uk": "Потребує прокачування «Талант 1»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_18",
+            "image": "images/heroes/talents/riki/18.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Невидимость Cloak and Dagger увеличивает Скорость Передвижения: 10%/20%",
+                  "en": "Cloak and Dagger Invisibility increases Movement Speed: 10%/20%",
+                  "uk": "Невидимість Cloak and Dagger збільшує Швидкість Пересування: 10%/20%"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_19",
+            "image": "images/heroes/talents/riki/19.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Smoke Screen уменьшает Сопротивление Магии противников: 5%/10%/15%. Отрицательный эффект Smoke Screen сохраняется после выхода из тучи: 0,5/1/1,5 сек",
+                  "en": "Smoke Screen reduces Enemy Magic Resistance: 5%/10%/15%. Smoke Screen debuff lingers after leaving the cloud: 0.5/1/1.5 s",
+                  "uk": "Smoke Screen зменшує Опір Магії ворогів: 5%/10%/15%. Негативний ефект Smoke Screen зберігається після виходу з хмари: 0,5/1/1,5 сек"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": null,
+                "new_raw_value": "Талант 3",
+                "note": {
+                  "ru": "Требует прокачки «Талант 3»",
+                  "en": "Requires upgrading «Talent 3»",
+                  "uk": "Потребує прокачування «Талант 3»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_20",
+            "image": "images/heroes/talents/riki/20.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "При получении Смертельного Урона Cloak and Dagger дарует полную Невидимость и Неуязвимость на 1/2 секунды. По окончании эффекта восстанавливает 10%/20% от Максимального Здоровья. Время Перезарядки: 120 сек",
+                  "en": "Upon taking Fatal Damage, Cloak and Dagger grants full Invisibility and Invulnerability for 1/2 seconds. After the effect ends, restores 10%/20% of Maximum Health. Cooldown: 120s",
+                  "uk": "При отриманні Смертельної Шкоди Cloak and Dagger дарує повну Невидимість і Невразливість на 1/2 секунди. Після завершення ефекту відновлює 10%/20% від Максимального Здоров'я. Перезарядка: 120 сек"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_riki_21",
+            "image": "images/heroes/talents/riki/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": null,
+                "new_raw_value": null,
+                "note": {
+                  "ru": "Уменьшение Радиуса Раскрытия Cloak and Dagger: 100. Уменьшение Задержки до Невидимости Cloak and Dagger: 1 сек",
+                  "en": "Reduce Cloak and Dagger Detection Radius: 100. Reduce Cloak and Dagger Fade Delay: 1s",
+                  "uk": "Зменшення Радіуса Викриття Cloak and Dagger: 100. Зменшення Затримки до Невидимості Cloak and Dagger: 1 сек"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bounty_hunter",
+      "name": "bounty hunter",
+      "image": "images/heroes/heroesPreview/bounty_hunter.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_bounty_hunter_17",
+            "image": "images/heroes/talents/bounty_hunter/17.webp",
+            "title": {
+              "ru": "Талант 2",
+              "en": "Talent 2",
+              "uk": "Талант 2"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Jinada даёт Золото за Крипов. Увеличение Золота Jinada: 6/12 Скорость Передвижения: 20/40",
+                  "en": "Jinada grants Gold for Creeps. Bonus Jinada Gold: 6/12 Movement Speed: 20/40",
+                  "uk": "Jinada дає Золото за Крипів. Додаткове Золото від Jinada: 6/12 Швидкість Руху: 20/40"
+                },
+                "new_raw_value": {
+                  "ru": "Jinada даёт Золото за Крипов. Увеличение Золота Jinada: 6/12 Увеличение Дополнительного Урона Jinada: 75/150",
+                  "en": "Jinada grants Gold for Creeps. Jinada Gold Bonus: 6/12 Jinada Bonus Damage Increase: 75/150",
+                  "uk": "Jinada дає Золото за Крипів. Збільшення Золота від Jinada: 6/12 Збільшення Додаткового Урону від Jinada: 75/150"
+                },
+                "note": {
+                  "ru": "Больше не даёт 20/40 к скорости передвижения",
+                  "en": "No longer grants 20/40 movement speed",
+                  "uk": "Більше не дає 20/40 до швидкості пересування"
+                }
+              },
+              {
+                "old_raw_value": {
+                  "ru": "Jinada даёт Золото за Крипов. Увеличение Золота Jinada: 6/12 Скорость Передвижения: 20/40",
+                  "en": "Jinada grants Gold for Creeps. Bonus Jinada Gold: 6/12 Movement Speed: 20/40",
+                  "uk": "Jinada дає Золото за Крипів. Додаткове Золото від Jinada: 6/12 Швидкість Руху: 20/40"
+                },
+                "new_raw_value": {
+                  "ru": "Jinada даёт Золото за Крипов. Увеличение Золота Jinada: 6/12 Увеличение Дополнительного Урона Jinada: 75/150",
+                  "en": "Jinada grants Gold for Creeps. Jinada Gold Bonus: 6/12 Jinada Bonus Damage Increase: 75/150",
+                  "uk": "Jinada дає Золото за Крипів. Збільшення Золота від Jinada: 6/12 Збільшення Додаткового Урону від Jinada: 75/150"
+                },
+                "note": {
+                  "ru": "Теперь также увеличивает дополнительный урон Jinada на 75/150",
+                  "en": "Now also increases Jinada bonus damage by 75/150",
+                  "uk": "Тепер також збільшує додаткову шкоду Jinada на 75/150"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_7",
+            "image": "images/heroes/talents/bounty_hunter/7.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Дополнительного Урона Jinada: 150/300",
+                  "en": "Jinada Extra Damage Increase: 150/300",
+                  "uk": "Збільшення Додаткових Втрат Jinada: 150/300"
+                },
+                "new_raw_value": {
+                  "ru": "Атаки Уменьшают Броню: 3/6 Длительность: 4 сек",
+                  "en": "Attacks Reduce Armor: 3/6 Duration: 4 sec",
+                  "uk": "Атаки Зменшують Броню: 3/6 Тривалість: 4 с"
+                },
+                "note": {
+                  "ru": "«Увеличение Дополнительного Урона Jinada: 150/300» заменено на «Атаки уменьшают Броню: 3/6. Длительность: 4 сек»",
+                  "en": "«Jinada Bonus Damage Increase: 150/300» replaced with «Attacks reduce Armor: 3/6. Duration: 4 sec»",
+                  "uk": "«Збільшення Додаткової Шкоди Jinada: 150/300» замінено на «Атаки зменшують Броню: 3/6. Тривалість: 4 сек»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_6",
+            "image": "images/heroes/talents/bounty_hunter/6.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Увеличение Доп. Золота Союзникам Track: 60. Увеличение Урона Track: 8%/16%» заменено на «Track уменьшает Восстановление Здоровья противников: 20%/40%. Track увеличивает Восстановление Здоровья героя: 0,4%/0,8%. Восстановление Здоровья: 0,2%/0,4%»",
+                  "en": "«Increased Bonus Gold to Allies from Track: 60. Increased Damage from Track: 8%/16%» replaced with «Track reduces enemy Health Regeneration: 20%/40%. Track increases hero's Health Regeneration: 0.4%/0.8%. Health Regeneration: 0.2%/0.4%»",
+                  "uk": "«Збільшення Додаткового Золота для Союзників від Track: 60. Збільшення Шкоди від Track: 8%/16%» замінено на «Track зменшує Відновлення Здоров'я ворогів: 20%/40%. Track підвищує Відновлення Здоров'я героя: 0,4%/0,8%. Відновлення Здоров'я: 0,2%/0,4%»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_16",
+            "image": "images/heroes/talents/bounty_hunter/16.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Track уменьшает Восстановление Здоровья противников: 20%/40%. Track увеличивает Восстановление Здоровья героя: 0,4%/0,8%» заменено на «Увеличение Доп. Золота Союзникам Track: 60/120. Увеличение Урона Track: 8%/16%»",
+                  "en": "«Track reduces enemy Health Regeneration: 20%/40%. Track increases hero's Health Regeneration: 0.4%/0.8%» replaced with «Increased Bonus Gold to Allies from Track: 60/120. Increased Damage from Track: 8%/16%»",
+                  "uk": "«Track зменшує Відновлення Здоров'я ворогів: 20%/40%. Track збільшує Відновлення Здоров'я героя: 0,4%/0,8%» замінено на «Збільшення Додаткового Золота для Союзників від Track: 60/120. Збільшення Шкоди від Track: 8%/16%»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_2",
+            "image": "images/heroes/talents/bounty_hunter/2.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Shuriken Toss совершает Атаку по основной цели. Увеличение Длительности Замедления Shuriken Toss: 0/1/2 сек. Сила: 7/14/21",
+                  "en": "Shuriken Toss performs an Attack on the primary target. Increased Slow Duration of Shuriken Toss: 0/1/2 sec. Power: 7/14/21",
+                  "uk": "Shuriken Toss завдає Атаку основній цілі. Збільшення Тривалості Сповільнення від Shuriken Toss: 0/1/2 сек. Сила: 7/14/21"
+                },
+                "new_raw_value": {
+                  "ru": "Shuriken Toss совершает Атаку по основной цели. Увеличение Длительности Замедления Shuriken Toss: 0/1/2 сек. Сила: 10/20/30",
+                  "en": "Shuriken Toss performs an Attack on the primary target. Increased Slow Duration of Shuriken Toss: 0/1/2 sec. Strength: 10/20/30",
+                  "uk": "Shuriken Toss завдає Атаку основній цілі. Збільшення Тривалості Сповільнення від Shuriken Toss: 0/1/2 сек. Сила: 10/20/30"
+                },
+                "note": {
+                  "ru": "Бонус к силе увеличен с 7/14/21 до 10/20/30",
+                  "en": "Strength bonus increased from 7/14/21 to 10/20/30",
+                  "uk": "Бонус до сили збільшено з 7/14/21 до 10/20/30"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_bounty_hunter_20",
+            "image": "images/heroes/talents/bounty_hunter/20.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Увеличение Урона Shuriken Toss: 1% от Общей Стоимости Максимальное Увеличение Урона: 100/Отсутствует",
+                  "en": "Increased Shuriken Toss Damage: 1% of Total Cost Max Damage Increase: 100/None",
+                  "uk": "Збільшення Шкоди від Shuriken Toss: 1% від Загальної Вартості Максимальне Збільшення Шкоди: 100/Відсутнє"
+                },
+                "new_raw_value": {
+                  "ru": "Увеличение Урона Shuriken Toss: 1% от Общей Стоимости Максимальное Увеличение Урона: 100/Отсутствует Урон от Заклинаний: 5%/10%",
+                  "en": "Increased Shuriken Toss Damage: 1% of Net Worth Max Damage Increase: 100/None Spell Damage: 5%/10%",
+                  "uk": "Збільшення Шкоди від Shuriken Toss: 1% від Загальної Вартості Максимальне Збільшення Шкоди: 100/Відсутнє Шкода від Заклять: 5%/10%"
+                },
+                "note": {
+                  "ru": "Теперь также даёт 5%/10% к урону от заклинаний",
+                  "en": "Now also grants 5%/10% spell damage",
+                  "uk": "Тепер також дає 5%/10% до шкоди від заклять"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_bounty_hunter_21",
+            "image": "images/heroes/talents/bounty_hunter/21.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Заклинания наносят 120% Критического Урона по целям Track",
+                  "en": "Spells deal 120% Critical Damage to Track targets",
+                  "uk": "Заклинання завдають 120% Критичної Шкоди по цілях з Track"
+                },
+                "new_raw_value": {
+                  "ru": "Track можно использовать на Крипов, но без доп. золота. Заклинания наносят 120% Критического Урона по целям Track",
+                  "en": "Track can be used on Creeps, but without bonus gold. Spells deal 120% Critical Damage to Track targets",
+                  "uk": "Track можна застосовувати до Крипів, але без додаткового золота. Закляття завдають 120% Критичної Шкоди цілям під дією Track"
+                },
+                "note": {
+                  "ru": "Теперь Track можно применять на крипов, но без дополнительного золота",
+                  "en": "Track can now be cast on creeps, but without the bonus gold",
+                  "uk": "Тепер Track можна застосовувати на крипів, але без додаткового золота"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "io",
+      "name": "io",
+      "image": "images/heroes/heroesPreview/io.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_io_1",
+            "image": "images/heroes/talents/io/1.webp",
+            "title": {
+              "ru": "Талант 1",
+              "en": "Talent 1",
+              "uk": "Талант 1"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Отнимает у противника здоровья в секунду: 30 + 2 за Уровень Героя Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 40%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. Drains enemy health per second: 30 + 2 per Hero Level Health Regeneration and all received Healing drain health from the tethered enemy: 40%",
+                  "uk": "Прибирає Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує та не копіює їхню швидкість пересування. Віднімає у ворога здоров'я щосекунди: 30 + 2 за Рівень Героя Відновлення Здоров'я та все отримане Лікування забирають здоров'я у зв'язаного ворога: 40%"
+                },
+                "new_raw_value": {
+                  "ru": "Убирает Spirits. Tether нельзя использовать на союзников. Tether можно использовать на противников. Не увеличивает и не копирует их скорость передвижения. Замедление со связанным противником равно ускорению героя. Отнимает у противника здоровья в секунду: 30 + 2 за Уровень Героя Восстановление Здоровья и всё получаемое Лечение отнимает здоровье связанного противника: 40%",
+                  "en": "Removes Spirits. Tether cannot be used on allies. Tether can be used on enemies. Does not increase or copy their movement speed. The slow on the tethered enemy equals the hero's bonus speed. Drains enemy health per second: 30 + 2 per Hero Level Health Regeneration and all received Healing drain the tethered enemy's health: 40%",
+                  "uk": "Прибирає Spirits. Tether не можна використовувати на союзників. Tether можна використовувати на ворогів. Не збільшує і не копіює їхню швидкість пересування. Сповільнення на зв’язаному ворогові дорівнює прискоренню героя. Віднімає у ворога здоров’я за секунду: 30 + 2 за Рівень Героя Відновлення Здоров’я і все отримане Лікування віднімають здоров’я у зв’язаного ворога: 40%"
+                },
+                "note": {
+                  "ru": "Теперь замедление связанного противника равно ускорению героя",
+                  "en": "The tethered enemy is now slowed by the same amount as the hero is hastened",
+                  "uk": "Тепер сповільнення пов'язаного ворога дорівнює прискоренню героя"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "luna",
+      "name": "luna",
+      "image": "images/heroes/heroesPreview/luna.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "luna_eclipse_custom",
+          "name": "Eclipse",
+          "image": "abilities/luna_eclipse.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "old_raw_value": "110",
+              "new_raw_value": "105",
+              "note": {
+                "ru": "Перезарядка уменьшена со 110 до 105 секунд",
+                "en": "Cooldown decreased from 110s to 105s",
+                "uk": "Перезарядку зменшено зі 110 до 105 секунд"
+              }
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "roshan",
+      "name": "roshan",
+      "image": "images/heroes/heroesPreview/roshan.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_roshan_10",
+            "image": "images/heroes/talents/roshan/10.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Использование Предметов применяет Bash на случайного противника в Радиусе: 900. Шанс срабатывания: 100%. В первую очередь на героев» заменено на «Новая Активная Способность: Roshpit. После небольшой подготовки герой призывает каменное логово, которое блокирует передвижение противников и ограничивает их обзор. Ускоряет героя внутри логова. Скорость Передвижения: 30%. Длительность: 6 сек. Дальность Применения: 400. Радиус: 550. Время Перезарядки: 30 сек»",
+                  "en": "«Using Items applies Bash to a random enemy within Radius: 900. Proc Chance: 100%. Prioritizes heroes» replaced with «New Active Ability: Roshpit. After a short preparation, the hero summons a stone lair that blocks enemy movement and limits their vision. Increases the hero's movement speed inside the lair. Movement Speed: 30%. Duration: 6 sec. Cast Range: 400. Radius: 550. Cooldown: 30 sec»",
+                  "uk": "«Використання предметів застосовує Bash до випадкового ворога в радіусі: 900. Шанс спрацювання: 100%. Пріоритет — герої» замінено на «Нова Активна Здібність: Roshpit. Після невеликої підготовки герой викликає кам'яне лігво, яке блокує пересування ворогів і обмежує їхній огляд. Прискорює героя всередині лігва. Швидкість Пересування: 30%. Тривалість: 6 сек. Дальність Застосування: 400. Радіус: 550. Перезарядка: 30 сек»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_roshan_11",
+            "image": "images/heroes/talents/roshan/11.webp",
+            "title": {
+              "ru": "Талант 4",
+              "en": "Talent 4",
+              "uk": "Талант 4"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Новая Активная Способность: Roshpit. После небольшой подготовки герой призывает каменное логово, которое блокирует передвижение противников и ограничивает их обзор. Ускоряет героя внутри логова. Скорость Передвижения: 30%. Длительность: 6 сек. Дальность Применения: 400. Радиус: 550. Время Перезарядки: 30 сек» заменено на «Противники у стен внутри логова получают Оглушение: 1/2/3 сек. Урон от Заклинаний: 5%/10%/15%»",
+                  "en": "«New Active Ability: Roshpit. After a short preparation, the hero summons a stone lair that blocks enemy movement and limits their vision. Increases the hero's movement speed inside the lair. Movement Speed: 30%. Duration: 6 sec. Cast Range: 400. Radius: 550. Cooldown: 30 sec» replaced with «Enemies near the walls inside the lair are Stunned: 1/2/3 sec. Spell Damage: 5%/10%/15%»",
+                  "uk": "«Нова Активна Здібність: Roshpit. Після невеликої підготовки герой викликає кам'яне лігво, яке блокує пересування ворогів і обмежує їхній огляд. Прискорює героя всередині лігва. Швидкість Пересування: 30%. Тривалість: 6 сек. Дальність Застосування: 400. Радіус: 550. Перезарядка: 30 сек» замінено на «Вороги біля стін у лігві отримують Оглушення: 1/2/3 сек. Шкода від Заклять: 5%/10%/15%»"
+                }
+              },
+              {
+                "parameter": "talent_requires",
+                "old_raw_value": "Талант 4",
+                "new_raw_value": "Талант 3",
+                "note": {
+                  "ru": "Теперь требует прокачки «Талант 3»",
+                  "en": "Now requires upgrading «Talent 3»",
+                  "uk": "Тепер потребує прокачування «Талант 3»"
+                },
+                "tooltip": {
+                  "ru": "Раньше требовался для прокачки «Талант 4»",
+                  "en": "Previously required upgrading «Talent 4»",
+                  "uk": "Раніше потребував прокачування «Талант 4»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_roshan_12",
+            "image": "images/heroes/talents/roshan/12.webp",
+            "title": {
+              "ru": "Талант 5",
+              "en": "Talent 5",
+              "uk": "Талант 5"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Уменьшение Времени Перезарядки Предметов: 10%/15%/20%» заменено на «Использование Предметов применяет Bash на случайного противника в Радиусе: 900. Шанс срабатывания: 100%. В первую очередь на героев»",
+                  "en": "«Reduced Item Cooldown: 10%/15%/20%» replaced with «Using Items applies Bash to a random enemy within Radius: 900. Proc Chance: 100%. Prioritizes heroes»",
+                  "uk": "«Зменшення часу Перезарядки Предметів: 10%/15%/20%» замінено на «Використання предметів застосовує Bash до випадкового ворога в радіусі: 900. Шанс спрацювання: 100%. Пріоритет — герої»"
+                }
+              }
+            ]
+          },
+          {
+            "talent_id": "modifier_roshan_13",
+            "image": "images/heroes/talents/roshan/13.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "note": {
+                  "ru": "«Противники у стен внутри логова получают Оглушение: 1/2/3 сек» заменено на «Уменьшение Времени Перезарядки Предметов: 10%/15%/20%»",
+                  "en": "«Enemies near the walls inside the lair receive Stun: 1/2/3 sec» replaced with «Reduced Item Cooldown: 10%/15%/20%»",
+                  "uk": "«Противники біля стін усередині лігва отримують Оглушення: 1/2/3 сек» замінено на «Зменшення часу Перезарядки Предметів: 10%/15%/20%»"
+                }
+              }
+            ]
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_rubick_6",
+            "image": "images/heroes/talents/rubick/6.webp",
+            "title": {
+              "ru": "Талант 6",
+              "en": "Talent 6",
+              "uk": "Талант 6"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Уменьшение Времени Перезарядки Fade Lightning: 1/2/3 сек",
+                  "en": "Fade Lightning Cooldown Reduction: 1/2/3 sec",
+                  "uk": "Зменшення Часу Перезаряджання Fade Lightning: 1/2/3 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Уменьшение Интервала Ударов Fade Lightning: 1/2/3 сек",
+                  "en": "Fade Lightning Strike Interval Reduction: 1/2/3 sec",
+                  "uk": "Зменшення Інтервалу Ударів Fade Lightning: 1/2/3 сек"
+                },
+                "note": {
+                  "ru": "Теперь уменьшает интервал ударов Fade Lightning, а не его перезарядку",
+                  "en": "Now reduces Fade Lightning strike interval instead of its cooldown",
+                  "uk": "Тепер зменшує інтервал ударів Fade Lightning, а не його перезарядку"
+                }
+              }
+            ]
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slark",
+      "name": "slark",
+      "image": "images/heroes/heroesPreview/slark.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_slark_21",
+            "image": "images/heroes/talents/slark/21.webp",
+            "title": {
+              "ru": "Талант 7",
+              "en": "Talent 7",
+              "uk": "Талант 7"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Dark Pact становится Пассивной Способностью и не развеивает эффекты. Dark Pact срабатывает на цели каждый раз, когда вы попадаете по ней Направленной Способностью или Предметом",
+                  "en": "Dark Pact becomes a Passive Ability and does not dispel effects. Dark Pact triggers on an target every time you hit them with a Directed Ability or Item",
+                  "uk": "Dark Pact стає пасивною здатністю і не розвіює ефекти. Dark Pact спрацьовує на цілі щоразу, коли ви потрапляєте по ній Спрямованою Здібністю або Предметом"
+                },
+                "new_raw_value": {
+                  "ru": "Dark Pact становится Пассивной Способностью. Dark Pact срабатывает на цели каждый раз, когда вы попадаете по ней Направленной Способностью или Предметом",
+                  "en": "Dark Pact becomes a Passive Ability. Dark Pact triggers on a target each time you hit it with a Targeted Ability or Item",
+                  "uk": "Dark Pact стає Пасивною Здібністю. Dark Pact спрацьовує на цілі щоразу, коли ви влучаєте по ній Спрямованою Здібністю або Предметом"
+                },
+                "note": {
+                  "ru": "Больше не лишает Dark Pact развеивания",
+                  "en": "No longer removes Dark Pact's dispel",
+                  "uk": "Більше не позбавляє Dark Pact розвіювання"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "sniper",
+      "name": "sniper",
+      "image": "images/heroes/heroesPreview/sniper.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_sniper_17",
+            "image": "images/heroes/talents/sniper/17.webp",
+            "title": {
+              "ru": "Талант 3",
+              "en": "Talent 3",
+              "uk": "Талант 3"
+            },
+            "talent_notes": [
+              {
+                "old_raw_value": {
+                  "ru": "Граната. Убирает Headshot. Новая Активная Способность: Flashbang Grenade Герой выпускает в указанную область гранату, которая уменьшает обзор врагов и оглушает их. Радиус: 375 Уменьшение Обзора: 75% Длительность Оглушения: 1.5 сек. Затраты Маны: 50 Время Перезарядки: 20 сек. Если выучить 4 гранаты, то: Применение Гранат уменьшает Время Перезарядки других Гранат: 2 сек",
+                  "en": "Grenade. Removes Headshot. New Active Ability: Flashbang Grenade The hero throws a grenade into the target area, reducing enemy vision and stunning them. Radius: 375 Vision Reduction: 75% Stun Duration: 1.5 sec. Mana Cost: 50 Cooldown: 20 sec. If you learn 4 grenades: Using a grenade reduces the cooldown of other grenades by 2 sec",
+                  "uk": "Граната. Забирає Headshot. Нова Активна Здібність: Flashbang Grenade Герой кидає гранату в зазначену область, яка зменшує огляд ворогів та оглушує їх. Радіус: 375 Зменшення Огляду: 75% Тривалість Оглушення: 1.5 сек. Витрати Мани: 50 Перезарядка: 20 сек. Якщо вивчено 4 гранати, то: Використання Гранат зменшує Перезарядку інших Гранат: 2 сек"
+                },
+                "new_raw_value": {
+                  "ru": "Граната. Убирает Headshot. Новая Активная Способность: Flashbang Grenade Герой выпускает в указанную область гранату, которая уменьшает обзор врагов и оглушает их. Радиус: 375 Уменьшение Обзора: 75% Длительность Оглушения: 1.5 сек. Затраты Маны: 50 Время Перезарядки: 20 сек. Если выучить 4 гранаты, то: Применение Гранат уменьшает Время Перезарядки других Гранат: 2 сек. Урон от Заклинаний: 30%",
+                  "en": "Grenade. Removes Headshot. New Active Ability: Flashbang Grenade The hero throws a grenade into the target area, reducing enemy vision and stunning them. Radius: 375 Vision Reduction: 75% Stun Duration: 1.5s Mana Cost: 50 Cooldown: 20s If you learn 4 grenades: Using Grenades reduces the Cooldown of other Grenades by 2s. Spell Damage: 30%",
+                  "uk": "Граната. Прибирає Headshot. Нова Активна Здатність: Світлошумова Граната Герой кидає гранату в зазначену область, що зменшує огляд ворогів і оглушує їх. Радіус: 375 Зменшення Огляду: 75% Тривалість Оглушення: 1.5 сек. Витрати Мани: 50 Перезарядка: 20 сек. Якщо вивчити 4 гранати: Використання Гранат зменшує Перезарядку інших Гранат на 2 сек. Магічна Шкода: 30%"
+                },
+                "note": {
+                  "ru": "Теперь также даёт 30% к урону от заклинаний",
+                  "en": "Now also grants 30% spell damage",
+                  "uk": "Тепер також дає 30% до шкоди від заклять"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

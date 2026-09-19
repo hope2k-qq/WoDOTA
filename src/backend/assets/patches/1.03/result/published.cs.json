@@ -1,0 +1,2604 @@
+{
+  "patch_number": "1.03",
+  "patch_name": "1.03",
+  "patch_timestamp": 1788894000,
+  "general": {
+    "global_changes": [
+      {
+        "title": "General Changes"
+      },
+      {
+        "note": "Effects that root and disarm are now considered Bind Effects and will have the status effect \"Bound\" overhead"
+      },
+      {
+        "note": "Item layout in the shop has been changed"
+      },
+      {
+        "note": "Almost all heroes have been added to the vote"
+      },
+      {
+        "title": "Talents"
+      },
+      {
+        "subtitle": "Strength"
+      },
+      {
+        "note": "Health Regeneration increased from 0.25%/0.5%/0.75% to 0.3%/0.6%/0.9%"
+      },
+      {
+        "title": "Mechanics Changes"
+      },
+      {
+        "note": "Lifesteal Amplification and Spell Lifesteal Amplification have been removed and a new umbrella stat has been created in their place: Health Restoration"
+      },
+      {
+        "note": "Provides a percentage increase to the health gained from Lifesteal, Spell Lifesteal, and Health Regeneration",
+        "indent": 2
+      },
+      {
+        "note": "Positive and Negative sources of Health Restoration stack diminishingly with each other",
+        "indent": 2
+      },
+      {
+        "note": "Health Restoration cannot go lower than -100% and cannot go higher than 100%",
+        "indent": 2
+      },
+      {
+        "note": "Sources of Heal Amplification now stack additively with each other instead of diminishingly"
+      },
+      {
+        "note": "Heal Amplification cannot go lower than -100% and has no upper limit"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [
+      {
+        "item_id": "item_orb_of_frost",
+        "name": "Orb of Frost",
+        "image": "orb_of_frost.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "ItemCost",
+            "note": "Cost increased from 250g to 300g"
+          },
+          {
+            "parameter": "heal_reduction",
+            "note": "Frost: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 13%, now reduces Health Restoration by 13%"
+          },
+          {
+            "note": "Frost: movement slow and Health Restoration reduction no longer stack with the same effects from Orb of Corrosion and Eye of Skadi"
+          }
+        ]
+      },
+      {
+        "item_id": "item_talisman_of_evasion",
+        "name": "Talisman of Evasion",
+        "image": "talisman_of_evasion.webp",
+        "is_new": false,
+        "is_upgrade": false,
+        "item_notes": [
+          {
+            "parameter": "bonus_evasion",
+            "note": "Evasion bonus decreased from 20% to 15%"
+          }
+        ]
+      }
+    ],
+    "upgrade": [
+      {
+        "item_id": "item_abyssal_blade",
+        "name": "Abyssal Blade",
+        "image": "abyssal_blade.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "No longer grants 25% HP Regen and Lifesteal Amplification. Now grants 20% Health Restoration."
+          }
+        ]
+      },
+      {
+        "item_id": "item_blade_mail",
+        "name": "Blade Mail",
+        "image": "blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_damage",
+            "note": "Damage bonus decreased from 28 to 18"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus increased from 6 to 7"
+          },
+          {
+            "parameter": "active_reflection_pct",
+            "note": "Damage Return: active damage return increased from 30% to 40%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_bloodstone",
+        "name": "Bloodstone",
+        "image": "bloodstone.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Bloodpact: cooldown decreased from 35s to 30s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_edge_of_discord",
+        "name": "Edge of Discord",
+        "image": "edge_of_discord.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "lifesteal_amplify",
+            "note": "No longer grants 20% Spell Lifesteal Amplification"
+          }
+        ]
+      },
+      {
+        "item_id": "item_elemental_ringmaster",
+        "name": "Elemental Master",
+        "image": "elemental_ringmaster_1.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost unchanged at 570. Total cost increased from 4900g to 4950g (Orb of Corrosion increased from 1000g to 1050g)"
+          },
+          {
+            "parameter": "debuff_increase",
+            "note": "Elementalist: Void debuff duration amplification increased from 10% to 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_gungir",
+        "name": "Gleipnir",
+        "image": "gungir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Eternal Chains: mana cost increased from 100 to 150"
+          },
+          {
+            "parameter": "bonus_intellect",
+            "note": "Intelligence bonus decreased from 15 to 12"
+          }
+        ]
+      },
+      {
+        "item_id": "item_holy_locket",
+        "name": "Holy Locket",
+        "image": "holy_locket.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "heal_increase",
+            "note": "Holy Blessing: heal amplification decreased from 25% to 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya",
+        "name": "Kaya",
+        "image": "kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "note": "No longer grants 20% Spell Lifesteal Amplification"
+          },
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Mana Regen Amplification bonus decreased from 50% to 40%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_kaya_and_sange",
+        "name": "Kaya and Sange",
+        "image": "kaya_and_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "No longer grants 25% HP Regen and Lifesteal Amplification and 25% Spell Lifesteal Amplification. Now grants 20% Health Restoration."
+          }
+        ]
+      },
+      {
+        "item_id": "item_madness_blade_mail",
+        "name": "Madness Blade Mail",
+        "image": "madness_blade_mail.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Berserk Return: mana cost decreased from 50 to 25"
+          },
+          {
+            "parameter": "bonus_armor",
+            "note": "Armor bonus increased from 6 to 7"
+          },
+          {
+            "parameter": "minus_armor_active",
+            "note": "Berserk Return: self armor reduction decreased from 8 to 7"
+          },
+          {
+            "parameter": "duration",
+            "note": "Berserk Return: duration decreased from 6s to 5.5s"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_hammer",
+        "name": "Meteor Hammer",
+        "image": "meteor_hammer.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "note": "No longer grants 24% Spell Lifesteal Amplification"
+          },
+          {
+            "parameter": "mana_regen_multiplier",
+            "note": "Mana Regen Amplification bonus decreased from 50% to 40%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_meteor_lens",
+        "name": "Meteor Lens",
+        "image": "meteor_lens.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_spell_lifesteal_amp",
+            "note": "No longer grants 24% Spell Lifesteal Amplification"
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_kaya",
+        "name": "Moon Kaya",
+        "image": "moon_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amplify",
+            "note": "No longer grants 24% Spell Lifesteal Amplification"
+          },
+          {
+            "parameter": "spell_amplify",
+            "note": "Spell Damage decreased from 16% to 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_sange",
+        "name": "Moon Sange",
+        "image": "moon_sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "status_resist",
+            "note": "Status Resistance increased from 24% to 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_moon_yasha",
+        "name": "Moon Yasha",
+        "image": "moon_yasha.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_attackspeed",
+            "note": "Attack speed bonus increased from 15 to 30"
+          },
+          {
+            "parameter": "movespeed_bonus",
+            "note": "Movement speed bonus decreased from 16% to 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_orb_of_corrosion",
+        "name": "Orb of Corrosion",
+        "image": "orb_of_corrosion.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Total cost increased from 1000g to 1050g (Orb of Frost increased from 250g to 300g)"
+          },
+          {
+            "parameter": "heal_reduction",
+            "note": "Corrosion: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 16%, now reduces Health Restoration by 16%"
+          },
+          {
+            "note": "Corrosion: movement slow and Health Restoration reduction no longer stack with the same effects from Orb of Frost and Eye of Skadi"
+          }
+        ]
+      },
+      {
+        "item_id": "item_radiance_custom",
+        "name": "Radiance",
+        "image": "radiance.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "evasion",
+            "note": "Evasion bonus decreased from 20% to 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_rod_of_atos",
+        "name": "Rod of Atos",
+        "image": "rod_of_atos.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "AbilityManaCost",
+            "note": "Cripple: mana cost increased from 50 to 100"
+          },
+          {
+            "parameter": "bonus_intellect",
+            "note": "Intelligence bonus decreased from 15 to 12"
+          }
+        ]
+      },
+      {
+        "item_id": "item_sange",
+        "name": "Sange",
+        "image": "sange.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "No longer grants 20% HP Regen and Lifesteal Amplification. Now grants 16% Health Restoration."
+          }
+        ]
+      },
+      {
+        "item_id": "item_sange_and_yasha",
+        "name": "Sange and Yasha",
+        "image": "sange_and_yasha.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "hp_regen_amp",
+            "note": "No longer grants 25% HP Regen and Lifesteal Amplification. Now grants 20% Health Restoration."
+          },
+          {
+            "parameter": "status_resistance",
+            "note": "Status Resistance bonus decreased from 20% to 15%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_shivas_guard",
+        "name": "Shiva's Guard",
+        "image": "shivas_guard.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "restoration_reduction_aura",
+            "note": "Freezing Aura: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 25%, now reduces Health Restoration and Heal Amplification by 25%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_skadi",
+        "name": "Eye of Skadi",
+        "image": "skadi.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe changed"
+          },
+          {
+            "parameter": "recipe",
+            "note": "Now requires a second Ultimate Orb (2800) instead of Point Booster (1200)"
+          },
+          {
+            "parameter": "recipe",
+            "note": "No longer requires a 1050g recipe. Total cost increased from 5300g to 5900g"
+          },
+          {
+            "parameter": "bonus_health",
+            "note": "No longer grants 250 health and 250 mana"
+          },
+          {
+            "parameter": "bonus_all_stats",
+            "note": "All Attributes bonus increased from 22 to 35"
+          },
+          {
+            "parameter": "restoration_reduction",
+            "note": "Cold Attack: instead of reducing Healing, Health Regen, Lifesteal, and Spell Lifesteal by 40%, now reduces Health Restoration and Heal Amplification by 40%"
+          },
+          {
+            "note": "Cold Attack: movement slow and Health Restoration reduction no longer stack with the same effects from Orb of Frost and Orb of Corrosion"
+          }
+        ]
+      },
+      {
+        "item_id": "item_sphere",
+        "name": "Linken's Sphere",
+        "image": "sphere.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "bonus_health_regen",
+            "note": "Health regen increased from 6 to 6.5"
+          }
+        ]
+      },
+      {
+        "item_id": "item_venom_song",
+        "name": "Venom Song",
+        "image": "venom_song.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "recipe",
+            "note": "Recipe cost unchanged at 1095. Total cost increased from 4000g to 4050g (Orb of Corrosion increased from 1000g to 1050g)"
+          },
+          {
+            "parameter": "mana_regen_reduce",
+            "note": "Quelling Aura: mana regen reduction increased from 20% to 30%"
+          }
+        ]
+      },
+      {
+        "item_id": "item_vladmir",
+        "name": "Vladmir's Offering",
+        "image": "vladmir.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "armor",
+            "note": "Armor bonus decreased from 2 to 1"
+          }
+        ]
+      },
+      {
+        "item_id": "item_yasha_and_kaya",
+        "name": "Yasha and Kaya",
+        "image": "yasha_and_kaya.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_lifesteal_amp",
+            "note": "No longer grants 25% Spell Lifesteal Amplification"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_divine_regalia",
+        "name": "Divine Regalia",
+        "image": "divine_regalia.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 5,
+        "neutral_item_notes": [],
+        "caption": "New tier 5 artifact",
+        "description": "Passive: Exalted. Increases outgoing damage by 20%. Dying permanently disables this Neutral Item and the current Enchantment is lost.",
+        "description_sections": [
+          {
+            "title": "Passive: Exalted",
+            "text": "Increases outgoing damage by 20%. Dying permanently disables this Neutral Item and the current Enchantment is lost"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 4,
+        "neutral_item_notes": [],
+        "caption": "New tier 4 artifact",
+        "description": "Passive: Crushing Blow. Empowers the next attack to be a critical hit. Hitting an enemy with an empowered attack temporarily decreases their movement speed, attack speed, and cast speed.",
+        "description_sections": [
+          {
+            "title": "Passive: Crushing Blow",
+            "text": "Empowers the next attack to be a critical hit. Hitting an enemy with an empowered attack temporarily decreases their movement speed, attack speed, and cast speed"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 3,
+        "neutral_item_notes": [],
+        "caption": "New tier 3 artifact",
+        "description": "Active: Pollinate. Spreads pollen on all nearby enemy units, decreasing their health restoration and dealing damage over time based on their maximum health.",
+        "description_sections": [
+          {
+            "title": "Active: Pollinate",
+            "text": "Spreads pollen on all nearby enemy units, decreasing their health restoration and dealing damage over time based on their maximum health"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_kobold_cup",
+        "name": "Kobold Cup",
+        "image": "kobold_cup.webp",
+        "neutral_type": "artifact",
+        "is_new": true,
+        "tier": 1,
+        "neutral_item_notes": [],
+        "caption": "New tier 1 artifact",
+        "description": "Active: One for the Road. Increases movement speed of all allied units in a radius around the caster.",
+        "description_sections": [
+          {
+            "title": "Active: One for the Road",
+            "text": "Increases movement speed of all allied units in a radius around the caster"
+          }
+        ],
+        "item_values": []
+      },
+      {
+        "neutral_item_id": "item_ceremonial_robe",
+        "name": "Ceremonial Robe",
+        "image": "ceremonial_robe.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 4 to 6"
+          },
+          {
+            "parameter": "status_resistance",
+            "note": "Ceremonial Aura: Status Resistance reduction increased from 10% to 15%"
+          },
+          {
+            "parameter": "magic_resistance",
+            "note": "Ceremonial Aura: Magic Resistance reduction increased from 10% to 15%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_chipped_vest",
+        "name": "Chipped Vest",
+        "image": "chipped_vest.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 1,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 6 to 1"
+          },
+          {
+            "parameter": "damage_return_hero",
+            "note": "Chipper: damage return against heroes decreased from 200 to 30"
+          },
+          {
+            "parameter": "damage_return_creep",
+            "note": "Chipper: damage return against creeps decreased from 200 to 20"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_crippling_crossbow",
+        "name": "Crippling Crossbow",
+        "image": "crippling_crossbow.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "note": "Hobble: 40% Healing, Health Regen, Lifesteal and Spell Lifesteal reductions replaced with a new 40% Health Restoration reduction stat"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_fallen_sky",
+        "name": "Fallen Sky",
+        "image": "fallen_sky.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "AbilityCooldown",
+            "note": "Cooldown increased from 18s to 25s"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_mana_draught",
+        "name": "Mana Draught",
+        "image": "mana_draught.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 1 to 2"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_panic_button",
+        "name": "Magic Lamp",
+        "image": "panic_button.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 5 to 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_poor_mans_shield",
+        "name": "Poor Man's Shield",
+        "image": "poor_mans_shield.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 2,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 5 to 2"
+          },
+          {
+            "parameter": "damage_block_melee",
+            "note": "Damage Block: damage blocked on melee heroes decreased from 75 to 30"
+          },
+          {
+            "parameter": "damage_block_ranged",
+            "note": "Damage Block: damage blocked on ranged heroes decreased from 75 to 20"
+          },
+          {
+            "parameter": "block_chance",
+            "note": "Damage Block: chance to block damage from creep attacks decreased from 100% to 50%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_psychic_headband",
+        "name": "Psychic Headband",
+        "image": "psychic_headband.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "intelligence_pct",
+            "note": "No longer grants 15% Intelligence"
+          },
+          {
+            "parameter": "cast_range",
+            "note": "No longer grants 100 cast range"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_tome_of_aghanim_custom",
+        "name": "Tome of Aghanim",
+        "image": "tome_of_aghanim.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 6,
+        "neutral_item_notes": [
+          {
+            "parameter": "neutral_tier",
+            "note": "Artifact tier changed from 5 to 6"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_unrelenting_eye",
+        "name": "Unrelenting Eye",
+        "image": "unrelenting_eye.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "max_slow_res",
+            "note": "Relentless: Slow Resistance increased from 30% to 40%"
+          }
+        ]
+      }
+    ],
+    "enhancements": [
+      {
+        "neutral_item_id": "item_enhancement_alert",
+        "name": "Alert",
+        "image": "enhancement_alert.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 1/2/3/4 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10/20/30/40 Attack Speed"
+          },
+          {
+            "note": "+125/250/375/500 Bonus Night Vision"
+          },
+          {
+            "note": "+25/50/75/100 Attack Range (Melee & Ranged)"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_audacious",
+        "name": "Audacious",
+        "image": "enhancement_audacious.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 5/6 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+80/100 Attack Speed"
+          },
+          {
+            "note": "+50 Magic Attack Damage"
+          },
+          {
+            "note": "+10% Incoming Damage",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_boundless",
+        "name": "Boundless",
+        "image": "enhancement_boundless.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 5/6 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+120/150 Attack Range (Melee & Ranged)"
+          },
+          {
+            "note": "+240/300 Cast Range"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_brawny",
+        "name": "Brawny",
+        "image": "enhancement_brawny.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 1/2/3/4 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+125/250/375/500 Health"
+          },
+          {
+            "note": "+3/6/9/12 Health Regeneration"
+          },
+          {
+            "note": "+5%/10%/15%/20% Slow Resistance"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_crude",
+        "name": "Crude",
+        "image": "enhancement_crude.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 4/5 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+20% Health Restoration"
+          },
+          {
+            "note": "-10%/15% Base Attack Time"
+          },
+          {
+            "note": "-10% Intelligence",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_evolved",
+        "name": "Evolved",
+        "image": "enhancement_evolved.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 5/6 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+40/50 Primary Attribute"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_feverish",
+        "name": "Feverish",
+        "image": "enhancement_feverish.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 4/5 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10%/15% Cooldown Reduction"
+          },
+          {
+            "note": "+20% Mana Cost/Mana Loss Increase",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_fleetfooted",
+        "name": "Fleetfooted",
+        "image": "enhancement_fleetfooted.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          5,
+          6
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 5/6 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+100/125 Movement Speed"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_greedy",
+        "name": "Greedy",
+        "image": "enhancement_greedy.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 2/3 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+100 Gold per Minute"
+          },
+          {
+            "note": "+250/375 Mana"
+          },
+          {
+            "note": "-60/30 Attack Damage",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_keen_eyed",
+        "name": "Keen-eyed",
+        "image": "enhancement_keen_eyed.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 2/3 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+200/240 Cast Range"
+          },
+          {
+            "note": "+6/9 Mana Regeneration"
+          },
+          {
+            "note": "-10% Max Mana",
+            "negative": true
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_mystical",
+        "name": "Mystical",
+        "image": "enhancement_mystical.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 1/2/3/4 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+3/6/9/12 Mana Regeneration"
+          },
+          {
+            "note": "+5%/10%/15%/20% Magic Resistance"
+          },
+          {
+            "note": "+25/50/75/100 Cast Range"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_quickened",
+        "name": "Quickened",
+        "image": "enhancement_quickened.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 1/2/3/4 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10/20/30/40 Movement Speed"
+          },
+          {
+            "note": "+125/250/375/500 Mana"
+          },
+          {
+            "note": "+3%/6%/9%/12% Evasion"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_timeless",
+        "name": "Timeless",
+        "image": "enhancement_timeless.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 4/5 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+15% Debuff Duration"
+          },
+          {
+            "note": "+10%/15% Spell Damage"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_titanic",
+        "name": "Titanic",
+        "image": "enhancement_titanic.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          4,
+          5
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 4/5 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+10%/15% Base Attack Damage"
+          },
+          {
+            "note": "+15% Status Resistance"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_tough",
+        "name": "Tough",
+        "image": "enhancement_tough.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 1/2/3/4 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+5/10/15/20 Damage"
+          },
+          {
+            "note": "+3/6/9/12 Armor"
+          },
+          {
+            "note": "+10%/20%/30%/40% Knockback Resistance"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_vampiric",
+        "name": "Vampiric",
+        "image": "enhancement_vampiric.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3,
+          4
+        ],
+        "enhancement_level": [
+          1,
+          2,
+          3
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 2/3/4 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+8%/10%/12% Lifesteal"
+          },
+          {
+            "note": "+8%/10%/12% Spell Lifesteal"
+          },
+          {
+            "note": "+100/150/200 Bonus Night Vision"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_vast",
+        "name": "Vast",
+        "image": "enhancement_vast.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 2/3 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+100/120 Attack Range (Melee & Ranged)"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_enhancement_wise",
+        "name": "Wise",
+        "image": "enhancement_wise.webp",
+        "neutral_type": "enhancement",
+        "is_new": true,
+        "tier": null,
+        "rank": [
+          2,
+          3
+        ],
+        "enhancement_level": [
+          1,
+          2
+        ],
+        "neutral_item_notes": [],
+        "caption": "New rank 2/3 enhancement",
+        "description": null,
+        "description_sections": [],
+        "stat_notes": [
+          {
+            "note": "+240/320 Experience per Minute"
+          },
+          {
+            "note": "+10% Max Mana Bonus"
+          }
+        ]
+      }
+    ]
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "ancient_apparition",
+      "name": "ancient apparition",
+      "image": "images/heroes/heroesPreview/ancient_apparition.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "ancient_apparition_ice_vortex_custom",
+          "name": "Ice Vortex",
+          "image": "ancient_apparition_ice_vortex.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Cast range decreased from 1500 to 1200"
+            },
+            {
+              "parameter": "radius",
+              "note": "Radius decreased from 300 to 275"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "axe",
+      "name": "axe",
+      "image": "images/heroes/heroesPreview/axe.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_axe_17",
+            "image": "axe_17.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Berserker's Call armor bonus decreased from 10/20 to 5/10"
+              }
+            ],
+            "talent_text": "Berserker's Call Radius Increase: 50/100\n\nBerserker's Call Armor Increase: 5/10"
+          },
+          {
+            "talent_id": "modifier_axe_20",
+            "image": "axe_20.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Battle Hunger: heal, health regen and lifesteal reduction decreased from 15%/30% to 10%/20%"
+              }
+            ],
+            "talent_text": "Battle Hunger always slows enemy movement.\n\nBattle Hunger reduces enemy healing, health regeneration, lifesteal, and spell lfesteal: 10%/20%"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "bristleback",
+      "name": "bristleback",
+      "image": "images/heroes/heroesPreview/bristleback.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "bristleback_quill_spray_custom",
+          "name": "Quill Spray",
+          "image": "bristleback_quill_spray.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Can now be set to autocast"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "dazzle",
+      "name": "dazzle",
+      "image": "images/heroes/heroesPreview/dazzle.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "dazzle_shallow_grave_custom",
+          "name": "Shallow Grave",
+          "image": "dazzle_shallow_grave.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Cast range changed from 700/800/900/1000 to 900"
+            },
+            {
+              "parameter": "duration",
+              "note": "Duration increased from 3.5/4/4.5/5s to 4/4.5/5/5.5s"
+            },
+            {
+              "parameter": "heal_amplify",
+              "note": "Heal amplification per 10% missing health increased from 2%/4%/6%/8% to 3%/5%/7%/9%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "death_prophet",
+      "name": "death prophet",
+      "image": "images/heroes/heroesPreview/death_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "death_prophet_silence_custom",
+          "name": "Silence",
+          "image": "death_prophet_silence.webp",
+          "ability_notes": [
+            {
+              "parameter": "projectile_speed",
+              "note": "Projectile speed increased from 1200 to 1400"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "doom_doom_custom",
+          "name": "Doom",
+          "image": "doom_doom.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost decreased from 150/225/300 to 150/200/250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "invoker",
+      "name": "invoker",
+      "image": "images/heroes/heroesPreview/invoker.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 4",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "jakiro",
+      "name": "jakiro",
+      "image": "images/heroes/heroesPreview/jakiro.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "jakiro_liquid_ice_custom",
+          "name": "Liquid Frost",
+          "image": "jakiro_liquid_ice.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_instance_damage_from_other_abilities",
+              "note": "Bonus damage the target takes from Jakiro's other abilities changed from 12/18/24/30 to 8/16/24/32"
+            }
+          ]
+        },
+        {
+          "ability_id": "jakiro_macropyre_custom",
+          "name": "Macropyre",
+          "image": "jakiro_macropyre.webp",
+          "ability_notes": [
+            {
+              "parameter": "linger_duration",
+              "note": "Effect duration after leaving the area decreased from 2s to 1s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_jakiro_14",
+            "image": "jakiro_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "Now also removes the shared cooldown of Liquid Fire and Liquid Frost"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Attack Damage Reduction: -50% </font></b>\n\nThe hero attacks with both heads simultaneously.\n\nRemoves the shared cooldown of Liquid Fire and Liquid Frost."
+          }
+        ],
+        "intelligence": [
+          {
+            "talent_id": "modifier_jakiro_20",
+            "image": "jakiro_20.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "Dual Breath damage and range bonus decreased from 60/120 to 50/100"
+              }
+            ],
+            "talent_text": "Increased Dual Breath Damage and Range: 50/100"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "juggernaut",
+      "name": "juggernaut",
+      "image": "images/heroes/heroesPreview/juggernaut.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "juggernaut_blade_fury_custom",
+          "name": "Blade Fury",
+          "image": "juggernaut_blade_fury.webp",
+          "ability_notes": [
+            {
+              "parameter": "blade_fury_damage",
+              "note": "Damage changed from 45/50/55/60 per hit at an interval based on attack speed to 80/110/140/170 per second"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_juggernaut_18",
+            "image": "juggernaut_18.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Blade Fury damage increase raised from 6%/9%/12% to 15%/30%/45% of Intelligence"
+              }
+            ],
+            "talent_text": "Increase Blade Fury Damage: 15%/30%/45% of Intellect"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "BaseAttackSpeed",
+          "note": "Base attack speed increased from 100 to 110",
+          "icon": "/icon_base_attack_speed.png"
+        },
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Base health regen increased by 0.5",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "kez_echo_slash_custom",
+          "name": "Echo Slash",
+          "image": "kez_echo_slash.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown changed from 20/18/16/14s to 21/18/15/12s"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_grappling_claw_custom",
+          "name": "Grappling Claw",
+          "image": "kez_grappling_claw.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost decreased from 50 to 40"
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 16/14/12/10s to 13/11/9/7s"
+            },
+            {
+              "parameter": "debuff_duration",
+              "note": "Slow duration is now 0.7/0.8/0.9/1s"
+            },
+            {
+              "parameter": "bonus_flat_lifesteal",
+              "note": "The attack after pulling in no longer heals"
+            },
+            {
+              "parameter": "katana_ms_slow_pct",
+              "note": "Slow changed from 80% to 70%/80%/90%/100%"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_kazurai_katana_custom",
+          "name": "Kazurai Katana",
+          "image": "kez_kazurai_katana.webp",
+          "ability_notes": [
+            {
+              "parameter": "katana_bleed_duration",
+              "note": "Effect duration increased from 4/5/6/7s to 7s"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_raptor_dance_custom",
+          "name": "Raptor Dance",
+          "image": "kez_raptor_dance.webp",
+          "ability_notes": [
+            {
+              "parameter": "strikes",
+              "note": "Number of strikes increased from 2/3/4 to 4"
+            },
+            {
+              "parameter": "base_damage",
+              "note": "Base damage changed from 75 to 30/60/90"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_falcon_rush_custom",
+          "name": "Falcon Rush",
+          "image": "kez_falcon_rush.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown changed from 20/18/16/14s to 21/18/15/12s"
+            }
+          ]
+        },
+        {
+          "ability_id": "kez_talon_toss_custom",
+          "name": "Talon Toss",
+          "image": "kez_talon_toss.webp",
+          "ability_notes": [
+            {
+              "parameter": "Description",
+              "note": "Now inflicts an attack with True Strike and fixed damage instead of simply dealing magical damage"
+            },
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Damage and silence now only affect the target unit instead of all enemies around it"
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 16/14/12/10s to 13/11/9/7s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_kez_19",
+            "image": "kez_19.webp",
+            "title": "Talent 5",
+            "talent_notes": [
+              {
+                "note": "«Grappling Claw always heals and applies a 1/2s daze» replaced with «Grappling Claw slow duration increased by 1/2s»"
+              }
+            ],
+            "talent_text": "Increased Grappling Claw Slow Duration: 1/2 sec.\n\nHealth: 200/400"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "kunkka",
+      "name": "kunkka",
+      "image": "images/heroes/heroesPreview/kunkka.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kunkka_x_marks_the_spot_custom",
+          "name": "X Marks the Spot",
+          "image": "kunkka_x_marks_the_spot.webp",
+          "ability_notes": [
+            {
+              "parameter": "duration",
+              "note": "Enemy delay decreased from 4s to 3s"
+            },
+            {
+              "parameter": "allied_duration",
+              "note": "Allied delay decreased from 8s to 6s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "lich",
+      "name": "lich",
+      "image": "images/heroes/heroesPreview/lich.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "lich_sinister_gaze_custom",
+          "name": "Sinister Gaze",
+          "image": "lich_sinister_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "mana_drain",
+              "note": "Mana drain per second increased from 10% to 20%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "marci",
+      "name": "marci",
+      "image": "images/heroes/heroesPreview/marci.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "marci_grapple_custom",
+          "name": "Dispose",
+          "image": "marci_grapple.webp",
+          "ability_notes": [
+            {
+              "parameter": "impact_damage",
+              "note": "Damage changed from 75/150/225/300 to 60/150/240/320"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "medusa",
+      "name": "medusa",
+      "image": "images/heroes/heroesPreview/medusa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "medusa_mystic_snake_custom",
+          "name": "Mystic Snake",
+          "image": "medusa_mystic_snake.webp",
+          "ability_notes": [
+            {
+              "parameter": "snake_damage",
+              "note": "Base damage increased from 85/130/175/220 to 90/140/190/240"
+            },
+            {
+              "parameter": "snake_mana_steal",
+              "note": "Mana gain changed from 14%/15%/16%/17% to 15%"
+            }
+          ]
+        },
+        {
+          "ability_id": "medusa_gorgon_grasp",
+          "name": "Gorgon's Grasp",
+          "image": "medusa_gorgon_grasp.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost increased from 40/60/80/100 to 65/85/105/125"
+            }
+          ]
+        },
+        {
+          "ability_id": "medusa_stone_gaze_custom",
+          "name": "Stone Gaze",
+          "image": "medusa_stone_gaze.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost increased from 150 to 250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "morphling",
+      "name": "morphling",
+      "image": "images/heroes/heroesPreview/morphling.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusManaRegen",
+          "note": "Base mana regen decreased by 0.5",
+          "icon": "/mana_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nature's_prophet",
+      "name": "nature's prophet",
+      "image": "images/heroes/heroesPreview/nature's_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "note": "Attack range decreased from 620 to 600",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "nature's_prophet_sprout_custom",
+          "name": "Sprout",
+          "image": "nature's_prophet_sprout.webp",
+          "ability_notes": [
+            {
+              "parameter": "sprout_damage",
+              "note": "Damage decreased from 70/140/210/280 to 70/135/200/265"
+            }
+          ]
+        },
+        {
+          "ability_id": "nature's_prophet_teleportation_custom",
+          "name": "Teleportation",
+          "image": "nature's_prophet_teleportation.webp",
+          "ability_notes": [
+            {
+              "parameter": "barrier",
+              "note": "Barrier decreased from 100/150/200/250 to 70/130/190/250"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "necrophos",
+      "name": "necrophos",
+      "image": "images/heroes/heroesPreview/necrophos.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "necrophos_death_pulse_custom",
+          "name": "Death Pulse",
+          "image": "necrophos_death_pulse.webp",
+          "ability_notes": [
+            {
+              "parameter": "heal",
+              "note": "Heal increased from 55/80/105/130 to 70/90/110/130"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "nyx_assassin_spiked_carapace_custom",
+          "name": "Spiked Carapace",
+          "image": "nyx_assassin_spiked_carapace.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 23/20/17/14s to 20/16/12/8s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "omniknight_hammer_of_purity_custom",
+          "name": "Hammer of Purity",
+          "image": "omniknight_hammer_of_purity.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityBehavior",
+              "note": "Is now an autocast attack modifier"
+            },
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 16/14/12/10s to 16/12/8/4s"
+            },
+            {
+              "parameter": "AbilityManaCost",
+              "note": "No longer costs 40/45/50/55 mana"
+            },
+            {
+              "parameter": "attack_range_bonus",
+              "note": "Attack range bonus is now 75"
+            },
+            {
+              "parameter": "movement_slow",
+              "note": "Now slows the target by 75% for 0.2 seconds"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_omniknight_11",
+            "image": "omniknight_11.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Hammer of Purity armor reduction decreased from 3/6/9 to 2/4/6"
+              }
+            ],
+            "talent_text": "Hammer of Purity reduces Armor: 2/4/6\n\nDuration: 5 sec."
+          },
+          {
+            "talent_id": "modifier_omniknight_10",
+            "image": "omniknight_10.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "«Hammer of Purity slows enemies by 40%/80% for 5s» replaced with «Hammer of Purity slow duration increased by 0.7/1.4s»"
+              }
+            ],
+            "talent_text": "Hammer of Purity Slow Duration Increase: 0.7/1.4 sec."
+          },
+          {
+            "talent_id": "modifier_omniknight_13",
+            "image": "omniknight_13.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Heal from damage dealt decreased from 60% to 20%/40%/60%"
+              },
+              {
+                "note": "Area duration changed from 3/6/9s to 4s"
+              }
+            ],
+            "talent_text": "At the location where Hammer of Purity is used, an area remains in which you heal for a portion of All Damage Dealt: 20%/40%/60%\n\nDuration: 4 sec."
+          },
+          {
+            "talent_id": "modifier_omniknight_9",
+            "image": "omniknight_9.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "«Hammer of Purity costs no mana. Hammer of Purity cast range increased by 200» replaced with «Hammer of Purity attack range increased by 200»"
+              }
+            ],
+            "talent_text": "Hammer of Purity Attack Range Increase: 200"
+          },
+          {
+            "talent_id": "modifier_omniknight_14",
+            "image": "omniknight_14.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "«Hammer of Purity gains 2 charges, can be cast on an area and teleports you to the cast location. Radius: 300» replaced with «Hammer of Purity triggers on all enemies within a 300 radius. Hammer of Purity cooldown decreased by 1s. Hammer of Purity pierces spell immunity»"
+              }
+            ],
+            "talent_text": "Hammer of Purity triggers on all enemies within a 300 radius.\n\nHammer of Purity Cooldown Reduction: 1 sec.\n\nHammer of Purity pierces Magic Immunity."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "oracle",
+      "name": "oracle",
+      "image": "images/heroes/heroesPreview/oracle.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [
+        {
+          "parameter": "AttackRange",
+          "note": "Attack range increased from 620 to 625",
+          "icon": "/icon_attack_range.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "oracle_fates_edict_custom",
+          "name": "Fate's Edict",
+          "image": "oracle_fates_edict.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Cast range changed from 500/600/700/800 to 700"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "phantom_assassin_blur_custom",
+          "name": "Blur",
+          "image": "phantom_assassin_blur.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Is now an innate ability"
+            },
+            {
+              "parameter": "DependentOnAbility",
+              "note": "Now upgrades with Coup de Grace"
+            },
+            {
+              "parameter": "AbilityCastRange",
+              "note": "Cast range decreased from 800 to 625/550/475/400"
+            },
+            {
+              "parameter": "bonus_movement_speed",
+              "note": "Movement speed bonus is now 3%/6%/9%/12%"
+            },
+            {
+              "parameter": "bonus_evasion",
+              "note": "No longer grants 15%/20%/25%/30% evasion"
+            },
+            {
+              "note": "Now disjoints projectiles flying at the hero"
+            },
+            {
+              "parameter": "duration",
+              "note": "Duration increased from 25s to 30s"
+            }
+          ]
+        },
+        {
+          "ability_id": "phantom_assassin_immaterial",
+          "name": "Immaterial",
+          "image": "phantom_assassin_immaterial.webp",
+          "description": [
+            "Phantom Assassin focuses inward, increasing her ability to evade enemy attacks. Evasion improves with Phantom Assassin's levels. Stacks diminishingly with other sources of Evasion. Bonus evasion: 15% / 20% / 25% / 30%."
+          ],
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "New basic ability. Passive."
+            }
+          ]
+        },
+        {
+          "ability_id": "phantom_assassin_coup_de_grace_custom",
+          "name": "Coup de Grace",
+          "image": "phantom_assassin_coup_de_grace.webp",
+          "ability_notes": [
+            {
+              "parameter": "duration",
+              "note": "Deadly Focus duration increased from 6s to 6/8/10s"
+            },
+            {
+              "parameter": "dagger_crit_chance",
+              "note": "Deadly Focus chance from the dagger decreased from 40% to 30%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_6",
+            "image": "phantom_assassin_6.webp",
+            "title": "Talent 2",
+            "talent_notes": [
+              {
+                "note": "Now removes Immaterial instead of Blur"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Immaterial.</font></b>\n\nStrength: 12/24"
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_4",
+            "image": "phantom_assassin_4.webp",
+            "title": "Talent 6",
+            "talent_notes": [
+              {
+                "note": "Now removes Blur instead of Phantom Strike"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Removes Blur.</font></b>\n\nStrength: 12/24"
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_phantom_assassin_12",
+            "image": "phantom_assassin_12.webp",
+            "title": "Talent 3",
+            "talent_notes": [
+              {
+                "note": "Now increases Immaterial evasion instead of Blur"
+              }
+            ],
+            "talent_text": "Immaterial Evasion Increase: 10%/20%"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "rubick",
+      "name": "rubick",
+      "image": "images/heroes/heroesPreview/rubick.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "rubick_telekinesis_custom",
+          "name": "Telekinesis",
+          "image": "rubick_telekinesis.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 24/21/18/15s to 23/20/17/14s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "shadow_fiend_frenzy_custom",
+          "name": "Feast of Souls",
+          "image": "shadow_fiend_frenzy.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown increased from 16s to 21s"
+            },
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost decreased from 75 to 60/65/70/75"
+            },
+            {
+              "parameter": "bonus_move_speed",
+              "note": "Now also increases movement speed by 5%/7%/9%/11%"
+            }
+          ]
+        },
+        {
+          "ability_id": "shadow_fiend_necromastery_custom",
+          "name": "Necromastery",
+          "image": "shadow_fiend_necromastery.webp",
+          "ability_notes": [
+            {
+              "parameter": "Innate",
+              "note": "Now upgrades along with Requiem of Souls"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "slardar",
+      "name": "slardar",
+      "image": "images/heroes/heroesPreview/slardar.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "ArmorPhysical",
+          "note": "Base armor decreased by 1",
+          "icon": "/icon_armor.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "spectre",
+      "name": "spectre",
+      "image": "images/heroes/heroesPreview/spectre.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "spectre_haunt_custom",
+          "name": "Haunt",
+          "image": "spectre_haunt.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityCooldown",
+              "note": "Cooldown decreased from 100/90/80s to 70/65/60s"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_spectre_11",
+            "image": "spectre_11.webp",
+            "title": "Talent 4",
+            "talent_notes": [
+              {
+                "note": "Haunt cooldown reduction increased from 3/6/9s to 5/10/15s"
+              }
+            ],
+            "talent_text": "Haunt Cooldown Reduction: 5/10/15 seconds"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "techies",
+      "name": "techies",
+      "image": "images/heroes/heroesPreview/techies.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Movement speed increased from 300 to 310",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_techies_21",
+            "image": "techies_21.webp",
+            "title": "Talent 7",
+            "talent_notes": [
+              {
+                "note": "The minefield now triggers on any enemy unit, not only heroes"
+              }
+            ],
+            "talent_text": "Reducing Minefield Sign Cooldown: 30 sec.\n\nWhen an enemy passes within 200 radius of Minefield Sign, a 1000 radius area around it becomes a minefield for 15 seconds, dealing Magic Damage to moving enemies. When the effect ends, the sign disappears.\n\nDamage: 600\nTrigger Range: 200"
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "terrorblade",
+      "name": "terrorblade",
+      "image": "images/heroes/heroesPreview/terrorblade.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Base health regen decreased by 1",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "terrorblade_reflection_custom",
+          "name": "Reflection",
+          "image": "terrorblade_reflection.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityManaCost",
+              "note": "Mana cost increased from 35/40/45/50 to 60/65/70/75"
+            }
+          ]
+        },
+        {
+          "ability_id": "terrorblade_metamorphosis_custom",
+          "name": "Metamorphosis",
+          "image": "terrorblade_metamorphosis.webp",
+          "ability_notes": [
+            {
+              "parameter": "bonus_damage",
+              "note": "Damage bonus changed from 30/40/50/60 to 20/40/60/80"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "tiny",
+      "name": "tiny",
+      "image": "images/heroes/heroesPreview/tiny.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "tiny_avalanche_custom",
+          "name": "Avalanche",
+          "image": "tiny_avalanche.webp",
+          "ability_notes": [
+            {
+              "parameter": "avalanche_damage",
+              "note": "Total damage decreased from 100/200/300/400 to 100/190/280/370"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_tree_grab_custom",
+          "name": "Tree Grab",
+          "image": "tiny_tree_grab.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_range",
+              "note": "Attack range decreased from 350 to 300"
+            }
+          ]
+        },
+        {
+          "ability_id": "tiny_grow_custom",
+          "name": "Grow",
+          "image": "tiny_grow.webp",
+          "ability_notes": [
+            {
+              "parameter": "attack_speed_reduction",
+              "note": "Attack speed reduction increased from 30% to 35%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "undying",
+      "name": "undying",
+      "image": "images/heroes/heroesPreview/undying.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "AttackDamageMin",
+          "note": "Base damage increased by 2",
+          "icon": "/icon_damage.png"
+        }
+      ],
+      "abilities": [
+        {
+          "ability_id": "undying_soul_rip_custom",
+          "name": "Soul Rip",
+          "image": "undying_soul_rip.webp",
+          "ability_notes": [
+            {
+              "parameter": "damage_per_unit",
+              "note": "Damage/heal per unit changed from 15/25/35/45 to 14/26/38/50"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "warlock",
+      "name": "warlock",
+      "image": "images/heroes/heroesPreview/warlock.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "warlock_shadow_word_custom",
+          "name": "Shadow Word",
+          "image": "warlock_shadow_word.webp",
+          "ability_notes": [
+            {
+              "parameter": "spell_aoe",
+              "note": "Effect radius decreased from 300 to 225"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "windranger",
+      "name": "windranger",
+      "image": "images/heroes/heroesPreview/windranger.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "windranger_focusfire_custom",
+          "name": "Focus Fire",
+          "image": "windranger_focusfire.webp",
+          "ability_notes": [
+            {
+              "parameter": "focusfire_damage_reduction",
+              "note": "Damage reduction decreased from 40% to 30%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "witch_doctor_paralyzing_cask_custom",
+          "name": "Paralyzing Cask",
+          "image": "witch_doctor_paralyzing_cask.webp",
+          "ability_notes": [
+            {
+              "parameter": "bounce_bonus_damage",
+              "note": "Damage now increases by 20 with each bounce"
+            },
+            {
+              "parameter": "base_damage",
+              "note": "Base damage decreased from 90/130/170/210 to 55/70/85/100"
+            },
+            {
+              "parameter": "bounces",
+              "note": "Bounce count changed from 2/4/6/8 to 3/4/5/6"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "wraith_king",
+      "name": "wraith king",
+      "image": "images/heroes/heroesPreview/wraith_king.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "MovementSpeed",
+          "note": "Movement speed decreased from 315 to 310",
+          "icon": "/icon_movement_speed.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    }
+  ]
+}

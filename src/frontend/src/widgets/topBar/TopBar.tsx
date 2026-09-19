@@ -10,6 +10,7 @@ import { ReactComponent as VotesIcon } from "../../assets/icons/votes_icon.svg";
 import { ReactComponent as SteamIcon } from "../../assets/icons/steam_icon.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings_icon.svg";
 import { ReactComponent as NewsIcon } from "../../assets/icons/NewsIcon.svg";
+import { ReactComponent as UpdatesIcon } from "../../assets/icons/UpdatesIcon.svg";
 import { ReactComponent as TournamentIcon } from "../../assets/icons/TournamentIcon.svg";
 import { ReactComponent as YouTubeIcon } from "../../assets/icons/YouTubeIcon.svg";
 //import { ReactComponent as WalletIcon } from "../../assets/icons/WalletIcon.svg";
@@ -84,7 +85,9 @@ export const TopBar = () => {
             pathname.startsWith(`${langPrefix}/hero-build/`)
         );
 
-        return isExactMatch || isHeroesSection;
+        const isPatchesSection = path === "/patches" && pathname.startsWith(`${langPrefix}/patches/`);
+
+        return isExactMatch || isHeroesSection || isPatchesSection;
     };
 
 
@@ -122,8 +125,13 @@ export const TopBar = () => {
                                 <div className={styles.topbar_menu_item_open_sub_c_bottom}
                                      style={{borderBottom: '1px solid rgba(128, 128, 128, 0.5)'}}>
                                     <Link className={styles.topbar_menu_item_open_sub_bottom}
-                                          to={buildPath('/tournament')} onClick={() => setMenuOpen(false)}>
-                                        <TopBarMenuItem title={t('tournament')} menuOpen={menuOpen}/>
+                                          to={buildPath('/patches')} onClick={() => setMenuOpen(false)}>
+                                        <TopBarMenuItem title={t('patches')} menuOpen={menuOpen}/>
+                                        <MoreIcon/>
+                                    </Link>
+                                    <Link className={styles.topbar_menu_item_open_sub_bottom}
+                                          to={buildPath('/tournaments')} onClick={() => setMenuOpen(false)}>
+                                        <TopBarMenuItem title={t('tournaments')} menuOpen={menuOpen}/>
                                         <MoreIcon/>
                                     </Link>
                                     <Link className={styles.topbar_menu_item_open_sub_bottom}
@@ -194,11 +202,12 @@ export const TopBar = () => {
                     <div className={`${styles.topbar_menu}`}>
                         <TopBarMenuItem title={t('game')}
                                         menuOpen={menuOpen} icon={<FireIcon/>}
-                                        isActive={activeIcon("/tournament") || activeIcon("/votes") || activeIcon("/leaderboard")}
+                                        isActive={activeIcon("/tournaments") || activeIcon("/votes") || activeIcon("/leaderboard") || activeIcon("/patches")}
                                         subItems={[
+                                            { title: t('patches'), icon: <UpdatesIcon />, to: buildPath('/patches') },
                                             {
-                                                title: t('tournament'),
-                                                icon: <TournamentIcon />, to: buildPath('/tournament') },
+                                                title: t('tournaments'),
+                                                icon: <TournamentIcon />, to: buildPath('/tournaments') },
                                             { title: t('votes'), icon: <VotesIcon />, to: buildPath('/votes') },
                                             { title: t('leaderboard'), icon: <LeaderboardIcon />, to: buildPath('/leaderboard') },
                                         ]}/>

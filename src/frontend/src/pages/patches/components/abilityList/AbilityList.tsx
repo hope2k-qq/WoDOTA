@@ -42,8 +42,10 @@ export const AbilityList = ({
                                 {noteText(ab.name)}
                             </div>
                             <Notes notes={ab.ability_notes.map((n) => n.note)} />
+                            {/* отступ вторым уровнем — только когда описание идёт под заметками об изменениях;
+                                у новой способности описание единственное и стоит первым уровнем */}
                             {descriptions.length > 0 && (
-                                <div className={styles.ability_desc}>
+                                <div className={items.length ? styles.ability_desc : undefined}>
                                     <Notes notes={descriptions} />
                                 </div>
                             )}

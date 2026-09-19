@@ -1,0 +1,255 @@
+{
+  "patch_number": "1.03a",
+  "patch_name": "1.03a",
+  "patch_timestamp": 1788965218,
+  "general": {
+    "global_changes": []
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": []
+  },
+  "neutral_items": {
+    "artifacts": [
+      {
+        "neutral_item_id": "item_dezun_bloodrite",
+        "name": "Dezun Bloodrite",
+        "image": "dezun_bloodrite.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 5,
+        "neutral_item_notes": [
+          {
+            "parameter": "aoe_pct",
+            "note": "Blood Invocation: бонус к радиусу заклинаний уменьшен с 15% до 12%"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_giant_maul",
+        "name": "Giant's Maul",
+        "image": "giant_maul.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 4,
+        "neutral_item_notes": [
+          {
+            "parameter": "debuff_duration",
+            "note": "Длительность эффекта уменьшена с 4 до 3 секунд"
+          }
+        ]
+      },
+      {
+        "neutral_item_id": "item_jidi_pollen_bag",
+        "name": "Jidi Pollen Bag",
+        "image": "jidi_pollen_bag.webp",
+        "neutral_type": "artifact",
+        "is_new": false,
+        "tier": 3,
+        "neutral_item_notes": [
+          {
+            "parameter": "health_regen_loss",
+            "note": "Снижение пополнения здоровья усилено с 20% до 30%"
+          }
+        ]
+      }
+    ],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "kez",
+      "name": "kez",
+      "image": "images/heroes/heroesPreview/kez.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "kez_talon_toss_custom",
+          "name": "Talon Toss",
+          "image": "kez_talon_toss.webp",
+          "ability_notes": [
+            {
+              "parameter": "AbilityUnitDamageType",
+              "note": "Тип урона изменён с магического на физический"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nyx_assassin",
+      "name": "nyx assassin",
+      "image": "images/heroes/heroesPreview/nyx_assassin.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_nyx_assassin_7",
+            "image": "nyx_assassin_7.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Spiked Carapace не Оглушает Противников. Spiked Carapace возвращает урон неограниченное количество раз» заменено на «Новая Активная Способность: Burrow. Герой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка. Уменьшение Скорости Передвижения в Burrow: 300. Уменьшение Всего Получаемого Урона в Burrow: 3%. Восстановление Здоровья и Маны в Burrow: 0,5%. Уменьшение Времени Перезарядки в Burrow: 10%. Дополнительная Дальность Заклинаний: 100»"
+              }
+            ],
+            "talent_text": "Новая Активная Способность: Burrow\n\nГерой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка.\n\nУменьшение Скорости Передвижения в Burrow: 300\nУменьшение Всего Получаемого Урона в Burrow: 3%\nВосстановление Здоровья и Маны в Burrow: 0.5%\nУменьшение Времени Перезарядки в Burrow: 10%\nДополнительная Дальность Заклинаний: 100"
+          },
+          {
+            "talent_id": "modifier_nyx_assassin_6",
+            "image": "nyx_assassin_6.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "«Новая Активная Способность: Burrow. Герой торопливо закапывается в землю. Там он получает уменьшенный урон и усиливает свои способности: Spiked Carapace действует на всех окружающих врагов в Радиусе 400, Mind Flare и Impale получают увеличенную дальность применения, а также уменьшается перезарядка. Уменьшение Скорости Передвижения в Burrow: 300. Уменьшение Всего Получаемого Урона в Burrow: 3%. Восстановление Здоровья и Маны в Burrow: 0,5%. Уменьшение Времени Перезарядки в Burrow: 10%. Дополнительная Дальность Заклинаний: 100» заменено на «Spiked Carapace не Оглушает Противников. Spiked Carapace возвращает урон неограниченное количество раз»"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Spiked Carapace не Оглушает Противников.</font></b>\n\nSpiked Carapace возвращает урон неограниченное количество раз."
+          }
+        ],
+        "agility": [
+          {
+            "talent_id": "modifier_nyx_assassin_13",
+            "image": "nyx_assassin_13.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Уменьшение перезарядки Spiked Carapace ослаблено с 3/6 до 1,5/3 секунд"
+              }
+            ],
+            "talent_text": "Уменьшение Времени Перезарядки Spiked Carapace: 1.5/3 сек."
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "omniknight",
+      "name": "omniknight",
+      "image": "images/heroes/heroesPreview/omniknight.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_omniknight_12",
+            "image": "omniknight_12.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Увеличение базового урона Hammer of Purity ослаблено с 70% до 30%"
+              }
+            ],
+            "talent_text": "Увеличение Базового Урона Hammer of Purity: 30%"
+          },
+          {
+            "talent_id": "modifier_omniknight_9",
+            "image": "omniknight_9.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Теперь также даёт 100% точности атакам Hammer of Purity"
+              }
+            ],
+            "talent_text": "Увеличение Дальности Атаки Hammer of Purity: 200\n\nТочность Атаки Hammer of Purity: 100%"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "phantom_assassin",
+      "name": "phantom assassin",
+      "image": "images/heroes/heroesPreview/phantom_assassin.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_phantom_assassin_6",
+            "image": "phantom_assassin_6.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Бонус к силе уменьшен с 12/24 до 10/20"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Immaterial.</font></b>\n\nСила: 10/20"
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_2",
+            "image": "phantom_assassin_2.webp",
+            "title": "Талант 4",
+            "talent_notes": [
+              {
+                "note": "Бонус к силе уменьшен с 12/24 до 10/20"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Stifling Dagger.</font></b>\n\nСила: 10/20"
+          },
+          {
+            "talent_id": "modifier_phantom_assassin_4",
+            "image": "phantom_assassin_4.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "Бонус к силе уменьшен с 12/24 до 10/20"
+              }
+            ],
+            "talent_text": "<b><font color='#ff0000'>Убирает Blur.</font></b>\n\nСила: 10/20"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "witch_doctor",
+      "name": "witch doctor",
+      "image": "images/heroes/heroesPreview/witch_doctor.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_witch_doctor_15",
+            "image": "witch_doctor_15.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Увеличение отскоков Paralyzing Cask усилено с 1/2 до 2/3"
+              }
+            ],
+            "talent_text": "Увеличение Отскоков Paralyzing Cask: 2/3"
+          },
+          {
+            "talent_id": "modifier_witch_doctor_19",
+            "image": "witch_doctor_19.webp",
+            "title": "Талант 3",
+            "talent_notes": [
+              {
+                "note": "Остаточный урон последней цели увеличен с 6%/9%/12% до 8%/12%/16%"
+              }
+            ],
+            "talent_text": "Если Paralyzing Cask перестал отскакивать раньше времени, то последняя цель получит 8%/12%/16% остаточного Урона и будет оглушена 1 дополнительный раз."
+          }
+        ]
+      }
+    }
+  ]
+}

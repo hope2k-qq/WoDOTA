@@ -1,0 +1,233 @@
+{
+  "patch_number": "1.03b",
+  "patch_name": "1.03b",
+  "patch_timestamp": 1788965450,
+  "general": {
+    "global_changes": [
+      {
+        "title": "Общие изменения"
+      },
+      {
+        "note": "Изменён цвет духа при появлении и смерти героя"
+      },
+      {
+        "note": "Небольшие изменения интерфейса"
+      },
+      {
+        "note": "Улучшена производительность на слабых ПК"
+      },
+      {
+        "note": "Удалены старые наборы героев из магазина"
+      },
+      {
+        "note": "Исправлено множество ошибок"
+      },
+      {
+        "title": "Таланты"
+      },
+      {
+        "subtitle": "Сила"
+      },
+      {
+        "note": "Базовый урон увеличен с 8/16/24 до 10/20/30"
+      },
+      {
+        "note": "Уменьшение получаемого урона от атак изменено с 4%/8%/12% на 5%/10%"
+      },
+      {
+        "note": "Талант «Сила»: если изучить таланты смены атрибута во всех трёх ветках, теперь также увеличивает базовый урон за атрибут на 0,1"
+      },
+      {
+        "subtitle": "Ловкость"
+      },
+      {
+        "note": "Вампиризм изменён с 7%/14%/21% на 7%/14%"
+      },
+      {
+        "note": "Талант «Ловкость»: если изучить таланты смены атрибута во всех трёх ветках, теперь также увеличивает базовый урон за атрибут на 0,1"
+      },
+      {
+        "subtitle": "Интеллект"
+      },
+      {
+        "note": "Вампиризм заклинаниями изменён с 7%/14%/21% на 7%/14%"
+      },
+      {
+        "note": "Барьер увеличен со 150/300 до 200/400"
+      },
+      {
+        "note": "Талант «Интеллект»: если изучить таланты смены атрибута во всех трёх ветках, теперь также увеличивает базовый урон за атрибут на 0,1"
+      }
+    ]
+  },
+  "neutral_creeps": [],
+  "items": {
+    "base": [],
+    "upgrade": [
+      {
+        "item_id": "item_khanda_custom",
+        "name": "Khanda",
+        "image": "angels_demise.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "spell_crit_multiplier",
+            "note": "Empower Spell: теперь дополнительно наносит 35% от урона от атаки"
+          }
+        ]
+      },
+      {
+        "item_id": "item_revenants_brooch_custom",
+        "name": "Revenant's Brooch 2",
+        "image": "revenants_brooch_custom.webp",
+        "is_new": false,
+        "is_upgrade": true,
+        "item_notes": [
+          {
+            "parameter": "manacost_per_hit",
+            "note": "Phantom Province: расход маны за атаку увеличен со 120 до 150"
+          }
+        ]
+      }
+    ]
+  },
+  "neutral_items": {
+    "artifacts": [],
+    "enhancements": []
+  },
+  "bosses": [],
+  "heroes": [
+    {
+      "hero_id": "doom",
+      "name": "doom",
+      "image": "images/heroes/heroesPreview/doom.webp",
+      "primary_attribute": "strength",
+      "hero_notes": [
+        {
+          "parameter": "StatusHealthRegen",
+          "note": "Базовое восстановление здоровья уменьшено с 1,25 до 0,66",
+          "icon": "/health_regen.png"
+        }
+      ],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "nature's_prophet",
+      "name": "nature's prophet",
+      "image": "images/heroes/heroesPreview/nature's_prophet.webp",
+      "primary_attribute": "universal",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_nature's_prophet_11",
+            "image": "nature's_prophet_11.webp",
+            "title": "Талант 5",
+            "talent_notes": [
+              {
+                "note": "Радиус увеличен с 600 до 900"
+              }
+            ],
+            "talent_text": "Увеличение Урона на 3 за каждое Дерево вокруг Героя.\n\nРадиус: 900"
+          }
+        ],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "shadow_fiend",
+      "name": "shadow fiend",
+      "image": "images/heroes/heroesPreview/shadow_fiend.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [
+        {
+          "ability_id": "shadow_fiend_shadowraze1_custom",
+          "name": "Shadowraze",
+          "image": "shadow_fiend_shadowraze1.webp",
+          "ability_notes": [
+            {
+              "parameter": "movement_speed_pct",
+              "note": "Больше не замедляет передвижение на 12%/13%/14%/15%"
+            }
+          ]
+        }
+      ],
+      "talents": {
+        "strength": [],
+        "agility": [],
+        "intelligence": [
+          {
+            "talent_id": "modifier_shadow_fiend_16",
+            "image": "shadow_fiend_16.webp",
+            "title": "Талант 2",
+            "talent_notes": [
+              {
+                "note": "Теперь также замедляет поражённых Shadowraze противников на 6%/12% на 5 секунд"
+              }
+            ],
+            "talent_text": "Увеличение Урона Попадания Shadowraze: 30/60\n\nShadowraze уменьшает Скорость Передвижения Противников: 6%/12%\n\nДлительность: 5 сек."
+          }
+        ]
+      }
+    },
+    {
+      "hero_id": "ursa",
+      "name": "ursa",
+      "image": "images/heroes/heroesPreview/ursa.webp",
+      "primary_attribute": "agility",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [
+          {
+            "talent_id": "modifier_ursa_6",
+            "image": "ursa_6.webp",
+            "title": "Талант 6",
+            "talent_notes": [
+              {
+                "note": "«Атаки Уменьшают Броню: 1 Длительность: 1/2/3 сек. Каждый эффект имеет свою длительность» заменено на «Fury Swipes уменьшает Броню за Эффект: 0,4/0,5/0,6»"
+              }
+            ],
+            "talent_text": "Fury Swipes уменьшает Броню за Эффект: 0.4/0.5/0.6"
+          }
+        ],
+        "agility": [],
+        "intelligence": []
+      }
+    },
+    {
+      "hero_id": "zeus",
+      "name": "zeus",
+      "image": "images/heroes/heroesPreview/zeus.webp",
+      "primary_attribute": "intelligence",
+      "hero_notes": [],
+      "abilities": [],
+      "talents": {
+        "strength": [],
+        "agility": [
+          {
+            "talent_id": "modifier_zeus_14",
+            "image": "zeus_14.webp",
+            "title": "Талант 7",
+            "talent_notes": [
+              {
+                "note": "«Убирает ограничение на максимальную Скорость Атаки. Скорость Атаки: 7%» заменено на «Базовая Скорость Атаки: 1,3»"
+              }
+            ],
+            "talent_text": "Базовая Скорость Атаки: 1.3"
+          }
+        ],
+        "intelligence": []
+      }
+    }
+  ]
+}
