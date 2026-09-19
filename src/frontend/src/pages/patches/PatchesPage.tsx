@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import type { PatchLog, PatchGlobalEntry, PatchGlobalTitle, PatchGlobalSubtitle } from '../../types/patchlog';
@@ -124,6 +125,10 @@ export const PatchesPage = () => {
 
     return (
         <div className={styles.div}>
+            <Helmet>
+                <title>{versionLabel ? `${t.pageTitle} — ${versionLabel}` : t.pageTitle}</title>
+            </Helmet>
+
             <div className={styles.patch_header}>
                 <div className={styles.patch_content}>
                     <div>

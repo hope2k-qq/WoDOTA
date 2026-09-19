@@ -1,6 +1,7 @@
 
 export const copy = {
     ru: {
+        pageTitle: 'Список изменений',
         eyebrow: 'Обновление баланса', general: 'Общие изменения', global: 'Глобальные изменения',
         items: 'Изменения предметов', heroes: 'Изменения героев', abilities: 'Способности',
         talents: 'Таланты', base: 'Основные параметры',
@@ -12,6 +13,7 @@ export const copy = {
         empty: 'Для этого патча изменений нет',
     },
     en: {
+        pageTitle: 'Changelog',
         eyebrow: 'Balance update', general: 'General changes', global: 'Global changes',
         items: 'Item changes', heroes: 'Hero changes', abilities: 'Abilities',
         talents: 'Talents', base: 'Base attributes',
@@ -23,6 +25,7 @@ export const copy = {
         empty: 'No changes for this patch',
     },
     uk: {
+        pageTitle: 'Список змін',
         eyebrow: 'Оновлення балансу', general: 'Загальні зміни', global: 'Глобальні зміни',
         items: 'Зміни предметів', heroes: 'Зміни героїв', abilities: 'Здібності',
         talents: 'Таланти', base: 'Основні параметри',
@@ -34,6 +37,7 @@ export const copy = {
         empty: 'Для цього патчу змін немає',
     },
     cs: {
+        pageTitle: 'Seznam změn',
         eyebrow: 'Aktualizace vyvážení', general: 'Obecné změny', global: 'Globální změny',
         items: 'Změny předmětů', heroes: 'Změny hrdinů', abilities: 'Schopnosti',
         talents: 'Talenty', base: 'Základní atributy',
