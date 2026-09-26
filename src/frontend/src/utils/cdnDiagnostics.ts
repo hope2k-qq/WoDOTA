@@ -7,6 +7,7 @@ const CONTROL_PROBE = '/wd.png';
 const PROBE_TIMEOUT = 5000;
 const COLLECT_DELAY = 1500;
 const INSTANT_FAIL_MS = 150;
+const MASS_FAILURE_MIN = 8;
 
 const SESSION_KEY = 'cdnDiagSent';
 
@@ -123,6 +124,8 @@ const runDiagnostics = async (): Promise<void> => {
 
     const cdn = await probeImage(CDN_PROBE);
 
+    if (cdn.ok && failedCount < MASS_FAILURE_MIN) return;
+
     let verdict: Verdict;
     if (cdn.ok) {
         verdict = 'cdn_ok_on_retry';
@@ -131,6 +134,8 @@ const runDiagnostics = async (): Promise<void> => {
     } else {
         verdict = 'timeout';
     }
+
+    safeSession.set(SESSION_KEY, '1');
 
     send({
         v: 1,
@@ -167,10 +172,13 @@ const onResourceError = (event: Event): void => {
     if (safeSession.get(SESSION_KEY)) return;
 
     scheduled = true;
-    safeSession.set(SESSION_KEY, '1');
 
     window.setTimeout(() => {
-        runDiagnostics().catch(() => undefined);
+        runDiagnostics()
+            .catch(() => undefined)
+            .finally(() => {
+                scheduled = false;
+            });
     }, COLLECT_DELAY);
 };
 

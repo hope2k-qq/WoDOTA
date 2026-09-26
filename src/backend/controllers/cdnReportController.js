@@ -165,7 +165,27 @@ const VERDICT_HINTS = {
     timeout: 'запрос уходит в никуда — блокировка по IP или DPI у провайдера'
 };
 
-const renderHtml = (stats, hours) => {
+const CONTROL_IP = '91.238.111.225';
+
+const buildSelfCheck = async (req) => {
+    const ip = getClientIp(req);
+    const [mine, control] = await Promise.all([lookupAsn(ip), lookupAsn(CONTROL_IP)]);
+
+    let diagnosis;
+    if (!control.asn) {
+        diagnosis = 'DNS с сервера не работает: резолв не прошёл даже для контрольного адреса. Проверь исходящий UDP 53 на VPS.';
+    } else if (ip === '127.0.0.1' || ip === '::1' || !ip) {
+        diagnosis = 'nginx не передаёт реальный IP. Добавь в конфиг proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;';
+    } else if (!mine.asn) {
+        diagnosis = `Контрольный адрес резолвится, а ${ip} — нет. Возможно это серый или необъявленный адрес.`;
+    } else {
+        diagnosis = 'Резолв работает.';
+    }
+
+    return { ip, mine, control, diagnosis };
+};
+
+const renderHtml = (stats, hours, selfCheck) => {
     const rows = stats.byProvider
         .map((p) => `<tr><td>${p.asn}</td><td>${p.provider || '—'}</td><td>${p.country || '—'}</td>` +
             `<td class="n">${p.count}</td><td class="n">${p.mobile}</td>` +
@@ -191,6 +211,13 @@ ul{list-style:none;padding:0;margin:0} li{padding:3px 0;border-bottom:1px solid 
 </style></head><body>
 <h1>Отчёты о недоступности CDN — за ${hours} ч</h1>
 <div class="total">${stats.total}</div>
+<h2>Самодиагностика резолва</h2>
+<ul>
+<li><b>твой IP для сервера</b> — ${selfCheck.ip || '(не определён)'}</li>
+<li><b>твой ASN</b> — ${selfCheck.mine.asn || '—'} ${selfCheck.mine.name || ''} ${selfCheck.mine.country || ''}</li>
+<li><b>контрольный ${CONTROL_IP}</b> — ${selfCheck.control.asn || '—'} ${selfCheck.control.name || ''}</li>
+<li><span class="hint">${selfCheck.diagnosis}</span></li>
+</ul>
 <h2>Провайдеры</h2>
 <table><tr><th>ASN</th><th>Провайдер</th><th>Страна</th><th class="n">Всего</th><th class="n">Моб.</th><th>Вердикты</th></tr>${rows}</table>
 <h2>Вердикты</h2><ul>${hints}</ul>
@@ -213,13 +240,14 @@ const getStats = async (req, res) => {
     try {
         const docs = await collection.find({ ts: { $gte: since } }).limit(50000).toArray();
         const stats = buildStats(docs);
+        const selfCheck = await buildSelfCheck(req);
 
         if (req.query.format === 'json') {
-            return res.json({ hours, ...stats });
+            return res.json({ hours, selfCheck, ...stats });
         }
 
         res.set('Content-Type', 'text/html; charset=utf-8');
-        return res.send(renderHtml(stats, hours));
+        return res.send(renderHtml(stats, hours, selfCheck));
     } catch (error) {
         console.error('cdn-report stats failed:', error.message);
         return res.status(500).json({ error: 'Failed to build stats' });
