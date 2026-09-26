@@ -87,6 +87,11 @@ const createReport = async (req, res) => {
             verdict: body.verdict,
             failed: num(body.failed) || 0,
             firstUrl: String(body.firstUrl || '').slice(0, 300),
+            retryOk: num(body.retryOk) || 0,
+            retryFail: num(body.retryFail) || 0,
+            stillBroken: num(body.stillBroken) || 0,
+            routeChanged: !!body.routeChanged,
+            visibility: String(body.visibility || ''),
             controlOk: !!(body.control && body.control.ok),
             controlMs: num(body.control && body.control.ms),
             cdnOk: !!(body.cdn && body.cdn.ok),
@@ -146,10 +151,20 @@ const buildStats = (docs) => {
         entry.verdicts[doc.verdict] = (entry.verdicts[doc.verdict] || 0) + 1;
     }
 
+    const recoveryLabel = (d) => {
+        if (!d.retryOk && !d.stillBroken) return 'нечего было чинить (картинки исчезли)';
+        if (d.retryOk && !d.stillBroken) return 'повтор помог полностью';
+        if (d.retryOk) return 'повтор помог частично';
+        return 'повтор не помог';
+    };
+
     return {
         total: docs.length,
         byProvider: Object.values(providers).sort((a, b) => b.count - a.count).slice(0, 40),
         byVerdict: tally(docs, (d) => d.verdict),
+        byRecovery: tally(docs, recoveryLabel),
+        byRouteChanged: tally(docs, (d) => (d.routeChanged ? 'ушёл со страницы' : 'остался на странице')),
+        byVisibility: tally(docs, (d) => d.visibility),
         byCountry: tally(docs, (d) => d.country),
         byConnection: tally(docs, (d) => d.connType || d.effectiveType),
         byPlatform: tally(docs, (d) => d.platform),
@@ -221,6 +236,9 @@ ul{list-style:none;padding:0;margin:0} li{padding:3px 0;border-bottom:1px solid 
 <h2>Провайдеры</h2>
 <table><tr><th>ASN</th><th>Провайдер</th><th>Страна</th><th class="n">Всего</th><th class="n">Моб.</th><th>Вердикты</th></tr>${rows}</table>
 <h2>Вердикты</h2><ul>${hints}</ul>
+${block('Помог ли повтор загрузки', stats.byRecovery)}
+${block('Менялся ли маршрут', stats.byRouteChanged)}
+${block('Вкладка на момент отчёта', stats.byVisibility)}
 ${block('Страны', stats.byCountry)}
 ${block('Тип соединения', stats.byConnection)}
 ${block('Платформы', stats.byPlatform)}

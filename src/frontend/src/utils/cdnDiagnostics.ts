@@ -5,9 +5,13 @@ const CDN_PROBE = `${CDN_ORIGIN}/abilities/innate_icon_small.png`;
 const CONTROL_PROBE = '/wd.png';
 
 const PROBE_TIMEOUT = 5000;
-const COLLECT_DELAY = 1500;
+const COLLECT_DELAY = 3500;
 const INSTANT_FAIL_MS = 150;
 const MASS_FAILURE_MIN = 8;
+
+const RETRY_DELAYS = [600, 2000];
+const RETRY_FAIL_LIMIT = 20;
+const TRACKED_LIMIT = 200;
 
 const SESSION_KEY = 'cdnDiagSent';
 
@@ -15,9 +19,19 @@ type ProbeResult = { ok: boolean; ms: number };
 
 type Verdict = 'cdn_ok_on_retry' | 'instant_fail' | 'timeout';
 
+type RetryState = { src: string; attempt: number };
+
 let scheduled = false;
 let failedCount = 0;
 let firstFailedUrl = '';
+let pageAtFirstError = '';
+
+let retryOk = 0;
+let retryFail = 0;
+let retryFailures = 0;
+
+const retryState = new WeakMap<HTMLImageElement, RetryState>();
+const trackedElements: HTMLElement[] = [];
 
 const safeSession = {
     get(key: string): string | null {
@@ -64,6 +78,40 @@ const probeImage = (url: string): Promise<ProbeResult> => {
         const separator = url.includes('?') ? '&' : '?';
         img.src = `${url}${separator}probe=${Date.now()}`;
     });
+};
+
+const recover = (img: HTMLImageElement): void => {
+    if (retryFailures >= RETRY_FAIL_LIMIT) return;
+
+    const state = retryState.get(img) || { src: img.src, attempt: 0 };
+
+    if (state.attempt >= RETRY_DELAYS.length) {
+        retryFail += 1;
+        return;
+    }
+
+    const delay = RETRY_DELAYS[state.attempt];
+    state.attempt += 1;
+    retryState.set(img, state);
+
+    window.setTimeout(() => {
+        if (!document.contains(img)) return;
+
+        img.addEventListener('load', () => {
+            retryOk += 1;
+        }, { once: true });
+
+        const separator = state.src.includes('?') ? '&' : '?';
+        img.src = `${state.src}${separator}r=${state.attempt}`;
+    }, delay);
+};
+
+const countStillBroken = (): number => {
+    return trackedElements.filter((el) => {
+        if (!document.contains(el)) return false;
+        if (el instanceof HTMLImageElement) return el.naturalWidth === 0;
+        return true;
+    }).length;
 };
 
 const getProtocol = (urlPrefix: string): string => {
@@ -138,10 +186,15 @@ const runDiagnostics = async (): Promise<void> => {
     safeSession.set(SESSION_KEY, '1');
 
     send({
-        v: 1,
+        v: 2,
         verdict,
         failed: failedCount,
         firstUrl: firstFailedUrl.slice(0, 300),
+        retryOk,
+        retryFail,
+        stillBroken: countStillBroken(),
+        routeChanged: pageAtFirstError !== window.location.pathname,
+        visibility: document.visibilityState,
         control,
         cdn,
         navProto: getNavigationProtocol(),
@@ -165,8 +218,21 @@ const onResourceError = (event: Event): void => {
     const src = (target as HTMLImageElement).currentSrc || (target as HTMLImageElement).src || '';
     if (!src.startsWith(CDN_ORIGIN)) return;
 
-    failedCount += 1;
-    if (!firstFailedUrl) firstFailedUrl = src;
+    const isImage = target instanceof HTMLImageElement;
+    const isRetry = isImage && retryState.has(target);
+
+    if (isRetry) {
+        retryFailures += 1;
+    } else {
+        failedCount += 1;
+        if (!firstFailedUrl) {
+            firstFailedUrl = src;
+            pageAtFirstError = window.location.pathname;
+        }
+        if (trackedElements.length < TRACKED_LIMIT) trackedElements.push(target);
+    }
+
+    if (isImage) recover(target);
 
     if (scheduled) return;
     if (safeSession.get(SESSION_KEY)) return;
