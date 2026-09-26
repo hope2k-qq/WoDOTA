@@ -12,6 +12,7 @@ import {UnreadNewsProvider} from "../context/UnreadNewsContext";
 import {HelmetProvider} from "react-helmet-async";
 import {MyDataProvider, useMyData} from "../context/HeroesDataContext";
 import {UserProvider} from "../context/UserContext";
+import {initCdnDiagnostics} from "../utils/cdnDiagnostics";
 //import RelocationNotice from "../widgets/relocationNotice/RelocationNotice";
 
 const App = () => {
@@ -22,6 +23,8 @@ const App = () => {
     useEffect(() => {
         setThemeVariables(theme);
     }, [theme]);
+
+    useEffect(() => initCdnDiagnostics(), []);
 
     if (isMaintenance) {
         return <MaintenancePage />;

@@ -16,6 +16,7 @@ const passport = require('./middleware/passport');
 
 
 app.use(passport.initialize());
+app.set('trust proxy', true);
 
 // const allowedTokens = ['your-secure-token'];
 
@@ -59,6 +60,9 @@ const startServer = async () => {
         app.locals.sitemap = db.collection('sitemap');
         app.locals.steam_data_players = db.collection('steam_data_players');
         app.locals.steam_users = db.collection('steam_users');
+        app.locals.cdn_reports = db.collection('cdn_reports');
+        await db.collection('cdn_reports').createIndex({ ts: 1 }, { expireAfterSeconds: 30 * 24 * 60 * 60 });
+        
         const routes = require('./routes');
         app.use('/', routes);
         
