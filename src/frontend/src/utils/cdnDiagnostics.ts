@@ -21,10 +21,13 @@ type Verdict = 'cdn_ok_on_retry' | 'instant_fail' | 'timeout';
 
 type RetryState = { src: string; attempt: number };
 
+const SAMPLE_LIMIT = 5;
+
 let scheduled = false;
 let failedCount = 0;
 let firstFailedUrl = '';
 let pageAtFirstError = '';
+const failedUrls: string[] = [];
 
 let retryOk = 0;
 let retryFail = 0;
@@ -204,10 +207,11 @@ const runDiagnostics = async (): Promise<void> => {
     const outcomes = countOutcomes();
 
     send({
-        v: 3,
+        v: 4,
         verdict,
         failed: failedCount,
         firstUrl: firstFailedUrl.slice(0, 300),
+        urls: failedUrls.map(url => url.slice(0, 300)),
         retryOk,
         retryFail,
         stillBroken: outcomes.stillBroken,
@@ -248,6 +252,9 @@ const onResourceError = (event: Event): void => {
         if (!firstFailedUrl) {
             firstFailedUrl = src;
             pageAtFirstError = window.location.pathname;
+        }
+        if (failedUrls.length < SAMPLE_LIMIT && !failedUrls.includes(src)) {
+            failedUrls.push(src);
         }
         if (trackedElements.length < TRACKED_LIMIT) trackedElements.push(target);
     }

@@ -1,5 +1,6 @@
 const { lookupAsn } = require('../utils/asnLookup');
 const { getClientIp } = require('../utils/clientIp');
+const { checkAssets } = require('../utils/assetCheck');
 
 const MAX_BODY = 8 * 1024;
 const RATE_WINDOW = 60 * 1000;
@@ -73,6 +74,16 @@ const createReport = async (req, res) => {
     if (!collection) return res.status(503).end();
 
     try {
+        const sample = Array.isArray(body.urls) && body.urls.length
+            ? body.urls
+            : [body.firstUrl];
+
+        const assets = await checkAssets(sample);
+
+        if (assets.checked > 0 && assets.missing === assets.checked) {
+            return res.status(204).end();
+        }
+
         const net = await lookupAsn(ip);
         const ua = String(body.ua || '');
         const conn = body.conn || {};
@@ -82,6 +93,8 @@ const createReport = async (req, res) => {
             verdict: body.verdict,
             failed: num(body.failed) || 0,
             firstUrl: String(body.firstUrl || '').slice(0, 300),
+            checkedUrls: assets.checked,
+            missingUrls: assets.missing,
             retryOk: num(body.retryOk) || 0,
             retryFail: num(body.retryFail) || 0,
             stillBroken: num(body.stillBroken) || 0,
