@@ -1,4 +1,5 @@
 const { lookupAsn } = require('../utils/asnLookup');
+const { getClientIp } = require('../utils/clientIp');
 
 const MAX_BODY = 8 * 1024;
 const RATE_WINDOW = 60 * 1000;
@@ -6,12 +7,6 @@ const RATE_LIMIT = 10;
 const VERDICTS = ['cdn_ok_on_retry', 'instant_fail', 'timeout'];
 
 const rateBuckets = new Map();
-
-const getClientIp = (req) => {
-    const forwarded = (req.headers['x-forwarded-for'] || '').split(',')[0].trim();
-    const ip = forwarded || req.ip || '';
-    return ip.replace(/^::ffff:/, '');
-};
 
 const isRateLimited = (ip) => {
     const now = Date.now();

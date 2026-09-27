@@ -10,7 +10,7 @@ import styles from "./app.module.scss";
 import MaintenancePage from "../pages/maintenance/MaintenancePage";
 import {UnreadNewsProvider} from "../context/UnreadNewsContext";
 import {HelmetProvider} from "react-helmet-async";
-import {MyDataProvider, useMyData} from "../context/HeroesDataContext";
+import {MyDataProvider} from "../context/HeroesDataContext";
 import {UserProvider} from "../context/UserContext";
 import {initCdnDiagnostics} from "../utils/cdnDiagnostics";
 //import RelocationNotice from "../widgets/relocationNotice/RelocationNotice";
@@ -40,7 +40,7 @@ const App = () => {
                             <UnreadNewsProvider>
                                 <Grid item md={12} id="app-scroll-container" className={styles.app}>
                                     {/*<RelocationNotice />*/}
-                                    <InnerApp />
+                                    <Routing />
                                 </Grid>
                             </UnreadNewsProvider>
                         </UserProvider>
@@ -50,13 +50,5 @@ const App = () => {
         </HelmetProvider>
     );
 }
-
-const InnerApp = () => {
-    const { languageReady } = useMyData();
-
-    return languageReady ? (
-            <Routing />
-    ) : null;
-};
 
 export default App;

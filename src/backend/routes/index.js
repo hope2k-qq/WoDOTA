@@ -17,6 +17,7 @@ const authRoutes = require('./authRoutes');
 const metaRoutes = require('./metaRoutes');
 const siteStatsRoutes = require('./siteStatsRoutes');
 const cdnReportRoutes = require('./cdnReportRoutes');
+const localeRoutes = require('./localeRoutes');
 
 router.use('/', homeRoutes);
 router.use('/', heroesRoutes);
@@ -35,5 +36,6 @@ router.use('/', authRoutes);
 router.use('/', metaRoutes);
 router.use('/', siteStatsRoutes);
 router.use('/', cdnReportRoutes);
+router.use('/', localeRoutes);
 
 module.exports = router;

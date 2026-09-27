@@ -1,19 +1,19 @@
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {HeroInformation} from "../../../../types/heroes";
 import RenderTalents from "../heroPage/RenderTalents";
 import {getImageUrl} from "../../../../utils/r2Storage";
 import styles from './hero_build_page.module.scss';
 import {useTranslation} from "react-i18next";
-import {useMyData} from "../../../../context/HeroesDataContext";
+import {useHeroData} from "../../../../hooks/useHeroData";
+import {useLang} from "../../../../hooks/useLang";
 
 export const HeroBuildPage: React.FC = () => {
     const { t } = useTranslation();
     const { id } = useParams<{ id: string }>();
-    const { heroesData } = useMyData();
-    const [heroInformation, setHeroInformation] = useState<HeroInformation | null>(null);
+    const lang = useLang();
     const [heroName, setHeroName] = useState<string | null>(null);
+    const { heroData } = useHeroData(heroName, lang);
     const [currentTalentLevels, setCurrentTalentLevels] = useState<{ [key: string]: { [key: string]: number } } | null>(null);
     const [upgradeOrder, setUpgradeOrder] = useState<string[] | null>(null);
     const API_URL = process.env.REACT_APP_API_URL;
@@ -46,33 +46,6 @@ export const HeroBuildPage: React.FC = () => {
             fetchHeroBuild();
         }
     }, [API_URL,id]);
-
-    const fetchHeroDataFromCache = useCallback((heroName: string) => {
-        if (heroesData) {
-            const heroData = heroesData[heroName];
-
-            if (heroData) {
-                return heroData;
-            } else {
-                return null;
-            }
-        }
-
-        return null;
-    }, [heroesData]);
-
-    useEffect(() => {
-        let data;
-        if(heroName){
-            data = fetchHeroDataFromCache(heroName);
-        }
-        if (data) {
-            setHeroInformation(data);
-        } else {
-        }
-    }, [heroName, heroesData, fetchHeroDataFromCache]);
-
-
 
     return (
         <div>
@@ -109,8 +82,8 @@ export const HeroBuildPage: React.FC = () => {
             }
             <RenderTalents
                 hero_name={heroName || 'slark'}
-                talents_information={heroInformation?.talents_information || {}}
-                talents_description={heroInformation?.talents_description || {}}
+                talents_information={heroData?.talents_information || {}}
+                talents_description={heroData?.talents_description || {}}
                 buildCurrentTalentLevels={currentTalentLevels ?? {}}
                 buildUpgradeOrder={upgradeOrder ?? []}
                 isBuild={true}

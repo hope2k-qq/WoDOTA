@@ -45,8 +45,8 @@ export interface talentsDescription {
 }
 
 export interface HeroInformation {
-    innate: { [key: string]: { [key: string]: string } };
-    abilities: { [key: string]: { [key: string]: string } };
+    innate: { [key: string]: AbilityData };
+    abilities: { [key: string]: AbilityData };
     characteristics: { [key: string]: string };
     talents_description: talentsDescription;
     talents_information: TalentsInformation;

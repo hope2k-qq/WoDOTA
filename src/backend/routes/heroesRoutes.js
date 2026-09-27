@@ -5,7 +5,7 @@ const checkPassword = require('../middleware/auth');
 
 router.get('/heroes', (req, res) => {
     res.set({
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'public, max-age=31536000, immutable'
     });
 
     heroesController.getHeroes(req, res);
@@ -18,6 +18,7 @@ router.get('/heroesAllData/:lang', checkPassword, (req, res) => {
     const lang = req.params.lang || 'en';
     heroesController.getAllHeroesData(req, res, lang);
 });
+router.get('/hero-data/:lang/:name', heroesController.getHeroDataByLang);
 router.get('/heroesAllDataJson/:lang', (req, res) => {
     const lang = req.params.lang || 'en';
     res.set({

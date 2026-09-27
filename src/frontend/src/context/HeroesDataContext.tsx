@@ -1,15 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import i18n from "../locales/i18n";
 import axios from "axios";
+import { CACHE_VERSION, FALLBACK_LANGUAGE, SUPPORTED_LANGUAGES } from "../constants/api";
 
-const API_IP = process.env.REACT_APP_API_IP;
 const API_URL = process.env.REACT_APP_API_URL;
-
-const CACHE_VERSION = "109.0";
 
 type MyDataContextType = {
     language: string | null;
-    heroesData: any | null;
     generalTalents: any | null;
     heroesAttributes: any | null;
     languageReady: boolean;
@@ -20,7 +17,6 @@ const MyDataContext = createContext<MyDataContextType | undefined>(undefined);
 
 export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [language, setLanguage] = useState<string | null>(null);
-    const [heroesData, setHeroesData] = useState<any | null>(null);
     const [generalTalents, setGeneralTalents] = useState<any | null>(null);
     const [heroesAttributes, setHeroesAttributes] = useState<any | null>(null);
     const [languageReady, setLanguageReady] = useState(false);
@@ -35,20 +31,15 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
             localStorage.setItem("language", lang);
             setLanguage(lang);
 
-            try {
-                await axios.post(
+            axios
+                .post(
                     `${API_URL}/account/settings`,
                     { language: lang },
                     { withCredentials: true }
-                );
-            } catch (err) {
-                console.warn("Не удалось сохранить язык:", err);
-            }
+                )
+                .catch(() => undefined);
 
-            const [heroesResponse, talentsResponse, heroesAttributesResponse] = await Promise.all([
-                axios.get(
-                    `${API_URL}/heroesAllDataJson/${lang}?v=${CACHE_VERSION}`
-                ),
+            const [talentsResponse, heroesAttributesResponse] = await Promise.all([
                 axios.get(
                     `${API_URL}/general_talents/${lang}?v=${CACHE_VERSION}`
                 ),
@@ -57,7 +48,6 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                 ),
             ]);
 
-            setHeroesData(heroesResponse.data);
             setGeneralTalents(talentsResponse.data);
             setHeroesAttributes(heroesAttributesResponse.data);
 
@@ -76,7 +66,6 @@ export const MyDataProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         <MyDataContext.Provider
             value={{
                 language,
-                heroesData,
                 generalTalents,
                 heroesAttributes,
                 languageReady,
@@ -98,27 +87,27 @@ export const useMyData = (): MyDataContextType => {
     return context;
 };
 
-const getCountryByIP = async (): Promise<string | null> => {
-    try {
-        const response = await fetch(
-            `https://ipinfo.io/json?token=${API_IP}`
-        );
-        const data = await response.json();
-        return data.country;
-    } catch {
-        return null;
-    }
+const detectLanguageSync = (): string | null => {
+    const fromPath = window.location.pathname.split("/")[1];
+    if (SUPPORTED_LANGUAGES.includes(fromPath)) return fromPath;
+
+    const saved = localStorage.getItem("language");
+    if (saved && SUPPORTED_LANGUAGES.includes(saved)) return saved;
+
+    return null;
 };
 
 const getDefaultLanguage = async (): Promise<string> => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) return savedLanguage;
+    const known = detectLanguageSync();
+    if (known) return known;
 
-    const country = await getCountryByIP();
+    try {
+        const response = await axios.get(`${API_URL}/detect-language`);
+        const lang = response.data?.lang;
+        if (lang && SUPPORTED_LANGUAGES.includes(lang)) return lang;
+    } catch {
+        return FALLBACK_LANGUAGE;
+    }
 
-    if (country === "UA") return "uk";
-    if (country === "RU") return "ru";
-    if (country === "CZ") return "cs";
-
-    return "en";
+    return FALLBACK_LANGUAGE;
 };

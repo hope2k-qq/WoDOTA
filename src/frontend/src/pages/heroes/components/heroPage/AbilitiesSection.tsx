@@ -1,9 +1,10 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import styles from "./abilities_section.module.scss";
 import {formatAbilityDescription} from '../../../../utils/formatAbilityDescription';
 import {AbilitiesSectionProps} from '../../../../types/heroes';
 import {useTranslation} from "react-i18next";
 import {useAltKey} from "../../../../hooks/useAltKey";
+import {useInView} from "../../../../hooks/useInView";
 import {getImageUrl} from "../../../../utils/r2Storage";
 
 
@@ -17,6 +18,8 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({
     const [videoError, setVideoError] = useState(false);
     const [imgSrc, setImgSrc] = useState("");
     const altPressed = useAltKey();
+    const videoWrapperRef = useRef<HTMLDivElement>(null);
+    const videoInView = useInView(videoWrapperRef);
 
     const combinedAbilities = useMemo(() => {
         const result: any[] = [];
@@ -165,10 +168,10 @@ const AbilitiesSection: React.FC<AbilitiesSectionProps> = ({
                     <div className={styles.render2AbilityWrapper}>
 
                         {/* VIDEO */}
-                        <div className={styles.render2VideoWrapper}>
+                        <div className={styles.render2VideoWrapper} ref={videoWrapperRef}>
 
 
-                            {selected && (
+                            {selected && videoInView && (
                                 <>
                                     {!videoError ? (
                                         <video

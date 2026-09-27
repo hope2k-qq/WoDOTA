@@ -621,6 +621,17 @@ exports.getAllHeroesData = (req, res, lang) => {
         const filePath = path.join(__dirname, `heroesData_${lang}.json`);
         fs.writeFileSync(filePath, JSON.stringify(allHeroesData, null, 2), 'utf8');
 
+        const heroesDir = path.join(__dirname, '../data/heroes', lang);
+        fs.mkdirSync(heroesDir, { recursive: true });
+
+        Object.entries(allHeroesData).forEach(([heroName, heroData]) => {
+            fs.writeFileSync(
+                path.join(heroesDir, `${heroName}.json`),
+                JSON.stringify(heroData, null, 2),
+                'utf8'
+            );
+        });
+
         res.json(allHeroesData);
     } catch (error) {
         console.error('Error loading all heroes data:', error);
@@ -632,6 +643,30 @@ exports.getAllHeroesData = (req, res, lang) => {
 exports.getAllHeroesDataJson = (req, res, lang) => {
     const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, `heroesData_${lang}.json`), 'utf8'));
     res.json(jsonData);
+};
+
+const HERO_DATA_LANGS = ['ru', 'uk', 'en', 'cs'];
+const HERO_NAME_PATTERN = /^[a-z0-9_'-]+$/;
+
+exports.getHeroDataByLang = (req, res) => {
+    const { lang, name } = req.params;
+
+    if (!HERO_DATA_LANGS.includes(lang) || !HERO_NAME_PATTERN.test(name)) {
+        return res.status(400).json({ error: 'Invalid language or hero name' });
+    }
+
+    const filePath = path.join(__dirname, '../data/heroes', lang, `${name}.json`);
+
+    res.sendFile(filePath, {
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Cache-Control': 'public, max-age=31536000, immutable'
+        }
+    }, (error) => {
+        if (error && !res.headersSent) {
+            res.status(404).json({ error: 'Hero data not found' });
+        }
+    });
 };
 
 // exports.getAllHeroesDataJson = (req, res) => {

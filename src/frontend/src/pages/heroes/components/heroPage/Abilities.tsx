@@ -1,29 +1,44 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import styles from "./abilities.module.scss";
 import { formatAbilityDescription } from '../../../../utils/formatAbilityDescription';
 import { AbilitiesProps } from '../../../../types/heroes';
 import {useTranslation} from "react-i18next";
+import {useBackgroundPrefetch} from "../../../../hooks/useBackgroundPrefetch";
 import {getImageUrl} from "../../../../utils/r2Storage";
 
 
 const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInnate  }) => {
     const {t} = useTranslation();
     const [videoLoaded, setVideoLoaded] = useState<{ [key: string]: boolean }>({});
+    const [activated, setActivated] = useState<Set<string>>(new Set());
 
     useEffect(() => {
-        if (!heroAbilities) return;
+        setActivated(new Set());
+        setVideoLoaded({});
+    }, [heroName]);
 
-        Object.keys(heroAbilities).forEach((key) => {
-            const img = new Image();
-            img.src = getImageUrl(`abilities_preview/images/${heroName}/${key}.webp`);
-        });
-    }, [heroAbilities, heroName]);
+    const prefetchUrls = useMemo(() => {
+        const keys = [
+            ...Object.keys(heroInnate ?? {}).slice(0, 1),
+            ...Object.keys(heroAbilities ?? {})
+        ];
+
+        return [
+            ...keys.map(key => getImageUrl(`abilities_preview/images/${heroName}/${key}.webp`)),
+            ...keys.map(key => getImageUrl(`abilities_preview/video/${heroName}/${key}.webm`))
+        ];
+    }, [heroAbilities, heroInnate, heroName]);
+
+    useBackgroundPrefetch(prefetchUrls);
 
     const renderAbility = (
         key: string,
         ability: any,
         isInnate = false
     ) => {
+        const uid = isInnate ? `innate-${key}` : key;
+        const isActive = activated.has(uid);
+
         const formattedDescription = formatAbilityDescription(
             ability.description,
             ability.values as Record<string, string>
@@ -31,8 +46,12 @@ const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInna
 
         return (
             <div
-                key={isInnate ? `innate-${key}` : key}
+                key={uid}
                 className={styles.ability}
+                onMouseEnter={() => {
+                    if (isActive) return;
+                    setActivated(prev => new Set(prev).add(uid));
+                }}
             >
                 <img
                     src={
@@ -46,39 +65,43 @@ const Abilities: React.FC<AbilitiesProps> = ({ heroName, heroAbilities, heroInna
 
                 <div className={styles.abilityDetails}>
                     <div className={styles.mediaContainer}>
-                        <video
-                            className={styles.abilityVideo}
-                            src={getImageUrl(`abilities_preview/video/${heroName}/${key}.webm`)}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            onLoadedData={() =>
-                                setVideoLoaded(prev => ({
-                                    ...prev,
-                                    [key]: true
-                                }))
-                            }
-                            onError={() =>
-                                setVideoLoaded(prev => ({
-                                    ...prev,
-                                    [key]: false
-                                }))
-                            }
-                            style={{
-                                display: videoLoaded[key] ? "block" : "none"
-                            }}
-                        />
+                        {isActive && (
+                            <>
+                                <video
+                                    className={styles.abilityVideo}
+                                    src={getImageUrl(`abilities_preview/video/${heroName}/${key}.webm`)}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    onLoadedData={() =>
+                                        setVideoLoaded(prev => ({
+                                            ...prev,
+                                            [uid]: true
+                                        }))
+                                    }
+                                    onError={() =>
+                                        setVideoLoaded(prev => ({
+                                            ...prev,
+                                            [uid]: false
+                                        }))
+                                    }
+                                    style={{
+                                        display: videoLoaded[uid] ? "block" : "none"
+                                    }}
+                                />
 
-                        {!videoLoaded[key] && (
-                            <img
-                                className={styles.abilityImage}
-                                src={getImageUrl(`abilities_preview/images/${heroName}/${key}.webp`)}
-                                alt={key}
-                                onError={(e) => {
-                                    e.currentTarget.src = "/noFound.png";
-                                }}
-                            />
+                                {!videoLoaded[uid] && (
+                                    <img
+                                        className={styles.abilityImage}
+                                        src={getImageUrl(`abilities_preview/images/${heroName}/${key}.webp`)}
+                                        alt={key}
+                                        onError={(e) => {
+                                            e.currentTarget.src = "/noFound.png";
+                                        }}
+                                    />
+                                )}
+                            </>
                         )}
                     </div>
 

@@ -10,6 +10,8 @@ import {HeroCharacteristics} from "./HeroCharacteristics";
 import {AbilityData, HeroInformation} from "../../../../types/heroes";
 import {useTranslation} from "react-i18next";
 import {useMyData} from "../../../../context/HeroesDataContext";
+import {useHeroData} from "../../../../hooks/useHeroData";
+import {useLang} from "../../../../hooks/useLang";
 import {NotFoundPage} from "../../../notFound/NotFoundPage";
 
 type AttributeType = 'int' | 'str' | 'agi' | 'uni';
@@ -36,16 +38,16 @@ const HeroPage: React.FC = () => {
     const [heroInnate, setHeroInnate] = useState<{
         [key: string]: AbilityData;
     } | null>(null);
-    const { heroesData, languageReady, heroesAttributes } = useMyData();
+    const { heroesAttributes } = useMyData();
+    const lang = useLang();
+    const { heroData, loading: heroDataLoading, notFound: heroDataNotFound } = useHeroData(name, lang);
+
     const hero = React.useMemo(() => {
         if (!heroesAttributes || !name) return null;
         return heroesAttributes.find((h: Hero) => h.name === name) || null;
     }, [heroesAttributes, name]);
 
-    const isDataLoading =
-        !languageReady ||
-        !heroesAttributes ||
-        !heroesData;
+    const isDataLoading = heroDataLoading;
 
     const isHeroLoading =
         isDataLoading ||
@@ -56,8 +58,7 @@ const HeroPage: React.FC = () => {
     const isNotFound =
         !isDataLoading &&
         !!name &&
-        Array.isArray(heroesAttributes) &&
-        hero === null;
+        (heroDataNotFound || (Array.isArray(heroesAttributes) && hero === null));
     useEffect(() => {
         if (name) {
             const formattedName = name
@@ -94,28 +95,17 @@ const HeroPage: React.FC = () => {
 
 
     useEffect(() => {
-        let data;
-        if(name){
-            const fetchHeroDataFromCache = (heroName: string) => {
-                if (heroesData) {
-                    const heroData = heroesData[heroName];
-                    if (heroData) {
-                        return heroData;
-                    } else {
-                        return null;
-                    }
-                }
+        if (!heroData) {
+            setHeroInformation(null);
+            setHeroAbilities(null);
+            setHeroInnate(null);
+            return;
+        }
 
-                return null;
-            };
-            data = fetchHeroDataFromCache(name);
-        }
-        if (data) {
-            setHeroInformation(data);
-            setHeroAbilities(data.abilities);
-            setHeroInnate(data.innate);
-        }
-    }, [name, heroesData]);
+        setHeroInformation(heroData);
+        setHeroAbilities(heroData.abilities);
+        setHeroInnate(heroData.innate);
+    }, [heroData]);
 
 
 
