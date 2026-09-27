@@ -90,6 +90,8 @@ const createReport = async (req, res) => {
             retryOk: num(body.retryOk) || 0,
             retryFail: num(body.retryFail) || 0,
             stillBroken: num(body.stillBroken) || 0,
+            detached: num(body.detached) || 0,
+            pending: num(body.pending) || 0,
             routeChanged: !!body.routeChanged,
             visibility: String(body.visibility || ''),
             controlOk: !!(body.control && body.control.ok),
@@ -158,11 +160,24 @@ const buildStats = (docs) => {
         return 'повтор не помог';
     };
 
+    const share = (field) => {
+        const withField = docs.filter((d) => typeof d[field] === 'number');
+        if (!withField.length) return 0;
+        return Math.round(withField.reduce((sum, d) => sum + d[field], 0) / withField.length);
+    };
+
     return {
         total: docs.length,
         byProvider: Object.values(providers).sort((a, b) => b.count - a.count).slice(0, 40),
         byVerdict: tally(docs, (d) => d.verdict),
         byRecovery: tally(docs, recoveryLabel),
+        average: {
+            'картинок упало': share('failed'),
+            'вытянуто повтором': share('retryOk'),
+            'осталось битыми': share('stillBroken'),
+            'исчезло со страницы': share('detached'),
+            'ещё грузилось': share('pending')
+        },
         byRouteChanged: tally(docs, (d) => (d.routeChanged ? 'ушёл со страницы' : 'остался на странице')),
         byVisibility: tally(docs, (d) => d.visibility),
         byCountry: tally(docs, (d) => d.country),
@@ -236,6 +251,7 @@ ul{list-style:none;padding:0;margin:0} li{padding:3px 0;border-bottom:1px solid 
 <h2>Провайдеры</h2>
 <table><tr><th>ASN</th><th>Провайдер</th><th>Страна</th><th class="n">Всего</th><th class="n">Моб.</th><th>Вердикты</th></tr>${rows}</table>
 <h2>Вердикты</h2><ul>${hints}</ul>
+${block('В среднем на один отчёт', stats.average)}
 ${block('Помог ли повтор загрузки', stats.byRecovery)}
 ${block('Менялся ли маршрут', stats.byRouteChanged)}
 ${block('Вкладка на момент отчёта', stats.byVisibility)}

@@ -995,6 +995,7 @@ const RenderTalents: React.FC<RenderTalentsProps> = ({ hero_name, talents_inform
                                                                         : `${styles.noFilter}`}`}
                                                                     src={src}
                                                                     alt="item"
+                                                                    loading="lazy"
                                                                     onLoad={() =>
                                                                         setLoadedImages(prev => ({
                                                                             ...prev,

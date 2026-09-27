@@ -5,11 +5,11 @@ const CDN_PROBE = `${CDN_ORIGIN}/abilities/innate_icon_small.png`;
 const CONTROL_PROBE = '/wd.png';
 
 const PROBE_TIMEOUT = 5000;
-const COLLECT_DELAY = 3500;
+const COLLECT_DELAY = 5000;
 const INSTANT_FAIL_MS = 150;
 const MASS_FAILURE_MIN = 8;
 
-const RETRY_DELAYS = [600, 2000];
+const RETRY_DELAYS = [400, 1200, 3000];
 const RETRY_FAIL_LIMIT = 20;
 const TRACKED_LIMIT = 200;
 
@@ -106,12 +106,28 @@ const recover = (img: HTMLImageElement): void => {
     }, delay);
 };
 
-const countStillBroken = (): number => {
-    return trackedElements.filter((el) => {
-        if (!document.contains(el)) return false;
-        if (el instanceof HTMLImageElement) return el.naturalWidth === 0;
-        return true;
-    }).length;
+const countOutcomes = () => {
+    let stillBroken = 0;
+    let detached = 0;
+    let pending = 0;
+
+    for (const el of trackedElements) {
+        if (!document.contains(el)) {
+            detached += 1;
+            continue;
+        }
+        if (!(el instanceof HTMLImageElement)) {
+            stillBroken += 1;
+            continue;
+        }
+        if (!el.complete) {
+            pending += 1;
+        } else if (el.naturalWidth === 0) {
+            stillBroken += 1;
+        }
+    }
+
+    return { stillBroken, detached, pending };
 };
 
 const getProtocol = (urlPrefix: string): string => {
@@ -185,14 +201,18 @@ const runDiagnostics = async (): Promise<void> => {
 
     safeSession.set(SESSION_KEY, '1');
 
+    const outcomes = countOutcomes();
+
     send({
-        v: 2,
+        v: 3,
         verdict,
         failed: failedCount,
         firstUrl: firstFailedUrl.slice(0, 300),
         retryOk,
         retryFail,
-        stillBroken: countStillBroken(),
+        stillBroken: outcomes.stillBroken,
+        detached: outcomes.detached,
+        pending: outcomes.pending,
         routeChanged: pageAtFirstError !== window.location.pathname,
         visibility: document.visibilityState,
         control,
